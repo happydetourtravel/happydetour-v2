@@ -109,7 +109,7 @@ export default function About() {
           </div>
         </div>
         <img
-          src="https://raw.githubusercontent.com/happydetourtravel/happydetour-website/main/IMG_2781.jpeg"
+          src="/IMG_2781.jpeg"
           alt="Eric Carney, travel advisor at Happy Detour Travel"
           class="eric-photo"
         />
