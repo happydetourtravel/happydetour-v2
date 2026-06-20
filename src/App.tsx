@@ -5,6 +5,7 @@ import Home from './pages/home/page'
 import Join from './pages/join/page'
 import Login from './pages/login/page'
 import Privacy from './pages/privacy/page'
+import Terms from './pages/terms/page'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/join" element={<Join />} />
           <Route path="/login" element={<Login />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
         </Routes>
         <Footer />
       </div>
