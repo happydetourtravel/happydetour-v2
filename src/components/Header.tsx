@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 export default function Header() {
   return (
     <>
-      <div className="w-full bg-brand-amber text-white text-center py-2 px-4 text-sm font-medium">
+      <div className="w-full bg-brand-amber text-white text-left py-2 px-4 text-sm font-medium">
         Sailings for 2026–2027 are selling fast.{' '}
         <Link to="/join" className="underline font-bold hover:text-brand-dark transition-colors">
           Learn More
@@ -17,9 +17,6 @@ export default function Header() {
               alt="Happy Detour Travel"
               className="h-12 w-auto"
             />
-            <span className="text-brand-blue font-bold text-lg leading-tight">
-              Happy Detour Travel
-            </span>
           </Link>
           <nav className="flex items-center gap-6 text-sm font-medium text-brand-dark">
             <Link to="/" className="hover:text-brand-blue transition-colors">Home</Link>
