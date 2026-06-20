@@ -7,6 +7,7 @@ import Login from './pages/login/page'
 import Privacy from './pages/privacy/page'
 import Terms from './pages/terms/page'
 import Members from './pages/members/page'
+import About from './pages/about/page'
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/members" element={<Members />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </div>
