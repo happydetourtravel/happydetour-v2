@@ -2,20 +2,26 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-brand-dark text-white py-8 px-6 mt-auto">
-      <div className="max-w-7xl mx-auto flex flex-col items-center gap-4 text-sm text-center">
-        <div className="flex items-center gap-4 flex-wrap justify-center text-gray-400">
-          <Link to="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
-          <span>·</span>
-          <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+    <footer style={{ backgroundColor: '#1F2937', padding: '32px 24px', marginTop: 'auto' }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px' }}>
+        <img src="/HDT.png" alt="Happy Detour Travel" style={{ height: '60px', width: 'auto' }} />
+        <div style={{ textAlign: 'center' }}>
+          <p style={{ color: '#9CA3AF', fontSize: '12px', margin: '0 0 4px 0' }}>
+            Real trips. Real value. Someone actually in your corner. · Northeast, OH · 747-333-8687 · eric@happydetour.com
+          </p>
+          <p style={{ color: '#6B7280', fontSize: '11px', margin: 0 }}>
+            © 2026 Happy Detour Travel LLC · Eric · Affiliated with WorldVia Travel Network ·{' '}
+            <Link to="/terms" style={{ color: '#6B7280', textDecoration: 'underline' }}>Terms & Conditions</Link>
+            {' · '}
+            <Link to="/privacy" style={{ color: '#6B7280', textDecoration: 'underline' }}>Privacy Policy</Link>
+            {' · '}Last updated: June 2026
+          </p>
         </div>
-        <p className="text-gray-400">
-          © 2026 Happy Detour Travel LLC · Eric · Affiliated with WorldVia Travel Network ·{' '}
-          <a href="mailto:eric@happydetour.com" className="hover:text-white transition-colors">
-            eric@happydetour.com
-          </a>{' '}
-          · Last updated: June 2026
-        </p>
+        <div style={{ display: 'flex', gap: '16px' }}>
+          <a href="https://facebook.com/happydetourtravel" target="_blank" rel="noopener noreferrer" style={{ color: '#9CA3AF', fontSize: '12px', textDecoration: 'none' }}>Facebook</a>
+          <a href="https://instagram.com/happydetourtravel" target="_blank" rel="noopener noreferrer" style={{ color: '#9CA3AF', fontSize: '12px', textDecoration: 'none' }}>Instagram</a>
+          <a href="https://tiktok.com/@happydetourtravel" target="_blank" rel="noopener noreferrer" style={{ color: '#9CA3AF', fontSize: '12px', textDecoration: 'none' }}>TikTok</a>
+        </div>
       </div>
     </footer>
   )
