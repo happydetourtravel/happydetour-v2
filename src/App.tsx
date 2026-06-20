@@ -1,16 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
-
-function Home() {
-  return (
-    <main className="min-h-screen flex items-center justify-center">
-      <h1 className="text-4xl font-bold text-brand-blue">
-        Happy Detour Travel
-      </h1>
-    </main>
-  )
-}
+import Home from './pages/home/page'
 
 export default function App() {
   return (
