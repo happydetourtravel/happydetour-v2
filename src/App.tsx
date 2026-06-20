@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Home from './pages/home/page'
 import Join from './pages/join/page'
 import Login from './pages/login/page'
+import Privacy from './pages/privacy/page'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/join" element={<Join />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/privacy" element={<Privacy />} />
         </Routes>
         <Footer />
       </div>
