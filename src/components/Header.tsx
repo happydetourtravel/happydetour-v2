@@ -13,7 +13,7 @@ export default function Header() {
         <div className="w-full flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <img
-              src="https://raw.githubusercontent.com/happydetourtravel/happydetour-v2/main/HDT-LOGO.png"
+              src="/HDT.png"
               alt="Happy Detour Travel"
               className="h-12 w-auto"
             />
