@@ -9,13 +9,13 @@ export default function Header() {
           Learn More
         </Link>
       </div>
-      <header className="w-full bg-white border-b border-gray-200 px-6 py-4">
+      <header className="w-full bg-white border-b border-gray-200 px-6 py-2">
         <div className="w-full flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <img
               src="/HDT.png"
               alt="Happy Detour Travel"
-              className="h-20 w-auto"
+              className="h-18 w-auto"
             />
           </Link>
           <nav className="flex items-center gap-6 text-sm font-medium text-brand-dark">
