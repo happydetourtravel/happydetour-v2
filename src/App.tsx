@@ -1,21 +1,27 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 function Home() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <main className="min-h-screen flex items-center justify-center">
       <h1 className="text-4xl font-bold text-brand-blue">
         Happy Detour Travel
       </h1>
-    </div>
+    </main>
   )
 }
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+        <Footer />
+      </div>
     </BrowserRouter>
   )
 }
