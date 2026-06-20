@@ -39,11 +39,11 @@ export default function Home() {
             <h1 style={{ color: 'white', fontSize: '46px', fontWeight: '800', lineHeight: '1.15', margin: '0 0 16px 0' }}>
               Real trips. Real value. Someone actually in your corner.
             </h1>
-            <p style={{ color: '#F59E0B', fontSize: '18px', fontWeight: '700', margin: '0 0 16px 0' }}>
-              Your personal travel advisor from start to finish.
+            <p style={{ color: '#F59E0B', fontSize: '20px', fontWeight: '700', margin: '0 0 16px 0' }}>
+              Vacations Planned Without The Overwhelming Complications
             </p>
             <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '15px', lineHeight: '1.7', margin: '0 0 32px 0', maxWidth: '480px' }}>
-              Anyone can book a trip. I am the one who answers the phone when things do not go as planned.
+              Our founder Eric helps you skip the corporate fluff and endless hold music. As the head of Happy Detour Travel, he cuts through the noise to build your perfect cruise or all-inclusive resort getaway, proving that sometimes the best journeys begin with a Happy Detour.
             </p>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
               <a href="/contact" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '13px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>Talk to Eric</a>
