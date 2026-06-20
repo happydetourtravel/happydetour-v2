@@ -21,9 +21,10 @@ export default function Header() {
           <nav className="flex items-center gap-6 text-sm font-medium text-brand-dark">
             <Link to="/" className="hover:text-brand-blue transition-colors">Home</Link>
             <Link to="/cruises" className="hover:text-brand-blue transition-colors">Cruises</Link>
-            <Link to="/join" className="hover:text-brand-blue transition-colors">Join HDT</Link>
             <Link to="/about" className="hover:text-brand-blue transition-colors">About</Link>
             <Link to="/contact" className="hover:text-brand-blue transition-colors">Contact</Link>
+            <Link to="/login" className="hover:text-brand-blue transition-colors">Sign In</Link>
+            <Link to="/join" className="bg-brand-amber text-white px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity">Join HDT</Link>
           </nav>
         </div>
       </header>
