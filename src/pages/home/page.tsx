@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const featuredDeals = [
   { tag: "VIRGIN VOYAGES", title: "Caribbean Escape — Bahamas & Key West", date: "Jan 2027", nights: "4 nights", ship: "Scarlet Lady · Miami", originalPrice: "$699", salePrice: "$549", link: "/cruises/bahamas-key-west" },
@@ -15,8 +15,20 @@ const cruiseLines = [
   { name: "Royal Caribbean", tagline: "Big ships. Big fun.", desc: "Rock climbing walls, surf simulators, Broadway shows. If someone wants everything, this is where you go.", live: false },
 ]
 
+const testimonials = [
+  { name: "Shannon M.", location: "Akron, OH", trip: "Caribbean Cruise", quote: "Eric took care of absolutely everything. I showed up at the port and all I had to do was enjoy myself. I didn't have to think about a single thing." },
+  { name: "Jason R.", location: "Pittsburgh, PA", trip: "NCL Group Sailing", quote: "We had a group of 10 people with 10 different opinions. Eric figured it out and everyone had the time of their lives. No drama, no stress." },
+  { name: "Becky T.", location: "Columbus, OH", trip: "MSC Meraviglia", quote: "I had never cruised before and had no idea where to start. Eric made it so easy. I never felt overwhelmed or like I was asking dumb questions." },
+  { name: "Amanda C.", location: "Cleveland, OH", trip: "NCL Caribbean Cruise", quote: "Honestly I was skeptical about using a travel agent but Eric was different. He actually knew the ship inside and out. Worth every penny." },
+  { name: "Mike D.", location: "Canton, OH", trip: "NCL Caribbean Cruise", quote: "The price Eric got us was better than anything I found online. And when we had a question the night before sailing he actually picked up the phone." },
+  { name: "Janice P.", location: "Youngstown, OH", trip: "Caribbean Group Cruise", quote: "It was good overall. Took a little longer than I expected to get everything confirmed but the trip itself was great and Eric was helpful when I had questions." },
+  { name: "Christina L.", location: "Plainfield, IL", trip: "Virgin Voyages Transatlantic", quote: "I have booked two cruises through Eric now and I will not go back to doing it myself. He catches things I would have never thought to ask about." },
+  { name: "Dave & Karen S.", location: "Erie, PA", trip: "Caribbean Couples Cruise", quote: "We told Eric our budget and what we were looking for and he came back with options that actually fit. No upselling, no pressure. Just straightforward help." },
+]
+
 export default function Home() {
   const [dealIndex, setDealIndex] = useState(0)
+  const scrollRef = useRef<HTMLDivElement>(null)
   const deal = featuredDeals[dealIndex]
 
   useEffect(() => {
@@ -25,6 +37,32 @@ export default function Home() {
     }, 4000)
     return () => clearInterval(timer)
   }, [])
+
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+    let animFrame: number
+    let pos = 0
+    const speed = 0.5
+    const step = () => {
+      pos += speed
+      if (pos >= el.scrollWidth / 2) pos = 0
+      el.scrollLeft = pos
+      animFrame = requestAnimationFrame(step)
+    }
+    animFrame = requestAnimationFrame(step)
+    const pause = () => cancelAnimationFrame(animFrame)
+    const resume = () => { animFrame = requestAnimationFrame(step) }
+    el.addEventListener('mouseenter', pause)
+    el.addEventListener('mouseleave', resume)
+    return () => {
+      cancelAnimationFrame(animFrame)
+      el.removeEventListener('mouseenter', pause)
+      el.removeEventListener('mouseleave', resume)
+    }
+  }, [])
+
+  const doubled = [...testimonials, ...testimonials]
 
   return (
     <main>
@@ -46,8 +84,12 @@ export default function Home() {
               Our founder Eric helps you skip the corporate fluff and endless hold music. As the head of Happy Detour Travel, he cuts through the noise to build your perfect cruise or all-inclusive resort getaway, proving that sometimes the best journeys begin with a Happy Detour.
             </p>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <a href="/contact" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '13px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>Talk to Eric</a>
-              <a href="#cruise-lines" style={{ border: '2px solid rgba(255,255,255,0.5)', color: 'white', padding: '13px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '600', fontSize: '15px' }}>View Cruises</a>
+              <a href="/join" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '13px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>
+                Join HDT
+              </a>
+              <a href="#cruise-lines" style={{ border: '2px solid rgba(255,255,255,0.5)', color: 'white', padding: '13px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '600', fontSize: '15px' }}>
+                View Cruises
+              </a>
             </div>
           </div>
 
@@ -83,24 +125,12 @@ export default function Home() {
         </div>
       </div>
 
-      {/* About Eric */}
-      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '80px 24px' }}>
-        <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>About Eric</p>
-        <h2 style={{ color: '#1F2937', fontSize: '32px', fontWeight: '800', margin: '0 0 24px 0' }}>I help people plan trips without making it complicated.</h2>
-        <p style={{ color: '#4B5563', fontSize: '16px', lineHeight: '1.8', marginBottom: '16px' }}>I'm Eric. Most people know they want to travel. They just don't know where to start. And honestly, the research can feel like a second job. That's where I come in.</p>
-        <p style={{ color: '#4B5563', fontSize: '16px', lineHeight: '1.8', marginBottom: '16px' }}>You share a rough idea. I take it from there. I find the options, sort through the details, and help you pick something that actually fits your budget, your timeline, your vibe.</p>
-        <p style={{ color: '#4B5563', fontSize: '16px', lineHeight: '1.8', marginBottom: '16px' }}>I am a professional travel advisor. Planning fees start at $50 depending on the complexity of your trip. We talk through it together before anything is confirmed so there are no surprises. Cruise lines and resorts pay me when you travel, and that is already built into the price you would pay anyway.</p>
-        <p style={{ color: '#4B5563', fontSize: '16px', lineHeight: '1.8', marginBottom: '24px' }}>And if something goes wrong while you are out there, I am the one making the calls so you do not have to.</p>
-        <p style={{ color: '#007298', fontSize: '17px', fontWeight: '600', fontStyle: 'italic', marginBottom: '8px' }}>"Sometimes the best journeys begin with a Happy Detour."</p>
-        <p style={{ color: '#6B7280', fontSize: '14px' }}>Eric Carney, Happy Detour Travel</p>
-      </div>
-
       {/* Cruise Lines */}
       <div id="cruise-lines" style={{ backgroundColor: '#F3F4F6', padding: '80px 24px' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Where We Specialize</p>
-            <h2 style={{ color: '#1F2937', fontSize: '36px', fontWeight: '800', margin: 0 }}>Cruise lines we work with</h2>
+            <h2 style={{ color: '#1F2937', fontSize: '36px', fontWeight: '800', margin: 0 }}>Take a look at our cruise offerings</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
             {cruiseLines.map((line) => (
@@ -122,10 +152,35 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Testimonials */}
+      <div style={{ backgroundColor: '#F9FAFB', padding: '80px 0' }}>
+        <div style={{ textAlign: 'center', marginBottom: '48px', padding: '0 24px' }}>
+          <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>What People Say</p>
+          <h2 style={{ color: '#1F2937', fontSize: '36px', fontWeight: '800', margin: 0 }}>Real people. Real trips. No surprises.</h2>
+        </div>
+        <div
+          ref={scrollRef}
+          style={{ display: 'flex', overflowX: 'hidden', gap: '20px', padding: '0 24px', cursor: 'grab', userSelect: 'none' }}
+        >
+          {doubled.map((t, i) => (
+            <div key={i} style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #E5E7EB', minWidth: '300px', maxWidth: '300px', flexShrink: 0 }}>
+              <p style={{ color: '#1F2937', fontSize: '14px', lineHeight: '1.7', fontStyle: 'italic', margin: '0 0 16px 0' }}>"{t.quote}"</p>
+              <div style={{ borderTop: '1px solid #F3F4F6', paddingTop: '16px' }}>
+                <p style={{ color: '#1F2937', fontWeight: '600', fontSize: '14px', margin: '0 0 2px 0' }}>{t.name}</p>
+                <p style={{ color: '#9CA3AF', fontSize: '11px', margin: '0 0 2px 0' }}>{t.location}</p>
+                <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>{t.trip}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* CTA */}
-      <div style={{ padding: '80px 24px', textAlign: 'center' }}>
+      <div style={{ borderTop: '1px solid #E5E7EB', padding: '64px 24px', textAlign: 'center' }}>
         <h2 style={{ color: '#1F2937', fontSize: '32px', fontWeight: '800', margin: '0 0 16px 0' }}>Ready to start planning?</h2>
-        <p style={{ color: '#6B7280', fontSize: '16px', maxWidth: '480px', margin: '0 auto 32px auto', lineHeight: '1.6' }}>Reach out and let's figure out the right trip for you. No pressure, no surprises.</p>
+        <p style={{ color: '#6B7280', fontSize: '16px', maxWidth: '480px', margin: '0 auto 32px auto', lineHeight: '1.6' }}>
+          Reach out and let's figure out the right trip for you. No pressure, no surprises.
+        </p>
         <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
           <a href="sms:7473338687" style={{ backgroundColor: '#007298', color: 'white', padding: '13px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>Text Eric</a>
           <a href="mailto:eric@happydetour.com" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '13px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>Email Eric</a>
