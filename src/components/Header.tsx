@@ -25,7 +25,6 @@ export default function Header() {
             <Link to="/" className="hover:text-brand-blue transition-colors">Home</Link>
             <Link to="/cruises" className="hover:text-brand-blue transition-colors">Cruises</Link>
             <Link to="/about" className="hover:text-brand-blue transition-colors">About</Link>
-            <Link to="/contact" className="hover:text-brand-blue transition-colors">Contact</Link>
             <Link to="/join" className="hover:text-brand-blue transition-colors">Join HDT</Link>
             <Link to="/login" className="hover:text-brand-blue transition-colors">Sign In</Link>
 
