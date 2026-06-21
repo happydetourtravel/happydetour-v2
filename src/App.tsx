@@ -18,6 +18,7 @@ import VirginVoyagesHome from './pages/virginvoyages/virginhome/page'
 import NCLHome from './pages/ncl/nclhome/page'
 import MSCHome from './pages/msc/mschome/page'
 import RoyalHome from './pages/royal/royalhome/page'
+import CarnivalHome from './pages/carnival/carnivalhome/page'
 
 function Layout() {
   return (
@@ -41,6 +42,7 @@ function Layout() {
         <Route path="/cruises/norwegian" element={<NCLHome />} />
         <Route path="/cruises/msc" element={<MSCHome />} />
         <Route path="/cruises/royal-caribbean" element={<RoyalHome />} />
+        <Route path="/cruises/carnival" element={<CarnivalHome />} />
       </Routes>
       <Footer />
     </div>
