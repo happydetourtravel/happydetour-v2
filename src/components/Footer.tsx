@@ -18,6 +18,8 @@ export default function Footer() {
             <Link to="/privacy" style={{ color: '#6B7280', textDecoration: 'underline' }}>Privacy Policy</Link>
             {' · '}
             <Link to="/faq" style={{ color: '#6B7280', textDecoration: 'underline' }}>FAQ</Link>
+            {' · '}
+            <Link to="/blog" style={{ color: '#6B7280', textDecoration: 'underline' }}>Blog</Link>
             {' · '}Last updated: June 2026
           </p>
         </div>
