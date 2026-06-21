@@ -40,7 +40,7 @@ export default function Header() {
               {dropdownOpen && (
                 <div style={{ position: 'absolute', top: 'calc(100% + 6px)', right: 0, backgroundColor: 'white', borderRadius: '10px', boxShadow: '0 4px 24px rgba(0,0,0,0.12)', border: '1px solid #F3F4F6', minWidth: '240px', zIndex: 100, overflow: 'hidden' }}>
                   
-                  <a href="https://forgehq.app/f/?s=yozjm6l0"
+                  <a href="https://forgehq.app/f/?s=20bejr4j"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:bg-gray-50 transition-colors"
