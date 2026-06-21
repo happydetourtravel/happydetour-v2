@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const CARNIVAL_RED = "#CC0000";
-const CARNIVAL_BLUE = "#003087";
 const CARNIVAL_LIGHT = "#FFF5F5";
 const CARNIVAL_DARK = "#1A0000";
 const CARNIVAL_GOLD = "#C9A84C";
