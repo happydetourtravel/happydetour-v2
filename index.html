@@ -18,6 +18,8 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Travel Agency Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -36,9 +38,55 @@
         "https://www.facebook.com/happydetourtravel",
         "https://www.instagram.com/happydetourtravel"
       ],
-      "slogan": "Real trips. Real value. Someone actually in your corner."
+      "slogan": "Real trips. Real value. Someone actually in your corner.",
+      "employee": {
+        "@type": "Person",
+        "name": "Eric Carney",
+        "jobTitle": "Travel Advisor",
+        "telephone": "+17473338687",
+        "email": "eric@happydetour.com",
+        "sameAs": [
+          "https://www.facebook.com/happydetourtravel",
+          "https://www.instagram.com/happydetourtravel"
+        ]
+      }
     }
     </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does working with a travel advisor actually save me money?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cruise lines and resorts pay me directly when you travel. You get someone doing all the research, watching for price drops, and handling every detail. You are not paying extra for that. You are just getting more out of your trip."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What kind of trips do you book?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I specialize in two things: cruises and all-inclusive resorts through Sandals and Beaches. That is it. I go deep on what I know so I can give you real advice, not just a generic search result."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I get started?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Just reach out. We will talk through your trip ideas before anything is confirmed so there are no surprises. No commitment, no pressure. Just a real conversation about where you want to go."
+          }
+        }
+      ]
+    }
+    </script>
+
   </head>
   <body>
     <div id="root"></div>
