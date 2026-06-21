@@ -104,7 +104,7 @@ export default function Header() {
                 Find your next detour.
               </h2>
               <p style={{ color: '#BAE6FD', fontSize: '14px', margin: 0, lineHeight: '1.5' }}>
-                Get first dibs on cruise deals, resort updates, and honest travel tips. No spam. Just good stuff.
+                Get first dibs on cruise deals, resort updates, and honest travel tips from someone actually in your corner. No spam. Just good stuff.
               </p>
             </div>
 
