@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom'
-
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: '#1F2937', padding: '32px 24px', marginTop: 'auto' }}>
       <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px' }}>
-        <img src="/HDT.png" alt="Happy Detour Travel" style={{ height: '60px', width: 'auto' }} />
+        <span style={{ color: 'white', fontWeight: '700', fontSize: '16px' }}>Happy Detour Travel</span>
         <div style={{ textAlign: 'center' }}>
           <p style={{ color: '#9CA3AF', fontSize: '12px', margin: '0 0 4px 0' }}>
             Real trips. Real value. Someone actually in your corner. · Northeast, OH · 747-333-8687 · eric@happydetour.com
