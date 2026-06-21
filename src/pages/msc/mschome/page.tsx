@@ -69,7 +69,7 @@ export default function MSCPage() {
             European elegance at a real price. MSC is one of the most underrated cruise lines out there and one of the lines Eric knows from personal experience. Beautiful ships, a Mediterranean style that feels genuinely different, and value that is hard to beat.
           </p>
           <p className="text-base" style={{ color: "#94A3B8" }}>
-            Everything you need to know about sailing MSC, put together by Eric, your HDT travel advisor who has sailed MSC four times.
+            Everything you need to know about sailing MSC, put together by Eric, your Happy Detour Travel advisor who has sailed MSC four times.
           </p>
         </div>
       </div>
@@ -679,7 +679,7 @@ export default function MSCPage() {
           <p className="text-sm uppercase tracking-widest mb-2" style={{ color: MSC_GOLD }}>Ready to Sail MSC</p>
           <h3 className="text-2xl font-bold mb-3">Let's Find Your Perfect Sailing</h3>
           <p className="mb-6 max-w-lg mx-auto" style={{ color: "#CBD5E1" }}>
-            I have sailed MSC four times and I know this line well. I book MSC on your behalf so you get the expertise, the right cabin, and someone actually paying attention to the details. Fill out my form and I will be in touch within 24 hours.
+            I've sailed MSC four times and know the line inside and out. When you book with me, you get that actual firsthand experience, the right cabin for your style, and someone who is genuinely paying attention to the details. Drop your info below and I'll be in touch to get it sorted.
           </p>
           <a
             href={FORM_LINK}
@@ -688,7 +688,7 @@ export default function MSCPage() {
             className="inline-block px-8 py-4 rounded-lg font-bold text-base transition hover:opacity-90"
             style={{ background: MSC_GOLD, color: MSC_DARK }}
           >
-            Start Planning with Eric
+            Let's build your trip.
           </a>
         </div>
 
