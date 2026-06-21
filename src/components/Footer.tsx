@@ -5,13 +5,16 @@ export default function Footer() {
     <footer style={{ backgroundColor: '#1F2937', padding: '32px 24px', marginTop: 'auto' }}>
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
 
-        {/* Top row: brand + center info + social links */}
-        <div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px' }}>
+        {/* Top row: left social | center info | right social */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px' }}>
 
-          <span style={{ color: 'white', fontWeight: '700', fontSize: '16px', whiteSpace: 'nowrap' }}>
-            Happy Detour Travel
-          </span>
+          {/* Left: Facebook + Instagram */}
+          <div style={{ display: 'flex', gap: '12px', alignItems: 'center', whiteSpace: 'nowrap' }}>
+            <a href="https://facebook.com/happydetourtravel" target="_blank" rel="noopener noreferrer" style={{ color: '#9CA3AF', fontSize: '12px', textDecoration: 'none' }}>Facebook</a>
+            <a href="https://instagram.com/happydetourtravel" target="_blank" rel="noopener noreferrer" style={{ color: '#9CA3AF', fontSize: '12px', textDecoration: 'none' }}>Instagram</a>
+          </div>
 
+          {/* Center: info */}
           <div style={{ textAlign: 'center', flex: 1 }}>
             <p style={{ color: '#9CA3AF', fontSize: '12px', margin: '0 0 4px 0' }}>
               Real trips. Real value. Someone actually in your corner. · Northeast, OH ·{' '}
@@ -29,9 +32,8 @@ export default function Footer() {
             </p>
           </div>
 
+          {/* Right: TikTok + Join the Group + Postcards & Updates */}
           <div style={{ display: 'flex', gap: '12px', alignItems: 'center', whiteSpace: 'nowrap' }}>
-            <a href="https://facebook.com/happydetourtravel" target="_blank" rel="noopener noreferrer" style={{ color: '#9CA3AF', fontSize: '12px', textDecoration: 'none' }}>Facebook</a>
-            <a href="https://instagram.com/happydetourtravel" target="_blank" rel="noopener noreferrer" style={{ color: '#9CA3AF', fontSize: '12px', textDecoration: 'none' }}>Instagram</a>
             <a href="https://tiktok.com/@happydetourtravel" target="_blank" rel="noopener noreferrer" style={{ color: '#9CA3AF', fontSize: '12px', textDecoration: 'none' }}>TikTok</a>
             <a href="https://www.facebook.com/groups/somuchtosea" target="_blank" rel="noopener noreferrer" style={{ color: '#F59E0B', fontSize: '12px', textDecoration: 'none', fontWeight: '600' }}>Join the Group</a>
             <Link to="/blog" style={{ color: '#9CA3AF', fontSize: '12px', textDecoration: 'none' }}>Postcards & Updates</Link>
