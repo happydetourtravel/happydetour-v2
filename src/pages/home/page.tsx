@@ -133,7 +133,7 @@ export default function Home() {
             <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Where We Specialize</p>
             <h2 style={{ color: '#1F2937', fontSize: '36px', fontWeight: '800', margin: 0 }}>Take a look at our cruise offerings</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '24px' }}>
             {cruiseLines.map((line) => (
               <div key={line.name} style={{ position: 'relative', overflow: 'hidden', borderRadius: '16px' }}>
                 {!line.live && (
