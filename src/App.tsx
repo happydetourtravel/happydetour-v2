@@ -10,6 +10,7 @@ import Terms from './pages/terms/page'
 import Members from './pages/members/page'
 import About from './pages/about/page'
 import Contact from './pages/contact/page'
+import FAQ from './pages/faq/page'
 import BahamasKeyWest from './pages/cruises/bahamas-key-west/page'
 import EasternCaribbeanBimini from './pages/cruises/eastern-caribbean-bimini/page'
 import FrenchRivieraIbiza from './pages/cruises/french-riviera-ibiza/page'
@@ -37,6 +38,7 @@ function Layout() {
         <Route path="/members" element={<Members />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/faq" element={<FAQ />} />
         <Route path="/cruises/bahamas-key-west" element={<BahamasKeyWest />} />
         <Route path="/cruises/eastern-caribbean-bimini" element={<EasternCaribbeanBimini />} />
         <Route path="/cruises/french-riviera-ibiza" element={<FrenchRivieraIbiza />} />
