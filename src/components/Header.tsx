@@ -24,9 +24,7 @@ export default function Header() {
 
           <nav className="flex items-center gap-6 text-sm font-medium text-brand-dark">
             <Link to="/" className="hover:text-brand-blue transition-colors">Home</Link>
-            <Link to="/cruises" className="hover:text-brand-blue transition-colors">Cruises</Link>
             <Link to="/about" className="hover:text-brand-blue transition-colors">About</Link>
-            <Link to="/join" className="hover:text-brand-blue transition-colors">Join HDT</Link>
             <a
               href="https://www.facebook.com/groups/somuchtosea"
               target="_blank"
@@ -42,6 +40,7 @@ export default function Header() {
             >
               Join the List
             </button>
+            <Link to="/join" className="hover:text-brand-blue transition-colors">Join HDT</Link>
             <Link to="/login" className="hover:text-brand-blue transition-colors">Sign In</Link>
 
             {/* Start Packing Dropdown */}
