@@ -72,7 +72,7 @@ export default function WhatIsIncludedOnACruise() {
           {/* Image 2 */}
           <div style={{ borderRadius: '16px', overflow: 'hidden', margin: '8px 0' }}>
             <img
-              src="/blog/cruise-dining-room.webp"
+              src="/blog/cruise-dining-room.png"
               alt="Elegant cruise ship main dining room with white tablecloths and warm lighting"
               style={{ width: '100%', height: '320px', objectFit: 'cover', display: 'block' }}
             />
@@ -113,7 +113,7 @@ export default function WhatIsIncludedOnACruise() {
           {/* Image 3 */}
           <div style={{ borderRadius: '16px', overflow: 'hidden', margin: '8px 0' }}>
             <img
-              src="/blog/cruise-bar-cocktails.webp"
+              src="/blog/cruise-bar-cocktails.png"
               alt="Colorful tropical cocktails on a cruise ship bar with ocean view"
               style={{ width: '100%', height: '300px', objectFit: 'cover', display: 'block' }}
             />
@@ -137,7 +137,7 @@ export default function WhatIsIncludedOnACruise() {
           {/* Image 4 */}
           <div style={{ borderRadius: '16px', overflow: 'hidden', margin: '8px 0' }}>
             <img
-              src="/blog/cruise-shore-excursion.webp"
+              src="/blog/cruise-shore-excursion.png"
               alt="Passengers on a snorkeling shore excursion in clear Caribbean water"
               style={{ width: '100%', height: '300px', objectFit: 'cover', display: 'block' }}
             />
@@ -170,7 +170,7 @@ export default function WhatIsIncludedOnACruise() {
           {/* Image 5 */}
           <div style={{ borderRadius: '16px', overflow: 'hidden', margin: '8px 0' }}>
             <img
-              src="/blog/virgin-voyages-restaurant.webp"
+              src="/blog/virgin-voyages-restaurant.png"
               alt="Stylish Virgin Voyages specialty restaurant with moody lighting and modern decor"
               style={{ width: '100%', height: '300px', objectFit: 'cover', display: 'block' }}
             />
@@ -228,7 +228,7 @@ export default function WhatIsIncludedOnACruise() {
           {/* Image 6 */}
           <div style={{ borderRadius: '16px', overflow: 'hidden', margin: '8px 0' }}>
             <img
-              src="/blog/cruise-balcony-sunset.webp"
+              src="/blog/cruise-balcony-sunset.png"
               alt="Couple sitting on a cruise ship balcony watching a sunset over the ocean"
               style={{ width: '100%', height: '340px', objectFit: 'cover', display: 'block' }}
             />
