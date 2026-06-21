@@ -46,7 +46,9 @@ export default function CruisePage({
 
       <img src={image} alt={title} className="w-full rounded-xl mb-6 object-cover max-h-72" />
       <h1 className="text-3xl font-bold mb-1">{title}</h1>
-      <p className="text-gray-500 mb-6">{date} · {nights} nights · {ship} · Departs {port}</p>
+      <p className="text-gray-500 mb-6">
+        {date} - {nights} nights - {ship} - Departs {port}
+      </p>
 
       <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-8">
         <p className="text-sm text-gray-500 mb-1">Starting from</p>
@@ -100,7 +102,7 @@ export default function CruisePage({
             onClick={() => setContactOpen(!contactOpen)}
             className="border border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-3 px-6 rounded-xl w-full sm:w-auto"
           >
-            Contact Eric ▾
+            Contact Eric
           </button>
 
           {contactOpen && (
@@ -109,13 +111,13 @@ export default function CruisePage({
                 href="sms:7473338687"
                 className="block px-5 py-3 hover:bg-gray-50 text-gray-700"
               >
-                📱 Send a Text
+                Send a Text
               </a>
               <a
                 href="mailto:eric@happydetour.com"
                 className="block px-5 py-3 hover:bg-gray-50 text-gray-700"
               >
-                ✉️ Send an Email
+                Send an Email
               </a>
             </div>
           )}
