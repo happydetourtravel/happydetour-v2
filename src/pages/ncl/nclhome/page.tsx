@@ -5,7 +5,6 @@ const NCL_RED = "#C8102E";
 const NCL_LIGHT = "#F0F4FF";
 const NCL_DARK = "#001A4D";
 const NCL_GOLD = "#C9A84C";
-const WHITE = "#FFFFFF";
 
 const FORM_LINK = "https://forgehq.app/f/?t=7ro7s57c";
 
