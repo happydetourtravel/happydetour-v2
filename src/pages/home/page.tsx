@@ -17,17 +17,8 @@ const cruiseLines = [
 ]
 
 const testimonials = [
-  { name: "Shannon M.", location: "Akron, OH", trip: "Caribbean Cruise", quote: "Eric took care of absolutely everything. I showed up at the port and all I had to do was enjoy myself. I didn't have to think about a single thing." },
-  { name: "Jason R.", location: "Pittsburgh, PA", trip: "NCL Group Sailing", quote: "We had a group of 10 people with 10 different opinions. Eric figured it out and everyone had the time of their lives. No drama, no stress." },
-  { name: "Becky T.", location: "Columbus, OH", trip: "MSC Meraviglia", quote: "I had never cruised before and had no idea where to start. Eric made it so easy. I never felt overwhelmed or like I was asking dumb questions." },
-  { name: "Amanda C.", location: "Cleveland, OH", trip: "NCL Caribbean Cruise", quote: "Honestly I was skeptical about using a travel agent but Eric was different. He actually knew the ship inside and out. Worth every penny." },
-  { name: "Mike D.", location: "Canton, OH", trip: "NCL Caribbean Cruise", quote: "The price Eric got us was better than anything I found online. And when we had a question the night before sailing he actually picked up the phone." },
-  { name: "Janice P.", location: "Youngstown, OH", trip: "Caribbean Group Cruise", quote: "It was good overall. Took a little longer than I expected to get everything confirmed but the trip itself was great and Eric was helpful when I had questions." },
-  { name: "Christina L.", location: "Plainfield, IL", trip: "Virgin Voyages Transatlantic", quote: "I have booked two cruises through Eric now and I will not go back to doing it myself. He catches things I would have never thought to ask about." },
-  { name: "Dave & Karen S.", location: "Erie, PA", trip: "Caribbean Couples Cruise", quote: "We told Eric our budget and what we were looking for and he came back with options that actually fit. No upselling, no pressure. Just straightforward help." },
-  { name: "Melissa & Tom R.", location: "Medina, OH", trip: "Sandals Royal Barbados", quote: "We had been talking about a real couples trip for years and kept putting it off. Eric made it so easy to finally just do it. Everything was handled. We showed up and it was exactly what we needed." },
-  { name: "Carrie B.", location: "Akron, OH", trip: "Beaches Turks and Caicos", quote: "Traveling with three kids and making everyone happy is basically impossible. Somehow this trip pulled it off. Eric knew exactly what to look for and the resort was incredible. The kids are already asking when we're going back." },
-  { name: "Nicole & Ryan P.", location: "Warren, OH", trip: "Sandals Ochi Beach Jamaica", quote: "Our honeymoon was everything we pictured. Eric handled every detail and we genuinely did not have to worry about a single thing. If you are planning a honeymoon, just call him first." },
+  { name: "Lana", location: "Alliance, OH", trip: "MSC Cruise — Galveston", quote: "I had no idea where to start and Eric made the whole thing easy. Booked my MSC cruise out of Galveston and had such a great time I am already booked on Virgin Voyages for February 2027. He is the only person I will call for travel from here on out." },
+  { name: "JB", location: "Los Angeles, CA", trip: "Virgin Voyages Alaska — Brilliant Lady", quote: "First cruise ever and Eric walked me through everything. Booked my Alaska sailing on Brilliant Lady for June 2027 and the whole process was so easy I could not believe it. Cannot wait to sail." },
 ]
 
 export default function Home() {
