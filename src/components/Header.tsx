@@ -38,22 +38,24 @@ export default function Header() {
                 <span style={{ fontSize: '10px' }}>▼</span>
               </button>
               {dropdownOpen && (
-                <div style={{ position: 'absolute', top: 'calc(100% + 6px)', right: 0, backgroundColor: 'white', borderRadius: '10px', boxShadow: '0 4px 24px rgba(0,0,0,0.12)', border: '1px solid #F3F4F6', minWidth: '220px', zIndex: 100 }}>
+                <div style={{ position: 'absolute', top: 'calc(100% + 6px)', right: 0, backgroundColor: 'white', borderRadius: '10px', boxShadow: '0 4px 24px rgba(0,0,0,0.12)', border: '1px solid #F3F4F6', minWidth: '240px', zIndex: 100, overflow: 'hidden' }}>
                   
-                   <a href="https://forgehq.app/f/?s=yozjm6l0"
+                  <a href="https://forgehq.app/f/?s=yozjm6l0"
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 16px', fontSize: '14px', color: '#1F2937', textDecoration: 'none', fontWeight: '600', borderBottom: '1px solid #F3F4F6' }}
+                    className="hover:bg-gray-50 transition-colors"
+                    style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 16px', fontSize: '14px', color: '#1F2937', textDecoration: 'none', fontWeight: '600', borderBottom: '1px solid #F3F4F6' }}
                   >
-                    📋 Drop your trip wishlist here!
+                    🗺️ Drop Your Trip Wishlist
                   </a>
                   
-                   <a href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK"
+                  <a href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK"
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 16px', fontSize: '14px', color: '#1F2937', textDecoration: 'none', fontWeight: '600' }}
+                    className="hover:bg-gray-50 transition-colors"
+                    style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 16px', fontSize: '14px', color: '#1F2937', textDecoration: 'none', fontWeight: '600' }}
                   >
-                    🚢 Book w/ Virgin Voyages
+                    💃 Book Virgin Voyages Directly
                   </a>
                 </div>
               )}
