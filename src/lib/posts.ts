@@ -96,3 +96,41 @@ export function getAllPosts(): Post[] {
 export function getPost(slug: string): Post | undefined {
   return POSTS.find((p) => p.slug === slug)
 }
+{
+    slug: '6-things-first-time-cruise-passengers-wish-they-knew',
+    title: '6 Things First Time Cruise Passengers Wish They Knew Before They Booked',
+    date: '2026-04-21',
+    tag: 'Cruise Tips',
+    excerpt: 'Maybe a friend went and will not stop talking about it. Maybe you have been scrolling through photos of the Caribbean thinking why not me. Either way, welcome. But before you book, there are a few things most first timers do not find out until they are already standing on the deck.',
+    content: `
+      <p>So you are thinking about your first cruise. Maybe a friend went and will not stop talking about it. Maybe you have been scrolling through photos of the Caribbean thinking why not me. Either way, welcome to the club. You are going to love it.</p>
+
+      <p>But before you book, there are a few things most first timers do not find out until they are already standing on the deck. Let us fix that now.</p>
+
+      <h2>1. The ship is the destination</h2>
+
+      <p>A lot of people think the cruise is just the transportation to get to a tropical beach. It is actually the opposite. The ship itself, the pools, the restaurants, the entertainment, and the people, that is at least half the experience. You need to choose your ship carefully. A party mega ship and a smaller, relaxed vessel are two completely different vacations. Think about what kind of energy you actually want before you pick.</p>
+
+      <h2>2. Not everything is included</h2>
+
+      <p>Your base fare covers your cabin, meals in the main dining room, and most of the shows. But specialty restaurants, drinks, excursions, and spa treatments add up fast. Some cruise lines bundle more than others, so knowing what is actually included before you book saves you from a massive surprise bill at the end of the trip.</p>
+
+      <h2>3. Embarkation day is chaotic only if you are not ready</h2>
+
+      <p>The day you board, thousands of people are all trying to do the same thing at the same time. Get to the port at your assigned time, have your documents ready in your hand, and do not plan anything big for that first evening. Give yourself time to settle in, explore the ship, and just breathe.</p>
+
+      <h2>4. Port days go by fast</h2>
+
+      <p>When the ship docks, you usually have about six to eight hours. That sounds like a long time until you factor in getting off the ship, finding your way around, and getting back before the gangway closes. Plan your excursions in advance and do not just wing it when you get there.</p>
+
+      <h2>5. Start with a test drive</h2>
+
+      <p>If you are nervous about being at sea, do not start with a 14 day voyage. I always recommend a 4 night itinerary as a test drive. It usually runs from a Thursday to a Monday, which is just enough time to see if you like the cruise life without it feeling like a huge commitment. It is the perfect long weekend to see what it is all about.</p>
+
+      <h2>6. A travel advisor saves you money and stress</h2>
+
+      <p>Here is the thing nobody tells you. Booking a cruise through a travel advisor costs you nothing extra. The cruise line pays the commission, not you. A good advisor, and yeah I am talking about myself here, knows which ships match your vibe, which cabins to avoid, and how to find deals you will not find on your own.</p>
+
+      <p>At Happy Detour Travel, I specialize in helping first timers figure all of this out without the overwhelm. You tell me what you are looking for and we talk through everything before anything is confirmed so there are no surprises.</p>
+    `,
+  },
