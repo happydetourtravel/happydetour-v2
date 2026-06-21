@@ -9,7 +9,6 @@ import Terms from './pages/terms/page'
 import Members from './pages/members/page'
 import About from './pages/about/page'
 import Contact from './pages/contact/page'
-import GreekIslesAdriatic from './pages/cruises/greek-isles-adriatic/page'
 
 export default function App() {
   return (
@@ -25,7 +24,6 @@ export default function App() {
           <Route path="/members" element={<Members />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/cruises/greek-isles-adriatic" element={<GreekIslesAdriatic />} />
         </Routes>
         <Footer />
       </div>
