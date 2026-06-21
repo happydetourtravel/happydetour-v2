@@ -71,6 +71,16 @@ export default function Join() {
     'A community of real cruisers just like you',
   ]
 
+  const getPasswordStrength = (password: string) => {
+    if (password.length === 0) return null
+    if (password.length < 6) return { label: 'Weak', color: '#DC2626', width: '33%' }
+    if (password.length < 10 || !/[A-Z]/.test(password) || !/[0-9]/.test(password)) return { label: 'Moderate', color: '#F59E0B', width: '66%' }
+    return { label: 'Strong', color: '#16A34A', width: '100%' }
+  }
+
+  const strength = getPasswordStrength(formData.password)
+  const passwordsMatch = formData.confirmPassword.length > 0 && formData.password === formData.confirmPassword
+
   const EyeIcon = ({ show }: { show: boolean }) => (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       {show ? (
@@ -179,6 +189,14 @@ export default function Join() {
                     <EyeIcon show={showPassword} />
                   </button>
                 </div>
+                {strength && (
+                  <div style={{ marginTop: '8px' }}>
+                    <div style={{ height: '4px', backgroundColor: '#E5E7EB', borderRadius: '4px', overflow: 'hidden' }}>
+                      <div style={{ height: '100%', width: strength.width, backgroundColor: strength.color, borderRadius: '4px', transition: 'all 0.3s ease' }} />
+                    </div>
+                    <p style={{ fontSize: '12px', color: strength.color, fontWeight: '600', margin: '4px 0 0 0' }}>{strength.label} password</p>
+                  </div>
+                )}
               </div>
 
               <div>
@@ -201,6 +219,11 @@ export default function Join() {
                     <EyeIcon show={showConfirmPassword} />
                   </button>
                 </div>
+                {formData.confirmPassword.length > 0 && (
+                  <p style={{ fontSize: '12px', fontWeight: '600', margin: '4px 0 0 0', color: passwordsMatch ? '#16A34A' : '#DC2626' }}>
+                    {passwordsMatch ? '✓ Passwords match!' : 'Passwords do not match'}
+                  </p>
+                )}
               </div>
 
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
