@@ -18,8 +18,6 @@ export default function Footer() {
             <Link to="/privacy" style={{ color: '#6B7280', textDecoration: 'underline' }}>Privacy Policy</Link>
             {' · '}
             <Link to="/faq" style={{ color: '#6B7280', textDecoration: 'underline' }}>FAQ</Link>
-            {' · '}
-            <Link to="/blog" style={{ color: '#6B7280', textDecoration: 'underline' }}>Blog</Link>
             {' · '}Last updated: June 2026
           </p>
         </div>
@@ -28,6 +26,7 @@ export default function Footer() {
           <a href="https://instagram.com/happydetourtravel" target="_blank" rel="noopener noreferrer" style={{ color: '#9CA3AF', fontSize: '12px', textDecoration: 'none' }} className="hover:text-white transition-colors">Instagram</a>
           <a href="https://tiktok.com/@happydetourtravel" target="_blank" rel="noopener noreferrer" style={{ color: '#9CA3AF', fontSize: '12px', textDecoration: 'none' }} className="hover:text-white transition-colors">TikTok</a>
           <a href="https://www.facebook.com/groups/somuchtosea" target="_blank" rel="noopener noreferrer" style={{ color: '#F59E0B', fontSize: '12px', textDecoration: 'none', fontWeight: '600' }} className="hover:opacity-80 transition-opacity">Join the Group</a>
+          <Link to="/blog" style={{ color: '#9CA3AF', fontSize: '12px', textDecoration: 'none' }} className="hover:text-white transition-colors">Postcards & Updates</Link>
         </div>
       </div>
     </footer>
