@@ -58,7 +58,7 @@ export default function About() {
 
     <section class="hero">
       <div class="hero-eyebrow">About Happy Detour Travel</div>
-      <h1>The Anti-Second Job.</h1>
+      <h1>The Anti Second Job.</h1>
       <p class="hero-sub">Real trips. Real value. Someone actually in your corner.</p>
     </section>
 
@@ -67,13 +67,13 @@ export default function About() {
         <div class="intro-grid">
           <div>
             <p class="section-label">My Story</p>
-            <h2>Hi, I'm Eric. I'm here to make travel simple.</h2>
-            <p>For as long as I can remember (definitely since at least 2017) I've been "that guy" in the group chat. I was the one finding the weirdly good flight deals, obsessing over cruise deck plans, and basically acting as an unpaid travel advisor for my friends and family just for the fun of it. I didn't do it for the thanks. I did it because I genuinely love the puzzle of a perfect itinerary.</p>
-            <p>Eventually, the hints from everyone I knew became too loud to ignore: "Eric, you're already doing the work. You should actually do this for real."</p>
-            <p>So, I listened. Happy Detour Travel started as a late-night idea in late 2025 and officially came to life in March of 2026. I'll be the first to tell you that I'm still building this dream. There is a learning curve, and some days I'm leaning on a lot of Dunkin' iced coffee, a few Coke Zeros, and a healthy dose of determination to figure out the technical side of the house from my home base in Ohio. But I am working through it every single day to build a travel brand that is vibrant, fun, and something I'm actually proud of.</p>
+            <h2>Hi, I am Eric. I am here to make travel simple.</h2>
+            <p>For as long as I can remember, definitely since at least 2017, I have been that guy in the group chat. I was the one finding the weirdly good flight deals, obsessing over cruise deck plans, and basically acting as an unpaid travel advisor for my friends and family just for the fun of it. I did not do it for the thanks. I did it because I genuinely love the puzzle of a perfect itinerary.</p>
+            <p>Eventually, the hints from everyone I knew became too loud to ignore: Eric, you are already doing the work. You should actually do this for real.</p>
+            <p>So, I listened. Happy Detour Travel started as a late night idea in late 2025 and officially came to life in March of 2026. I will be the first to tell you that I am still building this dream. There is a learning curve, and some days I am leaning on a lot of Dunkin iced coffee, a few Coke Zeros, and a healthy dose of determination to figure out the technical side of things from my home base in Ohio. But I am working through it every single day to build a travel brand that is vibrant, fun, and something I am proud of.</p>
             <div class="pull-quote">
               <p>Sometimes the best journeys begin with a Happy Detour.</p>
-              <span>— Eric Carney, Happy Detour Travel</span>
+              <span>Eric Carney, Happy Detour Travel</span>
             </div>
           </div>
           <img src="/IMG_2781.jpeg" alt="Eric Carney, travel advisor at Happy Detour Travel" class="eric-photo" />
@@ -83,16 +83,16 @@ export default function About() {
 
     <section class="section cruiser">
       <div class="container">
-        <p class="section-label">Where I've Been</p>
+        <p class="section-label">Where I have Been</p>
         <h2>A Cruiser at Heart</h2>
-        <p>I believe the world is far too big to stay in one spot. You only live once and most of us don't see nearly enough of what's out there. I'm a cruiser at heart. I love that the biggest decision of the day is which pool deck to lounge on. But I've also spent time navigating London and getting lost in the "everything is included" bliss of Caribbean resorts. One trip is never enough. There's always more to see.</p>
-        <p>Right now, I'm deep in the weeds researching a safari in Tanzania. It's a major bucket list item, and I'm going to make it happen soon.</p>
+        <p>I believe the world is far too big to stay in one spot. You only live once and most of us do not see nearly enough of what is out there. I am a cruiser at heart. I love that the biggest decision of the day is which pool deck to lounge on. But I have also spent time navigating London and getting lost in the absolute bliss of Caribbean resorts where everything is included. One trip is never enough. There is always more to see.</p>
+        <p>Right now, I am deep in the weeds researching a safari in Tanzania. It is a major bucket list item, and I am going to make it happen soon.</p>
         <div class="trip-tags">
           <span class="tag">🚢 Cruises</span>
-          <span class="tag">🏖️ All-Inclusives</span>
+          <span class="tag">🏖️ All Inclusives</span>
           <span class="tag">🏰 London</span>
           <span class="tag">🗼 Tokyo</span>
-          <span class="tag amber">🦁 Tanzania — coming soon</span>
+          <span class="tag amber">🦁 Tanzania (coming soon)</span>
         </div>
       </div>
     </section>
@@ -102,8 +102,8 @@ export default function About() {
         <p class="section-label">How We Work Together</p>
         <h2>Travel planning is a conversation, not a transaction.</h2>
         <div class="teamwork-box">
-          <p>I'm not a magician, and I'm probably not going to hit the "perfect trip" on the very first try. But that's okay. That's not how good travel planning works anyway.</p>
-          <p>You'll still be doing the fun research, scoping out excursions and dreaming about the views, while I handle the tedious parts. Think of me as your filter. You tell me what you're looking for, and I do the deep-dive research, check the logistics, and navigate the bookings. We'll go back and forth until the itinerary feels exactly right.</p>
+          <p>I am not a magician, and I am probably not going to hit the perfect trip on the very first try. But that is okay. That is not how good travel planning works anyway.</p>
+          <p>You will still be doing the fun research, scoping out excursions and dreaming about the views, while I handle the tedious parts. Think of me as your filter. You tell me what you are looking for, and I do the deep dive research, check the logistics, and navigate the bookings. We will go back and forth until the itinerary feels exactly right.</p>
           <p style="margin:0;font-weight:600;color:#005a78;">No pressure. No sales tactics. Just honest teamwork.</p>
         </div>
       </div>
@@ -119,8 +119,8 @@ export default function About() {
               <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             </div>
             <h3>Experience</h3>
-            <h4>I've Been There</h4>
-            <p>Scouting Caribbean resorts, navigating London, and deck-planning cruises since 2017.</p>
+            <h4>I Have Been There</h4>
+            <p>Scouting Caribbean resorts, navigating London, and planning cruise decks since 2017.</p>
           </div>
           <div class="eeat-card">
             <div class="eeat-icon">
@@ -136,7 +136,7 @@ export default function About() {
             </div>
             <h3>Authoritativeness</h3>
             <h4>Your Personal Filter</h4>
-            <p>I cut through 50+ open tabs and sponsored reviews to give you the straight facts.</p>
+            <p>I cut through 50 open tabs and sponsored reviews to give you the straight facts.</p>
           </div>
           <div class="eeat-card">
             <div class="eeat-icon">
@@ -155,7 +155,7 @@ export default function About() {
         <p class="section-label">A Little More About Me</p>
         <h2>The quick version.</h2>
         <ul class="vitals-list">
-          <li><span class="vi">☕</span><div><strong>Fuel of Choice:</strong> Dunkin' Iced Coffee and Coke Zero.</div></li>
+          <li><span class="vi">☕</span><div><strong>Fuel of Choice:</strong> Dunkin Iced Coffee and Coke Zero.</div></li>
           <li><span class="vi">🦁</span><div><strong>Current Mission:</strong> The Tanzania Safari.</div></li>
           <li><span class="vi">💻</span><div><strong>Built by hand on a Citrus MacBook</strong> from Ohio, with love.</div></li>
         </ul>
@@ -164,7 +164,7 @@ export default function About() {
 
     <section class="cta">
       <h2>Ready to go somewhere amazing?</h2>
-      <p>Let's figure out where that is. No pressure, no commitment. Just a real conversation about your next trip.</p>
+      <p>Let us figure out where that is. No pressure, no commitment. Just a real conversation about your next trip.</p>
       <a href="https://forgehq.app/f/?s=yozjm6l0" class="btn">✈️ Start Planning My Trip</a>
       <p class="cta-note">No pressure. Everyone welcome.</p>
       <a href="https://www.instagram.com/happydetourtravel/" target="_blank" rel="noopener" class="ig-link">@happydetourtravel</a>
