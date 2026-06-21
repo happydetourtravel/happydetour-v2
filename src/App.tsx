@@ -12,6 +12,7 @@ import Contact from './pages/contact/page'
 import BahamasKeyWest from './pages/cruises/bahamas-key-west/page'
 import EasternCaribbeanBimini from './pages/cruises/eastern-caribbean-bimini/page'
 import FrenchRivieraIbiza from './pages/cruises/french-riviera-ibiza/page'
+import MiamiMoroccoTransatlantic from './pages/cruises/miami-morocco-transatlantic/page'
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/cruises/bahamas-key-west" element={<BahamasKeyWest />} />
           <Route path="/cruises/eastern-caribbean-bimini" element={<EasternCaribbeanBimini />} />
           <Route path="/cruises/french-riviera-ibiza" element={<FrenchRivieraIbiza />} />
+          <Route path="/cruises/miami-morocco-transatlantic" element={<MiamiMoroccoTransatlantic />} />
         </Routes>
         <Footer />
       </div>
