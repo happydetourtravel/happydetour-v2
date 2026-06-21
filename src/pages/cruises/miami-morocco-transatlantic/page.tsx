@@ -39,7 +39,7 @@ export default function MiamiMoroccoTransatlantic() {
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "#F9FAFB", fontFamily: "sans-serif" }}>
       <div style={{ position: "relative", height: "480px", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/BCN.jpeg')", backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.55)" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/BCN.png')", backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.55)" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%)" }} />
         <div style={{ position: "relative", maxWidth: "1280px", margin: "0 auto", padding: "0 24px", height: "100%", display: "flex", flexDirection: "column", justifyContent: "flex-end", paddingBottom: "48px" }}>
           <div style={{ backgroundColor: "#CC0000", color: "white", fontSize: "11px", fontWeight: "800", padding: "4px 10px", borderRadius: "4px", display: "inline-block", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "12px", alignSelf: "flex-start" }}>Virgin Voyages</div>
