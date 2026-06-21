@@ -80,7 +80,7 @@ export default function VirginVoyagesPage() {
 
       {/* Tab Bar */}
       <div className="sticky top-0 z-30 shadow-md overflow-x-auto" style={{ background: VV_DARK }}>
-        <div className="flex min-w-max mx-auto px-4">
+        <div className="flex min-w-max mx-auto px-4 justify-center w-full">
           {TABS.map((tab) => (
             <button
               key={tab.id}
