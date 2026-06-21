@@ -101,10 +101,10 @@ export default function Header() {
               </button>
               <p style={{ color: '#F59E0B', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.08em', margin: '0 0 6px 0' }}>Happy Detour Travel</p>
               <h2 style={{ color: 'white', fontSize: '22px', fontWeight: '700', margin: '0 0 8px 0', lineHeight: '1.3' }}>
-                Good travel tips. No spam.
+                Find your next detour.
               </h2>
               <p style={{ color: '#BAE6FD', fontSize: '14px', margin: 0, lineHeight: '1.5' }}>
-                Get first dibs on cruise deals, resort updates, and honest travel tips from someone actually in your corner.
+                Get first dibs on cruise deals, resort updates, and honest travel tips. No spam. Just good stuff.
               </p>
             </div>
 
