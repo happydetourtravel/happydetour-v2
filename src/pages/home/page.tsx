@@ -53,13 +53,10 @@ export default function Home() {
               Our founder Eric helps you skip the corporate fluff and endless hold music. As the head of Happy Detour Travel, he cuts through the noise to build your perfect cruise or all-inclusive resort getaway, proving that sometimes the best journeys begin with a Happy Detour.
             </p>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <a href="/join" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '13px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>
-                Join HDT
-              </a>
-              <a href="#cruise-lines" style={{ border: '2px solid rgba(255,255,255,0.5)', color: 'white', padding: '13px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '600', fontSize: '15px' }}>
-                View Cruises
-              </a>
-            </div>
+  <a href="/join" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '13px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>
+    Join HDT
+  </a>
+</div>
           </div>
 
           <div style={{ width: '320px', flexShrink: 0 }}>
