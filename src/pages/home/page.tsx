@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 
 const featuredDeals = [
   { tag: "VIRGIN VOYAGES", title: "Caribbean Escape — Bahamas & Key West", date: "Jan 2027", nights: "4 nights", ship: "Scarlet Lady · Miami", originalPrice: "$699", salePrice: "$549", link: "/cruises/bahamas-key-west" },
@@ -18,12 +18,11 @@ const cruiseLines = [
 
 const testimonials = [
   { name: "Lana", location: "Alliance, OH", trip: "MSC Cruise — Galveston", quote: "I had no idea where to start and Eric made the whole thing easy. Booked my MSC cruise out of Galveston and had such a great time I am already booked on Virgin Voyages for February 2027. He is the only person I will call for travel from here on out." },
-  { name: "JB", location: "Los Angeles, CA", trip: "Virgin Voyages Alaska — Brilliant Lady", quote: "First cruise ever and Eric walked me through everything. Booked my Alaska sailing on Brilliant Lady for June 2027 and the whole process was so easy I could not believe it. Cannot wait to sail." },
+  { name: "JB", location: "Los Angeles, CA", trip: "Carnival Sensation — Grand Cayman & Ocho Rios", quote: "First cruise ever and Eric walked me through everything. The whole process was so easy I could not believe it. Already planning my next one." },
 ]
 
 export default function Home() {
   const [dealIndex, setDealIndex] = useState(0)
-  const scrollRef = useRef<HTMLDivElement>(null)
   const deal = featuredDeals[dealIndex]
 
   useEffect(() => {
@@ -33,31 +32,6 @@ export default function Home() {
     return () => clearInterval(timer)
   }, [])
 
-  useEffect(() => {
-    const el = scrollRef.current
-    if (!el) return
-    let animFrame: number
-    let pos = 0
-    const speed = 0.5
-    const step = () => {
-      pos += speed
-      if (pos >= el.scrollWidth / 2) pos = 0
-      el.scrollLeft = pos
-      animFrame = requestAnimationFrame(step)
-    }
-    animFrame = requestAnimationFrame(step)
-    const pause = () => cancelAnimationFrame(animFrame)
-    const resume = () => { animFrame = requestAnimationFrame(step) }
-    el.addEventListener('mouseenter', pause)
-    el.addEventListener('mouseleave', resume)
-    return () => {
-      cancelAnimationFrame(animFrame)
-      el.removeEventListener('mouseenter', pause)
-      el.removeEventListener('mouseleave', resume)
-    }
-  }, [])
-
-  const doubled = [...testimonials, ...testimonials]
 
   return (
     <main>
@@ -175,12 +149,9 @@ export default function Home() {
           <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>What People Say</p>
           <h2 style={{ color: '#1F2937', fontSize: '36px', fontWeight: '800', margin: 0 }}>Real people. Real trips. No surprises.</h2>
         </div>
-        <div
-          ref={scrollRef}
-          style={{ display: 'flex', overflowX: 'hidden', gap: '20px', padding: '0 24px', cursor: 'grab', userSelect: 'none' }}
-        >
-          {doubled.map((t, i) => (
-            <div key={i} style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #E5E7EB', minWidth: '300px', maxWidth: '300px', flexShrink: 0 }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', padding: '0 24px', flexWrap: 'wrap', maxWidth: '760px', margin: '0 auto' }}>
+          {testimonials.map((t, i) => (
+            <div key={i} style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #E5E7EB', width: '340px', flexShrink: 0 }}>
               <p style={{ color: '#1F2937', fontSize: '14px', lineHeight: '1.7', fontStyle: 'italic', margin: '0 0 16px 0' }}>"{t.quote}"</p>
               <div style={{ borderTop: '1px solid #F3F4F6', paddingTop: '16px' }}>
                 <p style={{ color: '#1F2937', fontWeight: '600', fontSize: '14px', margin: '0 0 2px 0' }}>{t.name}</p>
