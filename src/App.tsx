@@ -15,30 +15,38 @@ import FrenchRivieraIbiza from './pages/cruises/french-riviera-ibiza/page'
 import MiamiMoroccoTransatlantic from './pages/cruises/miami-morocco-transatlantic/page'
 import AlaskaHubbardGlacier from './pages/cruises/alaska-hubbard-glacier/page'
 import VirginVoyagesHome from './pages/virginvoyages/virginhome/page'
+import NCLHome from './pages/ncl/nclhome/page'
+
+function Layout() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/join" element={<Join />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/members" element={<Members />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/cruises/bahamas-key-west" element={<BahamasKeyWest />} />
+        <Route path="/cruises/eastern-caribbean-bimini" element={<EasternCaribbeanBimini />} />
+        <Route path="/cruises/french-riviera-ibiza" element={<FrenchRivieraIbiza />} />
+        <Route path="/cruises/miami-morocco-transatlantic" element={<MiamiMoroccoTransatlantic />} />
+        <Route path="/cruises/alaska-hubbard-glacier" element={<AlaskaHubbardGlacier />} />
+        <Route path="/cruises/virgin-voyages" element={<VirginVoyagesHome />} />
+        <Route path="/cruises/norwegian" element={<NCLHome />} />
+      </Routes>
+      <Footer />
+    </div>
+  )
+}
 
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/join" element={<Join />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/members" element={<Members />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/cruises/bahamas-key-west" element={<BahamasKeyWest />} />
-          <Route path="/cruises/eastern-caribbean-bimini" element={<EasternCaribbeanBimini />} />
-          <Route path="/cruises/french-riviera-ibiza" element={<FrenchRivieraIbiza />} />
-          <Route path="/cruises/miami-morocco-transatlantic" element={<MiamiMoroccoTransatlantic />} />
-          <Route path="/cruises/alaska-hubbard-glacier" element={<AlaskaHubbardGlacier />} />
-          <Route path="/cruises/virgin-voyages" element={<VirginVoyagesHome />} />
-        </Routes>
-        <Footer />
-      </div>
+      <Layout />
     </BrowserRouter>
   )
 }
