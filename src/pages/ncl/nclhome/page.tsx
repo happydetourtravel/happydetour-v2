@@ -582,9 +582,7 @@ export default function NCLPage() {
           >
             Ready to cruise your way? Let's chat.
           </a>
-          <p className="mt-4 text-xs" style={{ color: "#64748B" }}>
-            Planning fees start at $50 depending on your trip. We talk through everything before anything is confirmed so there are no surprises.
-          </p>
+
         </div>
 
       </div>
