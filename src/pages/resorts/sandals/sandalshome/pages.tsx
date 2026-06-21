@@ -2,9 +2,7 @@ import { useState } from "react";
 
 const S_BLACK = "#1A1A1A";
 const S_GOLD = "#C9A84C";
-const S_LIGHT_GOLD = "#F5EDD6";
 const S_CREAM = "#FDFAF4";
-const S_DARK_GOLD = "#A07830";
 const S_ACCENT = "#FFF8E8";
 
 const AFFILIATE_LINK = "https://www.sandals.com/?referral=101731&agentid=ERCA7707";
