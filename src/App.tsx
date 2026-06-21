@@ -24,7 +24,7 @@ import CarnivalHome from './pages/cruiselines/carnival/carnivalhome/page'
 import SandalsHome from './pages/resorts/sandals/sandalshome/page'
 import BeachesHome from './pages/resorts/beaches/beacheshome/page'
 import BlogIndex from './pages/blog/index/page'
-import WhatIsIncludedOnACruise from './pages/blog/posts/what-is-included-on-a-cruise/page'
+import BlogPost from './pages/blog/post/page'
 
 function Layout() {
   return (
@@ -53,9 +53,9 @@ function Layout() {
         <Route path="/cruises/carnival" element={<CarnivalHome />} />
         <Route path="/resorts/sandals" element={<SandalsHome />} />
         <Route path="/resorts/beaches" element={<BeachesHome />} />
-        {/* Blog */}
+        {/* Blog — one route handles all posts automatically */}
         <Route path="/blog" element={<BlogIndex />} />
-        <Route path="/blog/what-is-included-on-a-cruise" element={<WhatIsIncludedOnACruise />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
       <Footer />
     </div>
