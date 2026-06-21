@@ -25,6 +25,7 @@ export default function Header() {
           <nav className="flex items-center gap-6 text-sm font-medium text-brand-dark">
             <Link to="/" className="hover:text-brand-blue transition-colors">Home</Link>
             <Link to="/about" className="hover:text-brand-blue transition-colors">About</Link>
+            <Link to="/blog" className="hover:text-brand-blue transition-colors">Blog</Link>
             <a
               href="https://www.facebook.com/groups/somuchtosea"
               target="_blank"
