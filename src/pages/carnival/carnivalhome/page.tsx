@@ -794,7 +794,7 @@ export default function CarnivalPage() {
             </Accordion>
 
             <Accordion title="Get to the Pool Deck Early on Sea Days">
-              <p className="mb-3">Sea days on Carnival get busy fast. The best deck chairs around the main pool fill up by mid-morning. Get out there early, claim your spot, and settle in. If you want peace and quiet, head to Ser              <p className="mb-3">Sea days on Carnival get busy fast. The best deck chairs around the main pool fill up by mid-morning. Get out there early, claim your spot, and settle in. If you want peace and quiet, head to Serenity, the adults-only area, where it stays significantly calmer throughout the day.</p>
+              <p className="mb-3">Sea days on Carnival get busy fast. The best deck chairs around the main pool fill up by mid-morning. Get out there early, claim your spot, and settle in. If you want peace and quiet, head to Serenity, the adults-only area, where it stays significantly calmer throughout the day.</p>
             </Accordion>
 
             <Accordion title="Book Excursions Before You Sail">
