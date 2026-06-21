@@ -87,16 +87,7 @@ export const POSTS: Post[] = [
       <p>If you have questions about a specific sailing or want to talk through what a cruise would actually cost for your trip, reach out. That is exactly what I am here for. No pressure, no pitch. Just an honest conversation about where you want to go.</p>
     `,
   },
-]
-
-export function getAllPosts(): Post[] {
-  return POSTS.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-}
-
-export function getPost(slug: string): Post | undefined {
-  return POSTS.find((p) => p.slug === slug)
-}
-{
+  {
     slug: '6-things-first-time-cruise-passengers-wish-they-knew',
     title: '6 Things First Time Cruise Passengers Wish They Knew Before They Booked',
     date: '2026-04-21',
@@ -134,3 +125,12 @@ export function getPost(slug: string): Post | undefined {
       <p>At Happy Detour Travel, I specialize in helping first timers figure all of this out without the overwhelm. You tell me what you are looking for and we talk through everything before anything is confirmed so there are no surprises.</p>
     `,
   },
+]
+
+export function getAllPosts(): Post[] {
+  return POSTS.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+}
+
+export function getPost(slug: string): Post | undefined {
+  return POSTS.find((p) => p.slug === slug)
+}
