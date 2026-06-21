@@ -104,7 +104,7 @@ export default function Header() {
                 Good travel tips. No spam.
               </h2>
               <p style={{ color: '#BAE6FD', fontSize: '14px', margin: 0, lineHeight: '1.5' }}>
-                Join the list for cruise deals, resort updates, and travel advice from someone who actually knows the ships.
+                Get first dibs on cruise deals, resort updates, and honest travel tips from someone actually in your corner.
               </p>
             </div>
 
