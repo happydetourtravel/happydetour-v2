@@ -581,7 +581,7 @@ export default function NCLPage() {
             className="inline-block px-8 py-4 rounded-lg font-bold text-base transition hover:opacity-90"
             style={{ background: NCL_GOLD, color: NCL_DARK }}
           >
-            Start Planning with Eric
+            Ready to cruise your way? Let's chat.
           </a>
           <p className="mt-4 text-xs" style={{ color: "#64748B" }}>
             Planning fees start at $50 depending on your trip. We talk through everything before anything is confirmed so there are no surprises.
