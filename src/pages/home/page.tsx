@@ -53,10 +53,10 @@ export default function Home() {
               Our founder Eric helps you skip the corporate fluff and endless hold music. As the head of Happy Detour Travel, he cuts through the noise to build your perfect cruise or all-inclusive resort getaway, proving that sometimes the best journeys begin with a Happy Detour.
             </p>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-  <a href="/join" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '13px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>
-    Join HDT
-  </a>
-</div>
+              <a href="/join" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '13px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>
+                Join HDT
+              </a>
+            </div>
           </div>
 
           <div style={{ width: '320px', flexShrink: 0 }}>
@@ -77,12 +77,12 @@ export default function Home() {
                     <span style={{ color: '#6B7280', fontSize: '12px' }}>/person</span>
                   </div>
                 </div>
-                <a href={deal.link} style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>Get This Deal</a>
+                <a href={deal.link} aria-label={`Get this deal: ${deal.title}`} style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>Get This Deal</a>
                 <p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: '10px 0 0 0', lineHeight: '1.5' }}>Prices are estimates. Contact Eric for current availability.</p>
               </div>
               <div style={{ padding: '12px 20px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', borderTop: '1px solid #F3F4F6' }}>
                 {featuredDeals.map((_, i) => (
-                  <button key={i} onClick={() => setDealIndex(i)} style={{ width: i === dealIndex ? '20px' : '8px', height: '8px', borderRadius: '4px', backgroundColor: i === dealIndex ? '#007298' : '#D1D5DB', border: 'none', cursor: 'pointer', padding: 0 }} />
+                  <button key={i} onClick={() => setDealIndex(i)} aria-label={`View deal ${i + 1} of ${featuredDeals.length}`} style={{ width: i === dealIndex ? '20px' : '8px', height: '8px', borderRadius: '4px', backgroundColor: i === dealIndex ? '#007298' : '#D1D5DB', border: 'none', cursor: 'pointer', padding: 0 }} />
                 ))}
               </div>
             </div>
@@ -110,7 +110,7 @@ export default function Home() {
                   <h3 style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>{line.name}</h3>
                   <p style={{ color: '#007298', fontSize: '14px', fontWeight: '600', margin: 0 }}>{line.tagline}</p>
                   <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>{line.desc}</p>
-                  {line.live && <a href={line.link} style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>Learn More</a>}
+                  {line.live && <a href={line.link} aria-label={`Learn more about ${line.name}`} style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>Learn More</a>}
                 </div>
               </div>
             ))}
@@ -130,17 +130,18 @@ export default function Home() {
               <h3 style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>Sandals Resorts</h3>
               <p style={{ color: '#007298', fontSize: '14px', fontWeight: '600', margin: 0 }}>Luxury. Couples only. Truly all-inclusive.</p>
               <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>The gold standard for couples getaways. Unlimited premium drinks, gourmet dining, water sports, and accommodations that actually live up to the photos.</p>
-              <a href="/resorts/sandals" style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>Learn More</a>
+              <a href="/resorts/sandals" aria-label="Learn more about Sandals Resorts" style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>Learn More</a>
             </div>
             <div style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #F3F4F6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <h3 style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>Beaches Resorts</h3>
               <p style={{ color: '#007298', fontSize: '14px', fontWeight: '600', margin: 0 }}>Family all-inclusive done right.</p>
               <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>Everything Sandals does for couples, Beaches does for families. Kids clubs, water parks, unlimited food and drinks, and a resort where everyone actually has a great time.</p>
-              <a href="/resorts/beaches" style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>Learn More</a>
+              <a href="/resorts/beaches" aria-label="Learn more about Beaches Resorts" style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>Learn More</a>
             </div>
           </div>
         </div>
       </div>
+
       <div style={{ backgroundColor: '#F9FAFB', padding: '80px 0' }}>
         <div style={{ textAlign: 'center', marginBottom: '48px', padding: '0 24px' }}>
           <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>What People Say</p>
@@ -170,6 +171,7 @@ export default function Home() {
             href="https://forgehq.app/f/?s=20bejr4j"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Start planning your trip with Happy Detour Travel"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', backgroundColor: 'white', color: '#D97706', padding: '14px 28px', borderRadius: '100px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}
           >
             ✈ Start Planning My Trip
