@@ -5,7 +5,6 @@ export default function Footer() {
     <footer style={{ backgroundColor: '#1F2937', padding: '32px 24px', marginTop: 'auto' }}>
       <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px' }}>
         <span style={{ color: 'white', fontWeight: '700', fontSize: '16px' }}>Happy Detour Travel</span>
-
         <div style={{ textAlign: 'center' }}>
           <p style={{ color: '#9CA3AF', fontSize: '12px', margin: '0 0 4px 0' }}>
             Real trips. Real value. Someone actually in your corner. · Northeast, OH ·{' '}
@@ -17,10 +16,11 @@ export default function Footer() {
             <Link to="/terms" style={{ color: '#6B7280', textDecoration: 'underline' }}>Terms & Conditions</Link>
             {' · '}
             <Link to="/privacy" style={{ color: '#6B7280', textDecoration: 'underline' }}>Privacy Policy</Link>
+            {' · '}
+            <Link to="/faq" style={{ color: '#6B7280', textDecoration: 'underline' }}>FAQ</Link>
             {' · '}Last updated: June 2026
           </p>
         </div>
-
         <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
           <a href="https://facebook.com/happydetourtravel" target="_blank" rel="noopener noreferrer" style={{ color: '#9CA3AF', fontSize: '12px', textDecoration: 'none' }} className="hover:text-white transition-colors">Facebook</a>
           <a href="https://instagram.com/happydetourtravel" target="_blank" rel="noopener noreferrer" style={{ color: '#9CA3AF', fontSize: '12px', textDecoration: 'none' }} className="hover:text-white transition-colors">Instagram</a>
