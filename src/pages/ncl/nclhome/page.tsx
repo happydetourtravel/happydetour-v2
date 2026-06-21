@@ -39,6 +39,7 @@ const TABS = [
   { id: "ships", label: "The Ships" },
   { id: "dining", label: "Dining" },
   { id: "solo", label: "Solo Travel" },
+  { id: "haven", label: "The Haven" },
   { id: "freeatseaa", label: "Free at Sea" },
   { id: "cruisenext", label: "CruiseNext" },
   { id: "island", label: "Great Stirrup Cay" },
@@ -639,6 +640,67 @@ export default function NCLPage() {
 
             <Accordion title="Can Solo Travelers Use Free at Sea?">
               <p>Yes. Studio cabin guests are eligible for Free at Sea perks. This is one of the things that makes NCL especially good for solo travelers. You get the same promotion access as someone in a standard cabin and you are already not paying a single supplement. The math works out really well.</p>
+            </Accordion>
+          </section>
+        )}
+
+        {/* THE HAVEN */}
+        {activeTab === "haven" && (
+          <section>
+            <h2 className="text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>The Haven</h2>
+            <p className="text-gray-500 mb-8">The Haven is NCL's ship-within-a-ship luxury experience. It is a private enclave at the top of the ship with its own restaurant, bar, sun deck, pool, and dedicated concierge team. If you want the best of what NCL has to offer, The Haven is it.</p>
+
+            <Accordion title="What Is The Haven?">
+              <p className="mb-3">The Haven is a gated, keycard-access section of the ship reserved exclusively for Haven guests. Think of it as a boutique luxury hotel sitting on top of a large cruise ship. You have access to everything on the main ship but you also have your own private world above it all.</p>
+              <p>The Haven typically occupies the top two or three decks of the ship and includes a private courtyard, pool, hot tubs, sun loungers, a full-service restaurant, a bar, and a lounge. Haven guests also have a dedicated concierge team available around the clock.</p>
+            </Accordion>
+
+            <Accordion title="What Is Included in The Haven?">
+              <p className="mb-3">Haven guests get a significantly elevated experience compared to the rest of the ship. Here is what typically comes with a Haven cabin:</p>
+              <ul className="list-disc pl-5 space-y-2">
+                <li><strong>Private Haven restaurant</strong> with a dedicated menu and no reservations needed. You just show up.</li>
+                <li><strong>Private Haven bar and lounge</strong> open throughout the day with dedicated bartenders</li>
+                <li><strong>Private pool and sun deck</strong> with significantly fewer people than the main pool area</li>
+                <li><strong>24-hour butler service</strong> for your cabin. Your butler handles everything from unpacking to making dining reservations to bringing you breakfast in bed</li>
+                <li><strong>Dedicated concierge</strong> who can book specialty dining, shore excursions, spa appointments, and entertainment for you</li>
+                <li><strong>Priority embarkation and disembarkation</strong> so you are first on and first off</li>
+                <li><strong>Premium beverage package</strong> included on most Haven bookings</li>
+                <li><strong>Specialty dining package</strong> included on most Haven bookings</li>
+                <li><strong>Larger cabin with premium furnishings</strong> and in most cases a private balcony</li>
+              </ul>
+            </Accordion>
+
+            <Accordion title="The Haven Restaurant">
+              <p className="mb-3">The Haven restaurant is one of the genuinely special parts of the experience. It is a full-service sit-down restaurant exclusively for Haven guests with a menu that rotates daily and a dining team that gets to know your preferences over the course of the sailing.</p>
+              <p>No reservations, no waiting, no crowds. You just walk in when you are hungry. It has the feel of a private members dining room and the quality of the food and service is noticeably elevated compared to the main dining rooms. If you are a foodie, this alone might be worth the upgrade.</p>
+            </Accordion>
+
+            <Accordion title="Butler Service — What That Actually Means">
+              <p className="mb-3">Haven cabins come with a dedicated butler and it is not just a title. Your butler is a real resource who handles the small things that add up over a cruise. They can unpack your luggage when you board, set up your cabin the way you like it, bring you breakfast in the morning, arrange afternoon snacks, make restaurant reservations, and generally make sure everything runs smoothly.</p>
+              <p>For people who have never had butler service before it can feel a little unfamiliar at first. By day two most Haven guests wonder how they ever cruised without it.</p>
+            </Accordion>
+
+            <Accordion title="The Haven Sun Deck and Pool">
+              <p className="mb-3">The Haven has its own private outdoor area with a pool, hot tubs, and sun loungers that is exclusively for Haven guests. On a ship where the main pool deck can get crowded on sea days, having a private outdoor space with a fraction of the people is one of the most practical perks of The Haven.</p>
+              <p>The Haven deck tends to be quiet, relaxed, and well-staffed. Drinks come to you. The sun loungers are always available. It is a completely different energy from the main pool area.</p>
+            </Accordion>
+
+            <Accordion title="Who Is The Haven Right For?">
+              <p className="mb-3">The Haven costs more than a standard cabin, sometimes significantly more depending on the ship and itinerary. But for the right traveler it is genuinely worth the price difference. Here is who tends to love it most:</p>
+              <ul className="list-disc pl-5 space-y-2 mb-3">
+                <li>Travelers who want a premium experience but do not want to book a luxury-only cruise line</li>
+                <li>Anyone who values privacy, quiet, and not competing for space on sea days</li>
+                <li>People who appreciate attentive service and having someone handle the details</li>
+                <li>Couples celebrating something special who want the trip to feel elevated</li>
+                <li>Experienced cruisers who have done standard cabins and want to see what the top tier feels like</li>
+              </ul>
+              <p>If you are curious about The Haven and whether it makes sense for your budget and travel style, reach out and I can walk through the numbers with you. Sometimes the price difference is smaller than people expect once you factor in the included dining and beverage packages.</p>
+            </Accordion>
+
+            <Accordion title="The Haven vs Booking a Standard Cabin — Is It Worth It?">
+              <p className="mb-3">This is the question I get most often about The Haven. The honest answer is that it depends on what you value and what you are celebrating.</p>
+              <p className="mb-3">If you are someone who spends most of the cruise off the ship exploring ports and just needs a comfortable place to sleep, a standard cabin is fine. If you are someone who loves sea days, values privacy, appreciates great food and attentive service, and wants the cruise itself to feel like the destination, The Haven justifies its price for a lot of people.</p>
+              <p>Factor in the included premium beverage package, specialty dining credits, and butler service that come with most Haven bookings and the actual out-of-pocket difference from a standard cabin with those add-ons can be smaller than the sticker price suggests. Fill out my form and I can run the comparison for your specific sailing.</p>
             </Accordion>
           </section>
         )}
