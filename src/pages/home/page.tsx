@@ -25,6 +25,9 @@ const testimonials = [
   { name: "Janice P.", location: "Youngstown, OH", trip: "Caribbean Group Cruise", quote: "It was good overall. Took a little longer than I expected to get everything confirmed but the trip itself was great and Eric was helpful when I had questions." },
   { name: "Christina L.", location: "Plainfield, IL", trip: "Virgin Voyages Transatlantic", quote: "I have booked two cruises through Eric now and I will not go back to doing it myself. He catches things I would have never thought to ask about." },
   { name: "Dave & Karen S.", location: "Erie, PA", trip: "Caribbean Couples Cruise", quote: "We told Eric our budget and what we were looking for and he came back with options that actually fit. No upselling, no pressure. Just straightforward help." },
+  { name: "Melissa & Tom R.", location: "Medina, OH", trip: "Sandals Royal Barbados", quote: "We had been talking about a real couples trip for years and kept putting it off. Eric made it so easy to finally just do it. Everything was handled. We showed up and it was exactly what we needed." },
+  { name: "Carrie B.", location: "Akron, OH", trip: "Beaches Turks and Caicos", quote: "Traveling with three kids and making everyone happy is basically impossible. Somehow this trip pulled it off. Eric knew exactly what to look for and the resort was incredible. The kids are already asking when we're going back." },
+  { name: "Nicole & Ryan P.", location: "Warren, OH", trip: "Sandals Ochi Beach Jamaica", quote: "Our honeymoon was everything we pictured. Eric handled every detail and we genuinely did not have to worry about a single thing. If you are planning a honeymoon, just call him first." },
 ]
 
 export default function Home() {
@@ -153,7 +156,29 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Testimonials */}
+      {/* All-Inclusive Resorts */}
+      <div style={{ backgroundColor: '#FFFBF0', padding: '80px 24px' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>All-Inclusive Resorts</p>
+            <h2 style={{ color: '#1F2937', fontSize: '36px', fontWeight: '800', margin: 0 }}>Beaches and Sandals — the best in all-inclusive</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px', maxWidth: '800px', margin: '0 auto' }}>
+            <div style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #F3F4F6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <h3 style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>Sandals Resorts</h3>
+              <p style={{ color: '#007298', fontSize: '14px', fontWeight: '600', margin: 0 }}>Luxury. Couples only. Truly all-inclusive.</p>
+              <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>The gold standard for couples getaways. Unlimited premium drinks, gourmet dining, water sports, and accommodations that actually live up to the photos.</p>
+              <a href="/resorts/sandals" style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>Learn More</a>
+            </div>
+            <div style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #F3F4F6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <h3 style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>Beaches Resorts</h3>
+              <p style={{ color: '#007298', fontSize: '14px', fontWeight: '600', margin: 0 }}>Family all-inclusive done right.</p>
+              <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>Everything Sandals does for couples, Beaches does for families. Kids clubs, water parks, unlimited food and drinks, and a resort where everyone actually has a great time.</p>
+              <a href="/resorts/beaches" style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
       <div style={{ backgroundColor: '#F9FAFB', padding: '80px 0' }}>
         <div style={{ textAlign: 'center', marginBottom: '48px', padding: '0 24px' }}>
           <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>What People Say</p>
