@@ -13,7 +13,7 @@ const cruiseLines = [
   { name: "Norwegian (NCL)", tagline: "Freedom to do what you want.", desc: "NCL invented Freestyle Cruising. No set dining times, great group pricing.", live: true, link: "/cruises/norwegian" },
   { name: "MSC Cruises", tagline: "European elegance at a real price.", desc: "One of the most underrated lines out there. Beautiful ships and a Mediterranean style that feels different.", live: true, link: "/cruises/msc" },
   { name: "Royal Caribbean", tagline: "Big ships. Big fun.", desc: "Rock climbing walls, surf simulators, Broadway shows. If someone wants everything, this is where you go.", live: true, link: "/cruises/royal-caribbean" },
-  { name: "Carnival Cruise Line", tagline: "Fun for everyone.", desc: "The most popular cruise line in the world for a reason. Great value, nonstop entertainment, and a party atmosphere that is hard to beat.", live: false, link: "" },
+  { name: "Carnival Cruise Line", tagline: "Fun for everyone.", desc: "The most popular cruise line in the world for a reason. Great value, nonstop entertainment, and a party atmosphere that is hard to beat.", live: true, link: "/cruises/carnival" },
 ]
 
 const testimonials = [
