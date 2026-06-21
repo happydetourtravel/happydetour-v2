@@ -16,6 +16,7 @@ import MiamiMoroccoTransatlantic from './pages/cruises/miami-morocco-transatlant
 import AlaskaHubbardGlacier from './pages/cruises/alaska-hubbard-glacier/page'
 import VirginVoyagesHome from './pages/virginvoyages/virginhome/page'
 import NCLHome from './pages/ncl/nclhome/page'
+import MSCHome from './pages/msc/mschome/page'
 
 function Layout() {
   return (
@@ -37,6 +38,7 @@ function Layout() {
         <Route path="/cruises/alaska-hubbard-glacier" element={<AlaskaHubbardGlacier />} />
         <Route path="/cruises/virgin-voyages" element={<VirginVoyagesHome />} />
         <Route path="/cruises/norwegian" element={<NCLHome />} />
+        <Route path="/cruises/msc" element={<MSCHome />} />
       </Routes>
       <Footer />
     </div>
