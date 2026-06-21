@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const FORM_URL = "https://forgehq.app/f/?s=20bejr4j"
 
-const faqs = [
+const faqs: { question: string; answer: string }[] = [
   // ... your faqs array remains exactly the same
 ]
 
