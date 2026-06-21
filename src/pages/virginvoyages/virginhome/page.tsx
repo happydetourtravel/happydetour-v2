@@ -73,7 +73,7 @@ export default function VirginVoyagesPage() {
           <img
             src="/firstmate-gold.png"
             alt="Virgin Voyages Certified First Mate Gold Tier"
-            style={{ height: '80px', width: 'auto', margin: '0 auto', opacity: 0.95 }}
+            style={{ height: '160px', width: 'auto', margin: '0 auto', opacity: 0.95 }}
           />
         </div>
       </div>
