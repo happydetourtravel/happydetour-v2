@@ -67,9 +67,14 @@ export default function VirginVoyagesPage() {
           <p className="text-xl text-red-100 mb-6 leading-relaxed">
             No kids. No nickel and diming. No set dining times. Just you, the sea, and a ship that actually wants you to have fun.
           </p>
-          <p className="text-base text-red-200">
+          <p className="text-base text-red-200 mb-8">
             Everything you need to know before you sail, put together by Eric, your HDT travel advisor and Virgin Voyages First Mate certified agent.
           </p>
+          <img
+            src="/firstmate-gold.png"
+            alt="Virgin Voyages Certified First Mate Gold Tier"
+            style={{ height: '80px', width: 'auto', margin: '0 auto', opacity: 0.95 }}
+          />
         </div>
       </div>
 
