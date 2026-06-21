@@ -37,6 +37,7 @@ const TABS = [
   { id: "dining", label: "Dining" },
   { id: "bars", label: "Bars" },
   { id: "perks", label: "Bar Tab & Extras" },
+  { id: "solo", label: "Solo Travel" },
   { id: "excursions", label: "Shore Excursions" },
   { id: "insurance", label: "Trip Insurance" },
   { id: "tips", label: "Eric's Tips" },
@@ -357,6 +358,63 @@ export default function VirginVoyagesPage() {
           </section>
         )}
 
+        {/* SOLO TRAVEL */}
+        {activeTab === "solo" && (
+          <section>
+            <h2 className="text-3xl font-bold mb-2" style={{ color: VV_DARK }}>Solo Travel on Virgin Voyages</h2>
+            <p className="text-gray-500 mb-8">Virgin Voyages is adults only, not couples only. Solo travelers sail VV all the time and the experience is genuinely well suited for it. Here is what to know before you book.</p>
+
+            <div className="p-5 rounded-xl mb-8 text-white text-sm" style={{ background: `linear-gradient(135deg, ${VV_DARK}, ${VV_RED})` }}>
+              <p className="font-bold text-base mb-2" style={{ color: VV_GOLD }}>The honest thing to know upfront</p>
+              <p>Virgin Voyages does not have dedicated solo cabins like some other cruise lines. Most cabins are priced for two people, which means solo travelers typically pay what is called a single supplement to occupy the cabin alone. The amount varies by cabin category and sailing. It is worth knowing going in so you can plan your budget accordingly. Reach out and I can check current solo pricing on any sailing you are eyeing.</p>
+            </div>
+
+            <Accordion title="Why VV Actually Works Really Well for Solo Travelers">
+              <p className="mb-3">The single supplement is a real consideration, but once you are onboard, Virgin Voyages has a lot going for it as a solo experience. Here is why so many solo travelers come back:</p>
+              <p className="mb-3">The ship is adults only. That means the vibe skews social, relaxed, and easy to connect with people. Nobody is chasing kids around. Everyone on this ship is here to have a good time and the atmosphere makes conversations happen naturally.</p>
+              <p>The Freestyle setup means you eat when you want, do what you want, and never feel out of place doing it alone. You are not locked into a table assignment or a dining time that assumes you have a group. Your schedule is entirely your own.</p>
+            </Accordion>
+
+            <Accordion title="The Bar Scene Is a Solo Traveler's Best Friend">
+              <p className="mb-3">The bar program on Virgin Voyages is one of the best at sea, and for solo travelers that matters more than it might seem. When you walk into Voyage Vinyl or settle in at On the Rocks, you are walking into a space with a real identity and real bartenders who engage with you. These are not transactional service counters. They feel like actual bars.</p>
+              <p>Solo travelers almost always find their people at the bars on VV. Voyage Vinyl in particular has an energy that draws people in and keeps them there. If you are open to meeting fellow sailors, pull up a stool and give it an hour.</p>
+            </Accordion>
+
+            <Accordion title="Dining Alone Is Not Awkward Here">
+              <p className="mb-3">On a lot of cruise lines, dining alone can feel a little uncomfortable. Tables are set for two or four and you end up with extra place settings and a host who looks at you like you are missing someone.</p>
+              <p className="mb-3">Virgin Voyages handles this differently. The dining experience is reservation-based and the restaurants are designed to feel like real restaurants, not cruise ship banquet halls. You make a reservation, show up, and get seated like any other guest. Test Kitchen actually seats you at a communal chef's table format, which makes it one of the best solo dining experiences on the ship because the social piece is built right in.</p>
+              <p>Gunbae is another great solo option because the tabletop Korean BBQ format is interactive and lends itself to conversation with whoever is nearby.</p>
+            </Accordion>
+
+            <Accordion title="The Dock and Richard's Rooftop for Sea Days">
+              <p className="mb-3">Sea days as a solo traveler are where the ship design really pays off. The Dock at the stern of the ship is an open-air space with a swim platform, sun loungers, and a bar. It draws a relaxed crowd and the kind of conversations that start with someone asking about your drink and end with dinner plans.</p>
+              <p>Richard's Rooftop is the quieter adults-only pool area on the top deck. If you want a sea day that is more about recharging than socializing, this is your spot. Small, calm, and far less crowded than the main pool deck.</p>
+            </Accordion>
+
+            <Accordion title="Entertainment and Events Throughout the Sailing">
+              <p className="mb-3">Virgin Voyages programs events and entertainment throughout every sailing and a lot of them are naturally built for mingling. The Manor runs themed nights, DJ sets, and late night events that create a social scene without any pressure to participate. You can show up, have a drink, and see what happens.</p>
+              <p>There are also fitness classes, live music, comedy sets, and deck parties that give you natural reasons to be around other people throughout the day without having to organize anything yourself. As a solo traveler, that structure is genuinely helpful.</p>
+            </Accordion>
+
+            <Accordion title="Tips for Solo Travelers on VV">
+              <p className="mb-3">A few things that make the solo experience better:</p>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Book the Bar Tab promo when you can. Having drink credit already loaded means you are not watching the tab every time you settle in somewhere new. It frees you up to enjoy the bar scene without the mental accounting.</li>
+                <li>Lock in your dining reservations early in the Sailor app. As a solo traveler you have more flexibility on timing, but the most popular restaurants still fill up. Get them booked before you sail.</li>
+                <li>Try Test Kitchen. It is the most naturally social dining experience on the ship and the communal format means you are sharing a meal with a group of people regardless of who you came with.</li>
+                <li>Give Voyage Vinyl a real chance. Go in the evening, find a spot at the bar, and stay for more than one drink. That is when the room shifts and the conversations start.</li>
+                <li>Do not overthink shore excursions. Booking through the ship puts you in an organized group automatically, which means built-in company at every port without having to arrange anything.</li>
+              </ul>
+            </Accordion>
+
+            <Accordion title="Is VV Right for You as a Solo Traveler?">
+              <p className="mb-3">If you are someone who wants flexibility, does not need a built-in solo community structure, and is comfortable in a social environment where connections happen organically rather than through organized programming, Virgin Voyages is a really good fit.</p>
+              <p className="mb-3">The single supplement is the main thing to plan around. But once you are onboard, the ship itself does not treat you any differently for traveling alone. The experience is designed around adult freedom, and solo travel is about as close to that as it gets.</p>
+              <p>If you want to talk through the numbers on a specific sailing or figure out which cabin category makes the most sense for a solo booking, reach out and I will walk you through it. We talk through everything before anything is confirmed so there are no surprises.</p>
+            </Accordion>
+          </section>
+        )}
+
         {/* SHORE EXCURSIONS */}
         {activeTab === "excursions" && (
           <section>
@@ -531,8 +589,6 @@ export default function VirginVoyagesPage() {
           </p>
         </div>
       </div>
-
-
 
     </div>
   );
