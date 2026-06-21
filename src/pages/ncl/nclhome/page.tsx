@@ -854,9 +854,9 @@ export default function NCLPage() {
         {/* CTA */}
         <div className="mt-14 rounded-2xl p-8 text-center text-white" style={{ background: `linear-gradient(135deg, ${NCL_DARK}, ${NCL_NAVY})` }}>
           <p className="text-sm uppercase tracking-widest mb-2" style={{ color: NCL_GOLD }}>Ready to Sail NCL</p>
-          <h3 className="text-2xl font-bold mb-3">Let's Figure Out Your Cruise</h3>
+          <h3 className="text-2xl font-bold mb-3">Cruise Your Way Without the Hassle</h3>
           <p className="mb-6 max-w-lg mx-auto" style={{ color: "#CBD5E1" }}>
-            I hold an NCL University Master's Degree and have sailed Norwegian myself. I book NCL on your behalf so you get the expertise and I handle everything from start to finish. Fill out my quick form and I will be in touch within 24 hours. No pressure, no commitment. We just talk through everything first.
+            Planning a cruise shouldn't feel like a second job. As an NCL specialist who actually sails the line, I know how to cut through the noise to get you the exact experience you're looking for. Fill out the form and let's get to work. Someone is actually in your corner for this one.
           </p>
           <a
             href={FORM_LINK}
