@@ -163,15 +163,20 @@ export default function Home() {
         </div>
       </div>
 
-      {/* CTA */}
-      <div style={{ borderTop: '1px solid #E5E7EB', padding: '64px 24px', textAlign: 'center' }}>
-        <h2 style={{ color: '#1F2937', fontSize: '32px', fontWeight: '800', margin: '0 0 16px 0' }}>Ready to start planning?</h2>
-        <p style={{ color: '#6B7280', fontSize: '16px', maxWidth: '480px', margin: '0 auto 32px auto', lineHeight: '1.6' }}>
-          Reach out and let's figure out the right trip for you. No pressure, no surprises.
-        </p>
-        <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a href="sms:7473338687" style={{ backgroundColor: '#007298', color: 'white', padding: '13px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>Text Eric</a>
-          <a href="mailto:eric@happydetour.com" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '13px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>Email Eric</a>
+      {/* Final CTA */}
+      <div style={{ padding: '48px 24px' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto', backgroundColor: '#F59E0B', borderRadius: '20px', padding: '56px 32px', textAlign: 'center' }}>
+          <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>What Are You Waiting For?</p>
+          <h2 style={{ color: 'white', fontSize: '36px', fontWeight: '800', margin: '0 0 12px 0', lineHeight: '1.2' }}>Stop scrolling, start packing.</h2>
+          <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '16px', margin: '0 0 32px 0' }}>Let's find your happy detour.</p>
+          <a
+            href="https://forgehq.app/f/?s=20bejr4j"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', backgroundColor: 'white', color: '#D97706', padding: '14px 28px', borderRadius: '100px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}
+          >
+            ✈ Start Planning My Trip
+          </a>
         </div>
       </div>
 
