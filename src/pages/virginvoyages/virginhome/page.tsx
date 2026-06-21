@@ -527,38 +527,6 @@ export default function VirginVoyagesPage() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="mt-16 border-t border-gray-200 py-10 px-6 text-center" style={{ background: VV_DARK }}>
-        <p className="text-sm mb-3" style={{ color: VV_GOLD }}>Real trips. Real value. Someone actually in your corner.</p>
-        <p className="text-xs text-gray-400 mb-4">
-          Northeast, OH &nbsp;&bull;&nbsp; 747-333-8687 &nbsp;&bull;&nbsp; eric@happydetour.com
-        </p>
-        <p className="text-xs text-gray-500 mb-3">
-          &copy; 2026 Happy Detour Travel LLC &nbsp;&bull;&nbsp; Eric &nbsp;&bull;&nbsp; Affiliated with WorldVia Travel Network
-        </p>
-        <p className="text-xs space-x-3">
-          <a
-            href="https://happydetour-v2-xwhgrbrl4-happydetourtravel-8515s-projects.vercel.app/terms"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-            style={{ color: VV_GOLD }}
-          >
-            Terms &amp; Conditions
-          </a>
-          <span className="text-gray-600">&bull;</span>
-          <a
-            href="https://happydetour-v2-xwhgrbrl4-happydetourtravel-8515s-projects.vercel.app/privacy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-            style={{ color: VV_GOLD }}
-          >
-            Privacy Policy
-          </a>
-        </p>
-        <p className="text-xs text-gray-600 mt-3">Last updated: June 2026</p>
-      </footer>
     </div>
   );
 }
