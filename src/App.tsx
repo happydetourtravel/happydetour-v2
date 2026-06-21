@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Home from './pages/home/page'
 import Join from './pages/join/page'
 import Login from './pages/login/page'
+import Verify from './pages/verify/page'
 import Privacy from './pages/privacy/page'
 import Terms from './pages/terms/page'
 import Members from './pages/members/page'
@@ -30,6 +31,7 @@ function Layout() {
         <Route path="/" element={<Home />} />
         <Route path="/join" element={<Join />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/verify" element={<Verify />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/members" element={<Members />} />
