@@ -25,6 +25,7 @@ export default function Header() {
           <nav className="flex items-center gap-6 text-sm font-medium text-brand-dark">
             <Link to="/" className="hover:text-brand-blue transition-colors">Home</Link>
             <Link to="/about" className="hover:text-brand-blue transition-colors">About</Link>
+            <Link to="/faq" className="hover:text-brand-blue transition-colors">FAQ</Link>
             <a
               href="https://www.facebook.com/groups/somuchtosea"
               target="_blank"
@@ -90,7 +91,6 @@ export default function Header() {
             onClick={(e) => e.stopPropagation()}
             style={{ backgroundColor: 'white', borderRadius: '16px', maxWidth: '480px', width: '100%', overflow: 'hidden', boxShadow: '0 20px 60px rgba(0,0,0,0.3)' }}
           >
-            {/* Modal Header */}
             <div style={{ backgroundColor: '#007298', padding: '28px 28px 20px', position: 'relative' }}>
               <button
                 onClick={() => setModalOpen(false)}
@@ -107,8 +107,6 @@ export default function Header() {
                 Get first dibs on cruise deals, resort updates, and honest travel tips from someone actually in your corner. No spam. Just good stuff.
               </p>
             </div>
-
-            {/* Embedded MailerLite Form */}
             <div style={{ padding: '24px 28px 28px' }}>
               <iframe
                 src="https://preview.mailerlite.io/forms/2458736/190757326102202283/share"
