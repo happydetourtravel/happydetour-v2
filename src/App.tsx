@@ -14,6 +14,7 @@ import EasternCaribbeanBimini from './pages/cruises/eastern-caribbean-bimini/pag
 import FrenchRivieraIbiza from './pages/cruises/french-riviera-ibiza/page'
 import MiamiMoroccoTransatlantic from './pages/cruises/miami-morocco-transatlantic/page'
 import AlaskaHubbardGlacier from './pages/cruises/alaska-hubbard-glacier/page'
+import VirginVoyagesHome from './pages/virginvoyages/virginhome/page'
 
 export default function App() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/cruises/french-riviera-ibiza" element={<FrenchRivieraIbiza />} />
           <Route path="/cruises/miami-morocco-transatlantic" element={<MiamiMoroccoTransatlantic />} />
           <Route path="/cruises/alaska-hubbard-glacier" element={<AlaskaHubbardGlacier />} />
+          <Route path="/cruises/virgin-voyages" element={<VirginVoyagesHome />} />
         </Routes>
         <Footer />
       </div>
