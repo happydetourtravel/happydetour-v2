@@ -69,7 +69,7 @@ export default function MSCPage() {
             European elegance at a real price. MSC is one of the most underrated cruise lines out there and one of the lines Eric knows from personal experience. Beautiful ships, a Mediterranean style that feels genuinely different, and value that is hard to beat.
           </p>
           <p className="text-base" style={{ color: "#94A3B8" }}>
-            Everything you need to know about sailing MSC, put together by Eric, your Happy Detour Travel advisor who has sailed MSC four times.
+            Everything you need to know about sailing MSC, put together by Eric, your HDT travel advisor who has sailed MSC four times.
           </p>
         </div>
       </div>
@@ -137,41 +137,105 @@ export default function MSCPage() {
         {activeTab === "ships" && (
           <section>
             <h2 className="text-3xl font-bold mb-2" style={{ color: MSC_DARK }}>The MSC Fleet</h2>
-            <p className="text-gray-500 mb-8">MSC has one of the fastest-growing fleets in the world. They have been launching new ships at a pace that most lines cannot match and the newer vessels are genuinely impressive. Here is a look at the ships you are most likely to encounter sailing from US ports.</p>
+            <p className="text-gray-500 mb-8">MSC has one of the largest and fastest growing fleets in the world with ships sailing everywhere from the Caribbean to the Mediterranean, Alaska, South America, and beyond. Here is the complete fleet so you know exactly what is out there.</p>
 
             <div className="p-4 rounded-xl mb-6 text-sm" style={{ background: MSC_ACCENT, borderLeft: `4px solid ${MSC_NAVY}` }}>
               <strong>Eric's Note:</strong> I have personally sailed on the MSC Meraviglia three times and the MSC Armonia once. If you want to know what either of those ships actually feels like day to day, ask me directly. I can give you a real picture of what to expect.
             </div>
 
-            <h3 className="text-lg font-bold mb-3 mt-6" style={{ color: MSC_NAVY }}>World Class — MSC's Largest Ships</h3>
+            <h3 className="text-lg font-bold mb-3 mt-6" style={{ color: MSC_NAVY }}>World Class — Coming Soon and Newest</h3>
 
             {[
               {
+                name: "MSC World Atlantic",
+                status: "Debuting 2027",
+                homeport: "Orlando (Port Canaveral)",
+                destinations: "Caribbean and Bahamas",
+                notes: "The newest World Class ship debuting in 2027 and homeporting in Orlando. MSC World Atlantic brings the same next-generation design as World America with the full World Class feature set to the East Coast. A great option for Florida-based travelers who want the newest ship MSC has to offer.",
+                highlights: ["Debuting 2027", "Orlando homeport", "MSC Yacht Club", "World Class next-gen design", "Caribbean and Bahamas itineraries"]
+              },
+              {
+                name: "MSC World Asia",
+                status: "Debuting 2026",
+                homeport: "Mediterranean",
+                destinations: "Mediterranean",
+                notes: "Debuting in 2026 and sailing the Mediterranean. MSC World Asia is the third World Class ship and brings the brand's most advanced technology and features to European waters.",
+                highlights: ["Debuting 2026", "Mediterranean itineraries", "MSC Yacht Club", "World Class design", "Latest MSC technology"]
+              },
+              {
+                name: "MSC World America",
+                status: "Now Sailing",
+                homeport: "Miami",
+                destinations: "Caribbean and Bahamas",
+                notes: "MSC's newest ship and their first World Class vessel sailing from Miami. World America is designed for immersive Caribbean experiences and brings the most innovative features MSC has ever put on a ship to the North American market. If you want to sail the newest MSC has to offer from Miami, this is the ship.",
+                highlights: ["MSC's newest ship in Miami", "World Class innovative design", "MSC Yacht Club", "Caribbean and Bahamas itineraries", "Most advanced features in the fleet"]
+              },
+              {
                 name: "MSC World Europa",
-                built: "2022",
-                capacity: "6,762",
-                notes: "One of the largest cruise ships ever built and MSC's most ambitious vessel. World Europa is packed with features including a Formula 1 simulator, a VR zone, and some of the most spectacular public spaces at sea. She sails primarily from the Middle East and Europe.",
-                highlights: ["Formula 1 simulator", "Virtual reality zone", "MSC Yacht Club enclave", "Massive entertainment complex", "One of the largest ships at sea"]
-              },
-              {
-                name: "MSC Seashore",
-                built: "2021",
-                capacity: "5,632",
-                notes: "MSC Seashore is one of their largest North America-based ships and sails from Miami and Port Canaveral. She was designed with more outdoor space than any previous MSC ship and the pool deck experience reflects that. A great choice for Caribbean sailings from Florida.",
-                highlights: ["Extended outdoor deck space", "MSC Yacht Club", "Miami and Florida homeports", "Caribbean itineraries", "Strong entertainment lineup"]
-              },
-              {
-                name: "MSC Seascape",
-                built: "2022",
-                capacity: "5,877",
-                notes: "Sister ship to Seashore and based in Miami. Seascape was designed specifically for the North American market and has some features tailored to American travelers including a wider variety of bar concepts and a stronger sports entertainment focus.",
-                highlights: ["Designed for North American market", "Miami homeport", "Caribbean itineraries", "MSC Yacht Club", "Strong pool deck experience"]
+                status: "Now Sailing",
+                homeport: "Dubai and Mediterranean",
+                destinations: "Southern Caribbean, Dubai, Middle East, Mediterranean, MSC Grand Voyages",
+                notes: "One of the largest cruise ships ever built and MSC's most ambitious vessel to date. World Europa features a Formula 1 simulator, a VR zone, and some of the most spectacular public spaces at sea. She sails primarily from the Middle East and Mediterranean ports.",
+                highlights: ["Formula 1 simulator onboard", "Virtual reality zone", "MSC Yacht Club", "One of the largest ships at sea", "Dubai and Mediterranean homeports"]
               },
             ].map((ship) => (
               <div key={ship.name} className="mb-3">
-                <Accordion title={`${ship.name} — Built ${ship.built} · Capacity ${ship.capacity}`}>
+                <Accordion title={`${ship.name} — ${ship.status} · ${ship.homeport}`}>
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div><p className="mb-3">{ship.notes}</p></div>
+                    <div>
+                      <p className="mb-3">{ship.notes}</p>
+                      <p className="text-sm text-gray-500">Destinations: {ship.destinations}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold mb-2" style={{ color: MSC_NAVY }}>Highlights</p>
+                      <ul className="list-disc pl-5 space-y-1 text-sm">
+                        {ship.highlights.map((h) => <li key={h}>{h}</li>)}
+                      </ul>
+                    </div>
+                  </div>
+                </Accordion>
+              </div>
+            ))}
+
+            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: MSC_NAVY }}>Seashore Class</h3>
+
+            {[
+              {
+                name: "MSC Seascape",
+                homeport: "Galveston, TX",
+                destinations: "Caribbean and Bahamas",
+                notes: "Based in Galveston and a great option for Gulf Coast travelers who want to cruise without flying. Seascape was designed with the North American market in mind and has a strong outdoor deck experience and variety of bar concepts tailored to American tastes.",
+                highlights: ["Galveston homeport", "Designed for North American market", "MSC Yacht Club", "Caribbean and Bahamas itineraries", "Strong outdoor deck experience"]
+              },
+              {
+                name: "MSC Seashore",
+                homeport: "Orlando (Port Canaveral)",
+                destinations: "Caribbean and Bahamas, MSC Grand Voyages",
+                notes: "Sailing from Port Canaveral, MSC Seashore was designed with more outdoor deck space than any previous MSC ship. A great choice for Florida-based travelers who want to cruise from their backyard to the Caribbean and Bahamas.",
+                highlights: ["Orlando homeport", "Maximized outdoor deck space", "MSC Yacht Club", "Caribbean and Bahamas itineraries", "MSC Grand Voyage options"]
+              },
+              {
+                name: "MSC Seaside",
+                homeport: "Miami",
+                destinations: "Caribbean and Bahamas",
+                notes: "The original Seashore class ship with a pioneering design that puts guests closer to the water than any previous MSC vessel. The unique stern design creates a water-level experience on the lower decks that feels genuinely different from other cruise ships. Sails Caribbean itineraries from Miami.",
+                highlights: ["Innovative water-level stern design", "Miami homeport", "MSC Yacht Club", "Caribbean and Bahamas itineraries", "Extended outdoor decks"]
+              },
+              {
+                name: "MSC Seaview",
+                homeport: "Caribbean and Mediterranean",
+                destinations: "Caribbean and Bahamas, Mediterranean, MSC Grand Voyages",
+                notes: "Sister ship to Seaside with the same waterfront-focused design. Seaview splits time between Caribbean and Mediterranean itineraries and is a great option when you want the Seaside class experience on a European sailing.",
+                highlights: ["Water-level stern design", "MSC Yacht Club", "Caribbean and Mediterranean itineraries", "MSC Grand Voyage options"]
+              },
+            ].map((ship) => (
+              <div key={ship.name} className="mb-3">
+                <Accordion title={`${ship.name} · ${ship.homeport}`}>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <p className="mb-3">{ship.notes}</p>
+                      <p className="text-sm text-gray-500">Destinations: {ship.destinations}</p>
+                    </div>
                     <div>
                       <p className="font-semibold mb-2" style={{ color: MSC_NAVY }}>Highlights</p>
                       <ul className="list-disc pl-5 space-y-1 text-sm">
@@ -187,64 +251,48 @@ export default function MSCPage() {
 
             {[
               {
-                name: "MSC Meraviglia",
-                built: "2017",
-                capacity: "4,488",
-                notes: "Eric has sailed on the Meraviglia three times. Two sailings were out of New York to the Bahamas including Ocean Cay and Nassau, and one sailed to Florida and the Bahamas. The Meraviglia is one of MSC's signature ships and the one that introduced a lot of American cruisers to the brand. She has a stunning indoor promenade with an LED sky ceiling that is genuinely spectacular, strong specialty dining, and a great entertainment program. A beautiful ship that punches above its weight.",
-                highlights: ["Eric has sailed her three times", "LED sky ceiling indoor promenade", "New York City homeport", "Bahamas and Florida itineraries", "MSC Yacht Club", "Strong specialty dining"]
+                name: "MSC Virtuosa",
+                homeport: "Mediterranean and international",
+                destinations: "Mediterranean, MSC Grand Voyages, Northern Europe, South America",
+                notes: "One of MSC's most sophisticated ships with a stunning design and the full Meraviglia class experience. Virtuosa sails a wide variety of itineraries including Mediterranean, Northern Europe, and South America.",
+                highlights: ["MSC Yacht Club", "Meraviglia class design", "Wide itinerary variety", "Mediterranean and international routes"]
               },
               {
-                name: "MSC Bellissima",
-                built: "2019",
-                capacity: "4,488",
-                notes: "Sister ship to the Meraviglia with the same stunning interior design and LED promenade. Bellissima sails Mediterranean and international itineraries and brings the same high standard as her sister ship to a broader range of destinations.",
-                highlights: ["LED sky ceiling promenade", "Same layout as Meraviglia", "Mediterranean itineraries", "MSC Yacht Club", "Strong dining and entertainment"]
+                name: "MSC Euribia",
+                homeport: "Northern Europe and Mediterranean",
+                destinations: "Northern Europe, Mediterranean",
+                notes: "A newer addition to the Meraviglia class and one of the most environmentally advanced ships in the fleet. Euribia sails Northern Europe and Mediterranean itineraries and brings the signature indoor promenade experience to those routes.",
+                highlights: ["MSC Yacht Club", "Environmentally advanced design", "Northern Europe itineraries", "Signature LED promenade"]
               },
               {
                 name: "MSC Grandiosa",
-                built: "2019",
-                capacity: "4,888",
-                notes: "The largest of the Meraviglia class ships. Grandiosa sails mostly Mediterranean itineraries and is one of the most popular ships in the European market. She has the signature indoor promenade and an even larger entertainment and dining footprint than her Meraviglia class sisters.",
-                highlights: ["Largest Meraviglia class ship", "Signature LED promenade", "Mediterranean itineraries", "Expanded dining options", "MSC Yacht Club"]
+                homeport: "Miami and Mediterranean",
+                destinations: "Caribbean and Bahamas, Mediterranean, MSC Grand Voyages",
+                notes: "The largest of the Meraviglia class ships and one of the most popular in the fleet. Grandiosa splits time between Miami for Caribbean sailings and the Mediterranean. She has the signature LED indoor promenade and an expanded entertainment and dining footprint.",
+                highlights: ["Miami and Mediterranean homeports", "Largest Meraviglia class ship", "MSC Yacht Club", "Signature LED promenade", "Caribbean and Mediterranean itineraries"]
+              },
+              {
+                name: "MSC Meraviglia",
+                homeport: "Miami and New York",
+                destinations: "Caribbean and Bahamas, Mediterranean, MSC Grand Voyages",
+                notes: "Eric has sailed on the Meraviglia three times. Two sailings were out of New York to the Bahamas including Ocean Cay and Nassau, and one sailed to Florida and the Bahamas. The Meraviglia is one of MSC's signature ships and the one that introduced a lot of American cruisers to the brand. She has a stunning indoor promenade with an LED sky ceiling that is genuinely spectacular, strong specialty dining, and a great entertainment program.",
+                highlights: ["Eric has sailed her three times", "LED sky ceiling indoor promenade", "New York and Miami homeports", "Bahamas, Florida and Caribbean itineraries", "MSC Yacht Club", "Eataly specialty dining onboard"]
+              },
+              {
+                name: "MSC Bellissima",
+                homeport: "Asia",
+                destinations: "Asia",
+                notes: "Sister ship to the Meraviglia with the same stunning interior design and LED promenade. Bellissima currently sails Asian itineraries bringing the Meraviglia class experience to a different part of the world.",
+                highlights: ["LED sky ceiling promenade", "Same layout as Meraviglia", "MSC Yacht Club", "Asian itineraries"]
               },
             ].map((ship) => (
               <div key={ship.name} className="mb-3">
-                <Accordion title={`${ship.name} — Built ${ship.built} · Capacity ${ship.capacity}`}>
+                <Accordion title={`${ship.name} · ${ship.homeport}`}>
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div><p className="mb-3">{ship.notes}</p></div>
                     <div>
-                      <p className="font-semibold mb-2" style={{ color: MSC_NAVY }}>Highlights</p>
-                      <ul className="list-disc pl-5 space-y-1 text-sm">
-                        {ship.highlights.map((h) => <li key={h}>{h}</li>)}
-                      </ul>
+                      <p className="mb-3">{ship.notes}</p>
+                      <p className="text-sm text-gray-500">Destinations: {ship.destinations}</p>
                     </div>
-                  </div>
-                </Accordion>
-              </div>
-            ))}
-
-            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: MSC_NAVY }}>Seaside Class</h3>
-
-            {[
-              {
-                name: "MSC Seaside",
-                built: "2017",
-                capacity: "4,134",
-                notes: "Designed with more outdoor space and a closer connection to the ocean than any previous MSC ship. The Seaside has a unique stern design that puts you right at the water's edge on the lower decks. Sails from Miami on Caribbean itineraries.",
-                highlights: ["Innovative stern design at water level", "Extended outdoor decks", "Miami homeport", "Caribbean itineraries", "MSC Yacht Club"]
-              },
-              {
-                name: "MSC Seaview",
-                built: "2018",
-                capacity: "4,134",
-                notes: "Sister ship to Seaside with the same waterfront-focused design. Seaview sails primarily Mediterranean itineraries and brings the outdoor deck innovation of the Seaside class to European ports.",
-                highlights: ["Water-level stern design", "Extended outdoor spaces", "Mediterranean itineraries", "MSC Yacht Club"]
-              },
-            ].map((ship) => (
-              <div key={ship.name} className="mb-3">
-                <Accordion title={`${ship.name} — Built ${ship.built} · Capacity ${ship.capacity}`}>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div><p className="mb-3">{ship.notes}</p></div>
                     <div>
                       <p className="font-semibold mb-2" style={{ color: MSC_NAVY }}>Highlights</p>
                       <ul className="list-disc pl-5 space-y-1 text-sm">
@@ -261,30 +309,47 @@ export default function MSCPage() {
             {[
               {
                 name: "MSC Divina",
-                built: "2012",
-                capacity: "3,502",
-                notes: "One of the most beautiful ships in the fleet with an Italian design aesthetic that feels timeless. MSC Divina sails Caribbean itineraries from Miami and has a loyal following among repeat MSC guests who appreciate the classic European styling.",
-                highlights: ["Classic Italian design", "Miami homeport", "Caribbean itineraries", "MSC Yacht Club", "Timeless elegant interiors"]
+                homeport: "Miami and Mediterranean",
+                destinations: "Mediterranean, MSC Grand Voyages, South America",
+                notes: "One of the most beautifully designed ships in the fleet with a timeless Italian aesthetic. MSC Divina sails from Miami on Caribbean itineraries and has a loyal following among repeat MSC guests who appreciate classic European cruise styling.",
+                highlights: ["Classic Italian design", "Miami homeport", "MSC Yacht Club", "Caribbean and Mediterranean itineraries"]
+              },
+              {
+                name: "MSC Fantasia",
+                homeport: "Mediterranean",
+                destinations: "Canary Islands and Madeira, Mediterranean",
+                notes: "The original Fantasia class ship sailing Mediterranean and Canary Island itineraries. Fantasia has the classic large-ship MSC feel with the full dining and entertainment program the line is known for.",
+                highlights: ["MSC Yacht Club", "Mediterranean itineraries", "Canary Islands sailings", "Classic Fantasia class design"]
+              },
+              {
+                name: "MSC Preziosa",
+                homeport: "Northern Europe",
+                destinations: "Northern Europe",
+                notes: "Fantasia class ship sailing Northern European itineraries. A great option for travelers interested in the fjords, Baltic capitals, or British Isles on a well-appointed MSC vessel.",
+                highlights: ["MSC Yacht Club", "Northern Europe itineraries", "Fantasia class comfort", "Strong dining program"]
               },
               {
                 name: "MSC Splendida",
-                built: "2009",
-                capacity: "3,274",
-                notes: "One of MSC's earlier large ships, still very well maintained and a strong choice for European itineraries. The Splendida has a warm, classic MSC feel and all the core dining and entertainment you expect from the line.",
-                highlights: ["Classic MSC experience", "European itineraries", "MSC Yacht Club", "Full specialty dining lineup"]
+                homeport: "Mediterranean",
+                destinations: "Mediterranean, MSC Grand Voyages, South America",
+                notes: "One of MSC's well-established large ships with a warm classic feel. The Splendida sails Mediterranean and South American itineraries and delivers the full MSC experience in a proven package.",
+                highlights: ["MSC Yacht Club", "Mediterranean and South American itineraries", "Classic large-ship MSC feel", "Full specialty dining lineup"]
               },
               {
                 name: "MSC Magnifica",
-                built: "2010",
-                capacity: "2,518",
-                notes: "A mid-size MSC ship known for her world cruise and longer international itineraries. Magnifica has a warm intimate feel for MSC and is popular with experienced cruisers who appreciate a slightly smaller ship.",
-                highlights: ["World cruise itineraries", "Mid-size intimate feel", "MSC Yacht Club", "International itineraries"]
+                homeport: "Mediterranean and Northern Europe",
+                destinations: "Mediterranean, Northern Europe",
+                notes: "A mid-size ship with a warm intimate character that feels different from the mega ships. Magnifica sails Mediterranean and Northern Europe itineraries and is popular with experienced cruisers who prefer a slightly smaller vessel.",
+                highlights: ["MSC Yacht Club", "Mediterranean and Northern Europe", "More intimate mid-size feel", "Classic MSC experience"]
               },
             ].map((ship) => (
               <div key={ship.name} className="mb-3">
-                <Accordion title={`${ship.name} — Built ${ship.built} · Capacity ${ship.capacity}`}>
+                <Accordion title={`${ship.name} · ${ship.homeport}`}>
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div><p className="mb-3">{ship.notes}</p></div>
+                    <div>
+                      <p className="mb-3">{ship.notes}</p>
+                      <p className="text-sm text-gray-500">Destinations: {ship.destinations}</p>
+                    </div>
                     <div>
                       <p className="font-semibold mb-2" style={{ color: MSC_NAVY }}>Highlights</p>
                       <ul className="list-disc pl-5 space-y-1 text-sm">
@@ -296,35 +361,88 @@ export default function MSCPage() {
               </div>
             ))}
 
-            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: MSC_NAVY }}>Classic Fleet</h3>
+            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: MSC_NAVY }}>Musica Class</h3>
+
+            {[
+              {
+                name: "MSC Musica",
+                homeport: "Mediterranean",
+                destinations: "Canary Islands and Madeira, Mediterranean, MSC Grand Voyages, South America",
+                notes: "The original Musica class ship with a classic intimate design. Musica sails Mediterranean, Canary Island, and South American itineraries and delivers a warm European cruise feel.",
+                highlights: ["MSC Yacht Club", "Mediterranean and Canary Islands", "South American itineraries", "Classic intimate design"]
+              },
+              {
+                name: "MSC Orchestra",
+                homeport: "Mediterranean",
+                destinations: "Mediterranean",
+                notes: "Sister ship to Musica sailing Mediterranean itineraries. Orchestra has the warm classic MSC character of the Musica class and is a solid choice for a European sailing on a well-loved vessel.",
+                highlights: ["MSC Yacht Club", "Mediterranean itineraries", "Classic Musica class feel", "European sailing experience"]
+              },
+              {
+                name: "MSC Poesia",
+                homeport: "Miami and Seattle",
+                destinations: "Alaska, Caribbean and Bahamas, MSC Grand Voyages, Panama Canal",
+                notes: "A Musica class ship with a notably diverse itinerary range including Alaska sailings from Seattle, Caribbean itineraries from Miami, and Panama Canal Grand Voyages. If you want to sail MSC to Alaska, Poesia is your ship.",
+                highlights: ["MSC Yacht Club", "Alaska sailings from Seattle", "Caribbean from Miami", "Panama Canal Grand Voyages", "Diverse itinerary range"]
+              },
+            ].map((ship) => (
+              <div key={ship.name} className="mb-3">
+                <Accordion title={`${ship.name} · ${ship.homeport}`}>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <p className="mb-3">{ship.notes}</p>
+                      <p className="text-sm text-gray-500">Destinations: {ship.destinations}</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold mb-2" style={{ color: MSC_NAVY }}>Highlights</p>
+                      <ul className="list-disc pl-5 space-y-1 text-sm">
+                        {ship.highlights.map((h) => <li key={h}>{h}</li>)}
+                      </ul>
+                    </div>
+                  </div>
+                </Accordion>
+              </div>
+            ))}
+
+            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: MSC_NAVY }}>Lirica Class — Classic Fleet</h3>
 
             {[
               {
                 name: "MSC Armonia",
-                built: "2001",
-                capacity: "1,566",
-                notes: "Eric has sailed on the Armonia on an itinerary that covered Belize, Costa Maya, Roatan, and Cozumel. She is a smaller, older ship that feels intimate and personal compared to the mega ships. The Armonia delivers the core MSC experience on a more manageable scale and that Caribbean itinerary through Belize and Roatan is genuinely one of the best in the region.",
-                highlights: ["Eric has personally sailed on the Armonia", "Belize, Costa Maya, Roatan, and Cozumel itinerary", "Smaller intimate experience", "Classic MSC style", "Great entry point for first-time MSC sailors"]
+                homeport: "Mediterranean and South Africa",
+                destinations: "Mediterranean, South Africa, MSC Grand Voyages",
+                notes: "Eric has sailed on the Armonia on a Caribbean itinerary covering Belize, Costa Maya, Roatan, and Cozumel. She is a smaller, older ship that delivers an intimate and personal experience. The Armonia is a great entry point for first-time MSC sailors who want a more manageable ship size with the full MSC character.",
+                highlights: ["Eric has personally sailed the Armonia", "Intimate smaller ship experience", "Classic MSC style", "Mediterranean and South Africa itineraries", "Great for first-time MSC travelers"]
               },
               {
-                name: "MSC Sinfonia",
-                built: "2002",
-                capacity: "1,566",
-                notes: "Sister ship to the Armonia with the same classic intimate feel. The Sinfonia sails a variety of itineraries and is a good choice for travelers who prefer a smaller ship experience with the full MSC character.",
-                highlights: ["Intimate smaller ship", "Classic MSC experience", "Variety of itineraries", "Sister ship to Armonia"]
+                name: "MSC Lirica",
+                homeport: "Mediterranean",
+                destinations: "Mediterranean",
+                notes: "A classic smaller MSC ship sailing Mediterranean itineraries. The Lirica has a warm intimate feel and delivers the core MSC experience on a more personal scale.",
+                highlights: ["Intimate classic design", "Mediterranean itineraries", "Smaller comfortable ship", "Classic MSC character"]
               },
               {
                 name: "MSC Opera",
-                built: "2004",
-                capacity: "2,055",
-                notes: "A mid-size classic MSC ship that sails South American and Caribbean itineraries. The Opera has a warm, traditional European cruise feel and is popular with travelers who enjoy a more classic cruising experience.",
-                highlights: ["Classic European cruise feel", "South American itineraries", "Mid-size comfortable ship", "Traditional MSC character"]
+                homeport: "Caribbean and Mediterranean",
+                destinations: "Caribbean and Bahamas, Mediterranean, MSC Grand Voyages",
+                notes: "A Lirica class ship sailing both Caribbean and Mediterranean itineraries. The Opera has a warm traditional European cruise feel and is a good option for travelers who want the classic MSC experience with itinerary variety.",
+                highlights: ["MSC Yacht Club", "Caribbean and Mediterranean itineraries", "Classic European cruise feel", "MSC Grand Voyage options"]
+              },
+              {
+                name: "MSC Sinfonia",
+                homeport: "Mediterranean",
+                destinations: "Mediterranean, MSC Grand Voyages",
+                notes: "Sister ship to the Armonia with the same classic intimate design. Sinfonia sails Mediterranean itineraries and delivers the core MSC experience on a smaller, more personal scale.",
+                highlights: ["Classic intimate design", "Mediterranean itineraries", "Sister ship to Armonia", "Classic MSC experience"]
               },
             ].map((ship) => (
               <div key={ship.name} className="mb-3">
-                <Accordion title={`${ship.name} — Built ${ship.built} · Capacity ${ship.capacity}`}>
+                <Accordion title={`${ship.name} · ${ship.homeport}`}>
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div><p className="mb-3">{ship.notes}</p></div>
+                    <div>
+                      <p className="mb-3">{ship.notes}</p>
+                      <p className="text-sm text-gray-500">Destinations: {ship.destinations}</p>
+                    </div>
                     <div>
                       <p className="font-semibold mb-2" style={{ color: MSC_NAVY }}>Highlights</p>
                       <ul className="list-disc pl-5 space-y-1 text-sm">
@@ -337,7 +455,7 @@ export default function MSCPage() {
             ))}
 
             <div className="mt-8 p-5 rounded-xl text-white text-sm" style={{ background: MSC_NAVY }}>
-              <strong>Not sure which ship fits you?</strong> MSC has a wide range from intimate classic ships like the Armonia to massive modern vessels like the Seascape. Tell me where you want to go and what kind of experience you are after and I will point you in the right direction.
+              <strong>Not sure which ship fits you?</strong> MSC has over 20 ships sailing everywhere from the Bahamas to Alaska to South Africa. Tell me where you want to go and what kind of experience you are after and I will point you in the right direction.
             </div>
           </section>
         )}
