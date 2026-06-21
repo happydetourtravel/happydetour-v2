@@ -44,12 +44,10 @@ export default function CruisePage({
   return (
     <div className="max-w-3xl mx-auto px-4 py-10 font-sans text-gray-800">
 
-      {/* Hero */}
       <img src={image} alt={title} className="w-full rounded-xl mb-6 object-cover max-h-72" />
       <h1 className="text-3xl font-bold mb-1">{title}</h1>
       <p className="text-gray-500 mb-6">{date} · {nights} nights · {ship} · Departs {port}</p>
 
-      {/* Pricing */}
       <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-8">
         <p className="text-sm text-gray-500 mb-1">Starting from</p>
         <div className="flex items-baseline gap-3">
@@ -61,7 +59,6 @@ export default function CruisePage({
         <p className="text-xs text-gray-400 mt-1">per person, double occupancy</p>
       </div>
 
-      {/* Cabins */}
       <h2 className="text-xl font-semibold mb-3">Cabin Options</h2>
       <div className="grid gap-3 mb-10">
         {cabins.map((cabin, i) => (
@@ -75,7 +72,6 @@ export default function CruisePage({
         ))}
       </div>
 
-      {/* Itinerary */}
       <h2 className="text-xl font-semibold mb-3">Itinerary</h2>
       <div className="grid gap-3 mb-10">
         {days.map((d) => (
@@ -89,7 +85,6 @@ export default function CruisePage({
         ))}
       </div>
 
-      {/* CTA Buttons */}
       <div className="flex flex-col sm:flex-row gap-3 relative">
         
           href={bookingLink}
