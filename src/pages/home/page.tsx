@@ -4,7 +4,7 @@ const featuredDeals = [
   { tag: "VIRGIN VOYAGES", title: "Caribbean Escape — Bahamas & Key West", date: "Jan 2027", nights: "4 nights", ship: "Scarlet Lady · Miami", originalPrice: "$699", salePrice: "$549", link: "/cruises/bahamas-key-west" },
   { tag: "VIRGIN VOYAGES", title: "Eastern Caribbean & Bimini Beach Club", date: "Mar 2027", nights: "7 nights", ship: "Resilient Lady · Miami", originalPrice: "$1,399", salePrice: "$1,099", link: "/cruises/eastern-caribbean-bimini" },
   { tag: "VIRGIN VOYAGES", title: "French Riviera, Spain & Ibiza Overnight", date: "Jun 2027", nights: "7 nights", ship: "Resilient Lady · Barcelona", originalPrice: "$1,801", salePrice: "$1,253", link: "/cruises/french-riviera-ibiza" },
-  { tag: "VIRGIN VOYAGES", title: "Greek Isles & The Adriatic", date: "May 2027", nights: "11 nights", ship: "Scarlet Lady · Athens", originalPrice: "$2,325", salePrice: "$1,639", link: "/contact" },
+  { tag: "VIRGIN VOYAGES", title: "Miami to Morocco & Spain Transatlantic", date: "Apr 2027", nights: "14 nights", ship: "Scarlet Lady · Miami", originalPrice: "$1,818", salePrice: "$1,246", link: "/cruises/miami-morocco-transatlantic" },
   { tag: "VIRGIN VOYAGES", title: "Alaska & Beyond — Inside Passage", date: "Aug 2027", nights: "7 nights", ship: "Brilliant Lady · Seattle", originalPrice: "$1,899", salePrice: "$1,499", link: "/contact" },
 ]
 
