@@ -23,6 +23,8 @@ import RoyalHome from './pages/cruiselines/royal/royalhome/page'
 import CarnivalHome from './pages/cruiselines/carnival/carnivalhome/page'
 import SandalsHome from './pages/resorts/sandals/sandalshome/page'
 import BeachesHome from './pages/resorts/beaches/beacheshome/page'
+import BlogIndex from './pages/blog/index/page'
+import WhatIsIncludedOnACruise from './pages/blog/posts/what-is-included-on-a-cruise/page'
 
 function Layout() {
   return (
@@ -51,6 +53,9 @@ function Layout() {
         <Route path="/cruises/carnival" element={<CarnivalHome />} />
         <Route path="/resorts/sandals" element={<SandalsHome />} />
         <Route path="/resorts/beaches" element={<BeachesHome />} />
+        {/* Blog */}
+        <Route path="/blog" element={<BlogIndex />} />
+        <Route path="/blog/what-is-included-on-a-cruise" element={<WhatIsIncludedOnACruise />} />
       </Routes>
       <Footer />
     </div>
