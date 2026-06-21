@@ -26,7 +26,7 @@ export default function WhatIsIncludedOnACruise() {
         {/* Hero Image */}
         <div style={{ borderRadius: '16px', overflow: 'hidden', marginBottom: '40px' }}>
           <img
-            src="/blog/cruise-deck-overview.webp"
+            src="/blog/cruise-deck-overview.png"
             alt="Wide view of a cruise ship deck with pool and ocean in the background"
             style={{ width: '100%', height: '380px', objectFit: 'cover', display: 'block' }}
           />
