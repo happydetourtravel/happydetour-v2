@@ -15,7 +15,7 @@ import EasternCaribbeanBimini from './pages/cruises/eastern-caribbean-bimini/pag
 import FrenchRivieraIbiza from './pages/cruises/french-riviera-ibiza/page'
 import MiamiMoroccoTransatlantic from './pages/cruises/miami-morocco-transatlantic/page'
 import AlaskaHubbardGlacier from './pages/cruises/alaska-hubbard-glacier/page'
-import VirginVoyagesHome from './pages/cruiselines/virginvoyages/virginhome/page'
+import VirginVoyagesHome from './pages/cruiselines/virgin/virginhome/page'
 import NCLHome from './pages/cruiselines/ncl/nclhome/page'
 import MSCHome from './pages/cruiselines/msc/mschome/page'
 import RoyalHome from './pages/cruiselines/royal/royalhome/page'
