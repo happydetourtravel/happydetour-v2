@@ -9,11 +9,11 @@ const featuredDeals = [
 ]
 
 const cruiseLines = [
-  { name: "Virgin Voyages", tagline: "Adults only. All included.", desc: "No kids, no nickel and diming. Every restaurant included, gratuities covered. Eric is First Mate certified.", live: true, link: "/cruises/virgin-voyages" },
-  { name: "Norwegian (NCL)", tagline: "Freedom to do what you want.", desc: "NCL invented Freestyle Cruising. No set dining times, great group pricing.", live: true, link: "/cruises/norwegian" },
-  { name: "MSC Cruises", tagline: "European elegance at a real price.", desc: "One of the most underrated lines out there. Beautiful ships and a Mediterranean style that feels different.", live: true, link: "/cruises/msc" },
-  { name: "Royal Caribbean", tagline: "Big ships. Big fun.", desc: "Rock climbing walls, surf simulators, Broadway shows. If someone wants everything, this is where you go.", live: true, link: "/cruises/royal-caribbean" },
-  { name: "Carnival Cruise Line", tagline: "Fun for everyone.", desc: "The most popular cruise line in the world for a reason. Great value, nonstop entertainment, and a party atmosphere that is hard to beat.", live: true, link: "/cruises/carnival" },
+  { name: "Virgin Voyages", tagline: "Adults only. All included.", desc: "No kids, no nickel and diming. Every restaurant included, gratuities covered. Eric is First Mate certified.", live: true, link: "/cruises/virgin-voyages", cta: "View Virgin Voyages Cruises" },
+  { name: "Norwegian (NCL)", tagline: "Freedom to do what you want.", desc: "NCL invented Freestyle Cruising. No set dining times, great group pricing.", live: true, link: "/cruises/norwegian", cta: "Explore NCL Sailings" },
+  { name: "MSC Cruises", tagline: "European elegance at a real price.", desc: "One of the most underrated lines out there. Beautiful ships and a Mediterranean style that feels different.", live: true, link: "/cruises/msc", cta: "Explore MSC Cruises" },
+  { name: "Royal Caribbean", tagline: "Big ships. Big fun.", desc: "Rock climbing walls, surf simulators, Broadway shows. If someone wants everything, this is where you go.", live: true, link: "/cruises/royal-caribbean", cta: "See Royal Caribbean Ships" },
+  { name: "Carnival Cruise Line", tagline: "Fun for everyone.", desc: "The most popular cruise line in the world for a reason. Great value, nonstop entertainment, and a party atmosphere that is hard to beat.", live: true, link: "/cruises/carnival", cta: "View Carnival Sailings" },
 ]
 
 const testimonials = [
@@ -31,7 +31,6 @@ export default function Home() {
     }, 4000)
     return () => clearInterval(timer)
   }, [])
-
 
   return (
     <main>
@@ -110,7 +109,7 @@ export default function Home() {
                   <h3 style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>{line.name}</h3>
                   <p style={{ color: '#007298', fontSize: '14px', fontWeight: '600', margin: 0 }}>{line.tagline}</p>
                   <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>{line.desc}</p>
-                  {line.live && <a href={line.link} aria-label={`Learn more about ${line.name}`} style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>Learn More</a>}
+                  {line.live && <a href={line.link} style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>{line.cta}</a>}
                 </div>
               </div>
             ))}
@@ -130,13 +129,13 @@ export default function Home() {
               <h3 style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>Sandals Resorts</h3>
               <p style={{ color: '#007298', fontSize: '14px', fontWeight: '600', margin: 0 }}>Luxury. Couples only. Truly all-inclusive.</p>
               <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>The gold standard for couples getaways. Unlimited premium drinks, gourmet dining, water sports, and accommodations that actually live up to the photos.</p>
-              <a href="/resorts/sandals" aria-label="Learn more about Sandals Resorts" style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>Learn More</a>
+              <a href="/resorts/sandals" style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>Explore Sandals Resorts</a>
             </div>
             <div style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #F3F4F6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <h3 style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>Beaches Resorts</h3>
               <p style={{ color: '#007298', fontSize: '14px', fontWeight: '600', margin: 0 }}>Family all-inclusive done right.</p>
               <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>Everything Sandals does for couples, Beaches does for families. Kids clubs, water parks, unlimited food and drinks, and a resort where everyone actually has a great time.</p>
-              <a href="/resorts/beaches" aria-label="Learn more about Beaches Resorts" style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>Learn More</a>
+              <a href="/resorts/beaches" style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>View Beaches Resort Packages</a>
             </div>
           </div>
         </div>
