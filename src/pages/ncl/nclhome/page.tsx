@@ -65,14 +65,18 @@ export default function NCLPage() {
           }}
         />
         <div className="relative max-w-3xl mx-auto">
-          <p className="text-sm uppercase tracking-widest mb-3" style={{ color: NCL_GOLD }}>NCL University Master's Degree Certified</p>
           <h1 className="text-5xl font-bold mb-4 leading-tight">Norwegian Cruise Line</h1>
           <p className="text-xl mb-6 leading-relaxed" style={{ color: "#CBD5E1" }}>
             Freestyle Cruising means no formal dress codes, no set dining times, and no one telling you how to spend your day at sea. NCL invented this approach and they still do it better than anyone.
           </p>
-          <p className="text-base" style={{ color: "#94A3B8" }}>
+          <p className="text-base mb-8" style={{ color: "#94A3B8" }}>
             Everything you need to know about sailing NCL, put together by Eric, your HDT travel advisor with an NCL University Master's Degree.
           </p>
+          <img
+            src="/ncl-masters.jpg"
+            alt="NCL University Master's Degree"
+            style={{ height: '160px', width: 'auto', margin: '0 auto' }}
+          />
         </div>
       </div>
 
@@ -147,68 +151,45 @@ export default function NCLPage() {
         {activeTab === "ships" && (
           <section>
             <h2 className="text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>The NCL Fleet</h2>
-            <p className="text-gray-500 mb-8">NCL has one of the largest and most varied fleets at sea. From mid-size ships perfect for first timers to massive vessels packed with entertainment, there is a ship for every style of traveler.</p>
+            <p className="text-gray-500 mb-8">NCL has one of the largest and most varied fleets at sea. 22 ships covering everything from intimate mid-size sailings to massive mega ships packed with entertainment. Here is the full fleet so you know exactly what is out there.</p>
+
+            <div className="p-4 rounded-xl mb-6 text-sm" style={{ background: "#EEF4FF", borderLeft: `4px solid ${NCL_NAVY}` }}>
+              <strong>Eric's Note:</strong> I have personally sailed on the Norwegian Breakaway out of New York and the Norwegian Star. If you want to know what either of those ships actually feels like day to day, I can give you a real answer rather than a brochure one. Reach out and ask me anything.
+            </div>
+
+            <h3 className="text-lg font-bold mb-3 mt-6" style={{ color: NCL_NAVY }}>New Ships</h3>
 
             {[
               {
-                name: "Norwegian Breakaway",
-                class: "Breakaway Class",
-                capacity: "Approx. 3,963 guests",
-                notes: "Eric has sailed on the Breakaway out of New York City. She sails to Canada and the Caribbean and is a fantastic option for East Coasters who want to drive to the port. The Breakaway has The Waterfront, a quarter-mile outdoor promenade along the side of the ship, and a solid lineup of specialty restaurants and entertainment.",
-                highlights: ["The Waterfront outdoor promenade", "Howl at the Moon dueling pianos", "Rock of Ages Broadway show", "The Haven luxury ship-within-a-ship", "Plenty of specialty dining options", "Easy access from NYC"]
+                name: "Norwegian Aura",
+                built: "2027",
+                capacity: "3,840",
+                notes: "The newest and largest ship in the NCL fleet, launching in 2027. Norwegian Aura features Ocean Heights, a triple-deck amusement complex with waterslides, rock climbing, and cabanas. She also has Infinity Beach with infinity pools and luxury daybeds, plus the world-famous Mandara Spa with an adults-only Thermal Suite. The most innovative ship NCL has ever built.",
+                highlights: ["Ocean Heights triple-deck amusement complex", "Infinity Beach with infinity pools", "Mandara Spa and Thermal Suite", "The Haven luxury enclave", "Brand new for 2027"]
               },
               {
-                name: "Norwegian Getaway",
-                class: "Breakaway Class",
-                capacity: "Approx. 3,963 guests",
-                notes: "Sister ship to the Breakaway with a similar layout and experience. The Getaway sails from Miami and features a Miami-inspired design throughout. Great option for Florida-based travelers or anyone flying into Miami.",
-                highlights: ["Miami-inspired design theme", "The Waterfront outdoor promenade", "Million Dollar Quartet Broadway show", "Strong specialty dining lineup", "Miami homeport"]
+                name: "Norwegian Luna",
+                built: "2026",
+                capacity: "3,565",
+                notes: "Sister ship to Norwegian Aqua, launching in 2026. Luna brings the same modern design and updated amenities as Aqua with NCL's full Freestyle Cruising experience on a newer, well-appointed vessel.",
+                highlights: ["Launching 2026", "Sister ship to Norwegian Aqua", "Modern design throughout", "Full Freestyle Cruising experience"]
               },
               {
-                name: "Norwegian Bliss",
-                class: "Breakaway Plus Class",
-                capacity: "Approx. 4,004 guests",
-                notes: "One of NCL's most popular ships and for good reason. The Bliss has a go-kart track on the top deck, laser tag, and one of the best entertainment lineups in the fleet. She sails Alaska itineraries in summer which makes her a top pick for glacier viewing.",
-                highlights: ["Top deck go-kart track", "Laser tag arena", "Jersey Boys Broadway show", "Ocean Tunnel waterslide", "Perfect for Alaska sailings", "The Haven ship-within-a-ship"]
-              },
-              {
-                name: "Norwegian Joy",
-                class: "Breakaway Plus Class",
-                capacity: "Approx. 3,804 guests",
-                notes: "Originally built for the Chinese market and refurbished for North America. The Joy sails Alaska and the Caribbean and has some unique features including a two-level go-kart track and the Mandara Spa.",
-                highlights: ["Two-level go-kart track", "Laser tag", "Q Texas Smokehouse restaurant", "Galaxy Pavilion virtual reality", "Alaska and Caribbean itineraries"]
-              },
-              {
-                name: "Norwegian Encore",
-                class: "Breakaway Plus Class",
-                capacity: "Approx. 3,998 guests",
-                notes: "The largest of the Breakaway Plus class ships. The Encore has a massive go-kart track, Kinky Boots Broadway show, and some of the best entertainment facilities in the fleet. She sails the Caribbean and is a great choice for families and groups.",
-                highlights: ["Largest go-kart track in the class", "Kinky Boots Broadway show", "Q Texas Smokehouse", "Tobacco Road speakeasy bar", "Strong entertainment lineup"]
-              },
-              {
-                name: "Norwegian Prima",
-                class: "Prima Class",
-                capacity: "Approx. 3,099 guests",
-                notes: "The newest class of ship from NCL with a focus on more space per guest. The Prima has the fastest waterslide at sea, a redesigned pool area, and a more premium feel overall. Fewer guests on a similarly sized ship means less crowding and a more relaxed experience.",
-                highlights: ["The Drop free-fall waterslide", "Redesigned spacious pool deck", "Indulge Food Hall", "Prima Speedway race track", "More space per guest than older ships", "Premium finishes throughout"]
-              },
-              {
-                name: "Norwegian Star",
-                class: "Star Class",
-                capacity: "Approx. 2,348 guests",
-                notes: "Eric has sailed on the Star, which went to NCL's private island Great Stirrup Cay. She is a mid-size ship that feels more intimate than the mega ships. A great choice for someone who wants a solid cruise experience without the overwhelming scale of the larger vessels.",
-                highlights: ["Mid-size and easy to navigate", "Visits Great Stirrup Cay private island", "Classic NCL freestyle experience", "More relaxed pace than mega ships", "Good option for first time cruisers"]
+                name: "Norwegian Aqua",
+                built: "2025",
+                capacity: "3,565",
+                notes: "One of NCL's newest ships, launched in 2025. Norwegian Aqua brings a fresh modern design and updated features to the fleet. A great option for travelers who want a newer ship experience without waiting for Aura.",
+                highlights: ["Launched 2025", "Modern updated design", "Full specialty dining lineup", "Strong entertainment options"]
               },
             ].map((ship) => (
-              <div key={ship.name} className="mb-4">
-                <Accordion title={`${ship.name} — ${ship.class}`}>
+              <div key={ship.name} className="mb-3">
+                <Accordion title={`${ship.name} — Built ${ship.built} · Capacity ${ship.capacity}`}>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <p className="mb-3">{ship.notes}</p>
-                      <p className="text-sm text-gray-500">Capacity: {ship.capacity}</p>
                     </div>
                     <div>
-                      <p className="font-semibold mb-2" style={{ color: NCL_NAVY }}>Ship Highlights</p>
+                      <p className="font-semibold mb-2" style={{ color: NCL_NAVY }}>Highlights</p>
                       <ul className="list-disc pl-5 space-y-1 text-sm">
                         {ship.highlights.map((h) => <li key={h}>{h}</li>)}
                       </ul>
@@ -218,8 +199,274 @@ export default function NCLPage() {
               </div>
             ))}
 
-            <div className="mt-6 p-5 rounded-xl text-white text-sm" style={{ background: NCL_NAVY }}>
-              <strong>Note from Eric:</strong> I have personally sailed on the Norwegian Breakaway out of New York and the Norwegian Star. If you have questions about what the experience actually feels like on either of those ships, I can give you a real answer, not a brochure one.
+            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: NCL_NAVY }}>Prima Class</h3>
+
+            {[
+              {
+                name: "Norwegian Prima",
+                built: "2022",
+                capacity: "3,195",
+                notes: "The first of NCL's newest class of ships with a focus on more space per guest. The Prima has the fastest waterslide at sea, a redesigned pool area, and a more premium feel throughout. Fewer guests on a large ship means less crowding and a more relaxed pace.",
+                highlights: ["The Drop free-fall waterslide", "Indulge Food Hall", "Prima Speedway race track", "More space per guest", "Premium finishes throughout", "The Haven enclave"]
+              },
+              {
+                name: "Norwegian Viva",
+                built: "2023",
+                capacity: "3,195",
+                notes: "Sister ship to Norwegian Prima with the same elevated design philosophy. Norwegian Viva continues the Prima class experience with slightly updated features and a similarly spacious feel. A great pick for travelers who want a newer ship without the mega-ship crowd.",
+                highlights: ["Same spacious layout as Prima", "Indulge Food Hall", "Speedway race track", "Premium design throughout", "The Haven enclave"]
+              },
+            ].map((ship) => (
+              <div key={ship.name} className="mb-3">
+                <Accordion title={`${ship.name} — Built ${ship.built} · Capacity ${ship.capacity}`}>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div><p className="mb-3">{ship.notes}</p></div>
+                    <div>
+                      <p className="font-semibold mb-2" style={{ color: NCL_NAVY }}>Highlights</p>
+                      <ul className="list-disc pl-5 space-y-1 text-sm">
+                        {ship.highlights.map((h) => <li key={h}>{h}</li>)}
+                      </ul>
+                    </div>
+                  </div>
+                </Accordion>
+              </div>
+            ))}
+
+            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: NCL_NAVY }}>Breakaway Plus Class</h3>
+
+            {[
+              {
+                name: "Norwegian Escape",
+                built: "2015 (Refurbished 2022)",
+                capacity: "4,218",
+                notes: "One of the largest ships in the fleet. Norwegian Escape sails from Miami and Port Canaveral and is one of the most popular ships NCL has. She has The Waterfront outdoor promenade, great specialty dining, and strong entertainment.",
+                highlights: ["The Waterfront outdoor promenade", "For the Record entertainment show", "Strong dining lineup", "The Haven enclave", "Miami and Florida homeports"]
+              },
+              {
+                name: "Norwegian Bliss",
+                built: "2018 (Refurbished 2025)",
+                capacity: "4,010",
+                notes: "One of NCL's most popular ships. The Bliss has a top-deck go-kart track, laser tag, and one of the best entertainment lineups in the fleet. She sails Alaska itineraries in summer which makes her a top pick for glacier and wildlife viewing.",
+                highlights: ["Top deck go-kart track", "Laser tag arena", "Jersey Boys Broadway show", "Ocean Tunnel waterslide", "Alaska itineraries in summer", "The Haven enclave"]
+              },
+              {
+                name: "Norwegian Encore",
+                built: "2019 (Refurbished 2024)",
+                capacity: "3,958",
+                notes: "The Encore carries the largest go-kart track in the Breakaway Plus class and features Kinky Boots as its Broadway show. A great choice for travelers who want big ship energy with a strong entertainment focus.",
+                highlights: ["Largest go-kart track in class", "Kinky Boots Broadway show", "Q Texas Smokehouse", "Tobacco Road speakeasy bar", "The Haven enclave"]
+              },
+              {
+                name: "Norwegian Joy",
+                built: "2017 (Refurbished 2024)",
+                capacity: "3,776",
+                notes: "Originally built for the Chinese market and refurbished for North America. The Joy sails Alaska and Caribbean itineraries and has a two-level go-kart track and Galaxy Pavilion virtual reality experience.",
+                highlights: ["Two-level go-kart track", "Galaxy Pavilion VR", "Q Texas Smokehouse", "The Haven enclave", "Alaska and Caribbean itineraries"]
+              },
+            ].map((ship) => (
+              <div key={ship.name} className="mb-3">
+                <Accordion title={`${ship.name} — ${ship.built} · Capacity ${ship.capacity}`}>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div><p className="mb-3">{ship.notes}</p></div>
+                    <div>
+                      <p className="font-semibold mb-2" style={{ color: NCL_NAVY }}>Highlights</p>
+                      <ul className="list-disc pl-5 space-y-1 text-sm">
+                        {ship.highlights.map((h) => <li key={h}>{h}</li>)}
+                      </ul>
+                    </div>
+                  </div>
+                </Accordion>
+              </div>
+            ))}
+
+            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: NCL_NAVY }}>Breakaway Class</h3>
+
+            {[
+              {
+                name: "Norwegian Breakaway",
+                built: "2013 (Refurbished 2025)",
+                capacity: "3,903",
+                notes: "Eric has sailed on the Breakaway out of New York City on trips to Canada and the Caribbean. She is a fantastic option for East Coasters who want to drive to the port. The Breakaway has The Waterfront, a quarter-mile outdoor promenade along the side of the ship, strong specialty dining, and great entertainment.",
+                highlights: ["The Waterfront outdoor promenade", "Howl at the Moon dueling pianos", "Rock of Ages Broadway show", "The Haven enclave", "New York City homeport", "Canada and Caribbean itineraries"]
+              },
+              {
+                name: "Norwegian Getaway",
+                built: "2014 (Refurbished 2024)",
+                capacity: "3,903",
+                notes: "Sister ship to the Breakaway with a similar layout and the same strong experience. The Getaway sails from Miami and features a Miami-inspired design throughout. Great choice for Florida-based travelers or anyone flying into Miami.",
+                highlights: ["The Waterfront outdoor promenade", "Miami-inspired design", "Million Dollar Quartet show", "Strong specialty dining", "Miami homeport"]
+              },
+            ].map((ship) => (
+              <div key={ship.name} className="mb-3">
+                <Accordion title={`${ship.name} — ${ship.built} · Capacity ${ship.capacity}`}>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div><p className="mb-3">{ship.notes}</p></div>
+                    <div>
+                      <p className="font-semibold mb-2" style={{ color: NCL_NAVY }}>Highlights</p>
+                      <ul className="list-disc pl-5 space-y-1 text-sm">
+                        {ship.highlights.map((h) => <li key={h}>{h}</li>)}
+                      </ul>
+                    </div>
+                  </div>
+                </Accordion>
+              </div>
+            ))}
+
+            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: NCL_NAVY }}>Epic Class</h3>
+
+            {[
+              {
+                name: "Norwegian Epic",
+                built: "2010 (Refurbished 2025)",
+                capacity: "4,070",
+                notes: "Norwegian Epic is one of the most unique ships in the fleet with a curved hull design and some distinctive cabin layouts. She carries a big entertainment lineup including Blue Man Group and has strong specialty dining. A well-traveled ship that still holds up.",
+                highlights: ["Blue Man Group performance", "Unique curved hull design", "The Haven enclave", "Strong specialty dining", "Large capacity"]
+              },
+            ].map((ship) => (
+              <div key={ship.name} className="mb-3">
+                <Accordion title={`${ship.name} — ${ship.built} · Capacity ${ship.capacity}`}>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div><p className="mb-3">{ship.notes}</p></div>
+                    <div>
+                      <p className="font-semibold mb-2" style={{ color: NCL_NAVY }}>Highlights</p>
+                      <ul className="list-disc pl-5 space-y-1 text-sm">
+                        {ship.highlights.map((h) => <li key={h}>{h}</li>)}
+                      </ul>
+                    </div>
+                  </div>
+                </Accordion>
+              </div>
+            ))}
+
+            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: NCL_NAVY }}>Jewel Class</h3>
+
+            {[
+              {
+                name: "Norwegian Jewel",
+                built: "2005 (Refurbished 2025)",
+                capacity: "2,368",
+                notes: "A mid-size ship with a great itinerary variety including Europe, the Pacific, and repositioning sailings. Norwegian Jewel has a warm, classic feel and is a good option for travelers who prefer a smaller ship experience.",
+                highlights: ["Mid-size and easy to navigate", "Varied international itineraries", "Classic Freestyle Cruising experience", "Cagney's Steakhouse onboard"]
+              },
+              {
+                name: "Norwegian Jade",
+                built: "2006 (Refurbished 2022)",
+                capacity: "2,352",
+                notes: "Norwegian Jade sails mostly European and Mediterranean itineraries and is a good pick for travelers who want a mid-size ship with a classic NCL feel in a beautiful part of the world.",
+                highlights: ["Mediterranean and European itineraries", "Mid-size intimate feel", "Classic NCL dining and entertainment", "Specialty dining options"]
+              },
+              {
+                name: "Norwegian Pearl",
+                built: "2006 (Refurbished 2021)",
+                capacity: "2,344",
+                notes: "Sister ship to Norwegian Gem. The Pearl sails Alaska and other scenic itineraries and is a solid choice for travelers who want a reliable mid-size NCL experience on a well-maintained vessel.",
+                highlights: ["Alaska itineraries", "Mid-size and comfortable", "Classic Freestyle experience", "Specialty dining onboard"]
+              },
+              {
+                name: "Norwegian Gem",
+                built: "2007 (Refurbished 2022)",
+                capacity: "2,344",
+                notes: "Norwegian Gem sails from New York City making her another great option for East Coast travelers. She has a classic mid-size feel with solid specialty dining and the full Freestyle Cruising experience.",
+                highlights: ["New York City homeport", "Mid-size comfortable feel", "Good specialty dining lineup", "Classic NCL experience"]
+              },
+            ].map((ship) => (
+              <div key={ship.name} className="mb-3">
+                <Accordion title={`${ship.name} — ${ship.built} · Capacity ${ship.capacity}`}>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div><p className="mb-3">{ship.notes}</p></div>
+                    <div>
+                      <p className="font-semibold mb-2" style={{ color: NCL_NAVY }}>Highlights</p>
+                      <ul className="list-disc pl-5 space-y-1 text-sm">
+                        {ship.highlights.map((h) => <li key={h}>{h}</li>)}
+                      </ul>
+                    </div>
+                  </div>
+                </Accordion>
+              </div>
+            ))}
+
+            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: NCL_NAVY }}>Dawn Class</h3>
+
+            {[
+              {
+                name: "Norwegian Star",
+                built: "2001 (Refurbished 2021)",
+                capacity: "2,298",
+                notes: "Eric has sailed on the Norwegian Star on a trip that included Great Stirrup Cay, NCL's private island. She is a mid-size ship that feels more intimate than the mega ships and is a great choice for someone who wants a solid cruise experience without the scale of the larger vessels. A good first cruise ship.",
+                highlights: ["Eric has personally sailed on the Star", "Visits Great Stirrup Cay", "Intimate mid-size experience", "Classic Freestyle Cruising", "Good for first-time cruisers"]
+              },
+              {
+                name: "Norwegian Dawn",
+                built: "2002 (Refurbished 2024)",
+                capacity: "2,290",
+                notes: "Norwegian Dawn sails a variety of itineraries including the Caribbean and New England. She has the classic NCL mid-size feel and is a reliable option for travelers who appreciate a more manageable ship size.",
+                highlights: ["Caribbean and New England itineraries", "Mid-size comfortable feel", "Classic NCL experience", "Cagney's Steakhouse onboard"]
+              },
+            ].map((ship) => (
+              <div key={ship.name} className="mb-3">
+                <Accordion title={`${ship.name} — ${ship.built} · Capacity ${ship.capacity}`}>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div><p className="mb-3">{ship.notes}</p></div>
+                    <div>
+                      <p className="font-semibold mb-2" style={{ color: NCL_NAVY }}>Highlights</p>
+                      <ul className="list-disc pl-5 space-y-1 text-sm">
+                        {ship.highlights.map((h) => <li key={h}>{h}</li>)}
+                      </ul>
+                    </div>
+                  </div>
+                </Accordion>
+              </div>
+            ))}
+
+            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: NCL_NAVY }}>Sun Class and Older Ships</h3>
+
+            {[
+              {
+                name: "Norwegian Sun",
+                built: "2001 (Refurbished 2024)",
+                capacity: "1,878",
+                notes: "A smaller, older ship that sails niche itineraries including Cuba and Panama Canal. Norwegian Sun has a classic intimate feel that appeals to travelers who want something quieter and more personal than the mega ships.",
+                highlights: ["Smaller intimate experience", "Cuba and Panama Canal itineraries", "Classic NCL Freestyle feel", "Good for experienced cruisers"]
+              },
+              {
+                name: "Norwegian Sky",
+                built: "1999 (Refurbished 2024)",
+                capacity: "1,944",
+                notes: "Norwegian Sky sails short Bahamas itineraries from Miami including visits to Great Stirrup Cay. She is a great entry point for first-time cruisers who want a shorter sailing to test the waters before committing to a longer trip.",
+                highlights: ["Short Bahamas itineraries", "Visits Great Stirrup Cay", "Great for first-time cruisers", "Miami homeport", "Manageable smaller ship size"]
+              },
+              {
+                name: "Norwegian Spirit",
+                built: "1998 (Refurbished 2022)",
+                capacity: "1,972",
+                notes: "Norwegian Spirit sails longer international itineraries and is one of the smaller ships in the fleet. She has a classic feel and is popular with experienced cruisers who enjoy the more intimate atmosphere of a smaller vessel.",
+                highlights: ["International and longer itineraries", "Classic intimate atmosphere", "Smaller and easy to navigate", "Full Freestyle Cruising experience"]
+              },
+              {
+                name: "Pride of America",
+                built: "2005 (Refurbished 2025)",
+                capacity: "2,180",
+                notes: "Pride of America is completely unique in the NCL fleet. She is the only large cruise ship sailing under the American flag and she sails Hawaii year-round from Honolulu. If Hawaii is on your bucket list, this is the ship. No flying between islands, you sail between them.",
+                highlights: ["Hawaii year-round itineraries", "Only large US-flagged cruise ship", "Sail between Hawaiian islands", "Honolulu homeport", "Unique American crew and experience"]
+              },
+            ].map((ship) => (
+              <div key={ship.name} className="mb-3">
+                <Accordion title={`${ship.name} — ${ship.built} · Capacity ${ship.capacity}`}>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div><p className="mb-3">{ship.notes}</p></div>
+                    <div>
+                      <p className="font-semibold mb-2" style={{ color: NCL_NAVY }}>Highlights</p>
+                      <ul className="list-disc pl-5 space-y-1 text-sm">
+                        {ship.highlights.map((h) => <li key={h}>{h}</li>)}
+                      </ul>
+                    </div>
+                  </div>
+                </Accordion>
+              </div>
+            ))}
+
+            <div className="mt-8 p-5 rounded-xl text-white text-sm" style={{ background: NCL_NAVY }}>
+              <strong>Not sure which ship is right for you?</strong> That is exactly what I am here for. There are 22 ships in this fleet and they are all different. Tell me where you want to go, how long you want to sail, and what matters most to you and I will point you in the right direction. Fill out my form and let's figure it out together.
             </div>
           </section>
         )}
@@ -273,41 +520,79 @@ export default function NCLPage() {
         {activeTab === "solo" && (
           <section>
             <h2 className="text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>Solo Travel on NCL</h2>
-            <p className="text-gray-500 mb-8">Solo cruisers are not an afterthought on Norwegian. NCL was one of the first cruise lines to take solo travelers seriously and build the ship around them. If you are traveling alone, this is one of the best lines you can choose.</p>
+            <p className="text-gray-500 mb-4">Solo cruisers are not an afterthought on Norwegian. NCL was one of the first cruise lines to take solo travelers seriously and actually build the ship around them. If you are traveling alone, this is one of the best lines you can choose and here is exactly why.</p>
 
-            <Accordion title="Studio Cabins — Built for One">
-              <p className="mb-3">NCL pioneered the Studio cabin concept and it changed solo cruising forever. Studio cabins are designed specifically for a single occupant with no single supplement. That means you pay the same rate per person as someone sharing a cabin. No penalty for traveling alone.</p>
-              <p className="mb-3">The cabins themselves are smartly designed. They are compact but efficient, with everything you need and nothing wasted. Think of it like a really well-designed hotel room for one. You have a comfortable bed, a good shower, storage space, and a flat screen TV.</p>
-              <p>And then there is the coffee machine. The in-cabin coffee machine in the Studio cabins is genuinely one of the highlights of staying in one. It makes a proper cup, not the kind of sad drip coffee you get in a standard cabin on most ships. For a solo traveler who wants a good morning cup without hunting down a coffee bar before they are fully awake, it is a small thing that makes a real difference.</p>
+            <div className="p-5 rounded-xl mb-8 text-white text-sm" style={{ background: `linear-gradient(135deg, ${NCL_DARK}, ${NCL_NAVY})` }}>
+              <p className="font-bold text-base mb-2" style={{ color: NCL_GOLD }}>The biggest thing to know upfront</p>
+              <p>Most cruise lines charge solo travelers what is called a single supplement. It is essentially a penalty for not sharing a cabin, and it can add 50 to 100 percent to the cost of your trip. NCL offers cabin categories specifically priced for one person with no single supplement attached. You are not paying for a second person who is not there.</p>
+            </div>
+
+            <h3 className="text-xl font-bold mb-4 mt-8" style={{ color: NCL_DARK }}>Your Cabin Options as a Solo Traveler</h3>
+
+            <Accordion title="Solo Studio — The Original Solo Cabin">
+              <p className="mb-3">NCL invented the Studio cabin and it changed solo cruising forever. Studio cabins are designed from the ground up for a single occupant. The layout is smart and efficient, meaning nothing is wasted. You have everything you need in a space that actually makes sense for one person.</p>
+              <p className="mb-3">The cabins have a comfortable bed, a well-designed bathroom, good storage, and a flat screen TV. They are compact but they do not feel cramped because they were built with one person in mind rather than two people and a bunch of unused space.</p>
+              <p className="mb-3">And then there is the coffee machine. I have to mention it because it is genuinely one of the little highlights of staying in a Studio. It makes a proper cup of coffee. Not sad drip coffee from a paper filter. A real cup. For someone who wants a good morning coffee without hunting down a coffee bar before they are fully awake, it is one of those small things that just makes the whole experience better.</p>
+              <p className="font-semibold" style={{ color: NCL_NAVY }}>Studio availability and the Studio Lounge vary by ship. Ask me which ships have them when we talk through your options.</p>
             </Accordion>
 
-            <Accordion title="The Studio Lounge">
-              <p className="mb-3">Studio cabin guests have exclusive access to the Studio Lounge, a private social space just for solo travelers. This is one of the smartest things NCL has ever done. It gives solo cruisers a place to meet other people traveling alone in a comfortable, low-pressure environment.</p>
-              <p className="mb-3">The lounge has a bar, comfortable seating, and a built-in community. NCL staff host social events and mixer gatherings in the Studio Lounge so meeting other solo sailors happens naturally rather than awkwardly. By night two most people have already found a group to explore ports with or grab dinner with.</p>
-              <p>If you are nervous about dining alone or not knowing anyone onboard, the Studio Lounge takes care of that. It is one of the best perks on any cruise ship for solo travelers.</p>
+            <Accordion title="Solo Inside Stateroom — More Room, Still No Single Supplement">
+              <p className="mb-3">If you want a little more space than the Studio but still do not want to pay a single supplement, NCL's Solo Inside Staterooms are a great option. These are available fleetwide and give you a full standard inside cabin sized and priced for one person.</p>
+              <p className="mb-3">You are closer to all the action on the ship, right in the middle of the dining and entertainment areas. A good pick if you plan to spend most of your time out and about and just want a clean comfortable room to sleep in.</p>
+              <p>Solo Inside cabins do not have the Studio Lounge access that Studio cabin guests get, but they are a solid value for solo travelers who want more square footage without the supplement penalty.</p>
             </Accordion>
 
-            <Accordion title="No Single Supplement — What That Means">
-              <p className="mb-3">Most cruise lines charge solo travelers a single supplement, which is essentially a penalty for not having a cabin mate. It can add 50 to 100 percent to the cost of your cabin because the cruise line prices cabins assuming two people are splitting the cost.</p>
-              <p>NCL's Studio cabins eliminate that completely. The rate is priced for one person from the start. You are not paying for a phantom second passenger. This makes NCL one of the most financially practical cruise lines for solo travelers and it is a big reason why solo cruisers keep coming back to NCL.</p>
+            <Accordion title="Solo Oceanview — Wake Up to the Sea">
+              <p className="mb-3">Solo Oceanview Staterooms give you a window with an actual ocean view and still no single supplement. There is something genuinely different about waking up and being able to look out at the water from your own cabin. It makes the whole experience feel more connected to the fact that you are actually at sea.</p>
+              <p>Available fleetwide. A great middle ground between the Studio experience and a full balcony if you want natural light and a view without the premium price of a balcony cabin.</p>
             </Accordion>
 
-            <Accordion title="Dining Solo">
-              <p className="mb-3">One of the things solo travelers worry about most is dining alone. On NCL that is genuinely not a problem. The main dining rooms will seat solo guests at communal tables with other travelers if you want company, or give you your own table if you prefer privacy. You just let them know when you are seated.</p>
-              <p>The Garden Cafe buffet is also a natural social spot where conversations happen organically. And if you have connected with people from the Studio Lounge, dinner together becomes part of the experience rather than something you have to arrange awkwardly.</p>
+            <Accordion title="Solo Balcony — Your Own Private Outdoor Space">
+              <p className="mb-3">This one is the upgrade worth talking about. Solo Balcony Staterooms give a single traveler their own private balcony with open air ocean views, and they are available on any Norwegian ship fleetwide. No single supplement.</p>
+              <p className="mb-3">Having your own balcony as a solo traveler changes the whole experience. You have a private outdoor space to sit with your morning coffee, watch ports come into view, stargaze at night, or just decompress after a busy day without having to share that moment with anyone. It is genuinely one of the best things you can do for yourself on a solo cruise.</p>
+              <p>If your budget allows for it, I always recommend solo travelers at least consider the balcony option. The extra cost is worth it more often than not.</p>
+            </Accordion>
+
+            <h3 className="text-xl font-bold mb-4 mt-10" style={{ color: NCL_DARK }}>The Solo Experience Onboard</h3>
+
+            <Accordion title="The Studio Lounge — Your Built-In Community">
+              <p className="mb-3">Studio cabin guests get exclusive access to the Studio Lounge, a private social space just for solo travelers. This is one of the smartest things NCL has ever done for solo cruisers and it is the feature that people talk about most after their first solo sailing.</p>
+              <p className="mb-3">The lounge has a bar, comfortable seating, and a low-pressure atmosphere where meeting other solo travelers happens naturally. NCL staff host social events and mixer gatherings throughout the sailing so by night two most people have already found people to explore ports with or grab dinner with.</p>
+              <p>If you are nervous about being alone the whole time or not knowing anyone onboard, the Studio Lounge takes care of that. It gives you a community if you want one and complete privacy if you do not. You are in control.</p>
+            </Accordion>
+
+            <Accordion title="Dining as a Solo Traveler">
+              <p className="mb-3">Dining alone is one of the things people worry about most before a solo cruise. On NCL it genuinely is not a problem. The main dining rooms will seat solo guests at communal tables with other travelers if you want company, or give you your own table if you prefer to eat alone. Just let them know your preference when you are seated.</p>
+              <p className="mb-3">The Garden Cafe buffet is one of the most natural social environments on the ship. People talk, conversations start, and it is easy to end up at a table with people who become your dinner plans for the rest of the sailing.</p>
+              <p>And if you have already connected with people from the Studio Lounge, specialty dining together just becomes part of the experience. The social piece tends to take care of itself once you are onboard.</p>
+            </Accordion>
+
+            <Accordion title="Solo Travel and Free at Sea">
+              <p className="mb-3">Solo travelers in Studio cabins are eligible for Free at Sea perks. That means you can get the beverage package, specialty dining credits, shore excursion credits, and WiFi just like anyone else on the ship. You are not penalized for traveling alone when it comes to the promotions either.</p>
+              <p>This is one of the things that makes NCL particularly good value for solo travelers. No single supplement on the cabin plus access to the same promotions as everyone else adds up to a genuinely well-priced solo vacation.</p>
             </Accordion>
 
             <Accordion title="Shore Excursions as a Solo Traveler">
-              <p className="mb-3">Group shore excursions are one of the best ways to explore ports as a solo traveler because you are automatically surrounded by other people from the ship. NCL's excursion program books you into small and mid-size groups so you are never wandering a foreign port completely alone unless you choose to.</p>
-              <p>I always recommend booking excursions through the ship rather than independently, especially as a solo traveler. If something goes wrong or runs long, the ship waits for you. That peace of mind matters more when you are on your own.</p>
+              <p className="mb-3">Group shore excursions are one of the best ways to see ports as a solo traveler because you are automatically in a group of other people from the ship. NCL's excursion program books you into organized groups so you are never wandering a foreign port completely alone unless you choose to.</p>
+              <p>I always recommend booking excursions through the ship rather than independently, especially as a solo traveler. If your excursion runs long, the ship waits for you. On your own, the ship will not. That peace of mind matters more when you are traveling alone. I can help you pick the right excursions for your specific ports before you ever step onboard.</p>
             </Accordion>
 
-            <Accordion title="Is NCL Right for You as a Solo Traveler?">
-              <p className="mb-3">If you have been putting off a cruise because you did not want to pay a solo supplement or because you were worried about being alone the whole time, NCL removes both of those obstacles.</p>
-              <p>The Studio cabin gives you your own space at a fair price. The Studio Lounge gives you a community if you want one. Freestyle Cruising gives you the flexibility to do everything on your own timeline without feeling out of place. NCL built a ship that works for one person just as well as it works for two.</p>
+            <Accordion title="The Solo Meetup — 5pm Every Night">
+              <p className="mb-3">This is one of the best-kept secrets of solo cruising on NCL and one of the things I always tell solo travelers to put on their schedule before they even board the ship. Most NCL vessels host a solo traveler meetup every evening around 5pm, usually in or near the Studio Lounge.</p>
+              <p className="mb-3">The meetups are hosted by an NCL crew member who runs the whole thing with energy and purpose. There are games, icebreakers, and genuine conversation starters that make meeting people feel natural rather than forced. The host also takes dinner reservations for the group so by the end of the first meetup you are walking into a specialty restaurant with a table full of people you actually want to spend the evening with.</p>
+              <p className="mb-3">By night two or three you stop being strangers and start being travel friends. You have people to explore ports with, grab drinks with, save seats at shows for, and trade stories with over dinner. The social experience of a solo NCL cruise builds fast once you show up to that first meetup.</p>
+              <p>And sometimes it goes beyond the sailing. Some people who meet at these gatherings stay in touch long after the cruise ends. Solo travelers who made genuine friendships that lasted years, all because they showed up at 5pm on the first night. If you are sailing solo on NCL, do not skip it.</p>
             </Accordion>
+
+            <Accordion title="Is a Solo NCL Cruise Right for You?">
+              <p className="mb-3">If you have been putting off cruising because you did not want to pay a single supplement, or because you were worried about being alone the whole trip, NCL addresses both of those things directly.</p>
+              <p className="mb-3">Four cabin types priced for one person. A private community space in the Studio Lounge. Freestyle Cruising that lets you do everything on your own schedule. Full access to onboard promotions. And a ship full of people that tends to be very welcoming to solo travelers.</p>
+              <p>Solo travel is not a compromise. On NCL it is genuinely one of the best ways to cruise. You get to do exactly what you want, when you want, with the option of company whenever you feel like it. Reach out and I can help you figure out the right ship, the right itinerary, and the right cabin for your first or your next solo sailing.</p>
+            </Accordion>
+
           </section>
         )}
+
 
         {/* FREE AT SEA */}
         {activeTab === "freeatseaa" && (
