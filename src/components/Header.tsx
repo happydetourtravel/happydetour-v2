@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <>
@@ -16,13 +17,14 @@ export default function Header() {
       </div>
 
       {/* Header */}
-      <header className="w-full bg-white border-b border-gray-200 px-6 py-2">
+      <header className="w-full bg-white border-b border-gray-200 px-4 py-2">
         <div className="w-full flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img src="/HDT.png" alt="Happy Detour Travel" className="h-14 w-auto" />
           </Link>
 
-          <nav className="flex items-center gap-6 text-sm font-medium text-brand-dark">
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-brand-dark">
             <Link to="/" className="hover:text-brand-blue transition-colors">Home</Link>
             <Link to="/about" className="hover:text-brand-blue transition-colors">About</Link>
             <Link to="/blog" className="hover:text-brand-blue transition-colors">Blog</Link>
@@ -78,7 +80,83 @@ export default function Header() {
               )}
             </div>
           </nav>
+
+          {/* Mobile: Start Packing + Hamburger */}
+          <div className="flex md:hidden items-center gap-3">
+            <a
+              href="https://forgehq.app/f/?s=20bejr4j"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ backgroundColor: '#F59E0B', color: 'white', padding: '8px 14px', borderRadius: '8px', fontWeight: '700', fontSize: '13px', textDecoration: 'none' }}
+            >
+              Start Packing
+            </a>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+              style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px', color: '#1F2937' }}
+            >
+              {menuOpen ? (
+                <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" />
+                </svg>
+              ) : (
+                <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M4 6h16M4 12h16M4 18h16" strokeLinecap="round" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {menuOpen && (
+          <div
+            className="md:hidden"
+            style={{ borderTop: '1px solid #F3F4F6', marginTop: '8px', paddingTop: '8px', paddingBottom: '8px' }}
+          >
+            {[
+              { label: 'Home', to: '/' },
+              { label: 'About', to: '/about' },
+              { label: 'Blog', to: '/blog' },
+              { label: 'Join HDT', to: '/join' },
+              { label: 'Sign In', to: '/login' },
+            ].map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                onClick={() => setMenuOpen(false)}
+                style={{ display: 'block', padding: '12px 8px', fontSize: '15px', fontWeight: '500', color: '#1F2937', textDecoration: 'none', borderBottom: '1px solid #F9FAFB' }}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <a
+              href="https://www.facebook.com/groups/somuchtosea"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              style={{ display: 'block', padding: '12px 8px', fontSize: '15px', fontWeight: '500', color: '#1F2937', textDecoration: 'none', borderBottom: '1px solid #F9FAFB' }}
+            >
+              Community
+            </a>
+            <button
+              onClick={() => { setMenuOpen(false); setModalOpen(true) }}
+              style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 8px', fontSize: '15px', fontWeight: '500', color: '#1F2937', background: 'none', border: 'none', cursor: 'pointer', borderBottom: '1px solid #F9FAFB' }}
+            >
+              Join the List
+            </button>
+            <a
+              href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              style={{ display: 'block', padding: '12px 8px', fontSize: '15px', fontWeight: '500', color: '#007298', textDecoration: 'none' }}
+            >
+              💃 Book Virgin Voyages Directly
+            </a>
+          </div>
+        )}
       </header>
 
       {/* Mailing List Modal */}
