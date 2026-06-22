@@ -14,10 +14,10 @@ function Accordion({ title, children }: { title: string; children: React.ReactNo
     <div className="border border-red-100 rounded-xl overflow-hidden mb-3">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center px-6 py-4 text-left font-semibold text-gray-800 hover:bg-red-50 transition-colors"
+        className="w-full flex justify-between items-center px-4 md:px-6 py-4 text-left font-semibold text-gray-800 hover:bg-red-50 transition-colors gap-4"
         style={{ background: open ? CARNIVAL_ACCENT : "white" }}
       >
-        <span>{title}</span>
+        <span className="text-sm md:text-base">{title}</span>
         <span
           className="text-2xl transition-transform duration-200"
           style={{ color: CARNIVAL_RED, transform: open ? "rotate(45deg)" : "rotate(0deg)" }}
@@ -26,7 +26,7 @@ function Accordion({ title, children }: { title: string; children: React.ReactNo
         </span>
       </button>
       {open && (
-        <div className="px-6 py-5 bg-white border-t border-red-100 text-gray-700 leading-relaxed">
+        <div className="px-4 md:px-6 py-5 bg-white border-t border-red-100 text-gray-700 leading-relaxed text-sm md:text-base">
           {children}
         </div>
       )}
@@ -56,7 +56,7 @@ export default function CarnivalPage() {
 
       {/* Hero */}
       <div
-        className="relative py-24 px-6 text-center text-white overflow-hidden"
+        className="relative py-16 md:py-24 px-4 md:px-6 text-center text-white overflow-hidden"
         style={{ background: `linear-gradient(135deg, ${CARNIVAL_DARK} 0%, ${CARNIVAL_RED} 60%, #FF4444 100%)` }}
       >
         <div className="absolute inset-0 opacity-5"
@@ -66,24 +66,24 @@ export default function CarnivalPage() {
           }}
         />
         <div className="relative max-w-3xl mx-auto">
-          <h1 className="text-5xl font-bold mb-4 leading-tight">Carnival Cruise Line</h1>
-          <p className="text-xl mb-6 leading-relaxed" style={{ color: "#FFD0D0" }}>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">Carnival Cruise Line</h1>
+          <p className="text-lg md:text-xl mb-6 leading-relaxed" style={{ color: "#FFD0D0" }}>
             The Fun Ship. The most popular cruise line in the world for a reason. Great value, nonstop entertainment, and an atmosphere where strangers become friends by night two. Eric has sailed Carnival and the good time is real.
           </p>
-          <p className="text-base" style={{ color: "#FFA0A0" }}>
+          <p className="text-sm md:text-base" style={{ color: "#FFA0A0" }}>
             Everything you need to know about sailing Carnival, put together by Eric, your HDT travel advisor.
           </p>
         </div>
       </div>
 
       {/* Tab Bar */}
-      <div className="sticky top-0 z-30 shadow-md overflow-x-auto" style={{ background: CARNIVAL_DARK }}>
-        <div className="flex justify-center min-w-max mx-auto px-4 w-full">
+      <div className="sticky top-0 z-30 shadow-md overflow-x-auto scrollbar-none" style={{ background: CARNIVAL_DARK }}>
+        <div className="flex justify-start md:justify-center min-w-max mx-auto px-4 w-full">
           {TABS.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className="px-5 py-4 text-sm font-semibold whitespace-nowrap transition-all border-b-2"
+              className="px-4 md:px-5 py-4 text-xs md:text-sm font-semibold whitespace-nowrap transition-all border-b-2"
               style={{
                 color: activeTab === tab.id ? CARNIVAL_GOLD : "#94A3B8",
                 borderBottomColor: activeTab === tab.id ? CARNIVAL_GOLD : "transparent",
@@ -97,13 +97,13 @@ export default function CarnivalPage() {
       </div>
 
       {/* Tab Content */}
-      <div className="max-w-4xl mx-auto px-6 py-12">
+      <div className="max-w-4xl mx-auto px-4 md:px-6 py-8 md:py-12">
 
         {/* ABOUT CARNIVAL */}
         {activeTab === "about" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>About Carnival Cruise Line</h2>
-            <p className="text-gray-500 mb-8">Carnival is the most popular cruise line in the world and they earned that title by doing one thing better than anyone else. Making people have a good time. Eric sailed Carnival once and the experience was exactly what the brand promises. Great people, great energy, and memories that stick.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>About Carnival Cruise Line</h2>
+            <p className="text-gray-500 text-sm md:text-base mb-8">Carnival is the most popular cruise line in the world and they earned that title by doing one thing better than anyone else. Making people have a good time. Eric sailed Carnival once and the experience was exactly what the brand promises. Great people, great energy, and memories that stick.</p>
 
             <Accordion title="Who Is Carnival?">
               <p className="mb-3">Carnival Cruise Line is an American cruise company founded in 1972 and based in Miami. They started with one ship and a vision to make cruising accessible and fun for everyday people rather than just the wealthy. That philosophy never changed and it is why they became the largest cruise line in the world by passenger volume.</p>
@@ -139,8 +139,8 @@ export default function CarnivalPage() {
         {/* THE SHIPS */}
         {activeTab === "ships" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>The Carnival Fleet</h2>
-            <p className="text-gray-500 mb-8">Carnival has one of the largest fleets in the world with ships sailing from ports all over the United States. From classic mid-size ships to their massive new Excel class vessels, here is a breakdown of what is out there.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>The Carnival Fleet</h2>
+            <p className="text-gray-500 text-sm md:text-base mb-8">Carnival has one of the largest fleets in the world with ships sailing from ports all over the United States. From classic mid-size ships to their massive new Excel class vessels, here is a breakdown of what is out there.</p>
 
             <h3 className="text-lg font-bold mb-3 mt-6" style={{ color: CARNIVAL_RED }}>Excel Class — Carnival's Biggest and Newest</h3>
             {[
@@ -407,8 +407,8 @@ export default function CarnivalPage() {
         {/* DINING */}
         {activeTab === "dining" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Dining Onboard</h2>
-            <p className="text-gray-500 mb-8">Carnival's dining program has evolved significantly in recent years. The food is better than it used to be and the casual dining options are some of the best freebies in the cruise industry. Here is what to expect.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Dining Onboard</h2>
+            <p className="text-gray-500 text-sm md:text-base mb-8">Carnival's dining program has evolved significantly in recent years. The food is better than it used to be and the casual dining options are some of the best freebies in the cruise industry. Here is what to expect.</p>
 
             <Accordion title="Main Dining Room (Included)">
               <p className="mb-3">Carnival's main dining rooms offer both Your Time Dining with flexible seating times and set early and late seatings. The menus rotate nightly with a mix of classic American comfort food, international options, and Carnival signature dishes.</p>
@@ -449,8 +449,8 @@ export default function CarnivalPage() {
         {/* WHAT MAKES CARNIVAL FUN */}
         {activeTab === "fun" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>What Makes Carnival Fun</h2>
-            <p className="text-gray-500 mb-8">Carnival has been the Fun Ship for over 50 years and they have kept adding to the experience with every new ship class. Here are the features that define the Carnival experience.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>What Makes Carnival Fun</h2>
+            <p className="text-gray-500 text-sm md:text-base mb-8">Carnival has been the Fun Ship for over 50 years and they have kept adding to the experience with every new ship class. Here are the features that define the Carnival experience.</p>
 
             <Accordion title="BOLT — The First Roller Coaster at Sea">
               <p className="mb-3">BOLT is an electric roller coaster on the top deck of Excel class ships that reaches speeds up to 40 mph while you ride above the ocean. It is the first roller coaster ever installed on a cruise ship and it is genuinely thrilling.</p>
@@ -497,8 +497,8 @@ export default function CarnivalPage() {
         {/* SOLO TRAVEL */}
         {activeTab === "solo" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Solo Travel on Carnival</h2>
-            <p className="text-gray-500 mb-8">Carnival is actually one of the more naturally social cruise lines for solo travelers even though it is not marketed as a solo-focused brand. The energy onboard makes meeting people almost unavoidable if you are open to it.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Solo Travel on Carnival</h2>
+            <p className="text-gray-500 text-sm md:text-base mb-8">Carnival is actually one of the more naturally social cruise lines for solo travelers even though it is not marketed as a solo-focused brand. The energy onboard makes meeting people almost unavoidable if you are open to it.</p>
 
             <div className="p-4 rounded-xl mb-6 text-sm" style={{ background: CARNIVAL_ACCENT, borderLeft: `4px solid ${CARNIVAL_RED}` }}>
               <strong>Eric's honest take:</strong> Carnival does not have a structured solo program like NCL's hosted 5pm meetup with organized group dinners. What Carnival has is an atmosphere where people talk to strangers naturally, constantly, everywhere on the ship. Eric went with a friend but met people immediately and spent much of the trip with new friends they made onboard. For outgoing solo travelers, Carnival's social energy works in your favor.
@@ -530,8 +530,8 @@ export default function CarnivalPage() {
         {/* CELEBRATION KEY */}
         {activeTab === "island" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Celebration Key</h2>
-            <p className="text-gray-500 mb-8">Celebration Key is Carnival's brand new private island destination in the Bahamas, opened in 2024. It is the newest private island in cruising and was built from the ground up to match the Carnival Fun Ship energy on land.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Celebration Key</h2>
+            <p className="text-gray-500 text-sm md:text-base mb-8">Celebration Key is Carnival's brand new private island destination in the Bahamas, opened in 2024. It is the newest private island in cruising and was built from the ground up to match the Carnival Fun Ship energy on land.</p>
 
             <Accordion title="What Is Celebration Key?">
               <p className="mb-3">Celebration Key is a purpose-built private island destination on Grand Bahama Island in the Bahamas. Carnival invested heavily in the development and it shows. The island has multiple distinct beach areas, a massive lagoon pool, water attractions, dining venues, and a signature party atmosphere that matches the ships.</p>
@@ -569,8 +569,8 @@ export default function CarnivalPage() {
         {/* CHEERS PACKAGE */}
         {activeTab === "cheers" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>CHEERS! Beverage Package</h2>
-            <p className="text-gray-500 mb-8">CHEERS! is Carnival's all-inclusive beverage package and it is one of the most comprehensive drink programs in the cruise industry. Here is everything you need to know about how it works and whether it makes sense for your sailing.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>CHEERS! Beverage Package</h2>
+            <p className="text-gray-500 text-sm md:text-base mb-8">CHEERS! is Carnival's all-inclusive beverage package and it is one of the most comprehensive drink programs in the cruise industry. Here is everything you need to know about how it works and whether it makes sense for your sailing.</p>
 
             <Accordion title="What Is CHEERS!?">
               <p className="mb-3">CHEERS! is an unlimited beverage package that covers alcoholic and non-alcoholic drinks throughout your sailing. Once you have it activated you can order drinks at any bar, restaurant, or venue on the ship and at Carnival's private destinations without signing a check.</p>
@@ -621,8 +621,8 @@ export default function CarnivalPage() {
         {/* VIFP CLUB */}
         {activeTab === "vifp" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>VIFP Club</h2>
-            <p className="text-gray-500 mb-8">VIFP stands for Very Important Fun Person and it is Carnival's loyalty program. It rewards you for every night you sail with Carnival and the perks get genuinely valuable at the higher tiers. Here is how it works.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>VIFP Club</h2>
+            <p className="text-gray-500 text-sm md:text-base mb-8">VIFP stands for Very Important Fun Person and it is Carnival's loyalty program. It rewards you for every night you sail with Carnival and the perks get genuinely valuable at the higher tiers. Here is how it works.</p>
 
             <Accordion title="How VIFP Points Are Earned">
               <p className="mb-3">You earn one VIFP point for every night you sail on Carnival. A 7-night sailing earns 7 points. Points accumulate across all your Carnival sailings and your tier is determined by your total lifetime cruise nights.</p>
@@ -682,8 +682,8 @@ export default function CarnivalPage() {
         {/* SHORE EXCURSIONS */}
         {activeTab === "excursions" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Shore Excursions</h2>
-            <p className="text-gray-500 mb-8">Carnival offers shore excursions through their Hub app and website that you can book before your sailing. Here is what to know and a look at some popular ports on Carnival Caribbean itineraries.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Shore Excursions</h2>
+            <p className="text-gray-500 text-sm md:text-base mb-8">Carnival offers shore excursions through their Hub app and website that you can book before your sailing. Here is what to know and a look at some popular ports on Carnival Caribbean itineraries.</p>
 
             <div className="p-4 rounded-xl mb-6 text-sm" style={{ background: CARNIVAL_ACCENT, borderLeft: `4px solid ${CARNIVAL_RED}` }}>
               <p className="font-semibold mb-1">Book before you sail and book through Carnival.</p>
@@ -737,8 +737,8 @@ export default function CarnivalPage() {
         {/* TRIP INSURANCE */}
         {activeTab === "insurance" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Trip Insurance</h2>
-            <p className="text-gray-500 mb-8">I always recommend trip insurance on every cruise booking. The fun never stops on a Carnival ship but travel itself can throw curveballs that have nothing to do with the cruise line. This is the coverage that keeps a bad situation from becoming a financial disaster.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Trip Insurance</h2>
+            <p className="text-gray-500 text-sm md:text-base mb-8">I always recommend trip insurance on every cruise booking. The fun never stops on a Carnival ship but travel itself can throw curveballs that have nothing to do with the cruise line. This is the coverage that keeps a bad situation from becoming a financial disaster.</p>
 
             <div className="p-5 rounded-xl mb-6 text-white text-sm" style={{ background: CARNIVAL_RED }}>
               <strong>Buy it at booking.</strong> Trip insurance is cheaper when you add it at your initial deposit and pre-existing condition coverage only applies within 14 to 21 days of your first payment. Do not wait on this one.
@@ -776,8 +776,8 @@ export default function CarnivalPage() {
         {/* ERIC'S TIPS */}
         {activeTab === "tips" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Eric's Tips for Your Carnival Sailing</h2>
-            <p className="text-gray-500 mb-8">Eric sailed Carnival once and has helped clients plan Carnival cruises. Here is what actually matters before you board.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Eric's Tips for Your Carnival Sailing</h2>
+            <p className="text-gray-500 text-sm md:text-base mb-8">Eric sailed Carnival once and has helped clients plan Carnival cruises. Here is what actually matters before you board.</p>
 
             <Accordion title="Sign Up for VIFP Before You Board">
               <p>Create your VIFP account before your sailing and make sure it is linked to your reservation. Your cruise nights cannot be added retroactively if you forget to enroll. Every night counts from your very first sailing so get in the program before the ship leaves the dock.</p>
@@ -821,17 +821,17 @@ export default function CarnivalPage() {
         )}
 
         {/* CTA */}
-        <div className="mt-14 rounded-2xl p-8 text-center text-white" style={{ background: `linear-gradient(135deg, ${CARNIVAL_DARK}, ${CARNIVAL_RED})` }}>
-          <p className="text-sm uppercase tracking-widest mb-2" style={{ color: CARNIVAL_GOLD }}>Ready to Have Some Fun</p>
-          <h3 className="text-2xl font-bold mb-3">Let's Get You on a Fun Ship</h3>
-          <p className="mb-6 max-w-lg mx-auto" style={{ color: "#FFD0D0" }}>
+        <div className="mt-14 rounded-2xl p-6 md:p-8 text-center text-white" style={{ background: `linear-gradient(135deg, ${CARNIVAL_DARK}, ${CARNIVAL_RED})` }}>
+          <p className="text-xs uppercase tracking-widest mb-2" style={{ color: CARNIVAL_GOLD }}>Ready to Have Some Fun</p>
+          <h3 className="text-xl md:text-2xl font-bold mb-3">Let's Get You on a Fun Ship</h3>
+          <p className="text-sm md:text-base mb-6 max-w-lg mx-auto" style={{ color: "#FFD0D0" }}>
             Carnival is the most popular cruise line in the world for a reason and I have been on one. I book Carnival on your behalf so you get the right ship, the right itinerary, and someone who actually answers when you have a question. Fill out my form and let's figure out your sailing.
           </p>
           <a
             href={FORM_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-4 rounded-lg font-bold text-base transition hover:opacity-90"
+            className="inline-block px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold text-sm md:text-base transition hover:opacity-90"
             style={{ background: CARNIVAL_GOLD, color: CARNIVAL_DARK }}
           >
             Let's Plan Your Carnival Cruise
