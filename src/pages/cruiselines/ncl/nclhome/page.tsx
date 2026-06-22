@@ -14,19 +14,19 @@ function Accordion({ title, children }: { title: string; children: React.ReactNo
     <div className="border border-blue-100 rounded-xl overflow-hidden mb-3">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center px-6 py-4 text-left font-semibold text-gray-800 hover:bg-blue-50 transition-colors"
+        className="w-full flex justify-between items-center px-4 py-3 md:px-6 md:py-4 text-left font-semibold text-gray-800 hover:bg-blue-50 transition-colors"
         style={{ background: open ? "#EEF4FF" : "white" }}
       >
-        <span>{title}</span>
+        <span className="pr-2">{title}</span>
         <span
-          className="text-2xl transition-transform duration-200"
+          className="text-2xl transition-transform duration-200 flex-shrink-0"
           style={{ color: NCL_NAVY, transform: open ? "rotate(45deg)" : "rotate(0deg)" }}
         >
           +
         </span>
       </button>
       {open && (
-        <div className="px-6 py-5 bg-white border-t border-blue-100 text-gray-700 leading-relaxed">
+        <div className="px-4 py-4 md:px-6 md:py-5 bg-white border-t border-blue-100 text-gray-700 leading-relaxed text-sm md:text-base">
           {children}
         </div>
       )}
@@ -56,7 +56,7 @@ export default function NCLPage() {
 
       {/* Hero */}
       <div
-        className="relative py-24 px-6 text-center text-white overflow-hidden"
+        className="relative py-16 md:py-24 px-6 text-center text-white overflow-hidden"
         style={{ background: `linear-gradient(135deg, ${NCL_DARK} 0%, ${NCL_NAVY} 60%, ${NCL_RED} 100%)` }}
       >
         <div className="absolute inset-0 opacity-5"
@@ -66,29 +66,29 @@ export default function NCLPage() {
           }}
         />
         <div className="relative max-w-3xl mx-auto">
-          <h1 className="text-5xl font-bold mb-4 leading-tight">Norwegian Cruise Line</h1>
-          <p className="text-xl mb-6 leading-relaxed" style={{ color: "#CBD5E1" }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">Norwegian Cruise Line</h1>
+          <p className="text-lg md:text-xl mb-6 leading-relaxed" style={{ color: "#CBD5E1" }}>
             Freestyle Cruising means no formal dress codes, no set dining times, and no one telling you how to spend your day at sea. NCL invented this approach and they still do it better than anyone.
           </p>
-          <p className="text-base mb-8" style={{ color: "#94A3B8" }}>
+          <p className="text-sm md:text-base mb-8" style={{ color: "#94A3B8" }}>
             Everything you need to know about sailing NCL, put together by Eric, your HDT travel advisor with an NCL University Master's Degree.
           </p>
           <img
             src="/ncl-masters.jpg"
             alt="NCL University Master's Degree"
-            style={{ height: '160px', width: 'auto', margin: '0 auto' }}
+            className="h-32 md:h-40 w-auto mx-auto"
           />
         </div>
       </div>
 
       {/* Tab Bar */}
-      <div className="sticky top-0 z-30 shadow-md overflow-x-auto" style={{ background: NCL_DARK }}>
-        <div className="flex justify-center min-w-max mx-auto px-4 w-full">
+      <div className="sticky top-0 z-30 shadow-md overflow-x-auto scrollbar-none" style={{ background: NCL_DARK }}>
+        <div className="flex justify-start md:justify-center px-4 w-full">
           {TABS.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className="px-5 py-4 text-sm font-semibold whitespace-nowrap transition-all border-b-2"
+              className="px-4 py-4 text-xs md:text-sm font-semibold whitespace-nowrap transition-all border-b-2 flex-shrink-0"
               style={{
                 color: activeTab === tab.id ? NCL_GOLD : "#94A3B8",
                 borderBottomColor: activeTab === tab.id ? NCL_GOLD : "transparent",
@@ -102,13 +102,13 @@ export default function NCLPage() {
       </div>
 
       {/* Tab Content */}
-      <div className="max-w-4xl mx-auto px-6 py-12">
+      <div className="max-w-4xl mx-auto px-4 md:px-6 py-8 md:py-12">
 
         {/* FREESTYLE CRUISING */}
         {activeTab === "freestyle" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>What Is Freestyle Cruising?</h2>
-            <p className="text-gray-500 mb-8">Norwegian invented Freestyle Cruising and it changed the industry. Here is what it actually means for your vacation.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>What Is Freestyle Cruising?</h2>
+            <p className="text-gray-500 mb-6 md:mb-8 text-sm md:text-base">Norwegian invented Freestyle Cruising and it changed the industry. Here is what it actually means for your vacation.</p>
 
             <Accordion title="No Set Dining Times">
               <p>On most cruise lines you are assigned a dining time, early seating or late seating, and that is when you eat. On NCL you eat when you are hungry. The main dining rooms are open during broad windows and the specialty restaurants take reservations whenever you want them. If you want dinner at 9pm because you were out exploring a port all day, that works. Nobody is waiting on you and you are not waiting on anyone else.</p>
@@ -124,7 +124,7 @@ export default function NCLPage() {
 
             <Accordion title="Who Is NCL Best For?">
               <p className="mb-3">NCL works really well for a specific kind of traveler. If any of these sound like you, NCL is worth a serious look:</p>
-              <ul className="list-disc pl-5 space-y-2">
+              <ul className="list-disc pl-5 space-y-2St">
                 <li>You like flexibility and do not want a rigid daily schedule</li>
                 <li>You are traveling solo and want a ship that genuinely accommodates you</li>
                 <li>You are a foodie who wants multiple dining options without extra charges piling up</li>
@@ -151,8 +151,8 @@ export default function NCLPage() {
         {/* THE SHIPS */}
         {activeTab === "ships" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>The NCL Fleet</h2>
-            <p className="text-gray-500 mb-8">NCL has one of the largest and most varied fleets at sea. 22 ships covering everything from intimate mid-size sailings to massive mega ships packed with entertainment. Here is the full fleet so you know exactly what is out there.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>The NCL Fleet</h2>
+            <p className="text-gray-500 mb-6 md:mb-8 text-sm md:text-base">NCL has one of the largest and most varied fleets at sea. 22 ships covering everything from intimate mid-size sailings to massive mega ships packed with entertainment. Here is the full fleet so you know exactly what is out there.</p>
 
             <div className="p-4 rounded-xl mb-6 text-sm" style={{ background: "#EEF4FF", borderLeft: `4px solid ${NCL_NAVY}` }}>
               <strong>Eric's Note:</strong> I have personally sailed on the Norwegian Breakaway out of New York and the Norwegian Star. If you want to know what either of those ships actually feels like day to day, I can give you a real answer rather than a brochure one. Reach out and ask me anything.
@@ -475,8 +475,8 @@ export default function NCLPage() {
         {/* DINING */}
         {activeTab === "dining" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>Dining Onboard</h2>
-            <p className="text-gray-500 mb-8">NCL has a mix of included dining and specialty restaurants. The main dining rooms and buffet are covered in your fare. Specialty restaurants are an upcharge unless you have a Free at Sea dining package.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>Dining Onboard</h2>
+            <p className="text-gray-500 mb-6 md:mb-8 text-sm md:text-base">NCL has a mix of included dining and specialty restaurants. The main dining rooms and buffet are covered in your fare. Specialty restaurants are an upcharge unless you have a Free at Sea dining package.</p>
 
             <Accordion title="Main Dining Rooms (Included)">
               <p className="mb-3">Every NCL ship has multiple main dining rooms open for breakfast, lunch, and dinner during broad windows. You do not need a reservation and you can show up whenever works for you during those hours. The menus rotate and there is always a solid selection of appetizers, entrees, and desserts. Think of it as a proper sit-down restaurant that comes with your cruise.</p>
@@ -520,8 +520,8 @@ export default function NCLPage() {
         {/* SOLO TRAVEL */}
         {activeTab === "solo" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>Solo Travel on NCL</h2>
-            <p className="text-gray-500 mb-4">Solo cruisers are not an afterthought on Norwegian. NCL was one of the first cruise lines to take solo travelers seriously and actually build the ship around them. If you are traveling alone, this is one of the best lines you can choose and here is exactly why.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>Solo Travel on NCL</h2>
+            <p className="text-gray-500 mb-4 text-sm md:text-base">Solo cruisers are not an afterthought on Norwegian. NCL was one of the first cruise lines to take solo travelers seriously and actually build the ship around them. If you are traveling alone, this is one of the best lines you can choose and here is exactly why.</p>
 
             <div className="p-5 rounded-xl mb-8 text-white text-sm" style={{ background: `linear-gradient(135deg, ${NCL_DARK}, ${NCL_NAVY})` }}>
               <p className="font-bold text-base mb-2" style={{ color: NCL_GOLD }}>The biggest thing to know upfront</p>
@@ -582,7 +582,7 @@ export default function NCLPage() {
               <p className="mb-3">This is one of the best-kept secrets of solo cruising on NCL and one of the things I always tell solo travelers to put on their schedule before they even board the ship. Most NCL vessels host a solo traveler meetup every evening around 5pm, usually in or near the Studio Lounge.</p>
               <p className="mb-3">The meetups are hosted by an NCL crew member who runs the whole thing with energy and purpose. There are games, icebreakers, and genuine conversation starters that make meeting people feel natural rather than forced. The host also takes dinner reservations for the group so by the end of the first meetup you are walking into a specialty restaurant with a table full of people you actually want to spend the evening with.</p>
               <p className="mb-3">By night two or three you stop being strangers and start being travel friends. You have people to explore ports with, grab drinks with, save seats at shows for, and trade stories with over dinner. The social experience of a solo NCL cruise builds fast once you show up to that first meetup.</p>
-              <p>And sometimes it goes beyond the sailing. Some people who meet at these gatherings stay in touch long after the cruise ends. Solo travelers who made genuine friendships that lasted years, all because they showed up at 5pm on the first night. If you are sailing solo on NCL, do not skip it.</p>
+              <p className="mb-3">And sometimes it goes beyond the sailing. Some people who meet at these gatherings stay in touch long after the cruise ends. Solo travelers who made genuine friendships that lasted years, all because they showed up at 5pm on the first night. If you are sailing solo on NCL, do not skip it.</p>
             </Accordion>
 
             <Accordion title="Is a Solo NCL Cruise Right for You?">
@@ -598,8 +598,8 @@ export default function NCLPage() {
         {/* FREE AT SEA */}
         {activeTab === "freeatseaa" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>Free at Sea</h2>
-            <p className="text-gray-500 mb-8">Free at Sea is NCL's signature promotion and it is one of the most generous ongoing offers in cruising. It is not a limited time deal. This is a standard part of how NCL packages their sailings and it adds real value to your booking.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>Free at Sea</h2>
+            <p className="text-gray-500 mb-6 md:mb-8 text-sm md:text-base">Free at Sea is NCL's signature promotion and it is one of the most generous ongoing offers in cruising. It is not a limited time deal. This is a standard part of how NCL packages their sailings and it adds real value to your booking.</p>
 
             <div className="p-4 rounded-xl mb-6 text-sm" style={{ background: "#EEF4FF", borderLeft: `4px solid ${NCL_NAVY}` }}>
               Free at Sea and Free at Sea Plus are ongoing standard offers, not flash sales. The specific perks available can vary by sailing and cabin category. I will always confirm exactly what is included on your specific sailing before you book.
@@ -647,8 +647,8 @@ export default function NCLPage() {
         {/* THE HAVEN */}
         {activeTab === "haven" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>The Haven</h2>
-            <p className="text-gray-500 mb-8">The Haven is NCL's ship-within-a-ship luxury experience. It is a private enclave at the top of the ship with its own restaurant, bar, sun deck, pool, and dedicated concierge team. If you want the best of what NCL has to offer, The Haven is it.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>The Haven</h2>
+            <p className="text-gray-500 mb-6 md:mb-8 text-sm md:text-base">The Haven is NCL's ship-within-a-ship luxury experience. It is a private enclave at the top of the ship with its own restaurant, bar, sun deck, pool, and dedicated concierge team. If you want the best of what NCL has to offer, The Haven is it.</p>
 
             <Accordion title="What Is The Haven?">
               <p className="mb-3">The Haven is a gated, keycard-access section of the ship reserved exclusively for Haven guests. Think of it as a boutique luxury hotel sitting on top of a large cruise ship. You have access to everything on the main ship but you also have your own private world above it all.</p>
@@ -672,11 +672,11 @@ export default function NCLPage() {
 
             <Accordion title="The Haven Restaurant">
               <p className="mb-3">The Haven restaurant is one of the genuinely special parts of the experience. It is a full-service sit-down restaurant exclusively for Haven guests with a menu that rotates daily and a dining team that gets to know your preferences over the course of the sailing.</p>
-              <p>No reservations, no waiting, no crowds. You just walk in when you are hungry. It has the feel of a private members dining room and the quality of the food and service is noticeably elevated compared to the main dining rooms. If you are a foodie, this alone might be worth the upgrade.</p>
+              <p>No reservations, no waiting, no crowds. You just walk in when you are hungry. It has the feel of a private members dining room and the quality of the food and service is noticeably elevated compared to the main dining rooms.</p>
             </Accordion>
 
             <Accordion title="Butler Service — What That Actually Means">
-              <p className="mb-3">Haven cabins come with a dedicated butler and it is not just a title. Your butler is a real resource who handles the small things that add up over a cruise. They can unpack your luggage when you board, set up your cabin the way you like it, bring you breakfast in the morning, arrange afternoon snacks, make restaurant reservations, and generally make sure everything runs smoothly.</p>
+              <p className="mb-3">Haven cabins come with a dedicated butler and it is not just a title. Your butler is a real resource who handles the small things that add up over a cruise. They can unsubscribe your luggage when you board, set up your cabin the way you like it, bring you breakfast in the morning, arrange afternoon snacks, make restaurant reservations, and generally make sure everything runs smoothly.</p>
               <p>For people who have never had butler service before it can feel a little unfamiliar at first. By day two most Haven guests wonder how they ever cruised without it.</p>
             </Accordion>
 
@@ -708,8 +708,8 @@ export default function NCLPage() {
         {/* CRUISE NEXT */}
         {activeTab === "cruisenext" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>CruiseNext Vouchers</h2>
-            <p className="text-gray-500 mb-8">CruiseNext is NCL's onboard future cruise program. If you know you are going to cruise again, buying a CruiseNext voucher while you are onboard is one of the smartest things you can do.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>CruiseNext Vouchers</h2>
+            <p className="text-gray-500 mb-6 md:mb-8 text-sm md:text-base">CruiseNext is NCL's onboard future cruise program. If you know you are going to cruise again, buying a CruiseNext voucher while you are onboard is one of the smartest things you can do.</p>
 
             <Accordion title="What Is a CruiseNext Voucher?">
               <p className="mb-3">A CruiseNext voucher is essentially a deposit certificate you purchase while you are on your current NCL sailing. You buy it onboard at a discount and apply it to a future NCL booking as a deposit or toward your cruise fare.</p>
@@ -740,8 +740,8 @@ export default function NCLPage() {
         {/* GREAT STIRRUP CAY */}
         {activeTab === "island" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>Great Stirrup Cay</h2>
-            <p className="text-gray-500 mb-8">Great Stirrup Cay is NCL's private island in the Bahamas and one of the genuinely great perks of sailing with Norwegian. Eric has been there on the Norwegian Star and can tell you firsthand it is worth the trip.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>Great Stirrup Cay</h2>
+            <p className="text-gray-500 mb-6 md:mb-8 text-sm md:text-base">Great Stirrup Cay is NCL's private island in the Bahamas and one of the genuinely great perks of sailing with Norwegian. Eric has been there on the Norwegian Star and can tell you firsthand it is worth the trip.</p>
 
             <Accordion title="What Is Great Stirrup Cay?">
               <p className="mb-3">Great Stirrup Cay is a private island in the Berry Islands of the Bahamas, owned and operated exclusively by Norwegian Cruise Line. When your ship stops here, the entire island is yours and your fellow sailors. No other cruise lines. No outside tourists. Just NCL guests on a beautiful stretch of Bahamian beach.</p>
@@ -781,8 +781,8 @@ export default function NCLPage() {
         {/* SHORE EXCURSIONS */}
         {activeTab === "excursions" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>Shore Excursions</h2>
-            <p className="text-gray-500 mb-8">NCL calls their excursion program Shore Excursions and you can book them through My NCL online before you sail or through the excursion desk onboard. Here is what to know.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>Shore Excursions</h2>
+            <p className="text-gray-500 mb-6 md:mb-8 text-sm md:text-base">NCL calls their excursion program Shore Excursions and you can book them through My NCL online before you sail or through the excursion desk onboard. Here is what to know.</p>
 
             <div className="p-4 rounded-xl mb-6 text-sm" style={{ background: "#EEF4FF", borderLeft: `4px solid ${NCL_NAVY}` }}>
               <p className="font-semibold mb-1">Book before you sail and book through the ship.</p>
@@ -823,7 +823,7 @@ export default function NCLPage() {
               },
             ].map((p) => (
               <Accordion key={p.port} title={p.port}>
-                <p className="mb-4">{p.about}</p>
+                <p className="mb-4 text-sm md:text-base">{p.about}</p>
                 <p className="font-semibold mb-2" style={{ color: NCL_NAVY }}>Popular Excursions Here</p>
                 <ul className="list-disc pl-5 space-y-1 text-sm">
                   {p.excursions.map((e) => <li key={e}>{e}</li>)}
@@ -836,8 +836,8 @@ export default function NCLPage() {
         {/* TRIP INSURANCE */}
         {activeTab === "insurance" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>Trip Insurance</h2>
-            <p className="text-gray-500 mb-8">I always suggest trip insurance when booking a cruise. It is one of those things you hope you never need and are incredibly grateful for when you do. Travel puts you in situations where things can go sideways in ways that have nothing to do with the cruise line.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>Trip Insurance</h2>
+            <p className="text-gray-500 mb-6 md:mb-8 text-sm md:text-base">I always suggest trip insurance when booking a cruise. It is one of those things you hope you never need and are incredibly grateful for when you do. Travel puts you in situations where things can go sideways in ways that have nothing to do with the cruise line.</p>
 
             <div className="p-5 rounded-xl mb-6 text-white text-sm" style={{ background: NCL_NAVY }}>
               <strong>Lock it in at booking.</strong> Trip insurance is almost always cheaper when you buy it at the time of booking. The longer you wait, the more it costs and the fewer options you have.
@@ -876,8 +876,8 @@ export default function NCLPage() {
         {/* ERIC'S TIPS */}
         {activeTab === "tips" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>Eric's Tips for Your NCL Sailing</h2>
-            <p className="text-gray-500 mb-8">I hold an NCL University Master's Degree and have sailed Norwegian multiple times including on the Breakaway out of New York and the Star to Great Stirrup Cay. Here is what I actually tell people before they sail.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: NCL_DARK }}>Eric's Tips for Your NCL Sailing</h2>
+            <p className="text-gray-500 mb-6 md:mb-8 text-sm md:text-base">I hold an NCL University Master's Degree and have sailed Norwegian multiple times including on the Breakaway out of New York and the Star to Great Stirrup Cay.</p>
 
             <Accordion title="Book Your Specialty Dining Early">
               <p>Cagney's and Teppanyaki fill up fast. Log into My NCL as soon as your booking is confirmed and get your reservations in. If you have a Free at Sea dining package, those credits only go so far so pick your restaurants intentionally rather than waiting until you are onboard and scrambling.</p>
@@ -914,22 +914,21 @@ export default function NCLPage() {
         )}
 
         {/* CTA */}
-        <div className="mt-14 rounded-2xl p-8 text-center text-white" style={{ background: `linear-gradient(135deg, ${NCL_DARK}, ${NCL_NAVY})` }}>
-          <p className="text-sm uppercase tracking-widest mb-2" style={{ color: NCL_GOLD }}>Ready to Sail NCL</p>
-          <h3 className="text-2xl font-bold mb-3">Cruise Your Way Without the Hassle</h3>
-          <p className="mb-6 max-w-lg mx-auto" style={{ color: "#CBD5E1" }}>
+        <div className="mt-14 rounded-2xl p-6 md:p-8 text-center text-white" style={{ background: `linear-gradient(135deg, ${NCL_DARK}, ${NCL_NAVY})` }}>
+          <p className="text-xs md:text-sm uppercase tracking-widest mb-2" style={{ color: NCL_GOLD }}>Ready to Sail NCL</p>
+          <h3 className="text-xl md:text-2xl font-bold mb-3">Cruise Your Way Without the Hassle</h3>
+          <p className="text-sm md:text-base mb-6 max-w-lg mx-auto" style={{ color: "#CBD5E1" }}>
             Planning a cruise shouldn't feel like a second job. As an NCL specialist who actually sails the line, I know how to cut through the noise to get you the exact experience you're looking for. Fill out the form and let's get to work. Someone is actually in your corner for this one.
           </p>
           <a
             href={FORM_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-4 rounded-lg font-bold text-base transition hover:opacity-90"
+            className="inline-block w-full sm:w-auto px-8 py-4 rounded-lg font-bold text-sm md:text-base transition hover:opacity-90"
             style={{ background: NCL_GOLD, color: NCL_DARK }}
           >
             Ready to cruise your way? Let's chat.
           </a>
-
         </div>
 
       </div>
