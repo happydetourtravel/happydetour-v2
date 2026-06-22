@@ -9,11 +9,14 @@ export default function Header() {
   return (
     <>
       {/* Announcement Bar */}
-      <div className="w-full bg-brand-amber text-white text-left py-2 px-4 text-sm font-medium">
-        Sailings for 2026–2027 are selling fast.{' '}
-        <Link to="/join" className="underline font-bold hover:text-brand-dark transition-colors">
+      <div className="w-full bg-brand-amber text-white text-left py-2 px-4 text-sm font-medium flex items-center gap-1.5">
+        <span>Sailings for 2026–2027 are selling fast.</span>{' '}
+        <button 
+          onClick={() => setModalOpen(true)} 
+          className="underline font-bold hover:text-brand-dark transition-colors bg-transparent border-none p-0 cursor-pointer text-sm text-white"
+        >
           Learn More
-        </Link>
+        </button>
       </div>
 
       {/* Header */}
@@ -27,7 +30,6 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-brand-dark">
             <Link to="/" className="hover:text-brand-blue transition-colors">Home</Link>
             <Link to="/about" className="hover:text-brand-blue transition-colors">About</Link>
-            <Link to="/blog" className="hover:text-brand-blue transition-colors">Blog</Link>
             <a
               href="https://www.facebook.com/groups/somuchtosea"
               target="_blank"
@@ -43,8 +45,6 @@ export default function Header() {
             >
               Join the List
             </button>
-            <Link to="/join" className="hover:text-brand-blue transition-colors">Join HDT</Link>
-            <Link to="/login" className="hover:text-brand-blue transition-colors">Sign In</Link>
 
             {/* Start Packing Dropdown */}
             <div style={{ position: 'relative' }}>
@@ -118,9 +118,6 @@ export default function Header() {
             {[
               { label: 'Home', to: '/' },
               { label: 'About', to: '/about' },
-              { label: 'Blog', to: '/blog' },
-              { label: 'Join HDT', to: '/join' },
-              { label: 'Sign In', to: '/login' },
             ].map((item) => (
               <Link
                 key={item.to}
