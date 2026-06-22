@@ -38,6 +38,7 @@ const TABS = [
   { id: "about", label: "About MSC" },
   { id: "ships", label: "The Ships" },
   { id: "dining", label: "Dining" },
+  { id: "rewards", label: "Voyagers Club" },
   { id: "solo", label: "Solo Travel" },
   { id: "yacht", label: "MSC Yacht Club" },
   { id: "included", label: "What's Included" },
@@ -64,7 +65,7 @@ export default function MSCPage() {
           }}
         />
         <div className="relative max-w-3xl mx-auto">
-          <h1 className="text-5xl font-bold mb-4 leading-tight">MSC Cruises</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">MSC Cruises</h1>
           <p className="text-xl mb-6 leading-relaxed" style={{ color: "#CBD5E1" }}>
             European elegance at a real price. MSC is one of the most underrated cruise lines out there and one of the lines Eric knows from personal experience. Beautiful ships, a Mediterranean style that feels genuinely different, and value that is hard to beat.
           </p>
@@ -76,7 +77,7 @@ export default function MSCPage() {
 
       {/* Tab Bar */}
       <div className="sticky top-0 z-30 shadow-md overflow-x-auto" style={{ background: MSC_DARK }}>
-        <div className="flex justify-center min-w-max mx-auto px-4 w-full">
+        <div className="flex md:justify-center min-w-max mx-auto px-4 w-full">
           {TABS.map((tab) => (
             <button
               key={tab.id}
@@ -497,6 +498,49 @@ export default function MSCPage() {
             <Accordion title="Pizza and Casual Options (Included)">
               <p className="mb-3">MSC takes their pizza seriously. It is thin crust, properly made, and available throughout the day. It is one of those things that seems like a minor detail but when the pizza is actually good you end up having it more than you planned.</p>
               <p>Gelato bars, coffee stations, and casual grab-and-go options round out the included food program for when you want something quick between ports or activities.</p>
+            </Accordion>
+          </section>
+        )}
+
+        {/* MSC VOYAGERS CLUB */}
+        {activeTab === "rewards" && (
+          <section>
+            <h2 className="text-3xl font-bold mb-2" style={{ color: MSC_DARK }}>MSC Voyagers Club</h2>
+            <p className="text-gray-500 mb-8">MSC's loyalty program rewards you every time you sail, but their best feature is that they will honor your loyalty status from other cruise lines, hotels, and tour operators before you even book your first MSC cruise.</p>
+
+            <div className="p-4 rounded-xl mb-6 text-sm" style={{ background: MSC_ACCENT, borderLeft: `4px solid ${MSC_NAVY}` }}>
+              <strong>Eric's Loyalty Hack:</strong> Do not miss out on their Loyalty Match program. If you have status with Royal Caribbean, Carnival, Marriott, or Hilton, MSC will match it. You get the perks on day one without earning them from scratch.
+            </div>
+
+            <Accordion title="How the Status Match Works">
+              <p className="mb-3">MSC is unique in the cruise industry for offering a true <strong>Loyalty Match program</strong>. If you hold elite status with another major cruise line, a hotel brand, or a major tour operator, you can apply to have that status matched to an equivalent tier in the MSC Voyagers Club.</p>
+              <p className="mb-3">This must be done <strong>before you book your cruise</strong>. Once approved, you immediately start receiving the corresponding tier discounts and onboard perks on your very first MSC sailing.</p>
+              <p>There is no cost to apply for the status match, and it is one of the easiest ways to secure immediate value if you are transitioning from another brand.</p>
+            </Accordion>
+
+            <Accordion title="Membership Tiers and Points">
+              <p className="mb-3">The Voyagers Club is structured into five distinct tiers based on the points you earn from the length of your cruises and your onboard spending:</p>
+              <ul className="list-disc pl-5 space-y-2 mb-3">
+                <li><strong>Welcome Tier</strong> (1 point) — Confirmed enrollment, newsletter access, and access to the online member area.</li>
+                <li><strong>Classic Tier</strong> (1 to 2,199 points) — Earns a 5% cruise discount on standard bookings, plus onboard privileges.</li>
+                <li><strong>Silver Tier</strong> (2,200 to 4,399 points) — Retains the 5% discount, adding a milestones certificate and a special welcome cocktail.</li>
+                <li><strong>Gold Tier</strong> (4,400 to 9,999 points) — Includes a complimentary one-hour thermal area session in the spa and a complimentary gift.</li>
+                <li><strong>Diamond Tier</strong> (10,000+ points) — The highest tier, featuring priority boarding, a complimentary specialty dinner, a bottle of sparkling wine, and late cabin checkout.</li>
+              </ul>
+            </Accordion>
+
+            <Accordion title="Key Onboard Perks">
+              <p className="mb-3">As you advance through the tiers, the onboard experience becomes increasingly seamless. Standout perks include:</p>
+              <ul className="list-disc pl-5 space-y-2 mb-3">
+                <li><strong>Onboard Discounts</strong> — Discounts on digital photo packages, spa treatments, fitness classes, and select logo shop items.</li>
+                <li><strong>Priority Privileges</strong> — Diamond members receive priority disembarkation in tender ports and priority boarding on embarkation day.</li>
+                <li><strong>Special Events</strong> — Invitations to exclusive welcome cocktails and member-only gatherings during your sailing.</li>
+              </ul>
+            </Accordion>
+
+            <Accordion title="Voyagers Selection Discounts">
+              <p className="mb-3">In addition to the standard 5% membership discount, MSC regularly designates specific itineraries as <strong>Voyagers Selection</strong> cruises. These sailings offer members extra savings, frequently ranging from an additional 5% to 15% off the standard cruise fare.</p>
+              <p>Booking a Voyagers Selection itinerary is one of the cleanest strategies for stacking your loyalty status with seasonal promotions to maximize your overall trip value.</p>
             </Accordion>
           </section>
         )}
