@@ -22,7 +22,7 @@ export default function BlogIndex() {
           Real talk about cruises and travel.
         </h1>
         <p style={{ color: '#6B7280', fontSize: '16px', lineHeight: '1.7', margin: '0 0 48px 0' }}>
-          No fluff, no sponsored opinions. Just honest stories and advice from someone who has actually been out there.
+          Honest stories, cruise tips, and a look at what goes into building this business from someone actually doing it.
         </p>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
