@@ -10,7 +10,7 @@ export default function Footer() {
           <a href="https://facebook.com/happydetourtravel" target="_blank" rel="noopener noreferrer" style={{ color: '#9CA3AF', fontSize: '13px', textDecoration: 'none' }}>Facebook</a>
           <a href="https://instagram.com/happydetourtravel" target="_blank" rel="noopener noreferrer" style={{ color: '#9CA3AF', fontSize: '13px', textDecoration: 'none' }}>Instagram</a>
           <a href="https://tiktok.com/@happydetourtravel" target="_blank" rel="noopener noreferrer" style={{ color: '#9CA3AF', fontSize: '13px', textDecoration: 'none' }}>TikTok</a>
-          <a href="https://www.facebook.com/groups/somuchtosea" target="_blank" rel="noopener noreferrer" style={{ color: '#F59E0B', fontSize: '13px', textDecoration: 'none', fontWeight: '600' }}>Join the Group</a>
+          <a href="https://www.facebook.com/groups/somuchtosea" target="_blank" rel="noopener noreferrer" style={{ color: '#F59E0B', fontSize: '13px', textDecoration: 'none', fontWeight: '600' }}>Join the Community</a>
           <Link to="/blog" style={{ color: '#9CA3AF', fontSize: '13px', textDecoration: 'none' }}>Postcards & Updates</Link>
         </div>
 
