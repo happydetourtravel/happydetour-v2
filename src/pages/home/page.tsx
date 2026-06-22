@@ -17,7 +17,7 @@ const cruiseLines = [
 ]
 
 const testimonials = [
-  { name: "Lana", location: "Alliance, OH", trip: "MSC Cruise — Galveston", quote: "I had no idea where to start and Eric made the whole thing easy. Booked my MSC cruise out of Galveston and had such a great time I am already booked on Virgin Voyages for February 2027. He is the only person I will call for travel from here on out." },
+  { name: "Lana", location: "Northeast Ohio", trip: "MSC Cruise — Galveston", quote: "I had no idea where to start and Eric made the whole thing easy. Booked my MSC cruise out of Galveston and had such a great time I am already booked on Virgin Voyages for February 2027. He is the only person I will call for travel from here on out." },
   { name: "JB", location: "Los Angeles, CA", trip: "Carnival Sensation — Grand Cayman & Ocho Rios", quote: "First cruise ever and Eric walked me through everything. The whole process was so easy I could not believe it. Already planning my next one." },
 ]
 
@@ -36,30 +36,39 @@ export default function Home() {
     <main>
 
       {/* Hero */}
-      <div style={{ position: 'relative', minHeight: '520px', overflow: 'hidden' }}>
+      <div style={{ position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/hero-image.webp')", backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(0.38)' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,114,152,0.80) 0%, rgba(0,0,0,0.15) 100%)' }} />
-        <div style={{ position: 'relative', maxWidth: '1280px', margin: '0 auto', padding: '64px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '40px', minHeight: '520px', flexWrap: 'wrap' }}>
-
-          <div style={{ flex: '1', minWidth: '300px', maxWidth: '600px' }}>
-            <h1 style={{ color: 'white', fontSize: '46px', fontWeight: '800', lineHeight: '1.15', margin: '0 0 16px 0' }}>
+        <div style={{
+          position: 'relative',
+          maxWidth: '1280px',
+          margin: '0 auto',
+          padding: '48px 20px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '32px',
+          flexDirection: 'column',
+        }}
+          className="hero-inner"
+        >
+          <div style={{ width: '100%', maxWidth: '600px' }}>
+            <h1 style={{ color: 'white', fontSize: 'clamp(28px, 6vw, 46px)', fontWeight: '800', lineHeight: '1.15', margin: '0 0 16px 0' }}>
               Real trips. Real value. Someone actually in your corner.
             </h1>
-            <p style={{ color: '#F59E0B', fontSize: '20px', fontWeight: '700', margin: '0 0 16px 0' }}>
+            <p style={{ color: '#F59E0B', fontSize: 'clamp(16px, 4vw, 20px)', fontWeight: '700', margin: '0 0 16px 0' }}>
               Vacations Planned Without The Overwhelming Complications
             </p>
-            {/* CHANGE 1: Added "in 2026 and 2027" to give crawlers a time anchor early on the page */}
-            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '15px', lineHeight: '1.7', margin: '0 0 32px 0', maxWidth: '480px' }}>
+            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '15px', lineHeight: '1.7', margin: '0 0 28px 0', maxWidth: '480px' }}>
               Our founder Eric helps you skip the corporate fluff and endless hold music. As the head of Happy Detour Travel, he cuts through the noise to build your perfect cruise or all-inclusive resort getaway in 2026 and 2027, proving that sometimes the best journeys begin with a Happy Detour.
             </p>
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <a href="/join" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '13px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>
-                Join HDT
-              </a>
-            </div>
+            <a href="/join" style={{ display: 'inline-block', backgroundColor: '#F59E0B', color: 'white', padding: '13px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>
+              Join HDT
+            </a>
           </div>
 
-          <div style={{ width: '320px', flexShrink: 0 }}>
+          {/* Deal Card */}
+          <div style={{ width: '100%', maxWidth: '380px' }}>
             <div style={{ backgroundColor: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,0.25)' }}>
               <div style={{ backgroundColor: '#1F2937', padding: '12px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <span style={{ color: '#F59E0B', fontSize: '11px', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase' }}>Featured Deal</span>
@@ -78,7 +87,6 @@ export default function Home() {
                   </div>
                 </div>
                 <a href={deal.link} aria-label={`Get this deal: ${deal.title}`} style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>Get This Deal</a>
-                {/* CHANGE 2: Added "Updated June 2026" freshness signal below the deal card note */}
                 <p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: '10px 0 0 0', lineHeight: '1.5' }}>Prices are estimates. Contact Eric for current availability.</p>
                 <p style={{ color: '#D1D5DB', fontSize: '10px', textAlign: 'center', margin: '4px 0 0 0' }}>Updated June 2026</p>
               </div>
@@ -93,14 +101,25 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Responsive hero layout */}
+      <style>{`
+        @media (min-width: 768px) {
+          .hero-inner {
+            flex-direction: row !important;
+            padding: 64px 24px !important;
+            min-height: 520px;
+          }
+        }
+      `}</style>
+
       {/* Cruise Lines */}
-      <div id="cruise-lines" style={{ backgroundColor: '#F3F4F6', padding: '80px 24px' }}>
+      <div id="cruise-lines" style={{ backgroundColor: '#F3F4F6', padding: '60px 20px' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Where We Specialize</p>
-            <h2 style={{ color: '#1F2937', fontSize: '36px', fontWeight: '800', margin: 0 }}>Take a look at our cruise offerings</h2>
+            <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: 0 }}>Take a look at our cruise offerings</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
             {cruiseLines.map((line) => (
               <div key={line.name} style={{ position: 'relative', overflow: 'hidden', borderRadius: '16px' }}>
                 {!line.live && (
@@ -108,7 +127,7 @@ export default function Home() {
                     Coming Soon
                   </div>
                 )}
-                <div style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #F3F4F6', display: 'flex', flexDirection: 'column', gap: '12px', opacity: line.live ? 1 : 0.6, height: '100%' }}>
+                <div style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #F3F4F6', display: 'flex', flexDirection: 'column', gap: '12px', opacity: line.live ? 1 : 0.6, height: '100%', boxSizing: 'border-box' }}>
                   <h3 style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>{line.name}</h3>
                   <p style={{ color: '#007298', fontSize: '14px', fontWeight: '600', margin: 0 }}>{line.tagline}</p>
                   <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>{line.desc}</p>
@@ -121,13 +140,13 @@ export default function Home() {
       </div>
 
       {/* All-Inclusive Resorts */}
-      <div style={{ backgroundColor: '#FFFBF0', padding: '80px 24px' }}>
+      <div style={{ backgroundColor: '#FFFBF0', padding: '60px 20px' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>All Inclusive Vacations</p>
-            <h2 style={{ color: '#1F2937', fontSize: '36px', fontWeight: '800', margin: 0 }}>Experience premium luxury with Sandals and Beaches</h2>
+            <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: 0 }}>Experience premium luxury with Sandals and Beaches</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px', maxWidth: '800px', margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '24px', maxWidth: '800px', margin: '0 auto' }}>
             <div style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #F3F4F6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <h3 style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>Sandals Resorts</h3>
               <p style={{ color: '#007298', fontSize: '14px', fontWeight: '600', margin: 0 }}>Luxury. Couples only. Truly all-inclusive.</p>
@@ -144,14 +163,15 @@ export default function Home() {
         </div>
       </div>
 
-      <div style={{ backgroundColor: '#F9FAFB', padding: '80px 0' }}>
-        <div style={{ textAlign: 'center', marginBottom: '48px', padding: '0 24px' }}>
+      {/* Testimonials */}
+      <div style={{ backgroundColor: '#F9FAFB', padding: '60px 20px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>What People Say</p>
-          <h2 style={{ color: '#1F2937', fontSize: '36px', fontWeight: '800', margin: 0 }}>Real people. Real trips. No surprises.</h2>
+          <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: 0 }}>Real people. Real trips. No surprises.</h2>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', padding: '0 24px', flexWrap: 'wrap', maxWidth: '760px', margin: '0 auto' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px', maxWidth: '760px', margin: '0 auto' }}>
           {testimonials.map((t, i) => (
-            <div key={i} style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #E5E7EB', width: '340px', flexShrink: 0 }}>
+            <div key={i} style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #E5E7EB' }}>
               <p style={{ color: '#1F2937', fontSize: '14px', lineHeight: '1.7', fontStyle: 'italic', margin: '0 0 16px 0' }}>"{t.quote}"</p>
               <div style={{ borderTop: '1px solid #F3F4F6', paddingTop: '16px' }}>
                 <p style={{ color: '#1F2937', fontWeight: '600', fontSize: '14px', margin: '0 0 2px 0' }}>{t.name}</p>
@@ -164,11 +184,11 @@ export default function Home() {
       </div>
 
       {/* Final CTA */}
-      <div style={{ padding: '48px 24px' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto', backgroundColor: '#F59E0B', borderRadius: '20px', padding: '56px 32px', textAlign: 'center' }}>
+      <div style={{ padding: '48px 20px' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto', backgroundColor: '#F59E0B', borderRadius: '20px', padding: '48px 24px', textAlign: 'center' }}>
           <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>What Are You Waiting For?</p>
-          <h2 style={{ color: 'white', fontSize: '36px', fontWeight: '800', margin: '0 0 12px 0', lineHeight: '1.2' }}>Stop scrolling, start packing.</h2>
-          <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '16px', margin: '0 0 32px 0' }}>Let's find your happy detour.</p>
+          <h2 style={{ color: 'white', fontSize: 'clamp(28px, 6vw, 36px)', fontWeight: '800', margin: '0 0 12px 0', lineHeight: '1.2' }}>Stop scrolling, start packing.</h2>
+          <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '16px', margin: '0 0 28px 0' }}>Let's find your happy detour.</p>
           <a
             href="https://forgehq.app/f/?s=20bejr4j"
             target="_blank"
