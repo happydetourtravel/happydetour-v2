@@ -63,12 +63,8 @@ export default function Home() {
             <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '15px', lineHeight: '1.7', margin: '0 0 28px 0', maxWidth: '480px' }}>
               Our founder Eric helps you skip the corporate fluff and endless hold music. As the head of Happy Detour Travel, he cuts through the noise to build your perfect cruise or all-inclusive resort getaway in 2026 and 2027, proving that sometimes the best journeys begin with a Happy Detour.
             </p>
-            <a href="/join" style={{ display: 'inline-block', backgroundColor: '#F59E0B', color: 'white', padding: '13px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>
-              Join HDT
-            </a>
-          </div>
-
-          {/* Deal Card */}
+           
+            {/* Deal Card */}
           <div style={{ width: '100%', maxWidth: '380px' }}>
             <div style={{ backgroundColor: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,0.25)' }}>
               <div style={{ backgroundColor: '#1F2937', padding: '12px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
