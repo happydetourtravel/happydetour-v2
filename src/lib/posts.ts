@@ -129,6 +129,51 @@ export const POSTS: Post[] = [
     `,
   },
   {
+    slug: 'bye-bye-templates-hello-custom',
+    title: 'Bye-Bye Templates, Hello Custom! Building the New HappyDetour.com',
+    date: '2026-04-22',
+    tag: 'Behind the Brand',
+    excerpt: "Let's be real. Planning a vacation should be fun, not a chore. But while I was building the new home for Happy Detour, I realized that most off the shelf travel sites are a bit of a chore themselves. They are boxy, they are expensive, and they don't have that vibrant, whimsical energy I want for you.",
+    image: '/blog/coke_home_github.png',
+    content: `
+      <p>Let's be real. Planning a vacation should be fun, not a chore. But while I was building the new home for Happy Detour, I realized that most off the shelf travel sites are a bit of a chore themselves. They are boxy, they are expensive, and they don't have that vibrant, whimsical energy I want for you.</p>
+
+      <p>So tonight I rolled up my sleeves, opened my Citrus MacBook, and decided to take the detour less traveled. I ditched the twenty five dollar a month templates and built something from scratch using GitHub and Vercel.</p>
+
+      <p>Here is a look at what went down in the Happy Detour Lab tonight.</p>
+
+      <h2>1. The Choice Evolution</h2>
+
+      <p>I started with just a single link, but I knew you needed more. I coded a new self service section that gives you direct access to the big names:</p>
+
+      <ul>
+        <li>Virgin Voyages for that sleek, adults only vibe.</li>
+        <li>Sandals and Beaches for the ultimate couples retreat or family splash.</li>
+        <li>Royal Caribbean because sometimes you just need a classic getaway.</li>
+      </ul>
+
+      <h2>2. Adding the Whimsy</h2>
+
+      <p>Since I am all about the fun in travel, I added a little secret for the desktop users. If you hover over my new buttons, a tiny jet actually slides into view and takes off to show you the way. It's a small detail, but it's the kind of care I put into your actual itineraries too.</p>
+
+      <h2>3. Mobile First Magic</h2>
+
+      <p>I know most of you are dreaming about your next trip while scrolling on your phone. I spent tonight making sure those new buttons stack perfectly on your mobile screen. No squishing and no zooming, just easy tapping.</p>
+
+      <h2>4. Why I am doing this</h2>
+
+      <p>Why spend hours coding when I could just use a template? Because Happy Detour is about Everyone Welcome. I wanted a site that feels as fast, modern, and personal as the service I provide.</p>
+
+      <p>I am here to do the heavy lifting of travel planning so you don't have to. Whether it's navigating the confusing world of booking portals or coding a website at midnight, I have you covered.</p>
+
+      <p>So what are you waiting for? Stop scrolling and start packing.</p>
+
+      <p><a href="https://happydetour.app.n8n.cloud/form/91799171-4079-4ab7-9d13-9417ae57dfba">Let's find your happy detour.</a></p>
+
+      <p>Eric<br/>Happy Detour Travel: Affordable vacations. Fun experiences. Everyone welcome.</p>
+    `,
+  },
+  {
     slug: '6-things-first-time-cruise-passengers-wish-they-knew',
     title: '6 Things First Time Cruise Passengers Wish They Knew Before They Booked',
     date: '2026-04-21',
