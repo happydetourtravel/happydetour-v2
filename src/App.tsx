@@ -28,6 +28,7 @@ const SandalsHome = lazy(() => import('./pages/resorts/sandals/sandalshome/page'
 const BeachesHome = lazy(() => import('./pages/resorts/beaches/beacheshome/page'));
 const BlogIndex = lazy(() => import('./pages/blog/index/page'));
 const BlogPost = lazy(() => import('./pages/blog/post/page'));
+const HalloweenCaribbean = lazy(() => import('./pages/group/halloween-caribbean-2026/page'));
 
 function Layout() {
   return (
@@ -60,6 +61,7 @@ function Layout() {
           <Route path="/resorts/beaches" element={<BeachesHome />} />
           <Route path="/blog" element={<BlogIndex />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/group/halloween-caribbean-2026" element={<HalloweenCaribbean />} />
         </Routes>
       </Suspense>
       <Footer />
