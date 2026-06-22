@@ -12,22 +12,22 @@ const FORM_LINK = "https://forgehq.app/f/?t=7ro7s57c";
 function Accordion({ title, children }: { title: string; children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border border-blue-100 rounded-xl overflow-hidden mb-3">
+    <div className="border border-blue-100 rounded-xl overflow-hidden mb-3 shadow-sm">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center px-6 py-4 text-left font-semibold text-gray-800 hover:bg-blue-50 transition-colors"
+        className="w-full flex justify-between items-center px-4 sm:px-6 py-3.5 sm:py-4 text-left font-semibold text-gray-800 hover:bg-blue-50 transition-colors gap-4"
         style={{ background: open ? RC_ACCENT : "white" }}
       >
-        <span>{title}</span>
+        <span className="text-sm sm:text-base">{title}</span>
         <span
-          className="text-2xl transition-transform duration-200"
+          className="text-xl sm:text-2xl transition-transform duration-200 shrink-0 select-none"
           style={{ color: RC_NAVY, transform: open ? "rotate(45deg)" : "rotate(0deg)" }}
         >
           +
         </span>
       </button>
       {open && (
-        <div className="px-6 py-5 bg-white border-t border-blue-100 text-gray-700 leading-relaxed">
+        <div className="px-4 sm:px-6 py-4 sm:py-5 bg-white border-t border-blue-100 text-gray-700 text-sm sm:text-base leading-relaxed break-words">
           {children}
         </div>
       )}
@@ -56,7 +56,7 @@ export default function RoyalCaribbeanPage() {
 
       {/* Hero */}
       <div
-        className="relative py-24 px-6 text-center text-white overflow-hidden"
+        className="relative py-12 sm:py-16 md:py-24 px-4 sm:px-6 text-center text-white overflow-hidden"
         style={{ background: `linear-gradient(135deg, ${RC_DARK} 0%, ${RC_NAVY} 50%, ${RC_BLUE} 100%)` }}
       >
         <div className="absolute inset-0 opacity-5"
@@ -66,24 +66,24 @@ export default function RoyalCaribbeanPage() {
           }}
         />
         <div className="relative max-w-3xl mx-auto">
-          <h1 className="text-5xl font-bold mb-4 leading-tight">Royal Caribbean</h1>
-          <p className="text-xl mb-6 leading-relaxed" style={{ color: "#CBD5E1" }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">Royal Caribbean</h1>
+          <p className="text-base sm:text-lg md:text-xl mb-6 leading-relaxed" style={{ color: "#CBD5E1" }}>
             Big ships. Big fun. Royal Caribbean invented the idea of the cruise ship as a destination and they are still the best at it. Rock climbing walls, surf simulators, Broadway shows, Central Park at sea. If someone wants everything, this is where you go.
           </p>
-          <p className="text-base" style={{ color: "#94A3B8" }}>
+          <p className="text-xs sm:text-sm md:text-base" style={{ color: "#94A3B8" }}>
             Eric has sailed Royal Caribbean four times on Symphony of the Seas, Oasis of the Seas, Anthem of the Seas, and Majesty of the Seas. He is a Platinum Crown and Anchor Society member. When he says Royal is worth it, he means it.
           </p>
         </div>
       </div>
 
       {/* Tab Bar */}
-      <div className="sticky top-0 z-30 shadow-md overflow-x-auto" style={{ background: RC_DARK }}>
-        <div className="flex justify-center min-w-max mx-auto px-4 w-full">
+      <div className="sticky top-0 z-30 shadow-md overflow-x-auto scrollbar-none" style={{ background: RC_DARK }}>
+        <div className="flex justify-start md:justify-center px-4 md:px-0">
           {TABS.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className="px-5 py-4 text-sm font-semibold whitespace-nowrap transition-all border-b-2"
+              className="px-4 sm:px-5 py-3.5 sm:py-4 text-xs sm:text-sm font-semibold whitespace-nowrap transition-all border-b-2 shrink-0"
               style={{
                 color: activeTab === tab.id ? RC_GOLD : "#94A3B8",
                 borderBottomColor: activeTab === tab.id ? RC_GOLD : "transparent",
@@ -97,13 +97,13 @@ export default function RoyalCaribbeanPage() {
       </div>
 
       {/* Tab Content */}
-      <div className="max-w-4xl mx-auto px-6 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12">
 
         {/* ABOUT ROYAL */}
         {activeTab === "about" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: RC_DARK }}>About Royal Caribbean</h2>
-            <p className="text-gray-500 mb-8">Royal Caribbean is the largest cruise line in the world and the one that changed what people thought a cruise ship could be. They kept building bigger, kept adding more, and kept raising the bar on what you can do at sea. Eric has sailed Royal four times and it remains one of his favorite lines.</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: RC_DARK }}>About Royal Caribbean</h2>
+            <p className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8">Royal Caribbean is the largest cruise line in the world and the one that changed what people thought a cruise ship could be. They kept building bigger, kept adding more, and kept raising the bar on what you can do at sea. Eric has sailed Royal four times and it remains one of his favorite lines.</p>
 
             <Accordion title="Who Is Royal Caribbean?">
               <p className="mb-3">Royal Caribbean International is a Miami-based cruise line founded in 1969. They were not the first cruise line but they became the most ambitious one. When other lines were building comfortable ships, Royal Caribbean was asking what else a ship could be. The answer turned out to be a lot.</p>
@@ -139,14 +139,14 @@ export default function RoyalCaribbeanPage() {
         {/* THE SHIPS */}
         {activeTab === "ships" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: RC_DARK }}>The Royal Caribbean Fleet</h2>
-            <p className="text-gray-500 mb-8">Royal Caribbean has one of the most iconic fleets at sea organized into ship classes that each represent a different generation of ambition. Here is a breakdown by class so you can find the right ship for your trip.</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: RC_DARK }}>The Royal Caribbean Fleet</h2>
+            <p className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8">Royal Caribbean has one of the most iconic fleets at sea organized into ship classes that each represent a different generation of ambition. Here is a breakdown by class so you can find the right ship for your trip.</p>
 
-            <div className="p-4 rounded-xl mb-6 text-sm" style={{ background: RC_ACCENT, borderLeft: `4px solid ${RC_NAVY}` }}>
+            <div className="p-4 rounded-xl mb-6 text-xs sm:text-sm" style={{ background: RC_ACCENT, borderLeft: `4px solid ${RC_NAVY}` }}>
               <strong>Eric's Note:</strong> I have personally sailed on Symphony of the Seas, Oasis of the Seas, Anthem of the Seas, and Majesty of the Seas. If you want a real firsthand take on any of those ships, just ask me.
             </div>
 
-            <h3 className="text-lg font-bold mb-3 mt-6" style={{ color: RC_NAVY }}>Icon Class — The World's Largest Ships</h3>
+            <h3 className="text-base sm:text-lg font-bold mb-3 mt-6" style={{ color: RC_NAVY }}>Icon Class — The World's Largest Ships</h3>
             {[
               {
                 name: "Icon of the Seas",
@@ -176,7 +176,7 @@ export default function RoyalCaribbeanPage() {
               </div>
             ))}
 
-            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: RC_NAVY }}>Oasis Class — Eric's Ships</h3>
+            <h3 className="text-base sm:text-lg font-bold mb-3 mt-8" style={{ color: RC_NAVY }}>Oasis Class — Eric's Ships</h3>
             {[
               {
                 name: "Wonder of the Seas",
@@ -227,7 +227,7 @@ export default function RoyalCaribbeanPage() {
               </div>
             ))}
 
-            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: RC_NAVY }}>Quantum Class — Eric's Ship</h3>
+            <h3 className="text-base sm:text-lg font-bold mb-3 mt-8" style={{ color: RC_NAVY }}>Quantum Class — Eric's Ship</h3>
             {[
               {
                 name: "Anthem of the Seas",
@@ -278,7 +278,7 @@ export default function RoyalCaribbeanPage() {
               </div>
             ))}
 
-            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: RC_NAVY }}>Freedom Class</h3>
+            <h3 className="text-base sm:text-lg font-bold mb-3 mt-8" style={{ color: RC_NAVY }}>Freedom Class</h3>
             {[
               {
                 name: "Freedom of the Seas",
@@ -315,7 +315,7 @@ export default function RoyalCaribbeanPage() {
               </div>
             ))}
 
-            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: RC_NAVY }}>Voyager Class</h3>
+            <h3 className="text-base sm:text-lg font-bold mb-3 mt-8" style={{ color: RC_NAVY }}>Voyager Class</h3>
             {[
               {
                 name: "Navigator of the Seas",
@@ -366,7 +366,7 @@ export default function RoyalCaribbeanPage() {
               </div>
             ))}
 
-            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: RC_NAVY }}>Vision and Radiance Class</h3>
+            <h3 className="text-base sm:text-lg font-bold mb-3 mt-8" style={{ color: RC_NAVY }}>Vision and Radiance Class</h3>
             {[
               {
                 name: "Brilliance of the Seas",
@@ -417,7 +417,7 @@ export default function RoyalCaribbeanPage() {
               </div>
             ))}
 
-            <div className="mt-8 p-5 rounded-xl text-white text-sm" style={{ background: RC_NAVY }}>
+            <div className="mt-8 p-5 rounded-xl text-white text-xs sm:text-sm" style={{ background: RC_NAVY }}>
               <strong>Not sure which ship is right for you?</strong> Royal Caribbean has ships ranging from intimate classic vessels to the largest cruise ships ever built. I have sailed four of them personally. Tell me where you want to go and what kind of experience you are after and I will point you in the right direction.
             </div>
           </section>
@@ -426,8 +426,8 @@ export default function RoyalCaribbeanPage() {
         {/* DINING */}
         {activeTab === "dining" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: RC_DARK }}>Dining Onboard</h2>
-            <p className="text-gray-500 mb-8">Royal Caribbean's dining program has grown significantly over the years. The bigger the ship, the more options you have. Here is a breakdown of what to expect across the fleet.</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: RC_DARK }}>Dining Onboard</h2>
+            <p className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8">Royal Caribbean's dining program has grown significantly over the years. The bigger the ship, the more options you have. Here is a breakdown of what to expect across the fleet.</p>
 
             <Accordion title="Main Dining Room (Included)">
               <p className="mb-3">Royal Caribbean's main dining rooms are traditional sit-down restaurants with both My Time Dining (flexible times) and set seating options. The menus rotate nightly with a mix of classic dishes and rotating specials. The quality is solid and the service is genuinely attentive.</p>
@@ -459,8 +459,8 @@ export default function RoyalCaribbeanPage() {
         {/* WHAT MAKES ROYAL DIFFERENT */}
         {activeTab === "unique" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: RC_DARK }}>What Makes Royal Caribbean Different</h2>
-            <p className="text-gray-500 mb-8">Royal Caribbean has been raising the bar on what a cruise ship can do for decades. Here are the features that set them apart from every other line at sea.</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: RC_DARK }}>What Makes Royal Caribbean Different</h2>
+            <p className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8">Royal Caribbean has been raising the bar on what a cruise ship can do for decades. Here are the features that set them apart from every other line at sea.</p>
 
             <Accordion title="FlowRider Surf Simulator">
               <p className="mb-3">The FlowRider is a surf simulator that creates a continuous wave on the back of the ship. You can bodyboard or stand-up surf depending on your skill level and the instructors onboard will get you up and riding even if you have never surfed before.</p>
@@ -512,10 +512,10 @@ export default function RoyalCaribbeanPage() {
         {/* SOLO TRAVEL */}
         {activeTab === "solo" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: RC_DARK }}>Solo Travel on Royal Caribbean</h2>
-            <p className="text-gray-500 mb-8">Royal Caribbean is a genuinely great line for solo travelers, especially outgoing ones. The ships are so big and so social that meeting people happens naturally. Eric has experienced this firsthand and here is what you need to know.</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: RC_DARK }}>Solo Travel on Royal Caribbean</h2>
+            <p className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8">Royal Caribbean is a genuinely great line for solo travelers, especially outgoing ones. The ships are so big and so social that meeting people happens naturally. Eric has experienced this firsthand and here is what you need to know.</p>
 
-            <div className="p-4 rounded-xl mb-6 text-sm" style={{ background: RC_ACCENT, borderLeft: `4px solid ${RC_NAVY}` }}>
+            <div className="p-4 rounded-xl mb-6 text-xs sm:text-sm" style={{ background: RC_ACCENT, borderLeft: `4px solid ${RC_NAVY}` }}>
               <strong>Honest take:</strong> Royal Caribbean does not have a hosted solo program like NCL's 5pm daily meetup with organized group dinners and a crew host. What Royal does have is an enormous social environment on massive ships where meeting people is almost unavoidable if you are open to it. Eric did not have a solo group on his Royal sailings but met amazing people on every single one.
             </div>
 
@@ -551,12 +551,12 @@ export default function RoyalCaribbeanPage() {
         {/* COCOCAY */}
         {activeTab === "cococay" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: RC_DARK }}>Perfect Day at CocoCay</h2>
-            <p className="text-gray-500 mb-8">Perfect Day at CocoCay is Royal Caribbean's private island in the Bahamas and in Eric's opinion it is the best private island experience in cruising. He has been there on the Symphony of the Seas and it is one of the best port days he has had on any sailing on any line.</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: RC_DARK }}>Perfect Day at CocoCay</h2>
+            <p className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8">Perfect Day at CocoCay is Royal Caribbean's private island in the Bahamas and in Eric's opinion it is the best private island experience in cruising. He has been there on the Symphony of the Seas and it is one of the best port days he has had on any sailing on any line.</p>
 
-            <div className="p-5 rounded-xl mb-6 text-white text-sm" style={{ background: `linear-gradient(135deg, ${RC_DARK}, ${RC_NAVY})` }}>
+            <div className="p-4 sm:p-5 rounded-xl mb-6 text-white text-xs sm:text-sm" style={{ background: `linear-gradient(135deg, ${RC_DARK}, ${RC_NAVY})` }}>
               <p className="font-bold mb-1" style={{ color: RC_GOLD }}>Eric's take on CocoCay</p>
-              <p>I have been to a lot of private islands. Ocean Cay on MSC, Great Stirrup Cay on NCL, Bimini on Virgin Voyages. CocoCay beats them all. The water park alone makes it the most entertaining private island in cruising. The Oasis Lagoon is the largest freshwater pool in the Bahamas. The snorkeling is excellent. The beaches are beautiful. And the entire island has been developed with a level of investment and thought that makes it feel genuinely special rather than just a beach with a bar. If your itinerary includes CocoCay, plan to spend the entire day there.</p>
+              <p className="leading-relaxed">I have been to a lot of private islands. Ocean Cay on MSC, Great Stirrup Cay on NCL, Bimini on Virgin Voyages. CocoCay beats them all. The water park alone makes it the most entertaining private island in cruising. The Oasis Lagoon is the largest freshwater pool in the Bahamas. The snorkeling is excellent. The beaches are beautiful. And the entire island has been developed with a level of investment and thought that makes it feel genuinely special rather than just a beach with a bar. If your itinerary includes CocoCay, plan to spend the entire day there.</p>
             </div>
 
             <Accordion title="What Is Perfect Day at CocoCay?">
@@ -602,10 +602,10 @@ export default function RoyalCaribbeanPage() {
         {/* CROWN AND ANCHOR LOYALTY */}
         {activeTab === "loyalty" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: RC_DARK }}>Crown and Anchor Society</h2>
-            <p className="text-gray-500 mb-8">Crown and Anchor Society is Royal Caribbean's loyalty program and it rewards you for every night you sail. Eric is a Platinum member with 30 cruise points and 23 cruise nights. Here is everything you need to know about how the program works and why it is worth paying attention to from your very first sailing.</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: RC_DARK }}>Crown and Anchor Society</h2>
+            <p className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8">Crown and Anchor Society is Royal Caribbean's loyalty program and it rewards you for every night you sail. Eric is a Platinum member with 30 cruise points and 23 cruise nights. Here is everything you need to know about how the program works and why it is worth paying attention to from your very first sailing.</p>
 
-            <div className="p-4 rounded-xl mb-6 text-sm" style={{ background: RC_ACCENT, borderLeft: `4px solid ${RC_NAVY}` }}>
+            <div className="p-4 rounded-xl mb-6 text-xs sm:text-sm" style={{ background: RC_ACCENT, borderLeft: `4px solid ${RC_NAVY}` }}>
               <strong>Eric is Platinum.</strong> He has earned 30 Crown and Anchor points across his four Royal Caribbean sailings on Symphony, Oasis, Anthem, and Majesty. He knows the program from personal experience and can walk you through how to maximize your points from day one.
             </div>
 
@@ -616,7 +616,7 @@ export default function RoyalCaribbeanPage() {
 
             <Accordion title="The Tier Levels and What They Get You">
               <p className="mb-3">Crown and Anchor has six tiers and the perks get meaningfully better as you climb:</p>
-              <ul className="list-disc pl-5 space-y-2 mb-3">
+              <ul className="list-disc pl-5 space-y-2 mb-3 text-sm sm:text-base">
                 <li><strong>Gold (3-11 points)</strong> — Welcome gift, savings certificates for future sailings, members-only offers</li>
                 <li><strong>Platinum (30-54 points) — Eric's current tier</strong> — Priority check-in, a complimentary dinner at a specialty restaurant, complimentary internet package on select sailings, exclusive access to the Platinum and above lounge onboard, complimentary bag of laundry, balcony discount</li>
                 <li><strong>Emerald (55-79 points)</strong> — All Platinum perks plus additional savings and priority tendering at certain ports</li>
@@ -635,7 +635,7 @@ export default function RoyalCaribbeanPage() {
 
             <Accordion title="How to Maximize Your Points">
               <p className="mb-3">A few strategies that make a real difference in how fast you accumulate Crown and Anchor points:</p>
-              <ul className="list-disc pl-5 space-y-2 mb-3">
+              <ul className="list-disc pl-5 space-y-2 mb-3 text-sm sm:text-base">
                 <li><strong>Longer sailings earn more points</strong> — A 7-night sailing earns 7 points. A 14-night sailing earns 14. If you have flexibility, longer itineraries accelerate your tier progress significantly</li>
                 <li><strong>Suite bookings triple your points</strong> — One night in a suite earns 3 points versus 1 point in a standard cabin. If a suite fits your budget, the point acceleration is a meaningful benefit</li>
                 <li><strong>Book early and transfer to me</strong> — Royal Caribbean allows bookings made directly to be transferred to a travel advisor within a certain window. You can grab a good early booking price and still get my support and any advisor perks that apply</li>
@@ -645,7 +645,7 @@ export default function RoyalCaribbeanPage() {
 
             <Accordion title="Crown and Anchor vs Other Loyalty Programs">
               <p className="mb-3">Every major cruise line has a loyalty program and they are all worth enrolling in from day one. Here is a quick comparison of what Eric knows firsthand:</p>
-              <ul className="list-disc pl-5 space-y-2 mb-3">
+              <ul className="list-disc pl-5 space-y-2 mb-3 text-sm sm:text-base">
                 <li><strong>Royal Caribbean Crown and Anchor</strong> — Strong program with meaningful perks at Diamond and above. The drinks benefit at Diamond level is one of the best financial perks in cruise loyalty programs</li>
                 <li><strong>NCL Latitudes</strong> — NCL's loyalty program with similar tier structure. Priority boarding and specialty dining credits are highlights at higher tiers</li>
                 <li><strong>MSC Voyagers Club</strong> — MSC's program which offers discounts on future sailings and some onboard perks. Growing in value as MSC expands its North America presence</li>
@@ -659,10 +659,10 @@ export default function RoyalCaribbeanPage() {
         {/* SHORE EXCURSIONS */}
         {activeTab === "excursions" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: RC_DARK }}>Shore Excursions</h2>
-            <p className="text-gray-500 mb-8">Royal Caribbean's shore excursion program is one of the most comprehensive in the industry. You can book through the Royal Caribbean app or website before you sail. Here is what to know and a look at some of the ports Eric has visited on Royal sailings.</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: RC_DARK }}>Shore Excursions</h2>
+            <p className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8">Royal Caribbean's shore excursion program is one of the most comprehensive in the industry. You can book through the Royal Caribbean app or website before you sail. Here is what to know and a look at some of the ports Eric has visited on Royal sailings.</p>
 
-            <div className="p-4 rounded-xl mb-6 text-sm" style={{ background: RC_ACCENT, borderLeft: `4px solid ${RC_NAVY}` }}>
+            <div className="p-4 rounded-xl mb-6 text-xs sm:text-sm" style={{ background: RC_ACCENT, borderLeft: `4px solid ${RC_NAVY}` }}>
               <p className="font-semibold mb-1">Always book before you sail and always book through the ship.</p>
               <p className="mb-2">Pre-cruise pricing is lower and popular excursions sell out. The best port experiences go fast.</p>
               <p>When you book through Royal Caribbean, the ship waits for you if your excursion runs long. If you book independently and you are late, the ship leaves without you. That risk matters more on a port-heavy Caribbean itinerary where the next port might be a different country.</p>
@@ -707,9 +707,9 @@ export default function RoyalCaribbeanPage() {
               },
             ].map((p) => (
               <Accordion key={p.port} title={`${p.port}${p.eric ? " — Eric Has Been Here" : ""}`}>
-                <p className="mb-4">{p.about}</p>
-                <p className="font-semibold mb-2" style={{ color: RC_NAVY }}>Popular Excursions Here</p>
-                <ul className="list-disc pl-5 space-y-1 text-sm">
+                <p className="mb-4 text-sm sm:text-base">{p.about}</p>
+                <p className="font-semibold mb-2 text-sm sm:text-base" style={{ color: RC_NAVY }}>Popular Excursions Here</p>
+                <ul className="list-disc pl-5 space-y-1 text-xs sm:text-sm">
                   {p.excursions.map((e) => <li key={e}>{e}</li>)}
                 </ul>
               </Accordion>
@@ -720,10 +720,10 @@ export default function RoyalCaribbeanPage() {
         {/* TRIP INSURANCE */}
         {activeTab === "insurance" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: RC_DARK }}>Trip Insurance</h2>
-            <p className="text-gray-500 mb-8">I always recommend trip insurance on every cruise booking. Travel puts you in situations where things can go sideways in ways nobody plans for. This is the coverage that keeps a rough moment from becoming a financial disaster.</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: RC_DARK }}>Trip Insurance</h2>
+            <p className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8">I always recommend trip insurance on every cruise booking. Travel puts you in situations where things can go sideways in ways nobody plans for. This is the coverage that keeps a rough moment from becoming a financial disaster.</p>
 
-            <div className="p-5 rounded-xl mb-6 text-white text-sm" style={{ background: RC_NAVY }}>
+            <div className="p-4 sm:p-5 rounded-xl mb-6 text-white text-xs sm:text-sm" style={{ background: RC_NAVY }}>
               <strong>Buy it at booking.</strong> Trip insurance is cheaper when you add it at the time of your initial deposit and certain pre-existing condition coverage only applies within the first 14 to 21 days of booking. Do not wait on this one.
             </div>
 
@@ -759,8 +759,8 @@ export default function RoyalCaribbeanPage() {
         {/* ERIC'S TIPS */}
         {activeTab === "tips" && (
           <section>
-            <h2 className="text-3xl font-bold mb-2" style={{ color: RC_DARK }}>Eric's Tips for Your Royal Caribbean Sailing</h2>
-            <p className="text-gray-500 mb-8">I have sailed Royal Caribbean four times on four different ships. Here is what I actually tell people before they board.</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: RC_DARK }}>Eric's Tips for Your Royal Caribbean Sailing</h2>
+            <p className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8">I have sailed Royal Caribbean four times on four different ships. Here is what I actually tell people before they board.</p>
 
             <Accordion title="Sign Up for Crown and Anchor Before You Board">
               <p>If you do not have a Crown and Anchor account, create one before your sailing and make sure it is linked to your reservation. Your points will not be credited retroactively if you forget to enroll. Starting from day one means every night counts toward your tier progress from the very first sailing.</p>
@@ -803,17 +803,17 @@ export default function RoyalCaribbeanPage() {
         )}
 
         {/* CTA */}
-        <div className="mt-14 rounded-2xl p-8 text-center text-white" style={{ background: `linear-gradient(135deg, ${RC_DARK}, ${RC_NAVY})` }}>
-          <p className="text-sm uppercase tracking-widest mb-2" style={{ color: RC_GOLD }}>Ready to Sail Royal Caribbean</p>
-          <h3 className="text-2xl font-bold mb-3">Big Ships. Real Value. Someone In Your Corner.</h3>
-          <p className="mb-6 max-w-lg mx-auto" style={{ color: "#CBD5E1" }}>
+        <div className="mt-10 sm:mt-14 rounded-2xl p-6 sm:p-8 text-center text-white" style={{ background: `linear-gradient(135deg, ${RC_DARK}, ${RC_NAVY})` }}>
+          <p className="text-xs uppercase tracking-widest mb-2" style={{ color: RC_GOLD }}>Ready to Sail Royal Caribbean</p>
+          <h3 className="text-xl sm:text-2xl font-bold mb-3">Real trips. Real value. Someone actually in your corner.</h3>
+          <p className="text-sm sm:text-base mb-6 max-w-lg mx-auto leading-relaxed" style={{ color: "#CBD5E1" }}>
             I've sailed Royal Caribbean four times and I'm a Platinum Crown & Anchor member, so I know these massive ships inside and out. When you work with me, you get that actual firsthand knowledge to find the right ship for your style, and someone who actually answers the phone when you have a question. Drop your info below and let's get it sorted.
           </p>
           <a
             href={FORM_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-4 rounded-lg font-bold text-base transition hover:opacity-90"
+            className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg font-bold text-sm sm:text-base transition hover:opacity-90 shadow-md"
             style={{ background: RC_GOLD, color: RC_DARK }}
           >
             Why wait? Let's plan, book, and sail.
