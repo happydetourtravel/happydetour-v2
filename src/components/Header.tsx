@@ -20,7 +20,7 @@ export default function Header() {
       </div>
 
       {/* Header */}
-      <header className="w-full bg-white border-b border-gray-200 px-4 py-2">
+<header className="w-full bg-white border-b border-gray-200 px-4 py-4 md:py-6">
         <div className="w-full flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img src="/HDT.png" alt="Happy Detour Travel" className="h-14 w-auto" />
