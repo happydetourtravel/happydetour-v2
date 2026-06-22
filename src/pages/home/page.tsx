@@ -36,27 +36,27 @@ export default function Home() {
   return (
     <main>
 
-    {/* Hero */}
-  <div style={{ position: 'relative', overflow: 'hidden', marginTop: '40px' }}>
-    <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/hero-image.webp')", backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(0.38)' }} />
-    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,114,152,0.80) 0%, rgba(0,0,0,0.15) 100%)' }} />
-    <div style={{
-      position: 'relative',
-      maxWidth: '1280px',
-      margin: '0 auto',
-      padding: '48px 20px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      gap: '32px',
-      flexDirection: 'column',
-    }}
-      className="hero-inner"
-    >
-      <div style={{ width: '100%', maxWidth: '600px' }}>
-        <h1 style={{ color: 'white', fontSize: 'clamp(28px, 6vw, 46px)', fontWeight: '800', lineHeight: '1.15', margin: '0 0 16px 0' }}>
-          Real trips. Real value. Someone actually in your corner.
-        </h1>
+      {/* Hero */}
+      <div style={{ position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/hero-image.webp')", backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(0.38)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,114,152,0.80) 0%, rgba(0,0,0,0.15) 100%)' }} />
+        <div style={{
+          position: 'relative',
+          maxWidth: '1280px',
+          margin: '0 auto',
+          padding: '48px 20px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '32px',
+          flexDirection: 'column',
+        }}
+          className="hero-inner"
+        >
+          <div style={{ width: '100%', maxWidth: '600px' }}>
+            <h1 style={{ color: 'white', fontSize: 'clamp(28px, 6vw, 46px)', fontWeight: '800', lineHeight: '1.15', margin: '0 0 16px 0' }}>
+              Real trips. Real value. Someone actually in your corner.
+            </h1>
             <p style={{ color: '#F59E0B', fontSize: 'clamp(16px, 4vw, 20px)', fontWeight: '700', margin: '0 0 16px 0' }}>
               Vacations Planned Without The Overwhelming Complications
             </p>
