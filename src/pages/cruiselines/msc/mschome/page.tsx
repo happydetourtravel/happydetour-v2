@@ -110,7 +110,7 @@ export default function MSCPage() {
               <p className="text-sm" style={{ color: "#6B7280" }}>
                 MSC operates one of the largest and fastest-growing cruise fleets in the world, with ships sailing everywhere from the Caribbean to the Mediterranean, Alaska, and beyond.{" "}
                 
-                  href="https://www.msccruises.com/en-us/discover-msc/our-ships"
+                 <a href="https://www.msccruises.com/en-us/discover-msc/our-ships"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: MSC_NAVY, textDecoration: "underline" }}
@@ -823,7 +823,7 @@ export default function MSCPage() {
             I've sailed MSC four times and know the line inside and out. When you book with me, you get that actual firsthand experience, the right cabin for your style, and someone who is genuinely paying attention to the details.
           </p>
           
-            href={FORM_LINK}
+           <a href={FORM_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 rounded-lg font-bold text-sm transition hover:opacity-90"
