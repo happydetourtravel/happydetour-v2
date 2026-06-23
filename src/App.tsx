@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-// Now, the computer only loads these when the user actually clicks on them
 const Home = lazy(() => import('./pages/home/page'));
 const Join = lazy(() => import('./pages/join/page'));
 const Login = lazy(() => import('./pages/login/page'));
@@ -29,12 +28,12 @@ const BeachesHome = lazy(() => import('./pages/resorts/beaches/beacheshome/page'
 const BlogIndex = lazy(() => import('./pages/blog/index/page'));
 const BlogPost = lazy(() => import('./pages/blog/post/page'));
 const HalloweenCaribbean = lazy(() => import('./pages/group/halloween-caribbean-2026/page'));
+const AllureEasternCaribbean = lazy(() => import('./pages/group/allure-eastern-caribbean-2027/page'));
 
 function Layout() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      {/* This "Suspense" handles the brief moment while a new page loads */}
       <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -62,6 +61,7 @@ function Layout() {
           <Route path="/blog" element={<BlogIndex />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/group/halloween-caribbean-2026" element={<HalloweenCaribbean />} />
+          <Route path="/group/allure-eastern-caribbean-2027" element={<AllureEasternCaribbean />} />
         </Routes>
       </Suspense>
       <Footer />
