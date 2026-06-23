@@ -1,8 +1,4 @@
-// AllureEasternCaribbeanLanding.tsx
-// Route: /group/allure-eastern-caribbean-2027
-// Royal Caribbean — Allure of the Seas — January 10, 2027
-
-export default function AllureEasternCaribbeanLanding() {
+export default function Page() {
 
   const textHref = `sms:7473338687&body=${encodeURIComponent("Hi Eric, I saw the Allure of the Seas group cruise and want to know more.")}`;
   const emailHref = `mailto:eric@happydetour.com?subject=${encodeURIComponent("Allure of the Seas Group Cruise")}&body=${encodeURIComponent("Hi Eric, I am interested in the Eastern Caribbean group sailing on Allure of the Seas departing January 10, 2027. Can you send me the details?")}`;
@@ -59,7 +55,7 @@ export default function AllureEasternCaribbeanLanding() {
           <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
             Sailing Itinerary
           </p>
-          <div className="space-y-2 mb-5">
+          <div className="space-y-3 mb-5">
             {[
               { date: "Sun Jan 10", port: "Miami, Florida", note: "Departs 4:00 PM" },
               { date: "Mon Jan 11", port: "At Sea", note: "Cruising" },
@@ -69,10 +65,10 @@ export default function AllureEasternCaribbeanLanding() {
             ].map(({ date, port, note }) => (
               <div key={date} className="flex justify-between text-sm">
                 <div>
-                  <span className="text-gray-400 text-xs">{date}</span>
-                  <p className="text-[#1F2937] font-medium m-0">{port}</p>
+                  <p className="text-gray-400 text-xs mb-0.5">{date}</p>
+                  <p className="text-[#1F2937] font-medium">{port}</p>
                 </div>
-                <span className="text-gray-400 text-xs text-right self-center">{note}</span>
+                <span className="text-gray-400 text-xs self-center">{note}</span>
               </div>
             ))}
           </div>
