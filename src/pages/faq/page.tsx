@@ -168,7 +168,7 @@ export default function FAQ() {
             Still have a question? Just reach out directly.
           </p>
           
-            href={FORM_URL}
+           <a href={FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
             style={{
