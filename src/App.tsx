@@ -29,6 +29,8 @@ const BlogIndex = lazy(() => import('./pages/blog/index/page'));
 const BlogPost = lazy(() => import('./pages/blog/post/page'));
 const HalloweenCaribbean = lazy(() => import('./pages/group/halloween-caribbean-2026/page'));
 const AllureEasternCaribbean = lazy(() => import('./pages/group/allure-eastern-caribbean-2027/page'));
+const AlaskaGlacialFjords = lazy(() => import('./pages/group/alaska-glacial-fjords-2027/page'));
+const BajaHalloween = lazy(() => import('./pages/group/baja-halloween-2027/page'));
 
 function Layout() {
   return (
@@ -62,6 +64,8 @@ function Layout() {
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/group/halloween-caribbean-2026" element={<HalloweenCaribbean />} />
           <Route path="/group/allure-eastern-caribbean-2027" element={<AllureEasternCaribbean />} />
+          <Route path="/group/alaska-glacial-fjords-2027" element={<AlaskaGlacialFjords />} />
+          <Route path="/group/baja-halloween-2027" element={<BajaHalloween />} />
         </Routes>
       </Suspense>
       <Footer />
