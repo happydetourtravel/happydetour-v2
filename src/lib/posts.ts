@@ -888,6 +888,179 @@ export const POSTS: Post[] = [
       <p>Eric<br/>Happy Detour Travel<br/>happydetour.com</p>
     `,
   },
+  {
+    slug: 'the-great-chatbot-experiment',
+    title: 'The Great Chatbot Experiment: Why I am Sticking to Personal Service',
+    date: '2026-05-03',
+    tag: 'Behind the Brand',
+    excerpt: 'Running Happy Detour Travel means I am always looking for ways to help people plan trips without adding more complexity to the process. The real challenge is that people land on my website, have questions, and often leave before I even realize they were there.',
+    image: '/blog/img_56.webp',
+    content: `
+      <p>Running Happy Detour Travel means I am always looking for ways to help people plan trips without adding more complexity to the process. The real challenge is that people land on my website, have questions, and often leave before I even realize they were there. It feels like a missed connection.</p>
+
+      <p>I have been running Facebook and Instagram ads for my current group cruises. Right now I am focused on getting travelers on board the <a href="https://happydetour.com/everyonewelcome">MSC Seascape</a> sailing in September 2026 and our ABC Islands sailing on <a href="https://happydetour.com/carnival">Carnival Horizon</a> in October 2026.</p>
+
+      <p>I am getting hits on the website. But the reality is, out of 14 visitors who clicked through, I only had one person show real interest. That is not a traffic problem. That is a conversion problem.</p>
+
+      <h2>The Theory: Give Them Instant Answers</h2>
+
+      <p>I thought the solution was an AI chatbot. I spent hours today training a bot on 45 unique questions and answers, a list that started with the spreadsheet. It covered everything from "Is this actually free?" to "Do I need a passport?" and "What should I pack?"</p>
+
+      <p>I also looked into a tool called Tidio to add a live chat widget to my landing pages. I walked through the setup, picked my goals, and even got the code live on my GitHub repo so Vercel could deploy it.</p>
+
+      <h2>The Reality: Tech Friction is Real</h2>
+
+      <p>As soon as I got these tools live, I saw the problems.</p>
+
+      <p>First, the "annoying popup" issue. One of the tools immediately hit visitors with a "Subscribe now" form for a newsletter I do not even have yet. It felt pushy and corporate. It got in the way of the actual story I am trying to tell about these beautiful Caribbean destinations.</p>
+
+      <p>Second, the clutter. The chat widgets were overlapping with my "Reserve Now" buttons. It looked messy. My landing pages are designed to be calming and simple, and suddenly they felt like a busy tech dashboard.</p>
+
+      <p>But the biggest reason I decided to pull the plug? It just did not feel like me.</p>
+
+      <h2>Why I Drove a "Happy Detour" Away from Bots</h2>
+
+      <p>I realized that people do not come to a travel advisor for a bot. They come to a travel advisor because they want a human.</p>
+
+      <p>Most people are used to booking travel entirely online with faceless corporations. They are not used to working with an advisor who has personally sailed on 17 cruises and knows exactly which cabin they should pick. When I add a bot to that mix, I am just adding another layer of "tech" between me and the people I want to help.</p>
+
+      <p>I do not need multi-channel management or automated flows right now. Most of my clients just want to text me. I do not need the extra complexity, and neither do they.</p>
+
+      <h2>Where Things Stand Now</h2>
+
+      <p>I have removed the chatbot code and the Tidio widget from all my pages. I am keeping things lean and focused. Both landing pages now have a floating reserve button with a cruise ship icon, clear and simple ways to call, text, or email me directly, and zero annoying popups or bots getting in the way.</p>
+
+      <p>I am not spending money on a paid chat plan until I know it is actually helping my clients. That is how I run this business. I test a feature, I learn from it, and I am not afraid to pivot if it does not fit the brand.</p>
+
+      <p>If you have been thinking about a vacation, you can still get all those questions answered. But instead of a bot, you will be talking to me. There is absolutely no pressure. We just want to help you find that perfect escape.</p>
+
+      <p><a href="https://happydetour.com">Happy Detour Travel</a> — Affordable vacations. Fun experiences. Everyone welcome.</p>
+    `,
+  },
+  {
+    slug: 'why-im-all-in-on-the-msc-seascape-this-september',
+    title: 'Why I\'m All in on the MSC Seascape This September',
+    date: '2026-05-10',
+    tag: 'Cruise Tips',
+    excerpt: 'I\'ve cruised MSC three times now. Once on the Armonia and twice on the Meraviglia. And every single time, I\'ve had a good time. So when I saw the MSC Seascape sailing out for a week in September, I knew I wanted to be on it. And I wanted to bring people with me.',
+    image: '/blog/seascape.webp',
+    content: `
+      <p>I've cruised MSC three times now. Once on the Armonia and twice on the Meraviglia. And every single time, I've had a good time. Not because everything was perfect. Not because I stayed in the fanciest suite or ate at the most expensive restaurant. But because when you cruise, it's about the ship, the people you're with, and the experiences you let yourself have.</p>
+
+      <p>So when I saw the MSC Seascape sailing out for a week in September, I knew I wanted to be on it. And I wanted to bring people with me. This is the ship I'm booking my group on, and after everything I've learned about it, I'm confident this is going to be a trip worth remembering.</p>
+
+      <h2>The Ship That Gets Heads Turning</h2>
+
+      <p>The MSC Seascape is massive. We're talking 170,000 tons and 19 decks of pure cruise ship. It's built to hold over 5,000 people, but here's the thing. Even with that many guests, the ship feels designed so you can find your own space. There are quiet corners if you want them. There are lively pool decks if that's your vibe. And the layout makes it easy to move around without feeling like you're fighting the crowds.</p>
+
+      <p>The first thing people talk about when they board the Seascape is the atrium. It's four decks high with this sweeping staircase covered in 10,000 Swarovski crystals. It's meant to feel like New York City glamour, and it does. You walk on and you're hit with glass, chrome, sparkle, and this sense that you just stepped into something special. It's flashy, sure, but it's fun. And I think that's what MSC gets right. They don't try to be subtle. They lean into it.</p>
+
+      <p>People who have been on the ship say the same thing. The Seascape is gorgeous. The design feels fresh and modern. The cabins are clean and spacious, even in the standard rooms. And if you spring for a balcony, you're looking at ocean views that make it worth every penny. One reviewer I read said they'd wake up and watch the sunrise from their balcony every morning. That's the kind of moment you don't forget.</p>
+
+      <h2>The Food Situation</h2>
+
+      <p>Let me be honest with you. The main dining room and the buffet are fine. They're not going to blow your mind, but they're not bad either. MSC does a solid job with variety, and they've added some Texas-inspired dishes like smoked brisket and prime rib that people are loving. The buffet has options for everyone, including sugar-free desserts and dietary-friendly choices. And the pizza is actually really good, which matters more than you'd think.</p>
+
+      <p>But here's where the Seascape shines. The specialty restaurants. If you're going to splurge anywhere on this ship, do it here. The steakhouse, Butcher's Cut, gets rave reviews. People say the food is restaurant-quality and the service is on point. Hola Tacos and Cantina is a fan favorite for anyone who likes fresh, flavorful Mexican food. And if you're into teppanyaki, the hibachi grill is a whole experience.</p>
+
+      <p>One cruiser I came across said they booked their next two MSC cruises while they were still on the Seascape. That's the kind of impression the food made on them. And honestly, that tells me everything I need to know.</p>
+
+      <h2>Things to Do When You're Not Eating</h2>
+
+      <p>This ship has activities. Lots of them. There's a water park called Pirates Cove that's free and perfect for families. There's a sports court. There are pools spread across multiple decks so you're not fighting for space. The Robotron ride is the big draw. It's the only robo-coaster at sea, and it takes you 173 feet above the water while flipping you upside down and spinning you around. If you like thrill rides, this is your moment.</p>
+
+      <p>There's also a full spa with a thermal suite, which includes a salt room, hot tubs, and heated loungers. People who've been in there say it's the perfect way to unwind, especially on a sea day. And if you want to people-watch or just hang out with a drink, there are bars everywhere. The Seascape Bar overlooks the atrium and has this open, social vibe. The Cocktail Bar on Deck 8 feels more intimate and upscale.</p>
+
+      <p>The MSC for Me app is another thing people love. You can book reservations, check the daily schedule, chat with your travel group for free, and keep track of your onboard spending. It's one of those things that just makes the whole experience smoother.</p>
+
+      <h2>Cruising in September: What You Need to Know</h2>
+
+      <p>Let me be straight with you. September is peak hurricane season. That's just the reality. The weather can be hot and humid, and there's a higher chance of rain or tropical storms. But here's the thing. Cruise lines monitor the weather constantly. If a storm is coming, they will reroute the ship. You're not sailing into danger. And if conditions are bad enough, they'll cancel the cruise and refund you or give you future cruise credit.</p>
+
+      <p>The upside to cruising in September is that it's one of the quietest times of the year. Schools are back in session. Summer vacationers are done. That means fewer crowds, better availability, and often lower prices. You're more likely to find a lounge chair by the pool. You're not waiting in long lines at the buffet. And the ship feels a little more relaxed because there's just more space to breathe.</p>
+
+      <p>Yes, it might rain. Caribbean rain in September tends to come in quick bursts and then clear out. It's not the end of the world. Pack a light rain jacket. Plan for indoor activities if the weather's rough. And honestly, if you're on a ship like the Seascape with so much to do inside, a rainy afternoon isn't going to ruin your trip.</p>
+
+      <p>If you're someone who gets nervous about hurricanes, I get it. But I also think the risks are manageable, and the benefits of cruising this time of year make it worth considering. Especially if you're flexible and you know what you're signing up for.</p>
+
+      <h2>What Real Cruisers Are Saying</h2>
+
+      <p>I spent a lot of time reading reviews from people who've actually sailed on the Seascape. And the overall vibe is positive. People love the ship's design. They say the atrium is stunning and the ship feels new and well-maintained. The cabins are spacious, especially compared to other cruise lines. And the crew gets a lot of praise for being friendly and helpful.</p>
+
+      <p>One thing that kept coming up is that the ship never feels too crowded, even when it's at high capacity. There are enough pools, bars, and spaces that you can always find somewhere to go. And people appreciate that.</p>
+
+      <p>The specialty dining gets top marks. One person said the teppanyaki restaurant was awesome and the steakhouse was exceptional. Multiple reviews mentioned how good the shows are in the theater. The entertainment isn't just background noise. It's actually worth going to.</p>
+
+      <p>Not everything is perfect. Some people said the elevators can be slow during peak times. A few mentioned that the buffet food is sometimes lukewarm instead of hot. And a handful of cruisers felt like MSC nickel-and-dimes you with drink packages and internet fees. But those complaints are pretty standard for any cruise line. No ship is perfect.</p>
+
+      <p>The thing that stood out to me the most was this. People who went in nervous because of bad reviews online almost always came back saying they had a great time. One cruiser said they had a fantastic time despite the negative reviewers. Another said they were pleasantly surprised after reading so many complaints. That tells me the ship delivers when you give it a fair shot.</p>
+
+      <h2>Why I'm Confident About This Trip</h2>
+
+      <p>I've cruised MSC before, and I know what to expect. I know their style. I know the vibe. And I like it. The Seascape takes everything MSC does well and turns it up. This is their newest, flashiest ship, and they're clearly proud of it.</p>
+
+      <p>The ship is beautiful. The food at the specialty restaurants is excellent. Ocean Cay is a unique stop that you can't get anywhere else. And September, for all its weather risks, gives us the advantage of smaller crowds and better pricing.</p>
+
+      <p>I'm not promising you perfect weather. I'm not promising that every single thing will go exactly as planned. But I am promising that this trip is going to be fun. Because at the end of the day, cruising is what you make of it. It's about being on the water. It's about good food, good company, and good memories. And the Seascape is set up to give us all of that and then some.</p>
+
+      <p>If you've been thinking about joining us, now you know what you're getting into. This is the ship. This is the trip. And I can't wait to see who's coming along for the ride.</p>
+
+      <p>Happy Detour Travel — Affordable vacations. Fun experiences. Everyone welcome.</p>
+    `,
+  },
+  {
+    slug: 'the-lab-the-list-and-the-art-of-letting-go',
+    title: 'The Lab, the List, and the Art of Letting Go',
+    date: '2026-05-12',
+    tag: 'Behind the Brand',
+    excerpt: 'Running Happy Detour Travel means I am constantly looking for ways to stay connected with people who might want to book a trip. I keep hearing from every marketing expert that I need an email list. So I decided to set one up. What followed was a lesson in knowing when to stop.',
+    image: '/blog/img_56__1_.webp',
+    content: `
+      <p>Running Happy Detour Travel means I am constantly looking for ways to stay connected with people who might want to book a trip. I keep hearing from every marketing expert that I need an email list. They say it is essential for any business, especially one trying to build a loyal audience from the ground up.</p>
+
+      <p>So, I decided to set one up. I started with what seemed like the simplest option which is Jetpack. It is a WordPress plugin that lets people subscribe to my blog and get notified when I post something new. It sounded perfect because it was straightforward and built right into my site. Except it was not free anymore. The subscription feature now costs five dollars a month. While that is not a huge amount, I am bootstrapping this business and every recurring cost adds up.</p>
+
+      <p>I pivoted to MailerLite, which is a free email service that lets you manage up to 1,000 subscribers without paying a dime. I signed up, created a group called Happy Detour Insiders, and built a simple signup form. The copy felt right. I wrote that there would be no pressure and just fun tips and backstories. No sales clutter, just real stories from my travel experiences and an honest look at how I am building this business in Alliance, Ohio.</p>
+
+      <p>It felt like me. It felt like my brand. Then I tried to add it to my WordPress blog and things got messy.</p>
+
+      <p>My current WordPress plan does not support the MailerLite plugin unless I upgrade. I tried adding the embed code manually through widgets, but my theme does not use them. I tried the site editor by adding a Custom HTML block to my Single Posts template. It broke. The code showed up as plain text at the bottom of my blog posts instead of a clean signup form.</p>
+
+      <p>I could have kept troubleshooting. I could have searched for more workarounds. But at some point, I had to ask myself if this was worth it right now. The honest answer was no.</p>
+
+      <p>I do not have hundreds of people visiting my blog yet. I am still figuring out my voice, writing posts, and learning how to share content that resonates. Adding an email list right now would be solving a problem I do not actually have. Email lists are powerful, but they are also one more system to learn and one more task on the list. Right now, my energy is better spent writing good content and connecting with people on Facebook and Instagram where my audience already is.</p>
+
+      <p>Sometimes the smartest move in business is not adding more tools. It is knowing what to skip so you can focus on what actually matters. Right now, what matters is showing up, writing honestly, and building trust one post at a time. The email list can wait.</p>
+
+      <h2>Five Tries to Get a Single Page Live</h2>
+
+      <p>While I was wrestling with email lists, I was also fighting a different battle in the lab. I wanted to add a destinations page to the Happy Detour Travel website. It sounds simple to just create a page and push it live, but the reality was much different.</p>
+
+      <p>My website lives on GitHub and deploys through Vercel. Most of my pages are just simple HTML files like everyonewelcome or anniversary cruise. They work with no drama. But I also have a React setup running that I have been building out for more dynamic content.</p>
+
+      <p>I created a new page for destinations and pushed it to GitHub. When I checked the live site, it was a 404 error. It turns out that the router I am using did not like my file name. I renamed it and pushed it again. Still a 404 error. Then I realized the file somehow got deleted during the commit process. I created it again and pushed it a third time. Still nothing.</p>
+
+      <p>Then Vercel stopped building the site entirely. I had red icons everywhere. My routing config was looking for a file I had already deleted. I updated the code and finally got a green checkmark. The site built successfully, but the live page was still missing.</p>
+
+      <p>The fourth problem was a sneaky rewrite rule in my configuration file. Vercel was looking for an HTML file that did not exist instead of letting my React code handle it. I deleted that line and pushed it again. Still a 404.</p>
+
+      <p>The fifth and final problem was a missing catch-all rule. I finally added a line of code that told Vercel to send any unmatched routes to my main index file so the site could figure it out. I pushed the code, waited for the build, and hard refreshed my browser. It finally worked.</p>
+
+      <h2>What I am Learning in the Process</h2>
+
+      <p>At one point, I thought about converting every single page on my site to React. But honestly, the simple HTML pages just work. They are stable and they do not give me build errors. I am keeping them.</p>
+
+      <p>Right now, my site is a hybrid. I use static HTML pages for most things and React pages for things that need to be more dynamic like my new destinations page. Is it a bit messy? Maybe. Does it work? Yes.</p>
+
+      <p>This whole experience reminded me of a few things. File names matter. Always check your routing config when you rename files. Sometimes the simplest solution is the right one. And most importantly, you have to hard refresh your browser more often than you think.</p>
+
+      <p>The destinations page is live now at happydetour.com/destinations. It shows Virgin Voyages, Sandals, Beaches, and the other cruise lines I work with. It took five tries to get there, but that is part of the journey.</p>
+
+      <p>This business is about testing features, learning from the failures, and adjusting the strategy. If a tool does not fit the brand or it adds too much friction, I am not afraid to pull the plug and try something else. Whether it is a chatbot that feels too corporate or an email list that is not ready for prime time, I am sticking to what works for my community.</p>
+
+      <p>Happy Detour Travel — Affordable vacations. Fun experiences. Everyone welcome.</p>
+    `,
+  },
 ]
 
 export function getAllPosts(): Post[] {
