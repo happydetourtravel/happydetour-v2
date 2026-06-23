@@ -535,6 +535,45 @@ export const POSTS: Post[] = [
       <p>Eric<br/>happydetour.com<br/>@happydetourtravel<br/>Affordable vacations. Fun experiences. Everyone welcome.</p>
     `,
   },
+  {
+    slug: 'i-didnt-know-anything-about-websites-but-i-built-one-anyway',
+    title: 'I Didn\'t Know Anything About Websites… But I Built One Anyway',
+    date: '2026-03-18',
+    tag: 'Behind the Brand',
+    excerpt: 'I want to be real about this because I think a lot of people get stuck in the same place I was in. I had this idea for a laundromat and I bought a domain for it a while back through GoDaddy. When the renewal came up, it was about $20 for the year. I wasn\'t using it. And that\'s what bothered me.',
+    image: '/blog/gemini_generated_image_f29likf29likf29l.webp',
+    content: `
+      <p>I want to be real about this because I think a lot of people get stuck in the same place I was in. I had this idea for a laundromat and I bought a domain for it a while back through GoDaddy. When the renewal came up, it was about $20 for the year. Now, I'm not going to sit here and say I couldn't afford $20, but I also wasn't using it. And that's what bothered me. If I'm not building anything yet, why am I paying more than I need to just to hold a name?</p>
+
+      <p>So I started thinking a little differently. If I'm going to keep domains for future ideas, I should at least do it smarter and cheaper. I did what most people do and went to YouTube. I started searching for domain hosting, website hosting, and how to do all of this without spending a ton of money.</p>
+
+      <p>I went from having one tab open to about fifty-seven. My computer fan was screaming, and I was just sitting there staring at names like Porkbun wondering if I was accidentally looking at a lunch menu or a tech site. I kept seeing the same names come up over and over again like Namecheap, Porkbun, Dynadot, Spaceship, and Cloudflare. All of it was new to me, but one stood out.</p>
+
+      <p>Spaceship.</p>
+
+      <p>Something about it just clicked. The site looked clean, modern, and easy to understand. I really liked the black and blue look. It just felt simple. So I tried it. I registered happydetour.com there and what really got me was the price. It was under $10 a year to keep the domain. That changed everything for me because when you really think about it, the difference between $20 and $10 is basically a Starbucks coffee. And honestly, I'm more of a Dunkin person anyway.</p>
+
+      <p>I'm just a guy in Ohio trying to clear the fog. I don't have a Silicon Valley team; I have a laptop, a cold Dunkin coffee, and a refusal to be outsmarted by an algorithm. So I went ahead and transferred my other domain over too. Now I'll be honest with you, transferring a domain when you have no idea what you're doing is a little confusing. I had to slow down, figure it out, and not panic when something didn't work right away. I found a fix, got everything set up in about 20 minutes, and then just waited. The full transfer took about five days.</p>
+
+      <p>Then I was sitting there thinking, okay, now I have this domain. Now what? Because I didn't know how to build a website. I was starting from zero.</p>
+
+      <p>So I'm not going to lie, I used AI to help me get started. Inside Spaceship, I saw they offered a website builder called Alf. It was about $5 a month, which felt easy to justify, so I tried it. And it worked, kind of. But I don't want my website to sound like AI. You know how you can read something and instantly tell it's AI? The tone feels off and the wording feels too perfect. I didn't want that. I used AI to give me a starting point and then I would go in and rewrite everything to make it sound like something I would actually say.</p>
+
+      <p>I eventually hit a wall with Alf. That's when I started thinking maybe I needed help. I looked into hiring someone and that's when reality hit. It can cost $2,000 or more. That just wasn't an option for me.</p>
+
+      <p>I went back to figuring it out myself and that's when I found Readdy AI. This time, something clicked. Then the algorithm finally did something useful. I came across a company talking about automation and they mentioned something that changed everything: Vercel.</p>
+
+      <p>The catch was that I had to figure out GitHub. Looking at GitHub for the first time felt like trying to read code while it was raining. It's a lot of black screens and green text that looks like it belongs in a movie, not in my living room. But I spent the time and I did the work. I moved my vision to a repository and finally to the live web.</p>
+
+      <p>Now I'm not going to sit here and pretend I'm an expert. I'm not. I'm still learning and I'm still tweaking things as I go. But here's the part that matters: I didn't know anything about domains. I didn't know anything about hosting. I didn't know how to build a website. And now I have one.</p>
+
+      <p>happydetour.com is live. And I built it myself.</p>
+
+      <p>If you're sitting there thinking you don't know enough to start something, I promise you, neither did I. You figure it out one step at a time.</p>
+
+      <p>Eric<br/>Happy Detour Travel — Affordable vacations. Fun experiences. Everyone welcome.</p>
+    `,
+  },
 ]
 
 export function getAllPosts(): Post[] {
