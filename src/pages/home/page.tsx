@@ -60,9 +60,6 @@ export default function Home() {
     return () => clearInterval(timer)
   }, [])
 
-  const textHref = `sms:7473338687&body=${encodeURIComponent("Hi Eric, I saw the Halloween Caribbean cruise and want to know more.")}`
-  const emailHref = `mailto:eric@happydetour.com?subject=${encodeURIComponent("Halloween Caribbean Cruise")}&body=${encodeURIComponent("Hi Eric, I am interested in the Halloween Eastern Caribbean group sailing on October 31. Can you send me the details?")}`
-
   return (
     <main>
 
