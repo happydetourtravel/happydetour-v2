@@ -33,14 +33,40 @@ export default function Page() {
             Virgin Voyages &middot; Brilliant Lady
           </p>
           <p className="text-sm font-semibold text-[#007298] mb-4">
-            Departs June 17, 2027 &middot; Seattle, WA
+            June 17–24, 2027 &middot; Seattle, WA
           </p>
 
           <div className="flex flex-wrap gap-2 mb-5">
-            {["Seattle, WA", "Glacial Fjords", "Coastal Views", "Seattle, WA"].map((port, i) => (
+            {["Seattle, WA", "Ketchikan, AK", "Sitka, AK", "Tracy Arm Fjord", "Prince Rupert, BC", "Seattle, WA"].map((port, i) => (
               <span key={i} className="text-xs bg-gray-50 border border-gray-100 text-gray-500 px-3 py-1 rounded-full">
                 {port}
               </span>
+            ))}
+          </div>
+
+          <hr className="border-gray-100 mb-4" />
+
+          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+            Sailing Itinerary
+          </p>
+          <div className="space-y-3 mb-5">
+            {[
+              { day: "Day 1", port: "Seattle, Washington", note: "Departs 5:00 PM" },
+              { day: "Day 2", port: "At Sea", note: "Sailing" },
+              { day: "Day 3", port: "Ketchikan, Alaska", note: "9:00 AM – 5:00 PM" },
+              { day: "Day 4", port: "Sitka, Alaska", note: "9:00 AM – 4:00 PM" },
+              { day: "Day 5", port: "Tracy Arm Fjord, Alaska", note: "Scenic cruising" },
+              { day: "Day 6", port: "Prince Rupert, BC, Canada", note: "12:00 PM – 8:00 PM" },
+              { day: "Day 7", port: "At Sea", note: "Sailing" },
+              { day: "Day 8", port: "Seattle, Washington", note: "Arrives 7:00 AM" },
+            ].map(({ day, port, note }) => (
+              <div key={day} className="flex justify-between text-sm">
+                <div>
+                  <p className="text-gray-400 text-xs mb-0.5">{day}</p>
+                  <p className="text-[#1F2937] font-medium">{port}</p>
+                </div>
+                <span className="text-gray-400 text-xs self-center text-right">{note}</span>
+              </div>
             ))}
           </div>
 
@@ -92,7 +118,7 @@ export default function Page() {
           </div>
 
           <p className="text-sm text-gray-600 leading-relaxed mb-5">
-            Alaska on a Virgin Voyages ship is something different. No kids, no set dining times, no nickel and diming. Just glaciers, coastal scenery, and a ship that actually feels like a vacation. Seven nights out of Seattle with Brilliant Lady, one of the most stunning ships sailing today. I have a small group block and only 10 cabins are held. Once they are gone I cannot get them back at this price.
+            Alaska on a Virgin Voyages ship is something different. No kids, no set dining times, no nickel and diming. Seven nights out of Seattle on Brilliant Lady with stops in Ketchikan, Sitka, Tracy Arm Fjord, and Prince Rupert. These are real Alaska ports — glaciers, wildlife, fishing towns, and coastline that looks like nothing else. I have a small group block and only 10 cabins are held. Once they are gone I cannot get them back at this price.
           </p>
 
           <a href={textHref} className="block w-full text-center bg-[#F59E0B] hover:bg-amber-500 text-white font-bold text-base py-3.5 rounded-xl mb-3 transition-colors">
