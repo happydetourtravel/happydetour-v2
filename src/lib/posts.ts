@@ -216,6 +216,43 @@ export const POSTS: Post[] = [
       <p>Eric<br/>Happy Detour Travel: Affordable vacations. Fun experiences. Everyone welcome.</p>
     `,
   },
+  {
+    slug: '3-reasons-virgin-voyages-is-the-adult-only-vacation-you-actually-need',
+    title: '3 Reasons Virgin Voyages Is The Adult Only Vacation You Actually Need',
+    date: '2026-04-22',
+    tag: 'Cruise Tips',
+    excerpt: 'Drink in hand, ready to let the stress of the world melt away. Then, out of nowhere, a cannonball from a hyperactive eight year old sends a tidal wave of chlorinated water directly into your lap. Vacation over.',
+    image: '/blog/virgin_balcony.png',
+    content: `
+      <p>Drink in hand, ready to let the stress of the world melt away. Then, out of nowhere, a cannonball from a hyperactive eight year old sends a tidal wave of chlorinated water directly into your lap.</p>
+
+      <p>Vacation over.</p>
+
+      <p>If you are nodding your head right now, then you need to hear about Virgin Voyages. I have spent a lot of time looking into different cruise lines for Happy Detour, and Virgin is doing things differently. Here are three reasons why this is the kid free escape your soul is screaming for.</p>
+
+      <h2>1. The "No Kids" Policy is a literal game changer</h2>
+
+      <p>It sounds simple, but you don't realize how much "parent mode" your brain stays in until the possibility of a screaming toddler is completely removed from the equation. On a Virgin ship, everyone is eighteen or older. That means no character breakfasts, no splashing in the "fancy" pool, and definitely no "Baby Shark" playing on the speakers. It is a playground for grownups where you can actually hear the ocean and your own thoughts at the same time.</p>
+
+      <h2>2. The food is actually good (and there is no buffet)</h2>
+
+      <p>Most people think of cruise food and picture a sad, lukewarm buffet line where you have to fight someone's uncle for the last piece of mystery meat. Virgin killed the buffet. Instead, they have over twenty world class restaurants that are all included in your fare. We are talking about a high end steakhouse, a vibrant Mexican spot, and even an experimental kitchen that looks like it belongs in a sci-fi movie. It's like being in a trendy neighborhood in a major city, except the city is floating and you don't have to pay the check at the end.</p>
+
+      <h2>3. It's whimsical without being cheesy</h2>
+
+      <p>This is what I love most about their brand. It feels modern and a little bit rebellious. They have a tattoo parlor on the ship. They have shake to champagne service where you literally just shake your phone and a bottle appears wherever you are sitting. It's fun, it's vibrant, and it doesn't feel like a stuffy, traditional cruise. It feels like a party where everyone is invited to be themselves.</p>
+
+      <h2>The Bottom Line</h2>
+
+      <p>We spend so much of our lives doing the heavy lifting for everyone else. You deserve a few days where the only "work" you have to do is deciding which restaurant to hit for dinner.</p>
+
+      <p>I have built the new Happy Detour site specifically to make booking these kinds of escapes easy. If you are ready to swap the splash zone for a sunset at sea, I've got you covered.</p>
+
+      <p><a href="https://happydetour.app.n8n.cloud/form/91799171-4079-4ab7-9d13-9417ae57dfba">Let's find your happy detour.</a></p>
+
+      <p>Eric<br/>Happy Detour Travel: Affordable vacations. Fun experiences. Everyone welcome.</p>
+    `,
+  },
 ]
 
 export function getAllPosts(): Post[] {
