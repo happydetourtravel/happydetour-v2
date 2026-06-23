@@ -1061,6 +1061,105 @@ export const POSTS: Post[] = [
       <p>Happy Detour Travel — Affordable vacations. Fun experiences. Everyone welcome.</p>
     `,
   },
+  {
+    slug: 'a-saturday-well-spent-doubts-fixes-and-two-cruises',
+    title: 'A Saturday Well Spent: Doubts, Fixes, and Two Cruises Worth Talking About',
+    date: '2026-05-16',
+    tag: 'Behind the Brand',
+    excerpt: 'Some days in this business feel like momentum. Everything clicks. You post something and people respond. A lead comes in out of nowhere. And then there are the other days. Today started as one of the other days.',
+    image: '/blog/img_7899.webp',
+    content: `
+      <p>Some days in this business feel like momentum. Everything clicks. You post something and people respond. A lead comes in out of nowhere. You feel like you're actually building something real.</p>
+
+      <p>And then there are the other days.</p>
+
+      <p>Today started as one of the other days.</p>
+
+      <p>I woke up with a lot on my mind. Two months into Happy Detour Travel and the questions that had been quietly sitting in the back of my head were suddenly a lot louder. Is this working? Am I doing the right things? Why are people clicking my ads and then just... leaving?</p>
+
+      <p>I want to be honest about that because I think a lot of people building something on the side, while also working a full-time job, while also juggling everything else life throws at you, feel this way more than they let on. It doesn't mean you're failing. It just means you're in the hard part.</p>
+
+      <p>I've learned that the answer to doubt is usually not thinking harder. It's doing the next small thing. So that's what I did today.</p>
+
+      <h2>Two Months In: Where Things Actually Stand</h2>
+
+      <p>Before I get into what I fixed today, let me give you an honest picture of where Happy Detour Travel is right now.</p>
+
+      <p>I launched HDT just over two months ago. I'm an independent travel advisor affiliated with WorldVia Travel Network, based in Alliance, Ohio. My planning service is always free to clients. The cruise lines, hotels, and resorts pay my commission. You get a real person helping you plan your trip, and it doesn't cost you anything extra.</p>
+
+      <p>In two months I've done more than I sometimes give myself credit for. I have a website live at happydetour.com with an SEO score of 100. I have active social media on Facebook, Instagram, and TikTok under @happydetourtravel. I have HubSpot set up for client management and automation workflows running through n8n. I have two group cruise landing pages live and running Meta ads. I've booked trips. I've learned the WorldVia booking tools. I've written over 14 blog posts. And I've done all of this while working as a Retail Manager, taking entrepreneurship classes, and exploring a laundromat business on the side.</p>
+
+      <p>That's a lot. I don't always see it that way in the moment. But it's a lot.</p>
+
+      <p>What I don't have yet is a steady flow of leads from strangers. And that's the part that gets loud some mornings.</p>
+
+      <h2>The Problem I Finally Figured Out</h2>
+
+      <p>I have two group cruise landing pages running right now. One is for the MSC Seascape sailing September 13 through 20, 2026. Seven nights in the Western Caribbean departing from Galveston, Texas. Costa Maya, Roatan, and Cozumel. Starting at $455 per person. The other is for the Carnival Horizon ABC Islands cruise in October 2026. Eight days in the Caribbean visiting Aruba, Bonaire, and Curacao. Starting at $644 per person.</p>
+
+      <p>Both pages have been getting traffic from Meta ads. We're talking around 300 landing page visits on the MSC page alone. That's not nothing. People are seeing the ads, clicking, and landing on the page. But nobody was reaching out. No form submissions. No texts. No emails. Just traffic that showed up and quietly left.</p>
+
+      <p>I spent some time today really thinking about why. And when I looked at the pages with fresh eyes, it became obvious. The pages were asking too much too soon.</p>
+
+      <p>Think about it from the perspective of someone who just saw an ad on Facebook while scrolling through their phone. They weren't looking for a cruise. The ad caught their eye. They clicked. They land on my page and within seconds they're being asked to call or text me, or fill out a form with their name, email, phone number, and how many people are traveling. That's a lot to ask of someone who met me 30 seconds ago. There was no way for someone to say "I'm curious, tell me more" without it feeling like they were agreeing to something. That's a fixable problem. And today I fixed it.</p>
+
+      <h2>What I Changed and Why It Matters</h2>
+
+      <p>On both landing pages, I added a simple section right below the hero. Two fields only. First name. Phone number. That's it. The button says "Send Details, No Pressure!" No email required. No dropdown asking how many people are traveling. No commitment. Just enough information so I can text them personally, send over the pricing breakdown, and start a real human conversation from there.</p>
+
+      <p>I also removed the "Text or Call Me" button from the top of both pages. That button was competing with the simple form and honestly it was sending the wrong message to cold traffic. Nobody calls a stranger. Now the flow is simple. You land on the page, see the cruise and the starting price, scroll down and see a friendly form that says "Want the full pricing breakdown? Drop your name and number. I'll text it to you personally." You fill it out in 10 seconds. I text you. We start talking.</p>
+
+      <p>The full contact form with more fields is still at the bottom of the page for people who are more ready to take the next step. But now there's an easy on-ramp for the people who are just curious. It sounds like a small change. But I think it's the change that actually moves the needle. Because the problem was never the traffic. The problem was the friction.</p>
+
+      <h2>The MSC Seascape, September 13 to 20, 2026</h2>
+
+      <img src="/blog/img_0211.webp" alt="Eric with friends on the MSC Meraviglia" />
+
+      <p>This one is personal to me. I've sailed MSC three times. The Armonia and the Meraviglia twice. I know the brand. I know how their ships run. I know the things that surprised me the first time and the things I wish someone had told me before I went.</p>
+
+      <p>The Seascape will be a first for me too. But that's part of what makes this trip exciting. I'm not just selling this cruise. I'm going on it. I'm booking my own cabin. That means if you're on this sailing and you need anything, before the trip or during it, I'm right there. Not on the other end of a phone. Actually there.</p>
+
+      <p>We depart from Galveston, Texas and hit three ports over seven nights. Costa Maya in Mexico on day three. Roatan in Honduras on day four. And Cozumel on day five. Two sea days to do absolutely nothing if that's what you need. Pricing starts at $455 per person for an interior cabin, $645 for a balcony, and $847 for an interior with drinks and wifi included. Taxes and port fees are included in those numbers.</p>
+
+      <p>The "Everyone Welcome" tagline on this page is something I mean. Solo travelers are welcome. LGBTQ travelers are welcome. First-time cruisers are welcome. Families, couples, people who just need a week away from their regular life. All of you.</p>
+
+      <h2>Carnival Horizon, October 2026, ABC Islands</h2>
+
+      <img src="/blog/img_212.webp" alt="Colorful waterfront buildings in Willemstad, Curacao" />
+
+      <p>The ABC Islands are something special. Aruba, Bonaire, and Curacao sit just off the coast of Venezuela, which means they're outside the hurricane belt. The water is calm and clear. The beaches are white. The Dutch Caribbean architecture in Willemstad, Curacao is like nothing else in the Caribbean.</p>
+
+      <p>This cruise is eight days aboard the Carnival Horizon. Interior cabins start at $644 per person. Balcony cabins at $1,204 per person. I put this one together partly because my friend Jason has been talking about going to Aruba for his anniversary in October. And when one trip started coming together, it made sense to open it up and see if others wanted to come along too. That's kind of how I think about this whole group cruise thing. It starts with a real trip that real people are actually going on.</p>
+
+      <h2>The Legal Side: Why I Emailed a Lawyer Today</h2>
+
+      <p>Something I've been putting off is getting proper terms and conditions in place for Happy Detour Travel. Terms and conditions protect you when a client tries to dispute a charge. They protect you when something goes wrong on a trip that was completely out of your control. They make clear what you're responsible for and what you're not. And with credit card chargeback rules getting tighter since the pandemic, having signed terms and conditions is more important than ever.</p>
+
+      <p>Today I emailed Thomas Carpenter. He's an attorney who specializes specifically in travel advisor law and also runs his own travel agency called Huckleberry Travel. He's represented over 1,200 small travel agencies and tour operators. He knows this industry from both sides. What made the decision easier is that his pricing includes free amendments if the law changes. I'm expecting to hear back Monday.</p>
+
+      <h2>The Mindset Part (The Part I Almost Didn't Write)</h2>
+
+      <p>I almost didn't include this section. It feels vulnerable to talk about doubt when you're trying to build something and attract clients. But I think leaving it out would make this post feel less real than it actually is.</p>
+
+      <p>Two months in with no bookings from strangers is a tough place to sit. I have bookings. I've booked trips for people I know. I have leads in progress. But that first stranger booking, the one that tells you this thing is actually working, hasn't happened yet. And some mornings that gets heavy.</p>
+
+      <p>What I've had to remind myself is that two months is genuinely early. Most travel advisors say it takes six months to a year before leads start flowing consistently. Building trust with strangers takes time. Social media takes time. SEO takes time. Word of mouth takes time. The work I'm doing right now is all compounding. It doesn't feel like momentum yet. But it's building toward it.</p>
+
+      <p>Today I asked myself honestly whether I want to keep doing this. And the answer was yes. Not a hesitant maybe. A real yes.</p>
+
+      <p>I'm passionate about travel. I know what it feels like to help someone get somewhere they've been dreaming about. I know what it's like to be on a ship and feel like the world is a lot bigger and more beautiful than it seemed back home. That's what I want to give people. And I'm going to keep building toward it.</p>
+
+      <h2>What Comes Next</h2>
+
+      <p>Monday I'm expecting to hear back from Thomas Carpenter about the terms and conditions. The new forms on both landing pages are live as of today. I'm going to give them a week and see if the conversion rate improves. And I'm going to keep showing up. One small thing at a time.</p>
+
+      <p>If you've been thinking about the MSC Seascape in September or the Carnival Horizon ABC Islands cruise in October, now is a good time to reach out. The form on each landing page is simple. Just your name and number. I'll text you the full pricing breakdown personally. No bots. No pressure. Just me.</p>
+
+      <p>That's the whole point of Happy Detour Travel. Affordable vacations. Fun experiences. Everyone welcome.</p>
+
+      <p>Eric<br/>happydetour.com | @happydetourtravel</p>
+    `,
+  },
 ]
 
 export function getAllPosts(): Post[] {
