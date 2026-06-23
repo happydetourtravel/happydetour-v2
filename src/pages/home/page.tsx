@@ -281,6 +281,13 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Subtle credentials line */}
+      <div style={{ padding: '14px 20px', textAlign: 'center' }}>
+        <p style={{ color: '#9CA3AF', fontSize: '13px', margin: 0 }}>
+          Eric has sailed 20+ cruises and 100+ nights at sea &middot; Virgin Voyages Gold First Mate &middot; NCL University Master's Degree &middot; Royal Caribbean Platinum &middot; MSC Voyagers Club
+        </p>
+      </div>
+
     </main>
   )
 }
