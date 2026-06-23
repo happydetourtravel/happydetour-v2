@@ -603,6 +603,61 @@ export const POSTS: Post[] = [
       <p>Eric<br/>Happy Detour Travel — Affordable vacations. Fun experiences. Everyone welcome.</p>
     `,
   },
+  {
+    slug: 'how-i-made-my-travel-website-more-visible-on-google',
+    title: 'How I Made My Travel Website More Visible on Google (And Did It Myself)',
+    date: '2026-03-21',
+    tag: 'Behind the Brand',
+    excerpt: 'I wasn\'t sure what to expect, but the results were a massive wake-up call. The good news was my overall score was a 64 out of 100. My content quality actually scored a 90, which felt like a huge win. But then I saw the one big problem that was holding the whole site back.',
+    image: '/blog/desk-google-green-check.webp',
+    content: `
+      <p>I wasn't sure what to expect, but the results were a massive wake-up call.</p>
+
+      <p>The good news was my overall score was a 64 out of 100. My content quality actually scored a 90, which felt like a huge win. The report said the writing is clear, friendly, and easy to understand. That has always been the goal for me. Travel planning should feel simple and welcoming, not like you're reading a technical manual.</p>
+
+      <p>But then I saw the one big problem that was holding the whole site back.</p>
+
+      <h2>The Issue: Google Didn't Know Who I Was</h2>
+
+      <p>Even though the content was strong, my site was missing something called structured data. Think of it like invisible code that acts as a map for Google, AI search tools, and other search engines. It tells them exactly who you are, what you're selling, and how people can find you.</p>
+
+      <p>My structured data score? A big fat zero.</p>
+
+      <p>Without that code, search engines are basically just guessing what your site is about. And when they guess, they usually get it wrong or they just skip over you entirely. That's a death sentence when you're trying to grow a small travel business from the ground up.</p>
+
+      <h2>What I Did About It</h2>
+
+      <p>Instead of panicking or hiring an expensive agency, I decided to fix it myself. My site is built with React and hosted on Vercel, so I went straight into my index.html file to start adding the tags Google was looking for.</p>
+
+      <p>I focused on five main areas:</p>
+
+      <ol>
+        <li><strong>Organization Schema:</strong> I added the code that tells Google that Happy Detour Travel is a real business with a name, a website, and a real description.</li>
+        <li><strong>Person Schema:</strong> This was personal. It connects my name, Eric Carney, to the business as the Independent Travel Advisor behind it all. It builds that credibility that search engines and AI tools look for.</li>
+        <li><strong>Service Schema:</strong> This tells the bots exactly what I do. I'm not just a generic site; I offer personalized travel planning for cruises, all-inclusive resorts, and custom getaways.</li>
+        <li><strong>Canonical URL:</strong> One simple line that tells Google which version of my page is the "official" one so I don't get penalized for duplicate content.</li>
+        <li><strong>Open Graph Tags:</strong> These are the reason a link looks professional when you share it on Facebook or in a text message. Instead of just a plain blue link, it now shows a proper title and a description that actually makes people want to click.</li>
+      </ol>
+
+      <h2>Did It Work?</h2>
+
+      <p>After I committed the changes through GitHub, I ran Google's free Rich Results Test. I sat there for a second waiting for the page to load, and then I saw it: a big green checkmark.</p>
+
+      <p>✅ 1 valid item detected. Crawled successfully.</p>
+
+      <p>Google confirmed it could finally see the structured data. That was the moment I knew the "invisible" days were over.</p>
+
+      <h2>Why This Matters</h2>
+
+      <p>Before I sat down to fix this, my site was sitting 38 points below the average for my competitors. Now that gap is closed.</p>
+
+      <p>I'm not saying I'll be on the front page of Google by tomorrow morning. SEO is a long game and it takes time. But the foundation is finally solid. My site is now set up so that search engines and AI tools understand exactly what Happy Detour Travel is and who it's for.</p>
+
+      <p>It was one more step in the process, one more thing I had to learn on the fly, and I did it all myself.</p>
+
+      <p>Eric<br/>Happy Detour Travel: Affordable vacations. Fun experiences. Everyone welcome.</p>
+    `,
+  },
 ]
 
 export function getAllPosts(): Post[] {
