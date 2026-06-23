@@ -502,6 +502,39 @@ export const POSTS: Post[] = [
       <p>Eric<br/>@happydetourtravel</p>
     `,
   },
+  {
+    slug: 'how-happy-detour-travel-got-its-name',
+    title: 'How Happy Detour Travel Got Its Name',
+    date: '2026-04-14',
+    tag: 'Behind the Brand',
+    excerpt: 'March 13, 2026. That\'s the day everything became official.',
+    image: '/blog/happy_detour_logo_transparent.png',
+    content: `
+      <p>March 13, 2026. That's the day everything became official.</p>
+
+      <p>I've always wanted to be an entrepreneur. For a long time the path I had in my head was opening a laundromat. I have a name for it, I have ideas for it, and I have a vision for it. But a laundromat takes capital. A lot of capital. And right now capital is the reason that dream is sitting on the shelf. It's not off the table. Not even close. But today is not that day.</p>
+
+      <p>Looking around, I realized something. Everyone in my life was a little zealous of me traveling. They wanted to experience it too. They wanted to see the world, take a break, and just enjoy life. And that got me thinking. What if I took something I was already passionate about and used it to help other people live life and make their dreams happen too?</p>
+
+      <p>It didn't take long to find the answer.</p>
+
+      <p>I started thinking about names. I wanted something that fit with everything I was building. I went through a bunch of ideas. Carney Vacations. Travel with Eric. Cruise with Eric. Nothing clicked. Nothing felt like a brand. Nothing felt like me.</p>
+
+      <p>And then it came to me. Sometimes the best things in life happen when you take a happy detour. Think about it. We all make plans. We map things out. We know exactly how it's supposed to go. But life doesn't always follow the plan. Sometimes you end up somewhere you never expected and it turns out to be better than anything you originally had in mind. That's a happy detour.</p>
+
+      <p>I checked happydetour.com. Available. I looked at the social handles and that's where it got interesting. @happydetour was already taken by a band. So I thought, what about happydetourtravel? I checked every platform. Wide open across the board. That actually made more sense anyway. It tells people right away that it's travel. So I secured happydetour.com and locked down @happydetourtravel everywhere. That felt like a sign.</p>
+
+      <p>Within an hour and a half, maybe two hours, Happy Detour Travel was born. The name, the tagline, the vision. It all came together that day. And I haven't looked back since.</p>
+
+      <p>HDT. That's what I call it now because I've typed Happy Detour Travel so many times in the past month that I had to abbreviate it. But no matter how you say it, the meaning stays the same.</p>
+
+      <p>"Sometimes the best journeys begin with a happy detour." - Eric Carney</p>
+
+      <p>I truly believe that.</p>
+
+      <p>Eric<br/>happydetour.com<br/>@happydetourtravel<br/>Affordable vacations. Fun experiences. Everyone welcome.</p>
+    `,
+  },
 ]
 
 export function getAllPosts(): Post[] {
