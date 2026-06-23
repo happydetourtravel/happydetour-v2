@@ -1,10 +1,10 @@
 // Route: /group/baja-halloween-2027
-// Virgin Voyages — Brilliant Lady — Baja Mexico Halloween — Oct 30, 2027
+// Virgin Voyages — Brilliant Lady — Mexican Riviera Halloween Cruise — Oct 23, 2027
 
 export default function Page() {
 
-  const textHref = `sms:7473338687&body=${encodeURIComponent("Hi Eric, I saw the Baja Mexico Halloween cruise on Virgin Voyages and want to know more.")}`;
-  const emailHref = `mailto:eric@happydetour.com?subject=${encodeURIComponent("Baja Mexico Halloween Cruise 2027")}&body=${encodeURIComponent("Hi Eric, I am interested in the Baja Mexico Halloween group sailing on Brilliant Lady departing October 30, 2027. Can you send me the details?")}`;
+  const textHref = `sms:7473338687&body=${encodeURIComponent("Hi Eric, I saw the Mexican Riviera Halloween cruise on Virgin Voyages and want to know more.")}`;
+  const emailHref = `mailto:eric@happydetour.com?subject=${encodeURIComponent("Mexican Riviera Halloween Cruise 2027")}&body=${encodeURIComponent("Hi Eric, I am interested in the Mexican Riviera Halloween group sailing on Brilliant Lady departing October 23, 2027. Can you send me the details?")}`;
 
   return (
     <div className="min-h-screen bg-[#F9FAFB] flex items-start justify-center py-10 px-4">
@@ -27,17 +27,17 @@ export default function Page() {
           </div>
 
           <h1 className="text-2xl font-bold text-[#1F2937] leading-snug mb-1">
-            Baja Mexico Halloween Cruise
+            Mexican Riviera Halloween Cruise
           </h1>
           <p className="text-sm text-gray-500 mb-1">
             Virgin Voyages &middot; Brilliant Lady
           </p>
           <p className="text-sm font-semibold text-[#007298] mb-4">
-            Departs October 30, 2027 &middot; Los Angeles, CA
+            October 23–30, 2027 &middot; Los Angeles, CA
           </p>
 
           <div className="flex flex-wrap gap-2 mb-5">
-            {["Los Angeles, CA", "Baja Mexico", "Los Angeles, CA"].map((port, i) => (
+            {["Los Angeles, CA", "Cabo San Lucas", "Mazatlan", "Puerto Vallarta", "Los Angeles, CA"].map((port, i) => (
               <span key={i} className="text-xs bg-gray-50 border border-gray-100 text-gray-500 px-3 py-1 rounded-full">
                 {port}
               </span>
@@ -46,12 +46,38 @@ export default function Page() {
 
           <hr className="border-gray-100 mb-4" />
 
+          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+            Sailing Itinerary
+          </p>
+          <div className="space-y-3 mb-5">
+            {[
+              { day: "Day 1", port: "Los Angeles, California", note: "Departs 5:00 PM" },
+              { day: "Day 2", port: "At Sea", note: "Sailing" },
+              { day: "Day 3", port: "Cabo San Lucas, Mexico", note: "1:00 PM – 8:00 PM (tender)" },
+              { day: "Day 4", port: "Mazatlan, Mexico", note: "9:00 AM – 6:00 PM" },
+              { day: "Day 5", port: "Puerto Vallarta, Mexico", note: "8:00 AM – 5:00 PM" },
+              { day: "Day 6", port: "At Sea", note: "Sailing" },
+              { day: "Day 7", port: "At Sea", note: "Sailing" },
+              { day: "Day 8", port: "Los Angeles, California", note: "Arrives 6:30 AM" },
+            ].map(({ day, port, note }) => (
+              <div key={day} className="flex justify-between text-sm">
+                <div>
+                  <p className="text-gray-400 text-xs mb-0.5">{day}</p>
+                  <p className="text-[#1F2937] font-medium">{port}</p>
+                </div>
+                <span className="text-gray-400 text-xs self-center text-right">{note}</span>
+              </div>
+            ))}
+          </div>
+
+          <hr className="border-gray-100 mb-4" />
+
           <div className="space-y-2 mb-5">
             {[
-              { label: "Departure", value: "October 30, 2027" },
+              { label: "Departure", value: "October 23, 2027" },
               { label: "Departs from", value: "Los Angeles, CA" },
-              { label: "Length", value: "6 nights" },
-              { label: "Returns", value: "November 6, 2027" },
+              { label: "Length", value: "7 nights" },
+              { label: "Returns", value: "October 30, 2027" },
               { label: "Ship", value: "Brilliant Lady" },
               { label: "Cruise line", value: "Virgin Voyages (Adults Only)" },
               { label: "Group cabins", value: "20 cabins — locked at today's rate" },
@@ -88,11 +114,11 @@ export default function Page() {
           </div>
 
           <div className="bg-amber-50 border border-amber-100 rounded-xl px-4 py-3 text-sm text-amber-800 leading-relaxed mb-4">
-            I have 20 cabins held at this rate. Virgin Voyages is adults only — no kids, no nickel and diming. Every restaurant is included. Text me before these go.
+            I have 20 cabins held at this rate. Virgin Voyages is adults only — no kids, no nickel and diming, every restaurant included. Text me before these go.
           </div>
 
           <p className="text-sm text-gray-600 leading-relaxed mb-5">
-            Halloween on a Virgin Voyages ship is next level. No kids, no dress codes, no extra charges at dinner. Just a ship full of adults heading to Baja Mexico for six nights while Brilliant Lady throws the kind of Halloween party you actually want to be at. I have a group block held and the price is locked. Once the cabins fill that rate is gone.
+            Halloween on a Virgin Voyages ship sailing the Mexican Riviera is exactly what it sounds like. No kids, no dress codes, no surprise charges at dinner. Seven nights out of Los Angeles with stops in Cabo San Lucas, Mazatlan, and Puerto Vallarta. Brilliant Lady throws a Halloween party that is worth showing up for. I have a group block locked in and 20 cabins available at this rate. Once they fill that price is gone.
           </p>
 
           <a href={textHref} className="block w-full text-center bg-[#F59E0B] hover:bg-amber-500 text-white font-bold text-base py-3.5 rounded-xl mb-3 transition-colors">
