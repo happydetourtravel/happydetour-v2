@@ -474,7 +474,7 @@ export const POSTS: Post[] = [
   {
     slug: 'why-i-started-happy-detour-travel',
     title: 'Why I Started Happy Detour Travel',
-    date: '2026-04-14',
+    date: '2026-03-15',
     tag: 'Behind the Brand',
     excerpt: 'I work a lot. Like, a lot a lot. And for a long time, the way I dealt with that was simple. I traveled.',
     image: '/blog/pexels-raymond-148038562-10480288.jpg',
@@ -505,7 +505,7 @@ export const POSTS: Post[] = [
   {
     slug: 'how-happy-detour-travel-got-its-name',
     title: 'How Happy Detour Travel Got Its Name',
-    date: '2026-04-14',
+    date: '2026-03-16',
     tag: 'Behind the Brand',
     excerpt: 'March 13, 2026. That\'s the day everything became official.',
     image: '/blog/happy_detour_logo_transparent.png',
