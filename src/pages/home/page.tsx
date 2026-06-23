@@ -8,18 +8,75 @@ const featuredDeals = [
   { tag: "VIRGIN VOYAGES", title: "Alaska: Hubbard Glacier & Coastal Views", date: "Aug 2027", nights: "9 nights", ship: "Brilliant Lady · Seattle", originalPrice: "$1,597", salePrice: "$1,161", link: "/cruises/alaska-hubbard-glacier" },
 ]
 
+const linkStyle = { color: '#F59E0B', textDecoration: 'none', fontWeight: '700' }
+
 const cruiseLines = [
-  { name: "Virgin Voyages", tagline: "Adults only. All included.", desc: "No kids, no nickel and diming. Every restaurant included, gratuities covered. Eric is First Mate certified.", live: true, link: "/cruises/virgin-voyages", cta: "View Virgin Voyages Cruises" },
-  { name: "Norwegian (NCL)", tagline: "Freedom to do what you want.", desc: "NCL invented Freestyle Cruising. No set dining times, great group pricing.", live: true, link: "/cruises/norwegian", cta: "Explore NCL Sailings" },
-  { name: "MSC Cruises", tagline: "European elegance at a real price.", desc: "One of the most underrated lines out there. Beautiful ships and a Mediterranean style that feels different.", live: true, link: "/cruises/msc", cta: "Explore MSC Cruises" },
-  { name: "Royal Caribbean", tagline: "Big ships. Big fun.", desc: "Rock climbing walls, surf simulators, Broadway shows. If someone wants everything, this is where you go.", live: true, link: "/cruises/royal-caribbean", cta: "See Royal Caribbean Ships" },
-  { name: "Carnival Cruise Line", tagline: "Fun for everyone.", desc: "The most popular cruise line in the world for a reason. Great value, nonstop entertainment, and a party atmosphere that is hard to beat.", live: true, link: "/cruises/carnival", cta: "View Carnival Sailings" },
+  {
+    name: "Virgin Voyages",
+    tagline: (
+      <>
+        <a href="https://www.virginvoyages.com/virgin-cruises-101" target="_blank" rel="noopener noreferrer" style={linkStyle}>A</a>dults only. All included.
+      </>
+    ),
+    desc: "No kids, no nickel and diming. Every restaurant included, gratuities covered. Eric is First Mate certified.",
+    live: true,
+    link: "/cruises/virgin-voyages",
+    cta: "View Virgin Voyages Cruises"
+  },
+  {
+    name: "Norwegian (NCL)",
+    tagline: (
+      <>
+        <a href="https://www.ncl.com/cruise-ships" target="_blank" rel="noopener noreferrer" style={linkStyle}>F</a>reedom to do what you want.
+      </>
+    ),
+    desc: "NCL invented Freestyle Cruising. No set dining times, great group pricing.",
+    live: true,
+    link: "/cruises/norwegian",
+    cta: "Explore NCL Sailings"
+  },
+  {
+    name: "MSC Cruises",
+    tagline: (
+      <>
+        <a href="https://www.msccruisesusa.com/about" target="_blank" rel="noopener noreferrer" style={linkStyle}>E</a>uropean elegance at a real price.
+      </>
+    ),
+    desc: "One of the most underrated lines out there. Beautiful ships and a Mediterranean style that feels different.",
+    live: true,
+    link: "/cruises/msc",
+    cta: "Explore MSC Cruises"
+  },
+  {
+    name: "Royal Caribbean",
+    tagline: (
+      <>
+        Big shi<a href="https://www.royalcaribbean.com/cruise-ships" target="_blank" rel="noopener noreferrer" style={linkStyle}>p</a>s. Big fun.
+      </>
+    ),
+    desc: "Rock climbing walls, surf simulators, Broadway shows. If someone wants everything, this is where you go.",
+    live: true,
+    link: "/cruises/royal-caribbean",
+    cta: "See Royal Caribbean Ships"
+  },
+  {
+    name: "Carnival Cruise Line",
+    tagline: (
+      <>
+        Fun for everyon<a href="https://www.carnival.com/cruise-ships" target="_blank" rel="noopener noreferrer" style={linkStyle}>e</a>.
+      </>
+    ),
+    desc: "The most popular cruise line in the world for a reason. Great value, nonstop entertainment, and a party atmosphere that is hard to beat.",
+    live: true,
+    link: "/cruises/carnival",
+    cta: "View Carnival Sailings"
+  },
 ]
 
 const testimonials = [
   { name: "Lana", location: "Northeast Ohio", trip: "MSC Cruise — Galveston", quote: "I had no idea where to even start. Eric made the whole thing so easy I could not believe it. Booked my MSC cruise out of Galveston and had the best time. Already booked on Virgin Voyages, Sister at Sea for February 2027. He is literally the only person I will ever call for travel." },
   { name: "JB", location: "Los Angeles, CA", trip: "Carnival Sensation — Grand Cayman & Ocho Rios", quote: "First cruise ever and honestly I was nervous. Eric just walked me through everything, no pressure, no confusion. The whole thing was way easier than I expected. Already looking at my next one." },
-  { name: "Jason P.", location: "", trip: "NCL Star — Great Stirrup Cay", quote: "Thanks to Eric, my first cruise was extremely easy. Eric made all the arrangements from flying to overnight hotel stay and to getting right onto the cruise ship. It was so easy I now have my next cruise planned again from Eric.<br>Thanks Eric.</b>" },
+  { name: "Jason P.", location: "", trip: "NCL Star — Great Stirrup Cay", quote: "Thanks to Eric, my first cruise was extremely easy. Eric made all the arrangements from flying to overnight hotel stay and to getting right onto the cruise ship. It was so easy I now have my next cruise planned again from Eric. Thanks Eric." },
 ]
 
 export default function Home() {
@@ -134,7 +191,7 @@ export default function Home() {
                 )}
                 <div style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #F3F4F6', display: 'flex', flexDirection: 'column', gap: '12px', opacity: line.live ? 1 : 0.6, height: '100%', boxSizing: 'border-box' }}>
                   <h3 style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>{line.name}</h3>
-                  <p style={{ color: '#007298', fontSize: '14px', fontWeight: '600', margin: 0 }}>{line.tagline}</p>
+                  <p style={{ color: '#F59E0B', fontSize: '14px', fontWeight: '600', margin: 0 }}>{line.tagline}</p>
                   <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>{line.desc}</p>
                   {line.live && <a href={line.link} style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>{line.cta}</a>}
                 </div>
@@ -154,13 +211,17 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '24px', maxWidth: '800px', margin: '0 auto' }}>
             <div style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #F3F4F6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <h3 style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>Sandals Resorts</h3>
-              <p style={{ color: '#007298', fontSize: '14px', fontWeight: '600', margin: 0 }}>Luxury. Couples only. Truly all-inclusive.</p>
+              <p style={{ color: '#F59E0B', fontSize: '14px', fontWeight: '600', margin: 0 }}>
+                Luxury. Couples only. Truly all<a href="https://www.sandals.com/weddings/inquiry/" target="_blank" rel="noopener noreferrer" style={linkStyle}>-</a>inclusive.
+              </p>
               <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>The gold standard for couples getaways. Unlimited premium drinks, gourmet dining, water sports, and accommodations that actually live up to the photos.</p>
               <a href="/resorts/sandals" style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>Explore Sandals Resorts</a>
             </div>
             <div style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #F3F4F6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <h3 style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>Beaches Resorts</h3>
-              <p style={{ color: '#007298', fontSize: '14px', fontWeight: '600', margin: 0 }}>Family all-inclusive done right.</p>
+              <p style={{ color: '#F59E0B', fontSize: '14px', fontWeight: '600', margin: 0 }}>
+                Family all<a href="https://www.beaches.com/weddings/test-drive/" target="_blank" rel="noopener noreferrer" style={linkStyle}>-</a>inclusive done right.
+              </p>
               <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>Everything Sandals does for couples, Beaches does for families. Kids clubs, water parks, unlimited food and drinks, and a resort where everyone actually has a great time.</p>
               <a href="/resorts/beaches" style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>View Beaches Resort Packages</a>
             </div>
@@ -194,8 +255,8 @@ export default function Home() {
           <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>What Are You Waiting For?</p>
           <h2 style={{ color: 'white', fontSize: 'clamp(28px, 6vw, 36px)', fontWeight: '800', margin: '0 0 12px 0', lineHeight: '1.2' }}>Stop scrolling, start packing.</h2>
           <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '16px', margin: '0 0 28px 0' }}>Let's find your happy detour.</p>
-          
-           <a href="https://forgehq.app/f/?s=20bejr4j"
+          <a
+            href="https://forgehq.app/f/?s=20bejr4j"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Start planning your trip with Happy Detour Travel"
