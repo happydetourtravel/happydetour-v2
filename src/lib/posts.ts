@@ -1014,7 +1014,7 @@ export const POSTS: Post[] = [
     date: '2026-05-12',
     tag: 'Behind the Brand',
     excerpt: 'Running Happy Detour Travel means I am constantly looking for ways to stay connected with people who might want to book a trip. I keep hearing from every marketing expert that I need an email list. So I decided to set one up. What followed was a lesson in knowing when to stop.',
-    image: '/blog/img_56__1_.webp',
+    image: '/blog/img_56.webp',
     content: `
       <p>Running Happy Detour Travel means I am constantly looking for ways to stay connected with people who might want to book a trip. I keep hearing from every marketing expert that I need an email list. They say it is essential for any business, especially one trying to build a loyal audience from the ground up.</p>
 
