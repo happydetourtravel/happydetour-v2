@@ -1443,6 +1443,49 @@ export const POSTS: Post[] = [
       <p>happydetour.com | @happydetourtravel<br/>Affordable vacations. Fun experiences. Everyone welcome.</p>
     `,
   },
+  {
+    slug: 'what-ive-been-up-to-lately-at-happy-detour-travel',
+    title: 'What I\'ve Been Up To Lately at Happy Detour Travel',
+    date: '2026-06-12',
+    tag: 'Behind the Brand',
+    excerpt: 'It has been a busy couple of weeks over here at Happy Detour Travel, and I figured it was time to give you a little peek behind the curtain.',
+    image: '/blog/img_212.webp',
+    content: `
+      <p>It has been a busy couple of weeks over here at Happy Detour Travel, and I figured it was time to give you a little peek behind the curtain.</p>
+
+      <p>When I started HDT back in March, I knew I wanted to build something real. Not just a website with a booking link. Something that actually helps people feel good about planning a trip. So here is a quick rundown of what I have been working on.</p>
+
+      <h2>Group Cruises Are Officially a Thing</h2>
+
+      <p>One of the biggest things I have been building out is a group cruise program. Right now I am working with both Virgin Voyages and Norwegian Cruise Line to put together group sailings. Both are great options for different reasons, and I am excited to share more details as those come together.</p>
+
+      <p>I also have a Carnival Horizon sailing lined up for October 10 to 18, 2026, out of Miami. It is an ABC Islands itinerary hitting Aruba, Bonaire, and Curacao, and it is open to anyone who wants to join. Cabins start at $644 per person double occupancy. If that sounds like your kind of trip, just reach out and let me know.</p>
+
+      <h2>Cruise Chat with Eric</h2>
+
+      <p>I launched a live event series called Cruise Chat with Eric. It is a casual, no-pressure conversation where I walk through how cruising actually works, answer questions, and help people figure out if a cruise is right for them. If you have ever been curious but felt like there was too much to figure out, this is for you.</p>
+
+      <h2>Building Out the Facebook Community</h2>
+
+      <p>I started a Facebook group called <a href="https://www.facebook.com/groups/somuchtosea">So Much to Sea</a>, and it is specifically for people who have never cruised before. It is a welcoming space where you can ask questions, see what other people are planning, and just get comfortable with the idea of cruising without feeling like you are being sold something.</p>
+
+      <h2>Behind the Scenes</h2>
+
+      <p>I have also been doing a lot of the unglamorous behind-the-scenes work that comes with running a small business. Setting up the CRM, working on landing pages, getting my ads running, and figuring out how to reach people who are actually looking for help planning a trip. It is a lot, but it is the kind of work I genuinely enjoy.</p>
+
+      <h2>What Is Next</h2>
+
+      <p>I am actively building out group sailings with Virgin Voyages and Norwegian, and will have more details to share soon. I am also about to set sail on a Virgin Voyages transatlantic from Barcelona to Miami, and I cannot wait to share that experience with you.</p>
+
+      <p>If you want to talk about a cruise or an all-inclusive resort at Sandals or Beaches, I would love to hear from you. Reach me at <a href="mailto:eric@happydetour.com">eric@happydetour.com</a> or visit <a href="https://happydetour.com">happydetour.com</a>. We talk through everything before anything is confirmed, so there are no surprises.</p>
+
+      <p>Talk soon,<br/>Eric</p>
+
+      <p><a href="https://facebook.com/happydetourtravel">Happy Detour Travel</a><br/><a href="https://happydetour.com">happydetour.com</a></p>
+
+      <p>Real trips. Real value. Someone actually in your corner.</p>
+    `,
+  },
 ]
 
 export function getAllPosts(): Post[] {
