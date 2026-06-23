@@ -1160,6 +1160,212 @@ export const POSTS: Post[] = [
       <p>Eric<br/>happydetour.com | @happydetourtravel</p>
     `,
   },
+  {
+    slug: 'what-to-pack-for-a-7-day-caribbean-cruise',
+    title: 'What to Pack for a 7-Day Caribbean Cruise (Without Overpacking)',
+    date: '2026-05-18',
+    tag: 'Cruise Tips',
+    excerpt: 'You\'re going on a cruise. You\'re excited. And then you start wondering what to bring. I\'ve been on my share of cruises, and packing is one of the questions I get asked most. So I put together these checklists to make it simple.',
+    image: '/blog/img_9467.webp',
+    content: `
+      <p>You're going on a cruise. You're excited. And then you start wondering what to bring.</p>
+
+      <p>I've been on my share of cruises, and packing is one of the questions I get asked most. So I put together these checklists to make it simple. Whether you're packing for yourself, your partner, or the kids, this will help you get it right without dragging half your closet onto the ship.</p>
+
+      <h2>Why Cruises Are Different</h2>
+
+      <p>On a cruise, you're living out of a small cabin for a week. You don't have a washer and dryer down the hall. And you're moving between different settings every day: the pool, the dining room, port stops, formal nights. The trick is packing light but smart. You want enough to feel comfortable, but not so much that you're playing suitcase Tetris the whole week.</p>
+
+      <img src="/blog/img_9467.webp" alt="Packed suitcase ready for a cruise" />
+
+      <h2>Packing Checklist for Men</h2>
+
+      <p><strong>Clothes:</strong> 7 casual shirts, 2-3 pairs of shorts, 1 pair of lightweight pants or chinos, 1 pair of dress pants, 7 pairs of underwear, 7 pairs of socks, 2 pairs of swim trunks, 1 lightweight jacket or sweater for AC, 1 dress shirt or collared shirt for formal night, and sleepwear.</p>
+
+      <p><strong>Shoes:</strong> Sneakers or comfortable walking shoes, sandals or flip-flops, and dress shoes (loafers or boat shoes work great).</p>
+
+      <p><strong>Toiletries:</strong> Toothbrush and toothpaste, deodorant, razor and shaving cream, shampoo and body wash, sunscreen (SPF 30 or higher), after-sun lotion or aloe, any prescription meds, and motion sickness meds if you're prone to seasickness.</p>
+
+      <p><strong>Extras:</strong> Sunglasses, hat or cap, watch, portable phone charger, reusable water bottle, small backpack for port days, and Ziploc bags.</p>
+
+      <h2>Packing Checklist for Women</h2>
+
+      <p><strong>Clothes:</strong> 5-7 casual tops, 2-3 sundresses or casual dresses, 2-3 pairs of shorts or capris, 1 pair of lightweight pants or jeans, 7 pairs of underwear, 7 pairs of socks if you wear them, 2-3 swimsuits (rotate so they dry), 1 cover-up or sarong, 1 light cardigan or wrap for AC, 1-2 dressier outfits for formal nights, and sleepwear.</p>
+
+      <p><strong>Shoes:</strong> Comfortable walking shoes or sneakers, sandals or flip-flops, and dress sandals or low heels (nothing you can't walk in).</p>
+
+      <p><strong>Toiletries:</strong> Toothbrush and toothpaste, deodorant, face wash and moisturizer, makeup (keep it simple), hairbrush and hair ties, shampoo, conditioner and body wash, sunscreen, after-sun lotion, feminine hygiene products, any prescription meds, and motion sickness meds if needed.</p>
+
+      <p><strong>Extras:</strong> Sunglasses, hat or visor, jewelry (don't bring anything you'd cry over losing), beach bag or tote, portable phone charger, reusable water bottle, Ziploc bags, and a small crossbody bag for port days.</p>
+
+      <h2>Packing Checklist for Kids</h2>
+
+      <p><strong>Clothes:</strong> 5-7 casual outfits, 2 bathing suits, 1 cover-up or rash guard, 7 pairs of underwear, 7 pairs of socks, 1 light jacket or hoodie, 1 nicer outfit for formal night, sleepwear, and an extra outfit in your carry-on (trust me on this).</p>
+
+      <p><strong>Shoes:</strong> Sneakers or sandals, water shoes, flip-flops, and optional dress shoes.</p>
+
+      <p><strong>Toiletries:</strong> Toothbrush and toothpaste, kids' shampoo and body wash, kid-safe SPF 50 sunscreen, aloe, any prescription meds, chewable Dramamine if needed, and swim diapers if still needed.</p>
+
+      <p><strong>Extras:</strong> Hat, sunglasses if they'll wear them, a favorite small toy or comfort item, coloring books or activity books, a tablet with downloaded shows, headphones, portable charger, snacks for the room, and Ziploc bags.</p>
+
+      <img src="/blog/img_184.webp" alt="Cruise essentials including water bottle, sunglasses, and portable charger" />
+
+      <h2>A Few Things Everyone Forgets</h2>
+
+      <p><strong>Power strip or extension cord.</strong> Cabins usually only have one or two outlets. You'll thank me.</p>
+
+      <p><strong>Ziploc bags.</strong> They save you when wet swimsuits need to go in the suitcase or when you want to keep your phone dry.</p>
+
+      <p><strong>Dryer sheets or fabric freshener.</strong> Cruise cabins are small and clothes can get a little musty. Toss a dryer sheet in your suitcase.</p>
+
+      <p><strong>Highlighter and pen.</strong> The daily schedule they leave in your room is easier to manage if you can mark what you want to do.</p>
+
+      <p><strong>Magnets or hooks.</strong> Cabin walls are metal. Small magnets or hooks help you hang stuff and stay organized.</p>
+
+      <p><strong>Reusable water bottle.</strong> Drink stations are all over the ship. Bring your own bottle and skip buying bottled water at ports.</p>
+
+      <h2>What NOT to Pack</h2>
+
+      <p>Just as important as what to bring is what to leave at home. Too many shoes (you'll wear three pairs max), fancy jewelry (the ocean and your jewelry box don't mix), your entire makeup collection, a hairdryer (the cabin has one), an iron (also in the cabin), and books you won't read (bring one or two, or load up your Kindle).</p>
+
+      <h2>Formal Nights: What Does That Even Mean?</h2>
+
+      <p>Most 7-day cruises have one or two formal nights. Don't panic. Formal doesn't mean black-tie wedding. It just means dress up a little. For men: dress pants and a collared shirt, tie optional, blazer if you want but not required, no shorts or t-shirts. For women: a dress, skirt and blouse, or dressy pantsuit. Think date night, not prom. For kids: khakis and a polo for boys, a sundress or nice top and skirt for girls.</p>
+
+      <p>You can also skip formal night completely if it's not your thing. Just eat at the buffet that night. No one will judge you.</p>
+
+      <img src="/blog/img_884.webp" alt="Cruise ship balcony with ocean view" />
+
+      <h2>A Quick Word on Laundry</h2>
+
+      <p>Most cruise ships offer a paid laundry service. A few lines have self-service laundromats, but many don't. If you packed light (smart move), your best bet is what a lot of people do: rinse out swimsuits and a few shirts in the cabin sink and hang them to dry. Not glamorous, but it works.</p>
+
+      <h2>Packing Your Carry-On</h2>
+
+      <p>Your checked luggage might not show up in your cabin right away. So pack a small carry-on with your swimsuit (you'll want to hit the pool on embarkation day), sunscreen, a change of clothes, medications, valuables like your passport, wallet, phone, and chargers, and snacks. That way, even if your suitcase takes a few hours to arrive, you're set.</p>
+
+      <h2>One Last Thing</h2>
+
+      <p>Packing for a cruise doesn't have to be stressful. The key is to keep it simple. You don't need a different outfit for every hour of the day. You need basics, layers, and a couple of nice things. Mix and match. Wear things twice. Pack light and leave room in your suitcase for the stuff you'll pick up at ports.</p>
+
+      <p>And if you forget something? The ship has a shop. Ports have shops. You'll be fine.</p>
+
+      <p>If you're planning a Caribbean cruise and want help with more than just packing, I'm here. I help people book trips that actually fit their lives, and I take care of the details so you don't have to. Planning is always free. Reach out at eric@happydetour.com or fill out the form at happydetour.com.</p>
+
+      <p>Affordable vacations. Fun experiences. Everyone welcome.</p>
+    `,
+  },
+  {
+    slug: 'the-day-i-stopped-thinking-and-started-building',
+    title: 'The Day I Stopped Thinking and Started Building',
+    date: '2026-05-20',
+    tag: 'Behind the Brand',
+    excerpt: 'There\'s a version of this story where I sit down at my laptop, make a list, work through it methodically, and wrap up by 6pm feeling organized and accomplished. That\'s not what happened.',
+    image: '/blog/img_668.webp',
+    content: `
+      <p>There's a version of this story where I sit down at my laptop, make a list, work through it methodically, and wrap up by 6pm feeling organized and accomplished.</p>
+
+      <p>That's not what happened.</p>
+
+      <p>What actually happened on May 19 was messier than that, and honestly more interesting. It started with a lawyer questionnaire and ended with me staring at a cruise ship portal at midnight trying to figure out why a gear icon kept sending me in circles. In between there was a new cruise booked, a landing page built from scratch, a video edited, a URL moved, and a homepage redesigned.</p>
+
+      <p>By the time I closed my laptop I had done more in one day than I had planned to do in a week.</p>
+
+      <h2>A Questionnaire That Made Me Think</h2>
+
+      <p>The morning started with paperwork. Not glamorous, but necessary.</p>
+
+      <p>A few days earlier I had signed an engagement letter with Thomas Carpenter, an attorney out of New York who specializes specifically in travel advisor law. He also runs his own travel agency, which means he understands this industry from both sides. Not just the legal side. The actual day-to-day reality of booking trips, dealing with clients, managing chargebacks, and protecting yourself when something goes wrong.</p>
+
+      <p>I had been putting off getting proper terms and conditions in place for a while. When leads are slow and money isn't coming in yet, spending $850 on a legal document feels like a hard sell to yourself. But the honest truth is that terms and conditions aren't just about protecting you from bad clients. They're about looking and operating like a real business. When someone books a trip through me and signs my terms, they know what they're agreeing to. I know what I'm responsible for. Everyone is protected.</p>
+
+      <p>Thomas doesn't use templates. Everything is custom, drafted specifically for how Happy Detour Travel operates. And if the law changes down the road, he amends the documents for free.</p>
+
+      <p>The questionnaire was thorough. About twenty questions covering my business structure, how I handle payments, what types of travel I specialize in, whether I package multiple suppliers into one price, which states my clients are in, and whether I charge fees for cancellations or changes.</p>
+
+      <p>Some of those questions made me stop and think. The fee question in particular. Right now I don't charge planning fees. My service is free to clients because the cruise lines and resorts pay my commission. But do I want to charge cancellation fees if someone backs out after I've done a significant amount of research and planning? Probably yes, eventually. So instead of locking myself into a never answer, I left room for it.</p>
+
+      <p>I also had to think carefully about how I describe the way I work. I don't collect money from clients and then pay suppliers out of my own account. Clients pay the supplier directly and I earn commission. I book under my host agency WorldVia's credentials. I don't package multiple suppliers into one all-in price. All of those distinctions matter legally and they matter for how the terms get written.</p>
+
+      <p>I took my time. Answered everything honestly. And submitted it. Terms and conditions for Happy Detour Travel LLC are officially in progress.</p>
+
+      <h2>The Cruise I Wasn't Planning to Book</h2>
+
+      <img src="/blog/img_669-1.webp" alt="Alaska glacier with turquoise water" />
+
+      <p>Here's where the day took a turn.</p>
+
+      <p>I had been looking at a Virgin Voyages sailing to Alaska for a few days. The Brilliant Lady, departing Seattle on June 17, 2027, and returning to Seattle on June 24. Seven nights. A circle voyage, which means you fly into one city and fly home from the same city. No repositioning. No extra logistics. Just Alaska.</p>
+
+      <p>I'm a Gold-certified Virgin Voyages travel advisor. I've been on their ships. I know the brand well. And I genuinely love it. The dining on Virgin Voyages is award-winning and already included in your fare. Not a buffet. Not a main dining room with assigned seating. Over twenty restaurants across the ship, all included, no upcharges. WiFi is included. Group fitness classes are included. Entertainment is included. The ships are adults only. Eighteen and older.</p>
+
+      <p>I wanted to set up a group booking for this sailing. And when I looked at the terms I realized something that changed everything. No minimum cabins required to start. No deposit to hold the space. You can hold cabins for up to 30 days without putting any money down. Individual cabins only need a 20% deposit when someone actually books. And if you hit 10 cabins you unlock full group perks including Sailor Loot and dining guarantees.</p>
+
+      <p>Zero risk. Literally zero.</p>
+
+      <p>So I booked it. I locked in 10 cabins. Four Central Sea Terrace and six Sea Terrace. Alaska June 17 through 24, 2027 on the Brilliant Lady.</p>
+
+      <h2>Building Alaska from Nothing</h2>
+
+      <p>I've never been to Alaska. I don't have photos of glaciers or fjords. I don't have stories yet about watching whales breach from a ship deck or seeing the sun barely set in June. What I had was a cruise I believed in, a brand I trusted, and a blank page.</p>
+
+      <p>So I built the landing page the same way I've built everything else for Happy Detour Travel. Start with what's true. Say it simply. Make it easy for someone to take the next step.</p>
+
+      <p>The design for the Alaska page needed to feel different from the Carnival page. The ABC Islands cruise is warm and Caribbean and approachable. Alaska on Virgin Voyages is something else. It's premium. It's dramatic. It's a bucket list trip. So I went dark. Deep navy backgrounds. Glacier blue tones. Gold accents. An aurora borealis animation in the hero that actually moves. It doesn't look like a travel agency page. It looks like a destination.</p>
+
+      <p>The page covers the full itinerary from Seattle and back. It covers what's included in a Virgin Voyages fare honestly and in plain English. Dining included. WiFi included. Group fitness included. Entertainment included. Sodas and sparkling water included. And then it covers what's not included just as clearly. Bar tab is separate, though Virgin lets you pre-pay and get bonus credit added on top. Gratuities are separate. Transparency builds trust. Hidden fees destroy it.</p>
+
+      <p>The page went live at happydetour.com/alaska before I went to bed.</p>
+
+      <h2>The URL Move That Made Sense</h2>
+
+      <p>While I was in the middle of all of this I moved the Carnival ABC Islands landing page to a new URL. It used to live at happydetour.com/carnival. Now it lives at happydetour.com/abc.</p>
+
+      <p>The reason is simple and I should have thought of it sooner. If someone sees the word Carnival in the URL they might think about Carnival the cruise line and go book directly there. I don't get paid if they do that. But if the URL says abc they're thinking about the destination. Aruba, Bonaire, Curacao. Three islands in the southern Caribbean, outside the hurricane belt, with turquoise water and Dutch Caribbean architecture that looks like nowhere else in the world. That's what I want them to be thinking about.</p>
+
+      <h2>Two Cruises on the Homepage</h2>
+
+      <img src="/blog/img_670.webp" alt="Happy Detour Travel homepage showing ABC Islands and Alaska cruise cards" />
+
+      <p>Once the Alaska page was live I updated the group trips section on the main Happy Detour Travel homepage. Before today there was one cruise card. Now there are two cards side by side.</p>
+
+      <p>The ABC Islands card is warm and bright. A real photo of Aruba with a pelican in the foreground and a cruise ship in the background. Starting at $644 per person. Friendly and accessible. The Alaska card is dark and dramatic. Deep navy gradient with glacier blue tones. Gold date badge. Starting at $1,797 per person. Premium and intentional.</p>
+
+      <p>They look completely different from each other because they are completely different trips for completely different people. Having both on the homepage shows range. It shows that Happy Detour Travel isn't just one kind of cruise for one kind of traveler.</p>
+
+      <h2>A Video Ad That's Good Enough to Run</h2>
+
+      <img src="/blog/img_668.webp" alt="Happy Detour Travel ABC Islands landing page on laptop" />
+
+      <p>Somewhere in the middle of all of this I also edited a video ad for the Carnival ABC Islands cruise. I used CapCut. Free software. Free stock footage of a cruise ship sailing on blue water. Text overlays that fade in one line at a time. Three Islands. One Perfect Trip. Aruba. Bonaire. Curacao. Affordable Fun for Everyone. Sailing Miami, October 2026.</p>
+
+      <p>It's not a television commercial. But it's honest, it's on brand, and it makes the point clearly in about 15 seconds. The deposit deadline for the Carnival ABC Islands cruise is July 14. That's about eight weeks from now. I need the ad running now, not perfect. So I built it good enough to learn from and moved on.</p>
+
+      <h2>The Gear Icon That Went Nowhere</h2>
+
+      <p>I want to tell you about the moment at the end of the night that almost derailed everything. After I locked in the Virgin Alaska group booking I went back into the portal to confirm everything was correct. But when I clicked the gear icon to open the booking and manage it, it kept sending me to a page to create a new circle instead of opening the one I already had.</p>
+
+      <p>I clicked it five times. Same result every time.</p>
+
+      <p>A few months ago that kind of portal glitch would have sent me into a spiral of doubt. Is the booking real? Did something go wrong? Should I start over? Instead I just looked at the search results one more time. The booking was there. The status said Offered. The cabin count was right. The commission was there in the invoice. Everything was correct. The gear icon was just a broken link in their portal UI, not a problem with my actual booking.</p>
+
+      <p>I made a note to call Virgin Sailor Services in the morning to get confirmation and moved on. That small moment felt significant to me. Not because the portal glitch was a big deal. It wasn't. But because of how I handled it. I didn't spiral. I looked at the evidence, made a reasonable conclusion, and kept going. That's a different version of me than the one who started this business two months ago.</p>
+
+      <h2>What Two Months Actually Looks Like</h2>
+
+      <p>I launched Happy Detour Travel a little over two months ago. When I look at what existed on day one and what exists now I genuinely have to stop and take it in sometimes. A website with an SEO score of 100. Active social media on three platforms. Two group cruise landing pages with real booking infrastructure. A video ad in the queue. A legal engagement in progress. A second cruise line relationship as a Gold-certified advisor. Blog posts, brand guidelines, automation workflows, HubSpot set up, email flows running.</p>
+
+      <p>None of that existed two months ago. Two months ago I had an idea and a laptop.</p>
+
+      <p>I'm still hesitant some mornings. I still don't have a stranger booking yet. I still wonder sometimes if this is going to work. But days like today remind me that wondering is just noise. The work is what's real.</p>
+
+      <p>If you're reading this and you've been thinking about the ABC Islands cruise in October or the Virgin Voyages Alaska sailing in June 2027, I'd genuinely love to help you figure out if either one is a fit. Just drop your name and number on the page and I'll text you the details personally. No bots. No pressure. Just me.</p>
+
+      <p>happydetour.com | @happydetourtravel</p>
+
+      <p>Affordable vacations. Fun experiences. Everyone welcome.</p>
+    `,
+  },
 ]
 
 export function getAllPosts(): Post[] {
