@@ -430,6 +430,47 @@ export const POSTS: Post[] = [
       <p>Eric Carney<br/>Happy Detour Travel<br/>Affordable vacations. Fun experiences. Everyone welcome.<br/>@happydetourtravel</p>
     `,
   },
+  {
+    slug: 'the-truth-about-all-inclusive-luxury',
+    title: 'The Truth About All-Inclusive Luxury',
+    date: '2026-04-25',
+    tag: 'Resort Reviews',
+    excerpt: 'I see the word luxury slapped on every travel brochure and website these days. Every resort claims to be five stars. Every lobby has a fountain and some nice flowers. But as we have learned from my own Happy Detours around the world the label does not always match the experience.',
+    image: '/blog/IMG_2791.jpeg',
+    content: `
+      <p>I see the word luxury slapped on every travel brochure and website these days. Every resort claims to be five stars. Every lobby has a fountain and some nice flowers. But as we have learned from my own Happy Detours around the world the label does not always match the experience. When you are spending thousands of dollars on a vacation you deserve to know what you are actually getting.</p>
+
+      <h2>The Staff Experience</h2>
+
+      <p>The biggest indicator of a true luxury resort is the staff. You can have gold plated faucets and marble floors but if the service is bad the vacation is ruined. I look for the staff to guest ratio. In a high-end resort like a Sandals or a Beaches property the staff members are trained to anticipate what you need before you even ask.</p>
+
+      <p>It is the small things that matter. It is the person at the pool who brings you a fresh towel without you looking for one. It is the bartender who remembers that you prefer a Coke Zero over a cocktail in the afternoon. When the staff is overworked or under-trained you feel it in the energy of the place. A real luxury resort feels effortless. If you find yourself waiting in long lines for every meal or hunting for a clean beach chair you are not at a luxury resort. You are at a factory.</p>
+
+      <h2>The Hidden Costs and the Upsell</h2>
+
+      <p>A lot of resorts lead with a low price to get you in the door and then they spend the rest of the week trying to get more money out of you. They charge for the premium steak at dinner. They charge for the better WiFi. They charge for the beach cabanas.</p>
+
+      <p>To me true luxury means the price is the price. When I book a client at a Sandals resort I know their snorkeling is included. I know their scuba diving is included. I know they can walk into any of the ten or fifteen restaurants on the property and order whatever they want without looking at a price tag. If you have to keep your credit card in your pocket all day long it is hard to actually relax.</p>
+
+      <h2>Maintenance and the Details</h2>
+
+      <p>You have to look at the bones of the property. Brochures are great at hiding the cracks. I look at the age of the rooms and how often they are renovated. Is the air conditioning quiet and effective? Is the water pressure in the shower actually good? Are the pillows high quality or are they the flat ones you find at a budget motel?</p>
+
+      <p>I also look at the common areas. If the pool tiles are missing or the beach umbrellas are tattered it tells me the management is cutting corners. If they are cutting corners on the things you can see they are definitely cutting corners on the things you cannot see like food safety or staff pay.</p>
+
+      <h2>The Whimsical Factor</h2>
+
+      <p>Finally I look for the vibe. A resort can be fancy but boring. My brand is all about fun experiences. I want a place that has some personality. I want a resort that feels like it belongs in the Caribbean rather than a boxy hotel that could be in the middle of a city anywhere. I look for unique architecture and gardens that make you want to go for a walk.</p>
+
+      <h2>Why You Need an Advisor</h2>
+
+      <p>This is why I do what I do. I spend my time digging through the reviews and visiting these properties so you do not have to. I know which five star resorts are actually three stars in disguise. I know which ones have the best beaches and which ones have the best food.</p>
+
+      <p>Luxury is not just a label. It is a feeling of being taken care of. It is the peace of mind that comes from knowing you made the right choice. If you are ready to stop guessing and start traveling the right way let us plan your next detour together.</p>
+
+      <p>Eric Carney<br/><a href="https://happydetour.com">Happy Detour Travel</a><br/>Affordable vacations. Fun experiences. Everyone welcome.<br/><a href="https://instagram.com/happydetourtravel">@happydetourtravel</a></p>
+    `,
+  },
 ]
 
 export function getAllPosts(): Post[] {
