@@ -253,6 +253,183 @@ export const POSTS: Post[] = [
       <p>Eric<br/>Happy Detour Travel: Affordable vacations. Fun experiences. Everyone welcome.</p>
     `,
   },
+  {
+    slug: 'the-day-i-built-like-i-meant-it',
+    title: 'The Day I Built Like I Meant It',
+    date: '2026-04-23',
+    tag: 'Behind the Brand',
+    excerpt: 'A full day in the Happy Detour lab and I am not stopping. Today was different. I have been building Happy Detour Travel piece by piece since March of 2026. I have been figuring things out as I go, leaning on Dunkin\' iced coffee and a lot of determination. But today? Today felt like the day everything started coming together for real.',
+    image: '/blog/eric.jpeg',
+    content: `
+      <p>A full day in the Happy Detour lab and I am not stopping.</p>
+
+      <p>Today was different. I have been building Happy Detour Travel piece by piece since March of 2026. I have been figuring things out as I go, leaning on Dunkin' iced coffee and a lot of determination. But today? Today felt like the day everything started coming together for real.</p>
+
+      <p>I want to document this. Not because I have it all figured out, but because I think there is something honest and useful in showing what it actually looks like to build a travel brand from scratch, one commit at a time.</p>
+
+      <h2>The Website Audit</h2>
+
+      <p>It started with a website audit. I ran my site through a tool called Klok Labs. It is an AI visibility analyzer that scores your website across 14 categories. My starting score was a 70 out of 100. That is good, but not great. The biggest problem was that my structured data was a mess. I had three separate schema blocks when it should have been one clean, consolidated block.</p>
+
+      <p>So I fixed it. I rebuilt my entire JSON-LD schema from scratch. I combined my Organization, Person, and Travel Agency data into one unified block. I baked in my logo, email, social links, WorldVia affiliation, and my tagline. I ran it through Google's Rich Results Test and got a green checkmark. Google can finally see exactly who Happy Detour Travel is and what I do.</p>
+
+      <h2>Building the About Page</h2>
+
+      <p>Then I built my About page. I didn't have one before. For a brand built on trust and personality, that was a problem.</p>
+
+      <p>I wrote the real story. I talked about being "that guy" in the group chat since 2017. I mentioned the late nights on a Citrus MacBook in Ohio, the Dunkin' iced coffee, and the Coke Zeros. I even put in the Tanzania safari that is still on my bucket list and the learning curve I am still climbing every single day. You can check it out at happydetour.com/about. It has my photo, my story, and the "teamwork clause" that explains how I work with my clients. It is the most personal thing on the site and I am proud of it.</p>
+
+      <h2>The Links Page</h2>
+
+      <p>If you follow me on Instagram, Facebook, or TikTok, you have probably seen travel brands with a clean "link in bio" page. I built my own version today at happydetour.com/links. It has everything in one place. My planning form, my About page, my blog, and direct links to Virgin Voyages and Sandals are all there. It is clean, on brand, and ready for traffic.</p>
+
+      <h2>Honest Stats and Better FAQs</h2>
+
+      <p>I added stats that are actually true. On my "Why Work With Me" section, I added a simple stats bar: 17+ cruises taken personally, $0 cost to you, 3+ countries visited, and a promise that I am always researching the best deals for you. Nothing is inflated or fake. It is just honest numbers that tell you something real about who I am.</p>
+
+      <p>I also expanded my FAQ to 12 questions. I added four new questions specifically designed for AI search tools. I covered things like "What is a travel advisor?" and "Is Happy Detour Travel a legitimate travel agency?" These are the questions people type into ChatGPT and Google AI. If my site answers them clearly, AI tools start pulling my content as a source. That is the long game.</p>
+
+      <h2>Technical Wins</h2>
+
+      <p>I spent time fixing accessibility across the entire site. Six components including the TrustSection and TravelServices were updated with proper ARIA labels and descriptive alt text. It is not the most glamorous work, but it matters. It makes my site usable for everyone and Google definitely notices.</p>
+
+      <p>I also added real pricing and brand names to my services. My cruise section now mentions Royal Caribbean, Norwegian, Carnival, MSC, and Virgin Voyages with real price ranges. My all-inclusive section names Sandals and Beaches specifically. It is all specific, verifiable, and real.</p>
+
+      <p>Finally, I set up Google Analytics and Google Search Console. From today forward, I can see exactly who is visiting happydetour.com and what they are doing on the site. No more flying blind.</p>
+
+      <h2>Where the Score Landed</h2>
+
+      <p>I started the day at 70 and I ended at 71. That might sound disappointing, but I know that the score is a lagging indicator. The work I did today on the schema, content, and accessibility is the infrastructure. The score catches up eventually. My AEO (Answer Engine Optimization) is at 80 and my LLMO is at 78. Those are the numbers that matter most for AI search visibility, and they are strong.</p>
+
+      <h2>What is Next</h2>
+
+      <p>This is the end of Day One of the real build. Tomorrow starts fresh. There is still work to do like a privacy policy and gathering testimonials, but today I built like I meant it.</p>
+
+      <p>I am just getting started.</p>
+
+      <p>Eric Carney<br/>Owner, Happy Detour Travel</p>
+
+      <p>Affordable vacations. Fun experiences. Everyone welcome.<br/>happydetour.com @happydetourtravel</p>
+    `,
+  },
+  {
+    slug: 'day-2-in-the-lab-and-the-site-got-better',
+    title: 'Day 2 in the Lab and the Site Got Better',
+    date: '2026-04-24',
+    tag: 'Behind the Brand',
+    excerpt: 'Behind the scenes of building Happy Detour Travel one commit at a time. Day 2 was less about big dramatic changes and more about the stuff that makes a website actually work.',
+    image: '/blog/og-image.png',
+    content: `
+      <p>Behind the scenes of building Happy Detour Travel one commit at a time.</p>
+
+      <p>If you read Blog #10, you know I ended Day 1 at 1:49 AM after one of the most productive building sessions Happy Detour Travel has ever had. I posted it, closed the laptop, and went to bed. I woke up ready to keep going.</p>
+
+      <p>Day 2 was less about big dramatic changes and more about the stuff that makes a website actually work. This is the behind the scenes infrastructure that visitors never see but search engines and AI tools absolutely do. It is not glamorous, but it matters.</p>
+
+      <h2>I built a branded 404 page</h2>
+
+      <p>You know that page you land on when a link is broken? Most businesses have a generic error message that just says "page not found" and leaves you stranded. Mine doesn't do that anymore. Now if you land somewhere that doesn't exist on my site, you will see a compass emoji and the message "Looks like this trail went cold. Don't worry, I'll help you get back on the right path." I've included a clear way to get back to the fun stuff including a direct link to start planning your trip. Even when things go wrong, Happy Detour stays on brand.</p>
+
+      <h2>I completely rebuilt the Success page</h2>
+
+      <p>This is the page you land on after filling out my trip planning form. It was functional before but it felt like a default with a dark background and one button. It had nothing personal. Now it feels like me. You get a bouncing plane emoji and a blue message card that says I am a real person diving into research for you. I added a "While You Wait" section with a link to the blog and the honest admission that I am probably on my second Dunkin' of the day. There are also social links so you can follow the journey while I work. It is the first real impression I make after someone trusts me with their trip, so it needed to feel like Happy Detour Travel. Now it does.</p>
+
+      <h2>I installed Google Analytics</h2>
+
+      <p>From this point forward I can see exactly who is visiting my site, where they are coming from, and what they are doing once they get there. Before today I was flying completely blind. No more. This is real business intelligence and it costs nothing.</p>
+
+      <h2>I set up Google Search Console and submitted my sitemap</h2>
+
+      <p>Google now knows exactly what pages exist on my site and has been asked to crawl and index them. My sitemap includes my homepage, About page, Links page, and Success page. Status is green and three pages were discovered.</p>
+
+      <h2>I built a custom Open Graph image</h2>
+
+      <p>This is the image that shows up when someone shares my site on social media. Before today it was just my logo. Now it is a proper branded card with a Happy Detour blue background, amber accents, my name, my tagline, and the URL front and center. I tested it on opengraph.xyz and it works.</p>
+
+      <h2>I upgraded my meta tags and schema</h2>
+
+      <p>My Person schema now includes my description, my Ohio location, my photo, and all the travel brands I specialize in. My meta description leads with my tagline and my keywords include specific cruise lines and resort names like Royal Caribbean, Virgin Voyages, Sandals, and Beaches. Every piece of it is more specific and findable than it was 48 hours ago.</p>
+
+      <h2>I researched a privacy policy</h2>
+
+      <p>I am being honest about this one. I researched current TCPA and CCPA requirements and learned about the new FCC opt out rules. I started drafting an interim policy but I made the decision to pause and do it right. I am in the process of working with legal counsel to get a proper terms of service. It is costing $850 and it is worth every penny. Happy Detour Travel is a real business and real businesses get real legal help.</p>
+
+      <h2>Where things stand</h2>
+
+      <p>After two very long days, Happy Detour Travel is now a clean and fast website. I have a polished About page that tells my real story, a links page ready for every social bio, a branded 404 page, and a warm success page. Google is indexing every page and the custom schema has been validated. I have twelve FAQ answers optimized for AI search and real pricing in every service description.</p>
+
+      <p>The site is ready, the form works, and the automation fires. Now it needs people. That part is on me. I will be posting consistently and building trust one conversation at a time. I am ready to get that first client through the door and make sure their trip is everything they hoped for.</p>
+
+      <p>I cannot wait.</p>
+
+      <p>Eric Carney<br/>Happy Detour Travel</p>
+
+      <p>Affordable vacations. Fun experiences. Everyone welcome.<br/>@happydetourtravel</p>
+    `,
+  },
+  {
+    slug: 'honest-review-bahia-principe-explore-legend',
+    title: 'I Went to the Dominican Republic in October. Here\'s My Honest Take on Bahia Principe Explore Legend.',
+    date: '2026-04-24',
+    tag: 'Resort Reviews',
+    excerpt: 'A real review from someone who was actually there. Pools, beaches, upsells, and everything in between.',
+    image: '/blog/Jason_and_Lori.jpg',
+    content: `
+      <p>A real review from someone who was actually there. Pools, beaches, upsells, and everything in between.</p>
+
+      <p>"Celebrating friends! I went with them to the DR for their 10/13/25 anniversary. Happy Detour Travel is all about these real moments."</p>
+
+      <p>Let me be upfront about something before I start. I am a travel advisor. That means when I review a resort, I am not just thinking about whether I had a good time. I am thinking about whether I would send my clients there. More importantly, I am thinking about who I would send there and why.</p>
+
+      <p>So here is my honest take on the Bahia Principe Explore Legend in Punta Cana. I stayed there in October 2025 and I am going to tell you exactly what I found.</p>
+
+      <h2>First, what is this place?</h2>
+
+      <p>The Bahia Principe Explore Legend is a 5-star all-inclusive resort on Playa Bavaro. It is a massive property. It is part of the larger Bahia Principe Bavaro complex, which means you actually have access to multiple resorts, restaurants, and facilities all on the same grounds. It is themed around a fantasy castle concept which makes it a huge hit with families.</p>
+
+      <h2>What is actually included?</h2>
+
+      <p>This is always the first question people ask me so let us get it out of the way. Here is what your room rate covers. You get unlimited food and drinks at the buffet and specialty restaurants. You get non-motorized water sports like snorkeling and kayaking. You also get access to the water park, the Kids Club, and the nightly entertainment. You can also use the facilities at the neighboring Turquesa and Punta Cana properties.</p>
+
+      <p>The rooms are solid. You get a pillow menu, bathrobes, and a coffee maker. The WiFi in the room is free, which is not always a given at resorts in the Dominican Republic. That is a genuinely good all-inclusive package.</p>
+
+      <h2>The pool and beach were my favorite part</h2>
+
+      <p>I am going to be real with you. I could have spent my entire trip between the pool and the beach and been completely happy. The pools are spectacular. The beach on Playa Bavaro is exactly what you picture when you think of the Caribbean. White sand, turquoise water, and palm trees. It did not disappoint.</p>
+
+      <p>What I loved most was the energy. There were beach volleyball games going constantly. People were laughing and making friends with strangers. It had that laid-back vacation feeling where time just disappears and you look up and realize it is somehow 4pm already. The atmosphere was genuinely fun. This is the kind of stuff you cannot manufacture. It either has a vibe or it does not. This place has it.</p>
+
+      <h2>Rooms and Housekeeping</h2>
+
+      <p>My room was cleaned every single day without fail. Fresh towels, beds made, and everything tidied up. That sounds basic but it is not always consistent at big resorts. My experience was great. The rooms are comfortable. They aren't "luxury boutique" fancy, but they are well maintained and I had no complaints.</p>
+
+      <h2>The Staff</h2>
+
+      <p>Every single person I interacted with was warm and helpful. They genuinely seemed happy to be there. That goes a long way when you are away from home. The staff members are consistently one of the highlights here.</p>
+
+      <h2>The Food</h2>
+
+      <p>The buffet was solid with plenty of variety. The specialty restaurants are worth booking, but make your reservations early because they fill up fast. You have access to the Las Olas Beach House which has five specialty spots including Indian, Greek, and Mexican. That is genuinely impressive for an all-inclusive. For the pool and beach snacks, they are fine but nothing to write home about. Grab a cocktail and do not overthink it.</p>
+
+      <h2>The honest negative: The upsells</h2>
+
+      <p>I have to talk about this because it is real. Everywhere you go at this resort, someone is trying to sell you something. Excursion packages, spa upgrades, or photography sessions. It happens at the pool, on the beach, and even when you are just walking to lunch.</p>
+
+      <p>Once I mentally accepted it and learned to politely say no, it stopped bothering me. But I won't pretend it does not happen because it absolutely does. Some guests find it frustrating. Here is the silver lining though. The excursions they offer are actually good. If you want to see the Dominican Republic beyond the resort gates, the options are solid. Just go in with your eyes open and do not feel pressured.</p>
+
+      <h2>Who is this resort right for?</h2>
+
+      <p>If you have kids, this place was built for you. The water park and the castle theme are perfect for families. It is also great for groups of friends because the energy is so social. If you are a couple looking for a quiet and romantic escape, you might want to look elsewhere. This is a big, lively property.</p>
+
+      <h2>My bottom line</h2>
+
+      <p>Bahia Principe Explore Legend delivers on the fundamentals. You get a great beach, fun pools, and friendly staff. The upsells are there but manageable. The food is good and the atmosphere is fun.</p>
+
+      <p>I would send my clients here if they are looking for a lively and well-rounded experience. If you are thinking about the Dominican Republic for your next trip and want to talk through the right fit, reach out. That is exactly what I am here for.</p>
+
+      <p>Eric Carney<br/>Happy Detour Travel<br/>Affordable vacations. Fun experiences. Everyone welcome.<br/>@happydetourtravel</p>
+    `,
+  },
 ]
 
 export function getAllPosts(): Post[] {
