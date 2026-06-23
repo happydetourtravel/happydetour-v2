@@ -111,7 +111,7 @@ export default function CarnivalPage() {
               <p className="text-sm" style={{ color: "#6B7280" }}>
                 Carnival operates one of the largest cruise fleets in the world, sailing from more U.S. homeports than any other cruise line.{" "}
                 
-                  href="https://www.carnival.com/cruise-ships"
+                 <a href="https://www.carnival.com/cruise-ships"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: CARNIVAL_RED, textDecoration: "underline" }}
@@ -814,7 +814,7 @@ export default function CarnivalPage() {
             Carnival is the most popular cruise line in the world for a reason and I have been on one. I book Carnival on your behalf so you get the right ship, the right itinerary, and someone who actually answers when you have a question.
           </p>
           
-            href={FORM_LINK}
+           <a href={FORM_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 rounded-lg font-bold text-sm transition hover:opacity-90"
