@@ -471,6 +471,37 @@ export const POSTS: Post[] = [
       <p>Eric Carney<br/><a href="https://happydetour.com">Happy Detour Travel</a><br/>Affordable vacations. Fun experiences. Everyone welcome.<br/><a href="https://instagram.com/happydetourtravel">@happydetourtravel</a></p>
     `,
   },
+  {
+    slug: 'why-i-started-happy-detour-travel',
+    title: 'Why I Started Happy Detour Travel',
+    date: '2026-04-14',
+    tag: 'Behind the Brand',
+    excerpt: 'I work a lot. Like, a lot a lot. And for a long time, the way I dealt with that was simple. I traveled.',
+    image: '/blog/pexels-raymond-148038562-10480288.jpg',
+    content: `
+      <p>I work a lot. Like, a lot a lot. And for a long time, the way I dealt with that was simple. I traveled.</p>
+
+      <p>Not just a trip here and there either. I've been on 17 solo cruises. I've walked the streets of London and Tokyo. I've relaxed at all inclusive resorts and explored more places than I can count. Travel isn't something I stumbled into. It's been a big part of my life for a long time.</p>
+
+      <p>But cruising is my thing. There's nothing like going to sleep on a ship and waking up in a completely different country. The Cayman Islands is my favorite island I've ever stepped off a ship onto. The water, the people, the energy. And if you ever get the chance to visit Coco Cay, Royal Caribbean's private island, do it. It's one of those places that makes you stop and think. Everybody needs to experience something like this.</p>
+
+      <p>That's actually what this whole thing is about.</p>
+
+      <p>The people you meet on a cruise ship can become lifelong friends. I've met people five years ago on a ship that I'm still cruising with today. There's something about traveling that opens people up in a way nothing else does. And somewhere along the way, everyone around me started living vicariously through my trips. Friends, family, coworkers all saying "I want to do that."</p>
+
+      <p>That planted a seed.</p>
+
+      <p>I looked into starting a travel agency, found WorldVia, did my research, and thought this is something I could actually do. Life got busy, the holidays hit hard as a grocery store manager, and the idea sat for a while. But then January came, then February. Two more cruises, another friend who had never sailed before who now wants to book his next trip. And it all clicked.</p>
+
+      <p>This wasn't just about travel for me anymore. It was about helping people find their own happy detour. Because this world is beautiful, and everybody deserves to slow down, step away, and just take it all in.</p>
+
+      <p>That's what Happy Detour Travel is about.</p>
+
+      <p>Affordable vacations. Fun experiences. Everyone welcome.</p>
+
+      <p>Eric<br/>@happydetourtravel</p>
+    `,
+  },
 ]
 
 export function getAllPosts(): Post[] {
