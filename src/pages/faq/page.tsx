@@ -63,6 +63,25 @@ export default function FAQ() {
   return (
     <main style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
 
+      {/* FAQ Schema for AI and search engines */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
+          })
+        }}
+      />
+
       {/* Header */}
       <div style={{ backgroundColor: '#007298', padding: '64px 24px', textAlign: 'center' }}>
         <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>
@@ -148,7 +167,7 @@ export default function FAQ() {
           <p style={{ color: '#6B7280', fontSize: '15px', marginBottom: '20px' }}>
             Still have a question? Just reach out directly.
           </p>
-          <a
+          
             href={FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
