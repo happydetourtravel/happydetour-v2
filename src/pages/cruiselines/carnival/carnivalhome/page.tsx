@@ -14,19 +14,19 @@ function Accordion({ title, children }: { title: string; children: React.ReactNo
     <div className="border border-red-100 rounded-xl overflow-hidden mb-3">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center px-4 md:px-6 py-4 text-left font-semibold text-gray-800 hover:bg-red-50 transition-colors gap-4"
+        className="w-full flex justify-between items-center px-4 py-4 text-left font-semibold text-gray-800 hover:bg-red-50 transition-colors gap-4"
         style={{ background: open ? CARNIVAL_ACCENT : "white" }}
       >
-        <span className="text-sm md:text-base">{title}</span>
+        <span className="text-sm md:text-base leading-snug">{title}</span>
         <span
-          className="text-2xl transition-transform duration-200"
+          className="text-2xl transition-transform duration-200 flex-shrink-0"
           style={{ color: CARNIVAL_RED, transform: open ? "rotate(45deg)" : "rotate(0deg)" }}
         >
           +
         </span>
       </button>
       {open && (
-        <div className="px-4 md:px-6 py-5 bg-white border-t border-red-100 text-gray-700 leading-relaxed text-sm md:text-base">
+        <div className="px-4 py-4 bg-white border-t border-red-100 text-gray-700 leading-relaxed text-sm md:text-base">
           {children}
         </div>
       )}
@@ -56,7 +56,7 @@ export default function CarnivalPage() {
 
       {/* Hero */}
       <div
-        className="relative py-16 md:py-24 px-4 md:px-6 text-center text-white overflow-hidden"
+        className="relative py-12 md:py-24 px-4 text-center text-white overflow-hidden"
         style={{ background: `linear-gradient(135deg, ${CARNIVAL_DARK} 0%, ${CARNIVAL_RED} 60%, #FF4444 100%)` }}
       >
         <div className="absolute inset-0 opacity-5"
@@ -66,11 +66,11 @@ export default function CarnivalPage() {
           }}
         />
         <div className="relative max-w-3xl mx-auto">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">Carnival Cruise Line</h1>
-          <p className="text-lg md:text-xl mb-6 leading-relaxed" style={{ color: "#FFD0D0" }}>
+          <h1 className="text-2xl md:text-5xl font-bold mb-3 leading-tight">Carnival Cruise Line</h1>
+          <p className="text-base md:text-xl mb-4 leading-relaxed" style={{ color: "#FFD0D0" }}>
             The Fun Ship. The most popular cruise line in the world for a reason. Great value, nonstop entertainment, and an atmosphere where strangers become friends by night two. Eric has sailed Carnival and the good time is real.
           </p>
-          <p className="text-sm md:text-base" style={{ color: "#FFA0A0" }}>
+          <p className="text-xs md:text-base" style={{ color: "#FFA0A0" }}>
             Everything you need to know about sailing Carnival, put together by Eric, your HDT travel advisor.
           </p>
         </div>
@@ -78,12 +78,12 @@ export default function CarnivalPage() {
 
       {/* Tab Bar */}
       <div className="sticky top-0 z-30 shadow-md overflow-x-auto scrollbar-none" style={{ background: CARNIVAL_DARK }}>
-        <div className="flex justify-start md:justify-center min-w-max mx-auto px-4 w-full">
+        <div className="flex justify-start min-w-max px-2">
           {TABS.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className="px-4 md:px-5 py-4 text-xs md:text-sm font-semibold whitespace-nowrap transition-all border-b-2"
+              className="px-3 md:px-5 py-3 text-xs font-semibold whitespace-nowrap transition-all border-b-2"
               style={{
                 color: activeTab === tab.id ? CARNIVAL_GOLD : "#94A3B8",
                 borderBottomColor: activeTab === tab.id ? CARNIVAL_GOLD : "transparent",
@@ -97,17 +97,28 @@ export default function CarnivalPage() {
       </div>
 
       {/* Tab Content */}
-      <div className="max-w-4xl mx-auto px-4 md:px-6 py-8 md:py-12">
+      <div className="max-w-4xl mx-auto px-3 md:px-6 py-6 md:py-12">
 
         {/* ABOUT CARNIVAL */}
         {activeTab === "about" && (
           <section>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>About Carnival Cruise Line</h2>
-            <p className="text-gray-500 text-sm md:text-base mb-8">Carnival is the most popular cruise line in the world and they earned that title by doing one thing better than anyone else. Making people have a good time. Eric sailed Carnival once and the experience was exactly what the brand promises. Great people, great energy, and memories that stick.</p>
+            <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>About Carnival Cruise Line</h2>
+            <p className="text-gray-500 text-sm mb-6">Carnival is the most popular cruise line in the world and they earned that title by doing one thing better than anyone else. Making people have a good time. Eric sailed Carnival once and the experience was exactly what the brand promises. Great people, great energy, and memories that stick.</p>
 
             <Accordion title="Who Is Carnival?">
               <p className="mb-3">Carnival Cruise Line is an American cruise company founded in 1972 and based in Miami. They started with one ship and a vision to make cruising accessible and fun for everyday people rather than just the wealthy. That philosophy never changed and it is why they became the largest cruise line in the world by passenger volume.</p>
-              <p>Carnival is not trying to be the most refined or the most sophisticated line at sea. They are trying to make sure you have the most fun. And they are very, very good at it. The ships are colorful, the staff is energetic, the food is solid, and the atmosphere is unlike anything else on the water.</p>
+              <p className="mb-3">Carnival is not trying to be the most refined or the most sophisticated line at sea. They are trying to make sure you have the most fun. And they are very, very good at it. The ships are colorful, the staff is energetic, the food is solid, and the atmosphere is unlike anything else on the water.</p>
+              <p className="text-sm" style={{ color: "#6B7280" }}>
+                Carnival operates one of the largest cruise fleets in the world, sailing from more U.S. homeports than any other cruise line.{" "}
+                
+                  href="https://www.carnival.com/cruise-ships"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: CARNIVAL_RED, textDecoration: "underline" }}
+                >
+                  Learn more about the Carnival fleet at carnival.com
+                </a>.
+              </p>
             </Accordion>
 
             <Accordion title="The Fun Ship Philosophy">
@@ -139,10 +150,10 @@ export default function CarnivalPage() {
         {/* THE SHIPS */}
         {activeTab === "ships" && (
           <section>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>The Carnival Fleet</h2>
-            <p className="text-gray-500 text-sm md:text-base mb-8">Carnival has one of the largest fleets in the world with ships sailing from ports all over the United States. From classic mid-size ships to their massive new Excel class vessels, here is a breakdown of what is out there.</p>
+            <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>The Carnival Fleet</h2>
+            <p className="text-gray-500 text-sm mb-6">Carnival has one of the largest fleets in the world with ships sailing from ports all over the United States. From classic mid-size ships to their massive new Excel class vessels, here is a breakdown of what is out there.</p>
 
-            <h3 className="text-lg font-bold mb-3 mt-6" style={{ color: CARNIVAL_RED }}>Excel Class — Carnival's Biggest and Newest</h3>
+            <h3 className="text-base font-bold mb-3 mt-6" style={{ color: CARNIVAL_RED }}>Excel Class — Carnival's Biggest and Newest</h3>
             {[
               {
                 name: "Carnival Celebration",
@@ -171,7 +182,7 @@ export default function CarnivalPage() {
             ].map((ship) => (
               <div key={ship.name} className="mb-3">
                 <Accordion title={`${ship.name} — Built ${ship.built} · ${ship.homeport} · Capacity ${ship.capacity}`}>
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-4">
                     <div><p className="mb-3">{ship.notes}</p></div>
                     <div>
                       <p className="font-semibold mb-2" style={{ color: CARNIVAL_RED }}>Highlights</p>
@@ -182,7 +193,7 @@ export default function CarnivalPage() {
               </div>
             ))}
 
-            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: CARNIVAL_RED }}>Vista Class</h3>
+            <h3 className="text-base font-bold mb-3 mt-8" style={{ color: CARNIVAL_RED }}>Vista Class</h3>
             {[
               {
                 name: "Carnival Panorama",
@@ -211,7 +222,7 @@ export default function CarnivalPage() {
             ].map((ship) => (
               <div key={ship.name} className="mb-3">
                 <Accordion title={`${ship.name} — Built ${ship.built} · ${ship.homeport} · Capacity ${ship.capacity}`}>
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-4">
                     <div><p className="mb-3">{ship.notes}</p></div>
                     <div>
                       <p className="font-semibold mb-2" style={{ color: CARNIVAL_RED }}>Highlights</p>
@@ -222,7 +233,7 @@ export default function CarnivalPage() {
               </div>
             ))}
 
-            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: CARNIVAL_RED }}>Dream Class</h3>
+            <h3 className="text-base font-bold mb-3 mt-8" style={{ color: CARNIVAL_RED }}>Dream Class</h3>
             {[
               {
                 name: "Carnival Dream",
@@ -251,7 +262,7 @@ export default function CarnivalPage() {
             ].map((ship) => (
               <div key={ship.name} className="mb-3">
                 <Accordion title={`${ship.name} — Built ${ship.built} · ${ship.homeport} · Capacity ${ship.capacity}`}>
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-4">
                     <div><p className="mb-3">{ship.notes}</p></div>
                     <div>
                       <p className="font-semibold mb-2" style={{ color: CARNIVAL_RED }}>Highlights</p>
@@ -262,7 +273,7 @@ export default function CarnivalPage() {
               </div>
             ))}
 
-            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: CARNIVAL_RED }}>Sunshine and Splendor Class</h3>
+            <h3 className="text-base font-bold mb-3 mt-8" style={{ color: CARNIVAL_RED }}>Sunshine and Splendor Class</h3>
             {[
               {
                 name: "Carnival Sunshine",
@@ -283,7 +294,7 @@ export default function CarnivalPage() {
             ].map((ship) => (
               <div key={ship.name} className="mb-3">
                 <Accordion title={`${ship.name} — ${ship.built} · ${ship.homeport} · Capacity ${ship.capacity}`}>
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-4">
                     <div><p className="mb-3">{ship.notes}</p></div>
                     <div>
                       <p className="font-semibold mb-2" style={{ color: CARNIVAL_RED }}>Highlights</p>
@@ -294,7 +305,7 @@ export default function CarnivalPage() {
               </div>
             ))}
 
-            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: CARNIVAL_RED }}>Spirit Class</h3>
+            <h3 className="text-base font-bold mb-3 mt-8" style={{ color: CARNIVAL_RED }}>Spirit Class</h3>
             {[
               {
                 name: "Carnival Spirit",
@@ -331,7 +342,7 @@ export default function CarnivalPage() {
             ].map((ship) => (
               <div key={ship.name} className="mb-3">
                 <Accordion title={`${ship.name} — Built ${ship.built} · ${ship.homeport} · Capacity ${ship.capacity}`}>
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-4">
                     <div><p className="mb-3">{ship.notes}</p></div>
                     <div>
                       <p className="font-semibold mb-2" style={{ color: CARNIVAL_RED }}>Highlights</p>
@@ -342,7 +353,7 @@ export default function CarnivalPage() {
               </div>
             ))}
 
-            <h3 className="text-lg font-bold mb-3 mt-8" style={{ color: CARNIVAL_RED }}>Conquest Class</h3>
+            <h3 className="text-base font-bold mb-3 mt-8" style={{ color: CARNIVAL_RED }}>Conquest Class</h3>
             {[
               {
                 name: "Carnival Conquest",
@@ -387,7 +398,7 @@ export default function CarnivalPage() {
             ].map((ship) => (
               <div key={ship.name} className="mb-3">
                 <Accordion title={`${ship.name} — Built ${ship.built} · ${ship.homeport} · Capacity ${ship.capacity}`}>
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-4">
                     <div><p className="mb-3">{ship.notes}</p></div>
                     <div>
                       <p className="font-semibold mb-2" style={{ color: CARNIVAL_RED }}>Highlights</p>
@@ -398,7 +409,7 @@ export default function CarnivalPage() {
               </div>
             ))}
 
-            <div className="mt-8 p-5 rounded-xl text-white text-sm" style={{ background: CARNIVAL_RED }}>
+            <div className="mt-8 p-4 rounded-xl text-white text-sm" style={{ background: CARNIVAL_RED }}>
               <strong>Not sure which ship is right for you?</strong> Carnival sails from more US homeports than any other cruise line. Chances are there is a Carnival ship within driving distance of wherever you are. Tell me where you are and where you want to go and I will find you the right fit.
             </div>
           </section>
@@ -407,8 +418,8 @@ export default function CarnivalPage() {
         {/* DINING */}
         {activeTab === "dining" && (
           <section>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Dining Onboard</h2>
-            <p className="text-gray-500 text-sm md:text-base mb-8">Carnival's dining program has evolved significantly in recent years. The food is better than it used to be and the casual dining options are some of the best freebies in the cruise industry. Here is what to expect.</p>
+            <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Dining Onboard</h2>
+            <p className="text-gray-500 text-sm mb-6">Carnival's dining program has evolved significantly in recent years. The food is better than it used to be and the casual dining options are some of the best freebies in the cruise industry. Here is what to expect.</p>
 
             <Accordion title="Main Dining Room (Included)">
               <p className="mb-3">Carnival's main dining rooms offer both Your Time Dining with flexible seating times and set early and late seatings. The menus rotate nightly with a mix of classic American comfort food, international options, and Carnival signature dishes.</p>
@@ -436,7 +447,7 @@ export default function CarnivalPage() {
             </Accordion>
 
             <Accordion title="Bonsai Sushi (Specialty)">
-              <p className="mb-3">A sushi restaurant available on select ships with a menu of rolls, nigiri, and Japanese-inspired small plates. Available for lunch and dinner at an additional charge. A good option when you want something lighter or different from the main dining program.</p>
+              <p>A sushi restaurant available on select ships with a menu of rolls, nigiri, and Japanese-inspired small plates. Available for lunch and dinner at an additional charge. A good option when you want something lighter or different from the main dining program.</p>
             </Accordion>
 
             <Accordion title="24-Hour Pizza and Late Night">
@@ -449,8 +460,8 @@ export default function CarnivalPage() {
         {/* WHAT MAKES CARNIVAL FUN */}
         {activeTab === "fun" && (
           <section>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>What Makes Carnival Fun</h2>
-            <p className="text-gray-500 text-sm md:text-base mb-8">Carnival has been the Fun Ship for over 50 years and they have kept adding to the experience with every new ship class. Here are the features that define the Carnival experience.</p>
+            <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>What Makes Carnival Fun</h2>
+            <p className="text-gray-500 text-sm mb-6">Carnival has been the Fun Ship for over 50 years and they have kept adding to the experience with every new ship class. Here are the features that define the Carnival experience.</p>
 
             <Accordion title="BOLT — The First Roller Coaster at Sea">
               <p className="mb-3">BOLT is an electric roller coaster on the top deck of Excel class ships that reaches speeds up to 40 mph while you ride above the ocean. It is the first roller coaster ever installed on a cruise ship and it is genuinely thrilling.</p>
@@ -497,8 +508,8 @@ export default function CarnivalPage() {
         {/* SOLO TRAVEL */}
         {activeTab === "solo" && (
           <section>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Solo Travel on Carnival</h2>
-            <p className="text-gray-500 text-sm md:text-base mb-8">Carnival is actually one of the more naturally social cruise lines for solo travelers even though it is not marketed as a solo-focused brand. The energy onboard makes meeting people almost unavoidable if you are open to it.</p>
+            <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Solo Travel on Carnival</h2>
+            <p className="text-gray-500 text-sm mb-6">Carnival is actually one of the more naturally social cruise lines for solo travelers even though it is not marketed as a solo-focused brand. The energy onboard makes meeting people almost unavoidable if you are open to it.</p>
 
             <div className="p-4 rounded-xl mb-6 text-sm" style={{ background: CARNIVAL_ACCENT, borderLeft: `4px solid ${CARNIVAL_RED}` }}>
               <strong>Eric's honest take:</strong> Carnival does not have a structured solo program like NCL's hosted 5pm meetup with organized group dinners. What Carnival has is an atmosphere where people talk to strangers naturally, constantly, everywhere on the ship. Eric went with a friend but met people immediately and spent much of the trip with new friends they made onboard. For outgoing solo travelers, Carnival's social energy works in your favor.
@@ -530,8 +541,8 @@ export default function CarnivalPage() {
         {/* CELEBRATION KEY */}
         {activeTab === "island" && (
           <section>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Celebration Key</h2>
-            <p className="text-gray-500 text-sm md:text-base mb-8">Celebration Key is Carnival's brand new private island destination in the Bahamas, opened in 2024. It is the newest private island in cruising and was built from the ground up to match the Carnival Fun Ship energy on land.</p>
+            <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Celebration Key</h2>
+            <p className="text-gray-500 text-sm mb-6">Celebration Key is Carnival's brand new private island destination in the Bahamas, opened in 2024. It is the newest private island in cruising and was built from the ground up to match the Carnival Fun Ship energy on land.</p>
 
             <Accordion title="What Is Celebration Key?">
               <p className="mb-3">Celebration Key is a purpose-built private island destination on Grand Bahama Island in the Bahamas. Carnival invested heavily in the development and it shows. The island has multiple distinct beach areas, a massive lagoon pool, water attractions, dining venues, and a signature party atmosphere that matches the ships.</p>
@@ -569,8 +580,8 @@ export default function CarnivalPage() {
         {/* CHEERS PACKAGE */}
         {activeTab === "cheers" && (
           <section>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>CHEERS! Beverage Package</h2>
-            <p className="text-gray-500 text-sm md:text-base mb-8">CHEERS! is Carnival's all-inclusive beverage package and it is one of the most comprehensive drink programs in the cruise industry. Here is everything you need to know about how it works and whether it makes sense for your sailing.</p>
+            <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>CHEERS! Beverage Package</h2>
+            <p className="text-gray-500 text-sm mb-6">CHEERS! is Carnival's all-inclusive beverage package and it is one of the most comprehensive drink programs in the cruise industry. Here is everything you need to know about how it works and whether it makes sense for your sailing.</p>
 
             <Accordion title="What Is CHEERS!?">
               <p className="mb-3">CHEERS! is an unlimited beverage package that covers alcoholic and non-alcoholic drinks throughout your sailing. Once you have it activated you can order drinks at any bar, restaurant, or venue on the ship and at Carnival's private destinations without signing a check.</p>
@@ -592,8 +603,8 @@ export default function CarnivalPage() {
 
             <Accordion title="What Is NOT Included in CHEERS!?">
               <ul className="list-disc pl-5 space-y-2">
-                <li>Drinks above the $20 per drink value threshold — the difference is charged to your account</li>
-                <li>Bottles of wine or spirits (by the bottle rather than by the glass)</li>
+                <li>Drinks above the $20 per drink value threshold</li>
+                <li>Bottles of wine or spirits by the bottle</li>
                 <li>Room service beverages</li>
                 <li>Mini bar items in the cabin</li>
                 <li>Souvenir cups or commemorative glasses</li>
@@ -601,19 +612,17 @@ export default function CarnivalPage() {
             </Accordion>
 
             <Accordion title="How Is CHEERS! Priced?">
-              <p className="mb-3">CHEERS! is priced per person per day and must be purchased for the full duration of the sailing. Both guests in a cabin who are 21 or older must purchase the package together — you cannot buy it for one person in a standard cabin.</p>
-              <p className="mb-3">The price varies by ship and sailing length but typically runs between $50 and $80 per person per day before the mandatory 18 percent gratuity that is added on top. The gratuity applies to the full package value even though you are paying a flat daily rate.</p>
-              <p>Whether CHEERS! is worth it depends entirely on how much you drink. For someone who has 5 or more drinks per day including specialty coffees and bottled waters, it usually pays off. For lighter drinkers, paying as you go may be more economical.</p>
+              <p className="mb-3">CHEERS! is priced per person per day and must be purchased for the full duration of the sailing. Both guests in a cabin who are 21 or older must purchase the package together.</p>
+              <p className="mb-3">The price varies by ship and sailing length but typically runs between $50 and $80 per person per day before the mandatory 18 percent gratuity. Whether CHEERS! is worth it depends entirely on how much you drink. For someone who has 5 or more drinks per day including specialty coffees and bottled waters, it usually pays off.</p>
             </Accordion>
 
             <Accordion title="When Should You Buy CHEERS!?">
-              <p className="mb-3">The package is almost always cheaper when you purchase it before your sailing through the Carnival website rather than onboard. Prices are typically lower during pre-cruise sales and the savings can be meaningful on a longer sailing.</p>
-              <p>Look for CHEERS! sales and promotions in the weeks before your sailing. Carnival regularly discounts the package and buying at the right time can save you a noticeable amount. I always let clients know when a good CHEERS! sale is running for their sailing so they can lock it in at the best price.</p>
+              <p className="mb-3">The package is almost always cheaper when you purchase it before your sailing through the Carnival website rather than onboard. Look for CHEERS! sales and promotions in the weeks before your sailing.</p>
+              <p>I always let clients know when a good CHEERS! sale is running for their sailing so they can lock it in at the best price.</p>
             </Accordion>
 
             <Accordion title="CHEERS! at Celebration Key">
-              <p className="mb-3">One of the best things about CHEERS! is that it works at Celebration Key and Carnival's other private destinations. On a private island day where you might normally pay individually for each drink at the beach bar, having CHEERS! means your drinks are already covered.</p>
-              <p>On a hot day at Celebration Key going through several tropical drinks at the beach, CHEERS! pays for itself quickly. If you are already planning to add the package for the sea days, the private island coverage makes the math even better.</p>
+              <p className="mb-3">One of the best things about CHEERS! is that it works at Celebration Key and Carnival's other private destinations. On a hot day at Celebration Key going through several tropical drinks at the beach, CHEERS! pays for itself quickly.</p>
             </Accordion>
           </section>
         )}
@@ -621,8 +630,8 @@ export default function CarnivalPage() {
         {/* VIFP CLUB */}
         {activeTab === "vifp" && (
           <section>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>VIFP Club</h2>
-            <p className="text-gray-500 text-sm md:text-base mb-8">VIFP stands for Very Important Fun Person and it is Carnival's loyalty program. It rewards you for every night you sail with Carnival and the perks get genuinely valuable at the higher tiers. Here is how it works.</p>
+            <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>VIFP Club</h2>
+            <p className="text-gray-500 text-sm mb-6">VIFP stands for Very Important Fun Person and it is Carnival's loyalty program. It rewards you for every night you sail with Carnival and the perks get genuinely valuable at the higher tiers.</p>
 
             <Accordion title="How VIFP Points Are Earned">
               <p className="mb-3">You earn one VIFP point for every night you sail on Carnival. A 7-night sailing earns 7 points. Points accumulate across all your Carnival sailings and your tier is determined by your total lifetime cruise nights.</p>
@@ -630,51 +639,28 @@ export default function CarnivalPage() {
             </Accordion>
 
             <Accordion title="The VIFP Tier Levels">
-              <p className="mb-3">VIFP has five color-coded tiers and the benefits grow meaningfully as you move up:</p>
               <ul className="list-disc pl-5 space-y-3 mb-3">
-                <li>
-                  <strong>Blue (0 points — First Sailing)</strong> — Welcome gift onboard, access to VIFP members-only offers and promotions, and the foundation for everything that follows
-                </li>
-                <li>
-                  <strong>Red (1-24 points)</strong> — Priority check-in at the pier, complimentary bottle of water in your cabin, access to exclusive VIFP sale fares, and invitations to members-only events onboard
-                </li>
-                <li>
-                  <strong>Gold (25-74 points)</strong> — All Red perks plus complimentary wine or a cocktail upon boarding, priority boarding access, a complimentary casino credit, and a dedicated Gold and above guest services line onboard
-                </li>
-                <li>
-                  <strong>Platinum (75-199 points)</strong> — All Gold perks plus complimentary specialty dining for two, a complimentary mini bar setup in your cabin, complimentary internet package, priority disembarkation, and a Platinum gift delivered to your cabin
-                </li>
-                <li>
-                  <strong>Diamond (200+ points)</strong> — The highest VIFP tier with all Platinum perks plus an upgraded cabin mini bar, additional onboard credits, complimentary laundry service, exclusive Diamond events and receptions onboard, and priority tender access at tender ports
-                </li>
+                <li><strong>Blue (0 points)</strong> — Welcome gift onboard and access to VIFP members-only offers</li>
+                <li><strong>Red (1-24 points)</strong> — Priority check-in, complimentary water in your cabin, exclusive sale fares</li>
+                <li><strong>Gold (25-74 points)</strong> — All Red perks plus complimentary wine or cocktail on boarding, priority boarding, casino credit</li>
+                <li><strong>Platinum (75-199 points)</strong> — All Gold perks plus specialty dining for two, mini bar setup, internet package, priority disembarkation</li>
+                <li><strong>Diamond (200+ points)</strong> — All Platinum perks plus upgraded mini bar, additional onboard credits, laundry service, exclusive events</li>
               </ul>
-              <p>Platinum and Diamond are where the program really delivers financial value with the included specialty dining, internet package, and mini bar making the tier benefits worth real money on every sailing.</p>
+              <p>Platinum and Diamond are where the program delivers real financial value with specialty dining, internet, and mini bar included on every sailing.</p>
             </Accordion>
 
             <Accordion title="VIFP Members-Only Sale Fares">
-              <p className="mb-3">One of the less-talked-about but genuinely valuable VIFP benefits is access to members-only sale fares. Carnival regularly runs VIFP-exclusive promotions with discounted cruise fares, reduced CHEERS! package pricing, and cabin upgrade offers that are not available to the general public.</p>
-              <p>Even at the Red tier after your first sailing you get access to these exclusive offers. I keep an eye on VIFP sales for clients and can flag when a particularly good one comes up for your preferred itinerary.</p>
+              <p className="mb-3">Carnival regularly runs VIFP-exclusive promotions with discounted cruise fares, reduced CHEERS! package pricing, and cabin upgrade offers not available to the general public.</p>
+              <p>I keep an eye on VIFP sales for clients and can flag when a particularly good one comes up for your preferred itinerary.</p>
             </Accordion>
 
             <Accordion title="How to Maximize Your VIFP Points">
-              <ul className="list-disc pl-5 space-y-2 mb-3">
-                <li><strong>Longer sailings earn more points</strong> — A 7-night sailing earns 7 points versus 4 for a 4-night. If you are close to a tier threshold, a longer sailing can push you over</li>
-                <li><strong>Enroll before your first sailing</strong> — Points cannot be added retroactively if you forget to join. Sign up before you board and your very first night counts</li>
-                <li><strong>Stay loyal to Carnival</strong> — The VIFP program rewards Carnival-specific loyalty. If you split your sailings across multiple lines you move up slower on every line. If Carnival is your line, sail it consistently</li>
-                <li><strong>Stack sailings in the same year</strong> — Multiple sailings in a calendar year accelerate your tier progress significantly especially if you are working toward Platinum</li>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Longer sailings earn more points</li>
+                <li>Enroll before your first sailing — points cannot be added retroactively</li>
+                <li>Stay loyal to Carnival to move up faster</li>
+                <li>Stack multiple sailings in a calendar year to accelerate tier progress</li>
               </ul>
-            </Accordion>
-
-            <Accordion title="VIFP vs Other Cruise Loyalty Programs">
-              <p className="mb-3">Every major cruise line has a loyalty program and they are all worth joining from day one. Here is how VIFP compares to the others:</p>
-              <ul className="list-disc pl-5 space-y-2 mb-3">
-                <li><strong>Carnival VIFP</strong> — Strong value at Platinum and above with specialty dining, internet, and mini bar included. The members-only sale fares are a real perk even at lower tiers</li>
-                <li><strong>Royal Caribbean Crown and Anchor</strong> — Diamond tier nightly drink credits are one of the best financial perks in cruise loyalty programs. Strong competitor to VIFP at high tier levels</li>
-                <li><strong>NCL Latitudes</strong> — Good program with priority boarding and specialty dining credits at higher tiers</li>
-                <li><strong>MSC Voyagers Club</strong> — Growing in value as MSC expands in North America. Discounts on future sailings are the main benefit at lower tiers</li>
-                <li><strong>Virgin Voyages Sailing Club</strong> — Newer program with bar tab credits and upgrade perks for returning sailors</li>
-              </ul>
-              <p>The best approach is to pick one or two lines you genuinely love and sail them consistently rather than spreading across too many lines and never reaching the tiers where the real value kicks in.</p>
             </Accordion>
           </section>
         )}
@@ -682,24 +668,24 @@ export default function CarnivalPage() {
         {/* SHORE EXCURSIONS */}
         {activeTab === "excursions" && (
           <section>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Shore Excursions</h2>
-            <p className="text-gray-500 text-sm md:text-base mb-8">Carnival offers shore excursions through their Hub app and website that you can book before your sailing. Here is what to know and a look at some popular ports on Carnival Caribbean itineraries.</p>
+            <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Shore Excursions</h2>
+            <p className="text-gray-500 text-sm mb-6">Carnival offers shore excursions through their Hub app and website that you can book before your sailing. Here is what to know and a look at some popular ports on Carnival Caribbean itineraries.</p>
 
             <div className="p-4 rounded-xl mb-6 text-sm" style={{ background: CARNIVAL_ACCENT, borderLeft: `4px solid ${CARNIVAL_RED}` }}>
               <p className="font-semibold mb-1">Book before you sail and book through Carnival.</p>
-              <p className="mb-2">Pre-cruise pricing is lower than onboard pricing and popular excursions sell out. The best port experiences fill up well before embarkation day.</p>
-              <p>When you book through Carnival, if your excursion runs long the ship waits for you. If you book independently and you are late, the ship leaves without you. That risk matters more on a fun vacation where the last thing you want is a stressful port experience.</p>
+              <p className="mb-2">Pre-cruise pricing is lower than onboard pricing and popular excursions sell out.</p>
+              <p>When you book through Carnival, if your excursion runs long the ship waits for you. If you book independently and you are late, the ship leaves without you.</p>
             </div>
 
             {[
               {
                 port: "Celebration Key, Grand Bahama Island",
-                about: "Carnival's brand new private island destination opened in 2024. The full breakdown is in the Celebration Key tab but the short version is spend the whole day there, do the lagoon, eat the included BBQ, and get to the beach early for the best spots.",
+                about: "Carnival's brand new private island destination opened in 2024. Spend the whole day there, do the lagoon, eat the included BBQ, and get to the beach early for the best spots.",
                 excursions: ["Calypso Lagoon Pool (included)", "Beach BBQ Lunch (included)", "Snorkeling Adventure", "Kayak and Paddleboard Rentals", "Premium Beach Club Upgrade", "Water Sports Package"]
               },
               {
                 port: "Nassau, Bahamas",
-                about: "A classic Caribbean port with beaches, history, and shopping. Atlantis is the big draw and worth it if you want a full beach and water park day. The island itself has a lot of character beyond the tourist strip.",
+                about: "A classic Caribbean port with beaches, history, and shopping. Atlantis is the big draw and worth it if you want a full beach and water park day.",
                 excursions: ["Atlantis Beach Day", "Blue Lagoon Island Snorkel and Beach", "Nassau Walking Tour", "Swim with Dolphins", "Atlantis Water Park Access", "Snorkel and Beach Combo"]
               },
               {
@@ -709,12 +695,12 @@ export default function CarnivalPage() {
               },
               {
                 port: "Mahogany Bay, Roatan, Honduras",
-                about: "Carnival's private beach area on the island of Roatan. The beach itself is excellent and the water is clear. Roatan is one of the most underrated port stops in the Caribbean and worth exploring beyond the immediate port area.",
+                about: "Carnival's private beach area on the island of Roatan. The beach itself is excellent and the water is clear. Roatan is one of the most underrated port stops in the Caribbean.",
                 excursions: ["Carnival's Mahogany Bay Beach (included access)", "Chair Lift to the Beach", "Snorkeling at the Barrier Reef", "Monkey and Sloth Sanctuary", "West Bay Beach Day", "ATV Adventure"]
               },
               {
                 port: "Grand Cayman",
-                about: "One of the most beautiful and upscale port stops in the Caribbean. Grand Cayman is a tender port so you take a boat from the ship to shore. Stingray City is the iconic excursion here and genuinely spectacular.",
+                about: "One of the most beautiful and upscale port stops in the Caribbean. Grand Cayman is a tender port so you take a boat from the ship to shore. Stingray City is the iconic excursion here.",
                 excursions: ["Stingray City Sandbar Tour", "Seven Mile Beach Day", "Snorkel and Stingray Combo", "Catamaran Sail", "Dolphin Discovery", "Island Jeep Tour"]
               },
               {
@@ -737,10 +723,10 @@ export default function CarnivalPage() {
         {/* TRIP INSURANCE */}
         {activeTab === "insurance" && (
           <section>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Trip Insurance</h2>
-            <p className="text-gray-500 text-sm md:text-base mb-8">I always recommend trip insurance on every cruise booking. The fun never stops on a Carnival ship but travel itself can throw curveballs that have nothing to do with the cruise line. This is the coverage that keeps a bad situation from becoming a financial disaster.</p>
+            <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Trip Insurance</h2>
+            <p className="text-gray-500 text-sm mb-6">I always recommend trip insurance on every cruise booking. Travel can throw curveballs that have nothing to do with the cruise line. This is the coverage that keeps a bad situation from becoming a financial disaster.</p>
 
-            <div className="p-5 rounded-xl mb-6 text-white text-sm" style={{ background: CARNIVAL_RED }}>
+            <div className="p-4 rounded-xl mb-6 text-white text-sm" style={{ background: CARNIVAL_RED }}>
               <strong>Buy it at booking.</strong> Trip insurance is cheaper when you add it at your initial deposit and pre-existing condition coverage only applies within 14 to 21 days of your first payment. Do not wait on this one.
             </div>
 
@@ -755,19 +741,19 @@ export default function CarnivalPage() {
 
             <Accordion title="What If You Get Hurt at Sea or Overseas?">
               <p className="mb-3">Your regular health insurance often does not cover you outside the United States. A medical situation in the Bahamas or Belize can get expensive fast without coverage.</p>
-              <p>Trip insurance with medical and evacuation coverage means you get the care you need no matter where you are when something happens.</p>
+              <p>Trip insurance with medical and evacuation coverage means you get the care you need no matter where you are.</p>
             </Accordion>
 
             <Accordion title="What If Your Flight Gets Cancelled?">
-              <p>You are flying to Miami or Galveston and your flight falls apart. Trip delay coverage helps cover last-minute hotels, meals, and rebooking costs so a disrupted travel day does not become a financial hit on top of the stress.</p>
+              <p>Trip delay coverage helps cover last-minute hotels, meals, and rebooking costs so a disrupted travel day does not become a financial hit on top of the stress.</p>
             </Accordion>
 
             <Accordion title="What If Your Luggage Gets Lost?">
-              <p>Airlines lose bags. If yours does not make it to the ship, baggage delay coverage helps cover the essentials while your luggage catches up. Nobody wants to start a Caribbean vacation in airport clothes.</p>
+              <p>Airlines lose bags. Baggage delay coverage helps cover the essentials while your luggage catches up. Nobody wants to start a Caribbean vacation in airport clothes.</p>
             </Accordion>
 
             <Accordion title="Why Buy at Booking?">
-              <p className="mb-3">Two reasons. It is cheaper early because the risk to the insurer is lower. And pre-existing condition coverage requires buying within a set window of your deposit. Miss that window and that coverage is gone permanently.</p>
+              <p className="mb-3">It is cheaper early and pre-existing condition coverage requires buying within a set window of your deposit. Miss that window and that coverage is gone permanently.</p>
               <p>I flag this for every client when we lock in a booking. Lock it in early and you are covered for whatever comes up between booking day and sailing day.</p>
             </Accordion>
           </section>
@@ -776,62 +762,62 @@ export default function CarnivalPage() {
         {/* ERIC'S TIPS */}
         {activeTab === "tips" && (
           <section>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Eric's Tips for Your Carnival Sailing</h2>
-            <p className="text-gray-500 text-sm md:text-base mb-8">Eric sailed Carnival once and has helped clients plan Carnival cruises. Here is what actually matters before you board.</p>
+            <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: CARNIVAL_DARK }}>Eric's Tips for Your Carnival Sailing</h2>
+            <p className="text-gray-500 text-sm mb-6">Eric sailed Carnival once and has helped clients plan Carnival cruises. Here is what actually matters before you board.</p>
 
             <Accordion title="Sign Up for VIFP Before You Board">
               <p>Create your VIFP account before your sailing and make sure it is linked to your reservation. Your cruise nights cannot be added retroactively if you forget to enroll. Every night counts from your very first sailing so get in the program before the ship leaves the dock.</p>
             </Accordion>
 
             <Accordion title="Buy CHEERS! Before You Sail">
-              <p className="mb-3">The CHEERS! package is almost always cheaper when you purchase it pre-cruise through the Carnival website rather than onboard. Watch for CHEERS! sales in the weeks before your sailing because Carnival discounts it regularly and the savings can be significant.</p>
+              <p className="mb-3">The CHEERS! package is almost always cheaper when you purchase it pre-cruise. Watch for CHEERS! sales in the weeks before your sailing because Carnival discounts it regularly.</p>
               <p>If you plan to drink throughout the day including specialty coffees and bottled water, CHEERS! tends to pay for itself. Do the math based on your habits before you commit.</p>
             </Accordion>
 
             <Accordion title="Try Guy's Burger Joint at Least Once">
-              <p>It sounds too simple but Guy's Burger Joint is legitimately one of the best things on the ship and it is completely free. Go at least once, preferably on a sea day when you want something casual and satisfying at the pool. The line moves fast and the burger is worth it every time.</p>
+              <p>It sounds too simple but Guy's Burger Joint is legitimately one of the best things on the ship and it is completely free. Go at least once, preferably on a sea day. The line moves fast and the burger is worth it every time.</p>
             </Accordion>
 
             <Accordion title="Get to the Pool Deck Early on Sea Days">
-              <p className="mb-3">Sea days on Carnival get busy fast. The best deck chairs around the main pool fill up by mid-morning. Get out there early, claim your spot, and settle in. If you want peace and quiet, head to Serenity, the adults-only area, where it stays significantly calmer throughout the day.</p>
+              <p>Sea days on Carnival get busy fast. The best deck chairs around the main pool fill up by mid-morning. Get out there early. If you want peace and quiet, head to Serenity where it stays significantly calmer throughout the day.</p>
             </Accordion>
 
             <Accordion title="Book Excursions Before You Sail">
-              <p className="mb-3">Pre-cruise excursion pricing through the Carnival Hub app is lower than onboard pricing. Popular excursions like Stingray City in Grand Cayman and cave tubing in Belize sell out well before the ship arrives in port.</p>
-              <p>I can help you sort through the excursion options for your specific ports and pick the ones that fit your budget. Reach out before you finalize your plans.</p>
+              <p className="mb-3">Pre-cruise excursion pricing is lower than onboard pricing. Popular excursions like Stingray City in Grand Cayman and cave tubing in Belize sell out well before the ship arrives in port.</p>
+              <p>I can help you sort through the excursion options for your specific ports. Reach out before you finalize your plans.</p>
             </Accordion>
 
             <Accordion title="Go to the Comedy Club">
-              <p>The Punchliner Comedy Club shows are free and consistently one of the best entertainment options on the ship. The late-night adults-only shows have a great energy and the comedians are genuinely funny. Reserve seats through the Carnival Hub app because they fill up.</p>
+              <p>The Punchliner Comedy Club shows are free and consistently one of the best entertainment options on the ship. Reserve seats through the Carnival Hub app because they fill up.</p>
             </Accordion>
 
             <Accordion title="If Your Ship Has BOLT, Ride It">
-              <p>The BOLT roller coaster on Excel class ships is genuinely thrilling. Do it on a sea day when you can see the ocean in every direction below you. Buy the unlimited package if you plan to ride more than twice.</p>
+              <p>The BOLT roller coaster on Excel class ships is genuinely thrilling. Do it on a sea day when you can see the ocean in every direction below you.</p>
             </Accordion>
 
             <Accordion title="Say Yes to People">
               <p className="mb-3">This one is for solo travelers or anyone who tends to keep to themselves. Carnival's social environment rewards openness. Eric sailed with a friend and still ended up spending most of the trip with new people they met on day one.</p>
-              <p>Say yes when someone at the pool bar asks if you want to join them. Say yes to the deck party. The best Carnival memories come from those moments and the ship is specifically designed to create them.</p>
+              <p>Say yes when someone at the pool bar asks if you want to join them. The best Carnival memories come from those moments.</p>
             </Accordion>
 
             <Accordion title="Get Trip Insurance at Booking">
-              <p>Lock it in when you pay your deposit. It is cheaper then and you get full pre-existing condition coverage in that early window. Cover yourself from day one.</p>
+              <p>Lock it in when you pay your deposit. It is cheaper then and you get full pre-existing condition coverage in that early window.</p>
             </Accordion>
           </section>
         )}
 
         {/* CTA */}
-        <div className="mt-14 rounded-2xl p-6 md:p-8 text-center text-white" style={{ background: `linear-gradient(135deg, ${CARNIVAL_DARK}, ${CARNIVAL_RED})` }}>
+        <div className="mt-10 rounded-2xl p-5 md:p-8 text-center text-white" style={{ background: `linear-gradient(135deg, ${CARNIVAL_DARK}, ${CARNIVAL_RED})` }}>
           <p className="text-xs uppercase tracking-widest mb-2" style={{ color: CARNIVAL_GOLD }}>Ready to Have Some Fun</p>
-          <h3 className="text-xl md:text-2xl font-bold mb-3">Let's Get You on a Fun Ship</h3>
-          <p className="text-sm md:text-base mb-6 max-w-lg mx-auto" style={{ color: "#FFD0D0" }}>
-            Carnival is the most popular cruise line in the world for a reason and I have been on one. I book Carnival on your behalf so you get the right ship, the right itinerary, and someone who actually answers when you have a question. Fill out my form and let's figure out your sailing.
+          <h3 className="text-lg md:text-2xl font-bold mb-3">Let's Get You on a Fun Ship</h3>
+          <p className="text-sm mb-5 max-w-lg mx-auto" style={{ color: "#FFD0D0" }}>
+            Carnival is the most popular cruise line in the world for a reason and I have been on one. I book Carnival on your behalf so you get the right ship, the right itinerary, and someone who actually answers when you have a question.
           </p>
-          <a
+          
             href={FORM_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold text-sm md:text-base transition hover:opacity-90"
+            className="inline-block px-6 py-3 rounded-lg font-bold text-sm transition hover:opacity-90"
             style={{ background: CARNIVAL_GOLD, color: CARNIVAL_DARK }}
           >
             Let's Plan Your Carnival Cruise
