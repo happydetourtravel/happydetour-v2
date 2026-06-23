@@ -7,7 +7,7 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/favicon-hdt.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Happy Detour Travel is your personal cruise and all inclusive resort advisor based in Alliance, Ohio. Real trips. Real value. Someone actually in your corner." />
+    <meta name="description" content="Happy Detour Travel is your personal cruise and all inclusive resort advisor based in Northeast Ohio. Real trips. Real value. Someone actually in your corner." />
     <meta name="robots" content="index,follow" />
     <title>Happy Detour Travel | Cruise & Resort Advisor</title>
 
@@ -36,71 +36,70 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
     </noscript>
 
-    <!-- Travel Agency Schema -->
+    <!-- Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "TravelAgency",
-      "name": "Happy Detour Travel",
-      "description": "Personal cruise and all inclusive resort advisor based in Alliance, Ohio. Specializing in Virgin Voyages, NCL, MSC, Royal Caribbean, Carnival, Sandals, and Beaches resorts.",
-      "url": "https://www.happydetour.com",
-      "telephone": "+17473338687",
-      "email": "eric@happydetour.com",
-      "address": {
-  "@type": "PostalAddress",
-  "addressLocality": "Alliance",
-  "addressRegion": "OH",
-  "postalCode": "44601",
-  "addressCountry": "US"
-}
-      "sameAs": [
-        "https://www.facebook.com/happydetourtravel",
-        "https://www.instagram.com/happydetourtravel"
-      ],
-      "slogan": "Real trips. Real value. Someone actually in your corner.",
-      "employee": {
-        "@type": "Person",
-        "name": "Eric Carney",
-        "jobTitle": "Travel Advisor",
-        "telephone": "+17473338687",
-        "email": "eric@happydetour.com",
-        "sameAs": [
-          "https://www.facebook.com/happydetourtravel",
-          "https://www.instagram.com/happydetourtravel"
-        ]
-      }
-    }
-    </script>
-
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+      "@graph": [
         {
-          "@type": "Question",
-          "name": "How does working with a travel advisor save money?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Cruise lines and resorts pay me directly when you travel. You get someone doing the research, watching for price drops, and handling every single detail. You do not pay extra for that. You just get more out of your vacation."
+          "@type": "TravelAgency",
+          "name": "Happy Detour Travel",
+          "description": "Personal cruise and all inclusive resort advisor based in Northeast Ohio. Specializing in Virgin Voyages, NCL, MSC, Royal Caribbean, Carnival, Sandals, and Beaches resorts.",
+          "url": "https://www.happydetour.com",
+          "telephone": "+17473338687",
+          "email": "eric@happydetour.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Alliance",
+            "addressRegion": "OH",
+            "postalCode": "44601",
+            "addressCountry": "US"
+          },
+          "sameAs": [
+            "https://www.facebook.com/happydetourtravel",
+            "https://www.instagram.com/happydetourtravel"
+          ],
+          "slogan": "Real trips. Real value. Someone actually in your corner.",
+          "employee": {
+            "@type": "Person",
+            "name": "Eric Carney",
+            "jobTitle": "Travel Advisor",
+            "telephone": "+17473338687",
+            "email": "eric@happydetour.com",
+            "sameAs": [
+              "https://www.facebook.com/happydetourtravel",
+              "https://www.instagram.com/happydetourtravel"
+            ]
           }
         },
         {
-          "@type": "Question",
-          "name": "What kind of trips do you book?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "I specialize in cruises and all inclusive resorts through brands like Sandals and Beaches. That is it. I focus entirely on what I know best so I can give you real advice instead of a generic search result."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do we get started?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Just reach out. We will talk through your trip ideas before anything is confirmed so there are no surprises. There is no commitment and no pressure. It is just a real conversation about where you want to go."
-          }
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does working with a travel advisor save money?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Cruise lines and resorts pay me directly when you travel. You get someone doing the research, watching for price drops, and handling every single detail. You do not pay extra for that. You just get more out of your vacation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What kind of trips do you book?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "I specialize in cruises and all inclusive resorts through brands like Sandals and Beaches. That is it. I focus entirely on what I know best so I can give you real advice instead of a generic search result."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do we get started?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Just reach out. We will talk through your trip ideas before anything is confirmed so there are no surprises. There is no commitment and no pressure. It is just a real conversation about where you want to go."
+              }
+            }
+          ]
         }
       ]
     }
