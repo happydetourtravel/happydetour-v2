@@ -1,5 +1,4 @@
-// GroupCruiseLanding-HalloweenCaribbean.tsx
-// Route suggestion: /group/halloween-caribbean-2026
+// Route: /group/halloween-caribbean-2026
 // Carnival Magic — Halloween Eastern Caribbean — Oct 31, 2026
 
 export default function HalloweenCaribbeanLanding() {
@@ -20,6 +19,15 @@ export default function HalloweenCaribbeanLanding() {
           <span className="inline-block text-xs font-semibold uppercase tracking-widest bg-amber-100 text-amber-800 px-3 py-1 rounded-full mb-4">
             Group Sailing — Limited Rooms
           </span>
+
+          {/* Ship image */}
+          <div className="rounded-xl overflow-hidden mb-4" style={{ height: '200px' }}>
+            <img
+              src="/carnivalmagic.jpeg"
+              alt="Carnival Magic cruise ship"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+            />
+          </div>
 
           {/* Title */}
           <h1 className="text-2xl font-bold text-[#1F2937] leading-snug mb-1">
@@ -97,7 +105,7 @@ export default function HalloweenCaribbeanLanding() {
 
           {/* Urgency */}
           <div className="bg-amber-50 border border-amber-100 rounded-xl px-4 py-3 text-sm text-amber-800 leading-relaxed mb-4">
-            I have a small block of rooms held at this price. Once they fill up I cannot guarantee this rate or availability. Text me before you lose it.
+            I have a small block of rooms held at this price. Deposit is due July 5. Once they fill up I cannot guarantee this rate or availability. Text me before you lose it.
           </div>
 
           {/* Description */}
