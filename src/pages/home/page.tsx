@@ -264,7 +264,7 @@ export default function Home() {
               <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '0 0 6px 0' }}>Alaska</p>
               <h3 style={{ color: '#1F2937', fontSize: '19px', fontWeight: '700', margin: '0 0 5px 0', lineHeight: '1.3' }}>Alaska: Glacial Fjords & Coastal Views</h3>
               <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 10px 0' }}>June 17, 2027 &middot; 7 nights &middot; Brilliant Lady &middot; Virgin Voyages</p>
-              <p style={{ color: '#007298', fontSize: '13px', margin: '0 0 10px 0', lineHeight: '1.7' }}>Seattle, WA &rarr; Glacial Fjords &rarr; Coastal Views &rarr; Seattle, WA</p>
+              <p style={{ color: '#007298', fontSize: '13px', margin: '0 0 10px 0', lineHeight: '1.7' }}>Seattle, WA &rarr; Ketchikan, AK &rarr; Sitka, AK &rarr; Tracy Arm Fjord, AK &rarr; Prince Rupert, BC &rarr; Seattle, WA</p>
               <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                 <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>🏔️ Alaska</span>
                 <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>✦ Adults Only</span>
@@ -291,10 +291,10 @@ export default function Home() {
               <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#007298', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '4px' }}>🧑‍✈️ Group Rate</span>
             </div>
             <div style={{ flex: 1, padding: '20px 24px' }}>
-              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '0 0 6px 0' }}>Baja Mexico</p>
-              <h3 style={{ color: '#1F2937', fontSize: '19px', fontWeight: '700', margin: '0 0 5px 0', lineHeight: '1.3' }}>Baja Mexico Halloween Cruise</h3>
-              <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 10px 0' }}>October 30, 2027 &middot; 6 nights &middot; Brilliant Lady &middot; Virgin Voyages</p>
-              <p style={{ color: '#007298', fontSize: '13px', margin: '0 0 10px 0', lineHeight: '1.7' }}>Los Angeles, CA &rarr; Baja Mexico &rarr; Los Angeles, CA</p>
+              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '0 0 6px 0' }}>Mexican Riviera</p>
+              <h3 style={{ color: '#1F2937', fontSize: '19px', fontWeight: '700', margin: '0 0 5px 0', lineHeight: '1.3' }}>Mexican Riviera Halloween Cruise</h3>
+              <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 10px 0' }}>October 23, 2027 &middot; 7 nights &middot; Brilliant Lady &middot; Virgin Voyages</p>
+              <p style={{ color: '#007298', fontSize: '13px', margin: '0 0 10px 0', lineHeight: '1.7' }}>Los Angeles, CA &rarr; Cabo San Lucas &rarr; Mazatlan &rarr; Puerto Vallarta &rarr; Los Angeles, CA</p>
               <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                 <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>🎃 Halloween Sailing</span>
                 <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>✦ Adults Only</span>
