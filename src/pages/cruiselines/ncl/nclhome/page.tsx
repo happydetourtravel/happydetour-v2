@@ -455,7 +455,7 @@ export default function NCLPage() {
             <p className="text-sm mt-4" style={{ color: "#6B7280" }}>
               Norwegian Cruise Line operates 22 ships sailing destinations from the Caribbean to Alaska, Hawaii, Europe, and beyond.{" "}
               
-                href="https://www.ncl.com/cruise-ship"
+               <a href="https://www.ncl.com/cruise-ship"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: NCL_NAVY, textDecoration: "underline" }}
