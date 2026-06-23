@@ -1366,6 +1366,83 @@ export const POSTS: Post[] = [
       <p>Affordable vacations. Fun experiences. Everyone welcome.</p>
     `,
   },
+  {
+    slug: 'the-work-nobody-sees-what-i-actually-did-this-week',
+    title: 'The Work Nobody Sees: What I Actually Did This Week',
+    date: '2026-05-23',
+    tag: 'Behind the Brand',
+    excerpt: 'There\'s a version of building a business that looks good on paper. Launches, milestones, announcements. And then there\'s the version that actually happens, which is a lot of quiet decisions made at 11pm on a Wednesday that nobody sees until they\'re already done.',
+    image: '/blog/carnival-flyer-2.webp',
+    content: `
+      <p>There's a version of building a business that looks good on paper. Launches, milestones, announcements. And then there's the version that actually happens, which is a lot of quiet decisions made at 11pm on a Wednesday that nobody sees until they're already done.</p>
+
+      <p>This is that version.</p>
+
+      <h2>The Ad Is Live</h2>
+
+      <p>On May 20 I launched my first real paid Meta ad for the Carnival ABC Islands cruise. It's been running for less than three days. I'm not going to pretend I have meaningful data yet. I don't. But it's live, it's active, and real people are seeing it right now on Facebook and Instagram. The ad sends people to happydetour.com/abc. The goal is simple. Get people to the page. Let the page do its job.</p>
+
+      <h2>The Landing Page Got Three Updates in Two Days</h2>
+
+      <p>I've been watching how people interact with the ABC Islands landing page and making changes based on what I see.</p>
+
+      <p>The first change was adding a button directly in the hero section, the very first thing people see when they land. Before this fix there was nothing to tap at the top of the page. People landed, saw the cruise info, and had to scroll to find the form. Most people don't scroll. So I added a button that says "Get More Info, No Pressure" that takes them straight down to the form with one tap.</p>
+
+      <p>The second change was making the floating button disappear on page load and only appear after someone scrolls down a bit. It was always visible before which felt pushy. Now it shows up naturally as people explore the page.</p>
+
+      <p>The third change was urgency in the form headline. It used to say "Want the full pricing breakdown?" which is fine but passive. I changed it to "Spots are going fast. Get the details before July 14." That's honest. July 14 is a real deposit deadline and it gives people a reason to act now instead of closing the tab and meaning to come back later.</p>
+
+      <p>Every one of these changes is small. Together they make the page feel more intentional and give people clearer reasons to take the next step.</p>
+
+      <h2>Six Flyers for One Cruise</h2>
+
+      <img src="/blog/carnival-flyer-2.webp" alt="ABC Islands Caribbean Cruise flyer showing Aruba, Bonaire, and Curacao" />
+
+      <p>I needed social media content that didn't repeat the same message over and over. So I built six completely different flyers for the Carnival ABC Islands cruise. Each one has a completely different look and feel.</p>
+
+      <p>Dark and moody. Bright and fun with a big orange price tag. Retro vintage travel poster style with aged paper and corner ornaments. Bold graphic with an orange and navy diagonal. Tropical with deep jungle greens and layered leaf shapes. And a sunset gradient from deep purple through gold down to warm cream.</p>
+
+      <p>Six different moods. Six different reasons for someone to stop scrolling. I can rotate these through June without repeating myself and give people a fresh look at the same cruise every time.</p>
+
+      <h2>Ten Questions Scheduled for June</h2>
+
+      <p>Alongside the flyers I wrote ten question posts designed to start conversations rather than sell anything. Things like "what's stopping you from taking a Caribbean vacation this year" and "be honest, have you been saying I need a vacation for more than six months" and "solo travel on a cruise, has anyone done it and was it worth it."</p>
+
+      <p>These aren't pitches. They're conversation starters. When people comment it tells the algorithm the post is getting engagement and pushes it to more people. All ten are scheduled and ready to go on Facebook and Threads through June. I don't have to think about what to post for weeks.</p>
+
+      <h2>The Legal Setup Is Moving</h2>
+
+      <p>I have a call scheduled with Thomas Carpenter on May 26 to go over my Terms and Conditions draft. He already sent the discussion draft along with a full workflow guide explaining how to use it properly. How to get client signatures, how credit card authorization language works, and why all of it matters for chargeback protection.</p>
+
+      <p>While I wait for that call I set up Docuseal, a free electronic signature tool, using my eric@happydetour.com address. I wrote the signature request email that clients will receive when I send them documents to sign. I set up my own electronic signature and initials in the system. Everything is ready and waiting for the final document from Thomas.</p>
+
+      <h2>A Placeholder Page for the T&C</h2>
+
+      <p>I also built a page at happydetour.com/tc while the final document is being prepared. It's clean and on brand. A simple message that the Terms and Conditions are being finalized and will be published shortly, my email and phone number as contact buttons, and my WorldVia affiliation in the footer. The page is set to noindex so Google won't surface an incomplete page in search results. Once Thomas finalizes everything I drop the content in and the page goes live for real.</p>
+
+      <h2>A Real Link in Bio</h2>
+
+      <img src="/blog/79273.webp" alt="Happy Detour Travel Direct.me link in bio page on mobile" />
+
+      <p>One thing that was missing from my social profiles was a proper link in bio page. Instagram only allows one link and I now have multiple destinations. So I set up a Direct.me page at direct.me/happydetourtravel.</p>
+
+      <p>It has my photo at the top, social icons for TikTok, Facebook, Instagram and Threads, three cruise cards with photos, and text links for my home page, about page, planning form, Sandals Resorts, and Beaches Resorts. The planning form link goes directly to my intake form so when someone taps "Plan Your Trip w/ Happy Detour Travel" they go straight into my workflow and become a lead automatically.</p>
+
+      <p>I updated my Facebook, Instagram and Threads bio links to point to Direct.me. Now instead of sending people to one place the link in bio gives them a full menu depending on what they're looking for.</p>
+
+      <h2>What I'm Actually Focused On Right Now</h2>
+
+      <p>The deposit deadline for the Carnival ABC Islands cruise is July 14. That's the number I'm keeping in front of me. Not the follower count. Not the website score. Not how many blog posts I've written. July 14 is when people need to decide and everything I'm doing right now is moving toward that date.</p>
+
+      <p>The ad is running. The content is scheduled. The legal work is in motion. The link in bio is set up. The landing page is as good as I know how to make it right now. Now I show up every day and see what happens.</p>
+
+      <p>If you've been thinking about the ABC Islands cruise, Aruba, Bonaire, Curacao, eight days out of Miami on Carnival Horizon starting at $644 per person, July 14 is coming faster than it feels. You don't have to be ready to book. You just have to be curious enough to ask.</p>
+
+      <p>Just me. Eric.</p>
+
+      <p>happydetour.com | @happydetourtravel<br/>Affordable vacations. Fun experiences. Everyone welcome.</p>
+    `,
+  },
 ]
 
 export function getAllPosts(): Post[] {
