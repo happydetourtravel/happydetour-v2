@@ -1486,6 +1486,63 @@ export const POSTS: Post[] = [
       <p>Real trips. Real value. Someone actually in your corner.</p>
     `,
   },
+  {
+    slug: 'a-lot-has-changed-heres-where-things-stand',
+    title: 'A Lot Has Changed. Here\'s Where Things Stand.',
+    date: '2026-06-22',
+    tag: 'Behind the Brand',
+    excerpt: 'I have been quiet on the blog for a minute. Not because nothing was happening. Actually, the opposite. A lot has happened and I wanted to wait until I had something real to say before I said it.',
+    image: '/blog/Nw_HDT_website.png',
+    content: `
+      <p>I have been quiet on the blog for a minute. Not because nothing was happening. Actually, the opposite. A lot has happened and I wanted to wait until I had something real to say before I said it.</p>
+
+      <p>So here it is.</p>
+
+      <h2>The website is new.</h2>
+
+      <p>Happydetour.com got a full rebuild. Not a little tweak. A full redesign from the ground up. New look, new layout, cruise line pages, a blog system, an FAQ, the whole thing. I am really proud of it. It took a lot of work and a lot of late nights but it feels like a real business now, not just a landing page. Go check it out if you have not yet.</p>
+
+      <p>And yes, the blog moved too. It lives on the website now at happydetour.com. Every post I write should be bringing people back to where I actually do business. So that is where I am going to be from here on out.</p>
+
+      <h2>New number.</h2>
+
+      <p>My contact number changed. The new number is 747-333-8687. If you had my old number, please update it. That one is gone. You can text or call the new one anytime.</p>
+
+      <h2>The tagline changed.</h2>
+
+      <p>Real trips. Real value. Someone actually in your corner.</p>
+
+      <p>That is the line that actually says what I do. I am not here to just hand you a booking link. I am the person who answers the phone when something goes wrong. I do the research so you do not have to. I know which ships are worth it and which ones are not. That is what you are getting when you work with me.</p>
+
+      <h2>Planning fees.</h2>
+
+      <p>I have to be honest about this because it came up more than once this spring. Some people reached out, asked a lot of questions, got the information they needed, and then went and booked somewhere else on their own. That is not how this works.</p>
+
+      <p>My time has value. I have put real effort into learning this industry. I have sailed over 20 times. I hold certifications with multiple cruise lines. When you ask me for advice, you are getting professional knowledge, not a Google search.</p>
+
+      <p>Planning fees start at $50 depending on the trip. We will always talk through everything before anything is confirmed so there are no surprises. And yes, cruise lines and resorts pay me when you travel. But that does not mean my time is without value to everyone who wants a quick tip.</p>
+
+      <p>I am not saying this with any bitterness. I am saying it because I take this seriously and I want clients who do too.</p>
+
+      <h2>The GHL situation.</h2>
+
+      <p>I tried GoHighLevel. It was too much, too complicated, and not the right fit for where I am right now. I moved on. No drama. Just not the right tool for this stage of the business. I would rather keep things simple and focused than get buried in a system I do not need yet.</p>
+
+      <h2>New group cruise.</h2>
+
+      <p>I started another one. This time it is a Halloween sailing on the Carnival Magic. Eight days, Eastern Caribbean. And yes, Halloween on a cruise ship is exactly as fun as it sounds. Details are coming soon. If you want to be on the list when spots open up, reach out now.</p>
+
+      <h2>Where I am.</h2>
+
+      <p>I started Happy Detour Travel in March 2026. I am doing this while working another job and taking classes. I am building this one honest step at a time. The new website, the new number, the blog moving over, the Halloween cruise on the Carnival Magic, all of it is proof that this is real and it is growing.</p>
+
+      <p>I am proud of where I am. Not where I am going to be someday. Where I am right now.</p>
+
+      <p>Thanks for following along.</p>
+
+      <p>Eric<br/>Happy Detour Travel<br/>happydetour.com | 747-333-8687<br/>@happydetourtravel</p>
+    `,
+  },
 ]
 
 export function getAllPosts(): Post[] {
