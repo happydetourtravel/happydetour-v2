@@ -574,6 +574,35 @@ export const POSTS: Post[] = [
       <p>Eric<br/>Happy Detour Travel — Affordable vacations. Fun experiences. Everyone welcome.</p>
     `,
   },
+  {
+    slug: 'building-the-engine-under-the-hood',
+    title: 'Building the Engine Under the Hood',
+    date: '2026-03-19',
+    tag: 'Behind the Brand',
+    excerpt: 'After I got the website live, I had a moment where I just sat back and looked at the screen. It was a win, but then the "what now" set in. A website is a great digital billboard, but I didn\'t want to spend my whole day manually answering every single email and tracking leads on a sticky note.',
+    image: '/blog/n8n-coffee.webp',
+    content: `
+      <p>After I got the website live, I had a moment where I just sat back and looked at the screen. It was a win, but then the "what now" set in. A website is a great digital billboard, but I didn't want to spend my whole day manually answering every single email and tracking leads on a sticky note. I wanted this business to work for me, even when I was away from the desk.</p>
+
+      <p>That's when I took a deep dive into automation.</p>
+
+      <p>The first piece of the puzzle was getting a professional business line. I went through Quo, and they were great. What really sold me was that they offered integration with HubSpot. If you're not a tech person, HubSpot is basically the brain where you keep all your client info so nothing falls through the cracks.</p>
+
+      <p>Then I found n8n on YouTube. It's a tool that lets all your different apps talk to each other. I spent some time figuring it out, and now I have a system that feels like magic. When someone fills out a form on happydetour.com, n8n automatically creates a contact and a deal in HubSpot.</p>
+
+      <p>But I didn't want it to feel like a robot was answering. I programmed the system to wait seven minutes before doing anything. That way, when the client gets an email, it feels like I actually sat down and sent it myself. It feels authentic. Five minutes after that, the system sends them a text to set up a calendar invite so we can actually talk about their vacation.</p>
+
+      <p>While the automation is handling the "paperwork," it sends me an email to let me know a new lead is in. That's when my real work starts.</p>
+
+      <p>One thing I've learned quickly is that by the time someone reaches out to a travel planner, they've usually already done hours of their own research. You can't just show up and wing it. You have to sound like you know the destination better than they do if you want to keep them as a client. So, while the system is sending those timed messages, I'm already hitting the books. I start putting together ideas and familiarizing myself with the trip so that when we do get on that call, I'm the expert they need.</p>
+
+      <p>It's a lot of work to set all this up, and I'm still learning as I go, but I'm hopeful. I'm building an engine that lets me focus on the travel, not just the typing.</p>
+
+      <p>The fog is clearing, and the engine is officially humming.</p>
+
+      <p>Eric<br/>Happy Detour Travel — Affordable vacations. Fun experiences. Everyone welcome.</p>
+    `,
+  },
 ]
 
 export function getAllPosts(): Post[] {
