@@ -581,35 +581,34 @@ export default function CheriPage() {
         <div ref={contentRef}>
           {tab === "cover" ? <CoverContent /> : activeSailing ? <SailingDetail s={activeSailing} /> : null}
         </div>
-      </div>
 
-      {/* Footer */}
-      <div style={{ background: "#2d0a1e", padding: "28px 24px 20px", marginTop: 40 }}>
-        <p style={{ textAlign: "center", fontSize: 13, color: "#f9a8c9", marginBottom: 10, lineHeight: 1.7 }}>
-          Real trips. Real value. Someone actually in your corner.
-          <span style={{ color: "#ff85a1", margin: "0 8px" }}>·</span>
-          Northeast, OH
-          <span style={{ color: "#ff85a1", margin: "0 8px" }}>·</span>
-          747-333-8687
-          <span style={{ color: "#ff85a1", margin: "0 8px" }}>·</span>
-          eric@happydetour.com
-        </p>
-        <p style={{ textAlign: "center", fontSize: 11, color: "rgba(255,182,193,0.4)", lineHeight: 1.7 }}>
-          © 2026 Happy Detour Travel LLC
-          <span style={{ margin: "0 6px" }}>·</span>
-          Eric
-          <span style={{ margin: "0 6px" }}>·</span>
-          Affiliated with WorldVia Travel Network
-          <span style={{ margin: "0 6px" }}>·</span>
-          <a href="/terms" style={{ color: "rgba(255,182,193,0.55)", textDecoration: "none" }}>Terms &amp; Conditions</a>
-          <span style={{ margin: "0 6px" }}>·</span>
-          <a href="/faq" style={{ color: "rgba(255,182,193,0.55)", textDecoration: "none" }}>FAQ</a>
-          <span style={{ margin: "0 6px" }}>·</span>
-          Last updated: June 2026
-        </p>
-      </div>
+        {/* Footer */}
+        <div style={{ background: "#2d0a1e", padding: "28px 24px 20px", marginTop: 40 }}>
+          <p style={{ textAlign: "center", fontSize: 13, color: "#f9a8c9", marginBottom: 10, lineHeight: 1.7 }}>
+            Real trips. Real value. Someone actually in your corner.
+            <span style={{ color: "#ff85a1", margin: "0 8px" }}>·</span>
+            Northeast, OH
+            <span style={{ color: "#ff85a1", margin: "0 8px" }}>·</span>
+            747-333-8687
+            <span style={{ color: "#ff85a1", margin: "0 8px" }}>·</span>
+            eric@happydetour.com
+          </p>
+          <p style={{ textAlign: "center", fontSize: 11, color: "rgba(255,182,193,0.4)", lineHeight: 1.7 }}>
+            © 2026 Happy Detour Travel LLC
+            <span style={{ margin: "0 6px" }}>·</span>
+            Eric
+            <span style={{ margin: "0 6px" }}>·</span>
+            Affiliated with WorldVia Travel Network
+            <span style={{ margin: "0 6px" }}>·</span>
+            <a href="/terms" style={{ color: "rgba(255,182,193,0.55)", textDecoration: "none" }}>Terms &amp; Conditions</a>
+            <span style={{ margin: "0 6px" }}>·</span>
+            <a href="/faq" style={{ color: "rgba(255,182,193,0.55)", textDecoration: "none" }}>FAQ</a>
+            <span style={{ margin: "0 6px" }}>·</span>
+            Last updated: June 2026
+          </p>
+        </div>
 
-    </div>
+      </div>
     </>
   );
 }
