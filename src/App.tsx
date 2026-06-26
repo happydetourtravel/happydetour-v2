@@ -31,9 +31,7 @@ const HalloweenCaribbean = lazy(() => import('./pages/group/halloween-caribbean-
 const AllureEasternCaribbean = lazy(() => import('./pages/group/allure-eastern-caribbean-2027/page'));
 const AlaskaGlacialFjords = lazy(() => import('./pages/group/alaska-glacial-fjords-2027/page'));
 const BajaHalloween = lazy(() => import('./pages/group/baja-halloween-2027/page'));
-
-// Standalone — no header or footer
-const Cheri = lazy(() => import('./pages/cheri/page'));
+const CheriPage = lazy(() => import('./pages/cheri/page'));
 
 function Layout() {
   return (
@@ -80,16 +78,14 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Standalone page — no header or footer */}
         <Route
           path="/cheri"
           element={
             <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
-              <Cheri />
+              <CheriPage />
             </Suspense>
           }
         />
-        {/* All other pages use the Layout with header and footer */}
         <Route path="/*" element={<Layout />} />
       </Routes>
     </BrowserRouter>
