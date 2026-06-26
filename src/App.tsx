@@ -33,7 +33,7 @@ const AlaskaGlacialFjords = lazy(() => import('./pages/group/alaska-glacial-fjor
 const BajaHalloween = lazy(() => import('./pages/group/baja-halloween-2027/page'));
 
 // Standalone — no header or footer
-const cheri = lazy(() => import('./pages/cheri/page'));
+const Cheri = lazy(() => import('./pages/cheri/page'));
 
 function Layout() {
   return (
