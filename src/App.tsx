@@ -31,7 +31,7 @@ const HalloweenCaribbean = lazy(() => import('./pages/group/halloween-caribbean-
 const AllureEasternCaribbean = lazy(() => import('./pages/group/allure-eastern-caribbean-2027/page'));
 const AlaskaGlacialFjords = lazy(() => import('./pages/group/alaska-glacial-fjords-2027/page'));
 const BajaHalloween = lazy(() => import('./pages/group/baja-halloween-2027/page'));
-const CheriPage = lazy(() => import('./pages/cheri/page'));
+const CheriPage = lazy(() => import('./cheri/page'));
 
 function Layout() {
   return (
