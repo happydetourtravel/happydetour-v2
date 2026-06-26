@@ -29,11 +29,11 @@ function Confetti() {
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 const TABS = [
-  { id: "cover",     label: "Overview" },
-  { id: "gem",       label: "Norwegian Gem" },
-  { id: "odyssey",   label: "Odyssey of the Seas" },
-  { id: "resilient", label: "Resilient Lady" },
-  { id: "enchanted", label: "Enchanted Princess" },
+  { id: "cover",     label: "Overview",           short: "Overview" },
+  { id: "gem",       label: "Norwegian Gem",       short: "Gem" },
+  { id: "odyssey",   label: "Odyssey of the Seas", short: "Odyssey" },
+  { id: "resilient", label: "Resilient Lady",      short: "Resilient" },
+  { id: "enchanted", label: "Enchanted Princess",  short: "Enchanted" },
 ];
 
 const sailings = [
@@ -337,7 +337,10 @@ function TabBar({ active, onChange }: { active: string; onChange: (id: string) =
             background: "transparent", whiteSpace: "nowrap", cursor: "pointer",
             border: "none", borderBottom: `2px solid ${active === t.id ? "#ff85a1" : "transparent"}`,
             transition: "color 0.15s",
-          }}>{t.label}</button>
+          }}>
+            <span className="hidden sm:inline">{t.label}</span>
+            <span className="inline sm:hidden">{t.short}</span>
+          </button>
         ))}
       </div>
     </div>
