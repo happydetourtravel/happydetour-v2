@@ -32,6 +32,9 @@ const AllureEasternCaribbean = lazy(() => import('./pages/group/allure-eastern-c
 const AlaskaGlacialFjords = lazy(() => import('./pages/group/alaska-glacial-fjords-2027/page'));
 const BajaHalloween = lazy(() => import('./pages/group/baja-halloween-2027/page'));
 
+// Standalone — no header or footer
+const Cheri = lazy(() => import('./pages/Cheri/page'));
+
 function Layout() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -70,13 +73,25 @@ function Layout() {
       </Suspense>
       <Footer />
     </div>
-  )
+  );
 }
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Layout />
+      <Routes>
+        {/* Standalone page — no header or footer */}
+        <Route
+          path="/cheri"
+          element={
+            <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
+              <Cheri />
+            </Suspense>
+          }
+        />
+        {/* All other pages use the Layout with header and footer */}
+        <Route path="/*" element={<Layout />} />
+      </Routes>
     </BrowserRouter>
-  )
+  );
 }
