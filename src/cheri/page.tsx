@@ -602,6 +602,8 @@ export default function CheriPage() {
             <span style={{ margin: "0 6px" }}>·</span>
             <a href="/terms" style={{ color: "rgba(255,182,193,0.55)", textDecoration: "none" }}>Terms &amp; Conditions</a>
             <span style={{ margin: "0 6px" }}>·</span>
+            <a href="/privacy" style={{ color: "rgba(255,182,193,0.55)", textDecoration: "none" }}>Privacy Policy</a>
+            <span style={{ margin: "0 6px" }}>·</span>
             <a href="/faq" style={{ color: "rgba(255,182,193,0.55)", textDecoration: "none" }}>FAQ</a>
             <span style={{ margin: "0 6px" }}>·</span>
             Last updated: June 2026
