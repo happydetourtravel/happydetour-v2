@@ -85,7 +85,7 @@ export default function App() {
           path="/cheri"
           element={
             <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
-              <cheri />
+              <Cheri />
             </Suspense>
           }
         />
