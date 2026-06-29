@@ -217,7 +217,7 @@ export default function Home() {
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
                 <span style={{ color: '#9CA3AF', fontSize: '13px', textDecoration: 'line-through' }}>$768</span>
                 <span style={{ color: '#1F2937', fontSize: '26px', fontWeight: '800' }}>$643</span>
-                <span style={{ color: '#6B7280', fontSize: '12px' }}>/cabin</span>
+                <span style={{ color: '#6B7280', fontSize: '12px' }}>/person</span>
               </div>
               <a href="https://www.happydetour.com/group/halloween-caribbean-2026" style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>View Details &rarr;</a>
             </div>
