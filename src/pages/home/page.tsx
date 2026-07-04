@@ -10,12 +10,6 @@ const featuredDeals = [
 
 const cruiseLines = [
   {
-    name: "Virgin Voyages",
-    tagline: "Adults only. All included.",
-    desc: "No kids, no nickel and diming. Every restaurant included, gratuities covered. Eric is First Mate certified.",
-    live: true, link: "/cruises/virgin-voyages", cta: "View Virgin Voyages Cruises"
-  },
-  {
     name: "Norwegian (NCL)",
     tagline: "Freedom to do what you want.",
     desc: "NCL invented Freestyle Cruising. No set dining times, great group pricing.",
@@ -126,6 +120,8 @@ export default function Home() {
           .group-card-image { width: 210px !important; height: auto !important; min-height: 100%; }
           .group-card-pricing { border-top: none !important; border-left: 1px solid #F3F4F6; }
           .why-eric-inner { flex-direction: row !important; }
+          .vv-featured-inner { flex-wrap: nowrap !important; }
+          .vv-featured-buttons { min-width: 220px !important; }
         }
       `}</style>
 
@@ -138,7 +134,7 @@ export default function Home() {
           <div style={{ display: 'flex', gap: '32px', alignItems: 'flex-start', flexWrap: 'wrap' }} className="why-eric-inner">
             <div style={{ flex: '0 0 140px', textAlign: 'center', margin: '0 auto' }}>
               <img
-                src="/eric-headshot.jpeg"
+                src="/eric-headshot.jpg"
                 alt="Eric Carney, founder of Happy Detour Travel"
                 style={{ width: '120px', height: '120px', borderRadius: '50%', objectFit: 'cover', margin: '0 auto 12px auto', display: 'block' }}
               />
@@ -201,27 +197,47 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Cruise Lines */}
+      {/* Virgin Voyages Featured */}
       <div id="cruise-lines" style={{ backgroundColor: '#F3F4F6', padding: '60px 20px' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Where We Specialize</p>
-            <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: 0 }}>Take a look at our cruise offerings</h2>
+          <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px' }}>Our Specialty</p>
+
+          <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '2px solid #007298', padding: '28px', display: 'flex', gap: '24px', flexWrap: 'wrap', alignItems: 'center', marginBottom: '40px' }} className="vv-featured-inner">
+            <div style={{ flex: 1, minWidth: '260px' }}>
+              <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '100px' }}>Featured Partner</span>
+              <h2 style={{ color: '#1F2937', fontSize: '24px', fontWeight: '800', margin: '12px 0 6px 0' }}>Virgin Voyages</h2>
+              <p style={{ color: '#F59E0B', fontSize: '14px', fontWeight: '600', margin: '0 0 10px 0' }}>Adults only. All included.</p>
+              <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>No kids, no nickel and diming. Every restaurant included, gratuities covered. Eric is First Mate certified and can search live sailings and book directly for you.</p>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', minWidth: '100%' }} className="vv-featured-buttons">
+              <a
+                href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ backgroundColor: '#007298', color: 'white', textAlign: 'center', padding: '12px 20px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}
+              >
+                Search & Book Virgin Voyages
+              </a>
+              <a
+                href="sms:7473338687"
+                style={{ backgroundColor: 'white', color: '#007298', textAlign: 'center', padding: '12px 20px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px', border: '1px solid #007298' }}
+              >
+                Reach Out With Questions
+              </a>
+            </div>
           </div>
+
+          <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '4px' }}>Where We Specialize</p>
+          <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: '0 0 4px 0' }}>Other Cruise Lines We Work With</h2>
+          <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 24px 0' }}>If adults-only is not the right fit, we will find the perfect line for your trip.</p>
+
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
             {cruiseLines.map((line) => (
-              <div key={line.name} style={{ position: 'relative', overflow: 'hidden', borderRadius: '16px' }}>
-                {!line.live && (
-                  <div style={{ position: 'absolute', top: '18px', right: '-28px', backgroundColor: '#DC2626', color: 'white', fontSize: '11px', fontWeight: '700', padding: '4px 36px', transform: 'rotate(45deg)', zIndex: 10, letterSpacing: '1px', textTransform: 'uppercase' }}>
-                    Coming Soon
-                  </div>
-                )}
-                <div style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #F3F4F6', display: 'flex', flexDirection: 'column', gap: '12px', opacity: line.live ? 1 : 0.6, height: '100%', boxSizing: 'border-box' }}>
-                  <h3 style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>{line.name}</h3>
-                  <p style={{ color: '#F59E0B', fontSize: '14px', fontWeight: '600', margin: 0 }}>{line.tagline}</p>
-                  <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>{line.desc}</p>
-                  {line.live && <a href={line.link} style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>{line.cta}</a>}
-                </div>
+              <div key={line.name} style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #F3F4F6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <h3 style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>{line.name}</h3>
+                <p style={{ color: '#F59E0B', fontSize: '14px', fontWeight: '600', margin: 0 }}>{line.tagline}</p>
+                <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>{line.desc}</p>
+                <a href={line.link} style={{ color: '#007298', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>{line.cta}</a>
               </div>
             ))}
           </div>
