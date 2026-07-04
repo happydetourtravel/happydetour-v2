@@ -137,7 +137,7 @@ export default function Home() {
           <div style={{ display: 'flex', gap: '32px', alignItems: 'flex-start', flexWrap: 'wrap' }} className="why-eric-inner">
             <div style={{ flex: '0 0 140px', textAlign: 'center', margin: '0 auto' }}>
               <img
-                src="/eric-headshot.jpg"
+                src="/eric-headshot.jpeg"
                 alt="Eric Carney, founder of Happy Detour Travel"
                 style={{ width: '120px', height: '120px', borderRadius: '50%', objectFit: 'cover', margin: '0 auto 12px auto', display: 'block' }}
               />
