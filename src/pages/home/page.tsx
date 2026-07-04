@@ -273,7 +273,10 @@ export default function Home() {
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '32px' }}>
             <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Group Sailings</p>
-            <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: 0 }}>Sail with a crew. Lock in your rate now.</h2>
+            <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: '0 0 16px 0' }}>Locked in early. Priced to move.</h2>
+            <p style={{ color: '#374151', fontSize: '15px', lineHeight: '1.7', maxWidth: '700px', margin: '0 auto' }}>
+              These are promotional sailings I book directly with the cruise line before prices go up. I hold a block of cabins on each one, usually 10 inside, 4 balcony, and 2 ocean view, so I can offer a better rate than booking on your own. Space is limited, so it is smart to grab your spot early. I can also help with airfare and a hotel stay before or after the cruise if you need one.
+            </p>
           </div>
 
           {/* Card 1 — Carnival Halloween */}
