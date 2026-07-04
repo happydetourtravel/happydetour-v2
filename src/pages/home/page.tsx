@@ -49,6 +49,7 @@ const testimonials = [
 
 export default function Home() {
   const [dealIndex, setDealIndex] = useState(0)
+  const [ericDropdownOpen, setEricDropdownOpen] = useState(false)
   const deal = featuredDeals[dealIndex]
 
   useEffect(() => {
@@ -169,7 +170,32 @@ export default function Home() {
                 </div>
               </div>
 
-              <a href="sms:7473338687" style={{ display: 'inline-block', marginTop: '24px', backgroundColor: '#F59E0B', color: 'white', padding: '12px 24px', borderRadius: '100px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>Text or Email Eric</a>
+              <div style={{ position: 'relative', marginTop: '24px', display: 'inline-block' }}>
+                <button
+                  onClick={() => setEricDropdownOpen(!ericDropdownOpen)}
+                  onBlur={() => setTimeout(() => setEricDropdownOpen(false), 150)}
+                  style={{ backgroundColor: '#F59E0B', color: 'white', padding: '12px 24px', borderRadius: '100px', border: 'none', cursor: 'pointer', fontWeight: '700', fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px' }}
+                >
+                  Text or Email Eric
+                  <span style={{ fontSize: '10px' }}>▼</span>
+                </button>
+                {ericDropdownOpen && (
+                  <div style={{ position: 'absolute', top: 'calc(100% + 6px)', left: 0, backgroundColor: 'white', borderRadius: '10px', boxShadow: '0 4px 24px rgba(0,0,0,0.12)', border: '1px solid #F3F4F6', minWidth: '200px', zIndex: 100, overflow: 'hidden' }}>
+                    <a
+                      href="sms:7473338687"
+                      style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 16px', fontSize: '14px', color: '#1F2937', textDecoration: 'none', fontWeight: '600', borderBottom: '1px solid #F3F4F6' }}
+                    >
+                      📱 Text Eric
+                    </a>
+                    <a
+                      href="mailto:eric@happydetour.com"
+                      style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 16px', fontSize: '14px', color: '#1F2937', textDecoration: 'none', fontWeight: '600' }}
+                    >
+                      ✉️ Email Eric
+                    </a>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
