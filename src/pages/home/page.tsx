@@ -157,8 +157,8 @@ export default function Home() {
                   <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>Virgin Voyages, NCL, Royal Caribbean, MSC</p>
                 </div>
                 <div style={{ backgroundColor: 'white', border: '1px solid #F3F4F6', borderRadius: '12px', padding: '16px' }}>
-                  <p style={{ color: '#007298', fontWeight: '700', fontSize: '14px', margin: '0 0 4px 0' }}>We talk before anything is booked</p>
-                  <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>No surprises, no pressure</p>
+                  <p style={{ color: '#007298', fontWeight: '700', fontSize: '14px', margin: '0 0 4px 0' }}>No surprises, no pressure</p>
+                  <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>Whichever way you book</p>
                 </div>
                 <div style={{ backgroundColor: 'white', border: '1px solid #F3F4F6', borderRadius: '12px', padding: '16px' }}>
                   <p style={{ color: '#007298', fontWeight: '700', fontSize: '14px', margin: '0 0 4px 0' }}>Here when something goes wrong</p>
