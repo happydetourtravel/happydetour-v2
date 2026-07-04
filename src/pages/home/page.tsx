@@ -129,7 +129,7 @@ export default function Home() {
       <div style={{ backgroundColor: '#F9FAFB', padding: '60px 20px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px', textAlign: 'center' }}>Why Book With Eric</p>
-          <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: '0 0 32px 0', textAlign: 'center' }}>Someone actually in your corner</h2>
+          <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: '0 0 32px 0', textAlign: 'center' }}>Not just booked. Looked after.</h2>
 
           <div style={{ display: 'flex', gap: '32px', alignItems: 'flex-start', flexWrap: 'wrap' }} className="why-eric-inner">
             <div style={{ flex: '0 0 140px', textAlign: 'center', margin: '0 auto' }}>
