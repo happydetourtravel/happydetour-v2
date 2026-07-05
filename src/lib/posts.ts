@@ -14,6 +14,82 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: 'happy-fourth-of-july-americas-250th',
+    title: 'Happy Fourth of July, America. Let\'s Talk About 250 Years.',
+    date: '2026-07-04',
+    tag: 'Behind the Brand',
+    image: '/blog/firemans-field-fireworks.jpeg',
+    excerpt: 'I still remember standing at Fireman\'s Field back home as a kid, watching fireworks pop over the trees. This year feels a little different though. In 2026, America turns 250 years old.',
+    content: `
+      <p>I still remember standing at Fireman's Field back home as a kid, watching fireworks pop over the trees while somebody's radio played old patriotic songs from a truck parked nearby. There was nothing fancy about it. Just folding chairs, sticky hands from melted popsicles, and a whole town looking up at the same sky at the same time.</p>
+
+      <p>That is what the Fourth of July has always meant to me. Not the fancy stuff. Just people, together, grateful to be here.</p>
+
+      <p>This year feels a little different though. In 2026, America turns 250 years old. Two hundred and fifty years since a group of people decided they wanted something better and were willing to fight for it. That is a big deal, and it deserves a moment of real reflection, not just a parade and a hot dog.</p>
+
+      <h2>A Milestone Worth Slowing Down For</h2>
+
+      <p>We do not get a 250th birthday very often. Actually, we only get one. So this Fourth of July, I hope you get to slow down for a second between the burgers and the fireworks and just take it in. Think about how far this country has come. Think about the people who came before us, the ones who built things, fixed things, and kept showing up even when it was hard.</p>
+
+      <p>I think about that a lot in my own life too. I did not come from an easy path. There was a stretch of my life where I did not know where I was going to sleep, let alone where I was headed. I know what it feels like to start over, to build something from nothing, and to keep going because giving up was never really an option.</p>
+
+      <p>That same spirit is what this whole country was built on. Show up. Work hard. Take care of each other. Keep moving forward. It sounds simple when I say it like that, but simple does not mean easy. Nothing worth having ever is.</p>
+
+      <h2>What Fireman's Field Taught Me</h2>
+
+      <img src="/blog/firemans-field-fireworks.jpeg" alt="Fireworks over Fireman's Field with families gathered on blankets" />
+      <p class="caption">Fireman's Field, a few Fourth of Julys ago. This is the whole holiday in one photo.</p>
+
+      <p>I keep coming back to that ball field in my mind. It was not a big stage. No fancy lighting, no professional show. Just a bunch of neighbors on a patch of grass, watching the sky light up together.</p>
+
+      <p>Looking back now, I think that is exactly what the Fourth of July is supposed to feel like. Not something you buy your way into. Something you just show up for. You bring a lawn chair, maybe a cooler, and you sit next to people you have known your whole life, or people you just met that night. Either way, for a few hours, everybody is on the same team.</p>
+
+      <p>I think a lot of us have a place like that. A field, a backyard, a lake, a driveway. Somewhere that is not glamorous but is completely ours. Those are the places that shape how we see this holiday. Not the big city fireworks shows on TV. The small, local, ordinary moments that somehow end up meaning the most.</p>
+
+      <h2>Two Hundred and Fifty Years Is a Long Story</h2>
+
+      <p>When you really sit with the number 250, it starts to feel different than just a date on a calendar. That is generations of people. Farmers, soldiers, teachers, nurses, factory workers, small business owners, parents just trying to get their kids through school. All of them showing up, day after day, adding their little piece to something much bigger than themselves.</p>
+
+      <p>None of them got to see the whole picture. They just did their part and trusted that it mattered. I think that is worth remembering this year. You do not have to build the whole thing yourself. You just have to do your part, and trust that it counts.</p>
+
+      <p>That is true whether you are talking about a country or a career or a family. Nobody builds something lasting in one big leap. It happens one ordinary day at a time, one decision to keep going instead of quitting.</p>
+
+      <h2>Why Travel and the Fourth Go Together</h2>
+
+      <p>Here is something I have noticed after years of cruising and helping people plan trips. Travel has a funny way of making you appreciate home even more. You see new places, meet new people, and then you come back and look at your own country a little differently. A little more grateful.</p>
+
+      <p>I have sailed out of ports up and down the East Coast, walked through cities I had only seen in pictures, and stood on beaches that felt like a different world. Every single time, coming home hits different after a trip like that. You notice things you used to take for granted. The way people wave at you on your street. The smell of a summer cookout. The sound of fireworks echoing over a small town instead of a big skyline.</p>
+
+      <p>So many of the folks I work with tell me their favorite trips are the ones where they come home and feel like they finally exhaled. That is what a good vacation should do. It should not just be a getaway. It should remind you what home actually feels like, and maybe even help you appreciate it more than you did before you left.</p>
+
+      <h2>A Holiday That Is Not About Perfection</h2>
+
+      <p>If your Fourth of July does not look like a postcard this year, that is okay. Maybe the weather is not perfect. Maybe somebody in the family cannot make it. Maybe the burgers get a little too crispy on the grill. None of that matters as much as we think it does in the moment.</p>
+
+      <p>The Fourth of July was never about perfection. It was about people who were far from perfect deciding to try anyway. That is worth remembering when your own plans do not go exactly how you pictured them. Show up anyway. Celebrate anyway. Be grateful anyway.</p>
+
+      <p>This Fourth of July, if you are staying local, that is wonderful. Grill something good, watch the fireworks, and hug the people next to you a little tighter. Sit in a lawn chair somewhere ordinary and let it be enough.</p>
+
+      <h2>If Travel Is on Your Mind This Year</h2>
+
+      <p>And if this milestone year has you dreaming about your next trip, whether that is a sunset on a cruise ship deck or a quiet beach in the Caribbean, I would love to help you plan it. Planning fees start at $50 depending on the trip, and we talk through everything before anything is confirmed so there are no surprises.</p>
+
+      <p>You do not need a big fancy plan to make a trip meaningful. Sometimes the best ones start with a simple conversation about what you actually want, not what you think you are supposed to want. That is the kind of planning I like to do. No pressure, no upsell, just an honest conversation about what would actually make you happy.</p>
+
+      <h2>A Simple Wish for This Year</h2>
+
+      <p>Two hundred and fifty years is not something that happens by accident. It happens because people keep showing up for each other, year after year, generation after generation. That is true for a country, and it is true for a life.</p>
+
+      <p>So here is my wish for you this Fourth of July. Rest a little. Celebrate a little. And remember that whatever you are building right now, whether it is a business, a family, or just a better version of yourself, you are part of the same story this whole country has been writing for 250 years.</p>
+
+      <p>You do not have to do it all at once. You just have to keep showing up, the way that town at Fireman's Field kept showing up every summer, year after year, without ever making a big deal out of it. That is how the good things get built. Quietly, steadily, one ordinary night under the fireworks at a time.</p>
+
+      <p>Happy birthday, America. And happy Fourth of July to you and yours.</p>
+
+      <p>Eric<br/>Happy Detour Travel<br/>Real trips. Real value. Someone actually in your corner.<br/>happydetour.com | eric@happydetour.com | 747-333-8687</p>
+    `,
+  },
+  {
     slug: 'what-is-included-on-a-cruise',
     title: 'What Is Actually Included on a Cruise? The Honest Answer Nobody Gives You.',
     date: '2026-06-21',
@@ -1541,78 +1617,6 @@ export const POSTS: Post[] = [
       <p>Thanks for following along.</p>
 
       <p>Eric<br/>Happy Detour Travel<br/>happydetour.com | 747-333-8687<br/>@happydetourtravel</p>
-    `,
-  },
-  {
-    slug: 'happy-fourth-of-july-americas-250th',
-    title: 'Happy Fourth of July, America. Let\'s Talk About 250 Years.',
-    date: '2026-07-04',
-    tag: 'Behind the Brand',
-    excerpt: 'I still remember standing at Fireman\'s Field back home as a kid, watching fireworks pop over the trees. This year feels a little different though. In 2026, America turns 250 years old.',
-    content: `
-      <p>I still remember standing at Fireman's Field back home as a kid, watching fireworks pop over the trees while somebody's radio played old patriotic songs from a truck parked nearby. There was nothing fancy about it. Just folding chairs, sticky hands from melted popsicles, and a whole town looking up at the same sky at the same time.</p>
-
-      <p>That is what the Fourth of July has always meant to me. Not the fancy stuff. Just people, together, grateful to be here.</p>
-
-      <p>This year feels a little different though. In 2026, America turns 250 years old. Two hundred and fifty years since a group of people decided they wanted something better and were willing to fight for it. That is a big deal, and it deserves a moment of real reflection, not just a parade and a hot dog.</p>
-
-      <h2>A Milestone Worth Slowing Down For</h2>
-
-      <p>We do not get a 250th birthday very often. Actually, we only get one. So this Fourth of July, I hope you get to slow down for a second between the burgers and the fireworks and just take it in. Think about how far this country has come. Think about the people who came before us, the ones who built things, fixed things, and kept showing up even when it was hard.</p>
-
-      <p>I think about that a lot in my own life too. I did not come from an easy path. There was a stretch of my life where I did not know where I was going to sleep, let alone where I was headed. I know what it feels like to start over, to build something from nothing, and to keep going because giving up was never really an option.</p>
-
-      <p>That same spirit is what this whole country was built on. Show up. Work hard. Take care of each other. Keep moving forward. It sounds simple when I say it like that, but simple does not mean easy. Nothing worth having ever is.</p>
-
-      <h2>What Fireman's Field Taught Me</h2>
-
-      <p>I keep coming back to that ball field in my mind. It was not a big stage. No fancy lighting, no professional show. Just a bunch of neighbors on a patch of grass, watching the sky light up together.</p>
-
-      <p>Looking back now, I think that is exactly what the Fourth of July is supposed to feel like. Not something you buy your way into. Something you just show up for. You bring a lawn chair, maybe a cooler, and you sit next to people you have known your whole life, or people you just met that night. Either way, for a few hours, everybody is on the same team.</p>
-
-      <p>I think a lot of us have a place like that. A field, a backyard, a lake, a driveway. Somewhere that is not glamorous but is completely ours. Those are the places that shape how we see this holiday. Not the big city fireworks shows on TV. The small, local, ordinary moments that somehow end up meaning the most.</p>
-
-      <h2>Two Hundred and Fifty Years Is a Long Story</h2>
-
-      <p>When you really sit with the number 250, it starts to feel different than just a date on a calendar. That is generations of people. Farmers, soldiers, teachers, nurses, factory workers, small business owners, parents just trying to get their kids through school. All of them showing up, day after day, adding their little piece to something much bigger than themselves.</p>
-
-      <p>None of them got to see the whole picture. They just did their part and trusted that it mattered. I think that is worth remembering this year. You do not have to build the whole thing yourself. You just have to do your part, and trust that it counts.</p>
-
-      <p>That is true whether you are talking about a country or a career or a family. Nobody builds something lasting in one big leap. It happens one ordinary day at a time, one decision to keep going instead of quitting.</p>
-
-      <h2>Why Travel and the Fourth Go Together</h2>
-
-      <p>Here is something I have noticed after years of cruising and helping people plan trips. Travel has a funny way of making you appreciate home even more. You see new places, meet new people, and then you come back and look at your own country a little differently. A little more grateful.</p>
-
-      <p>I have sailed out of ports up and down the East Coast, walked through cities I had only seen in pictures, and stood on beaches that felt like a different world. Every single time, coming home hits different after a trip like that. You notice things you used to take for granted. The way people wave at you on your street. The smell of a summer cookout. The sound of fireworks echoing over a small town instead of a big skyline.</p>
-
-      <p>So many of the folks I work with tell me their favorite trips are the ones where they come home and feel like they finally exhaled. That is what a good vacation should do. It should not just be a getaway. It should remind you what home actually feels like, and maybe even help you appreciate it more than you did before you left.</p>
-
-      <h2>A Holiday That Is Not About Perfection</h2>
-
-      <p>If your Fourth of July does not look like a postcard this year, that is okay. Maybe the weather is not perfect. Maybe somebody in the family cannot make it. Maybe the burgers get a little too crispy on the grill. None of that matters as much as we think it does in the moment.</p>
-
-      <p>The Fourth of July was never about perfection. It was about people who were far from perfect deciding to try anyway. That is worth remembering when your own plans do not go exactly how you pictured them. Show up anyway. Celebrate anyway. Be grateful anyway.</p>
-
-      <p>This Fourth of July, if you are staying local, that is wonderful. Grill something good, watch the fireworks, and hug the people next to you a little tighter. Sit in a lawn chair somewhere ordinary and let it be enough.</p>
-
-      <h2>If Travel Is on Your Mind This Year</h2>
-
-      <p>And if this milestone year has you dreaming about your next trip, whether that is a sunset on a cruise ship deck or a quiet beach in the Caribbean, I would love to help you plan it. Planning fees start at $50 depending on the trip, and we talk through everything before anything is confirmed so there are no surprises.</p>
-
-      <p>You do not need a big fancy plan to make a trip meaningful. Sometimes the best ones start with a simple conversation about what you actually want, not what you think you are supposed to want. That is the kind of planning I like to do. No pressure, no upsell, just an honest conversation about what would actually make you happy.</p>
-
-      <h2>A Simple Wish for This Year</h2>
-
-      <p>Two hundred and fifty years is not something that happens by accident. It happens because people keep showing up for each other, year after year, generation after generation. That is true for a country, and it is true for a life.</p>
-
-      <p>So here is my wish for you this Fourth of July. Rest a little. Celebrate a little. And remember that whatever you are building right now, whether it is a business, a family, or just a better version of yourself, you are part of the same story this whole country has been writing for 250 years.</p>
-
-      <p>You do not have to do it all at once. You just have to keep showing up, the way that town at Fireman's Field kept showing up every summer, year after year, without ever making a big deal out of it. That is how the good things get built. Quietly, steadily, one ordinary night under the fireworks at a time.</p>
-
-      <p>Happy birthday, America. And happy Fourth of July to you and yours.</p>
-
-      <p>Eric<br/>Happy Detour Travel<br/>Real trips. Real value. Someone actually in your corner.<br/>happydetour.com | eric@happydetour.com | 747-333-8687</p>
     `,
   },
 ]
