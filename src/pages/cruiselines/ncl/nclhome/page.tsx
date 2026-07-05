@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-const NCL_NAVY = "#003087";
-const NCL_RED = "#C8102E";
-const NCL_LIGHT = "#F0F4FF";
-const NCL_DARK = "#001A4D";
+const NCL_NAVY = "#0A2540";
+const NCL_RED = "#E8654A";
+const NCL_LIGHT = "#F7FAFC";
+const NCL_DARK = "#071829";
 const NCL_GOLD = "#C9A84C";
 
 const FORM_LINK = "https://forgehq.app/f/?t=7ro7s57c";
@@ -83,7 +83,7 @@ export default function NCLPage() {
 
       {/* Tab Bar */}
       <div className="sticky top-0 z-30 shadow-md overflow-x-auto scrollbar-none" style={{ background: NCL_DARK }}>
-        <div className="flex justify-start min-w-max px-2">
+        <div className="flex justify-center px-2">
           {TABS.map((tab) => (
             <button
               key={tab.id}
@@ -453,15 +453,7 @@ export default function NCLPage() {
             </div>
 
             <p className="text-sm mt-4" style={{ color: "#6B7280" }}>
-              Norwegian Cruise Line operates 22 ships sailing destinations from the Caribbean to Alaska, Hawaii, Europe, and beyond.{" "}
-              
-               <a href="https://www.ncl.com/cruise-ship"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: NCL_NAVY, textDecoration: "underline" }}
-              >
-                Learn more about the NCL fleet at ncl.com
-              </a>.
+              Norwegian Cruise Line operates 22 ships sailing destinations from the Caribbean to Alaska, Hawaii, Europe, and beyond.
             </p>
           </section>
         )}
