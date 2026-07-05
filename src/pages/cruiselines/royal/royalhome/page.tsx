@@ -2,9 +2,9 @@ import { useState } from "react";
 
 const RC_NAVY = "#00205B";
 const RC_BLUE = "#0057B8";
-const RC_GOLD = "#C9A84C";
-const RC_LIGHT = "#F0F4FA";
-const RC_DARK = "#001040";
+const RC_GOLD = "#F0A830";
+const RC_LIGHT = "#F7FAFC";
+const RC_DARK = "#00113A";
 const RC_ACCENT = "#E8F0FF";
 
 const FORM_LINK = "https://forgehq.app/f/?t=7ro7s57c";
@@ -78,7 +78,7 @@ export default function RoyalCaribbeanPage() {
 
       {/* Tab Bar */}
       <div className="sticky top-0 z-30 shadow-md overflow-x-auto scrollbar-none" style={{ background: RC_DARK }}>
-        <div className="flex justify-start min-w-max px-2">
+        <div className="flex justify-center px-2">
           {TABS.map((tab) => (
             <button
               key={tab.id}
@@ -109,15 +109,7 @@ export default function RoyalCaribbeanPage() {
               <p className="mb-3">Royal Caribbean International is a Miami-based cruise line founded in 1969. They were not the first cruise line but they became the most ambitious one. When other lines were building comfortable ships, Royal Caribbean was asking what else a ship could be.</p>
               <p className="mb-3">Today Royal Caribbean operates some of the largest ships ever built, including the Icon of the Seas which launched in 2024 and became the largest cruise ship in the world. They are a line built on the philosophy that more is more, executed at a level nobody else has matched.</p>
               <p className="text-sm" style={{ color: "#6B7280" }}>
-                Royal Caribbean is headquartered in Miami and operates one of the largest and most innovative cruise fleets in the world.{" "}
-                <a
-                  href="https://www.royalcaribbean.com/cruise-ships"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: RC_NAVY, textDecoration: "underline" }}
-                >
-                  Learn more about the Royal Caribbean fleet at royalcaribbean.com
-                </a>.
+                Royal Caribbean is headquartered in Miami and operates one of the largest and most innovative cruise fleets in the world.
               </p>
             </Accordion>
 
