@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const S_BLACK = "#1A1A1A";
+const S_BLACK = "#0A1F44";
 const S_GOLD = "#C9A84C";
 const S_CREAM = "#FDFAF4";
 const S_ACCENT = "#FFF8E8";
@@ -54,7 +54,7 @@ export default function SandalsPage() {
       {/* Hero */}
       <div
         className="relative py-12 md:py-24 px-4 text-center overflow-hidden"
-        style={{ background: `linear-gradient(135deg, ${S_BLACK} 0%, #2A2A2A 60%, #3A3020 100%)` }}
+        style={{ background: `linear-gradient(135deg, ${S_BLACK} 0%, #12305E 60%, #1B4078 100%)` }}
       >
         <div className="absolute inset-0 opacity-10"
           style={{
@@ -76,7 +76,7 @@ export default function SandalsPage() {
 
       {/* Tab Bar */}
       <div className="sticky top-0 z-30 shadow-md overflow-x-auto scrollbar-none" style={{ background: S_BLACK }}>
-        <div className="flex justify-start min-w-max px-2">
+        <div className="flex justify-center px-2">
           {TABS.map((tab) => (
             <button
               key={tab.id}
@@ -107,15 +107,7 @@ export default function SandalsPage() {
               <p className="mb-3">Sandals Resorts is a Jamaica-born company founded in 1981 with a single resort in Montego Bay. Today they operate 17 adults-only, couples-only resorts across 8 Caribbean islands and have been voted the World's Leading All-Inclusive Resort Brand for 31 consecutive years.</p>
               <p className="mb-3">Every Sandals resort is designed exclusively for couples. The entire experience -- from the room categories to the dining concepts to the entertainment -- is built around two people who want to disconnect from everything else and just be together somewhere beautiful.</p>
               <p className="text-sm" style={{ color: "#6B7280" }}>
-                Sandals Resorts is one of the Caribbean's most recognized luxury all-inclusive brands with 17 properties across 8 islands.{" "}
-                <a
-                  href="https://www.sandals.com/resorts"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: S_GOLD, textDecoration: "underline" }}
-                >
-                  Learn more about Sandals Resorts at sandals.com
-                </a>.
+                Sandals Resorts is one of the Caribbean's most recognized luxury all-inclusive brands with 17 properties across 8 islands.
               </p>
             </Accordion>
 
@@ -459,7 +451,7 @@ export default function SandalsPage() {
         )}
 
         {/* CTA */}
-        <div className="mt-10 rounded-2xl p-5 md:p-8 text-center" style={{ background: `linear-gradient(135deg, ${S_BLACK}, #2A2010)` }}>
+        <div className="mt-10 rounded-2xl p-5 md:p-8 text-center" style={{ background: `linear-gradient(135deg, ${S_BLACK}, #12305E)` }}>
           <p className="text-xs uppercase tracking-widest mb-2" style={{ color: S_GOLD }}>Ready to Go All In</p>
           <h3 className="text-lg md:text-2xl font-bold mb-3 text-white">Find Your Perfect Sandals Resort</h3>
           <p className="text-sm mb-5 max-w-lg mx-auto" style={{ color: "#C4B490" }}>
