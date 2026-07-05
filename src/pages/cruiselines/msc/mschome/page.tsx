@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-const MSC_NAVY = "#00235F";
-const MSC_GOLD = "#C9A84C";
-const MSC_LIGHT = "#F0F4FA";
-const MSC_DARK = "#001040";
+const MSC_NAVY = "#0A1A3D";
+const MSC_GOLD = "#E67E22";
+const MSC_LIGHT = "#F7FAFC";
+const MSC_DARK = "#050F26";
 const MSC_ACCENT = "#E8F0FF";
 
 const FORM_LINK = "https://forgehq.app/f/?t=7ro7s57c";
@@ -77,7 +77,7 @@ export default function MSCPage() {
 
       {/* Tab Bar */}
       <div className="sticky top-0 z-30 shadow-md overflow-x-auto" style={{ background: MSC_DARK }}>
-        <div className="flex justify-start min-w-max px-2">
+        <div className="flex justify-center px-2">
           {TABS.map((tab) => (
             <button
               key={tab.id}
@@ -108,15 +108,7 @@ export default function MSCPage() {
               <p className="mb-3">MSC Cruises is a Swiss-based cruise line and the largest privately owned cruise company in the world. They started as a Mediterranean shipping company and have been building cruise ships since the 1980s. Their home is the Mediterranean and it shows in the design, the food, the entertainment, and the overall feel of the ships.</p>
               <p className="mb-3">When you board an MSC ship you notice it feels different from an American cruise line. The architecture is more European, the dining program leans into Italian and Mediterranean cuisine, and the whole experience has a sophistication that does not feel forced. It is just how they do things.</p>
               <p className="text-sm" style={{ color: "#6B7280" }}>
-                MSC operates one of the largest and fastest-growing cruise fleets in the world, with ships sailing everywhere from the Caribbean to the Mediterranean, Alaska, and beyond.{" "}
-                
-                 <a href="https://www.msccruises.com/en-us/discover-msc/our-ships"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: MSC_NAVY, textDecoration: "underline" }}
-                >
-                  Learn more about the MSC fleet at msccruises.com
-                </a>.
+                MSC operates one of the largest and fastest-growing cruise fleets in the world, with ships sailing everywhere from the Caribbean to the Mediterranean, Alaska, and beyond.
               </p>
             </Accordion>
 
