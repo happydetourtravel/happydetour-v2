@@ -207,7 +207,7 @@ export default function Home() {
               <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '100px' }}>Featured Partner</span>
               <h2 style={{ color: '#1F2937', fontSize: '24px', fontWeight: '800', margin: '12px 0 6px 0' }}>Virgin Voyages</h2>
               <p style={{ color: '#F59E0B', fontSize: '14px', fontWeight: '600', margin: '0 0 10px 0' }}>Adults only. All included.</p>
-              <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>No kids, no nickel and diming. Every restaurant included, gratuities covered. Eric is First Mate certified and can search live sailings and book directly for you.</p>
+              <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>No kids, no nickel and diming. Every restaurant included, free WiFi included. Eric is First Mate certified and can search live sailings and book directly for you.</p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', minWidth: '100%' }} className="vv-featured-buttons">
               <a
