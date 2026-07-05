@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-const B_TEAL = "#00847F";
+const B_TEAL = "#0A2A5E";
 const B_ORANGE = "#E8630A";
-const B_DARK = "#00413E";
-const B_LIGHT = "#F0FAFA";
+const B_DARK = "#061A3E";
+const B_LIGHT = "#F7FAFC";
 const B_ACCENT = "#E0F5F4";
 
 const AFFILIATE_LINK = "https://www.beaches.com/?referral=101731&agentid=ERCA7707";
@@ -54,7 +54,7 @@ export default function BeachesPage() {
       {/* Hero */}
       <div
         className="relative py-12 md:py-24 px-4 text-center text-white overflow-hidden"
-        style={{ background: `linear-gradient(135deg, ${B_DARK} 0%, ${B_TEAL} 60%, #00A89E 100%)` }}
+        style={{ background: `linear-gradient(135deg, ${B_DARK} 0%, ${B_TEAL} 60%, #14418C 100%)` }}
       >
         <div className="absolute inset-0 opacity-10"
           style={{
@@ -63,12 +63,12 @@ export default function BeachesPage() {
           }}
         />
         <div className="relative max-w-3xl mx-auto">
-          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: "#7EEEE8" }}>Family All-Inclusive</p>
+          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: "#7EC8EE" }}>Family All-Inclusive</p>
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 leading-tight">Beaches Resorts</h1>
-          <p className="text-base md:text-xl mb-4 leading-relaxed" style={{ color: "#C0F0EE" }}>
+          <p className="text-base md:text-xl mb-4 leading-relaxed" style={{ color: "#C0DCF0" }}>
             Everything Sandals does for couples, Beaches does for families. Unlimited dining, premium drinks, waterparks, kids clubs, Sesame Street characters, and a resort where every single person in your family actually has the time of their life.
           </p>
-          <p className="text-xs md:text-base" style={{ color: "#90D8D4" }}>
+          <p className="text-xs md:text-base" style={{ color: "#90B8D8" }}>
             The only true luxury all-inclusive family resort brand in the Caribbean. Eric books Beaches on your behalf using his affiliate partnership at no extra cost to you.
           </p>
         </div>
@@ -76,15 +76,15 @@ export default function BeachesPage() {
 
       {/* Tab Bar */}
       <div className="sticky top-0 z-30 shadow-md overflow-x-auto scrollbar-none" style={{ background: B_DARK }}>
-        <div className="flex justify-start min-w-max px-2">
+        <div className="flex justify-center px-2">
           {TABS.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className="px-3 py-3 text-xs font-semibold whitespace-nowrap transition-all border-b-2 flex-shrink-0"
               style={{
-                color: activeTab === tab.id ? "#7EEEE8" : "#94A3B8",
-                borderBottomColor: activeTab === tab.id ? "#7EEEE8" : "transparent",
+                color: activeTab === tab.id ? "#7EC8EE" : "#94A3B8",
+                borderBottomColor: activeTab === tab.id ? "#7EC8EE" : "transparent",
                 background: "transparent",
               }}
             >
@@ -107,15 +107,7 @@ export default function BeachesPage() {
               <p className="mb-3">Beaches Resorts was launched by the Gordon "Butch" Stewart family, the same people behind Sandals. The idea was simple: take everything that makes Sandals the gold standard for couples and redesign it for families. Kids clubs, waterparks, Sesame Street characters, teen programs, and multiple pools -- all included with no supplemental charges piling up.</p>
               <p className="mb-3">The result is a resort brand that solves the hardest problem in family travel. Making everyone actually happy at the same time.</p>
               <p className="text-sm" style={{ color: "#6B7280" }}>
-                Beaches Resorts is part of the Sandals Resorts family and operates luxury all-inclusive properties in the Caribbean.{" "}
-                <a
-                  href="https://www.beaches.com/resorts"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: B_TEAL, textDecoration: "underline" }}
-                >
-                  Learn more about Beaches Resorts at beaches.com
-                </a>.
+                Beaches Resorts is part of the Sandals Resorts family and operates luxury all-inclusive properties in the Caribbean.
               </p>
             </Accordion>
 
@@ -365,7 +357,7 @@ export default function BeachesPage() {
             <p className="text-gray-500 text-sm mb-6">Trip insurance is even more important on a family trip than on a couples getaway. More people means more variables. One sick kid can affect the whole trip. This is the coverage that protects your family vacation investment.</p>
 
             <div className="p-4 rounded-xl mb-6 text-white text-sm" style={{ background: B_DARK }}>
-              <strong style={{ color: "#7EEEE8" }}>Buy it at booking.</strong> Insurance is cheaper at your initial deposit and pre-existing condition coverage requires buying within 14 to 21 days of your first payment. With kids involved there are more health considerations to cover. Lock it in early.
+              <strong style={{ color: "#7EC8EE" }}>Buy it at booking.</strong> Insurance is cheaper at your initial deposit and pre-existing condition coverage requires buying within 14 to 21 days of your first payment. With kids involved there are more health considerations to cover. Lock it in early.
             </div>
 
             <Accordion title="What If Someone Gets Sick Before You Leave?">
@@ -436,9 +428,9 @@ export default function BeachesPage() {
 
         {/* CTA */}
         <div className="mt-10 rounded-2xl p-5 md:p-8 text-center text-white" style={{ background: `linear-gradient(135deg, ${B_DARK}, ${B_TEAL})` }}>
-          <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#7EEEE8" }}>Ready for the Family Trip</p>
+          <p className="text-xs uppercase tracking-widest mb-2" style={{ color: "#7EC8EE" }}>Ready for the Family Trip</p>
           <h3 className="text-lg md:text-2xl font-bold mb-3">Let's Find Your Perfect Beaches Resort</h3>
-          <p className="text-sm mb-5 max-w-lg mx-auto" style={{ color: "#C0F0EE" }}>
+          <p className="text-sm mb-5 max-w-lg mx-auto" style={{ color: "#C0DCF0" }}>
             You get the same price booking through my link as you do booking direct. The difference is you get someone who knows the properties, understands what works for different family situations, and is available if anything comes up.
           </p>
           <a
@@ -450,7 +442,7 @@ export default function BeachesPage() {
           >
             Explore Beaches Resorts
           </a>
-          <p className="mt-4 text-xs" style={{ color: "#70C8C4" }}>Booking through this link supports Happy Detour Travel at no extra cost to you.</p>
+          <p className="mt-4 text-xs" style={{ color: "#5A8AB4" }}>Booking through this link supports Happy Detour Travel at no extra cost to you.</p>
         </div>
 
       </div>
