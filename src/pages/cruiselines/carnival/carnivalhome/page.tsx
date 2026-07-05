@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const CARNIVAL_RED = "#CC0000";
-const CARNIVAL_LIGHT = "#FFF5F5";
-const CARNIVAL_DARK = "#1A0000";
+const CARNIVAL_RED = "#D0021B";
+const CARNIVAL_LIGHT = "#FAFAFA";
+const CARNIVAL_DARK = "#0A1A3D";
 const CARNIVAL_GOLD = "#C9A84C";
 const CARNIVAL_ACCENT = "#FFE8E8";
 
@@ -57,7 +57,7 @@ export default function CarnivalPage() {
       {/* Hero */}
       <div
         className="relative py-12 md:py-24 px-4 text-center text-white overflow-hidden"
-        style={{ background: `linear-gradient(135deg, ${CARNIVAL_DARK} 0%, ${CARNIVAL_RED} 60%, #FF4444 100%)` }}
+        style={{ background: `linear-gradient(135deg, ${CARNIVAL_DARK} 0%, ${CARNIVAL_RED} 100%)` }}
       >
         <div className="absolute inset-0 opacity-5"
           style={{
@@ -67,10 +67,10 @@ export default function CarnivalPage() {
         />
         <div className="relative max-w-3xl mx-auto">
           <h1 className="text-2xl md:text-5xl font-bold mb-3 leading-tight">Carnival Cruise Line</h1>
-          <p className="text-base md:text-xl mb-4 leading-relaxed" style={{ color: "#FFD0D0" }}>
+          <p className="text-base md:text-xl mb-4 leading-relaxed" style={{ color: "#CBD5E1" }}>
             The Fun Ship. The most popular cruise line in the world for a reason. Great value, nonstop entertainment, and an atmosphere where strangers become friends by night two. Eric has sailed Carnival and the good time is real.
           </p>
-          <p className="text-xs md:text-base" style={{ color: "#FFA0A0" }}>
+          <p className="text-xs md:text-base" style={{ color: "#94A3B8" }}>
             Everything you need to know about sailing Carnival, put together by Eric, your HDT travel advisor.
           </p>
         </div>
@@ -78,7 +78,7 @@ export default function CarnivalPage() {
 
       {/* Tab Bar */}
       <div className="sticky top-0 z-30 shadow-md overflow-x-auto scrollbar-none" style={{ background: CARNIVAL_DARK }}>
-        <div className="flex justify-start min-w-max px-2">
+        <div className="flex justify-center px-2">
           {TABS.map((tab) => (
             <button
               key={tab.id}
@@ -109,15 +109,7 @@ export default function CarnivalPage() {
               <p className="mb-3">Carnival Cruise Line is an American cruise company founded in 1972 and based in Miami. They started with one ship and a vision to make cruising accessible and fun for everyday people rather than just the wealthy. That philosophy never changed and it is why they became the largest cruise line in the world by passenger volume.</p>
               <p className="mb-3">Carnival is not trying to be the most refined or the most sophisticated line at sea. They are trying to make sure you have the most fun. And they are very, very good at it. The ships are colorful, the staff is energetic, the food is solid, and the atmosphere is unlike anything else on the water.</p>
               <p className="text-sm" style={{ color: "#6B7280" }}>
-                Carnival operates one of the largest cruise fleets in the world, sailing from more U.S. homeports than any other cruise line.{" "}
-                
-                 <a href="https://www.carnival.com/cruise-ships"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: CARNIVAL_RED, textDecoration: "underline" }}
-                >
-                  Learn more about the Carnival fleet at carnival.com
-                </a>.
+                Carnival operates one of the largest cruise fleets in the world, sailing from more U.S. homeports than any other cruise line.
               </p>
             </Accordion>
 
@@ -810,7 +802,7 @@ export default function CarnivalPage() {
         <div className="mt-10 rounded-2xl p-5 md:p-8 text-center text-white" style={{ background: `linear-gradient(135deg, ${CARNIVAL_DARK}, ${CARNIVAL_RED})` }}>
           <p className="text-xs uppercase tracking-widest mb-2" style={{ color: CARNIVAL_GOLD }}>Ready to Have Some Fun</p>
           <h3 className="text-lg md:text-2xl font-bold mb-3">Let's Get You on a Fun Ship</h3>
-          <p className="text-sm mb-5 max-w-lg mx-auto" style={{ color: "#FFD0D0" }}>
+          <p className="text-sm mb-5 max-w-lg mx-auto" style={{ color: "#CBD5E1" }}>
             Carnival is the most popular cruise line in the world for a reason and I have been on one. I book Carnival on your behalf so you get the right ship, the right itinerary, and someone who actually answers when you have a question.
           </p>
           
