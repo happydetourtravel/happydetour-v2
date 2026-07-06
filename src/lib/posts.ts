@@ -1619,6 +1619,47 @@ export const POSTS: Post[] = [
       <p>Eric<br/>Happy Detour Travel<br/>happydetour.com | 747-333-8687<br/>@happydetourtravel</p>
     `,
   },
+  {
+    slug: 'charleston-cruise-port-closes-for-good',
+    title: 'Charleston Just Said Goodbye to Cruise Ships for Good',
+    date: '2026-07-06',
+    tag: 'Cruise Tips',
+    excerpt: 'Norwegian Jewel made the final call at Charleston\'s Union Pier Terminal on June 30. That closed the book on cruising there for good. Here is what happened and what it means if you have a cruise booked.',
+    image: '/blog/norwegian-jewel-charleston.jpg',
+    content: `
+      <p>If you have ever cruised out of Charleston, South Carolina, or dreamed about it, this one is a little bittersweet.</p>
+
+      <p>Norwegian Jewel made the final call at Charleston's Union Pier Terminal on June 30. That sailing closed the book on years of cruise history at that port. Carnival had already pulled out back in January 2025 after 14 years of calling Charleston home. Now Norwegian's departure marks the real end.</p>
+
+      <h2>Why It Is Closing</h2>
+
+      <p>This one comes down to real estate, not lack of interest from cruisers. The South Carolina Ports Authority has handed the 65 acre waterfront property over to Beemok Capital, the family office of local businessman Ben Navarro. The old terminal is being torn down to make way for a new waterfront neighborhood with housing, shops, restaurants, and parks.</p>
+
+      <p>Charleston has had a complicated relationship with cruise ships for years, and clearing the port out permanently was part of making this deal happen.</p>
+
+      <h2>What This Means If You Have a Cruise Booked</h2>
+
+      <p>If your cruise was scheduled to stop in Charleston, your trip is not canceled. A few things are changing though.</p>
+
+      <ul>
+        <li>Some ships, like Oceania Vista, are being moved to the nearby Columbus Street Terminal instead</li>
+        <li>Norwegian rerouted some Charleston stops to Halifax, Nova Scotia instead</li>
+        <li>The easy walk off the ship straight into downtown Charleston that Union Pier was known for is going away. Columbus Street is about a mile and a half up the road, so the experience changes a bit</li>
+      </ul>
+
+      <p>Cruise traffic through Charleston will not disappear completely. Smaller ships, like the ones from American Cruise Line, will still visit. But the days of big ships doing homeport sailings out of Charleston are over.</p>
+
+      <h2>My Take</h2>
+
+      <p>This is a good reminder of something I tell every client. Ports change. Itineraries change. Cruise lines make business decisions that have nothing to do with you and everything to do with contracts, real estate, and logistics happening behind the scenes.</p>
+
+      <p>That is exactly why having someone in your corner matters. If a port swap or itinerary change happens on your sailing, I am the one who catches it, explains what it actually means for your trip, and makes sure you are not caught off guard on embarkation day.</p>
+
+      <p>If you have questions about an upcoming cruise, or you are just cruise curious and want to talk through your options, reach out. I am always happy to help you sort through the moving pieces.</p>
+
+      <p>Eric<br/>Happy Detour Travel<br/>Real trips. Real value. Someone actually in your corner.<br/>happydetour.com | eric@happydetour.com | 747-333-8687</p>
+    `,
+  },
 ]
 
 export function getAllPosts(): Post[] {
