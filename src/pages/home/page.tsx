@@ -279,8 +279,11 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Card 1 — Carnival Halloween */}
-          <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto 16px auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
+          {/* Card 1 — Carnival Halloween — BOOKED / SOLD OUT */}
+          <div style={{ position: 'relative', backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto 16px auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
+            <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(20,20,20,0.55)', zIndex: 5, display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
+              <div style={{ backgroundColor: '#A32D2D', color: '#FCEBEB', fontSize: '22px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', padding: '10px 48px', transform: 'rotate(-6deg)', boxShadow: '0 0 0 2px #791F1F' }}>Booked</div>
+            </div>
             <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden' }} className="group-card-image">
               <img src="/carnivalmagic.jpeg" alt="Carnival Magic cruise ship" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#007298', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '4px' }}>🧑‍✈️ Group Rate</span>
@@ -306,7 +309,7 @@ export default function Home() {
                 <span style={{ color: '#1F2937', fontSize: '26px', fontWeight: '800' }}>$643</span>
                 <span style={{ color: '#6B7280', fontSize: '12px' }}>/person</span>
               </div>
-              <a href="https://www.happydetour.com/group/halloween-caribbean-2026" style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>View Details &rarr;</a>
+              <div style={{ display: 'block', textAlign: 'center', backgroundColor: '#E5E7EB', color: '#9CA3AF', padding: '11px 16px', borderRadius: '8px', fontWeight: '700', fontSize: '14px' }}>Sold Out</div>
             </div>
           </div>
 
