@@ -13,7 +13,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.0",
     "@clerk/clerk-react": "^4.30.0",
-    "vite-react-ssg": "^0.7.30"
+    "vite-react-ssg": "^0.8.9"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
