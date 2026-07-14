@@ -1,15 +1,28 @@
 import type { RouteRecord } from 'vite-react-ssg';
 import { Outlet } from 'react-router-dom';
+import { ClerkProvider } from '@clerk/clerk-react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
 function Layout() {
-  return (
+  const publishableKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+
+  const body = (
     <div className="flex flex-col min-h-screen">
       <Header />
       <Outlet />
       <Footer />
     </div>
+  );
+
+  if (!publishableKey) {
+    return body;
+  }
+
+  return (
+    <ClerkProvider publishableKey={publishableKey}>
+      {body}
+    </ClerkProvider>
   );
 }
 
