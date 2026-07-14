@@ -1,11 +1,19 @@
+import { useState, useEffect, type ComponentType } from 'react';
 import type { RouteRecord } from 'vite-react-ssg';
 import { Outlet } from 'react-router-dom';
-import { ClerkProvider } from '@clerk/clerk-react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
 function Layout() {
   const publishableKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+  const [ClerkProviderComp, setClerkProviderComp] = useState<ComponentType<any> | null>(null);
+
+  useEffect(() => {
+    if (!publishableKey) return;
+    import('@clerk/clerk-react').then((mod) => {
+      setClerkProviderComp(() => mod.ClerkProvider);
+    });
+  }, [publishableKey]);
 
   const body = (
     <div className="flex flex-col min-h-screen">
@@ -19,11 +27,12 @@ function Layout() {
     return body;
   }
 
-  return (
-    <ClerkProvider publishableKey={publishableKey}>
-      {body}
-    </ClerkProvider>
-  );
+  if (!ClerkProviderComp) {
+    return null;
+  }
+
+  const ClerkProvider = ClerkProviderComp;
+  return <ClerkProvider publishableKey={publishableKey}>{body}</ClerkProvider>;
 }
 
 export const routes: RouteRecord[] = [
