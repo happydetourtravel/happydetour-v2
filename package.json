@@ -5,14 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite-react-ssg build",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.0",
-    "@clerk/clerk-react": "^4.30.0"
+    "@clerk/clerk-react": "^4.30.0",
+    "vite-react-ssg": "^0.7.30"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
