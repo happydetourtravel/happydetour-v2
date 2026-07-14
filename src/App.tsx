@@ -1,93 +1,57 @@
-import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import type { RouteRecord } from 'vite-react-ssg';
+import { Outlet } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
-const Home = lazy(() => import('./pages/home/page'));
-const Join = lazy(() => import('./pages/join/page'));
-const Login = lazy(() => import('./pages/login/page'));
-const Verify = lazy(() => import('./pages/verify/page'));
-const Privacy = lazy(() => import('./pages/privacy/page'));
-const Terms = lazy(() => import('./pages/terms/page'));
-const Members = lazy(() => import('./pages/members/page'));
-const About = lazy(() => import('./pages/about/page'));
-const Contact = lazy(() => import('./pages/contact/page'));
-const FAQ = lazy(() => import('./pages/faq/page'));
-const BahamasKeyWest = lazy(() => import('./pages/cruises/bahamas-key-west/page'));
-const EasternCaribbeanBimini = lazy(() => import('./pages/cruises/eastern-caribbean-bimini/page'));
-const FrenchRivieraIbiza = lazy(() => import('./pages/cruises/french-riviera-ibiza/page'));
-const MiamiMoroccoTransatlantic = lazy(() => import('./pages/cruises/miami-morocco-transatlantic/page'));
-const AlaskaHubbardGlacier = lazy(() => import('./pages/cruises/alaska-hubbard-glacier/page'));
-const VirginVoyagesHome = lazy(() => import('./pages/cruiselines/virgin/virginhome/page'));
-const NCLHome = lazy(() => import('./pages/cruiselines/ncl/nclhome/page'));
-const MSCHome = lazy(() => import('./pages/cruiselines/msc/mschome/page'));
-const RoyalHome = lazy(() => import('./pages/cruiselines/royal/royalhome/page'));
-const CarnivalHome = lazy(() => import('./pages/cruiselines/carnival/carnivalhome/page'));
-const SandalsHome = lazy(() => import('./pages/resorts/sandals/sandalshome/page'));
-const BeachesHome = lazy(() => import('./pages/resorts/beaches/beacheshome/page'));
-const BlogIndex = lazy(() => import('./pages/blog/index/page'));
-const BlogPost = lazy(() => import('./pages/blog/post/page'));
-const HalloweenCaribbean = lazy(() => import('./pages/group/halloween-caribbean-2026/page'));
-const AllureEasternCaribbean = lazy(() => import('./pages/group/allure-eastern-caribbean-2027/page'));
-const AlaskaGlacialFjords = lazy(() => import('./pages/group/alaska-glacial-fjords-2027/page'));
-const BajaHalloween = lazy(() => import('./pages/group/baja-halloween-2027/page'));
-const CheriPage = lazy(() => import('./cheri/page'));
 
 function Layout() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/join" element={<Join />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/verify" element={<Verify />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/members" element={<Members />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/cruises/bahamas-key-west" element={<BahamasKeyWest />} />
-          <Route path="/cruises/eastern-caribbean-bimini" element={<EasternCaribbeanBimini />} />
-          <Route path="/cruises/french-riviera-ibiza" element={<FrenchRivieraIbiza />} />
-          <Route path="/cruises/miami-morocco-transatlantic" element={<MiamiMoroccoTransatlantic />} />
-          <Route path="/cruises/alaska-hubbard-glacier" element={<AlaskaHubbardGlacier />} />
-          <Route path="/cruises/virgin-voyages" element={<VirginVoyagesHome />} />
-          <Route path="/cruises/norwegian" element={<NCLHome />} />
-          <Route path="/cruises/msc" element={<MSCHome />} />
-          <Route path="/cruises/royal-caribbean" element={<RoyalHome />} />
-          <Route path="/cruises/carnival" element={<CarnivalHome />} />
-          <Route path="/resorts/sandals" element={<SandalsHome />} />
-          <Route path="/resorts/beaches" element={<BeachesHome />} />
-          <Route path="/blog" element={<BlogIndex />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/group/halloween-caribbean-2026" element={<HalloweenCaribbean />} />
-          <Route path="/group/allure-eastern-caribbean-2027" element={<AllureEasternCaribbean />} />
-          <Route path="/group/alaska-glacial-fjords-2027" element={<AlaskaGlacialFjords />} />
-          <Route path="/group/baja-halloween-2027" element={<BajaHalloween />} />
-        </Routes>
-      </Suspense>
+      <Outlet />
       <Footer />
     </div>
   );
 }
 
-export default function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/cheri"
-          element={
-            <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
-              <CheriPage />
-            </Suspense>
-          }
-        />
-        <Route path="/*" element={<Layout />} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
+export const routes: RouteRecord[] = [
+  {
+    path: '/cheri',
+    entry: 'src/cheri/page.tsx',
+    lazy: () => import('./cheri/page').then((m) => ({ Component: m.default })),
+  },
+  {
+    path: '/',
+    element: <Layout />,
+    entry: 'src/App.tsx',
+    children: [
+      { index: true, entry: 'src/pages/home/page.tsx', lazy: () => import('./pages/home/page').then((m) => ({ Component: m.default })) },
+      { path: 'join', entry: 'src/pages/join/page.tsx', lazy: () => import('./pages/join/page').then((m) => ({ Component: m.default })) },
+      { path: 'login', entry: 'src/pages/login/page.tsx', lazy: () => import('./pages/login/page').then((m) => ({ Component: m.default })) },
+      { path: 'verify', entry: 'src/pages/verify/page.tsx', lazy: () => import('./pages/verify/page').then((m) => ({ Component: m.default })) },
+      { path: 'privacy', entry: 'src/pages/privacy/page.tsx', lazy: () => import('./pages/privacy/page').then((m) => ({ Component: m.default })) },
+      { path: 'terms', entry: 'src/pages/terms/page.tsx', lazy: () => import('./pages/terms/page').then((m) => ({ Component: m.default })) },
+      { path: 'members', entry: 'src/pages/members/page.tsx', lazy: () => import('./pages/members/page').then((m) => ({ Component: m.default })) },
+      { path: 'about', entry: 'src/pages/about/page.tsx', lazy: () => import('./pages/about/page').then((m) => ({ Component: m.default })) },
+      { path: 'contact', entry: 'src/pages/contact/page.tsx', lazy: () => import('./pages/contact/page').then((m) => ({ Component: m.default })) },
+      { path: 'faq', entry: 'src/pages/faq/page.tsx', lazy: () => import('./pages/faq/page').then((m) => ({ Component: m.default })) },
+      { path: 'cruises/bahamas-key-west', entry: 'src/pages/cruises/bahamas-key-west/page.tsx', lazy: () => import('./pages/cruises/bahamas-key-west/page').then((m) => ({ Component: m.default })) },
+      { path: 'cruises/eastern-caribbean-bimini', entry: 'src/pages/cruises/eastern-caribbean-bimini/page.tsx', lazy: () => import('./pages/cruises/eastern-caribbean-bimini/page').then((m) => ({ Component: m.default })) },
+      { path: 'cruises/french-riviera-ibiza', entry: 'src/pages/cruises/french-riviera-ibiza/page.tsx', lazy: () => import('./pages/cruises/french-riviera-ibiza/page').then((m) => ({ Component: m.default })) },
+      { path: 'cruises/miami-morocco-transatlantic', entry: 'src/pages/cruises/miami-morocco-transatlantic/page.tsx', lazy: () => import('./pages/cruises/miami-morocco-transatlantic/page').then((m) => ({ Component: m.default })) },
+      { path: 'cruises/alaska-hubbard-glacier', entry: 'src/pages/cruises/alaska-hubbard-glacier/page.tsx', lazy: () => import('./pages/cruises/alaska-hubbard-glacier/page').then((m) => ({ Component: m.default })) },
+      { path: 'cruises/virgin-voyages', entry: 'src/pages/cruiselines/virgin/virginhome/page.tsx', lazy: () => import('./pages/cruiselines/virgin/virginhome/page').then((m) => ({ Component: m.default })) },
+      { path: 'cruises/norwegian', entry: 'src/pages/cruiselines/ncl/nclhome/page.tsx', lazy: () => import('./pages/cruiselines/ncl/nclhome/page').then((m) => ({ Component: m.default })) },
+      { path: 'cruises/msc', entry: 'src/pages/cruiselines/msc/mschome/page.tsx', lazy: () => import('./pages/cruiselines/msc/mschome/page').then((m) => ({ Component: m.default })) },
+      { path: 'cruises/royal-caribbean', entry: 'src/pages/cruiselines/royal/royalhome/page.tsx', lazy: () => import('./pages/cruiselines/royal/royalhome/page').then((m) => ({ Component: m.default })) },
+      { path: 'cruises/carnival', entry: 'src/pages/cruiselines/carnival/carnivalhome/page.tsx', lazy: () => import('./pages/cruiselines/carnival/carnivalhome/page').then((m) => ({ Component: m.default })) },
+      { path: 'resorts/sandals', entry: 'src/pages/resorts/sandals/sandalshome/page.tsx', lazy: () => import('./pages/resorts/sandals/sandalshome/page').then((m) => ({ Component: m.default })) },
+      { path: 'resorts/beaches', entry: 'src/pages/resorts/beaches/beacheshome/page.tsx', lazy: () => import('./pages/resorts/beaches/beacheshome/page').then((m) => ({ Component: m.default })) },
+      { path: 'blog', entry: 'src/pages/blog/index/page.tsx', lazy: () => import('./pages/blog/index/page').then((m) => ({ Component: m.default })) },
+      { path: 'blog/:slug', entry: 'src/pages/blog/post/page.tsx', lazy: () => import('./pages/blog/post/page').then((m) => ({ Component: m.default })) },
+      { path: 'group/halloween-caribbean-2026', entry: 'src/pages/group/halloween-caribbean-2026/page.tsx', lazy: () => import('./pages/group/halloween-caribbean-2026/page').then((m) => ({ Component: m.default })) },
+      { path: 'group/allure-eastern-caribbean-2027', entry: 'src/pages/group/allure-eastern-caribbean-2027/page.tsx', lazy: () => import('./pages/group/allure-eastern-caribbean-2027/page').then((m) => ({ Component: m.default })) },
+      { path: 'group/alaska-glacial-fjords-2027', entry: 'src/pages/group/alaska-glacial-fjords-2027/page.tsx', lazy: () => import('./pages/group/alaska-glacial-fjords-2027/page').then((m) => ({ Component: m.default })) },
+      { path: 'group/baja-halloween-2027', entry: 'src/pages/group/baja-halloween-2027/page.tsx', lazy: () => import('./pages/group/baja-halloween-2027/page').then((m) => ({ Component: m.default })) },
+    ],
+  },
+];
