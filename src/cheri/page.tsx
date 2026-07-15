@@ -40,12 +40,12 @@ export default function CheriPage() {
     recommendation = 'Enter your estimated daily drinks above to get a recommendation.'
   } else if (hasAlcohol && (totalSpend * 2) > deluxeForTwo) {
     savings = (totalSpend * 2) - deluxeForTwo
-    recommendation = `A drink package looks worth it for your cabin. You and your cabin mate would spend an estimated $${(totalSpend * 2).toFixed(2)} paying as you go versus $${deluxeForTwo.toFixed(2)} for both of you on the Deluxe Package (including 18% gratuity) — saving around $${savings.toFixed(2)}.`
+    recommendation = `A drink package looks worth it for your cabin. You and your cabin mate would spend an estimated $${(totalSpend * 2).toFixed(2)} paying as you go versus $${deluxeForTwo.toFixed(2)} for both of you on the Deluxe Package including 18% gratuity. That saves you around $${savings.toFixed(2)}.`
   } else if (!hasAlcohol && hasCoffeeOrSoft && (totalSpend * 2) > refreshForTwo) {
     savings = (totalSpend * 2) - refreshForTwo
-    recommendation = `The Refreshment Package looks worth it for your cabin. You and your cabin mate would spend an estimated $${(totalSpend * 2).toFixed(2)} paying as you go versus $${refreshForTwo.toFixed(2)} for both of you on the Refreshment Package (including 18% gratuity) — saving around $${savings.toFixed(2)}.`
+    recommendation = `The Refreshment Package looks worth it for your cabin. You and your cabin mate would spend an estimated $${(totalSpend * 2).toFixed(2)} paying as you go versus $${refreshForTwo.toFixed(2)} for both of you on the Refreshment Package including 18% gratuity. That saves you around $${savings.toFixed(2)}.`
   } else {
-    recommendation = `Based on your estimates paying as you go may be the better option. Remember both people in your cabin have to purchase the same package so the total cost for two would be $${deluxeForTwo.toFixed(2)} for the Deluxe Package or $${refreshForTwo.toFixed(2)} for the Refreshment Package — both including 18% gratuity.`
+    recommendation = `Based on your estimates paying as you go may be the better option. Remember both people in your cabin have to purchase the same package so the total cost for two would be $${deluxeForTwo.toFixed(2)} for the Deluxe Package or $${refreshForTwo.toFixed(2)} for the Refreshment Package. Both include 18% gratuity.`
   }
 
   useEffect(() => {
@@ -99,11 +99,11 @@ export default function CheriPage() {
   const faqs = [
     {
       q: "How much does it cost?",
-      a: "Inside cabins are $1,437.63 per person and balcony cabins are $2,032.13 per person. Both prices include port fees and taxes and are based on double occupancy. Gratuities are not included and run $18.50 per person per day, so $129.50 per person for the full 7 nights. We would love to get a head count as quickly as possible so Cheri can start planning some group activities. Reach out to Eric and let him know you are in!"
+      a: "Inside cabins are $1,437.63 per person and balcony cabins are $2,032.13 per person. Both prices include port fees and taxes and are based on double occupancy. Gratuities are not included and run $18.50 per person per day, so $129.50 per person for the full 7 nights. Book with a $500 deposit by August 22, 2026 and your cabin gets a $50 onboard credit toward whatever you want. Flex pay options are available so reach out to Eric and he will help you find a payment plan that works for you."
     },
     {
       q: "Do I have to book by August 22?",
-      a: "Not at all. August 22 is simply the deadline to receive a $50 onboard credit per cabin toward drinks or gratuities. If you miss that date you can absolutely still come. The final payment deadline for everyone is February 20, 2027. That said the sooner you are in the better because Cheri is planning group activities and wants to know who is coming!"
+      a: "You do not have to but here is why it is worth it. Book with a $500 deposit by August 22, 2026 and every cabin gets a $50 onboard credit. That is money toward drinks, gratuities, shore excursions, whatever you want. You can absolutely still join the group after that date right up until the final payment deadline of February 20, 2027. You just won't get that extra credit. So August 22 is not a hard deadline to join. It is just a real reason to commit early instead of waiting until the last minute. And honestly the sooner you are in the better because Cheri is planning group activities and wants to know who is coming!"
     },
     {
       q: "What is included in the price?",
@@ -284,7 +284,7 @@ export default function CheriPage() {
               { label: 'Departs', value: <><strong style={{ color: '#fce7f3' }}>May 30, 2027</strong> from Rome (Civitavecchia), Italy</> },
               { label: 'Returns', value: <><strong style={{ color: '#fce7f3' }}>June 6, 2027</strong> back to Rome (Civitavecchia), Italy</> },
               { label: 'Duration', value: <><strong style={{ color: '#fce7f3' }}>7 nights</strong> · Round trip from Rome</> },
-              { label: 'Pricing', value: <>Inside cabin <strong style={{ color: '#fce7f3' }}>$1,437.63/person</strong> · Balcony <strong style={{ color: '#fce7f3' }}>$2,032.13/person</strong> · Double occupancy · Port fees and taxes included · Gratuities $18.50/person/day not included</> },              { label: 'Book by', value: <><strong style={{ color: '#fbbf24' }}>August 22, 2026</strong> to receive a $50 onboard credit per cabin. <span style={{ color: 'rgba(252,231,243,0.5)' }}>You can still join after this date. August 22 is only the deadline for the credit bonus.</span> Final payment due February 20, 2027.</> },
+              { label: 'Pricing', value: <>Inside cabin <strong style={{ color: '#fce7f3' }}>$1,437.63/person</strong> · Balcony <strong style={{ color: '#fce7f3' }}>$2,032.13/person</strong> · Double occupancy · Port fees and taxes included · Gratuities $18.50/person/day not included</> },              { label: 'Book by', value: <>Book with a $500 deposit by <strong style={{ color: '#fbbf24' }}>August 22, 2026</strong> and your cabin gets a $50 onboard credit toward drinks, gratuities, or whatever you want. <span style={{ color: 'rgba(252,231,243,0.5)' }}>You can still join the group after that date right up until the final payment deadline of February 20, 2027. You just won't get the extra credit.</span></> },
             ].map((row, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'flex-start', padding: 'clamp(12px, 3vw, 18px) clamp(16px, 4vw, 32px)', borderBottom: i < 5 ? '1px solid rgba(249,168,212,0.07)' : 'none', gap: 12 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' as const, color: '#f9a8d4', width: 80, flexShrink: 0, paddingTop: 2 }}>{row.label}</div>
@@ -302,7 +302,7 @@ export default function CheriPage() {
             {[
               { day: 1, port: 'Rome (Civitavecchia), Italy', note: 'All aboard — departs 3:00 PM' },
               { day: 2, port: 'Day at Sea', note: 'Relax, celebrate, explore the ship' },
-              { day: 3, port: 'Santorini, Greece', note: '9:00 AM – 11:00 PM · The longest port day — Royal Club awaits' },
+              { day: 3, port: 'Santorini, Greece', note: '9:00 AM to 11:00 PM · The longest port day · Royal Club awaits' },
               { day: 4, port: 'Ephesus (Kusadasi), Turkey', note: '9:00 AM – 7:00 PM · Ancient wonders' },
               { day: 5, port: 'Mykonos, Greece', note: '7:00 AM – 5:00 PM · Whitewashed bliss' },
               { day: 6, port: 'Day at Sea', note: 'One more day to soak it all in' },
@@ -327,7 +327,7 @@ export default function CheriPage() {
           <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase' as const, color: '#f9a8d4', marginBottom: 16, display: 'block' }}>Do you need a drink package?</span>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 900, color: '#fce7f3', marginBottom: 12, lineHeight: 1.2 }}>Drink Package Calculator</h2>
           <p style={{ fontSize: 14, color: 'rgba(252,231,243,0.6)', marginBottom: 28, lineHeight: 1.7 }}>
-            Drinks are not included in your fare. Royal Caribbean runs sales regularly and Eric will email the group when a deal drops. Everyone in the same cabin has to purchase the same package — you cannot split it. Use this calculator to see if a package makes sense for you.
+            Drinks are not included in your fare. Royal Caribbean runs sales regularly and Eric will email the group when a deal drops. Everyone in the same cabin has to purchase the same package. You cannot split it. Use this calculator to see if a package makes sense for you.
           </p>
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(249,168,212,0.12)', borderRadius: 20, overflow: 'hidden' }}>
             <div style={{ padding: '24px 28px', borderBottom: '1px solid rgba(249,168,212,0.08)' }}>
