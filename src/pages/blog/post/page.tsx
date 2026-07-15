@@ -1,4 +1,4 @@
-https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/RFxrKCNQTejSeWAhpo4BaaEz/link// src/pages/blog/post/page.tsx
+// src/pages/blog/post/page.tsx
 
 import { useParams, Link } from 'react-router-dom'
 import { getPost } from '../../../lib/posts'
