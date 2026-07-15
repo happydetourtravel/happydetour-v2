@@ -1742,7 +1742,7 @@ export const POSTS: Post[] = [
   title: 'How to Plan the Right Birthday Trip (And Why Most People Get It Wrong)',
   date: '2026-07-14',
   tag: 'Cruise Tips',
-  image: '/blog/eric-cafe.jpeg',
+  image: '/blog/eric-cafe.png',
   excerpt: "It was Cheri. She was turning 60 in 2027 and wanted to take the people she loves most somewhere that actually matched the size of the moment. Here's what it actually takes to plan a birthday trip that works, not just one that looks good on paper.",
   content: `
     <p>It was Cheri. She had seen one of my videos and reached out on Facebook. She said she had two group trips she wanted help planning and asked if we could chat. Simple enough. I texted her back, she texted me back, and just like that we were talking.</p>
