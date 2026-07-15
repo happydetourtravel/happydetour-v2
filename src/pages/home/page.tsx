@@ -433,7 +433,7 @@ export default function Home() {
           <h2 style={{ color: 'white', fontSize: 'clamp(28px, 6vw, 36px)', fontWeight: '800', margin: '0 0 12px 0', lineHeight: '1.2' }}>Stop scrolling, start packing.</h2>
           <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '16px', margin: '0 0 28px 0' }}>Let's find your happy detour.</p>
           <a
-            href="https://forgehq.app/f/?s=20bejr4j"
+            href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/RFxrKCNQTejSeWAhpo4BaaEz/link"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Start planning your trip with Happy Detour Travel"
