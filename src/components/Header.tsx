@@ -59,7 +59,7 @@ export default function Header() {
               {dropdownOpen && (
                 <div style={{ position: 'absolute', top: 'calc(100% + 6px)', right: 0, backgroundColor: 'white', borderRadius: '10px', boxShadow: '0 4px 24px rgba(0,0,0,0.12)', border: '1px solid #F3F4F6', minWidth: '240px', zIndex: 100, overflow: 'hidden' }}>
                   <a
-                    href="https://forgehq.app/f/?s=20bejr4j"
+                    href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/RFxrKCNQTejSeWAhpo4BaaEz/link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:bg-gray-50 transition-colors"
@@ -84,7 +84,7 @@ export default function Header() {
           {/* Mobile: Start Packing + Hamburger */}
           <div className="flex md:hidden items-center gap-3">
             <a
-              href="https://forgehq.app/f/?s=20bejr4j"
+              href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/RFxrKCNQTejSeWAhpo4BaaEz/link"
               target="_blank"
               rel="noopener noreferrer"
               style={{ backgroundColor: '#F59E0B', color: 'white', padding: '8px 14px', borderRadius: '8px', fontWeight: '700', fontSize: '13px', textDecoration: 'none' }}
