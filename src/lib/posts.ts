@@ -1748,7 +1748,7 @@ export const POSTS: Post[] = [
     <p>It was Cheri. She had seen one of my videos and reached out on Facebook. She said she had two group trips she wanted help planning and asked if we could chat. Simple enough. I texted her back, she texted me back, and just like that we were talking.</p>
     <p>She told me she was turning 60 in 2027 and wanted to do something really special. Not just a dinner out. Not a party at someone's house. She wanted to take the people she loves most somewhere that actually matched the size of the moment.</p>
     <p>She wanted a cruise. She wanted the Mediterranean. She wanted it to feel like the trip of a lifetime.</p>
-    <img src="/blog/cheri-eric.jpeg" alt="Cheri smiling with a loved one" />
+    <img src="/blog/cheri-eric.jpg" alt="Cheri smiling with a loved one" />
     <p class="caption">Cheri. It took about a minute in person to understand why everyone in her life shows up for her the way they do.</p>
     <p>I met Cheri in person for the first time back in February. And I'm not kidding when I say it took me less than a minute to understand exactly why everyone in her life shows up for her the way they do. She walks into a room and the energy changes. She's warm and real and the kind of person who makes you feel like you've known her for years even when you just met.</p>
     <p>I knew immediately that the trip had to match her. Not just be a nice cruise. It had to be the right cruise.</p>
