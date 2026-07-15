@@ -114,7 +114,7 @@ export default function CheriPage() {
             Seven nights. The Mediterranean. The most epic birthday celebration on the high seas. 🛳️
           </p>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <a href="https://traveljoy.com/bookings/Cra63nGeaTzGEHzCBruiESCq" target="_blank" rel="noopener noreferrer" className="cheri-btn-primary">I Want to Be on That Ship</a>
+            <a href="https://traveljoy.com/bookings/Cra63nGeaTzGEHzCBruiESCq" target="_blank" rel="noopener noreferrer" className="cheri-btn-primary">I'm In — Let's Celebrate Cheri!</a>
             <a href="mailto:eric@happydetour.com?subject=Cheri's 60th Birthday Cruise" className="cheri-btn-secondary">Get More Info</a>
           </div>
         </div>
@@ -225,7 +225,7 @@ export default function CheriPage() {
             Spots are limited. The earlier you lock yours in the better. Reach out to Eric directly or click below to claim your cabin and be part of the most epic birthday cruise of 2027.
           </p>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <a href="https://traveljoy.com/bookings/Cra63nGeaTzGEHzCBruiESCq" target="_blank" rel="noopener noreferrer" className="cheri-btn-primary">I Want to Be on That Ship</a>
+            <a href="https://traveljoy.com/bookings/Cra63nGeaTzGEHzCBruiESCq" target="_blank" rel="noopener noreferrer" className="cheri-btn-primary">I'm In — Let's Celebrate Cheri!</a>
             <a href="mailto:eric@happydetour.com?subject=Cheri's 60th Birthday Cruise" className="cheri-btn-secondary">Ask Eric a Question</a>
           </div>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginTop: 24 }}>
