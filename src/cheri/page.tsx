@@ -1,9 +1,10 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function CheriPage() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [dropdownOpen, setDropdownOpen] = useState(false)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -54,7 +55,6 @@ export default function CheriPage() {
     }
     draw()
 
-    // Scroll reveal
     const reveals = document.querySelectorAll('.cheri-reveal')
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('cheri-visible') })
@@ -68,6 +68,29 @@ export default function CheriPage() {
     }
   }, [])
 
+  const AskEricButton = () => (
+    <div style={{ position: 'relative', display: 'inline-block' }}>
+      <button
+        onClick={() => setDropdownOpen(!dropdownOpen)}
+        onBlur={() => setTimeout(() => setDropdownOpen(false), 150)}
+        className="cheri-btn-secondary"
+        style={{ cursor: 'pointer', border: '1px solid rgba(249,168,212,0.25)' }}
+      >
+        Ask Eric a Question ▾
+      </button>
+      {dropdownOpen && (
+        <div style={{ position: 'absolute', top: 'calc(100% + 6px)', left: 0, backgroundColor: 'white', borderRadius: 10, boxShadow: '0 4px 24px rgba(0,0,0,0.2)', minWidth: 200, zIndex: 100, overflow: 'hidden' }}>
+          <a href="sms:7473338687" style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 16px', fontSize: 14, color: '#1F2937', textDecoration: 'none', fontWeight: 600, borderBottom: '1px solid #F3F4F6' }}>
+            📱 Text Eric
+          </a>
+          <a href="mailto:eric@happydetour.com?subject=Cheri's 60th Birthday Cruise" style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 16px', fontSize: 14, color: '#1F2937', textDecoration: 'none', fontWeight: 600 }}>
+            ✉️ Email Eric
+          </a>
+        </div>
+      )}
+    </div>
+  )
+
   return (
     <>
       <style>{`
@@ -77,7 +100,7 @@ export default function CheriPage() {
         .cheri-visible { opacity: 1; transform: translateY(0); }
         .cheri-btn-primary { display: inline-block; padding: 15px 36px; background: linear-gradient(135deg, #e040a0, #9d174d); color: #fff; font-size: 14px; font-weight: 600; border-radius: 100px; text-decoration: none; box-shadow: 0 8px 32px rgba(224,64,160,0.4); transition: transform 0.2s, box-shadow 0.2s; letter-spacing: 0.3px; }
         .cheri-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(224,64,160,0.55); }
-        .cheri-btn-secondary { display: inline-block; padding: 15px 36px; background: rgba(255,255,255,0.06); color: #f9a8d4; font-size: 14px; font-weight: 600; border-radius: 100px; text-decoration: none; border: 1px solid rgba(249,168,212,0.25); transition: transform 0.2s, background 0.2s; backdrop-filter: blur(8px); letter-spacing: 0.3px; }
+        .cheri-btn-secondary { display: inline-block; padding: 15px 36px; background: rgba(255,255,255,0.06); color: #f9a8d4; font-size: 14px; font-weight: 600; border-radius: 100px; text-decoration: none; transition: transform 0.2s, background 0.2s; backdrop-filter: blur(8px); letter-spacing: 0.3px; }
         .cheri-btn-secondary:hover { transform: translateY(-2px); background: rgba(249,168,212,0.1); }
         .cheri-contact-link { font-size: 13px; color: rgba(249,168,212,0.6); text-decoration: none; transition: color 0.2s; }
         .cheri-contact-link:hover { color: #f9a8d4; }
@@ -85,8 +108,8 @@ export default function CheriPage() {
         @media (max-width: 480px) { .cheri-love-grid { grid-template-columns: 1fr; } }
         @keyframes cheri-shimmer { from { filter: drop-shadow(0 0 30px rgba(224,64,160,0.3)); } to { filter: drop-shadow(0 0 60px rgba(224,64,160,0.6)); } }
         .cheri-number { animation: cheri-shimmer 4s ease-in-out infinite alternate; }
-        footer a { color: rgba(249,168,212,0.4); text-decoration: none; }
-        footer a:hover { color: rgba(249,168,212,0.7); }
+        .cheri-footer a { color: rgba(249,168,212,0.4); text-decoration: none; }
+        .cheri-footer a:hover { color: rgba(249,168,212,0.7); }
       `}</style>
 
       <div className="cheri-page">
@@ -114,8 +137,8 @@ export default function CheriPage() {
             Seven nights. The Mediterranean. The most epic birthday celebration on the high seas. 🛳️
           </p>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <a href="https://traveljoy.com/bookings/Cra63nGeaTzGEHzCBruiESCq" target="_blank" rel="noopener noreferrer" className="cheri-btn-primary">I'm In — Let's Celebrate Cheri!</a>
-            <a href="mailto:eric@happydetour.com?subject=Cheri's 60th Birthday Cruise" className="cheri-btn-secondary">Get More Info</a>
+            <a href="https://traveljoy.com/bookings/Cra63nGeaTzGEHzCBruiESCq" target="_blank" rel="noopener noreferrer" className="cheri-btn-primary">I&apos;m In — Let&apos;s Celebrate Cheri!</a>
+            <AskEricButton />
           </div>
         </div>
 
@@ -225,8 +248,8 @@ export default function CheriPage() {
             Spots are limited. The earlier you lock yours in the better. Reach out to Eric directly or click below to claim your cabin and be part of the most epic birthday cruise of 2027.
           </p>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <a href="https://traveljoy.com/bookings/Cra63nGeaTzGEHzCBruiESCq" target="_blank" rel="noopener noreferrer" className="cheri-btn-primary">I'm In — Let's Celebrate Cheri!</a>
-            <a href="mailto:eric@happydetour.com?subject=Cheri's 60th Birthday Cruise" className="cheri-btn-secondary">Ask Eric a Question</a>
+            <a href="https://traveljoy.com/bookings/Cra63nGeaTzGEHzCBruiESCq" target="_blank" rel="noopener noreferrer" className="cheri-btn-primary">I&apos;m In — Let&apos;s Celebrate Cheri!</a>
+            <AskEricButton />
           </div>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginTop: 24 }}>
             <a href="tel:7473338687" className="cheri-contact-link">📞 747-333-8687</a>
@@ -236,7 +259,7 @@ export default function CheriPage() {
         </div>
 
         {/* FOOTER */}
-        <footer style={{ position: 'relative', zIndex: 2, borderTop: '1px solid rgba(249,168,212,0.08)', padding: '28px 24px 24px', textAlign: 'center' }}>
+        <footer className="cheri-footer" style={{ position: 'relative', zIndex: 2, borderTop: '1px solid rgba(249,168,212,0.08)', padding: '28px 24px 24px', textAlign: 'center' }}>
           <p style={{ fontSize: 13, color: 'rgba(249,168,212,0.5)', lineHeight: 1.7, marginBottom: 8 }}>
             Real trips. Real value. Someone actually in your corner.
             <span style={{ color: 'rgba(249,168,212,0.2)', margin: '0 8px' }}>·</span>
@@ -251,7 +274,7 @@ export default function CheriPage() {
             <span style={{ margin: '0 6px' }}>·</span>
             Affiliated with WorldVia Travel Network
             <span style={{ margin: '0 6px' }}>·</span>
-            Page created July 14, 2026
+            Page created July 15, 2026
           </p>
         </footer>
 
