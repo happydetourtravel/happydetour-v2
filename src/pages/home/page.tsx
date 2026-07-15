@@ -1,4 +1,4 @@
-https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/RFxrKCNQTejSeWAhpo4BaaEz/linkimport { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 const featuredDeals = [
   { tag: "VIRGIN VOYAGES", title: "Caribbean Escape — Bahamas & Key West", date: "Jan 2027", nights: "4 nights", ship: "Scarlet Lady · Miami", originalPrice: "$699", salePrice: "$549", link: "/cruises/bahamas-key-west" },
