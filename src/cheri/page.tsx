@@ -6,6 +6,8 @@ export default function CheriPage() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [dropdownOpen2, setDropdownOpen2] = useState(false)
+  const [bookingOpen, setBookingOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   // Bar Tab Optimizer state
@@ -115,7 +117,7 @@ export default function CheriPage() {
     },
     {
       q: "How do I book and what are my payment options?",
-      a: "You have two ways to book. Option 1 is through the booking link on this page. You can pay by credit card or ACH bank transfer. A convenience fee is added to cover credit card processing. For example a $500 deposit would be $518.50 with the convenience fee. ACH bank transfer has a lower processing fee. Option 2 is to contact Eric directly and pay by card over the phone. There is no convenience fee for this option. Your card number goes directly into the Royal Caribbean booking system and is never saved anywhere. Eric handles this the same way he would want someone to handle his own payment information. We can talk through what works best for you when the time comes. Call 747-333-8687 after 6pm EST, text or email any time at eric@happydetour.com."
+      a: "You have two ways to book. Option 1 is through the booking link on this page. You can pay by credit card or ACH bank transfer. A convenience fee is added to cover credit card processing. For example a $500 deposit would be $518.50 with the convenience fee. ACH bank transfer has a lower processing fee. Option 2 is to contact Eric directly and pay by card over the phone or Venmo. Your card number goes directly into the Royal Caribbean booking system and is never saved anywhere. Eric handles this the same way he would want someone to handle his own payment information. We can talk through what works best for you when the time comes. Call 747-333-8687 after 6pm EST, text or email any time at eric@happydetour.com."
     },
     {
       q: "What is flex pay?",
@@ -148,7 +150,7 @@ export default function CheriPage() {
   )
 
   const AskEricButton = ({ id }: { id: string }) => {
-    const isOpen = id === '1' ? dropdownOpen : dropdownOpen2
+    const isOpen = id === '1' ? dropdownOpen : dropdownOpen2  // id 3 also uses dropdownOpen2
     const setOpen = id === '1' ? setDropdownOpen : setDropdownOpen2
     return (
       <div style={{ position: 'relative', display: 'inline-block' }}>
@@ -185,6 +187,21 @@ export default function CheriPage() {
         .cheri-number { animation: cheri-shimmer 4s ease-in-out infinite alternate; }
         .cheri-footer a { color: rgba(249,168,212,0.4); text-decoration: none; }
         .cheri-footer a:hover { color: rgba(249,168,212,0.7); }
+        .cheri-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(10,6,18,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(249,168,212,0.1); }
+        .cheri-nav-inner { max-width: 760px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: flex-start; height: 56px; gap: 4px; }
+        .cheri-nav-links { display: flex; gap: 2px; align-items: center; }
+        .cheri-nav-link { font-size: 13px; font-weight: 600; color: rgba(252,231,243,0.6); text-decoration: none; padding: 6px 10px; border-radius: 100px; transition: color 0.2s, background 0.2s; cursor: pointer; background: none; border: none; font-family: 'DM Sans', sans-serif; }
+        .cheri-nav-link:hover { color: #f9a8d4; background: rgba(249,168,212,0.08); }
+        .cheri-nav-book { font-size: 12px; font-weight: 700; color: #fff; background: linear-gradient(135deg, #e040a0, #9d174d); padding: 8px 18px; border-radius: 100px; text-decoration: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: opacity 0.2s; white-space: nowrap; }
+        .cheri-nav-book:hover { opacity: 0.85; }
+        .cheri-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 5px; }
+        .cheri-hamburger span { display: block; width: 22px; height: 2px; background: #f9a8d4; border-radius: 2px; }
+        .cheri-mobile-menu { flex-direction: column; padding: 12px 24px 20px; gap: 4px; border-top: 1px solid rgba(249,168,212,0.08); }
+        @media (max-width: 600px) {
+          .cheri-nav-links { display: none !important; }
+          .cheri-nav-book-desktop { display: none !important; }
+          .cheri-hamburger { display: flex !important; }
+        }
         .faq-item { border-bottom: 1px solid rgba(249,168,212,0.08); }
         .faq-question { width: 100%; text-align: left; background: none; border: none; cursor: pointer; padding: 18px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; color: #fce7f3; font-size: 15px; font-weight: 600; font-family: 'DM Sans', sans-serif; }
         .faq-answer { font-size: 14px; line-height: 1.75; color: rgba(252,231,243,0.7); padding-bottom: 18px; }
@@ -192,11 +209,46 @@ export default function CheriPage() {
 
       <div className="cheri-page">
 
+        {/* NAV */}
+        <nav className="cheri-nav">
+          <div className="cheri-nav-inner">
+            <div className="cheri-nav-links">
+              {[
+                { label: 'About', href: '#about' },
+                { label: 'Cruise', href: '#cruise' },
+                { label: 'Itinerary', href: '#itinerary' },
+                { label: 'Drinks', href: '#drinks' },
+                { label: 'FAQ', href: '#faq' },
+              ].map((item) => (
+                <a key={item.label} href={item.href} className="cheri-nav-link">{item.label}</a>
+              ))}
+            </div>
+            <button className="cheri-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
+          {menuOpen && (
+            <div className="cheri-mobile-menu" style={{ display: 'flex' }}>
+              {[
+                { label: 'About', href: '#about' },
+                { label: 'The Cruise', href: '#cruise' },
+                { label: 'Itinerary', href: '#itinerary' },
+                { label: 'Drink Calculator', href: '#drinks' },
+                { label: 'FAQ', href: '#faq' },
+              ].map((item) => (
+                <a key={item.label} href={item.href} className="cheri-nav-link" onClick={() => setMenuOpen(false)}>{item.label}</a>
+              ))}
+            </div>
+          )}
+        </nav>
+
         <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0, background: 'radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.7) 0%, transparent 100%), radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,0.5) 0%, transparent 100%), radial-gradient(1.5px 1.5px at 45% 10%, rgba(255,255,255,0.8) 0%, transparent 100%), radial-gradient(1px 1px at 60% 55%, rgba(255,255,255,0.4) 0%, transparent 100%), radial-gradient(1px 1px at 75% 20%, rgba(255,255,255,0.6) 0%, transparent 100%)' }} />
         <canvas ref={canvasRef} style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 1 }} />
 
         {/* HERO */}
-        <div style={{ position: 'relative', zIndex: 2, minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '60px 24px 80px', background: 'radial-gradient(ellipse 80% 60% at 50% 30%, rgba(180,50,120,0.25) 0%, transparent 70%)' }}>
+        <div id="home" style={{ position: 'relative', zIndex: 2, minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '116px 24px 80px', background: 'radial-gradient(ellipse 80% 60% at 50% 30%, rgba(180,50,120,0.25) 0%, transparent 70%)' }}>
           <div style={{ display: 'inline-block', fontSize: 11, fontWeight: 600, letterSpacing: '4px', textTransform: 'uppercase', color: '#f9a8d4', border: '1px solid rgba(249,168,212,0.3)', borderRadius: 100, padding: '6px 20px', marginBottom: 32, backdropFilter: 'blur(8px)', background: 'rgba(249,168,212,0.05)' }}>
             ✦ Mediterranean · May 30 – June 6, 2027 ✦
           </div>
@@ -228,10 +280,8 @@ export default function CheriPage() {
           </div>
         </div>
 
-        <div style={{ position: 'relative', zIndex: 2, width: '100%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(249,168,212,0.3), rgba(251,191,36,0.3), transparent)' }} />
-
         {/* ERIC'S NOTE */}
-        <div className="cheri-reveal" style={{ position: 'relative', zIndex: 2, maxWidth: 720, margin: '0 auto', padding: '72px 24px' }}>
+        <div id="about" className="cheri-reveal" style={{ position: 'relative', zIndex: 2, maxWidth: 720, margin: '0 auto', padding: '72px 24px' }}>
           <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase' as const, color: '#f9a8d4', marginBottom: 16, display: 'block' }}>A note from Eric</span>
           <div style={{ background: 'linear-gradient(135deg, rgba(180,50,120,0.12), rgba(155,23,77,0.08))', border: '1px solid rgba(249,168,212,0.15)', borderRadius: 20, padding: 'clamp(20px, 5vw, 36px) clamp(16px, 5vw, 40px)', position: 'relative', overflow: 'hidden' }}>
             <p style={{ fontSize: 17, lineHeight: 1.8, color: 'rgba(252,231,243,0.85)', fontStyle: 'italic', position: 'relative', zIndex: 1, marginBottom: 16 }}>
@@ -271,7 +321,7 @@ export default function CheriPage() {
         <div style={{ position: 'relative', zIndex: 2, width: '100%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(249,168,212,0.3), rgba(251,191,36,0.3), transparent)' }} />
 
         {/* CRUISE DETAILS */}
-        <div className="cheri-reveal" style={{ position: 'relative', zIndex: 2, maxWidth: 720, margin: '0 auto', padding: '72px 24px' }}>
+        <div id="cruise" className="cheri-reveal" style={{ position: 'relative', zIndex: 2, maxWidth: 720, margin: '0 auto', padding: '72px 24px' }}>
           <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase' as const, color: '#f9a8d4', marginBottom: 16, display: 'block' }}>The voyage</span>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 900, color: '#fce7f3', marginBottom: 28, lineHeight: 1.2 }}>Seven Nights on the Mediterranean</h2>
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(249,168,212,0.12)', borderRadius: 20, overflow: 'hidden' }}>
@@ -295,7 +345,7 @@ export default function CheriPage() {
         </div>
 
         {/* ITINERARY */}
-        <div className="cheri-reveal" style={{ position: 'relative', zIndex: 2, maxWidth: 720, margin: '0 auto', padding: '0 24px 72px' }}>
+        <div id="itinerary" className="cheri-reveal" style={{ position: 'relative', zIndex: 2, maxWidth: 720, margin: '0 auto', padding: '0 24px 72px' }}>
           <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase' as const, color: '#f9a8d4', marginBottom: 16, display: 'block' }}>Port by port</span>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 900, color: '#fce7f3', marginBottom: 28, lineHeight: 1.2 }}>Where We&apos;re Going</h2>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -323,7 +373,7 @@ export default function CheriPage() {
         <div style={{ position: 'relative', zIndex: 2, width: '100%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(249,168,212,0.3), rgba(251,191,36,0.3), transparent)' }} />
 
         {/* DRINK CALCULATOR */}
-        <div className="cheri-reveal" style={{ position: 'relative', zIndex: 2, maxWidth: 720, margin: '0 auto', padding: '72px 24px' }}>
+        <div id="drinks" className="cheri-reveal" style={{ position: 'relative', zIndex: 2, maxWidth: 720, margin: '0 auto', padding: '72px 24px' }}>
           <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase' as const, color: '#f9a8d4', marginBottom: 16, display: 'block' }}>Do you need a drink package?</span>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 900, color: '#fce7f3', marginBottom: 12, lineHeight: 1.2 }}>Drink Package Calculator</h2>
           <p style={{ fontSize: 14, color: 'rgba(252,231,243,0.6)', marginBottom: 28, lineHeight: 1.7 }}>
@@ -382,9 +432,9 @@ export default function CheriPage() {
         <div style={{ position: 'relative', zIndex: 2, width: '100%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(249,168,212,0.3), rgba(251,191,36,0.3), transparent)' }} />
 
         {/* FAQ */}
-        <div className="cheri-reveal" style={{ position: 'relative', zIndex: 2, maxWidth: 720, margin: '0 auto', padding: '72px 24px' }}>
+        <div id="faq" className="cheri-reveal" style={{ position: 'relative', zIndex: 2, maxWidth: 720, margin: '0 auto', padding: '72px 24px' }}>
           <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase' as const, color: '#f9a8d4', marginBottom: 16, display: 'block' }}>Got questions?</span>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 900, color: '#fce7f3', marginBottom: 32, lineHeight: 1.2 }}>We&apos;ve Got Answers</h2>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 900, color: '#fce7f3', marginBottom: 32, lineHeight: 1.2 }}>We've Got Answers</h2>
           <div>
             {faqs.map((faq, i) => (
               <div key={i} className="faq-item">
@@ -395,30 +445,81 @@ export default function CheriPage() {
                 {openFaq === i && <p className="faq-answer">{faq.a}</p>}
               </div>
             ))}
+            {/* Ask Eric at bottom of FAQ */}
+            <div style={{ marginTop: 32, paddingTop: 24, borderTop: '1px solid rgba(249,168,212,0.1)', textAlign: 'center' }}>
+              <p style={{ fontSize: 14, color: 'rgba(252,231,243,0.6)', marginBottom: 16 }}>Still have a question? Eric is here to help.</p>
+              <AskEricButton id="3" />
+            </div>
           </div>
         </div>
+
 
         <div style={{ position: 'relative', zIndex: 2, width: '100%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(249,168,212,0.3), rgba(251,191,36,0.3), transparent)' }} />
 
         {/* CTA */}
-        <div className="cheri-reveal" style={{ position: 'relative', zIndex: 2, maxWidth: 720, margin: '0 auto', padding: '72px 24px', textAlign: 'center' }}>
+        <div id="book" className="cheri-reveal" style={{ position: 'relative', zIndex: 2, maxWidth: 720, margin: '0 auto', padding: '72px 24px', textAlign: 'center' }}>
           <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase' as const, color: '#f9a8d4', marginBottom: 16, display: 'block' }}>Ready to celebrate?</span>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 5vw, 42px)', fontWeight: 900, fontStyle: 'italic', color: '#fce7f3', marginBottom: 14, lineHeight: 1.2 }}>Come Celebrate Cheri<br />with Us at Sea</h2>
           <p style={{ fontSize: 14, lineHeight: 1.75, color: 'rgba(252,231,243,0.6)', maxWidth: 440, margin: '0 auto 36px' }}>
-            Spots are limited. The earlier you lock yours in the better. Cheri is planning group activities and wants to know who is coming. Reach out to Eric or click below to claim your cabin.
+            Spots are limited. The earlier you lock yours in the better. Cheri is planning group activities and wants to know who is coming.
           </p>
-          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <a href="https://traveljoy.com/bookings/Cra63nGeaTzGEHzCBruiESCq" target="_blank" rel="noopener noreferrer" className="cheri-btn-primary">I&apos;m In — Let&apos;s Celebrate Cheri!</a>
-            <AskEricButton id="2" />
+
+          {/* I'm In button with popup */}
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <button
+              onClick={() => setBookingOpen(!bookingOpen)}
+              onBlur={() => setTimeout(() => setBookingOpen(false), 200)}
+              className="cheri-btn-primary"
+              style={{ cursor: 'pointer', border: 'none' }}
+            >
+              I&apos;m In — Let&apos;s Celebrate Cheri! ▾
+            </button>
+            {bookingOpen && (
+              <div style={{ position: 'absolute', top: 'calc(100% + 10px)', left: '50%', transform: 'translateX(-50%)', backgroundColor: '#1a0a28', border: '1px solid rgba(249,168,212,0.2)', borderRadius: 16, boxShadow: '0 12px 48px rgba(0,0,0,0.5)', minWidth: 280, zIndex: 100, overflow: 'hidden' }}>
+                <a
+                  href="https://traveljoy.com/bookings/Cra63nGeaTzGEHzCBruiESCq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '16px 20px', textDecoration: 'none', borderBottom: '1px solid rgba(249,168,212,0.1)' }}
+                >
+                  <span style={{ fontSize: 20 }}>💳</span>
+                  <div style={{ textAlign: 'left' }}>
+                    <p style={{ fontSize: 14, fontWeight: 700, color: '#fce7f3', margin: 0 }}>Book Online</p>
+                    <p style={{ fontSize: 12, color: 'rgba(252,231,243,0.5)', margin: '2px 0 0 0' }}>Credit card or ACH · convenience fee applies</p>
+                  </div>
+                </a>
+                <a
+                  href="tel:7473338687"
+                  style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '16px 20px', textDecoration: 'none', borderBottom: '1px solid rgba(249,168,212,0.1)' }}
+                >
+                  <span style={{ fontSize: 20 }}>📞</span>
+                  <div style={{ textAlign: 'left' }}>
+                    <p style={{ fontSize: 14, fontWeight: 700, color: '#fce7f3', margin: 0 }}>Call Eric</p>
+                    <p style={{ fontSize: 12, color: 'rgba(252,231,243,0.5)', margin: '2px 0 0 0' }}>Card over phone or Venmo · calls after 6pm EST</p>
+                  </div>
+                </a>
+                <a
+                  href="sms:7473338687"
+                  style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '16px 20px', textDecoration: 'none' }}
+                >
+                  <span style={{ fontSize: 20 }}>💬</span>
+                  <div style={{ textAlign: 'left' }}>
+                    <p style={{ fontSize: 14, fontWeight: 700, color: '#fce7f3', margin: 0 }}>Text Eric</p>
+                    <p style={{ fontSize: 12, color: 'rgba(252,231,243,0.5)', margin: '2px 0 0 0' }}>Card over phone or Venmo · text any time</p>
+                  </div>
+                </a>
+              </div>
+            )}
           </div>
-          <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginTop: 24 }}>
+
+          <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginTop: 28 }}>
             <a href="tel:7473338687" className="cheri-contact-link">📞 747-333-8687 (calls after 6pm EST · text any time)</a>
             <span style={{ color: 'rgba(249,168,212,0.2)' }}>·</span>
             <a href="mailto:eric@happydetour.com" className="cheri-contact-link">✉ eric@happydetour.com</a>
           </div>
         </div>
 
-        {/* FOOTER */}
+                {/* FOOTER */}
         <footer className="cheri-footer" style={{ position: 'relative', zIndex: 2, borderTop: '1px solid rgba(249,168,212,0.08)', padding: '28px 24px 24px', textAlign: 'center' }}>
           <p style={{ fontSize: 13, color: 'rgba(249,168,212,0.5)', lineHeight: 1.7, marginBottom: 8 }}>
             Real trips. Real value. Someone actually in your corner.
