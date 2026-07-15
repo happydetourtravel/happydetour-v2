@@ -139,15 +139,6 @@ export default function CheriPage() {
           </div>
         </div>
 
-        {/* PHOTO */}
-        <div className="cheri-reveal" style={{ position: 'relative', zIndex: 2, maxWidth: 420, margin: '0 auto', padding: '0 24px 60px', textAlign: 'center' }}>
-          <div style={{ position: 'relative', display: 'inline-block' }}>
-            <img src="/cheri.jpg" alt="Eric and Cheri" style={{ width: '100%', maxWidth: 360, borderRadius: 20, display: 'block', border: '3px solid rgba(249,168,212,0.2)', boxShadow: '0 24px 80px rgba(224,64,160,0.25), 0 0 0 1px rgba(249,168,212,0.1)' }} />
-            <div style={{ position: 'absolute', bottom: -16, right: -16, background: 'linear-gradient(135deg, #e040a0, #9d174d)', color: '#fff', borderRadius: 100, padding: '8px 18px', fontSize: 12, fontWeight: 700, boxShadow: '0 8px 24px rgba(224,64,160,0.4)', whiteSpace: 'nowrap' }}>✨ February 2026</div>
-          </div>
-          <p style={{ marginTop: 28, fontSize: 13, color: 'rgba(249,168,212,0.6)', fontStyle: 'italic', lineHeight: 1.6 }}>Less than a minute. That&apos;s all it took. 💕</p>
-        </div>
-
         {/* Divider */}
         <div style={{ position: 'relative', zIndex: 2, width: '100%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(249,168,212,0.3), rgba(251,191,36,0.3), transparent)' }} />
 
