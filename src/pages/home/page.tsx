@@ -205,7 +205,7 @@ export default function Home() {
       </div>
 
       {/* ============ WHY VIRGIN VOYAGES — the new headline section ============ */}
-      <div id="virgin-voyages" style={{ background: 'linear-gradient(to right, #CC0000 0%, #CC0000 45%, #E8827C 100%)', padding: '64px 20px' }}>
+      <div id="virgin-voyages" style={{ background: 'linear-gradient(to right, #CC0000 0%, #CC0000 35%, #F0A39D 100%)', padding: '64px 20px' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <div style={{ display: 'flex', gap: '40px', alignItems: 'center', flexWrap: 'wrap' }} className="why-virgin-inner">
 
