@@ -205,7 +205,7 @@ export default function Home() {
       </div>
 
       {/* ============ WHY VIRGIN VOYAGES — the new headline section ============ */}
-      <div id="virgin-voyages" style={{ backgroundColor: '#CC0000', padding: '64px 20px' }}>
+      <div id="virgin-voyages" style={{ background: 'linear-gradient(to right, #CC0000 0%, #CC0000 45%, #E8827C 100%)', padding: '64px 20px' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <div style={{ display: 'flex', gap: '40px', alignItems: 'center', flexWrap: 'wrap' }} className="why-virgin-inner">
 
@@ -253,9 +253,7 @@ export default function Home() {
                   height: 'auto',
                   margin: '0 auto',
                   display: 'block',
-                  filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.35))',
-                  maskImage: 'radial-gradient(ellipse at center, black 55%, transparent 88%)',
-                  WebkitMaskImage: 'radial-gradient(ellipse at center, black 55%, transparent 88%)',
+                  filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.25))',
                 }}
               />
               <p style={{ color: 'white', fontWeight: '600', fontSize: '14px', marginTop: '14px' }}>First Mate, Gold Tier</p>
