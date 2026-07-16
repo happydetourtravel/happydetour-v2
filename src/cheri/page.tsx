@@ -125,7 +125,7 @@ export default function CheriPage() {
     },
     {
       q: "What if I am traveling solo?",
-      a: "Solo travelers are absolutely welcome. Just keep in mind that pricing is based on double occupancy so a solo traveler would pay the full cabin rate at 200% since the cabin is priced for two people. Reach out to Eric to talk through your options."
+      a: "Do not let traveling solo stop you from coming. I am actively matching solo travelers with cabin mates so nobody has to pay double on their own. If you are traveling solo reach out to me and I will connect you with others in the group who are also looking for a cabin mate. Some of you may already know each other and some may not but either way we will figure it out. Text or call 747-333-8687 after 6pm EST or email eric@happydetour.com any time and let me know you are interested."
     },
     {
       q: "What about flights and a hotel before the cruise?",
@@ -149,7 +149,101 @@ export default function CheriPage() {
     </div>
   )
 
-  const AskEricButton = ({ id }: { id: string }) => {
+  // Solo Matcher
+  const [soloName, setSoloName] = useState('')
+  const [soloSubmitting, setSoloSubmitting] = useState(false)
+  const [soloSubmitted, setSoloSubmitted] = useState(false)
+  const [soloList, setSoloList] = useState<{name: string; date: string}[]>([])
+  const [soloError, setSoloError] = useState('')
+
+  useEffect(() => {
+    const loadSolos = async () => {
+      try {
+        const result = await window.storage.get('cheri-solos')
+        if (result) setSoloList(JSON.parse(result.value))
+      } catch {}
+    }
+    loadSolos()
+  }, [])
+
+  const handleSoloSubmit = async () => {
+    if (!soloName.trim()) { setSoloError('Please enter your name.'); return }
+    setSoloSubmitting(true)
+    setSoloError('')
+    try {
+      const newEntry = { name: soloName.trim(), date: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) }
+      const updated = [...soloList, newEntry]
+      await window.storage.set('cheri-solos', JSON.stringify(updated))
+      setSoloList(updated)
+      setSoloName('')
+      setSoloSubmitted(true)
+    } catch { setSoloError('Something went wrong. Please reach out to Eric directly.') }
+    setSoloSubmitting(false)
+  }
+
+  const SoloMatcher = () => (
+    <div id="solo" className="cheri-reveal" style={{ position: 'relative', zIndex: 2, maxWidth: 720, margin: '0 auto', padding: '72px 24px' }}>
+      <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase' as const, color: '#f9a8d4', marginBottom: 16, display: 'block' }}>Traveling Solo?</span>
+      <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 900, color: '#fce7f3', marginBottom: 12, lineHeight: 1.2 }}>Find a Cabin Mate</h2>
+      <p style={{ fontSize: 14, color: 'rgba(252,231,243,0.6)', lineHeight: 1.75, marginBottom: 32 }}>
+        Do not let traveling solo stop you from coming. Add your name to the list below and Eric will reach out to connect you with others who are also looking for a cabin mate. Both people have to say yes before any introductions are made.
+      </p>
+
+      {/* Submit form */}
+      {!soloSubmitted ? (
+        <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(249,168,212,0.12)', borderRadius: 20, padding: '28px 28px', marginBottom: 32 }}>
+          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' as const, color: '#f9a8d4', marginBottom: 20 }}>Add yourself to the list</p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <input
+              type="text"
+              placeholder="Your first name"
+              value={soloName}
+              onChange={e => setSoloName(e.target.value)}
+              style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(249,168,212,0.2)', borderRadius: 12, padding: '12px 16px', color: '#fce7f3', fontSize: 14, fontFamily: 'DM Sans, sans-serif', outline: 'none', width: '100%' }}
+            />
+            {soloError && <p style={{ fontSize: 13, color: '#ff85c2', margin: 0 }}>{soloError}</p>}
+            <button
+              onClick={handleSoloSubmit}
+              disabled={soloSubmitting}
+              style={{ background: 'linear-gradient(135deg, #e040a0, #9d174d)', color: '#fff', border: 'none', borderRadius: 100, padding: '13px 28px', fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: 'DM Sans, sans-serif', opacity: soloSubmitting ? 0.7 : 1 }}
+            >
+              {soloSubmitting ? 'Adding you...' : 'Add Me to the List'}
+            </button>
+          </div>
+          <p style={{ fontSize: 12, color: 'rgba(252,231,243,0.3)', marginTop: 14, lineHeight: 1.6 }}>By adding your name you are letting Eric know you are open to being matched. He will reach out to both parties before making any introduction.</p>
+        </div>
+      ) : (
+        <div style={{ background: 'rgba(224,64,160,0.1)', border: '1px solid rgba(249,168,212,0.2)', borderRadius: 16, padding: '24px 28px', marginBottom: 32, textAlign: 'center' }}>
+          <p style={{ fontSize: 22, marginBottom: 8 }}>🎉</p>
+          <p style={{ fontSize: 15, fontWeight: 700, color: '#fce7f3', marginBottom: 6 }}>You are on the list!</p>
+          <p style={{ fontSize: 13, color: 'rgba(252,231,243,0.6)', lineHeight: 1.6 }}>Eric will reach out when there is a potential match. In the meantime feel free to reach out at 747-333-8687 or eric@happydetour.com.</p>
+        </div>
+      )}
+
+      {/* The list */}
+      {soloList.length > 0 && (
+        <div>
+          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' as const, color: '#f9a8d4', marginBottom: 16 }}>Looking for a cabin mate</p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {soloList.map((s, i) => (
+              <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(249,168,212,0.1)', borderRadius: 14, padding: '16px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
+                <p style={{ fontSize: 15, fontWeight: 700, color: '#fce7f3', margin: 0 }}>{s.name}</p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <span style={{ fontSize: 11, color: 'rgba(252,231,243,0.3)' }}>Joined {s.date}</span>
+                  <a href="sms:7473338687" style={{ fontSize: 12, fontWeight: 700, color: '#f9a8d4', textDecoration: 'none', background: 'rgba(249,168,212,0.1)', border: '1px solid rgba(249,168,212,0.2)', borderRadius: 100, padding: '5px 14px' }}>Text Eric</a>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: 12, color: 'rgba(252,231,243,0.3)', marginTop: 16, lineHeight: 1.6 }}>Interested in rooming with someone on this list? Text or email Eric and he will reach out to both of you to see if it is a good fit.</p>
+        </div>
+      )}
+
+      {soloList.length === 0 && soloSubmitted === false && (
+        <p style={{ fontSize: 13, color: 'rgba(252,231,243,0.3)', textAlign: 'center' }}>No one on the list yet. Be the first!</p>
+      )}
+    </div>
+  )
     const isOpen = id === '1' ? dropdownOpen : dropdownOpen2  // id 3 also uses dropdownOpen2
     const setOpen = id === '1' ? setDropdownOpen : setDropdownOpen2
     return (
@@ -219,9 +313,22 @@ export default function CheriPage() {
                 { label: 'Itinerary', href: '#itinerary' },
                 { label: 'Drinks', href: '#drinks' },
                 { label: 'FAQ', href: '#faq' },
+                { label: 'Solo', href: '#solo' },
               ].map((item) => (
                 <a key={item.label} href={item.href} className="cheri-nav-link">{item.label}</a>
               ))}
+              <a
+                href="https://www.facebook.com/groups/cheribirthdaycruise"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cheri-nav-link"
+                style={{ display: 'inline-flex', alignItems: 'center', padding: '6px 8px' }}
+                aria-label="Join Facebook Group"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+                </svg>
+              </a>
             </div>
             <button className="cheri-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
               <span />
@@ -237,9 +344,19 @@ export default function CheriPage() {
                 { label: 'Itinerary', href: '#itinerary' },
                 { label: 'Drink Calculator', href: '#drinks' },
                 { label: 'FAQ', href: '#faq' },
+                { label: 'Find a Cabin Mate', href: '#solo' },
               ].map((item) => (
                 <a key={item.label} href={item.href} className="cheri-nav-link" onClick={() => setMenuOpen(false)}>{item.label}</a>
               ))}
+              <a
+                href="https://www.facebook.com/groups/cheribirthdaycruise"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cheri-nav-link"
+                onClick={() => setMenuOpen(false)}
+              >
+                Join the Facebook group
+              </a>
             </div>
           )}
         </nav>
@@ -275,8 +392,21 @@ export default function CheriPage() {
           </div>
           <p style={{ fontSize: 12, color: 'rgba(252,231,243,0.4)', marginBottom: 36 }}>Per person · double occupancy · port fees and taxes included · gratuities not included · flex pay available</p>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <a href="https://traveljoy.com/bookings/Cra63nGeaTzGEHzCBruiESCq" target="_blank" rel="noopener noreferrer" className="cheri-btn-primary">I&apos;m In — Let&apos;s Celebrate Cheri!</a>
+            <a href="#book" className="cheri-btn-primary">I&apos;m In — Let&apos;s Celebrate Cheri!</a>
             <AskEricButton id="1" />
+          </div>
+          <div style={{ marginTop: 20 }}>
+            <a
+              href="https://www.facebook.com/groups/cheribirthdaycruise"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 7, color: 'rgba(252,231,243,0.4)', textDecoration: 'none', fontSize: 13, transition: 'color 0.2s' }}
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+              </svg>
+              Join the Facebook group
+            </a>
           </div>
         </div>
 
@@ -456,6 +586,11 @@ export default function CheriPage() {
 
         <div style={{ position: 'relative', zIndex: 2, width: '100%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(249,168,212,0.3), rgba(251,191,36,0.3), transparent)' }} />
 
+        {/* SOLO MATCHER */}
+        <SoloMatcher />
+
+        <div style={{ position: 'relative', zIndex: 2, width: '100%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(249,168,212,0.3), rgba(251,191,36,0.3), transparent)' }} />
+
         {/* CTA */}
         <div id="book" className="cheri-reveal" style={{ position: 'relative', zIndex: 2, maxWidth: 720, margin: '0 auto', padding: '72px 24px', textAlign: 'center' }}>
           <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase' as const, color: '#f9a8d4', marginBottom: 16, display: 'block' }}>Ready to celebrate?</span>
@@ -516,6 +651,21 @@ export default function CheriPage() {
             <a href="tel:7473338687" className="cheri-contact-link">📞 747-333-8687 (calls after 6pm EST · text any time)</a>
             <span style={{ color: 'rgba(249,168,212,0.2)' }}>·</span>
             <a href="mailto:eric@happydetour.com" className="cheri-contact-link">✉ eric@happydetour.com</a>
+          </div>
+
+          {/* Facebook Group */}
+          <div style={{ marginTop: 24 }}>
+            <a
+              href="https://www.facebook.com/groups/cheribirthdaycruise"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: 'rgba(252,231,243,0.45)', textDecoration: 'none', fontSize: 13, transition: 'color 0.2s' }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+              </svg>
+              Join the Facebook group
+            </a>
           </div>
         </div>
 
