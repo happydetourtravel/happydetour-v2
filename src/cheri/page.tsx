@@ -2,6 +2,15 @@
 
 import { useEffect, useRef, useState } from 'react'
 
+declare global {
+  interface Window {
+    storage: {
+      get: (key: string) => Promise<{ value: string } | null>
+      set: (key: string, value: string) => Promise<void>
+    }
+  }
+}
+
 export default function CheriPage() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [dropdownOpen, setDropdownOpen] = useState(false)
