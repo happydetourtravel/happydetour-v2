@@ -248,7 +248,15 @@ export default function Home() {
               <img
                 src="/firstmate-gold.png"
                 alt="Virgin Voyages First Mate Gold Tier badge"
-                style={{ width: '260px', height: 'auto', margin: '0 auto', display: 'block', filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.35))' }}
+                style={{
+                  width: '260px',
+                  height: 'auto',
+                  margin: '0 auto',
+                  display: 'block',
+                  filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.35))',
+                  maskImage: 'radial-gradient(ellipse at center, black 55%, transparent 88%)',
+                  WebkitMaskImage: 'radial-gradient(ellipse at center, black 55%, transparent 88%)',
+                }}
               />
               <p style={{ color: 'white', fontWeight: '600', fontSize: '14px', marginTop: '14px' }}>First Mate, Gold Tier</p>
             </div>
