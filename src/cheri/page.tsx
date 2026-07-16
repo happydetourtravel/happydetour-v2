@@ -244,7 +244,9 @@ export default function CheriPage() {
       )}
     </div>
   )
-    const isOpen = id === '1' ? dropdownOpen : dropdownOpen2  // id 3 also uses dropdownOpen2
+
+  const AskEricButton = ({ id }: { id: string }) => {
+    const isOpen = id === '1' ? dropdownOpen : dropdownOpen2
     const setOpen = id === '1' ? setDropdownOpen : setDropdownOpen2
     return (
       <div style={{ position: 'relative', display: 'inline-block' }}>
