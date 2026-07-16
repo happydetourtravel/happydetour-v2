@@ -244,13 +244,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div style={{ flex: '0 0 200px', textAlign: 'center', margin: '0 auto' }}>
+            <div style={{ flex: '0 0 260px', textAlign: 'center', margin: '0 auto' }}>
               <img
                 src="/firstmate-gold.png"
                 alt="Virgin Voyages First Mate Gold Tier badge"
-                style={{ width: '160px', height: 'auto', margin: '0 auto', display: 'block' }}
+                style={{ width: '220px', height: 'auto', margin: '0 auto', display: 'block' }}
               />
-              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '12px', marginTop: '10px' }}>First Mate, Gold Tier</p>
+              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px', marginTop: '12px' }}>First Mate, Gold Tier</p>
             </div>
 
           </div>
