@@ -518,7 +518,7 @@ export default function CheriPage() {
           <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase' as const, color: '#f9a8d4', marginBottom: 16, display: 'block' }}>Do you need a drink package?</span>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 900, color: '#fce7f3', marginBottom: 12, lineHeight: 1.2 }}>Drink Package Calculator</h2>
           <p style={{ fontSize: 14, color: 'rgba(252,231,243,0.6)', marginBottom: 28, lineHeight: 1.7 }}>
-            Drinks are not included in your fare. Royal Caribbean runs sales regularly and Eric will email the group when a deal drops. Everyone in the same cabin has to purchase the same package. You cannot split it. Use this calculator to see if a package makes sense for you.
+            Drinks are not included in your fare. Royal Caribbean runs sales regularly and Eric will email the group when a deal drops. Everyone in the same cabin has to purchase the same package. You cannot split it. Use this calculator to see if a package makes sense for you. Please note the drink prices shown are current estimates and are subject to change.
           </p>
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(249,168,212,0.12)', borderRadius: 20, overflow: 'hidden' }}>
             <div style={{ padding: '24px 28px', borderBottom: '1px solid rgba(249,168,212,0.08)' }}>
@@ -567,6 +567,7 @@ export default function CheriPage() {
                 </div>
               </div>
             </div>
+            <p style={{ fontSize: 11, color: 'rgba(252,231,243,0.3)', padding: '12px 28px', lineHeight: 1.6 }}>Drink package prices shown are current sale prices and are subject to change. Eric will notify the group when sales are available.</p>
           </div>
         </div>
 
