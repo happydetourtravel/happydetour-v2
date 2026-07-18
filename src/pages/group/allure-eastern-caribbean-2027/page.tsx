@@ -1,6 +1,6 @@
 630-823-1253export default function Page() {
 
-  const textHref = `sms:7473338687&body=${encodeURIComponent("Hi Eric, I saw the Allure of the Seas group cruise and want to know more.")}`;
+  const textHref = `sms:6308231253&body=${encodeURIComponent("Hi Eric, I saw the Allure of the Seas group cruise and want to know more.")}`;
   const emailHref = `mailto:eric@happydetour.com?subject=${encodeURIComponent("Allure of the Seas Group Cruise")}&body=${encodeURIComponent("Hi Eric, I am interested in the Eastern Caribbean group sailing on Allure of the Seas departing January 10, 2027. Can you send me the details?")}`;
 
   return (
