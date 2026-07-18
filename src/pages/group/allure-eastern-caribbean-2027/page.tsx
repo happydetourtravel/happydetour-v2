@@ -135,13 +135,13 @@ export default function Page() {
 
           {/* CTAs */}
           
-            href={textHref}
+           <a href={textHref}
             className="block w-full text-center bg-[#F59E0B] text-white font-bold text-base py-3.5 rounded-xl mb-3"
           >
             Text Eric to hold your spot
           </a>
           
-            href={emailHref}
+           <a href={emailHref}
             className="block w-full text-center border-2 border-[#007298] text-[#007298] font-bold text-sm py-3 rounded-xl"
           >
             Email Eric instead
