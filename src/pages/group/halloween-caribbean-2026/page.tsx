@@ -1,4 +1,4 @@
-// Route: /group/halloween-caribbean-2026
+630-823-1253// Route: /group/halloween-caribbean-2026
 // Carnival Magic — Halloween Eastern Caribbean — Oct 31, 2026
 
 export default function HalloweenCaribbeanLanding() {

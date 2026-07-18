@@ -1,4 +1,4 @@
-export default function Contact() {
+630-823-1253export default function Contact() {
   return (
     <main style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', padding: '80px 24px' }}>
       <div style={{ maxWidth: '600px', margin: '0 auto' }}>

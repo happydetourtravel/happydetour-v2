@@ -1,4 +1,4 @@
-// src/lib/posts.ts
+630-823-1253// src/lib/posts.ts
 // Add new posts by creating a new entry in the POSTS array below.
 // Each post has metadata at the top and content written as HTML.
 
