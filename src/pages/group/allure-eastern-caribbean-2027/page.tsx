@@ -1,4 +1,4 @@
-630-823-1253export default function Page() {
+export default function Page() {
 
   const textHref = `sms:6308231253&body=${encodeURIComponent("Hi Eric, I saw the Allure of the Seas group cruise and want to know more.")}`;
   const emailHref = `mailto:eric@happydetour.com?subject=${encodeURIComponent("Allure of the Seas Group Cruise")}&body=${encodeURIComponent("Hi Eric, I am interested in the Eastern Caribbean group sailing on Allure of the Seas departing January 10, 2027. Can you send me the details?")}`;
@@ -134,13 +134,13 @@
           </p>
 
           {/* CTAs */}
-          <a
+          
             href={textHref}
             className="block w-full text-center bg-[#F59E0B] text-white font-bold text-base py-3.5 rounded-xl mb-3"
           >
             Text Eric to hold your spot
           </a>
-          <a
+          
             href={emailHref}
             className="block w-full text-center border-2 border-[#007298] text-[#007298] font-bold text-sm py-3 rounded-xl"
           >
