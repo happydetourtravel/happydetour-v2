@@ -126,7 +126,7 @@ export default function CheriPage() {
     },
     {
       q: "How do I book and what are my payment options?",
-      a: "You have two ways to book. Option 1 is through the booking link on this page. You can pay by credit card or ACH bank transfer. A convenience fee is added to cover credit card processing. For example a $500 deposit would be $518.50 with the convenience fee. ACH bank transfer has a lower processing fee. Option 2 is to contact Eric directly and pay by card over the phone or Venmo. Your card number goes directly into the Royal Caribbean booking system and is never saved anywhere. Eric handles this the same way he would want someone to handle his own payment information. We can talk through what works best for you when the time comes. Call 747-333-8687 after 6pm EST, text or email any time at eric@happydetour.com."
+      a: "You have two ways to book. Option 1 is through the booking link on this page. You can pay by credit card or ACH bank transfer. A convenience fee is added to cover credit card processing. For example a $500 deposit would be $518.50 with the convenience fee. ACH bank transfer has a lower processing fee. Option 2 is to contact Eric directly and pay by card over the phone or Venmo. Your card number goes directly into the Royal Caribbean booking system and is never saved anywhere. Eric handles this the same way he would want someone to handle his own payment information. We can talk through what works best for you when the time comes. Call 630-823-1253 after 6pm EST, text or email any time at eric@happydetour.com."
     },
     {
       q: "What is flex pay?",
@@ -134,7 +134,7 @@ export default function CheriPage() {
     },
     {
       q: "What if I am traveling solo?",
-      a: "Do not let traveling solo stop you from coming. I am actively matching solo travelers with cabin mates so nobody has to pay double on their own. If you are traveling solo reach out to me and I will connect you with others in the group who are also looking for a cabin mate. Some of you may already know each other and some may not but either way we will figure it out. Text or call 747-333-8687 after 6pm EST or email eric@happydetour.com any time and let me know you are interested."
+      a: "Do not let traveling solo stop you from coming. I am actively matching solo travelers with cabin mates so nobody has to pay double on their own. If you are traveling solo reach out to me and I will connect you with others in the group who are also looking for a cabin mate. Some of you may already know each other and some may not but either way we will figure it out. Text or call 630-823-1253 after 6pm EST or email eric@happydetour.com any time and let me know you are interested."
     },
     {
       q: "What about flights and a hotel before the cruise?",
@@ -146,7 +146,7 @@ export default function CheriPage() {
     },
     {
       q: "Who do I contact with questions?",
-      a: "Eric at Happy Detour Travel is your guy. Calls work best after 6pm EST at 747-333-8687. Text or email any time at eric@happydetour.com. He is based in Alliance, OH and is personally sailing on this cruise to celebrate Cheri with everyone."
+      a: "Eric at Happy Detour Travel is your guy. Calls work best after 6pm EST at 630-823-1253. Text or email any time at eric@happydetour.com. He is based in Alliance, OH and is personally sailing on this cruise to celebrate Cheri with everyone."
     },
   ]
 
@@ -225,7 +225,7 @@ export default function CheriPage() {
         <div style={{ background: 'rgba(224,64,160,0.1)', border: '1px solid rgba(249,168,212,0.2)', borderRadius: 16, padding: '24px 28px', marginBottom: 32, textAlign: 'center' }}>
           <p style={{ fontSize: 22, marginBottom: 8 }}>🎉</p>
           <p style={{ fontSize: 15, fontWeight: 700, color: '#fce7f3', marginBottom: 6 }}>You are on the list!</p>
-          <p style={{ fontSize: 13, color: 'rgba(252,231,243,0.6)', lineHeight: 1.6 }}>Eric will reach out when there is a potential match. In the meantime feel free to reach out at 747-333-8687 or eric@happydetour.com.</p>
+          <p style={{ fontSize: 13, color: 'rgba(252,231,243,0.6)', lineHeight: 1.6 }}>Eric will reach out when there is a potential match. In the meantime feel free to reach out at 630-823-1253 or eric@happydetour.com.</p>
         </div>
       )}
 
@@ -239,7 +239,7 @@ export default function CheriPage() {
                 <p style={{ fontSize: 15, fontWeight: 700, color: '#fce7f3', margin: 0 }}>{s.name}</p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span style={{ fontSize: 11, color: 'rgba(252,231,243,0.3)' }}>Joined {s.date}</span>
-                  <a href="sms:7473338687" style={{ fontSize: 12, fontWeight: 700, color: '#f9a8d4', textDecoration: 'none', background: 'rgba(249,168,212,0.1)', border: '1px solid rgba(249,168,212,0.2)', borderRadius: 100, padding: '5px 14px' }}>Text Eric</a>
+                  <a href="sms:6308231253" style={{ fontSize: 12, fontWeight: 700, color: '#f9a8d4', textDecoration: 'none', background: 'rgba(249,168,212,0.1)', border: '1px solid rgba(249,168,212,0.2)', borderRadius: 100, padding: '5px 14px' }}>Text Eric</a>
                 </div>
               </div>
             ))}
@@ -264,8 +264,8 @@ export default function CheriPage() {
         </button>
         {isOpen && (
           <div style={{ position: 'absolute', top: 'calc(100% + 6px)', left: 0, backgroundColor: 'white', borderRadius: 10, boxShadow: '0 4px 24px rgba(0,0,0,0.2)', minWidth: 200, zIndex: 100, overflow: 'hidden' }}>
-            <a href="tel:7473338687" style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 16px', fontSize: 14, color: '#1F2937', textDecoration: 'none', fontWeight: 600, borderBottom: '1px solid #F3F4F6' }}>📱 Call Eric</a>
-            <a href="sms:7473338687" style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 16px', fontSize: 14, color: '#1F2937', textDecoration: 'none', fontWeight: 600, borderBottom: '1px solid #F3F4F6' }}>💬 Text Eric</a>
+            <a href="tel:6308231253" style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 16px', fontSize: 14, color: '#1F2937', textDecoration: 'none', fontWeight: 600, borderBottom: '1px solid #F3F4F6' }}>📱 Call Eric</a>
+            <a href="sms:6308231253" style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 16px', fontSize: 14, color: '#1F2937', textDecoration: 'none', fontWeight: 600, borderBottom: '1px solid #F3F4F6' }}>💬 Text Eric</a>
             <a href="mailto:eric@happydetour.com?subject=Cheri's 60th Birthday Cruise" style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 16px', fontSize: 14, color: '#1F2937', textDecoration: 'none', fontWeight: 600 }}>✉️ Email Eric</a>
           </div>
         )}
@@ -636,7 +636,7 @@ export default function CheriPage() {
                   </div>
                 </a>
                 <a
-                  href="tel:7473338687"
+                  href="tel:6308231253"
                   style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '16px 20px', textDecoration: 'none', borderBottom: '1px solid rgba(249,168,212,0.1)' }}
                 >
                   <span style={{ fontSize: 20 }}>📞</span>
@@ -646,7 +646,7 @@ export default function CheriPage() {
                   </div>
                 </a>
                 <a
-                  href="sms:7473338687"
+                  href="sms:6308231253"
                   style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '16px 20px', textDecoration: 'none' }}
                 >
                   <span style={{ fontSize: 20 }}>💬</span>
@@ -660,7 +660,7 @@ export default function CheriPage() {
           </div>
 
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginTop: 28 }}>
-            <a href="tel:7473338687" className="cheri-contact-link">📞 747-333-8687 (calls after 6pm EST · text any time)</a>
+            <a href="tel:6308231253" className="cheri-contact-link">📞 630-823-1253 (calls after 6pm EST · text any time)</a>
             <span style={{ color: 'rgba(249,168,212,0.2)' }}>·</span>
             <a href="mailto:eric@happydetour.com" className="cheri-contact-link">✉ eric@happydetour.com</a>
           </div>
@@ -688,7 +688,7 @@ export default function CheriPage() {
             <span style={{ color: 'rgba(249,168,212,0.2)', margin: '0 8px' }}>·</span>
             Alliance, OH
             <span style={{ color: 'rgba(249,168,212,0.2)', margin: '0 8px' }}>·</span>
-            747-333-8687
+            630-823-1253
             <span style={{ color: 'rgba(249,168,212,0.2)', margin: '0 8px' }}>·</span>
             <a href="mailto:eric@happydetour.com">eric@happydetour.com</a>
           </p>
