@@ -19,7 +19,7 @@
 
           {/* Text */}
           
-           <a href="sms:7473338687"
+           <a href="sms:6308231253"
             style={{ backgroundColor: 'white', border: '1px solid #E5E7EB', borderRadius: '16px', padding: '28px 32px', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '20px', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', transition: 'box-shadow 0.2s' }}
           >
             <div style={{ width: '56px', height: '56px', backgroundColor: '#007298', borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', flexShrink: 0 }}>
@@ -27,7 +27,7 @@
             </div>
             <div>
               <p style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>Send a Text</p>
-              <p style={{ color: '#6B7280', fontSize: '14px', margin: '0 0 4px 0' }}>747-333-8687</p>
+              <p style={{ color: '#6B7280', fontSize: '14px', margin: '0 0 4px 0' }}>630-823-1253</p>
               <p style={{ color: '#9CA3AF', fontSize: '13px', margin: 0 }}>Fastest way to reach Eric directly</p>
             </div>
           </a>
