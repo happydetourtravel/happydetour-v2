@@ -161,7 +161,7 @@
                 Eric Carney &middot; Happy Detour Travel
               </p>
               <p className="text-xs text-gray-400 leading-relaxed">
-                20+ personal cruises &middot; Royal Caribbean Platinum &middot; Northeast Ohio &middot; 747-333-8687
+                20+ personal cruises &middot; Royal Caribbean Platinum &middot; Northeast Ohio &middot; 630-823-1253
               </p>
             </div>
           </div>
