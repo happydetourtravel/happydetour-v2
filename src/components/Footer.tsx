@@ -17,7 +17,7 @@ export default function Footer() {
         {/* Contact info */}
         <p style={{ color: '#9CA3AF', fontSize: '12px', margin: 0, lineHeight: '1.8' }}>
           Real trips. Real value. Someone actually in your corner. · Northeast, OH ·{' '}
-          <a href="tel:7473338687" style={{ color: '#9CA3AF', textDecoration: 'none' }}>747-333-8687</a> ·{' '}
+          <a href="tel:7473338687" style={{ color: '#9CA3AF', textDecoration: 'none' }}>630-823-1253</a> ·{' '}
           <a href="mailto:eric@happydetour.com" style={{ color: '#9CA3AF', textDecoration: 'none' }}>eric@happydetour.com</a>
         </p>
 
