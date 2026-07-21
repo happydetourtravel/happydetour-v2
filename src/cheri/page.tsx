@@ -624,7 +624,7 @@ export default function CheriPage() {
             {bookingOpen && (
               <div style={{ position: 'absolute', top: 'calc(100% + 10px)', left: '50%', transform: 'translateX(-50%)', backgroundColor: '#1a0a28', border: '1px solid rgba(249,168,212,0.2)', borderRadius: 16, boxShadow: '0 12px 48px rgba(0,0,0,0.5)', minWidth: 280, zIndex: 100, overflow: 'hidden' }}>
                 <a
-                  href="href="https://traveljoy.com/bookings/aa94WDwywyKFZS5FaU891DYm""
+                  href="href="href="https://traveljoy.com/bookings/aa94WDwywyKFZS5FaU891DYm"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '16px 20px', textDecoration: 'none', borderBottom: '1px solid rgba(249,168,212,0.1)' }}
