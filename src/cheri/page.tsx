@@ -330,7 +330,7 @@ export default function CheriPage() {
                 <a key={item.label} href={item.href} className="cheri-nav-link">{item.label}</a>
               ))}
               
-                href="https://www.facebook.com/groups/cheribirthdaycruise"
+               <a href="https://www.facebook.com/groups/cheribirthdaycruise"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cheri-nav-link"
@@ -361,7 +361,7 @@ export default function CheriPage() {
                 <a key={item.label} href={item.href} className="cheri-nav-link" onClick={() => setMenuOpen(false)}>{item.label}</a>
               ))}
               
-                href="https://www.facebook.com/groups/cheribirthdaycruise"
+               <a href="https://www.facebook.com/groups/cheribirthdaycruise"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cheri-nav-link"
@@ -409,7 +409,7 @@ export default function CheriPage() {
           </div>
           <div style={{ marginTop: 20 }}>
             
-              href="https://www.facebook.com/groups/cheribirthdaycruise"
+             <a href="https://www.facebook.com/groups/cheribirthdaycruise"
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: 'inline-flex', alignItems: 'center', gap: 7, color: 'rgba(252,231,243,0.4)', textDecoration: 'none', fontSize: 13, transition: 'color 0.2s' }}
@@ -614,7 +614,7 @@ export default function CheriPage() {
 
           {/* I'm In button — goes straight to booking */}
           
-            href={BOOKING_URL}
+           <a href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="cheri-btn-primary"
@@ -633,7 +633,7 @@ export default function CheriPage() {
           {/* Facebook Group */}
           <div style={{ marginTop: 24 }}>
             
-              href="https://www.facebook.com/groups/cheribirthdaycruise"
+             <a href="https://www.facebook.com/groups/cheribirthdaycruise"
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: 'rgba(252,231,243,0.45)', textDecoration: 'none', fontSize: 13, transition: 'color 0.2s' }}
