@@ -15,9 +15,10 @@ export default function CheriPage() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [dropdownOpen2, setDropdownOpen2] = useState(false)
-  const [bookingOpen, setBookingOpen] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+
+  const BOOKING_URL = 'https://traveljoy.com/bookings/aa94WDwywyKFZS5FaU891DYm'
 
   // Bar Tab Optimizer state
   const [nights] = useState(7)
@@ -126,7 +127,7 @@ export default function CheriPage() {
     },
     {
       q: "How do I book and what are my payment options?",
-      a: "You have two ways to book. Option 1 is through the booking link on this page. You can pay by credit card or ACH bank transfer. A convenience fee is added to cover credit card processing. For example a $500 deposit would be $518.50 with the convenience fee. ACH bank transfer has a lower processing fee. Option 2 is to contact Eric directly and pay by card over the phone or Venmo. Your card number goes directly into the Royal Caribbean booking system and is never saved anywhere. Eric handles this the same way he would want someone to handle his own payment information. We can talk through what works best for you when the time comes. Call 630-823-1253 after 6pm EST, text or email any time at eric@happydetour.com."
+      a: "To book, go to the big pink 'I'm In — Let's Celebrate Cheri!' button on this page and book your trip online. You can pay by credit card or ACH bank transfer. A convenience fee is added to cover credit card processing. For example a $500 deposit would be $518.50 with the convenience fee. ACH bank transfer has a lower processing fee. If you'd rather talk it through first, reach out to Eric directly at 630-823-1253 (call after 6pm EST, text any time), on WhatsApp, or by email at eric@happydetour.com."
     },
     {
       q: "What is flex pay?",
@@ -146,7 +147,7 @@ export default function CheriPage() {
     },
     {
       q: "Who do I contact with questions?",
-      a: "Eric at Happy Detour Travel is your guy. Calls work best after 6pm EST at 630-823-1253. Text or email any time at eric@happydetour.com. He is based in Alliance, OH and is personally sailing on this cruise to celebrate Cheri with everyone."
+      a: "Eric at Happy Detour Travel is your guy. Calls work best after 6pm EST at 630-823-1253. Text, WhatsApp, or email any time at eric@happydetour.com. He is based in Alliance, OH and is personally sailing on this cruise to celebrate Cheri with everyone."
     },
   ]
 
@@ -328,7 +329,7 @@ export default function CheriPage() {
               ].map((item) => (
                 <a key={item.label} href={item.href} className="cheri-nav-link">{item.label}</a>
               ))}
-              <a
+              
                 href="https://www.facebook.com/groups/cheribirthdaycruise"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -359,7 +360,7 @@ export default function CheriPage() {
               ].map((item) => (
                 <a key={item.label} href={item.href} className="cheri-nav-link" onClick={() => setMenuOpen(false)}>{item.label}</a>
               ))}
-              <a
+              
                 href="https://www.facebook.com/groups/cheribirthdaycruise"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -403,11 +404,11 @@ export default function CheriPage() {
           </div>
           <p style={{ fontSize: 12, color: 'rgba(252,231,243,0.4)', marginBottom: 36 }}>Per person · double occupancy · port fees and taxes included · gratuities not included · flex pay available</p>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <a href="#book" className="cheri-btn-primary">I&apos;m In — Let&apos;s Celebrate Cheri!</a>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="cheri-btn-primary">I&apos;m In — Let&apos;s Celebrate Cheri!</a>
             <AskEricButton id="1" />
           </div>
           <div style={{ marginTop: 20 }}>
-            <a
+            
               href="https://www.facebook.com/groups/cheribirthdaycruise"
               target="_blank"
               rel="noopener noreferrer"
@@ -611,63 +612,27 @@ export default function CheriPage() {
             Spots are limited. The earlier you lock yours in the better. Cheri is planning group activities and wants to know who is coming.
           </p>
 
-          {/* I'm In button with popup */}
-          <div style={{ position: 'relative', display: 'inline-block' }}>
-            <button
-              onClick={() => setBookingOpen(!bookingOpen)}
-              onBlur={() => setTimeout(() => setBookingOpen(false), 200)}
-              className="cheri-btn-primary"
-              style={{ cursor: 'pointer', border: 'none' }}
-            >
-              I&apos;m In — Let&apos;s Celebrate Cheri! ▾
-            </button>
-            {bookingOpen && (
-              <div style={{ position: 'absolute', top: 'calc(100% + 10px)', left: '50%', transform: 'translateX(-50%)', backgroundColor: '#1a0a28', border: '1px solid rgba(249,168,212,0.2)', borderRadius: 16, boxShadow: '0 12px 48px rgba(0,0,0,0.5)', minWidth: 280, zIndex: 100, overflow: 'hidden' }}>
-                <a
-                  href="https://traveljoy.com/bookings/aa94WDwywyKFZS5FaU891DYm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '16px 20px', textDecoration: 'none', borderBottom: '1px solid rgba(249,168,212,0.1)' }}
-                >
-                  <span style={{ fontSize: 20 }}>💳</span>
-                  <div style={{ textAlign: 'left' }}>
-                    <p style={{ fontSize: 14, fontWeight: 700, color: '#fce7f3', margin: 0 }}>Book Online</p>
-                    <p style={{ fontSize: 12, color: 'rgba(252,231,243,0.5)', margin: '2px 0 0 0' }}>Credit card or ACH · convenience fee applies</p>
-                  </div>
-                </a>
-                <a
-                  href="tel:6308231253"
-                  style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '16px 20px', textDecoration: 'none', borderBottom: '1px solid rgba(249,168,212,0.1)' }}
-                >
-                  <span style={{ fontSize: 20 }}>📞</span>
-                  <div style={{ textAlign: 'left' }}>
-                    <p style={{ fontSize: 14, fontWeight: 700, color: '#fce7f3', margin: 0 }}>Call Eric</p>
-                    <p style={{ fontSize: 12, color: 'rgba(252,231,243,0.5)', margin: '2px 0 0 0' }}>Card over phone or Venmo · calls after 6pm EST</p>
-                  </div>
-                </a>
-                <a
-                  href="sms:6308231253"
-                  style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '16px 20px', textDecoration: 'none' }}
-                >
-                  <span style={{ fontSize: 20 }}>💬</span>
-                  <div style={{ textAlign: 'left' }}>
-                    <p style={{ fontSize: 14, fontWeight: 700, color: '#fce7f3', margin: 0 }}>Text Eric</p>
-                    <p style={{ fontSize: 12, color: 'rgba(252,231,243,0.5)', margin: '2px 0 0 0' }}>Card over phone or Venmo · text any time</p>
-                  </div>
-                </a>
-              </div>
-            )}
-          </div>
+          {/* I'm In button — goes straight to booking */}
+          
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cheri-btn-primary"
+          >
+            I&apos;m In — Let&apos;s Celebrate Cheri!
+          </a>
 
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginTop: 28 }}>
             <a href="tel:6308231253" className="cheri-contact-link">📞 630-823-1253 (calls after 6pm EST · text any time)</a>
+            <span style={{ color: 'rgba(249,168,212,0.2)' }}>·</span>
+            <span className="cheri-contact-link">💬 Also on WhatsApp</span>
             <span style={{ color: 'rgba(249,168,212,0.2)' }}>·</span>
             <a href="mailto:eric@happydetour.com" className="cheri-contact-link">✉ eric@happydetour.com</a>
           </div>
 
           {/* Facebook Group */}
           <div style={{ marginTop: 24 }}>
-            <a
+            
               href="https://www.facebook.com/groups/cheribirthdaycruise"
               target="_blank"
               rel="noopener noreferrer"
@@ -688,7 +653,7 @@ export default function CheriPage() {
             <span style={{ color: 'rgba(249,168,212,0.2)', margin: '0 8px' }}>·</span>
             Alliance, OH
             <span style={{ color: 'rgba(249,168,212,0.2)', margin: '0 8px' }}>·</span>
-            630-823-1253
+            630-823-1253 (also on WhatsApp)
             <span style={{ color: 'rgba(249,168,212,0.2)', margin: '0 8px' }}>·</span>
             <a href="mailto:eric@happydetour.com">eric@happydetour.com</a>
           </p>
