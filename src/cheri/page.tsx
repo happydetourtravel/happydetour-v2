@@ -127,7 +127,7 @@ export default function CheriPage() {
     },
     {
       q: "How do I book and what are my payment options?",
-      a: "To book, go to the big pink 'I'm In — Let's Celebrate Cheri!' button on this page and book your trip online. You can pay by credit card or ACH bank transfer. A convenience fee is added to cover credit card processing. For example a $500 deposit would be $518.50 with the convenience fee. ACH bank transfer has a lower processing fee. If you'd rather talk it through first, reach out to Eric directly at 630-823-1253 (call after 6pm EST, text any time), on WhatsApp, or by email at eric@happydetour.com."
+      a: "To book, go to the big pink 'I'm In — Let's Celebrate Cheri!' button on this page and book your trip online. You can pay by credit card or ACH bank transfer. If you'd rather talk it through first, reach out to Eric directly at 630-823-1253 (call after 6pm EST, text any time), on WhatsApp, or by email at eric@happydetour.com."
     },
     {
       q: "What is flex pay?",
