@@ -42,6 +42,11 @@ export const routes: RouteRecord[] = [
     lazy: () => import('./cheri/page').then((m) => ({ Component: m.default })),
   },
   {
+    path: '/susieandsue',
+    entry: 'src/susieandsue/page.tsx',
+    lazy: () => import('./susieandsue/page').then((m) => ({ Component: m.default })),
+  },
+  {
     path: '/',
     element: <Layout />,
     entry: 'src/App.tsx',
