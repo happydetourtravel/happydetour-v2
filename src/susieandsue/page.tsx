@@ -23,8 +23,6 @@ import { useEffect, useState } from "react";
 
 const DEPARTURE_DATE = new Date("2026-09-12T00:00:00");
 const RETURN_DATE = new Date("2026-09-25T23:59:59");
-const AGENT_PHONE = "6308231253";
-const AGENT_EMAIL = "eric@happydetour.com";
 const TRAVELJOY_URL = "https://traveljoy.com/client/Ztoj6Q3kNsPmLyAvP8g3McsR/view_proposal/ZzNUGsV2RDsNCyEmfTwQqjw8";
 
 type Leg = {
@@ -380,34 +378,32 @@ export default function SusieAndSue() {
       <RegionSection region="corfu" />
       <RegionSection region="dublin" />
 
-      {/* FOOTER ONLY, no site header/nav on this page */}
-      <footer className="bg-[#1F2937] text-white/80 px-6 py-10">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-center md:text-left">
-            <p className="font-['Fraunces'] text-lg text-white">Happy Detour Travel</p>
-            <p className="text-sm text-white/50 mt-1">
-              Real trips. Real value. Someone actually in your corner.
-            </p>
-          </div>
-
-          {/* Contact dropdown pattern: text or email, no forms */}
-          <div className="flex gap-3">
-            <a
-              href={`sms:${AGENT_PHONE}`}
-              className="px-4 py-2 rounded-full border border-white/20 text-sm hover:bg-white/10 transition-colors"
-            >
-              Text Eric
-            </a>
-            <a
-              href={`mailto:${AGENT_EMAIL}`}
-              className="px-4 py-2 rounded-full border border-white/20 text-sm hover:bg-white/10 transition-colors"
-            >
-              Email Eric
-            </a>
-          </div>
-        </div>
-        <p className="text-center text-xs text-white/30 mt-8">
-          Happy Detour Travel, Northeast, Ohio
+      {/* FOOTER */}
+      <footer
+        style={{
+          position: 'relative',
+          zIndex: 2,
+          borderTop: '1px solid rgba(255,255,255,0.1)',
+          padding: '28px 24px 24px',
+          textAlign: 'center',
+          backgroundColor: '#1F2937',
+        }}
+      >
+        <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, marginBottom: 8 }}>
+          Real trips. Real value. Someone actually in your corner.
+          <span style={{ color: 'rgba(255,255,255,0.2)', margin: '0 8px' }}>·</span>
+          Alliance, OH
+          <span style={{ color: 'rgba(255,255,255,0.2)', margin: '0 8px' }}>·</span>
+          630-823-1253 (also on WhatsApp)
+          <span style={{ color: 'rgba(255,255,255,0.2)', margin: '0 8px' }}>·</span>
+          <a href="mailto:eric@happydetour.com" style={{ color: 'rgba(255,255,255,0.6)' }}>eric@happydetour.com</a>
+        </p>
+        <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.3)', lineHeight: 1.7, margin: 0 }}>
+          © 2026 Happy Detour Travel
+          <span style={{ margin: '0 6px' }}>·</span>
+          Affiliated with WorldVia Travel Network
+          <span style={{ margin: '0 6px' }}>·</span>
+          Page created July 28, 2026
         </p>
       </footer>
     </div>
