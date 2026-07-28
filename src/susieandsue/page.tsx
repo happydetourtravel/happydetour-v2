@@ -115,6 +115,7 @@ const legs: Leg[] = [
     hotel: "Staying with a friend",
     detail: "A last stop in the city before flying home",
     note: "Flight from Corfu self booked by Susie & Sue",
+    image: "/images/susieandsue/dublin.jpeg",
   },
 ];
 
