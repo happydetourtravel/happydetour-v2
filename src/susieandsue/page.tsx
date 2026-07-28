@@ -25,7 +25,7 @@ const DEPARTURE_DATE = new Date("2026-09-12T00:00:00");
 const RETURN_DATE = new Date("2026-09-25T23:59:59");
 const AGENT_PHONE = "6308231253";
 const AGENT_EMAIL = "eric@happydetour.com";
-const TRAVELJOY_URL = "https://www.traveljoy.com/"; // TODO: replace with Susie & Sue's exact TravelJoy trip link
+const TRAVELJOY_URL = "https://traveljoy.com/client/Ztoj6Q3kNsPmLyAvP8g3McsR/view_proposal/ZzNUGsV2RDsNCyEmfTwQqjw8";
 
 type Leg = {
   id: string;
