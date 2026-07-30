@@ -36,7 +36,7 @@ export default function CheriPage() {
   const totalSpend = dailySpend * nights
 
   // Package prices per person with 18% gratuity included
-  const deluxePerPersonPerDay = 83.99 * (1 + GRATUITY)
+  const deluxePerPersonPerDay = 89.99 * (1 + GRATUITY)
   const deluxePerPerson = deluxePerPersonPerDay * nights
   const deluxeForTwo = deluxePerPerson * 2  // both in cabin must buy
   const refreshPerPersonPerDay = 28.99 * (1 + GRATUITY)
@@ -123,7 +123,7 @@ export default function CheriPage() {
     },
     {
       q: "What about drink packages?",
-      a: "Drinks are not included in the fare but Royal Caribbean runs sales regularly. Eric will email the group whenever Royal drops a sale on drink packages so you can grab it at the best price. The Deluxe Beverage Package normally runs $120 per guest per day and has been on sale for as low as $83.99. The Refreshment Package normally runs $42 and has been on sale for $28.99. One important thing to know: everyone staying in the same cabin has to purchase the same drink package. You cannot have one person in the cabin get it and the other opt out. Use the drink calculator on this page to figure out if a package makes sense for you."
+      a: "Drinks are not included in the fare but Royal Caribbean runs sales regularly. Eric will email the group whenever Royal drops a sale on drink packages so you can grab it at the best price. The Deluxe Beverage Package normally runs $120 per guest per day and has been on sale for as low as $89.99. The Refreshment Package normally runs $42 and has been on sale for $28.99. One important thing to know: everyone staying in the same cabin has to purchase the same drink package. You cannot have one person in the cabin get it and the other opt out. Use the drink calculator on this page to figure out if a package makes sense for you."
     },
     {
       q: "How do I book and what are my payment options?",
