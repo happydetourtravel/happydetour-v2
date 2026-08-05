@@ -1841,6 +1841,78 @@ export const POSTS: Post[] = [
     <p>Eric<br/>Happy Detour Travel<br/>Real trips. Real value. Someone actually in your corner.<br/>happydetour.com | eric@happydetour.com | 747-333-8687</p>
   `,
 },
+  {
+    slug: 'guaranteed-cabins-vs-travel-agent',
+    title: "Why That \"Guaranteed Balcony\" Deal Might Not Be the Deal You Think It Is",
+    date: '2026-08-05',
+    tag: 'Cruise Tips',
+    image: '/blog/balconyrm.png',
+    excerpt: "If you have ever seen a balcony cabin priced a few hundred dollars cheaper and noticed the word guaranteed next to it, this is what that word actually means, and why it matters more than most people realize.",
+    content: `
+      <p>If you have ever been pricing out a cruise and stumbled across a balcony cabin that is a few hundred dollars cheaper than everything else on the page, you probably felt a little jolt of excitement. Then you noticed the word "guaranteed" sitting quietly next to the price, and maybe you were not totally sure what that meant. So let's talk about it, because it matters more than most people realize, and it can also open the door to a real conversation about why booking with a travel agent is worth more than people give it credit for.</p>
+
+      <img src="/blog/balconyrm.png" alt="A cruise balcony view compared to a deck plan showing question marks over unassigned guaranteed cabins" />
+      <p class="caption">This is exactly what a guaranteed cabin gamble looks like. You know the category. You do not know the room.</p>
+
+      <h2>What a Guaranteed Cabin Actually Is</h2>
+
+      <p>A guaranteed cabin, sometimes shown as GTY on your booking, means you are locking in a cabin category, like an inside, an oceanview, or a balcony, but you are not picking the exact room. You will not choose the deck, you will not choose the location on the ship, and you will not see a room number until the cruise line assigns one to you. Sometimes that assignment happens weeks before sailing. Sometimes it happens the week of. Sometimes it does not happen until you are literally standing at the pier checking in.</p>
+
+      <p>The cruise line offers these at a lower price because you are giving something up in exchange for that discount. You are giving up control. That is the whole trade. It is not a scam and it is not a trick. It is just important that you understand what you are actually buying before you hand over anywhere from a few hundred to a few thousand dollars.</p>
+
+      <h2>Why It Is Cheaper</h2>
+
+      <p>Think about it from the cruise line's side. They have leftover inventory in a category and they need to fill it. Rather than let those rooms sit empty, they offer a lower rate to guests who say "I do not care exactly where I end up, just get me in that category." The cruise line gets to slot you into whatever cabin is left over once everyone else has picked their spot. You get a lower price. It works out for both sides, as long as you go in with your eyes open.</p>
+
+      <h2>The Part Nobody Explains Well Enough</h2>
+
+      <p>Here is where I want to slow down, because this is the piece that trips people up. When you book a guaranteed cabin, you have no say in where your stateroom ends up. None. You could be paying anywhere from a few hundred dollars up to two or three thousand dollars for that cabin category, and you are essentially taking a gamble on the details that actually shape your experience onboard.</p>
+
+      <p>A few things that can go very differently depending on where you land:</p>
+
+      <p><strong>You could end up under the pool deck.</strong> That means you might hear deck chairs scraping, music from the pool bar, or early morning maintenance crews hosing things down while you are trying to sleep in.</p>
+
+      <p><strong>You could end up with an obstructed view.</strong> This is the big one people do not know to ask about. Certain balcony cabins sit directly above or below one of the ship's lifeboats. Those lifeboats hang off the side of the ship, and if your cabin lines up with one, your "ocean view balcony" is actually a balcony with a giant orange lifeboat blocking half your line of sight. You paid balcony money for a view that is partially a boat.</p>
+
+      <p><strong>You could end up near an elevator bank, the casino, or a late night lounge.</strong> Noise and foot traffic are real considerations that most people never think to check until they are already living with it for a week.</p>
+
+      <p><strong>You could end up somewhere with more motion.</strong> Cabins toward the front or back of the ship, or higher up, tend to feel more of the ship's rocking in rough seas. If you get seasick easily, this matters a lot.</p>
+
+      <p>None of this means guaranteed cabins are bad. If you are the type of traveler who genuinely does not care where your room is, a guaranteed cabin can be a smart way to save some money and put those savings toward excursions or a nicer dinner onboard. Some people have gotten guaranteed cabins and ended up quietly upgraded to a much nicer room than they paid for, because the cruise line needed to move guests around and had a better category to slot them into. It happens. It is just never something you can count on.</p>
+
+      <p>The real question is whether you are the kind of traveler who can shrug off a bad location, or the kind of traveler who will spend the whole week annoyed about it. Only you know the answer to that.</p>
+
+      <h2>Where a Travel Agent Actually Earns Their Keep</h2>
+
+      <p>This is the part I think gets lost in all of it. A lot of people assume booking direct with the cruise line is always going to be the cheapest and easiest path, and sometimes it genuinely is. I am not going to pretend otherwise. But there is more happening behind the scenes than most people realize, and this is where working with someone like me makes a real difference.</p>
+
+      <p><strong>I know the deck plans.</strong> When you book through me, I am not guessing at what "guaranteed balcony" might get you. I can look at the ship's layout and steer you away from the cabins that sit under the pool deck, next to the elevator, or directly beneath a lifeboat. If a guarantee is your best financial option, I can at least help you understand the range of what you might end up with, instead of you finding out for the first time when you board.</p>
+
+      <p><strong>I watch the price after you book.</strong> Cruise fares move around more than people expect. If the price on your sailing drops before your final payment date, that can sometimes be repriced to the lower fare, which either lowers your balance or gets applied as a credit, depending on the cruise line and the fare type. I keep an eye on that for you. Most people book once and never look again. I look again.</p>
+
+      <p><strong>I can sometimes find a rate the general public cannot see.</strong> Depending on the cruise line and the sailing, there are times a rate is available to travel agents that is not published anywhere on the consumer website.</p>
+
+      <p>I do want to be honest with you about the other side of this too, because I would rather you hear it from me than get surprised later.</p>
+
+      <h2>The Honest Tradeoffs</h2>
+
+      <p>Sometimes the cruise line's own website really does have the lowest price for a given sailing, especially during a flash sale. And repricing is not automatic or guaranteed. Cruise lines have been tightening their rules around this. Some fares are now marked "new bookings only," which means even if the price drops, an existing booking cannot always be moved to that lower rate. Royal Caribbean in particular has made this more restrictive over the past year.</p>
+
+      <p>There is also the deposit question, and this one matters. The lowest prices you see, whether through a guarantee or through a promotional rate, often come attached to a non refundable deposit. That means if your plans change and you need to cancel, that deposit money is gone. It is not a small thing. A refundable deposit costs a little more upfront, but it protects you if life gets in the way, and life has a way of getting in the way more often than we plan for.</p>
+
+      <p>So here is the real, honest version of all of this. There is no single answer that is right for everyone. It depends on how flexible you are with your cabin location, how firm your plans are, and how much peace of mind is worth to you compared to shaving a little off the price.</p>
+
+      <h2>What I Actually Do for You</h2>
+
+      <p>My job is not to sell you the cheapest thing I can find. My job is to lay all of this out for you the way I just did, help you understand what you are trading for what price, and then help you pick the option that actually fits how you travel. Sometimes that is a guaranteed cabin. Sometimes it is a specific room I know you will love. Sometimes it is waiting two weeks for a better rate to show up. Sometimes it is choosing a refundable deposit even though it costs a little more, because your plans are not fully locked in yet.</p>
+
+      <p>And I always bring up trip insurance, because a cancelled trip or a medical situation overseas can cost far more than the insurance itself, and most people do not realize their regular health insurance will not help them once they are outside the country or on a ship.</p>
+
+      <p>None of this is about pressure. It is about you knowing exactly what you are getting before you hand over your money, whether that is with me or on your own. If you want a second set of eyes on a guarantee you are considering, or you just want to talk through what fits your trip, reach out. That is what I am here for.</p>
+
+      <p>Eric<br/>Happy Detour Travel<br/>Real trips. Real value. Someone actually in your corner.<br/>happydetour.com | eric@happydetour.com | 630-823-1253</p>
+    `,
+  },
  ]
 
 export function getAllPosts(): Post[] {
