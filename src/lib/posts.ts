@@ -37,7 +37,7 @@ export const POSTS: Post[] = [
 
       <h2>What Fireman's Field Taught Me</h2>
 
-      <img src="/blog/firemans-field-fireworks.jpeg" alt="Fireworks over Fireman's Field with families gathered on blankets" />
+      <img src="/blog/firemans-field-fireworks.jpeg" alt="Fireworks over Fireman's Field with families gathered on blankets" loading="lazy" />
       <p class="caption">Fireman's Field, a few Fourth of Julys ago. This is the whole holiday in one photo.</p>
 
       <p>I keep coming back to that ball field in my mind. It was not a big stage. No fancy lighting, no professional show. Just a bunch of neighbors on a patch of grass, watching the sky light up together.</p>
@@ -105,7 +105,7 @@ export const POSTS: Post[] = [
 
       <p>No matter which cruise line you sail, your cabin is covered. So is your food in the main restaurant and buffet. Shows, live music, the pool, the gym, and most activities onboard are included too. You are not paying extra to watch the comedian or sit by the pool. That stuff is just part of being on the ship.</p>
 
-      <img src="/blog/cruise-dining-room.png" alt="Main dining room on a cruise ship" />
+      <img src="/blog/cruise-dining-room.png" alt="Main dining room on a cruise ship" loading="lazy" />
       <p class="caption">The main dining room is included every night. It is nicer than most restaurants you will eat at on land.</p>
 
       <p>Entertainment is included. Broadway style shows, comedy nights, live music in the atrium, trivia contests, game shows, movie nights under the stars. All of it comes with the ticket. On a Royal Caribbean ship you might watch a full production show with a cast of twenty in a theater that seats a thousand people. That is just Tuesday night on a cruise.</p>
@@ -118,7 +118,7 @@ export const POSTS: Post[] = [
 
       <p>Most lines offer drink packages and for a lot of people they are worth it. The key is buying the package before you sail. It is almost always cheaper at pre-purchase than it is once you board.</p>
 
-      <img src="/blog/cruise-bar-cocktails.png" alt="Cocktails at a cruise ship bar" />
+      <img src="/blog/cruise-bar-cocktails.png" alt="Cocktails at a cruise ship bar" loading="lazy" />
       <p class="caption">The drinks are good. They are also not included on most lines. Plan accordingly.</p>
 
       <p>Specialty restaurants are usually not included. Every ship has options beyond the main dining room. Italian restaurants, steakhouses, sushi bars, teppanyaki tables. These are separate experiences and they come with a cover charge, usually somewhere between thirty and sixty dollars per person.</p>
@@ -127,7 +127,7 @@ export const POSTS: Post[] = [
 
       <p>Shore excursions are not included. Getting off the ship in port is free. But if you want to do a snorkeling trip, a city tour, a zip line adventure, or a beach club day, those all cost extra. I always tell people to book excursions through the cruise line rather than independently. If your independently booked excursion runs long and you are not back at the ship on time, the ship leaves without you. When you book through the cruise line, if the excursion is late the ship waits.</p>
 
-      <img src="/blog/cruise-shore-excursion.png" alt="Shore excursion group exploring a port town" />
+      <img src="/blog/cruise-shore-excursion.png" alt="Shore excursion group exploring a port town" loading="lazy" />
       <p class="caption">Shore excursions are one of the best parts of cruising. Book them through the ship so you are always protected.</p>
 
       <p>WiFi is not included on most lines. Spa treatments are not included either. Massages, facials, thermal suites, salon services are all extra.</p>
@@ -136,7 +136,7 @@ export const POSTS: Post[] = [
 
       <p>On Virgin Voyages, every single restaurant on the ship is included. Not just the main dining room. Every restaurant. There are usually somewhere between twenty and twenty five dining options depending on the ship and every single one is included in your fare. No cover charges, no specialty restaurant fees.</p>
 
-      <img src="/blog/virgin-voyages-restaurant.png" alt="Virgin Voyages specialty restaurant with ocean view" />
+      <img src="/blog/virgin-voyages-restaurant.png" alt="Virgin Voyages specialty restaurant with ocean view" loading="lazy" />
       <p class="caption">Every restaurant on Virgin Voyages is included. This is not the buffet. This is just dinner on a Tuesday.</p>
 
       <p>WiFi is included on Virgin Voyages. Fitness classes are included. Soft drinks, juices, and drip coffee are included. What is not included is alcohol, gratuities, and shore excursions. But when you factor in everything that is included, the gap between Virgin Voyages and a traditional cruise line closes pretty fast.</p>
@@ -155,7 +155,7 @@ export const POSTS: Post[] = [
 
       <p>Your answers to those questions will tell you exactly what your cruise is going to cost. And if you work with me, I can help you think through all of it before anything is confirmed so you are not figuring it out for the first time at the bar on day two.</p>
 
-      <img src="/blog/cruise-balcony-sunset.png" alt="Balcony view of a cruise ship at sunset" />
+      <img src="/blog/cruise-balcony-sunset.png" alt="Balcony view of a cruise ship at sunset" loading="lazy" />
       <p class="caption">This moment right here. This one is included.</p>
 
       <p>Cruising is genuinely one of the best values in travel when you understand how it works. You are getting accommodation, food, entertainment, and transportation to multiple destinations in one price. The add-ons are real but so is the value underneath them.</p>
@@ -868,7 +868,7 @@ export const POSTS: Post[] = [
 
       <p>I found a base rate for an upcoming sailing on the MSC Seascape for 645 dollars. When you see a number like that for a ship of this caliber, you do not just scroll past it. I reached out to a close friend I work with and told her about the deal. I asked if she wanted to come along, and she did not hesitate. We got the trip booked immediately.</p>
 
-      <img src="/blog/msc-seascape-credit-reddit.webp" alt="MSC Seascape cruise ship" />
+      <img src="/blog/msc-seascape-credit-reddit.webp" alt="MSC Seascape cruise ship" loading="lazy" />
 
       <p>I have sailed with MSC three times already. I know the Armonia well and I have been on the Meraviglia twice. I know exactly what to expect from their service and their ships, but the Seascape is something I have been watching videos of for months. The atrium is stunning and the outdoor promenade looks like the perfect place to spend a sea day.</p>
 
@@ -876,7 +876,7 @@ export const POSTS: Post[] = [
 
       <h2>The "Sisters at Sea" Connection</h2>
 
-      <img src="/blog/sisteratsea-credit-vv.webp" alt="Sisters at Sea Virgin Voyages event" />
+      <img src="/blog/sisteratsea-credit-vv.webp" alt="Sisters at Sea Virgin Voyages event" loading="lazy" />
 
       <p>While we were getting the MSC trip sorted, something else happened that proved the "Lab" is actually working. I made a post on my Facebook about a "Sisters at Sea" concept with Virgin Voyages. I wanted to highlight the unique vibe that Virgin brings to the table: adults-only, high-end food, and a very modern approach to cruising.</p>
 
@@ -1189,7 +1189,7 @@ export const POSTS: Post[] = [
 
       <h2>The MSC Seascape, September 13 to 20, 2026</h2>
 
-      <img src="/blog/img_0211.webp" alt="Eric with friends on the MSC Meraviglia" />
+      <img src="/blog/img_0211.webp" alt="Eric with friends on the MSC Meraviglia" loading="lazy" />
 
       <p>This one is personal to me. I've sailed MSC three times. The Armonia and the Meraviglia twice. I know the brand. I know how their ships run. I know the things that surprised me the first time and the things I wish someone had told me before I went.</p>
 
@@ -1201,7 +1201,7 @@ export const POSTS: Post[] = [
 
       <h2>Carnival Horizon, October 2026, ABC Islands</h2>
 
-      <img src="/blog/img_212.webp" alt="Colorful waterfront buildings in Willemstad, Curacao" />
+      <img src="/blog/img_212.webp" alt="Colorful waterfront buildings in Willemstad, Curacao" loading="lazy" />
 
       <p>The ABC Islands are something special. Aruba, Bonaire, and Curacao sit just off the coast of Venezuela, which means they're outside the hurricane belt. The water is calm and clear. The beaches are white. The Dutch Caribbean architecture in Willemstad, Curacao is like nothing else in the Caribbean.</p>
 
@@ -1252,7 +1252,7 @@ export const POSTS: Post[] = [
 
       <p>On a cruise, you're living out of a small cabin for a week. You don't have a washer and dryer down the hall. And you're moving between different settings every day: the pool, the dining room, port stops, formal nights. The trick is packing light but smart. You want enough to feel comfortable, but not so much that you're playing suitcase Tetris the whole week.</p>
 
-      <img src="/blog/img_9467.webp" alt="Packed suitcase ready for a cruise" />
+      <img src="/blog/img_9467.webp" alt="Packed suitcase ready for a cruise" loading="lazy" />
 
       <h2>Packing Checklist for Men</h2>
 
@@ -1284,7 +1284,7 @@ export const POSTS: Post[] = [
 
       <p><strong>Extras:</strong> Hat, sunglasses if they'll wear them, a favorite small toy or comfort item, coloring books or activity books, a tablet with downloaded shows, headphones, portable charger, snacks for the room, and Ziploc bags.</p>
 
-      <img src="/blog/img_184.webp" alt="Cruise essentials including water bottle, sunglasses, and portable charger" />
+      <img src="/blog/img_184.webp" alt="Cruise essentials including water bottle, sunglasses, and portable charger" loading="lazy" />
 
       <h2>A Few Things Everyone Forgets</h2>
 
@@ -1310,7 +1310,7 @@ export const POSTS: Post[] = [
 
       <p>You can also skip formal night completely if it's not your thing. Just eat at the buffet that night. No one will judge you.</p>
 
-      <img src="/blog/img_884.webp" alt="Cruise ship balcony with ocean view" />
+      <img src="/blog/img_884.webp" alt="Cruise ship balcony with ocean view" loading="lazy" />
 
       <h2>A Quick Word on Laundry</h2>
 
@@ -1367,7 +1367,7 @@ export const POSTS: Post[] = [
 
       <h2>The Cruise I Wasn't Planning to Book</h2>
 
-      <img src="/blog/img_669-1.webp" alt="Alaska glacier with turquoise water" />
+      <img src="/blog/img_669-1.webp" alt="Alaska glacier with turquoise water" loading="lazy" />
 
       <p>Here's where the day took a turn.</p>
 
@@ -1401,7 +1401,7 @@ export const POSTS: Post[] = [
 
       <h2>Two Cruises on the Homepage</h2>
 
-      <img src="/blog/img_670.webp" alt="Happy Detour Travel homepage showing ABC Islands and Alaska cruise cards" />
+      <img src="/blog/img_670.webp" alt="Happy Detour Travel homepage showing ABC Islands and Alaska cruise cards" loading="lazy" />
 
       <p>Once the Alaska page was live I updated the group trips section on the main Happy Detour Travel homepage. Before today there was one cruise card. Now there are two cards side by side.</p>
 
@@ -1411,7 +1411,7 @@ export const POSTS: Post[] = [
 
       <h2>A Video Ad That's Good Enough to Run</h2>
 
-      <img src="/blog/img_668.webp" alt="Happy Detour Travel ABC Islands landing page on laptop" />
+      <img src="/blog/img_668.webp" alt="Happy Detour Travel ABC Islands landing page on laptop" loading="lazy" />
 
       <p>Somewhere in the middle of all of this I also edited a video ad for the Carnival ABC Islands cruise. I used CapCut. Free software. Free stock footage of a cruise ship sailing on blue water. Text overlays that fade in one line at a time. Three Islands. One Perfect Trip. Aruba. Bonaire. Curacao. Affordable Fun for Everyone. Sailing Miami, October 2026.</p>
 
@@ -1472,7 +1472,7 @@ export const POSTS: Post[] = [
 
       <h2>Six Flyers for One Cruise</h2>
 
-      <img src="/blog/carnival-flyer-2.webp" alt="ABC Islands Caribbean Cruise flyer showing Aruba, Bonaire, and Curacao" />
+      <img src="/blog/carnival-flyer-2.webp" alt="ABC Islands Caribbean Cruise flyer showing Aruba, Bonaire, and Curacao" loading="lazy" />
 
       <p>I needed social media content that didn't repeat the same message over and over. So I built six completely different flyers for the Carnival ABC Islands cruise. Each one has a completely different look and feel.</p>
 
@@ -1498,7 +1498,7 @@ export const POSTS: Post[] = [
 
       <h2>A Real Link in Bio</h2>
 
-      <img src="/blog/79273.webp" alt="Happy Detour Travel Direct.me link in bio page on mobile" />
+      <img src="/blog/79273.webp" alt="Happy Detour Travel Direct.me link in bio page on mobile" loading="lazy" />
 
       <p>One thing that was missing from my social profiles was a proper link in bio page. Instagram only allows one link and I now have multiple destinations. So I set up a Direct.me page at direct.me/happydetourtravel.</p>
 
@@ -1672,14 +1672,14 @@ export const POSTS: Post[] = [
 
       <p>My flight from Pittsburgh to JFK was supposed to leave at 6am. That is an early flight, but it was an intentional one. I planned it that way because I like getting to a port city with plenty of daylight left. Well, the airport had other plans for me today.</p>
 
-      <img src="/blog/flight-delay-board-1.jpeg" alt="Flight board showing PIT to JFK delayed to a 12:43pm departure" />
+      <img src="/blog/flight-delay-board-1.jpeg" alt="Flight board showing PIT to JFK delayed to a 12:43pm departure" loading="lazy" />
       <p class="caption">First delay of the day. Scheduled 6am departure, pushed to 12:43pm, landing 2:12pm.</p>
 
       <p>That first delay alone pushed my morning flight back almost seven hours. If this had been the only delay of the day, I would have shrugged it off, grabbed a coffee, and settled in at the gate. But airports rarely stop at one surprise.</p>
 
       <p>A little while later, the board changed again.</p>
 
-      <img src="/blog/flight-delay-board-2.jpeg" alt="Flight board showing PIT to JFK now departing 1:30pm" />
+      <img src="/blog/flight-delay-board-2.jpeg" alt="Flight board showing PIT to JFK now departing 1:30pm" loading="lazy" />
       <p class="caption">Second delay. Now departing 1:30pm and landing 2:59pm.</p>
 
       <p>So here I am. Two delays deep, watching gate B13 like it owes me money.</p>
@@ -1748,7 +1748,7 @@ export const POSTS: Post[] = [
     <p>It was Cheri. She had seen one of my videos and reached out on Facebook. She said she had two group trips she wanted help planning and asked if we could chat. Simple enough. I texted her back, she texted me back, and just like that we were talking.</p>
     <p>She told me she was turning 60 in 2027 and wanted to do something really special. Not just a dinner out. Not a party at someone's house. She wanted to take the people she loves most somewhere that actually matched the size of the moment.</p>
     <p>She wanted a cruise. She wanted the Mediterranean. She wanted it to feel like the trip of a lifetime.</p>
-    <img src="/blog/cheri-eric.jpg" alt="Cheri smiling with a loved one" />
+    <img src="/blog/cheri-eric.jpg" alt="Cheri smiling with a loved one" loading="lazy" />
     <p class="caption">Cheri. It took about a minute in person to understand why everyone in her life shows up for her the way they do.</p>
     <p>I met Cheri in person for the first time back in February. And I'm not kidding when I say it took me less than a minute to understand exactly why everyone in her life shows up for her the way they do. She walks into a room and the energy changes. She's warm and real and the kind of person who makes you feel like you've known her for years even when you just met.</p>
     <p>I knew immediately that the trip had to match her. Not just be a nice cruise. It had to be the right cruise.</p>
@@ -1851,7 +1851,7 @@ export const POSTS: Post[] = [
     content: `
       <p>If you have ever been pricing out a cruise and stumbled across a balcony cabin that is a few hundred dollars cheaper than everything else on the page, you probably felt a little jolt of excitement. Then you noticed the word "guaranteed" sitting quietly next to the price, and maybe you were not totally sure what that meant. So let's talk about it, because it matters more than most people realize, and it can also open the door to a real conversation about why booking with a travel agent is worth more than people give it credit for.</p>
 
-      <img src="/blog/balconyrm.png" alt="A cruise balcony view compared to a deck plan showing question marks over unassigned guaranteed cabins" />
+      <img src="/blog/balconyrm.png" alt="A cruise balcony view compared to a deck plan showing question marks over unassigned guaranteed cabins" loading="lazy" />
       <p class="caption">This is exactly what a guaranteed cabin gamble looks like. You know the category. You do not know the room.</p>
 
       <h2>What a Guaranteed Cabin Actually Is</h2>
