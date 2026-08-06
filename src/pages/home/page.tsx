@@ -182,7 +182,7 @@ export default function Home() {
                 </div>
               </div>
 
-       <div style={{ display: 'flex', gap: '20px', marginTop: '24px' }}>
+      <div style={{ display: 'flex', gap: '20px', marginTop: '24px' }}>
   <a href="sms:6308231253" style={{ color: '#F59E0B', fontWeight: '600', fontSize: '14px', textDecoration: 'none' }}>
     Text Eric
   </a>
@@ -190,8 +190,6 @@ export default function Home() {
     Email Eric
   </a>
 </div>
-                )}
-              </div>
             </div>
           </div>
         </div>
