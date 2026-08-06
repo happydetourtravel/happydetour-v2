@@ -417,7 +417,6 @@ export default function Home() {
 </div>
           </div>
         </div>
-      </div>
 
       {/* Testimonials */}
       <div style={{ backgroundColor: '#F9FAFB', padding: '60px 20px' }}>
