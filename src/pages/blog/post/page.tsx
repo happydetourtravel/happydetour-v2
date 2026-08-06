@@ -15,6 +15,7 @@ export default function BlogPost() {
   const commentsRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     if (!commentsRef.current || !post) return
     commentsRef.current.innerHTML = ''
     const script = document.createElement('script')
