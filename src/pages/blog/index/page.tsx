@@ -1,6 +1,7 @@
 // src/pages/blog/index/page.tsx
 
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 import { getAllPosts } from '../../../lib/posts'
 
 function formatDate(dateStr: string) {
@@ -11,6 +12,10 @@ function formatDate(dateStr: string) {
 const posts = getAllPosts()
 
 export default function BlogIndex() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <main style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', padding: '64px 24px', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       <div style={{ maxWidth: '760px', margin: '0 auto' }}>
