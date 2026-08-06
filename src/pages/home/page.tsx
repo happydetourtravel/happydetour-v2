@@ -390,8 +390,7 @@ export default function Home() {
               <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                 <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>🚢 Royal Caribbean</span>
                 <span style={{ backgroundColor: '#FEF3C7', color: '#92400E', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>⏰ Deposit Due October 12</span>
-                <span style={{ backgroundColor: '#FEE2E2', color: '#991B1B', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>🔥 Filling Up, Limited Rooms Left</span>
-              </div>
+                </div>
             </div>
             <div style={{ backgroundColor: '#F9FAFB', padding: '20px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', minWidth: '210px', flexShrink: 0, borderTop: '1px solid #F3F4F6' }} className="group-card-pricing">
               <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: 0 }}>Interior cabins as low as</p>
