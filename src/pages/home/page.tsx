@@ -56,7 +56,6 @@ const virginFaqs = [
 
 export default function Home() {
   const [dealIndex, setDealIndex] = useState(0)
-  const [ericDropdownOpen, setEricDropdownOpen] = useState(false)
   const deal = featuredDeals[dealIndex]
 
   useEffect(() => {
