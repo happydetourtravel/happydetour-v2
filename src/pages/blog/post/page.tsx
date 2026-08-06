@@ -1,6 +1,7 @@
 // src/pages/blog/post/page.tsx
 
 import { useParams, Link } from 'react-router-dom'
+import { useEffect, useRef } from 'react'
 import { getPost } from '../../../lib/posts'
 
 function formatDate(dateStr: string) {
@@ -11,6 +12,28 @@ function formatDate(dateStr: string) {
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>()
   const post = getPost(slug || '')
+  const commentsRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!commentsRef.current || !post) return
+    commentsRef.current.innerHTML = ''
+    const script = document.createElement('script')
+    script.src = 'https://giscus.app/client.js'
+    script.setAttribute('data-repo', 'happydetourtravel/happydetour-v2')
+    script.setAttribute('data-repo-id', 'R_kgDOS_39QQ')
+    script.setAttribute('data-category', 'Announcements')
+    script.setAttribute('data-category-id', 'DIC_kwDOS_39Qc4DCwmj')
+    script.setAttribute('data-mapping', 'pathname')
+    script.setAttribute('data-strict', '0')
+    script.setAttribute('data-reactions-enabled', '1')
+    script.setAttribute('data-emit-metadata', '0')
+    script.setAttribute('data-input-position', 'bottom')
+    script.setAttribute('data-theme', 'light')
+    script.setAttribute('data-lang', 'en')
+    script.setAttribute('crossorigin', 'anonymous')
+    script.async = true
+    commentsRef.current.appendChild(script)
+  }, [slug])
 
   if (!post) {
     return (
@@ -77,6 +100,8 @@ export default function BlogPost() {
             Start Planning My Trip
           </a>
         </div>
+
+        <div ref={commentsRef} style={{ marginTop: '48px' }} />
 
         <div style={{ marginTop: '32px', textAlign: 'center' }}>
           <Link to="/blog" style={{ color: '#6B7280', fontSize: '14px', textDecoration: 'none' }}>
