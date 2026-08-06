@@ -116,8 +116,9 @@ export default function Home() {
                   </div>
                 </div>
                 <a href={deal.link} aria-label={`Get this deal: ${deal.title}`} style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>Get This Deal</a>
-                <p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: '10px 0 0 0', lineHeight: '1.5' }}>Prices are estimates. Contact Eric for current availability.</p>
-                <p style={{ color: '#D1D5DB', fontSize: '10px', textAlign: 'center', margin: '4px 0 0 0' }}>Updated June 2026</p>
+<a href="sms:6308231253" style={{ display: 'block', textAlign: 'center', color: '#6B7280', fontSize: '12px', fontWeight: '600', textDecoration: 'none', margin: '10px 0 0 0' }}>Prefer help? Text Eric →</a>
+<p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: '8px 0 0 0', lineHeight: '1.5' }}>Prices are estimates. Contact Eric for current availability.</p>
+<p style={{ color: '#D1D5DB', fontSize: '10px', textAlign: 'center', margin: '4px 0 0 0' }}>Updated August 2026</p>
               </div>
               <div style={{ padding: '12px 20px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', borderTop: '1px solid #F3F4F6' }}>
                 {featuredDeals.map((_, i) => (
