@@ -46,6 +46,14 @@ const virginPoints = [
   { label: "No planning fee", desc: "Book direct, Eric still looks after everything" },
 ]
 
+// Quick Virgin Voyages FAQ, shown right inside the Virgin section
+const virginFaqs = [
+  { q: "Is there a planning fee to book Virgin Voyages through you?", a: "No. Virgin Voyages bookings go through my direct affiliate link, so there is no planning fee. I still handle the details, you just do not pay extra for it." },
+  { q: "What is actually included in the fare?", a: "All restaurants onboard, unlimited WiFi, group fitness classes, and sodas and sparkling water. No buffets and no upcharge dining like you find on most other lines." },
+  { q: "What is Bar Tab or Sailor Loot credit?", a: "It is a bonus some sailings offer when you book a Sea Terrace cabin or higher through a travel advisor instead of going direct. Ask me if your sailing qualifies." },
+  { q: "Who is Virgin Voyages a good fit for?", a: "Couples, friend groups, and solo sailors who want a more upscale, relaxed vibe. Everyone onboard is 18 and up." },
+]
+
 export default function Home() {
   const [dealIndex, setDealIndex] = useState(0)
   const [ericDropdownOpen, setEricDropdownOpen] = useState(false)
@@ -260,6 +268,20 @@ export default function Home() {
             </div>
 
           </div>
+
+          {/* Quick Virgin Voyages FAQ */}
+          <div style={{ marginTop: '48px' }}>
+            <p style={{ color: '#F59E0B', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', margin: '0 0 16px 0' }}>Quick Questions</p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '14px' }}>
+              {virginFaqs.map((f) => (
+                <div key={f.q} style={{ backgroundColor: 'rgba(255,255,255,0.08)', borderRadius: '10px', padding: '16px 18px' }}>
+                  <p style={{ color: 'white', fontWeight: '700', fontSize: '13px', margin: '0 0 6px 0' }}>{f.q}</p>
+                  <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '13px', margin: 0, lineHeight: '1.6' }}>{f.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
 
