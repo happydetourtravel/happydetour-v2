@@ -24,21 +24,24 @@ export default function About() {
             <div className="md:col-span-2 space-y-5">
               <p className="text-xs font-bold tracking-widest uppercase text-brand-amber">My Story</p>
               <h2 className="text-3xl font-extrabold text-brand-blue tracking-tight leading-snug">
-                Hi, I am Eric. I am here to make travel simple.
+                Hi, I'm Eric.
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                For as long as I can remember, definitely since at least 2017, I have been that guy in the group chat. I was the one finding the weirdly good flight deals, obsessing over cruise deck plans, and basically acting as an unpaid travel advisor for my friends and family just for the fun of it. I did not do it for the thanks. I did it because I genuinely love the puzzle of a perfect itinerary.
+                I have been the guy in the group chat since 2017. The one who finds the weird good flight deals. The one who knows which cruise cabin to avoid and which one is worth the extra hundred bucks. I never got paid for it. I just liked doing it.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Eventually, the hints from everyone I knew became too loud to ignore: Eric, you are already doing the work. You should actually do this for real.
+                Eventually enough people told me the same thing. You are already doing this for free. Why not actually do it?
               </p>
               <p className="text-gray-700 leading-relaxed">
-                So, I listened. Happy Detour Travel started as a late night idea in late 2025 and officially came to life in March of 2026. I will be the first to tell you that I am still building this dream. There is a learning curve, and some days I am leaning on a lot of Dunkin iced coffee, a few Coke Zeros, and a healthy dose of determination to figure out the technical side of things from my home base in Ohio. But I am working through it every single day to build a travel brand that is vibrant, fun, and something I am proud of.
+                So in March of 2026, I did.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                I am not going to pretend I have it all figured out. I am still learning the business side of things some nights, fueled by more Dunkin than I probably need. But I know travel. I know what makes a trip actually good instead of just fine. And when you work with me, you are not getting a form. You are getting a person who picks up the phone.
               </p>
               
               {/* Pull Quote */}
               <div className="bg-brand-blue text-white rounded-2xl p-8 my-8 relative shadow-md">
-                <span className="absolute -top-3 left-5 text-7xl text-brand-amber/40 font-serif select-none">“</span>
+                <span className="absolute -top-3 left-5 text-7xl text-brand-amber/40 font-serif select-none">"</span>
                 <p className="text-lg font-semibold italic pl-4 mb-2 relative z-10">
                   Sometimes the best journeys begin with a Happy Detour.
                 </p>
@@ -65,10 +68,10 @@ export default function About() {
           <p className="text-xs font-bold tracking-widest uppercase text-brand-amber">Where I have Been</p>
           <h2 className="text-3xl font-extrabold text-brand-blue tracking-tight">A Cruiser at Heart</h2>
           <p className="text-gray-700 leading-relaxed">
-            I believe the world is far too big to stay in one spot. You only live once and most of us do not see nearly enough of what is out there. I am a cruiser at heart. I love that the biggest decision of the day is which pool deck to lounge on. But I have also spent time navigating London and getting lost in the absolute bliss of Caribbean resorts where everything is included. One trip is never enough. There is always more to see.
+            The world is too big to stay in one spot. That is just how I see it. My favorite decision of the day is which pool deck to post up on, but I have also gotten completely lost in London and melted into a lounge chair at an all-inclusive where nothing costs extra. One trip is never enough. There is always somewhere else calling.
           </p>
           <p className="text-gray-700 leading-relaxed">
-            Right now, I am deep in the weeds researching a safari in Tanzania. It is a major bucket list item, and I am going to make it happen soon.
+            Right now, I am deep in research mode on a Tanzania safari. It has been on my list for a while, and I am not letting it stay a someday thing much longer.
           </p>
           
           <div className="flex flex-wrap gap-2.5 pt-4">
@@ -88,12 +91,12 @@ export default function About() {
           <h2 className="text-3xl font-extrabold text-brand-blue tracking-tight">Travel planning is a conversation, not a transaction.</h2>
           <div className="bg-sky-50 border border-sky-200 rounded-2xl p-8 space-y-4 shadow-sm">
             <p className="text-sky-900 leading-relaxed">
-              I am not a magician, and I am probably not going to hit the perfect trip on the very first try. But that is okay. That is not how good travel planning works anyway.
+              I am not going to pretend I nail the perfect trip on the first try every time. Honestly, that is not how good travel planning works anyway.
             </p>
             <p className="text-sky-900 leading-relaxed">
-              You will still be doing the fun research, scoping out excursions and dreaming about the views, while I handle the tedious parts. Think of me as your filter. You tell me what you are looking for, and I do the deep dive research, check the logistics, and navigate the bookings. We will go back and forth until the itinerary feels exactly right.
+              You do the fun part. Dreaming about the views, scoping out what excursions look cool. I do the tedious part. Digging through the details, checking logistics, handling the bookings. Think of me as your filter. You tell me what you are picturing, and I go find it, or something even better.
             </p>
-            <p className="font-bold text-brand-blue pt-2">No pressure. No sales tactics. Just honest teamwork.</p>
+            <p className="font-bold text-brand-blue pt-2">We go back and forth until it feels right. No pressure, no sales pitch. Just two people figuring out a good trip together.</p>
           </div>
         </div>
       </section>
@@ -113,9 +116,8 @@ export default function About() {
               <div className="w-10 h-10 bg-sky-100 rounded-lg flex items-center justify-center mb-4 text-brand-blue">
                 <svg className="w-5 h-5 stroke-current fill-none stroke-2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
               </div>
-              <span className="text-[10px] font-bold tracking-wider text-brand-blue uppercase block mb-1">Experience</span>
-              <h4 className="text-base font-bold text-gray-900 mb-2">I Have Been There</h4>
-              <p className="text-xs text-gray-500 leading-relaxed">Scouting Caribbean resorts, navigating London, and planning cruise decks since 2017.</p>
+              <h4 className="text-base font-bold text-gray-900 mb-2">I've actually done it</h4>
+              <p className="text-xs text-gray-500 leading-relaxed">I have been planning trips like this since 2017, first for friends, now for a living. I know what makes a cruise cabin worth the upgrade and what an all inclusive resort brochure leaves out.</p>
             </div>
 
             {/* Card 2 */}
@@ -123,9 +125,8 @@ export default function About() {
               <div className="w-10 h-10 bg-sky-100 rounded-lg flex items-center justify-center mb-4 text-brand-blue">
                 <svg className="w-5 h-5 stroke-current fill-none stroke-2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
               </div>
-              <span className="text-[10px] font-bold tracking-wider text-brand-blue uppercase block mb-1">Expertise</span>
-              <h4 className="text-base font-bold text-gray-900 mb-2">I Do the Homework</h4>
-              <p className="text-xs text-gray-500 leading-relaxed">Proud member of the WorldVia Travel Network, staying current on deals and destinations.</p>
+              <h4 className="text-base font-bold text-gray-900 mb-2">I do the digging</h4>
+              <p className="text-xs text-gray-500 leading-relaxed">I am part of the WorldVia Travel Network, which keeps me plugged into the deals and details most people never see. I stay on top of it so you do not have to dig through fifty tabs.</p>
             </div>
 
             {/* Card 3 */}
@@ -133,9 +134,8 @@ export default function About() {
               <div className="w-10 h-10 bg-sky-100 rounded-lg flex items-center justify-center mb-4 text-brand-blue">
                 <svg className="w-5 h-5 stroke-current fill-none stroke-2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               </div>
-              <span className="text-[10px] font-bold tracking-wider text-brand-blue uppercase block mb-1">Authoritativeness</span>
-              <h4 className="text-base font-bold text-gray-900 mb-2">Your Personal Filter</h4>
-              <p className="text-xs text-gray-500 leading-relaxed">I cut through 50 open tabs and sponsored reviews to give you the straight facts.</p>
+              <h4 className="text-base font-bold text-gray-900 mb-2">I cut through the noise</h4>
+              <p className="text-xs text-gray-500 leading-relaxed">Everyone online is trying to sell you something. I am not. I go through the sponsored reviews and the fine print so you get the real answer, not the one somebody paid to have you see.</p>
             </div>
 
             {/* Card 4 */}
@@ -143,9 +143,8 @@ export default function About() {
               <div className="w-10 h-10 bg-sky-100 rounded-lg flex items-center justify-center mb-4 text-brand-blue">
                 <svg className="w-5 h-5 stroke-current fill-none stroke-2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
               </div>
-              <span className="text-[10px] font-bold tracking-wider text-brand-blue uppercase block mb-1">Trustworthiness</span>
-              <h4 className="text-base font-bold text-gray-900 mb-2">Transparent & Honest</h4>
-              <p className="text-xs text-gray-500 leading-relaxed">Commission-backed by providers. Custom planning options available. We talk numbers up front.</p>
+              <h4 className="text-base font-bold text-gray-900 mb-2">Straight answers, no games</h4>
+              <p className="text-xs text-gray-500 leading-relaxed">I will tell you the real cost, the real tradeoffs, and the real timeline before you book anything. If a trip is not the right fit, I will tell you that too.</p>
             </div>
 
           </div>
@@ -182,9 +181,9 @@ export default function About() {
 
       {/* CTA Bottom Banner */}
       <section className="bg-brand-blue relative overflow-hidden text-center py-20 px-6 text-white bg-[radial-gradient(ellipse_at_30%_50%,rgba(255,255,255,0.05)_0%,transparent_60%)]">
-        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-3">Ready to go somewhere amazing?</h2>
+        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-3">Ready to figure out where you're headed?</h2>
         <p className="text-sky-100/80 max-w-sm mx-auto mb-8 text-sm">
-          Let us figure out where that is. No pressure, no commitment. Just a real conversation about your next trip.
+          No pressure, no commitment. Just tell me what you are picturing and let us see where it takes us.
         </p>
         <a 
           href="https://forgehq.app/f/?s=yozjm6l0" 
