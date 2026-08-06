@@ -407,38 +407,14 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Card 4 — Carnival Halloween — BOOKED / SOLD OUT, pushed to the bottom */}
-          <div style={{ position: 'relative', backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
-            <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(20,20,20,0.55)', zIndex: 5, display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-              <div style={{ backgroundColor: '#A32D2D', color: '#FCEBEB', fontSize: '22px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', padding: '10px 48px', transform: 'rotate(-6deg)', boxShadow: '0 0 0 2px #791F1F' }}>Booked</div>
-            </div>
-            <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden' }} className="group-card-image">
-              <img src="/carnivalmagic.jpeg" alt="Carnival Magic cruise ship" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-              <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#007298', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '4px' }}>🧑‍✈️ Group Rate</span>
-            </div>
-            <div style={{ flex: 1, padding: '20px 24px' }}>
-              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '0 0 6px 0' }}>Eastern Caribbean</p>
-              <h3 style={{ color: '#1F2937', fontSize: '19px', fontWeight: '700', margin: '0 0 5px 0', lineHeight: '1.3' }}>Halloween Eastern Caribbean Cruise</h3>
-              <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 10px 0' }}>October 31, 2026 &middot; 8 nights &middot; Carnival Magic</p>
-              <p style={{ color: '#007298', fontSize: '13px', margin: '0 0 10px 0', lineHeight: '1.7' }}>Miami, FL &rarr; Half Moon Cay &rarr; San Juan &rarr; St. Maarten &rarr; St. Thomas &rarr; Miami, FL</p>
-              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>🎉 Fun Ship</span>
-                <span style={{ backgroundColor: '#FEF3C7', color: '#92400E', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>⏰ Deposit Due July 5</span>
-              </div>
-            </div>
-            <div style={{ backgroundColor: '#F9FAFB', padding: '20px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', minWidth: '210px', flexShrink: 0, borderTop: '1px solid #F3F4F6' }} className="group-card-pricing">
-              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: 0 }}>Interior cabins as low as</p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ Group rate locked in</p>
-                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ Limited cabins available</p>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-                <span style={{ color: '#9CA3AF', fontSize: '13px', textDecoration: 'line-through' }}>$768</span>
-                <span style={{ color: '#1F2937', fontSize: '26px', fontWeight: '800' }}>$643</span>
-                <span style={{ color: '#6B7280', fontSize: '12px' }}>/person</span>
-              </div>
-              <div style={{ display: 'block', textAlign: 'center', backgroundColor: '#E5E7EB', color: '#9CA3AF', padding: '11px 16px', borderRadius: '8px', fontWeight: '700', fontSize: '14px' }}>Sold Out</div>
-            </div>
+{/* Card 4 — Carnival Halloween — SOLD OUT, compact row */}
+<div style={{ maxWidth: '900px', margin: '0 auto', backgroundColor: '#F9FAFB', borderRadius: '12px', border: '1px solid #E5E7EB', padding: '14px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap' }}>
+  <div>
+    <p style={{ color: '#1F2937', fontWeight: '600', fontSize: '14px', margin: '0 0 2px 0' }}>Halloween Eastern Caribbean Cruise</p>
+    <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>October 31, 2026 &middot; 8 nights &middot; Carnival Magic</p>
+  </div>
+  <span style={{ backgroundColor: '#E5E7EB', color: '#6B7280', fontSize: '12px', fontWeight: '600', padding: '5px 14px', borderRadius: '100px', whiteSpace: 'nowrap' }}>Sold out</span>
+</div>
           </div>
         </div>
       </div>
