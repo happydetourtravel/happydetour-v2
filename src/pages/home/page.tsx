@@ -194,7 +194,7 @@ export default function Home() {
                 {ericDropdownOpen && (
                   <div style={{ position: 'absolute', top: 'calc(100% + 6px)', left: 0, backgroundColor: 'white', borderRadius: '10px', boxShadow: '0 4px 24px rgba(0,0,0,0.12)', border: '1px solid #F3F4F6', minWidth: '200px', zIndex: 100, overflow: 'hidden' }}>
                     <a
-                      href="sms:7473338687"
+                      href="sms:6308231253"
                       style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 16px', fontSize: '14px', color: '#1F2937', textDecoration: 'none', fontWeight: '600', borderBottom: '1px solid #F3F4F6' }}
                     >
                       📱 Text Eric
@@ -245,7 +245,7 @@ export default function Home() {
                   Search &amp; Book Virgin Voyages
                 </a>
                 <a
-                  href="sms:7473338687"
+                  href="sms:6308231253"
                   style={{ backgroundColor: 'transparent', color: 'white', textAlign: 'center', padding: '13px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px', border: '1px solid rgba(255,255,255,0.4)' }}
                 >
                   Reach Out With Questions
