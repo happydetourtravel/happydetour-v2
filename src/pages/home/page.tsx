@@ -399,9 +399,8 @@ export default function Home() {
                 <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ Limited cabins available</p>
               </div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-                <span style={{ color: '#9CA3AF', fontSize: '13px', textDecoration: 'line-through' }}>$529</span>
-                <span style={{ color: '#1F2937', fontSize: '26px', fontWeight: '800' }}>$410</span>
-                <span style={{ color: '#6B7280', fontSize: '12px' }}>/person</span>
+              <span style={{ color: '#1F2937', fontSize: '26px', fontWeight: '800' }}>$410</span>
+              <span style={{ color: '#6B7280', fontSize: '12px' }}>/person</span>
               </div>
               <a href="https://www.happydetour.com/group/allure-eastern-caribbean-2027" style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>View Details &rarr;</a>
             </div>
