@@ -324,8 +324,7 @@ export default function Home() {
   </div>
   <span style={{ backgroundColor: '#E5E7EB', color: '#6B7280', fontSize: '12px', fontWeight: '600', padding: '5px 14px', borderRadius: '100px', whiteSpace: 'nowrap' }}>Sold out</span>
 </div>
-          </div>
-
+          
           {/* Card 2 — Virgin Voyages Mexican Riviera Halloween (Oct 2027) */}
           <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto 16px auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
             <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden' }} className="group-card-image">
