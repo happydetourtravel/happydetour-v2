@@ -59,7 +59,7 @@ export default function Header() {
               {dropdownOpen && (
                 <div style={{ position: 'absolute', top: 'calc(100% + 6px)', right: 0, backgroundColor: 'white', borderRadius: '10px', boxShadow: '0 4px 24px rgba(0,0,0,0.12)', border: '1px solid #F3F4F6', minWidth: '240px', zIndex: 100, overflow: 'hidden' }}>
                   <a
-                    href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/RFxrKCNQTejSeWAhpo4BaaEz/link"
+                    href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/6E9JQLQfrQfUvS85KcGhiHE1/link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:bg-gray-50 transition-colors"
@@ -67,6 +67,13 @@ export default function Header() {
                   >
                     🗺️ Drop Your Trip Wishlist
                   </a>
+                  <Link
+                    to="/solo"
+                    className="hover:bg-gray-50 transition-colors"
+                    style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 16px', fontSize: '14px', color: '#1F2937', textDecoration: 'none', fontWeight: '600', borderBottom: '1px solid #F3F4F6' }}
+                  >
+                    🧳 Solo Sailor Deals
+                  </Link>
                   <a
                     href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK"
                     target="_blank"
@@ -84,7 +91,7 @@ export default function Header() {
           {/* Mobile: Start Packing + Hamburger */}
           <div className="flex md:hidden items-center gap-3">
             <a
-              href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/RFxrKCNQTejSeWAhpo4BaaEz/link"
+              href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/6E9JQLQfrQfUvS85KcGhiHE1/link"
               target="_blank"
               rel="noopener noreferrer"
               style={{ backgroundColor: '#F59E0B', color: 'white', padding: '8px 14px', borderRadius: '8px', fontWeight: '700', fontSize: '13px', textDecoration: 'none' }}
@@ -143,6 +150,13 @@ export default function Header() {
             >
               Join the List
             </button>
+            <Link
+              to="/solo"
+              onClick={() => setMenuOpen(false)}
+              style={{ display: 'block', padding: '12px 8px', fontSize: '15px', fontWeight: '500', color: '#1F2937', textDecoration: 'none', borderBottom: '1px solid #F9FAFB' }}
+            >
+              🧳 Solo Sailor Deals
+            </Link>
             <a
               href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK"
               target="_blank"
