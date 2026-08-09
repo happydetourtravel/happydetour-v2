@@ -67,6 +67,7 @@ export const routes: RouteRecord[] = [
       { path: 'cruises/miami-morocco-transatlantic', entry: 'src/pages/cruises/miami-morocco-transatlantic/page.tsx', lazy: () => import('./pages/cruises/miami-morocco-transatlantic/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/alaska-hubbard-glacier', entry: 'src/pages/cruises/alaska-hubbard-glacier/page.tsx', lazy: () => import('./pages/cruises/alaska-hubbard-glacier/page').then((m) => ({ Component: m.default })) },
       { path: 'solo/scarlet-italy-french-riviera-0822', entry: 'src/pages/solo/scarlet-italy-french-riviera-0822/page.tsx', lazy: () => import('./pages/solo/scarlet-italy-french-riviera-0822/page').then((m) => ({ Component: m.default })) },
+      { path: 'solo/scarlet-mediterranean-rome-athens-0831', entry: 'src/pages/solo/scarlet-mediterranean-rome-athens-0831/page.tsx', lazy: () => import('./pages/solo/scarlet-mediterranean-rome-athens-0831/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/virgin-voyages', entry: 'src/pages/cruiselines/virgin/virginhome/page.tsx', lazy: () => import('./pages/cruiselines/virgin/virginhome/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/norwegian', entry: 'src/pages/cruiselines/ncl/nclhome/page.tsx', lazy: () => import('./pages/cruiselines/ncl/nclhome/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/msc', entry: 'src/pages/cruiselines/msc/mschome/page.tsx', lazy: () => import('./pages/cruiselines/msc/mschome/page').then((m) => ({ Component: m.default })) },
