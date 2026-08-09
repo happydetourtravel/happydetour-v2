@@ -8,6 +8,13 @@ const featuredDeals = [
   { tag: "VIRGIN VOYAGES", title: "Alaska: Hubbard Glacier & Coastal Views", date: "Aug 2027", nights: "9 nights", ship: "Brilliant Lady · Seattle", originalPrice: "$1,597", salePrice: "$1,161", link: "/cruises/alaska-hubbard-glacier" },
 ]
 
+// Solo sailor sailings — three examples shown here, all 9 live on /solo
+const soloDeals = [
+  { title: "Italy & French Riviera", date: "Aug 22, 2026", nights: "9 nights", ship: "Scarlet Lady", price: "$2,730", link: "/solo/scarlet-italy-french-riviera-0822" },
+  { title: "Alaska: Seattle to Vancouver", date: "Sep 3, 2026", nights: "8 nights", ship: "Brilliant Lady", price: "$1,610", link: "/solo/alaska-seattle-vancouver-brilliant-0903" },
+  { title: "Dominican Republic & Bimini Beach Club", date: "Sep 14, 2026", nights: "5 nights", ship: "Resilient Lady", price: "$1,097", link: "/solo/dominican-bimini-resilient-0914" },
+]
+
 // Other lines Eric also books — kept small and quiet, well below the Virgin content
 const otherLines = [
   {
@@ -267,6 +274,47 @@ export default function Home() {
         </div>
       </div>
 
+      {/* ============ SOLO SAILOR DEALS ============ */}
+      <div id="solo-sailor-deals" style={{ backgroundColor: '#FFFBF0', padding: '60px 20px' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+            <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Solo Sailor Offers</p>
+            <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: '0 0 16px 0' }}>Solo Travel. Big Vibes. Smaller Price.</h2>
+            <p style={{ color: '#374151', fontSize: '15px', lineHeight: '1.7', maxWidth: '700px', margin: '0 auto' }}>
+              Nine Virgin Voyages sailings at just 150% single supplement — no paying double to cruise solo. From a five-night Caribbean getaway to a one-time transatlantic crossing.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px', maxWidth: '1000px', margin: '0 auto 28px auto' }}>
+            {soloDeals.map((s) => (
+              <a
+                key={s.link}
+                href={s.link}
+                style={{ display: 'block', textDecoration: 'none', backgroundColor: 'white', borderRadius: '14px', border: '1px solid #E5E7EB', padding: '20px' }}
+              >
+                <span style={{ backgroundColor: '#CC0000', color: 'white', fontSize: '10px', fontWeight: '800', padding: '3px 8px', borderRadius: '4px', letterSpacing: '0.5px', textTransform: 'uppercase' }}>{s.ship}</span>
+                <p style={{ color: '#1F2937', fontWeight: '700', fontSize: '15px', margin: '10px 0 4px 0', lineHeight: '1.3' }}>{s.title}</p>
+                <p style={{ color: '#9CA3AF', fontSize: '12px', margin: '0 0 12px 0' }}>{s.date} · {s.nights}</p>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
+                  <span style={{ color: '#9CA3AF', fontSize: '11px' }}>From</span>
+                  <span style={{ color: '#007298', fontWeight: '800', fontSize: '18px' }}>{s.price}</span>
+                  <span style={{ color: '#9CA3AF', fontSize: '11px' }}>/sailor</span>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <a
+              href="/solo"
+              style={{ display: 'inline-block', backgroundColor: '#007298', color: 'white', padding: '13px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}
+            >
+              View All 9 Solo Sailings →
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* Also Booking These Lines — plain text links, no tiles, stays out of Virgin's way */}
       <div id="cruise-lines" style={{ backgroundColor: '#F3F4F6', padding: '32px 20px', textAlign: 'center' }}>
         <p style={{ color: '#6B7280', fontSize: '11px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', margin: '0 0 6px 0' }}>Also Booking</p>
@@ -423,7 +471,7 @@ export default function Home() {
           <h2 style={{ color: 'white', fontSize: 'clamp(28px, 6vw, 36px)', fontWeight: '800', margin: '0 0 12px 0', lineHeight: '1.2' }}>Stop scrolling, start packing.</h2>
           <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '16px', margin: '0 0 28px 0' }}>Let's find your happy detour.</p>
           <a
-            href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/RFxrKCNQTejSeWAhpo4BaaEz/link"
+            href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/6E9JQLQfrQfUvS85KcGhiHE1/link"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Start planning your trip with Happy Detour Travel"
