@@ -33,7 +33,7 @@ export default function DominicanBiminiResilientSep14() {
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "#F9FAFB", fontFamily: "sans-serif" }}>
       <div className="h-[320px] md:h-[480px]" style={{ position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/RS-DominicanBiminiSep14.jpg')", backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.55)" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/RS-DominicanBiminiAug31.jpg')", backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.55)" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%)" }} />
         <div className="px-4 md:px-6 pb-8 md:pb-12" style={{ position: "relative", maxWidth: "1280px", margin: "0 auto", height: "100%", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
           <div style={{ display: "flex", gap: "8px", marginBottom: "12px" }}>
