@@ -20,12 +20,12 @@ export default function IcelandGreenlandNycValiant() {
     { day: 6, port: "At Sea", time: "", desc: "A sea day continuing along the Greenland coast." },
     { day: 7, port: "Nuuk, Greenland", time: "07:00 AM - 06:00 PM", desc: "Greenland's capital — modern Nordic city meets Arctic wilderness." },
     { day: 8, port: "At Sea", time: "", desc: "A sea day crossing toward Canada." },
-    { day: 9, port: "St. John's, Newfoundland, Canada", time: "", desc: "Whales, puffins, and icebergs by day, rollicking Irish pubs and Celtic tunes by night." },
-    { day: 10, port: "At Sea", time: "", desc: "A sea day heading south along the Canadian coast." },
-    { day: 11, port: "Halifax, Nova Scotia, Canada", time: "", desc: "Atlantic Canada's gateway city, with a historic waterfront and easy walkability." },
-    { day: 12, port: "At Sea", time: "", desc: "A sea day heading toward New York." },
+    { day: 9, port: "At Sea", time: "", desc: "A second sea day continuing the crossing toward Newfoundland." },
+    { day: 10, port: "St. John's, Newfoundland, Canada", time: "09:00 AM - 06:00 PM", desc: "Whales, puffins, and icebergs by day, rollicking Irish pubs and Celtic tunes by night." },
+    { day: 11, port: "At Sea", time: "", desc: "A sea day heading south along the Canadian coast." },
+    { day: 12, port: "Halifax, Nova Scotia, Canada", time: "08:00 AM - 06:00 PM", desc: "Atlantic Canada's gateway city, with a historic waterfront and easy walkability." },
     { day: 13, port: "At Sea", time: "", desc: "A final sea day before arriving in New York City." },
-    { day: 14, port: "New York City, USA", time: "Arrives", desc: "Thirteen nights from Iceland to Manhattan — a one-time-only transatlantic crossing unlike anything else Virgin runs." },
+    { day: 14, port: "New York City, USA", time: "Arrives 06:30 AM", desc: "Thirteen nights from Iceland to Manhattan — a one-time-only transatlantic crossing unlike anything else Virgin runs." },
   ];
 
   // Verified solo (per Sailor) pricing pulled directly from Eric's FirstMates affiliate
@@ -164,8 +164,7 @@ export default function IcelandGreenlandNycValiant() {
                     </div>
                   )}
                 </div>
-                {/* NO CONFIRMED VOYAGE CODE FOUND for this sailing — need Eric to grab the exact voyage code and affiliate link from FirstMates before this button works */}
-                <p style={{ color: "#9CA3AF", fontSize: "11px", textAlign: "center", padding: "6px 16px", marginBottom: "10px" }}>Direct booking link pending — ask Eric for now.</p>
+                <a href="https://www.virginvoyages.com/book/voyage-planner/pre-checkout?agencyId=589&agentId=278796&currencyCode=USD&dateFrom=2026-09-01&dateTo=2026-09-30&packageCode=13NRNB&sailors=1&ships=VL&voyageId=VL26090613NRNB" target="_blank" rel="noopener noreferrer" style={{ display: "block", textAlign: "center", color: "#D1D5DB", padding: "6px 16px", textDecoration: "underline", fontWeight: "500", fontSize: "11px", marginBottom: "10px" }}>Already know your cabin? Book directly</a>
                 <p style={{ color: "#9CA3AF", fontSize: "11px", textAlign: "center", margin: 0, lineHeight: "1.5" }}>Solo pricing shown, taxes & fees included. Subject to change and availability.</p>
                 <button onClick={() => setModalOpen(true)} style={{ display: "block", width: "100%", textAlign: "center", background: "none", border: "none", color: "#007298", fontSize: "12px", fontWeight: "600", cursor: "pointer", marginTop: "14px", textDecoration: "underline" }}>Join the mailing list for more deals like this</button>
               </div>
