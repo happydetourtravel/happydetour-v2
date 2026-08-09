@@ -364,16 +364,7 @@ export default function Home() {
             </p>
           </div>
 
-         {/* Card 1 — Virgin Voyages Alaska (Jun 2027) — SOLD OUT, compact row */}
-<div style={{ maxWidth: '900px', margin: '0 auto 16px auto', backgroundColor: '#F9FAFB', borderRadius: '12px', border: '1px solid #E5E7EB', padding: '14px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap' }}>
-  <div>
-    <p style={{ color: '#1F2937', fontWeight: '600', fontSize: '14px', margin: '0 0 2px 0' }}>Alaska: Glacial Fjords &amp; Coastal Views</p>
-    <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>June 17, 2027 &middot; 7 nights &middot; Brilliant Lady &middot; Virgin Voyages</p>
-  </div>
-  <span style={{ backgroundColor: '#E5E7EB', color: '#6B7280', fontSize: '12px', fontWeight: '600', padding: '5px 14px', borderRadius: '100px', whiteSpace: 'nowrap' }}>Sold out</span>
-</div>
-          
-          {/* Card 2 — Virgin Voyages Mexican Riviera Halloween (Oct 2027) */}
+          {/* Card 1 — Virgin Voyages Mexican Riviera Halloween (Oct 2027) */}
           <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto 16px auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
             <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden' }} className="group-card-image">
               <img src="/brilliantlady.jpeg" alt="Brilliant Lady cruise ship" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
@@ -403,7 +394,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Card 3 — Royal Caribbean Allure */}
+          {/* Card 2 — Royal Caribbean Allure */}
           <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto 16px auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
             <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden' }} className="group-card-image">
               <img src="/allureoftheseas.jpeg" alt="Allure of the Seas cruise ship" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
@@ -433,11 +424,20 @@ export default function Home() {
             </div>
           </div>
 
-{/* Card 4 — Carnival Halloween — SOLD OUT, compact row */}
-<div style={{ maxWidth: '900px', margin: '0 auto', backgroundColor: '#F9FAFB', borderRadius: '12px', border: '1px solid #E5E7EB', padding: '14px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap' }}>
+{/* Card 3 — Carnival Halloween — SOLD OUT, compact row */}
+<div style={{ maxWidth: '900px', margin: '0 auto 16px auto', backgroundColor: '#F9FAFB', borderRadius: '12px', border: '1px solid #E5E7EB', padding: '14px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap' }}>
   <div>
     <p style={{ color: '#1F2937', fontWeight: '600', fontSize: '14px', margin: '0 0 2px 0' }}>Halloween Eastern Caribbean Cruise</p>
     <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>October 31, 2026 &middot; 8 nights &middot; Carnival Magic</p>
+  </div>
+  <span style={{ backgroundColor: '#E5E7EB', color: '#6B7280', fontSize: '12px', fontWeight: '600', padding: '5px 14px', borderRadius: '100px', whiteSpace: 'nowrap' }}>Sold out</span>
+</div>
+
+{/* Card 4 — Virgin Voyages Alaska (Jun 2027) — SOLD OUT, compact row */}
+<div style={{ maxWidth: '900px', margin: '0 auto', backgroundColor: '#F9FAFB', borderRadius: '12px', border: '1px solid #E5E7EB', padding: '14px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap' }}>
+  <div>
+    <p style={{ color: '#1F2937', fontWeight: '600', fontSize: '14px', margin: '0 0 2px 0' }}>Alaska: Glacial Fjords &amp; Coastal Views</p>
+    <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>June 17, 2027 &middot; 7 nights &middot; Brilliant Lady &middot; Virgin Voyages</p>
   </div>
   <span style={{ backgroundColor: '#E5E7EB', color: '#6B7280', fontSize: '12px', fontWeight: '600', padding: '5px 14px', borderRadius: '100px', whiteSpace: 'nowrap' }}>Sold out</span>
 </div>
