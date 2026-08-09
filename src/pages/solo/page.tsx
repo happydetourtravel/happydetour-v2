@@ -58,7 +58,7 @@ const sailings = [
   },
   {
     slug: "dominican-bimini-resilient-0914",
-    photo: "/RS-DominicanBiminiSep14.jpg",
+    photo: "/RS-DominicanBiminiAug31.jpg",
     ship: "Resilient Lady",
     title: "Dominican Republic & Bimini Beach Club",
     date: "September 14, 2026",
