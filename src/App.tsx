@@ -72,6 +72,7 @@ export const routes: RouteRecord[] = [
       { path: 'solo/portsmouth-iceland-valiant-0827', entry: 'src/pages/solo/portsmouth-iceland-valiant-0827/page.tsx', lazy: () => import('./pages/solo/portsmouth-iceland-valiant-0827/page').then((m) => ({ Component: m.default })) },
       { path: 'solo/iceland-greenland-nyc-valiant-0906', entry: 'src/pages/solo/iceland-greenland-nyc-valiant-0906/page.tsx', lazy: () => import('./pages/solo/iceland-greenland-nyc-valiant-0906/page').then((m) => ({ Component: m.default })) },
       { path: 'solo/dominican-bimini-resilient-0831', entry: 'src/pages/solo/dominican-bimini-resilient-0831/page.tsx', lazy: () => import('./pages/solo/dominican-bimini-resilient-0831/page').then((m) => ({ Component: m.default })) },
+      { path: 'solo/dominican-bimini-resilient-0914', entry: 'src/pages/solo/dominican-bimini-resilient-0914/page.tsx', lazy: () => import('./pages/solo/dominican-bimini-resilient-0914/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/virgin-voyages', entry: 'src/pages/cruiselines/virgin/virginhome/page.tsx', lazy: () => import('./pages/cruiselines/virgin/virginhome/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/norwegian', entry: 'src/pages/cruiselines/ncl/nclhome/page.tsx', lazy: () => import('./pages/cruiselines/ncl/nclhome/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/msc', entry: 'src/pages/cruiselines/msc/mschome/page.tsx', lazy: () => import('./pages/cruiselines/msc/mschome/page').then((m) => ({ Component: m.default })) },
