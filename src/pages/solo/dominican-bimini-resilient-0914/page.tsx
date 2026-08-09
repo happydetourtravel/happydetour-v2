@@ -25,7 +25,7 @@ export default function DominicanBiminiResilientSep14() {
   const cabins = [
     { type: "Insider", desc: "No window, but everything else you need for a quick Caribbean reset.", price: "$1,097" },
     { type: "Sea View", desc: "A porthole view of the Caribbean as you sail between ports.", price: "$1,397" },
-    { type: "Sea Terrace", desc: "Your own private balcony with hammock. Includes bar tab when booked with Eric.", price: "$1,156" },
+    { type: "Sea Terrace", desc: "Your own private balcony with hammock.", price: "$1,156" },
     { type: "RockStar Quarters", desc: "Exclusive Richard's Rooftop access, stocked in-room bar, priority booking. Includes bar tab when booked with Eric.", price: "$4,097" },
     { type: "Mega RockStar Quarters", desc: "The largest spaces on the ship, with daily bar tab and spa access.", price: "$6,597" },
   ];
