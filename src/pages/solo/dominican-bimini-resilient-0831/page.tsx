@@ -149,8 +149,7 @@ export default function DominicanBiminiResilientAug31() {
                     </div>
                   )}
                 </div>
-                {/* NO CONFIRMED VOYAGE CODE FOUND for this sailing — need Eric to grab the exact voyage code and affiliate link from FirstMates before this button works */}
-                <p style={{ color: "#9CA3AF", fontSize: "11px", textAlign: "center", padding: "6px 16px", marginBottom: "10px" }}>Direct booking link pending — ask Eric for now.</p>
+                <a href="https://www.virginvoyages.com/book/voyage-planner/pre-checkout?agencyId=589&agentId=278796&currencyCode=USD&dateFrom=2026-08-01&dateTo=2026-08-31&packageCode=4NKW&priceType=perCabin&sailors=1&ships=RS&voyageId=RS2608274NKW" target="_blank" rel="noopener noreferrer" style={{ display: "block", textAlign: "center", color: "#D1D5DB", padding: "6px 16px", textDecoration: "underline", fontWeight: "500", fontSize: "11px", marginBottom: "10px" }}>Already know your cabin? Book directly</a>
                 <p style={{ color: "#9CA3AF", fontSize: "11px", textAlign: "center", margin: 0, lineHeight: "1.5" }}>Solo pricing shown, taxes & fees included. Subject to change and availability.</p>
                 <button onClick={() => setModalOpen(true)} style={{ display: "block", width: "100%", textAlign: "center", background: "none", border: "none", color: "#007298", fontSize: "12px", fontWeight: "600", cursor: "pointer", marginTop: "14px", textDecoration: "underline" }}>Join the mailing list for more deals like this</button>
               </div>
