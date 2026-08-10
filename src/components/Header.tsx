@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { SignedIn, SignedOut, SignInButton } from '@clerk/clerk-react'
 
 export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
@@ -46,6 +47,21 @@ export default function Header() {
               Join the List
             </button>
 
+            {/* Members / Sign In */}
+            <SignedOut>
+              <SignInButton mode="modal">
+                <button
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, color: '#1F2937', fontSize: '14px', fontWeight: '500' }}
+                  className="hover:text-brand-blue transition-colors"
+                >
+                  Sign In
+                </button>
+              </SignInButton>
+            </SignedOut>
+            <SignedIn>
+              <Link to="/members" className="hover:text-brand-blue transition-colors">Members</Link>
+            </SignedIn>
+
             {/* Start Packing Dropdown */}
             <div style={{ position: 'relative' }}>
               <button
@@ -59,7 +75,7 @@ export default function Header() {
               {dropdownOpen && (
                 <div style={{ position: 'absolute', top: 'calc(100% + 6px)', right: 0, backgroundColor: 'white', borderRadius: '10px', boxShadow: '0 4px 24px rgba(0,0,0,0.12)', border: '1px solid #F3F4F6', minWidth: '240px', zIndex: 100, overflow: 'hidden' }}>
                   <a
-                    href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/6E9JQLQfrQfUvS85KcGhiHE1/link"
+                    href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/RFxrKCNQTejSeWAhpo4BaaEz/link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:bg-gray-50 transition-colors"
@@ -150,6 +166,28 @@ export default function Header() {
             >
               Join the List
             </button>
+
+            {/* Members / Sign In (mobile) */}
+            <SignedOut>
+              <SignInButton mode="modal">
+                <button
+                  onClick={() => setMenuOpen(false)}
+                  style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 8px', fontSize: '15px', fontWeight: '500', color: '#1F2937', background: 'none', border: 'none', cursor: 'pointer', borderBottom: '1px solid #F9FAFB' }}
+                >
+                  Sign In
+                </button>
+              </SignInButton>
+            </SignedOut>
+            <SignedIn>
+              <Link
+                to="/members"
+                onClick={() => setMenuOpen(false)}
+                style={{ display: 'block', padding: '12px 8px', fontSize: '15px', fontWeight: '500', color: '#1F2937', textDecoration: 'none', borderBottom: '1px solid #F9FAFB' }}
+              >
+                Members
+              </Link>
+            </SignedIn>
+
             <Link
               to="/solo"
               onClick={() => setMenuOpen(false)}
