@@ -24,6 +24,9 @@ export default function AuthNavLink({ variant = 'desktop', onNavigate }: AuthNav
           <Link to="/login" onClick={onNavigate} style={mobileLinkStyle}>
             Sign In
           </Link>
+          <Link to="/join" onClick={onNavigate} style={mobileLinkStyle}>
+            Sign Up
+          </Link>
         </SignedOut>
         <SignedIn>
           <Link to="/members" onClick={onNavigate} style={mobileLinkStyle}>
@@ -38,6 +41,7 @@ export default function AuthNavLink({ variant = 'desktop', onNavigate }: AuthNav
     <>
       <SignedOut>
         <Link to="/login" className="hover:text-brand-blue transition-colors">Sign In</Link>
+        <Link to="/join" className="hover:text-brand-blue transition-colors">Sign Up</Link>
       </SignedOut>
       <SignedIn>
         <Link to="/members" className="hover:text-brand-blue transition-colors">Members</Link>
