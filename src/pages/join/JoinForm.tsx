@@ -19,9 +19,52 @@ export default function JoinForm() {
   const [loading, setLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+  const [copied, setCopied] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const generatePassword = () => {
+    const upper = 'ABCDEFGHJKLMNPQRSTUVWXYZ'
+    const lower = 'abcdefghijkmnpqrstuvwxyz'
+    const numbers = '23456789'
+    const symbols = '!@#$%&*'
+    const all = upper + lower + numbers + symbols
+
+    let password = [
+      upper[Math.floor(Math.random() * upper.length)],
+      lower[Math.floor(Math.random() * lower.length)],
+      numbers[Math.floor(Math.random() * numbers.length)],
+      symbols[Math.floor(Math.random() * symbols.length)],
+    ]
+
+    for (let i = 0; i < 8; i++) {
+      password.push(all[Math.floor(Math.random() * all.length)])
+    }
+
+    // shuffle
+    for (let i = password.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[password[i], password[j]] = [password[j], password[i]]
+    }
+
+    const generated = password.join('')
+    setFormData((prev) => ({ ...prev, password: generated, confirmPassword: generated }))
+    setShowPassword(true)
+    setShowConfirmPassword(true)
+    setCopied(false)
+  }
+
+  const copyPassword = async () => {
+    if (!formData.password) return
+    try {
+      await navigator.clipboard.writeText(formData.password)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      // clipboard not available, ignore silently
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -168,7 +211,16 @@ export default function JoinForm() {
               </div>
 
               <div>
-                <label style={{ display: 'block', color: '#374151', fontSize: '13px', fontWeight: '600', marginBottom: '6px' }}>Password *</label>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
+                  <label style={{ display: 'block', color: '#374151', fontSize: '13px', fontWeight: '600', margin: 0 }}>Password *</label>
+                  <button
+                    type="button"
+                    onClick={generatePassword}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#007298', fontSize: '12px', fontWeight: '700', padding: 0 }}
+                  >
+                    Suggest a password
+                  </button>
+                </div>
                 <div style={{ position: 'relative' }}>
                   <input
                     name="password"
@@ -195,6 +247,21 @@ export default function JoinForm() {
                     <p style={{ fontSize: '12px', color: strength.color, fontWeight: '600', margin: '4px 0 0 0' }}>{strength.label} password</p>
                   </div>
                 )}
+                {formData.password.length > 0 && showPassword && (
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '8px', backgroundColor: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: '6px', padding: '8px 10px' }}>
+                    <span style={{ fontFamily: 'monospace', fontSize: '13px', color: '#1F2937' }}>{formData.password}</span>
+                    <button
+                      type="button"
+                      onClick={copyPassword}
+                      style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#007298', fontSize: '12px', fontWeight: '700', padding: 0, marginLeft: '10px', whiteSpace: 'nowrap' }}
+                    >
+                      {copied ? 'Copied!' : 'Copy'}
+                    </button>
+                  </div>
+                )}
+                <p style={{ fontSize: '11px', color: '#9CA3AF', margin: '6px 0 0 0' }}>
+                  Save this somewhere safe, like a notes app or password manager.
+                </p>
               </div>
 
               <div>
