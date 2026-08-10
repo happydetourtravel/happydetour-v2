@@ -26,7 +26,7 @@ export default function SailorLootSection() {
   }, [search, ship, region])
 
   return (
-    <div style={{ marginBottom: '32px' }}>
+    <div id="sailor-loot" style={{ marginBottom: '32px', scrollMarginTop: '24px' }}>
       <div style={{ marginBottom: '20px' }}>
         <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>
           Automatic Onboard Credit
