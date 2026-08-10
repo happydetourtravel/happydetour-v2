@@ -1,4 +1,5 @@
 import { useUser, SignedIn, SignedOut, RedirectToSignIn } from '@clerk/clerk-react'
+import SailorLootSection from './SailorLootSection'
 
 export default function MembersContent() {
   const { user } = useUser()
@@ -140,6 +141,8 @@ export default function MembersContent() {
                 Prices are estimates. Contact Eric for current availability and to lock in your spot.
               </p>
             </div>
+
+            <SailorLootSection />
 
             <div style={{ backgroundColor: '#007298', borderRadius: '16px', padding: '32px 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '20px' }}>
               <div>
