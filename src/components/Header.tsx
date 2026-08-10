@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { SignedIn, SignedOut, SignInButton } from '@clerk/clerk-react'
+import { ClientOnly } from 'vite-react-ssg'
+import AuthNavLink from '../components/AuthNavLink'
 
 export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
@@ -47,20 +48,10 @@ export default function Header() {
               Join the List
             </button>
 
-            {/* Members / Sign In */}
-            <SignedOut>
-              <SignInButton mode="modal">
-                <button
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, color: '#1F2937', fontSize: '14px', fontWeight: '500' }}
-                  className="hover:text-brand-blue transition-colors"
-                >
-                  Sign In
-                </button>
-              </SignInButton>
-            </SignedOut>
-            <SignedIn>
-              <Link to="/members" className="hover:text-brand-blue transition-colors">Members</Link>
-            </SignedIn>
+            {/* Members / Sign In — client-only so Clerk never runs during the SSG build */}
+            <ClientOnly>
+              {() => <AuthNavLink variant="desktop" />}
+            </ClientOnly>
 
             {/* Start Packing Dropdown */}
             <div style={{ position: 'relative' }}>
@@ -167,26 +158,10 @@ export default function Header() {
               Join the List
             </button>
 
-            {/* Members / Sign In (mobile) */}
-            <SignedOut>
-              <SignInButton mode="modal">
-                <button
-                  onClick={() => setMenuOpen(false)}
-                  style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 8px', fontSize: '15px', fontWeight: '500', color: '#1F2937', background: 'none', border: 'none', cursor: 'pointer', borderBottom: '1px solid #F9FAFB' }}
-                >
-                  Sign In
-                </button>
-              </SignInButton>
-            </SignedOut>
-            <SignedIn>
-              <Link
-                to="/members"
-                onClick={() => setMenuOpen(false)}
-                style={{ display: 'block', padding: '12px 8px', fontSize: '15px', fontWeight: '500', color: '#1F2937', textDecoration: 'none', borderBottom: '1px solid #F9FAFB' }}
-              >
-                Members
-              </Link>
-            </SignedIn>
+            {/* Members / Sign In (mobile) — client-only so Clerk never runs during the SSG build */}
+            <ClientOnly>
+              {() => <AuthNavLink variant="mobile" onNavigate={() => setMenuOpen(false)} />}
+            </ClientOnly>
 
             <Link
               to="/solo"
