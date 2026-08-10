@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, lazy, Suspense } from 'react'
 import { Link } from 'react-router-dom'
 import { ClientOnly } from 'vite-react-ssg'
-import AuthNavLink from '../components/AuthNavLink'
+
+const AuthNavLink = lazy(() => import('./AuthNavLink'))
 
 export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
@@ -50,7 +51,11 @@ export default function Header() {
 
             {/* Members / Sign In — client-only so Clerk never runs during the SSG build */}
             <ClientOnly>
-              {() => <AuthNavLink variant="desktop" />}
+              {() => (
+                <Suspense fallback={null}>
+                  <AuthNavLink variant="desktop" />
+                </Suspense>
+              )}
             </ClientOnly>
 
             {/* Start Packing Dropdown */}
@@ -160,7 +165,11 @@ export default function Header() {
 
             {/* Members / Sign In (mobile) — client-only so Clerk never runs during the SSG build */}
             <ClientOnly>
-              {() => <AuthNavLink variant="mobile" onNavigate={() => setMenuOpen(false)} />}
+              {() => (
+                <Suspense fallback={null}>
+                  <AuthNavLink variant="mobile" onNavigate={() => setMenuOpen(false)} />
+                </Suspense>
+              )}
             </ClientOnly>
 
             <Link
