@@ -33,6 +33,24 @@ export default function MembersContent() {
     },
   ]
 
+  const perks = [
+    {
+      icon: '\ud83c\udf79',
+      title: '$200 Bar Tab Included',
+      desc: 'On most Virgin Voyages sailings, Sea Terrace cabins and above, when booked through Eric.',
+    },
+    {
+      icon: '\u2b50',
+      title: 'WorldVia Agent Perks',
+      desc: 'Extra amenities on select Virgin Voyages sailings, arranged by Eric. Varies by sailing, ask for details.',
+    },
+    {
+      icon: '\ud83c\udf82',
+      title: 'Birthday Trip Discount',
+      desc: 'A discount toward a trip booked around your birthday. Just let Eric know when you reach out.',
+    },
+  ]
+
   return (
     <>
       <SignedOut>
@@ -48,8 +66,25 @@ export default function MembersContent() {
                 Welcome{user?.firstName ? `, ${user.firstName}` : ''}.
               </h1>
               <p style={{ color: '#6B7280', fontSize: '16px', lineHeight: '1.7', maxWidth: '520px', margin: '0 auto' }}>
-                You're in. This is your space for group cruise updates and exclusive sailings hand-picked by Eric.
+                You're in. This is your space for member perks, group cruise updates, and exclusive sailings hand-picked by Eric.
               </p>
+            </div>
+
+            {/* Member Perks */}
+            <div style={{ marginBottom: '32px' }}>
+              <div style={{ marginBottom: '20px' }}>
+                <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Member Perks</p>
+                <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: 0 }}>What You Get for Booking With Eric</h2>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
+                {perks.map((perk, i) => (
+                  <div key={i} style={{ backgroundColor: 'white', borderRadius: '14px', border: '1px solid #E5E7EB', padding: '24px', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
+                    <span style={{ fontSize: '28px' }}>{perk.icon}</span>
+                    <h3 style={{ color: '#1F2937', fontSize: '15px', fontWeight: '700', margin: '10px 0 6px 0' }}>{perk.title}</h3>
+                    <p style={{ color: '#6B7280', fontSize: '13px', lineHeight: '1.6', margin: 0 }}>{perk.desc}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', padding: '40px', boxShadow: '0 4px 24px rgba(0,0,0,0.06)', marginBottom: '32px' }}>
@@ -67,7 +102,7 @@ export default function MembersContent() {
                 Have a destination or cruise line in mind? Reach out and let Eric know. He's building these around what members actually want.
               </p>
               <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                <a href="sms:7473338687" style={{ backgroundColor: '#007298', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
+                <a href="sms:6308231253" style={{ backgroundColor: '#007298', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
                   Text Eric
                 </a>
                 <a href="mailto:eric@happydetour.com" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
@@ -112,7 +147,7 @@ export default function MembersContent() {
                 <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', margin: 0 }}>Eric is a real person and he actually responds.</p>
               </div>
               <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                <a href="sms:7473338687" style={{ backgroundColor: 'white', color: '#007298', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
+                <a href="sms:6308231253" style={{ backgroundColor: 'white', color: '#007298', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
                   Text Eric
                 </a>
                 <a href="mailto:eric@happydetour.com" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
