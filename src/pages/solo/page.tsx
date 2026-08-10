@@ -10,24 +10,7 @@ const sailings = [
     date: "August 22, 2026",
     nights: "9 Nights",
     price: "$2,730",
-  },
-  {
-    slug: "scarlet-mediterranean-rome-athens-0831",
-    photo: "/SC-GreekIslesAdriatic.jpg",
-    ship: "Scarlet Lady",
-    title: "Mediterranean: Rome to Athens",
-    date: "August 31, 2026",
-    nights: "10 Nights",
-    price: "$3,458",
-  },
-  {
-    slug: "greek-isles-adriatic-scarlet-0910",
-    photo: "/SC-GreekIslesAdriatic.jpg",
-    ship: "Scarlet Lady",
-    title: "Greek Isles & The Adriatic",
-    date: "September 10, 2026",
-    nights: "10 Nights",
-    price: "$4,984",
+    loot: 100,
   },
   {
     slug: "portsmouth-iceland-valiant-0827",
@@ -37,15 +20,17 @@ const sailings = [
     date: "August 27, 2026",
     nights: "10 Nights",
     price: "$3,026",
+    loot: 200,
   },
   {
-    slug: "iceland-greenland-nyc-valiant-0906",
-    photo: "/VL-IcelandGreenlandNYC.jpg",
-    ship: "Valiant Lady",
-    title: "Iceland, Greenland, Canada & NYC",
-    date: "September 6, 2026",
-    nights: "13 Nights",
-    price: "$3,098",
+    slug: "scarlet-mediterranean-rome-athens-0831",
+    photo: "/SC-GreekIslesAdriatic.jpg",
+    ship: "Scarlet Lady",
+    title: "Mediterranean: Rome to Athens",
+    date: "August 31, 2026",
+    nights: "10 Nights",
+    price: "$3,458",
+    loot: 200,
   },
   {
     slug: "dominican-bimini-resilient-0831",
@@ -55,15 +40,7 @@ const sailings = [
     date: "August 31, 2026",
     nights: "5 Nights",
     price: "$1,788",
-  },
-  {
-    slug: "dominican-bimini-resilient-0914",
-    photo: "/RS-DominicanBiminiAug31.jpg",
-    ship: "Resilient Lady",
-    title: "Dominican Republic & Bimini Beach Club",
-    date: "September 14, 2026",
-    nights: "5 Nights",
-    price: "$1,097",
+    loot: 50,
   },
   {
     slug: "alaska-seattle-vancouver-brilliant-0903",
@@ -73,6 +50,37 @@ const sailings = [
     date: "September 3, 2026",
     nights: "8 Nights",
     price: "$1,610",
+    loot: 100,
+  },
+  {
+    slug: "iceland-greenland-nyc-valiant-0906",
+    photo: "/VL-IcelandGreenlandNYC.jpg",
+    ship: "Valiant Lady",
+    title: "Iceland, Greenland, Canada & NYC",
+    date: "September 6, 2026",
+    nights: "13 Nights",
+    price: "$3,098",
+    loot: 200,
+  },
+  {
+    slug: "greek-isles-adriatic-scarlet-0910",
+    photo: "/SC-GreekIslesAdriatic.jpg",
+    ship: "Scarlet Lady",
+    title: "Greek Isles & The Adriatic",
+    date: "September 10, 2026",
+    nights: "10 Nights",
+    price: "$4,984",
+    loot: 200,
+  },
+  {
+    slug: "dominican-bimini-resilient-0914",
+    photo: "/RS-DominicanBiminiAug31.jpg",
+    ship: "Resilient Lady",
+    title: "Dominican Republic & Bimini Beach Club",
+    date: "September 14, 2026",
+    nights: "5 Nights",
+    price: "$1,097",
+    loot: 50,
   },
   {
     slug: "mexican-riviera-brilliant-0919",
@@ -82,6 +90,7 @@ const sailings = [
     date: "September 19, 2026",
     nights: "7 Nights",
     price: "$1,452",
+    loot: 100,
   },
 ];
 
@@ -98,7 +107,7 @@ export default function SoloSailingsHub() {
           </div>
           <h1 className="text-[28px] md:text-[42px]" style={{ color: "white", fontWeight: "800", margin: "0 0 12px 0", lineHeight: "1.2" }}>Solo Travel. Big Vibes. Smaller Price.</h1>
           <p style={{ color: "#D1D5DB", fontSize: "16px", maxWidth: "640px", margin: "0 auto", lineHeight: "1.6" }}>
-            These sailings are at just 150% single supplement — no paying double to cruise solo. Nine dates across four ships, from a five-night Caribbean getaway to a one-time transatlantic crossing.
+            These sailings are at just 150% single supplement, so cruising solo does not mean paying double. Nine dates across four ships, from a five-night Caribbean getaway to a one-time transatlantic crossing. And you do not have to be solo to book. Couples and groups are welcome on every one of these sailings too.
           </p>
         </div>
       </div>
@@ -113,6 +122,11 @@ export default function SoloSailingsHub() {
             >
               <div style={{ height: "160px", backgroundImage: `url('${s.photo}')`, backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
                 <div style={{ position: "absolute", top: "10px", left: "10px", backgroundColor: "#CC0000", color: "white", fontSize: "10px", fontWeight: "800", padding: "3px 8px", borderRadius: "4px", letterSpacing: "0.5px", textTransform: "uppercase" }}>{s.ship}</div>
+                {s.loot > 0 && (
+                  <div style={{ position: "absolute", top: "10px", right: "10px", backgroundColor: "#007298", color: "white", fontSize: "10px", fontWeight: "800", padding: "3px 8px", borderRadius: "4px", letterSpacing: "0.5px" }}>
+                    +${s.loot} Sailor Loot
+                  </div>
+                )}
               </div>
               <div style={{ padding: "16px", flex: 1, display: "flex", flexDirection: "column" }}>
                 <p style={{ color: "#1F2937", fontWeight: "700", fontSize: "16px", margin: "0 0 6px 0", lineHeight: "1.3" }}>{s.title}</p>
@@ -125,6 +139,11 @@ export default function SoloSailingsHub() {
                   </div>
                   <span style={{ color: "#CC0000", fontWeight: "700", fontSize: "13px" }}>View →</span>
                 </div>
+                {s.loot > 0 && (
+                  <p style={{ color: "#007298", fontSize: "11px", fontWeight: "600", margin: "8px 0 0 0" }}>
+                    Includes ${s.loot} onboard credit when booked with Eric
+                  </p>
+                )}
               </div>
             </Link>
           ))}
