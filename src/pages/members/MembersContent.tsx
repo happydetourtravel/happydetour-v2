@@ -34,7 +34,7 @@ export default function MembersContent() {
     },
   ]
 
-  const perks = [
+  const perks: { icon: string; title: string; desc: string; link?: { href: string; label: string } }[] = [
     {
       icon: '\ud83c\udf79',
       title: '$200 Bar Tab Included',
@@ -42,8 +42,9 @@ export default function MembersContent() {
     },
     {
       icon: '\u2b50',
-      title: 'WorldVia Agent Perks',
-      desc: 'Extra amenities on select Virgin Voyages sailings, arranged by Eric. Varies by sailing, ask for details.',
+      title: 'Sailor Loot, Added Automatically',
+      desc: 'Virgin Voyages adds onboard credit to your cabin, from $50 to $200, on select sailings booked through Eric. No code needed.',
+      link: { href: '#sailor-loot', label: 'See eligible sailings' },
     },
     {
       icon: '\ud83c\udf82',
@@ -82,7 +83,12 @@ export default function MembersContent() {
                   <div key={i} style={{ backgroundColor: 'white', borderRadius: '14px', border: '1px solid #E5E7EB', padding: '24px', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
                     <span style={{ fontSize: '28px' }}>{perk.icon}</span>
                     <h3 style={{ color: '#1F2937', fontSize: '15px', fontWeight: '700', margin: '10px 0 6px 0' }}>{perk.title}</h3>
-                    <p style={{ color: '#6B7280', fontSize: '13px', lineHeight: '1.6', margin: 0 }}>{perk.desc}</p>
+                    <p style={{ color: '#6B7280', fontSize: '13px', lineHeight: '1.6', margin: perk.link ? '0 0 10px 0' : 0 }}>{perk.desc}</p>
+                    {perk.link && (
+                      <a href={perk.link.href} style={{ color: '#007298', fontSize: '13px', fontWeight: '700', textDecoration: 'none' }}>
+                        {perk.link.label} &rarr;
+                      </a>
+                    )}
                   </div>
                 ))}
               </div>
