@@ -11,6 +11,7 @@ const sailings = [
     nights: "9 Nights",
     price: "$2,730",
     loot: 100,
+    sailed: true,
   },
   {
     slug: "portsmouth-iceland-valiant-0827",
@@ -118,14 +119,20 @@ export default function SoloSailingsHub() {
             <Link
               key={s.slug}
               to={`/solo/${s.slug}`}
-              style={{ textDecoration: "none", backgroundColor: "white", borderRadius: "12px", border: "1px solid #E5E7EB", overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.05)", display: "flex", flexDirection: "column" }}
+              style={{ textDecoration: "none", backgroundColor: "white", borderRadius: "12px", border: "1px solid #E5E7EB", overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.05)", display: "flex", flexDirection: "column", opacity: s.sailed ? 0.55 : 1 }}
             >
               <div style={{ height: "160px", backgroundImage: `url('${s.photo}')`, backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
                 <div style={{ position: "absolute", top: "10px", left: "10px", backgroundColor: "#CC0000", color: "white", fontSize: "10px", fontWeight: "800", padding: "3px 8px", borderRadius: "4px", letterSpacing: "0.5px", textTransform: "uppercase" }}>{s.ship}</div>
-                {s.loot > 0 && (
-                  <div style={{ position: "absolute", top: "10px", right: "10px", backgroundColor: "#007298", color: "white", fontSize: "10px", fontWeight: "800", padding: "3px 8px", borderRadius: "4px", letterSpacing: "0.5px" }}>
-                    +${s.loot} Sailor Loot
+                {s.sailed ? (
+                  <div style={{ position: "absolute", top: "10px", right: "10px", backgroundColor: "#6B7280", color: "white", fontSize: "10px", fontWeight: "800", padding: "3px 8px", borderRadius: "4px", letterSpacing: "0.5px", textTransform: "uppercase" }}>
+                    Sailed
                   </div>
+                ) : (
+                  s.loot > 0 && (
+                    <div style={{ position: "absolute", top: "10px", right: "10px", backgroundColor: "#007298", color: "white", fontSize: "10px", fontWeight: "800", padding: "3px 8px", borderRadius: "4px", letterSpacing: "0.5px" }}>
+                      +${s.loot} Sailor Loot
+                    </div>
+                  )
                 )}
               </div>
               <div style={{ padding: "16px", flex: 1, display: "flex", flexDirection: "column" }}>
@@ -139,7 +146,7 @@ export default function SoloSailingsHub() {
                   </div>
                   <span style={{ color: "#CC0000", fontWeight: "700", fontSize: "13px" }}>View →</span>
                 </div>
-                {s.loot > 0 && (
+                {!s.sailed && s.loot > 0 && (
                   <p style={{ color: "#007298", fontSize: "11px", fontWeight: "600", margin: "8px 0 0 0" }}>
                     Includes ${s.loot} onboard credit when booked with Eric
                   </p>
