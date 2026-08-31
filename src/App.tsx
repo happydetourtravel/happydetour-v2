@@ -61,6 +61,7 @@ export const routes: RouteRecord[] = [
       { path: 'about', entry: 'src/pages/about/page.tsx', lazy: () => import('./pages/about/page').then((m) => ({ Component: m.default })) },
       { path: 'contact', entry: 'src/pages/contact/page.tsx', lazy: () => import('./pages/contact/page').then((m) => ({ Component: m.default })) },
       { path: 'faq', entry: 'src/pages/faq/page.tsx', lazy: () => import('./pages/faq/page').then((m) => ({ Component: m.default })) },
+      { path: 'links', entry: 'src/pages/links/page.tsx', lazy: () => import('./pages/links/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/bahamas-key-west', entry: 'src/pages/cruises/bahamas-key-west/page.tsx', lazy: () => import('./pages/cruises/bahamas-key-west/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/eastern-caribbean-bimini', entry: 'src/pages/cruises/eastern-caribbean-bimini/page.tsx', lazy: () => import('./pages/cruises/eastern-caribbean-bimini/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/french-riviera-ibiza', entry: 'src/pages/cruises/french-riviera-ibiza/page.tsx', lazy: () => import('./pages/cruises/french-riviera-ibiza/page').then((m) => ({ Component: m.default })) },
