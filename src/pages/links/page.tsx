@@ -7,7 +7,7 @@ const sections: { heading: string; links: LinkItem[] }[] = [
       { label: "🏠 Back to Happy Detour Travel", href: "/" },
       { label: "✈ Start Planning My Trip", href: "https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/6E9JQLQfrQfUvS85KcGhiHE1/link", external: true },
       { label: "🗺️ Drop Your Trip Wishlist", href: "https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/RFxrKCNQTejSeWAhpo4BaaEz/link", external: true },
-      { label: "📝 Read Postcards, the HDT Blog", href: "/postcards" },
+      { label: "📝 Read Postcards, the HDT Blog", href: "/blog" },
     ]
   },
   {
