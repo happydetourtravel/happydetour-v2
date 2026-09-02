@@ -22,6 +22,7 @@ const sailings = [
     nights: "10 Nights",
     price: "$3,026",
     loot: 200,
+    sailed: true,
   },
   {
     slug: "scarlet-mediterranean-rome-athens-0831",
@@ -32,6 +33,7 @@ const sailings = [
     nights: "10 Nights",
     price: "$3,458",
     loot: 200,
+    sailed: true,
   },
   {
     slug: "dominican-bimini-resilient-0831",
@@ -42,6 +44,7 @@ const sailings = [
     nights: "5 Nights",
     price: "$1,788",
     loot: 50,
+    sailed: true,
   },
   {
     slug: "alaska-seattle-vancouver-brilliant-0903",
