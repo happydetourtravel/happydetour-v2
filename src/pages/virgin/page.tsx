@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const sailings = [
   {
     slug: "bermuda-caribbean-nyc-sanjuan-valiant-1019",
-    photo: "/VL-BritishVirginIslands.jpg", // TODO: upload to /public — see note below
+    photo: "/VL-BritishVirginIslands.JPG", // TODO: upload to /public — see note below
     ship: "Valiant Lady",
     title: "Bermuda & Caribbean: NYC to San Juan",
     date: "October 19, 2026",
