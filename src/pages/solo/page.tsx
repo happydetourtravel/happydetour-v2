@@ -16,8 +16,7 @@ type Sailing = {
 };
 
 const sailings: Sailing[] = [
-  
-const sailings = [
+
   {
     slug: "scarlet-italy-french-riviera-0822",
     photo: "/SC-ItalyFrenchRiviera.jpg",
