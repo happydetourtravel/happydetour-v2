@@ -62,6 +62,7 @@ const sailings: Sailing[] = [
     sailed: true,
   },
   {
+  {
     slug: "alaska-seattle-vancouver-brilliant-0903",
     photo: "/BL-Alaska.png",
     ship: "Brilliant Lady",
@@ -70,6 +71,7 @@ const sailings: Sailing[] = [
     nights: "8 Nights",
     price: "$1,610",
     loot: 100,
+    sailed: true,
   },
   {
     slug: "iceland-greenland-nyc-valiant-0906",
