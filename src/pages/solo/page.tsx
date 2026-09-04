@@ -118,7 +118,7 @@ export default function SoloSailingsHub() {
 
       <div className="px-4 md:px-6 py-10 md:py-16" style={{ maxWidth: "1280px", margin: "0 auto" }}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {sailings.map((s) => (
+          {sailings.filter((s) => !s.sailed && !s.booked && !s.full).map((s) => (
             <Link
               key={s.slug}
               to={`/solo/${s.slug}`}
