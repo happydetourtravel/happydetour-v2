@@ -88,7 +88,7 @@ const sailings = [
   },
   {
     slug: "southern-caribbean-valiant-0306",
-    photo: "/BR-BalconyHammock.jpg", // TODO: upload to /public
+    photo: "/BR-BalconyHammock.JPG", // TODO: upload to /public
     ship: "Valiant Lady",
     title: "Southern Caribbean Cruise",
     date: "March 6, 2027",
