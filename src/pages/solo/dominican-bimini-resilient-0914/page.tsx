@@ -22,12 +22,11 @@ export default function DominicanBiminiResilientSep14() {
 
   // Verified solo pricing pulled directly from Eric's FirstMates affiliate booking tool
   // (shown as per-cabin total for solo occupancy). Taxes & fees are included.
+  // RockStar Quarters and Mega RockStar Quarters are sold out on this sailing.
   const cabins = [
-    { type: "Insider", desc: "No window, but everything else you need for a quick Caribbean reset.", price: "$1,097" },
-    { type: "Sea View", desc: "A porthole view of the Caribbean as you sail between ports.", price: "$1,397" },
-    { type: "Sea Terrace", desc: "Your own private balcony with hammock.", price: "$1,156" },
-    { type: "RockStar Quarters", desc: "Exclusive Richard's Rooftop access, stocked in-room bar, priority booking. Includes bar tab when booked with Eric.", price: "$4,097" },
-    { type: "Mega RockStar Quarters", desc: "The largest spaces on the ship, with daily bar tab and spa access.", price: "$6,597" },
+    { type: "Insider", desc: "No window, but everything else you need for a quick Caribbean reset.", price: "$1,397" },
+    { type: "Sea View", desc: "A porthole view of the Caribbean as you sail between ports.", price: "$1,497" },
+    { type: "Sea Terrace", desc: "Your own private balcony with hammock.", price: "$1,696" },
   ];
 
   return (
@@ -119,7 +118,7 @@ export default function DominicanBiminiResilientSep14() {
               <div style={{ backgroundColor: "#1F2937", padding: "16px 20px" }}>
                 <p style={{ color: "#F59E0B", fontSize: "11px", fontWeight: "700", letterSpacing: "1px", textTransform: "uppercase", margin: "0 0 4px 0" }}>Starting From</p>
                 <div style={{ display: "flex", alignItems: "baseline", gap: "8px" }}>
-                  <span style={{ color: "white", fontSize: "36px", fontWeight: "800" }}>$1,097</span>
+                  <span style={{ color: "white", fontSize: "36px", fontWeight: "800" }}>$1,397</span>
                   <span style={{ color: "#9CA3AF", fontSize: "13px" }}>/sailor</span>
                 </div>
                 <p style={{ color: "#FDE68A", fontSize: "12px", margin: "6px 0 0 0" }}>150% single supplement. No paying double to cruise solo.</p>
