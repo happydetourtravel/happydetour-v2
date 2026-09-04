@@ -16,62 +16,6 @@ type Sailing = {
 };
 
 const sailings: Sailing[] = [
-
-  {
-    slug: "scarlet-italy-french-riviera-0822",
-    photo: "/SC-ItalyFrenchRiviera.jpg",
-    ship: "Scarlet Lady",
-    title: "Italy & French Riviera",
-    date: "August 22, 2026",
-    nights: "9 Nights",
-    price: "$2,730",
-    loot: 100,
-    sailed: true,
-  },
-  {
-    slug: "portsmouth-iceland-valiant-0827",
-    photo: "/VL-PortsmouthIceland.jpg",
-    ship: "Valiant Lady",
-    title: "Northern Europe: Portsmouth to Iceland",
-    date: "August 27, 2026",
-    nights: "10 Nights",
-    price: "$3,026",
-    loot: 200,
-    sailed: true,
-  },
-  {
-    slug: "scarlet-mediterranean-rome-athens-0831",
-    photo: "/SC-GreekIslesAdriatic.jpg",
-    ship: "Scarlet Lady",
-    title: "Mediterranean: Rome to Athens",
-    date: "August 31, 2026",
-    nights: "10 Nights",
-    price: "$3,458",
-    loot: 200,
-    sailed: true,
-  },
-  {
-    slug: "dominican-bimini-resilient-0831",
-    photo: "/RS-DominicanBiminiAug31.jpg",
-    ship: "Resilient Lady",
-    title: "Dominican Republic & Bimini Beach Club",
-    date: "August 31, 2026",
-    nights: "5 Nights",
-    price: "$1,788",
-    loot: 50,
-    sailed: true,
-  },
-  {
-    slug: "alaska-seattle-vancouver-brilliant-0903",
-    photo: "/BL-Alaska.png",
-    ship: "Brilliant Lady",
-    title: "Alaska: Seattle to Vancouver",
-    date: "September 3, 2026",
-    nights: "8 Nights",
-    price: "$1,610",
-    loot: 100,
-    sailed: true,
-  },
   {
     slug: "iceland-greenland-nyc-valiant-0906",
     photo: "/VL-IcelandGreenlandNYC.jpg",
@@ -79,7 +23,7 @@ const sailings: Sailing[] = [
     title: "Iceland, Greenland, Canada & NYC",
     date: "September 6, 2026",
     nights: "13 Nights",
-    price: "$3,098",
+    price: "$3,358",
     loot: 200,
   },
   {
@@ -89,7 +33,7 @@ const sailings: Sailing[] = [
     title: "Greek Isles & The Adriatic",
     date: "September 10, 2026",
     nights: "10 Nights",
-    price: "$4,984",
+    price: "$4,146",
     loot: 200,
   },
   {
@@ -99,7 +43,7 @@ const sailings: Sailing[] = [
     title: "Dominican Republic & Bimini Beach Club",
     date: "September 14, 2026",
     nights: "5 Nights",
-    price: "$1,097",
+    price: "$1,397",
     loot: 50,
   },
   {
@@ -109,7 +53,7 @@ const sailings: Sailing[] = [
     title: "Mexican Riviera",
     date: "September 19, 2026",
     nights: "7 Nights",
-    price: "$1,452",
+    price: "$1,171",
     loot: 100,
   },
 ];
