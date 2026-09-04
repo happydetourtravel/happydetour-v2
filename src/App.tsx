@@ -51,8 +51,6 @@ export const routes: RouteRecord[] = [
     element: <Layout />,
     entry: 'src/App.tsx',
     children: [
-      { path: 'virgin/bermuda-caribbean-nyc-sanjuan-valiant-1019', entry: 'src/pages/virgin/bermuda-caribbean-nyc-sanjuan-valiant-1019/page.tsx', lazy: () => import('./pages/virgin/bermuda-caribbean-nyc-sanjuan-valiant-1019/page').then((m) => ({ Component: m.default })) },
-      { path: 'virgin', entry: 'src/pages/virgin/page.tsx', lazy: () => import('./pages/virgin/page').then((m) => ({ Component: m.default })) },
       { index: true, entry: 'src/pages/home/page.tsx', lazy: () => import('./pages/home/page').then((m) => ({ Component: m.default })) },
       { path: 'join', entry: 'src/pages/join/page.tsx', lazy: () => import('./pages/join/page').then((m) => ({ Component: m.default })) },
       { path: 'login', entry: 'src/pages/login/page.tsx', lazy: () => import('./pages/login/page').then((m) => ({ Component: m.default })) },
@@ -64,6 +62,9 @@ export const routes: RouteRecord[] = [
       { path: 'contact', entry: 'src/pages/contact/page.tsx', lazy: () => import('./pages/contact/page').then((m) => ({ Component: m.default })) },
       { path: 'faq', entry: 'src/pages/faq/page.tsx', lazy: () => import('./pages/faq/page').then((m) => ({ Component: m.default })) },
       { path: 'links', entry: 'src/pages/links/page.tsx', lazy: () => import('./pages/links/page').then((m) => ({ Component: m.default })) },
+      { path: 'virgin', entry: 'src/pages/virgin/page.tsx', lazy: () => import('./pages/virgin/page').then((m) => ({ Component: m.default })) },
+      { path: 'virgin/bermuda-caribbean-nyc-sanjuan-valiant-1019', entry: 'src/pages/virgin/bermuda-caribbean-nyc-sanjuan-valiant-1019/page.tsx', lazy: () => import('./pages/virgin/bermuda-caribbean-nyc-sanjuan-valiant-1019/page').then((m) => ({ Component: m.default })) },
+      { path: 'virgin/spanish-isles-transatlantic-scarlet-1011', entry: 'src/pages/virgin/spanish-isles-transatlantic-scarlet-1011/page.tsx', lazy: () => import('./pages/virgin/spanish-isles-transatlantic-scarlet-1011/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/bahamas-key-west', entry: 'src/pages/cruises/bahamas-key-west/page.tsx', lazy: () => import('./pages/cruises/bahamas-key-west/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/eastern-caribbean-bimini', entry: 'src/pages/cruises/eastern-caribbean-bimini/page.tsx', lazy: () => import('./pages/cruises/eastern-caribbean-bimini/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/french-riviera-ibiza', entry: 'src/pages/cruises/french-riviera-ibiza/page.tsx', lazy: () => import('./pages/cruises/french-riviera-ibiza/page').then((m) => ({ Component: m.default })) },
