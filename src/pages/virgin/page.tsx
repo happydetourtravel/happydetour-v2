@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const sailings = [
   {
     slug: "bermuda-caribbean-nyc-sanjuan-valiant-1019",
-    photo: "/VL-BritishVirginIslands.JPG", // TODO: upload to /public — see note below
+    photo: "/VL-BritishVirginIslands.JPG",
     ship: "Valiant Lady",
     title: "Bermuda & Caribbean: NYC to San Juan",
     date: "October 19, 2026",
@@ -75,6 +75,7 @@ const sailings = [
     nights: "10 Nights",
     price: "$990",
     loot: 200,
+    comingSoon: true,
   },
   {
     slug: "southern-caribbean-aruban-valiant-0206",
@@ -85,6 +86,7 @@ const sailings = [
     nights: "7 Nights",
     price: "$1,043",
     loot: 100,
+    comingSoon: true,
   },
   {
     slug: "southern-caribbean-valiant-0306",
@@ -95,6 +97,7 @@ const sailings = [
     nights: "7 Nights",
     price: "$1,113",
     loot: 100,
+    comingSoon: true,
   },
   {
     slug: "mediterranean-barcelona-athens-resilient-0606",
@@ -105,6 +108,7 @@ const sailings = [
     nights: "10 Nights",
     price: "$2,190",
     loot: 200,
+    comingSoon: true,
   },
   {
     slug: "greek-isles-mykonos-scarlet-0627",
@@ -115,6 +119,7 @@ const sailings = [
     nights: "7 Nights",
     price: "$1,533",
     loot: 100,
+    comingSoon: true,
   },
   {
     slug: "alaska-glacial-fjords-brilliant-0520",
@@ -125,6 +130,7 @@ const sailings = [
     nights: "7 Nights",
     price: "$1,183",
     loot: 100,
+    comingSoon: true,
   },
 ];
 
@@ -148,35 +154,55 @@ export default function VirginDealsHub() {
 
       <div className="px-4 md:px-6 py-10 md:py-16" style={{ maxWidth: "1280px", margin: "0 auto" }}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {sailings.map((s) => (
-            <Link
-              key={s.slug}
-              to={`/virgin/${s.slug}`}
-              style={{ textDecoration: "none", backgroundColor: "white", borderRadius: "12px", border: "1px solid #E5E7EB", overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.05)", display: "flex", flexDirection: "column" }}
-            >
-              <div style={{ height: "160px", backgroundImage: `url('${s.photo}')`, backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
-                <div style={{ position: "absolute", top: "10px", left: "10px", backgroundColor: "#CC0000", color: "white", fontSize: "10px", fontWeight: "800", padding: "3px 8px", borderRadius: "4px", letterSpacing: "0.5px", textTransform: "uppercase" }}>{s.ship}</div>
-                <div style={{ position: "absolute", top: "10px", right: "10px", backgroundColor: "#007298", color: "white", fontSize: "10px", fontWeight: "800", padding: "3px 8px", borderRadius: "4px", letterSpacing: "0.5px" }}>
-                  +${s.loot} Sailor Loot
+          {sailings.map((s) => {
+            const cardInner = (
+              <>
+                <div style={{ height: "160px", backgroundImage: `url('${s.photo}')`, backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
+                  <div style={{ position: "absolute", top: "10px", left: "10px", backgroundColor: "#CC0000", color: "white", fontSize: "10px", fontWeight: "800", padding: "3px 8px", borderRadius: "4px", letterSpacing: "0.5px", textTransform: "uppercase" }}>{s.ship}</div>
+                  {s.comingSoon ? (
+                    <div style={{ position: "absolute", top: "10px", right: "10px", backgroundColor: "#6B7280", color: "white", fontSize: "10px", fontWeight: "800", padding: "3px 8px", borderRadius: "4px", letterSpacing: "0.5px", textTransform: "uppercase" }}>
+                      Coming Soon
+                    </div>
+                  ) : (
+                    <div style={{ position: "absolute", top: "10px", right: "10px", backgroundColor: "#007298", color: "white", fontSize: "10px", fontWeight: "800", padding: "3px 8px", borderRadius: "4px", letterSpacing: "0.5px" }}>
+                      +${s.loot} Sailor Loot
+                    </div>
+                  )}
                 </div>
-              </div>
-              <div style={{ padding: "16px", flex: 1, display: "flex", flexDirection: "column" }}>
-                <p style={{ color: "#1F2937", fontWeight: "700", fontSize: "16px", margin: "0 0 6px 0", lineHeight: "1.3" }}>{s.title}</p>
-                <p style={{ color: "#9CA3AF", fontSize: "13px", margin: "0 0 12px 0" }}>{s.date} · {s.nights}</p>
-                <div style={{ marginTop: "auto", display: "flex", alignItems: "baseline", justifyContent: "space-between" }}>
-                  <div>
-                    <span style={{ color: "#9CA3AF", fontSize: "11px" }}>From </span>
-                    <span style={{ color: "#007298", fontWeight: "800", fontSize: "18px" }}>{s.price}</span>
-                    <span style={{ color: "#9CA3AF", fontSize: "11px" }}> /person</span>
+                <div style={{ padding: "16px", flex: 1, display: "flex", flexDirection: "column" }}>
+                  <p style={{ color: "#1F2937", fontWeight: "700", fontSize: "16px", margin: "0 0 6px 0", lineHeight: "1.3" }}>{s.title}</p>
+                  <p style={{ color: "#9CA3AF", fontSize: "13px", margin: "0 0 12px 0" }}>{s.date} · {s.nights}</p>
+                  <div style={{ marginTop: "auto", display: "flex", alignItems: "baseline", justifyContent: "space-between" }}>
+                    <div>
+                      <span style={{ color: "#9CA3AF", fontSize: "11px" }}>From </span>
+                      <span style={{ color: "#007298", fontWeight: "800", fontSize: "18px" }}>{s.price}</span>
+                      <span style={{ color: "#9CA3AF", fontSize: "11px" }}> /person</span>
+                    </div>
+                    {s.comingSoon ? (
+                      <span style={{ color: "#9CA3AF", fontWeight: "700", fontSize: "13px" }}>Coming Soon</span>
+                    ) : (
+                      <span style={{ color: "#CC0000", fontWeight: "700", fontSize: "13px" }}>View →</span>
+                    )}
                   </div>
-                  <span style={{ color: "#CC0000", fontWeight: "700", fontSize: "13px" }}>View →</span>
+                  <p style={{ color: s.comingSoon ? "#9CA3AF" : "#007298", fontSize: "11px", fontWeight: "600", margin: "8px 0 0 0" }}>
+                    Includes ${s.loot} onboard credit when booked with Eric
+                  </p>
                 </div>
-                <p style={{ color: "#007298", fontSize: "11px", fontWeight: "600", margin: "8px 0 0 0" }}>
-                  Includes ${s.loot} onboard credit when booked with Eric
-                </p>
+              </>
+            );
+
+            const cardStyle = { textDecoration: "none", backgroundColor: "white", borderRadius: "12px", border: "1px solid #E5E7EB", overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.05)", display: "flex", flexDirection: "column" as const, opacity: s.comingSoon ? 0.7 : 1 };
+
+            return s.comingSoon ? (
+              <div key={s.slug} style={{ ...cardStyle, cursor: "default" }}>
+                {cardInner}
               </div>
-            </Link>
-          ))}
+            ) : (
+              <Link key={s.slug} to={`/virgin/${s.slug}`} style={cardStyle}>
+                {cardInner}
+              </Link>
+            );
+          })}
         </div>
 
         <div style={{ marginTop: "16px", textAlign: "center" }}>
