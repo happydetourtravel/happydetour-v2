@@ -51,6 +51,7 @@ export const routes: RouteRecord[] = [
     element: <Layout />,
     entry: 'src/App.tsx',
     children: [
+      { path: 'virgin', entry: 'src/pages/virgin/page.tsx', lazy: () => import('./pages/virgin/page').then((m) => ({ Component: m.default })) },
       { index: true, entry: 'src/pages/home/page.tsx', lazy: () => import('./pages/home/page').then((m) => ({ Component: m.default })) },
       { path: 'join', entry: 'src/pages/join/page.tsx', lazy: () => import('./pages/join/page').then((m) => ({ Component: m.default })) },
       { path: 'login', entry: 'src/pages/login/page.tsx', lazy: () => import('./pages/login/page').then((m) => ({ Component: m.default })) },
