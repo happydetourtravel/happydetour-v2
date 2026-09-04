@@ -62,7 +62,6 @@ const sailings: Sailing[] = [
     sailed: true,
   },
   {
-  {
     slug: "alaska-seattle-vancouver-brilliant-0903",
     photo: "/BL-Alaska.png",
     ship: "Brilliant Lady",
