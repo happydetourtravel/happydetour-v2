@@ -31,9 +31,9 @@ export default function IcelandGreenlandNycValiant() {
   // Verified solo (per Sailor) pricing pulled directly from Eric's FirstMates affiliate
   // booking tool. Taxes & fees are included in these prices. RockStar and Mega RockStar are sold out on this sailing.
   const cabins = [
-    { type: "Insider", desc: "No window, but everything else you need for this one-time transatlantic crossing.", price: "$3,098" },
+    { type: "Insider", desc: "No window, but everything else you need for this one-time transatlantic crossing.", price: "$3,358" },
+    { type: "Sea Terrace", desc: "Your own private balcony with hammock. Includes bar tab when booked with Eric.", price: "$3,766" },
     { type: "Sea View", desc: "A porthole view of the North Atlantic, Greenland's coast, and the fjords as you sail between ports.", price: "$4,398" },
-    { type: "Sea Terrace", desc: "Your own private balcony with hammock. Includes bar tab when booked with Eric.", price: "$4,918" },
     { type: "RockStar Quarters", desc: "Exclusive Richard's Rooftop access, stocked in-room bar, priority booking. Includes bar tab when booked with Eric.", price: "Sold Out", soldOut: true },
     { type: "Mega RockStar Quarters", desc: "The largest spaces on the ship, with daily bar tab and spa access.", price: "Sold Out", soldOut: true },
   ];
@@ -135,7 +135,7 @@ export default function IcelandGreenlandNycValiant() {
               <div style={{ backgroundColor: "#1F2937", padding: "16px 20px" }}>
                 <p style={{ color: "#F59E0B", fontSize: "11px", fontWeight: "700", letterSpacing: "1px", textTransform: "uppercase", margin: "0 0 4px 0" }}>Starting From</p>
                 <div style={{ display: "flex", alignItems: "baseline", gap: "8px" }}>
-                  <span style={{ color: "white", fontSize: "36px", fontWeight: "800" }}>$3,098</span>
+                  <span style={{ color: "white", fontSize: "36px", fontWeight: "800" }}>$3,358</span>
                   <span style={{ color: "#9CA3AF", fontSize: "13px" }}>/sailor</span>
                 </div>
                 <p style={{ color: "#FDE68A", fontSize: "12px", margin: "6px 0 0 0" }}>150% single supplement. No paying double to cruise solo.</p>
