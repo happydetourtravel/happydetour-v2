@@ -1,6 +1,22 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+type Sailing = {
+  slug: string;
+  photo: string;
+  ship: string;
+  title: string;
+  date: string;
+  nights: string;
+  price: string;
+  loot: number;
+  sailed?: boolean;
+  booked?: boolean;
+  full?: boolean;
+};
+
+const sailings: Sailing[] = [
+  
 const sailings = [
   {
     slug: "scarlet-italy-french-riviera-0822",
