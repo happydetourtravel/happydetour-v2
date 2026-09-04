@@ -151,7 +151,7 @@ export default function VirginDealsHub() {
           {sailings.map((s) => (
             <Link
               key={s.slug}
-              to={`/solo/${s.slug}`}
+              to={`/virgin/${s.slug}`}
               style={{ textDecoration: "none", backgroundColor: "white", borderRadius: "12px", border: "1px solid #E5E7EB", overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.05)", display: "flex", flexDirection: "column" }}
             >
               <div style={{ height: "160px", backgroundImage: `url('${s.photo}')`, backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
@@ -188,7 +188,7 @@ export default function VirginDealsHub() {
         <div style={{ marginTop: "32px", textAlign: "center", backgroundColor: "white", border: "1px solid #E5E7EB", borderRadius: "12px", padding: "32px 20px" }}>
           <div style={{ width: "56px", height: "56px", borderRadius: "50%", backgroundColor: "#E5E7EB", margin: "0 auto 12px auto", backgroundImage: "url('/eric-headshot.jpeg')", backgroundSize: "cover", backgroundPosition: "center" }} />
           <p style={{ color: "#1F2937", fontWeight: "700", fontSize: "16px", margin: "0 0 6px 0" }}>Don't see the sailing you want?</p>
-          <p style={{ color: "#4B5563", fontSize: "14px", margin: "0 0 16px 0" }}>I can check pricing on any Virgin Voyages sailing and add the same onboard credit perk.</p>
+          <p style={{ color: "#4B5563", fontSize: "14px", margin: "0 0 16px 0" }}>I can check pricing on any Virgin Voyages sailing — the onboard credit bonus above is only available on select sailings like these, but I'm happy to look into any date that works for you.</p>
           <button onClick={() => setModalOpen(true)} style={{ backgroundColor: "#CC0000", color: "white", padding: "12px 24px", borderRadius: "8px", fontWeight: "700", fontSize: "14px", border: "none", cursor: "pointer" }}>Join the mailing list for more deals like this</button>
         </div>
       </div>
