@@ -22,8 +22,6 @@ export default function MexicanRivieraBrilliant() {
     { day: 8, port: "Los Angeles, California, USA", time: "Arrives 06:30 AM", desc: "Seven nights along the Mexican Riviera, done the Virgin way." },
   ];
 
-  // Verified solo (per Sailor) pricing pulled directly from Eric's FirstMates affiliate
-  // booking tool. Taxes & fees are included in these prices. Mega RockStar is sold out on this sailing.
   const cabins = [
     { type: "Insider", desc: "No window, but everything else you need for a warm-weather Pacific coast getaway.", price: "$1,171" },
     { type: "Sea View", desc: "A porthole view of the Pacific as you sail between ports.", price: "$1,311" },
@@ -140,7 +138,7 @@ export default function MexicanRivieraBrilliant() {
                     </div>
                   ))}
                 </div>
-                <a href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/6E9JQLQfrQfUvS85KcGhiHE1/link" target="_blank" rel="noopener noreferrer" style={{ display: "block", textAlign: "center", backgroundColor: "#CC0000", color: "white", padding: "14px 16px", borderRadius: "8px", textDecoration: "none", fontWeight: "700", fontSize: "15px", marginBottom: "10px" }}>Claim This Solo Spot</a>
+                <a href="https://www.virginvoyages.com/book/voyage-planner/pre-checkout?agencyId=589&agentId=278796&currencyCode=USD&dateFrom=2026-09-01&dateTo=2026-09-30&homePorts=LAX&packageCode=7NLAX&sailors=1&voyageId=BR2609197NLAX" target="_blank" rel="noopener noreferrer" style={{ display: "block", textAlign: "center", backgroundColor: "#CC0000", color: "white", padding: "14px 16px", borderRadius: "8px", textDecoration: "none", fontWeight: "700", fontSize: "15px", marginBottom: "10px" }}>Claim This Solo Spot</a>
                 <div style={{ position: "relative", marginBottom: "10px" }}>
                   <button onClick={() => setContactOpen(!contactOpen)} style={{ width: "100%", display: "block", textAlign: "center", backgroundColor: "#F9FAFB", color: "#007298", padding: "10px 16px", borderRadius: "8px", fontWeight: "600", fontSize: "13px", border: "1px solid #E5E7EB", cursor: "pointer" }}>Or text/email Eric directly</button>
                   {contactOpen && (
@@ -150,7 +148,7 @@ export default function MexicanRivieraBrilliant() {
                     </div>
                   )}
                 </div>
-                <a href="https://www.virginvoyages.com/book/voyage-planner/pre-checkout?agencyId=589&agentId=278796&currencyCode=USD&dateFrom=2026-09-01&dateTo=2026-09-30&homePorts=LAX&packageCode=7NLAX&sailors=1&voyageId=BR2609197NLAX" target="_blank" rel="noopener noreferrer" style={{ display: "block", textAlign: "center", color: "#D1D5DB", padding: "6px 16px", textDecoration: "underline", fontWeight: "500", fontSize: "11px", marginBottom: "10px" }}>Already know your cabin? Book directly</a>
+                <a href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/6E9JQLQfrQfUvS85KcGhiHE1/link" target="_blank" rel="noopener noreferrer" style={{ display: "block", textAlign: "center", color: "#D1D5DB", padding: "6px 16px", textDecoration: "underline", fontWeight: "500", fontSize: "11px", marginBottom: "10px" }}>Want my help picking a cabin first? Fill out this form</a>
                 <p style={{ color: "#9CA3AF", fontSize: "11px", textAlign: "center", margin: 0, lineHeight: "1.5" }}>Solo pricing shown, taxes & fees included. Subject to change and availability.</p>
                 <button onClick={() => setModalOpen(true)} style={{ display: "block", width: "100%", textAlign: "center", background: "none", border: "none", color: "#007298", fontSize: "12px", fontWeight: "600", cursor: "pointer", marginTop: "14px", textDecoration: "underline" }}>Join the mailing list for more deals like this</button>
               </div>
