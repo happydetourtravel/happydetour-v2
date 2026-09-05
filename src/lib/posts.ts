@@ -1913,6 +1913,88 @@ export const POSTS: Post[] = [
       <p>Eric<br/>Happy Detour Travel<br/>Real trips. Real value. Someone actually in your corner.<br/>happydetour.com | eric@happydetour.com | 630-823-1253</p>
     `,
   },
+    {
+    slug: 'the-two-weeks-that-taught-me-when-to-pull-back',
+    title: 'The Two Weeks That Taught Me When to Pull Back',
+    date: '2026-09-04',
+    tag: 'Behind the Brand',
+    image: '/blog/coolhorizon.png',
+    excerpt: "I built a page, let it sit too long, almost hard promoted it too late, and then deleted the whole thing. Here is the honest version of the last couple of weeks, plus what I am learning at a new store at the same time.",
+    content: `
+      <p>I want to be honest with you about the last couple of weeks, because if you have been following along, you deserve the real version, not the highlight reel.</p>
+
+      <p>Here is what actually happened.</p>
+
+      <h2>I built a page and let it sit too long</h2>
+
+      <p>A few weeks back I built a solo sailors page for Happy Detour Travel. Virgin Voyages has a handful of sailings where solo travelers only pay 150 percent of the fare instead of a full double supplement, and I wanted a place where people could see all of those open dates in one spot. Nine sailings, four ships, real photos, real pricing pulled straight from my booking tool. I was proud of it. It looked good, it worked well, and I genuinely believed there were solo travelers out there who would book if they just knew this kind of deal existed.</p>
+
+      <p>Then I did the thing a lot of new business owners do. I built it, felt good about it, and moved on to the next thing without ever actually promoting it.</p>
+
+      <p>I did not mean for that to happen. Some weeks got busy with other parts of the business, some weeks got busy with life, and the page just sat there quietly while the calendar kept moving. Weeks went by. The sailing dates started passing without a single booking. One by one I had to go back in and mark them as sailed, which is a strange feeling, watching a page you built with real hope in it slowly turn gray, sailing by sailing.</p>
+
+      <p>By the time I circled back to actually push the page, most of the original nine sailings were gone. What was left were four sailings all leaving within about two weeks. That is when I made the call to hard promote it. I even started building a Meta ad campaign, wrote copy, and thought through targeting people already overseas, since one of the sailings left from Athens and would only make sense for someone who could get there fast.</p>
+
+      <h2>Then I asked myself the harder question</h2>
+
+      <p>Before I spent a dollar on ads, I stopped and asked something I do not always ask early enough. Would a smart competitor actually expect to book four clients off sailings this close to departure?</p>
+
+      <p>The honest answer was no.</p>
+
+      <p>International cruises need lead time. Flights are not simple or cheap to book on a week's notice, and prices only climb the closer you get to the sail date. Solo travelers especially tend to plan further out than couples, since they are coordinating everything on their own without anyone else's schedule to work around. On top of that, I was not fully confident every price on the page was still current. Cruise pricing moves fast, sometimes week to week, and I had not gone back to verify every number since I first pulled it. If someone had clicked through and the price they saw did not match reality, that is not a small mistake. That is the kind of thing that costs you a client relationship before it even starts, and trust is the entire foundation of this business.</p>
+
+      <p>So I deleted the page.</p>
+
+      <p>Not paused it. Not softened the copy. Deleted the routes, deleted the folders, cleaned it out of my sitemap so search engines would not keep trying to crawl pages that no longer existed. It felt a little strange killing something I had put real work into. There is a small sting in deleting something you built with your own hands, even when you know it is the right call. But it felt a lot better than spending money and energy chasing bookings that were never realistic to begin with.</p>
+
+      <p>I want to be clear that this was not a case of the page itself being bad. The pages looked good, the layout worked, the information was clear. The problem was never the craftsmanship. The problem was timing, and timing is one of those things that no amount of good design can fix after the fact. You can have the nicest looking page in the world, but if the sailing leaves in six days and your audience needs sixty, none of that polish matters. That was a hard thing to accept after putting in the hours, but it was true, and pretending otherwise would not have changed it.</p>
+
+      <p>I think that is one of the most useful things I have learned building this business so far. Building something is not the finish line. Knowing when to walk away from it is just as much a skill, maybe more of one. It is easy to fall in love with something you made and keep pushing it out of pride long after the timing has passed. It is harder, and more valuable, to notice when the moment for an idea has come and gone, and to let it go without treating that as failure.</p>
+
+      <img src="/blog/coolhorizon.png" alt="Calm ocean horizon at sunrise" loading="lazy" />
+      <p class="caption">Some weeks the right move is not to push forward. It is to step back and look at the whole horizon before deciding what is actually worth chasing.</p>
+
+      <h2>What I am doing instead</h2>
+
+      <p>I still think there is something real in that original idea, just not the way I first tried it. Right now I am looking into building a last minute deals page instead, one that leans into short notice as the whole point rather than something working against it. That is really the key difference. A solo sailings page needs runway to work, because people need time to plan flights and get time off. A last minute deals page does not need runway. Short notice is the entire pitch.</p>
+
+      <p>Virgin actually has a real promotion running right now, with meaningful instant savings plus a strong discount on a second sailor, on top of the Sailor Loot that comes with a lot of these sailings already. That is genuine urgency with a real deadline, not a made up one, and it is the kind of offer that actually rewards someone for booking fast instead of penalizing them for not planning far enough ahead.</p>
+
+      <p>I am still in the research phase on that one. I am pulling current pricing directly from my booking tool sailing by sailing, rather than reusing old numbers, because I do not want to make the same mistake twice. I would rather take the extra time to get the pricing and the offer right than rush it out the door again the way I nearly did with the solo page.</p>
+
+      <p>There is also a lesson in here about how I approach research going forward. With the solo page, I pulled pricing once and treated it as settled. I did not build in any habit of going back to check it again as time passed. This time I want to build the checking into the process itself, not just the initial pull. A deal is only a good deal if the number on the page still matches the number a client actually gets charged, and that only works if someone is actually keeping an eye on it.</p>
+
+      <h2>Learning a new team while still building this</h2>
+
+      <p>While all of this was going on with Happy Detour, I was also transferring to a new store to work with a new team. That is its own kind of adjustment. New people, new dynamics, a new rhythm to learn, all while still trying to grow this business on the side.</p>
+
+      <p>I went in trying to just listen first. Meet the team, watch how things run day to day, understand how they already work together before trying to change anything. That part matters to me. It is easy to walk into a new place and start pushing your own way of doing things right away, but that usually just tells people you do not respect what was already working before you got there.</p>
+
+      <p>What I found was genuinely great teamwork, and I am excited to be part of it. People who show up for each other, who know their roles, who do not need someone standing over them to get things done well. That kind of thing is not something you can fake or build overnight, and stepping into a team that already has it is honestly a good problem to have.</p>
+
+      <p>It also reminded me of something I want to carry into Happy Detour as it grows. Good teamwork does not happen by accident. Somebody built the habits and the trust that make a team work well together long before I showed up, and I am walking into the benefit of that effort. I want to build that same kind of foundation with Happy Detour, so that whatever this business looks like a year or two from now, it is built on habits I actually trust, not just whatever got me through the next booking.</p>
+
+      <p>It is not easy learning a brand new team and pushing travel bookings at the same time. Some days it has felt like doing two jobs at once instead of one job well. There have been evenings where I finish a full day with the new team and then sit down to work on Happy Detour with not much left in the tank. But I am doing it, one day at a time, and I would rather be honest about how much of a stretch it has been than pretend it has been effortless.</p>
+
+      <p>What I have noticed is that the two things are actually teaching me some of the same lessons at the same time, just from different directions. Learning a new team means resisting the urge to change everything right away, the same way pulling back on that solo page meant resisting the urge to push ahead just because I had already put work into it. Both situations reward patience over speed, and both punish moving fast just to feel like you are making progress. I am trying to let that lesson show up in both places instead of only learning it once and forgetting it the next time it matters.</p>
+
+      <h2>What I am taking from all of this</h2>
+
+      <p>If I am being real with myself, the last couple of weeks were not a failure. They were a correction. I built something, let it sit too long, almost made that worse by rushing to fix it with another mistake, and then caught myself before spending money I could not get back.</p>
+
+      <p>That is not nothing. That is actually the job. Building a business from scratch means you are going to build things that do not work, promote things at the wrong time, and occasionally have to delete a page you spent hours on. The part that matters is noticing it, being honest about it, and adjusting instead of doubling down out of pride. Nobody starting a business gets it right every single time, and I think the ones who last are the ones willing to admit when something is not working instead of quietly hoping it fixes itself.</p>
+
+      <p>I am still figuring a lot of this out as I go, both at Happy Detour and with the new team. I do not have it all mapped out, and I am not going to act like I do. What I can tell you is that I am paying attention, I am willing to undo my own work when it is the right call, and I am not going to stop building just because one attempt did not land the way I hoped.</p>
+
+      <p>I also think there is value in sharing the version of this that is not tied up neatly with a bow on it. It would be easier to write a post about the solo sailings page that only talked about the win, or to leave out the part where I built something and let it sit unused for weeks. But this blog has never really been about only showing the finished, polished version of things. It has been about showing the actual process, including the parts where I get it wrong before I get it right. If that is useful to anyone else building something of their own right now, then writing it down like this is worth it.</p>
+
+      <p>Thank you for being part of this journey with me. Whether you have been reading since the very first post or you just found this one today, it means something that you are here for the real version of building this thing, not just the polished parts. This business is being built in the open, mistakes and all, and I would not want to do it any other way.</p>
+
+      <p>More soon, once the next idea is actually ready.</p>
+
+      <p>Eric<br/>Happy Detour Travel<br/>Real trips. Real value. Someone actually in your corner.<br/>happydetour.com | eric@happydetour.com | 630-823-1253</p>
+    `,
+  },
  ]
 
 export function getAllPosts(): Post[] {
