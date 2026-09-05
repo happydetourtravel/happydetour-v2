@@ -80,11 +80,11 @@ export default function Header() {
                     🗺️ Drop Your Trip Wishlist
                   </a>
                   <Link
-                    to="/solo"
+                    to="/virgin"
                     className="hover:bg-gray-50 transition-colors"
                     style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 16px', fontSize: '14px', color: '#1F2937', textDecoration: 'none', fontWeight: '600', borderBottom: '1px solid #F3F4F6' }}
                   >
-                    🧳 Solo Sailor Deals
+                    🧳 Virgin Voyages Deals
                   </Link>
                   <a
                     href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK"
@@ -173,11 +173,11 @@ export default function Header() {
             </ClientOnly>
 
             <Link
-              to="/solo"
+              to="/virgin"
               onClick={() => setMenuOpen(false)}
               style={{ display: 'block', padding: '12px 8px', fontSize: '15px', fontWeight: '500', color: '#1F2937', textDecoration: 'none', borderBottom: '1px solid #F9FAFB' }}
             >
-              🧳 Solo Sailor Deals
+              🧳 Virgin Voyages Deals
             </Link>
             <a
               href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK"
