@@ -93,7 +93,7 @@ export default function BlogPost() {
             We will talk through everything before anything is confirmed so there are no surprises.
           </p>
           <a
-            href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/RFxrKCNQTejSeWAhpo4BaaEz/link"
+            href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/dDfyxMMy8gucAddKpaipPB4Z/link"
             target="_blank"
             rel="noopener noreferrer"
             style={{ display: 'inline-block', backgroundColor: '#F59E0B', color: 'white', padding: '13px 32px', borderRadius: '100px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}
