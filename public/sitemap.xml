@@ -97,48 +97,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.happydetour.com/virgin</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.happydetour.com/virgin/bermuda-caribbean-nyc-sanjuan-valiant-1019</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.happydetour.com/virgin/spanish-isles-transatlantic-scarlet-1011</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.happydetour.com/virgin/panama-canal-la-miami-brilliant-1029</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.happydetour.com/virgin/western-caribbean-bimini-resilient-1101</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.happydetour.com/virgin/eastern-caribbean-bimini-brilliant-1115</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.happydetour.com/virgin/southern-caribbean-valiant-1120</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.happydetour.com/resorts/sandals</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -152,7 +110,7 @@
   </url>
   <url>
     <loc>https://www.happydetour.com/blog</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -182,6 +140,42 @@
   </url>
 
   <!-- Blog Posts -->
+  <url>
+    <loc>https://www.happydetour.com/blog/the-two-weeks-that-taught-me-when-to-pull-back</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.happydetour.com/blog/guaranteed-cabins-vs-travel-agent</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.happydetour.com/blog/how-to-plan-the-right-birthday-trip</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.happydetour.com/blog/my-6am-flight-just-became-a-130pm-flight</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.happydetour.com/blog/charleston-cruise-port-closes-for-good</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.happydetour.com/blog/happy-fourth-of-july-americas-250th</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://www.happydetour.com/blog/a-lot-has-changed-heres-where-things-stand</loc>
     <lastmod>2026-06-22</lastmod>
