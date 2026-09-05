@@ -97,31 +97,43 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.happydetour.com/solo</loc>
+    <loc>https://www.happydetour.com/virgin</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.happydetour.com/solo/greek-isles-adriatic-scarlet-0910</loc>
+    <loc>https://www.happydetour.com/virgin/bermuda-caribbean-nyc-sanjuan-valiant-1019</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.happydetour.com/solo/iceland-greenland-nyc-valiant-0906</loc>
+    <loc>https://www.happydetour.com/virgin/spanish-isles-transatlantic-scarlet-1011</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.happydetour.com/solo/dominican-bimini-resilient-0914</loc>
+    <loc>https://www.happydetour.com/virgin/panama-canal-la-miami-brilliant-1029</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.happydetour.com/solo/mexican-riviera-brilliant-0919</loc>
+    <loc>https://www.happydetour.com/virgin/western-caribbean-bimini-resilient-1101</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.happydetour.com/virgin/eastern-caribbean-bimini-brilliant-1115</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.happydetour.com/virgin/southern-caribbean-valiant-1120</loc>
     <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
