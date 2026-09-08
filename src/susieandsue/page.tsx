@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 
 /**
  * Italy, Greece & Ireland: Susie & Sue's Detour
- * Route: happydetour.com/susie
+ * Route: happydetour.com/susieandsue
  *
  * Drop this file into your happydetour-v2 project (e.g. src/pages/susieandsue.tsx)
- * and wire it up to the /susie route. No header, footer only, matching the Cheri page.
+ * and wire it up to the /susieandsue route. No header, footer only, matching the Cheri page.
  *
  * Design: plain white throughout. The only color on the page is each
  * destination name and its small marker dot. Everything else (text,
@@ -19,6 +19,13 @@ import { useEffect, useState } from "react";
  * loaded in your project (e.g. via index.html or a Google Fonts import).
  * If not, add:
  * <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+ *
+ * UPDATED using confirmed vouchers (Sept 2026):
+ * - Added the Sep 12-13 arrival night in Bari (was missing before)
+ * - Corrected the Mercure Villa Romanazzi phone number
+ * - Added the Trulli Alberobello phone number
+ * - Added the Corfu rental car leg (was missing before)
+ * - Added a check-in heads up note for Blue Haven (no front desk, host needs 48 hr notice)
  */
 
 const DEPARTURE_DATE = new Date("2026-09-12T00:00:00");
@@ -40,18 +47,29 @@ type Leg = {
 
 const legs: Leg[] = [
   {
+    id: "bari-0",
+    region: "puglia",
+    place: "Bari",
+    dates: "Sep 12 to 13",
+    hotel: "Mercure Villa Romanazzi Carducci",
+    detail: "1 night, arrival in Puglia",
+    address: "Via Giuseppe Capruzzi 326, 70124 Bari BA, Italy",
+    phone: "+39 080 542 7400",
+    image: "/images/susieandsue/mercure.jpg",
+  },
+  {
     id: "bari-1",
     region: "puglia",
     place: "Bari",
     dates: "Sep 13 to 14",
     hotel: "Mercure Villa Romanazzi Carducci",
-    detail: "1 night, arrival in Puglia",
+    detail: "1 night, upgraded to a Superior Double/Twin Room",
     address: "Via Giuseppe Capruzzi 326, 70124 Bari BA, Italy",
-    phone: "+39 080 918 4704",
+    phone: "+39 080 542 7400",
     image: "/images/susieandsue/mercure.jpg",
   },
   {
-    id: "car",
+    id: "car-bari",
     region: "puglia",
     place: "Bari Airport",
     dates: "Sep 13 to 18",
@@ -68,6 +86,7 @@ const legs: Leg[] = [
     dates: "Sep 14 to 16",
     hotel: "La Perla",
     detail: "2 nights along the Amalfi Coast",
+    note: "No front desk after hours, call ahead to arrange arrival time",
     address: "Via Miglina 2, 84010 Praiano (SA), Italy",
     phone: "+39 089 874052",
     image: "/images/susieandsue/laperla.webp",
@@ -80,6 +99,7 @@ const legs: Leg[] = [
     hotel: "Trulli BB Alberobello",
     detail: "2 nights among the trulli, Puglia's whitewashed, cone roofed houses",
     address: "Via Mendel 1, 70011 Alberobello, Puglia, Italy",
+    phone: "+39 349 562 1064",
     image: "/images/susieandsue/trulli.jpg",
   },
   {
@@ -100,10 +120,21 @@ const legs: Leg[] = [
     dates: "Sep 19 to 24",
     hotel: "Blue Haven Beach Loft Apartment",
     detail: "5 nights on the Ionian Sea, sea view apartment, Palaiokastritsa",
-    note: "Flight from Bari self booked by Susie & Sue",
+    note: "No front desk, host will contact before arrival to arrange check in",
     address: "8th Km Palaiokastritsa National Road, Corfu 49100, Greece",
     phone: "+30 2661 700718",
     image: "/images/susieandsue/bluehaven.webp",
+  },
+  {
+    id: "car-corfu",
+    region: "corfu",
+    place: "Corfu Airport",
+    dates: "Sep 19 to 24",
+    hotel: "Rental car, Opel Corsa Auto or similar",
+    detail: "Picked up and returned at Corfu Airport, EXER Car Rental",
+    address: "Konstantinou Georgaki 31, opposite the airport, Corfu 49100, Greece",
+    phone: "+30 699 522 3668",
+    image: "/images/susieandsue/exer.webp",
   },
   {
     id: "dublin",
@@ -392,7 +423,7 @@ export default function SusieAndSue() {
         <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, marginBottom: 8 }}>
           Real trips. Real value. Someone actually in your corner.
           <span style={{ color: 'rgba(255,255,255,0.2)', margin: '0 8px' }}>·</span>
-          Alliance, OH
+          Northeast, OH
           <span style={{ color: 'rgba(255,255,255,0.2)', margin: '0 8px' }}>·</span>
           630-823-1253 (also on WhatsApp)
           <span style={{ color: 'rgba(255,255,255,0.2)', margin: '0 8px' }}>·</span>
@@ -403,7 +434,7 @@ export default function SusieAndSue() {
           <span style={{ margin: '0 6px' }}>·</span>
           Affiliated with WorldVia Travel Network
           <span style={{ margin: '0 6px' }}>·</span>
-          Page created July 28, 2026
+          Page rebuilt September 8, 2026
         </p>
       </footer>
     </div>
