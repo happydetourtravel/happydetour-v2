@@ -134,7 +134,7 @@ const legs: Leg[] = [
     detail: "Picked up and returned at Corfu Airport, EXER Car Rental",
     address: "Konstantinou Georgaki 31, opposite the airport, Corfu 49100, Greece",
     phone: "+30 699 522 3668",
-    image: "/images/susieandsue/exer.webp",
+    image: "/images/susieandsue/exer-logo.png",
   },
   {
     id: "dublin",
