@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const featuredDeals = [
   { tag: "VIRGIN VOYAGES", title: "Caribbean Escape — Bahamas & Key West", date: "Jan 2027", nights: "4 nights", ship: "Scarlet Lady · Miami", originalPrice: "$699", salePrice: "$549", link: "/cruises/bahamas-key-west" },
@@ -6,13 +6,6 @@ const featuredDeals = [
   { tag: "VIRGIN VOYAGES", title: "French Riviera, Spain & Ibiza Overnight", date: "Jun 2027", nights: "7 nights", ship: "Resilient Lady · Barcelona", originalPrice: "$1,801", salePrice: "$1,253", link: "/cruises/french-riviera-ibiza" },
   { tag: "VIRGIN VOYAGES", title: "Miami to Morocco & Spain Transatlantic", date: "Apr 2027", nights: "14 nights", ship: "Scarlet Lady · Miami", originalPrice: "$1,818", salePrice: "$1,246", link: "/cruises/miami-morocco-transatlantic" },
   { tag: "VIRGIN VOYAGES", title: "Alaska: Hubbard Glacier & Coastal Views", date: "Aug 2027", nights: "9 nights", ship: "Brilliant Lady · Seattle", originalPrice: "$1,597", salePrice: "$1,161", link: "/cruises/alaska-hubbard-glacier" },
-]
-
-// Solo sailor sailings — three examples shown here, all 9 live on /solo
-const soloDeals = [
-  { title: "Italy & French Riviera", date: "Aug 22, 2026", nights: "9 nights", ship: "Scarlet Lady", price: "$2,730", link: "/solo/scarlet-italy-french-riviera-0822" },
-  { title: "Alaska: Seattle to Vancouver", date: "Sep 3, 2026", nights: "8 nights", ship: "Brilliant Lady", price: "$1,610", link: "/solo/alaska-seattle-vancouver-brilliant-0903" },
-  { title: "Dominican Republic & Bimini Beach Club", date: "Sep 14, 2026", nights: "5 nights", ship: "Resilient Lady", price: "$1,097", link: "/solo/dominican-bimini-resilient-0914" },
 ]
 
 // Other lines Eric also books — kept small and quiet, well below the Virgin content
@@ -65,12 +58,28 @@ const virginFaqs = [
 export default function Home() {
   const [dealIndex, setDealIndex] = useState(0)
   const deal = featuredDeals[dealIndex]
+  const testimonialScrollRef = useRef(null)
 
   useEffect(() => {
     const timer = setInterval(() => {
       setDealIndex((prev) => (prev + 1) % featuredDeals.length)
     }, 4000)
     return () => clearInterval(timer)
+  }, [])
+
+  useEffect(() => {
+    const el = testimonialScrollRef.current
+    if (!el) return
+    const scrollAmount = 300 // roughly one card width + gap
+    const interval = setInterval(() => {
+      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 5
+      if (atEnd) {
+        el.scrollTo({ left: 0, behavior: 'smooth' })
+      } else {
+        el.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+      }
+    }, 3500)
+    return () => clearInterval(interval)
   }, [])
 
   return (
@@ -292,47 +301,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ============ SOLO SAILOR DEALS ============ */}
-      <div id="solo-sailor-deals" style={{ backgroundColor: '#FFFBF0', padding: '60px 20px' }}>
-        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-            <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Solo Sailor Offers</p>
-            <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: '0 0 16px 0' }}>Solo Travel. Big Vibes. Smaller Price.</h2>
-            <p style={{ color: '#374151', fontSize: '15px', lineHeight: '1.7', maxWidth: '700px', margin: '0 auto' }}>
-              Nine Virgin Voyages sailings at just 150% single supplement — no paying double to cruise solo. From a five-night Caribbean getaway to a one-time transatlantic crossing.
-            </p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px', maxWidth: '1000px', margin: '0 auto 28px auto' }}>
-            {soloDeals.map((s) => (
-              <a
-                key={s.link}
-                href={s.link}
-                style={{ display: 'block', textDecoration: 'none', backgroundColor: 'white', borderRadius: '14px', border: '1px solid #E5E7EB', padding: '20px' }}
-              >
-                <span style={{ backgroundColor: '#CC0000', color: 'white', fontSize: '10px', fontWeight: '800', padding: '3px 8px', borderRadius: '4px', letterSpacing: '0.5px', textTransform: 'uppercase' }}>{s.ship}</span>
-                <p style={{ color: '#1F2937', fontWeight: '700', fontSize: '15px', margin: '10px 0 4px 0', lineHeight: '1.3' }}>{s.title}</p>
-                <p style={{ color: '#9CA3AF', fontSize: '12px', margin: '0 0 12px 0' }}>{s.date} · {s.nights}</p>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-                  <span style={{ color: '#9CA3AF', fontSize: '11px' }}>From</span>
-                  <span style={{ color: '#007298', fontWeight: '800', fontSize: '18px' }}>{s.price}</span>
-                  <span style={{ color: '#9CA3AF', fontSize: '11px' }}>/sailor</span>
-                </div>
-              </a>
-            ))}
-          </div>
-
-          <div style={{ textAlign: 'center' }}>
-            <a
-              href="/solo"
-              style={{ display: 'inline-block', backgroundColor: '#007298', color: 'white', padding: '13px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}
-            >
-              View All 9 Solo Sailings →
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Also Booking These Lines — plain text links, no tiles, stays out of Virgin's way */}
       <div id="cruise-lines" style={{ backgroundColor: '#F3F4F6', padding: '32px 20px', textAlign: 'center' }}>
         <p style={{ color: '#6B7280', fontSize: '11px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', margin: '0 0 6px 0' }}>Also Booking</p>
@@ -510,6 +478,7 @@ export default function Home() {
         </div>
         <div
           className="testimonial-scroll"
+          ref={testimonialScrollRef}
           style={{ display: 'flex', gap: '20px', overflowX: 'auto', padding: '4px 20px 16px 20px', maxWidth: '1100px', margin: '0 auto', scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}
         >
           {testimonials.map((t, i) => (
@@ -523,7 +492,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <p style={{ textAlign: 'center', color: '#9CA3AF', fontSize: '12px', marginTop: '8px' }}>← Swipe to see more →</p>
+        <p style={{ textAlign: 'center', color: '#9CA3AF', fontSize: '12px', marginTop: '8px' }}>Scrolls automatically — swipe anytime to browse at your own pace</p>
       </div>
 
       {/* Final CTA */}
