@@ -58,7 +58,7 @@ const virginFaqs = [
 export default function Home() {
   const [dealIndex, setDealIndex] = useState(0)
   const deal = featuredDeals[dealIndex]
-  const testimonialScrollRef = useRef(null)
+  const testimonialScrollRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const timer = setInterval(() => {
