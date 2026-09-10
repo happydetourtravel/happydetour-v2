@@ -146,6 +146,8 @@ export default function Home() {
           .why-eric-inner { flex-direction: row !important; }
           .why-virgin-inner { flex-direction: row !important; }
         }
+        .testimonial-scroll::-webkit-scrollbar { height: 6px; }
+        .testimonial-scroll::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 10px; }
       `}</style>
 
       {/* Why Book With Eric */}
@@ -169,6 +171,13 @@ export default function Home() {
               <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.7', margin: '0 0 20px 0' }}>
                 Anyone can book a trip. I am the one who answers the phone when things do not go as planned. I have sailed over 20 cruises myself, so when I recommend a ship or a resort, it comes from actually being there, not a brochure.
               </p>
+
+              <div style={{ backgroundColor: 'white', borderLeft: '4px solid #007298', borderRadius: '8px', padding: '18px 20px', margin: '0 0 20px 0' }}>
+                <p style={{ color: '#1F2937', fontSize: '14px', lineHeight: '1.7', fontStyle: 'italic', margin: '0 0 10px 0' }}>
+                  "Not every cruise line is right for every person. I don't start by asking which cruise is the cheapest. I want to know what you actually want your vacation to feel like. Do you want quiet and relaxing? Lots to do? Adults only? Great food? A ship that's good for the whole family? The right cruise isn't always the one with the best deal. It's the one that fits you. That's where I come in."
+                </p>
+                <p style={{ color: '#007298', fontWeight: '700', fontSize: '13px', margin: 0 }}>— Eric Carney, Happy Detour Travel</p>
+              </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
                 <div style={{ backgroundColor: 'white', border: '1px solid #F3F4F6', borderRadius: '12px', padding: '16px' }}>
@@ -272,6 +281,14 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Eric's expert take on flying in */}
+          <div style={{ marginTop: '32px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '12px', padding: '20px 24px' }}>
+            <p style={{ color: 'white', fontSize: '14px', lineHeight: '1.7', fontStyle: 'italic', margin: '0 0 10px 0' }}>
+              "Never fly in the same day as your cruise. Flights get delayed. Flights get cancelled. And that is not how you want to start your vacation. I always recommend flying in the day before. Get a good night's sleep, enjoy the city a little, and wake up knowing your ship is right there waiting for you. Trust me, starting your cruise relaxed is so much better than starting it stressed."
+            </p>
+            <p style={{ color: '#F59E0B', fontWeight: '700', fontSize: '13px', margin: 0 }}>Eric Carney, Happy Detour Travel</p>
+          </div>
+
         </div>
       </div>
 
@@ -365,83 +382,124 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Card 1 — Virgin Voyages Mexican Riviera Halloween (Oct 2027) */}
+          {/* Card 1 — Western Caribbean & Bimini Beach Club */}
           <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto 16px auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
             <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden' }} className="group-card-image">
-              <img src="/brilliantlady.jpeg" alt="Brilliant Lady cruise ship" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-              <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#007298', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '4px' }}>🧑‍✈️ Group Rate</span>
+              {/* TODO: upload BiminiBeachClubDrone.jpg to /public */}
+              <img src="/BiminiBeachClubDrone.jpg" alt="Bimini Beach Club aerial view" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#007298', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '4px' }}>✦ Sailor Loot</span>
             </div>
             <div style={{ flex: 1, padding: '20px 24px' }}>
-              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '0 0 6px 0' }}>Mexican Riviera</p>
-              <h3 style={{ color: '#1F2937', fontSize: '19px', fontWeight: '700', margin: '0 0 5px 0', lineHeight: '1.3' }}>Mexican Riviera Halloween Cruise</h3>
-              <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 10px 0' }}>October 23, 2027 &middot; 7 nights &middot; Brilliant Lady &middot; Virgin Voyages</p>
-              <p style={{ color: '#007298', fontSize: '13px', margin: '0 0 10px 0', lineHeight: '1.7' }}>Los Angeles, CA &rarr; Cabo San Lucas &rarr; Mazatlan &rarr; Puerto Vallarta &rarr; Los Angeles, CA</p>
+              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '0 0 6px 0' }}>Western Caribbean</p>
+              <h3 style={{ color: '#1F2937', fontSize: '19px', fontWeight: '700', margin: '0 0 5px 0', lineHeight: '1.3' }}>Western Caribbean & Bimini Beach Club</h3>
+              <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 10px 0' }}>November 1, 2026 &middot; 7 nights &middot; Resilient Lady &middot; Virgin Voyages</p>
               <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>🎃 Halloween Sailing</span>
+                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>✦ Virgin Voyages</span>
+                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>$100 Sailor Loot Included</span>
+              </div>
+            </div>
+            <div style={{ backgroundColor: '#F9FAFB', padding: '20px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', minWidth: '210px', flexShrink: 0, borderTop: '1px solid #F3F4F6' }} className="group-card-pricing">
+              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: 0 }}>Starting from</p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ $100 onboard credit</p>
+                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ No planning fee</p>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
+                <span style={{ color: '#1F2937', fontSize: '26px', fontWeight: '800' }}>$693</span>
+                <span style={{ color: '#6B7280', fontSize: '12px' }}>/person</span>
+              </div>
+              <a href="/virgin/western-caribbean-bimini-resilient-1101" style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>View Details &rarr;</a>
+            </div>
+          </div>
+
+          {/* Card 2 — Eastern Caribbean & Bimini Beach Club */}
+          <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto 16px auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
+            <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden' }} className="group-card-image">
+              <img src="/eastern-caribbean-bimini.webp" alt="Eastern Caribbean and Bimini Beach Club" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#007298', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '4px' }}>✦ Sailor Loot</span>
+            </div>
+            <div style={{ flex: 1, padding: '20px 24px' }}>
+              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '0 0 6px 0' }}>Eastern Caribbean</p>
+              <h3 style={{ color: '#1F2937', fontSize: '19px', fontWeight: '700', margin: '0 0 5px 0', lineHeight: '1.3' }}>Eastern Caribbean & Bimini Beach Club</h3>
+              <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 10px 0' }}>November 15, 2026 &middot; 10 nights &middot; Brilliant Lady &middot; Virgin Voyages</p>
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>✦ Virgin Voyages</span>
+                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>$200 Sailor Loot Included</span>
+              </div>
+            </div>
+            <div style={{ backgroundColor: '#F9FAFB', padding: '20px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', minWidth: '210px', flexShrink: 0, borderTop: '1px solid #F3F4F6' }} className="group-card-pricing">
+              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: 0 }}>Starting from</p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ $200 onboard credit</p>
+                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ No planning fee</p>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
+              <span style={{ color: '#1F2937', fontSize: '26px', fontWeight: '800' }}>$1,190</span>
+              <span style={{ color: '#6B7280', fontSize: '12px' }}>/person</span>
+              </div>
+              <a href="/virgin/eastern-caribbean-bimini-brilliant-1115" style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>View Details &rarr;</a>
+            </div>
+          </div>
+
+          {/* Card 3 — Southern Caribbean Cruise */}
+          <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto 16px auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
+            <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden' }} className="group-card-image">
+              {/* TODO: upload SanJuanCouple.jpg to /public */}
+              <img src="/SanJuanCouple.jpg" alt="Southern Caribbean sailing" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#007298', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '4px' }}>✦ Sailor Loot</span>
+            </div>
+            <div style={{ flex: 1, padding: '20px 24px' }}>
+              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '0 0 6px 0' }}>Southern Caribbean</p>
+              <h3 style={{ color: '#1F2937', fontSize: '19px', fontWeight: '700', margin: '0 0 5px 0', lineHeight: '1.3' }}>Southern Caribbean Cruise</h3>
+              <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 10px 0' }}>November 20, 2026 &middot; 8 nights &middot; Valiant Lady &middot; Virgin Voyages</p>
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>✦ Virgin Voyages</span>
+                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>$100 Sailor Loot Included</span>
+              </div>
+            </div>
+            <div style={{ backgroundColor: '#F9FAFB', padding: '20px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', minWidth: '210px', flexShrink: 0, borderTop: '1px solid #F3F4F6' }} className="group-card-pricing">
+              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: 0 }}>Starting from</p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ $100 onboard credit</p>
+                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ No planning fee</p>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
+              <span style={{ color: '#1F2937', fontSize: '26px', fontWeight: '800' }}>$792</span>
+              <span style={{ color: '#6B7280', fontSize: '12px' }}>/person</span>
+              </div>
+              <a href="/virgin/southern-caribbean-valiant-1120" style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>View Details &rarr;</a>
+            </div>
+          </div>
+
+          {/* Card 4 — Christmas Balcony Sailing, Scarlet Lady (from Eric's Christmas flyer) */}
+          <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
+            <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden' }} className="group-card-image">
+              {/* TODO: upload the Christmas flyer image to /public as christmas-balcony-flyer.png */}
+              <img src="/christmas-balcony-flyer.png" alt="All I Want for Christmas Is a Balcony — Virgin Voyages" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#CC0000', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '4px' }}>🎄 Holiday Sailing</span>
+            </div>
+            <div style={{ flex: 1, padding: '20px 24px' }}>
+              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '0 0 6px 0' }}>Mexico, Round Trip Miami</p>
+              <h3 style={{ color: '#1F2937', fontSize: '19px', fontWeight: '700', margin: '0 0 5px 0', lineHeight: '1.3' }}>All I Want for Christmas Is a Balcony</h3>
+              <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 10px 0' }}>December 21&ndash;26, 2026 &middot; 5 nights &middot; Scarlet Lady &middot; Virgin Voyages</p>
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                <span style={{ backgroundColor: '#FEF2F2', color: '#CC0000', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>🎄 Christmas Week</span>
                 <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>✦ Virgin Voyages</span>
               </div>
             </div>
             <div style={{ backgroundColor: '#F9FAFB', padding: '20px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', minWidth: '210px', flexShrink: 0, borderTop: '1px solid #F3F4F6' }} className="group-card-pricing">
-              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: 0 }}>Sea Terrace from</p>
+              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: 0 }}>Balcony from</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ Group rate locked in</p>
-                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ 20 cabins available</p>
+                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ No planning fee</p>
+                <p style={{ color: '#9CA3AF', fontSize: '11px', margin: 0 }}>Price estimate, confirm before quoting</p>
               </div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-                <span style={{ color: '#1F2937', fontSize: '26px', fontWeight: '800' }}>$1,286</span>
-                <span style={{ color: '#6B7280', fontSize: '12px' }}>/person</span>
-              </div>
-              <a href="https://www.happydetour.com/group/baja-halloween-2027" style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>View Details &rarr;</a>
-            </div>
-          </div>
-
-          {/* Card 2 — Royal Caribbean Allure */}
-          <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto 16px auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
-            <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden' }} className="group-card-image">
-              <img src="/allureoftheseas.jpeg" alt="Allure of the Seas cruise ship" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-              <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#007298', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '4px' }}>🧑‍✈️ Group Rate</span>
-            </div>
-            <div style={{ flex: 1, padding: '20px 24px' }}>
-              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '0 0 6px 0' }}>Eastern Caribbean</p>
-              <h3 style={{ color: '#1F2937', fontSize: '19px', fontWeight: '700', margin: '0 0 5px 0', lineHeight: '1.3' }}>Eastern Caribbean on Allure of the Seas</h3>
-              <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 10px 0' }}>January 10, 2027 &middot; 4 nights &middot; Allure of the Seas</p>
-              <p style={{ color: '#007298', fontSize: '13px', margin: '0 0 10px 0', lineHeight: '1.7' }}>Miami, FL &rarr; Cozumel, Mexico &rarr; Miami, FL</p>
-              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>🚢 Royal Caribbean</span>
-                <span style={{ backgroundColor: '#FEF3C7', color: '#92400E', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>⏰ Deposit Due October 12</span>
-                </div>
-            </div>
-            <div style={{ backgroundColor: '#F9FAFB', padding: '20px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', minWidth: '210px', flexShrink: 0, borderTop: '1px solid #F3F4F6' }} className="group-card-pricing">
-              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: 0 }}>Interior cabins as low as</p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ Group rate locked in</p>
-                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ Limited cabins available</p>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-              <span style={{ color: '#1F2937', fontSize: '26px', fontWeight: '800' }}>$410</span>
+              <span style={{ color: '#1F2937', fontSize: '26px', fontWeight: '800' }}>$595</span>
               <span style={{ color: '#6B7280', fontSize: '12px' }}>/person</span>
               </div>
-              <a href="https://www.happydetour.com/group/allure-eastern-caribbean-2027" style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>View Details &rarr;</a>
+              <a href="https://www.virginvoyages.com/share?type=G&pkgCode=5NCH&voyageCode=SC2612215NCH&metaCat&currencyCode=USD&agencyId=589&agentId=278796" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>View Details &rarr;</a>
             </div>
           </div>
-
-{/* Card 3 — Carnival Halloween — SOLD OUT, compact row */}
-<div style={{ maxWidth: '900px', margin: '0 auto 16px auto', backgroundColor: '#F9FAFB', borderRadius: '12px', border: '1px solid #E5E7EB', padding: '14px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap' }}>
-  <div>
-    <p style={{ color: '#1F2937', fontWeight: '600', fontSize: '14px', margin: '0 0 2px 0' }}>Halloween Eastern Caribbean Cruise</p>
-    <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>October 31, 2026 &middot; 8 nights &middot; Carnival Magic</p>
-  </div>
-  <span style={{ backgroundColor: '#E5E7EB', color: '#6B7280', fontSize: '12px', fontWeight: '600', padding: '5px 14px', borderRadius: '100px', whiteSpace: 'nowrap' }}>Sold out</span>
-</div>
-
-{/* Card 4 — Virgin Voyages Alaska (Jun 2027) — SOLD OUT, compact row */}
-<div style={{ maxWidth: '900px', margin: '0 auto', backgroundColor: '#F9FAFB', borderRadius: '12px', border: '1px solid #E5E7EB', padding: '14px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap' }}>
-  <div>
-    <p style={{ color: '#1F2937', fontWeight: '600', fontSize: '14px', margin: '0 0 2px 0' }}>Alaska: Glacial Fjords &amp; Coastal Views</p>
-    <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>June 17, 2027 &middot; 7 nights &middot; Brilliant Lady &middot; Virgin Voyages</p>
-  </div>
-  <span style={{ backgroundColor: '#E5E7EB', color: '#6B7280', fontSize: '12px', fontWeight: '600', padding: '5px 14px', borderRadius: '100px', whiteSpace: 'nowrap' }}>Sold out</span>
-</div>
           </div>
         </div>
 
@@ -451,9 +509,12 @@ export default function Home() {
           <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>What People Say</p>
           <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: 0 }}>Real people. Real trips. No surprises.</h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px', maxWidth: '1100px', margin: '0 auto' }}>
+        <div
+          className="testimonial-scroll"
+          style={{ display: 'flex', gap: '20px', overflowX: 'auto', padding: '4px 20px 16px 20px', maxWidth: '1100px', margin: '0 auto', scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}
+        >
           {testimonials.map((t, i) => (
-            <div key={i} style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #E5E7EB' }}>
+            <div key={i} style={{ backgroundColor: 'white', borderRadius: '16px', padding: '24px', border: '1px solid #E5E7EB', flex: '0 0 280px', scrollSnapAlign: 'start' }}>
               <p style={{ color: '#1F2937', fontSize: '14px', lineHeight: '1.7', fontStyle: 'italic', margin: '0 0 16px 0' }}>"{t.quote}"</p>
               <div style={{ borderTop: '1px solid #F3F4F6', paddingTop: '16px' }}>
                 <p style={{ color: '#1F2937', fontWeight: '600', fontSize: '14px', margin: '0 0 2px 0' }}>{t.name}</p>
@@ -463,12 +524,14 @@ export default function Home() {
             </div>
           ))}
         </div>
+        <p style={{ textAlign: 'center', color: '#9CA3AF', fontSize: '12px', marginTop: '8px' }}>← Swipe to see more →</p>
       </div>
 
       {/* Final CTA */}
       <div style={{ padding: '48px 20px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', backgroundColor: '#F59E0B', borderRadius: '20px', padding: '48px 24px', textAlign: 'center' }}>
           <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>What Are You Waiting For?</p>
+          <p style={{ color: 'white', fontSize: '16px', fontWeight: '600', fontStyle: 'italic', margin: '0 0 14px 0' }}>"Every great trip has a happy detour."</p>
           <h2 style={{ color: 'white', fontSize: 'clamp(28px, 6vw, 36px)', fontWeight: '800', margin: '0 0 12px 0', lineHeight: '1.2' }}>Stop scrolling, start packing.</h2>
           <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '16px', margin: '0 0 28px 0' }}>Let's find your happy detour.</p>
           <a
