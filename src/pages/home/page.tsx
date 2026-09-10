@@ -474,8 +474,7 @@ export default function Home() {
           {/* Card 4 — Christmas Balcony Sailing, Scarlet Lady (from Eric's Christmas flyer) */}
           <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
             <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden' }} className="group-card-image">
-              {/* TODO: upload the Christmas flyer image to /public as christmas-balcony-flyer.png */}
-              <img src="/christmas-balcony-flyer.png" alt="All I Want for Christmas Is a Balcony — Virgin Voyages" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <img src="/Christmas Flyer Final.png" alt="All I Want for Christmas Is a Balcony — Virgin Voyages" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#CC0000', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '4px' }}>🎄 Holiday Sailing</span>
             </div>
             <div style={{ flex: 1, padding: '20px 24px' }}>
