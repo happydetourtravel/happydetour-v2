@@ -71,15 +71,33 @@ export default function Home() {
     const el = testimonialScrollRef.current
     if (!el) return
     const scrollAmount = 300 // roughly one card width + gap
+    let paused = false
+    let resumeTimeout: ReturnType<typeof setTimeout>
+
+    const pauseThenResume = () => {
+      paused = true
+      clearTimeout(resumeTimeout)
+      resumeTimeout = setTimeout(() => { paused = false }, 4000)
+    }
+    el.addEventListener('touchstart', pauseThenResume)
+    el.addEventListener('wheel', pauseThenResume)
+
     const interval = setInterval(() => {
+      if (paused) return
       const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 5
       if (atEnd) {
         el.scrollTo({ left: 0, behavior: 'smooth' })
       } else {
         el.scrollBy({ left: scrollAmount, behavior: 'smooth' })
       }
-    }, 3500)
-    return () => clearInterval(interval)
+    }, 3000)
+
+    return () => {
+      clearInterval(interval)
+      clearTimeout(resumeTimeout)
+      el.removeEventListener('touchstart', pauseThenResume)
+      el.removeEventListener('wheel', pauseThenResume)
+    }
   }, [])
 
   return (
@@ -290,14 +308,16 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Eric's expert take on flying in */}
-          <div style={{ marginTop: '32px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '12px', padding: '20px 24px' }}>
-            <p style={{ color: 'white', fontSize: '14px', lineHeight: '1.7', fontStyle: 'italic', margin: '0 0 10px 0' }}>
-              "Never fly in the same day as your cruise. Flights get delayed. Flights get cancelled. And that is not how you want to start your vacation. I always recommend flying in the day before. Get a good night's sleep, enjoy the city a little, and wake up knowing your ship is right there waiting for you. Trust me, starting your cruise relaxed is so much better than starting it stressed."
-            </p>
-            <p style={{ color: '#F59E0B', fontWeight: '700', fontSize: '13px', margin: 0 }}>Eric Carney, Happy Detour Travel</p>
-          </div>
+        </div>
+      </div>
 
+      {/* Eric's expert take on flying in — its own neutral section, separate from Virgin's red branding */}
+      <div style={{ backgroundColor: 'white', padding: '48px 20px' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', backgroundColor: '#F9FAFB', borderLeft: '4px solid #F59E0B', borderRadius: '8px', padding: '24px 28px' }}>
+          <p style={{ color: '#1F2937', fontSize: '15px', lineHeight: '1.7', fontStyle: 'italic', margin: '0 0 10px 0' }}>
+            "Never fly in the same day as your cruise. Flights get delayed. Flights get cancelled. And that is not how you want to start your vacation. I always recommend flying in the day before. Get a good night's sleep, enjoy the city a little, and wake up knowing your ship is right there waiting for you. Trust me, starting your cruise relaxed is so much better than starting it stressed."
+          </p>
+          <p style={{ color: '#007298', fontWeight: '700', fontSize: '13px', margin: 0 }}>Eric Carney, Happy Detour Travel</p>
         </div>
       </div>
 
