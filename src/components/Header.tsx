@@ -220,7 +220,7 @@ export default function Header() {
             </div>
             <div style={{ padding: '24px 28px 28px' }}>
               <iframe
-                src="https://preview.mailerlite.io/forms/2317623/186582621479765627/share""
+                src="https://preview.mailerlite.io/forms/2317623/186582621479765627/share"
                 style={{ width: '100%', height: '300px', border: 'none', borderRadius: '8px' }}
                 title="Join the Happy Detour Travel mailing list"
               />
