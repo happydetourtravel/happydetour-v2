@@ -257,6 +257,12 @@ export default function Home() {
                   Search &amp; Book Virgin Voyages
                 </a>
                 <a
+                  href="/cruises/virgin-voyages#bar-tab"
+                  style={{ backgroundColor: 'white', color: '#CC0000', textAlign: 'center', padding: '13px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}
+                >
+                  Virgin Guide &amp; Bar Tab Optimizer
+                </a>
+                <a
                   href="sms:6308231253"
                   style={{ backgroundColor: 'transparent', color: 'white', textAlign: 'center', padding: '13px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px', border: '1px solid rgba(255,255,255,0.4)' }}
                 >
@@ -292,14 +298,6 @@ export default function Home() {
                   <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '13px', margin: 0, lineHeight: '1.6' }}>{f.a}</p>
                 </div>
               ))}
-            </div>
-            <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', marginTop: '20px' }}>
-              <a href="/cruises/virgin-voyages#bar-tab" style={{ color: 'white', fontWeight: '700', fontSize: '14px', textDecoration: 'underline' }}>
-                Try the Bar Tab Optimizer &rarr;
-              </a>
-              <a href="/cruises/virgin-voyages" style={{ color: 'white', fontWeight: '700', fontSize: '14px', textDecoration: 'underline' }}>
-                Read the full Virgin Voyages guide &rarr;
-              </a>
             </div>
           </div>
 
