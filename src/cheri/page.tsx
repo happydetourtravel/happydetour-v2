@@ -31,7 +31,6 @@ export default function CheriPage() {
 
   const [soda, setSoda] = useState(0)
   const drinkPrices = { wine: 14, beer: 9, cocktails: 16, mixed: 13, coffee: 6, soda: 4.50, other: 8 }
-  const GRATUITY = 0.18
   const dailySpend = wine * drinkPrices.wine + beer * drinkPrices.beer + cocktails * drinkPrices.cocktails + mixed * drinkPrices.mixed + coffee * drinkPrices.coffee + soda * drinkPrices.soda + other * drinkPrices.other
   const totalSpend = dailySpend * nights
 
