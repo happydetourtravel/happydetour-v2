@@ -124,6 +124,25 @@ export default function JoinForm() {
   const strength = getPasswordStrength(formData.password)
   const passwordsMatch = formData.confirmPassword.length > 0 && formData.password === formData.confirmPassword
 
+  // Shared styles
+  // 16px text on inputs stops iPhones from zooming in when a field is tapped
+  const inputStyle: React.CSSProperties = {
+    width: '100%',
+    padding: '12px 14px',
+    borderRadius: '8px',
+    border: '1px solid #D1D5DB',
+    fontSize: '16px',
+    outline: 'none',
+    boxSizing: 'border-box',
+    backgroundColor: 'white',
+  }
+  const passwordInputStyle: React.CSSProperties = { ...inputStyle, padding: '12px 44px 12px 14px' }
+  const labelStyle: React.CSSProperties = { display: 'block', color: '#374151', fontSize: '13px', fontWeight: '600', marginBottom: '6px' }
+  const eyeButtonStyle: React.CSSProperties = { position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', color: '#9CA3AF', padding: '4px', display: 'flex', alignItems: 'center' }
+
+  // Padding shrinks on small screens, grows on large ones
+  const panelPadding = 'clamp(36px, 7vw, 64px) clamp(20px, 5vw, 48px)'
+
   const EyeIcon = ({ show }: { show: boolean }) => (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       {show ? (
@@ -142,34 +161,37 @@ export default function JoinForm() {
   )
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#F9FAFB', fontFamily: 'sans-serif' }}>
-      <div style={{ display: 'flex', minHeight: '100vh' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#F9FAFB', fontFamily: 'sans-serif', overflowX: 'hidden' }}>
+      {/* flexWrap lets the two panels stack on phones and sit side by side on wider screens */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', minHeight: '100vh' }}>
 
-        <div style={{ flex: 1, backgroundColor: '#007298', padding: '64px 48px', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
+        {/* Left / top: welcome panel */}
+        <div style={{ flex: '1 1 380px', minWidth: 0, backgroundColor: '#007298', padding: panelPadding, display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', overflow: 'hidden', boxSizing: 'border-box' }}>
           <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/hero-image.webp')", backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.15 }} />
-          <div style={{ position: 'relative', maxWidth: '440px' }}>
-            <p style={{ color: '#F59E0B', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px' }}>HDT Members</p>
-            <h1 style={{ color: 'white', fontSize: '40px', fontWeight: '800', lineHeight: '1.2', margin: '0 0 24px 0' }}>
+          <div style={{ position: 'relative', maxWidth: '440px', width: '100%', margin: '0 auto' }}>
+            <p style={{ color: '#F59E0B', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', margin: '0 0 12px 0' }}>HDT Members</p>
+            <h1 style={{ color: 'white', fontSize: 'clamp(28px, 6vw, 40px)', fontWeight: '800', lineHeight: '1.2', margin: '0 0 16px 0' }}>
               Join the HDT Club
             </h1>
-            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '16px', lineHeight: '1.7', margin: '0 0 40px 0' }}>
+            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '16px', lineHeight: '1.7', margin: '0 0 28px 0' }}>
               Get exclusive access to group cruise deals that Eric organizes personally. Real trips, real savings, and someone actually in your corner.
             </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {perks.map((perk, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <span style={{ color: '#F59E0B', fontSize: '18px', marginTop: '1px' }}>✓</span>
-                  <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '15px', margin: 0 }}>{perk}</p>
+                  <span style={{ color: '#F59E0B', fontSize: '18px', lineHeight: '1.3', flexShrink: 0 }}>✓</span>
+                  <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '15px', lineHeight: '1.5', margin: 0 }}>{perk}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div style={{ flex: 1, padding: '64px 48px', display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor: 'white' }}>
-          <div style={{ maxWidth: '440px', width: '100%' }}>
-            <h2 style={{ color: '#1F2937', fontSize: '28px', fontWeight: '800', margin: '0 0 8px 0' }}>Create your account</h2>
-            <p style={{ color: '#6B7280', fontSize: '15px', margin: '0 0 32px 0' }}>
+        {/* Right / bottom: signup form */}
+        <div style={{ flex: '1 1 380px', minWidth: 0, padding: panelPadding, display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor: 'white', boxSizing: 'border-box' }}>
+          <div style={{ maxWidth: '440px', width: '100%', margin: '0 auto' }}>
+            <h2 style={{ color: '#1F2937', fontSize: 'clamp(24px, 5vw, 28px)', fontWeight: '800', margin: '0 0 8px 0' }}>Create your account</h2>
+            <p style={{ color: '#6B7280', fontSize: '15px', margin: '0 0 28px 0' }}>
               Already have an account?{' '}
               <a href="/login" style={{ color: '#007298', fontWeight: '600', textDecoration: 'none' }}>Sign In</a>
             </p>
@@ -182,25 +204,26 @@ export default function JoinForm() {
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+              {/* Names sit side by side when there's room, and stack on narrow phones */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '12px' }}>
                 <div>
-                  <label style={{ display: 'block', color: '#374151', fontSize: '13px', fontWeight: '600', marginBottom: '6px' }}>First Name *</label>
-                  <input name="firstName" value={formData.firstName} onChange={handleChange} required placeholder="First name" style={{ width: '100%', padding: '10px 14px', borderRadius: '8px', border: '1px solid #D1D5DB', fontSize: '14px', outline: 'none', boxSizing: 'border-box' }} />
+                  <label style={labelStyle}>First Name *</label>
+                  <input name="firstName" value={formData.firstName} onChange={handleChange} required placeholder="First name" autoComplete="given-name" style={inputStyle} />
                 </div>
                 <div>
-                  <label style={{ display: 'block', color: '#374151', fontSize: '13px', fontWeight: '600', marginBottom: '6px' }}>Last Name *</label>
-                  <input name="lastName" value={formData.lastName} onChange={handleChange} required placeholder="Last name" style={{ width: '100%', padding: '10px 14px', borderRadius: '8px', border: '1px solid #D1D5DB', fontSize: '14px', outline: 'none', boxSizing: 'border-box' }} />
+                  <label style={labelStyle}>Last Name *</label>
+                  <input name="lastName" value={formData.lastName} onChange={handleChange} required placeholder="Last name" autoComplete="family-name" style={inputStyle} />
                 </div>
               </div>
 
               <div>
-                <label style={{ display: 'block', color: '#374151', fontSize: '13px', fontWeight: '600', marginBottom: '6px' }}>Email Address *</label>
-                <input name="email" type="email" value={formData.email} onChange={handleChange} required placeholder="you@email.com" style={{ width: '100%', padding: '10px 14px', borderRadius: '8px', border: '1px solid #D1D5DB', fontSize: '14px', outline: 'none', boxSizing: 'border-box' }} />
+                <label style={labelStyle}>Email Address *</label>
+                <input name="email" type="email" value={formData.email} onChange={handleChange} required placeholder="you@email.com" autoComplete="email" inputMode="email" style={inputStyle} />
               </div>
 
               <div>
-                <label style={{ display: 'block', color: '#374151', fontSize: '13px', fontWeight: '600', marginBottom: '6px' }}>Who do you usually sail with?</label>
-                <select name="sailsWith" value={formData.sailsWith} onChange={handleChange} style={{ width: '100%', padding: '10px 14px', borderRadius: '8px', border: '1px solid #D1D5DB', fontSize: '14px', outline: 'none', backgroundColor: 'white', boxSizing: 'border-box' }}>
+                <label style={labelStyle}>Who do you usually sail with?</label>
+                <select name="sailsWith" value={formData.sailsWith} onChange={handleChange} style={inputStyle}>
                   <option value="">Select one...</option>
                   <option value="partner">My partner</option>
                   <option value="family">Family</option>
@@ -211,12 +234,12 @@ export default function JoinForm() {
               </div>
 
               <div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
-                  <label style={{ display: 'block', color: '#374151', fontSize: '13px', fontWeight: '600', margin: 0 }}>Password *</label>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', marginBottom: '6px' }}>
+                  <label style={{ ...labelStyle, margin: 0 }}>Password *</label>
                   <button
                     type="button"
                     onClick={generatePassword}
-                    style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#007298', fontSize: '12px', fontWeight: '700', padding: 0 }}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#007298', fontSize: '13px', fontWeight: '700', padding: '4px 0' }}
                   >
                     Suggest a password
                   </button>
@@ -229,12 +252,14 @@ export default function JoinForm() {
                     onChange={handleChange}
                     required
                     placeholder="At least 8 characters"
-                    style={{ width: '100%', padding: '10px 44px 10px 14px', borderRadius: '8px', border: '1px solid #D1D5DB', fontSize: '14px', outline: 'none', boxSizing: 'border-box' }}
+                    autoComplete="new-password"
+                    style={passwordInputStyle}
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', color: '#9CA3AF', padding: 0, display: 'flex', alignItems: 'center' }}
+                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    style={eyeButtonStyle}
                   >
                     <EyeIcon show={showPassword} />
                   </button>
@@ -248,24 +273,24 @@ export default function JoinForm() {
                   </div>
                 )}
                 {formData.password.length > 0 && showPassword && (
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '8px', backgroundColor: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: '6px', padding: '8px 10px' }}>
-                    <span style={{ fontFamily: 'monospace', fontSize: '13px', color: '#1F2937' }}>{formData.password}</span>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', marginTop: '8px', backgroundColor: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: '6px', padding: '8px 10px' }}>
+                    <span style={{ fontFamily: 'monospace', fontSize: '14px', color: '#1F2937', wordBreak: 'break-all', minWidth: 0 }}>{formData.password}</span>
                     <button
                       type="button"
                       onClick={copyPassword}
-                      style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#007298', fontSize: '12px', fontWeight: '700', padding: 0, marginLeft: '10px', whiteSpace: 'nowrap' }}
+                      style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#007298', fontSize: '13px', fontWeight: '700', padding: '4px 0', whiteSpace: 'nowrap', flexShrink: 0 }}
                     >
                       {copied ? 'Copied!' : 'Copy'}
                     </button>
                   </div>
                 )}
-                <p style={{ fontSize: '11px', color: '#9CA3AF', margin: '6px 0 0 0' }}>
+                <p style={{ fontSize: '12px', color: '#9CA3AF', margin: '6px 0 0 0' }}>
                   Save this somewhere safe, like a notes app or password manager.
                 </p>
               </div>
 
               <div>
-                <label style={{ display: 'block', color: '#374151', fontSize: '13px', fontWeight: '600', marginBottom: '6px' }}>Confirm Password *</label>
+                <label style={labelStyle}>Confirm Password *</label>
                 <div style={{ position: 'relative' }}>
                   <input
                     name="confirmPassword"
@@ -274,12 +299,14 @@ export default function JoinForm() {
                     onChange={handleChange}
                     required
                     placeholder="Repeat your password"
-                    style={{ width: '100%', padding: '10px 44px 10px 14px', borderRadius: '8px', border: '1px solid #D1D5DB', fontSize: '14px', outline: 'none', boxSizing: 'border-box' }}
+                    autoComplete="new-password"
+                    style={passwordInputStyle}
                   />
                   <button
                     type="button"
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                    style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', color: '#9CA3AF', padding: 0, display: 'flex', alignItems: 'center' }}
+                    aria-label={showConfirmPassword ? 'Hide password' : 'Show password'}
+                    style={eyeButtonStyle}
                   >
                     <EyeIcon show={showConfirmPassword} />
                   </button>
@@ -292,15 +319,15 @@ export default function JoinForm() {
               </div>
 
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                <input type="checkbox" id="acceptsMarketing" checked={acceptsMarketing} onChange={(e) => setAcceptsMarketing(e.target.checked)} style={{ marginTop: '2px', accentColor: '#007298', width: '16px', height: '16px', flexShrink: 0 }} />
-                <label htmlFor="acceptsMarketing" style={{ color: '#374151', fontSize: '13px', lineHeight: '1.5', cursor: 'pointer' }}>
+                <input type="checkbox" id="acceptsMarketing" checked={acceptsMarketing} onChange={(e) => setAcceptsMarketing(e.target.checked)} style={{ marginTop: '2px', accentColor: '#007298', width: '18px', height: '18px', flexShrink: 0 }} />
+                <label htmlFor="acceptsMarketing" style={{ color: '#374151', fontSize: '14px', lineHeight: '1.5', cursor: 'pointer' }}>
                   Send me member exclusive deals, perks, and updates
                 </label>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                <input type="checkbox" id="acceptsTerms" checked={acceptsTerms} onChange={(e) => setAcceptsTerms(e.target.checked)} style={{ marginTop: '2px', accentColor: '#007298', width: '16px', height: '16px', flexShrink: 0 }} />
-                <label htmlFor="acceptsTerms" style={{ color: '#374151', fontSize: '13px', lineHeight: '1.5', cursor: 'pointer' }}>
+                <input type="checkbox" id="acceptsTerms" checked={acceptsTerms} onChange={(e) => setAcceptsTerms(e.target.checked)} style={{ marginTop: '2px', accentColor: '#007298', width: '18px', height: '18px', flexShrink: 0 }} />
+                <label htmlFor="acceptsTerms" style={{ color: '#374151', fontSize: '14px', lineHeight: '1.5', cursor: 'pointer' }}>
                   I accept the{' '}
                   <a href="/terms" style={{ color: '#007298', textDecoration: 'none', fontWeight: '600' }}>Terms and Conditions</a>
                   {' '}and{' '}
@@ -308,7 +335,7 @@ export default function JoinForm() {
                 </label>
               </div>
 
-              <button type="submit" disabled={loading} style={{ backgroundColor: loading ? '#9CA3AF' : '#F59E0B', color: 'white', padding: '14px', borderRadius: '8px', border: 'none', fontSize: '16px', fontWeight: '700', cursor: loading ? 'not-allowed' : 'pointer', marginTop: '8px' }}>
+              <button type="submit" disabled={loading} style={{ width: '100%', backgroundColor: loading ? '#9CA3AF' : '#F59E0B', color: 'white', padding: '15px', borderRadius: '8px', border: 'none', fontSize: '16px', fontWeight: '700', cursor: loading ? 'not-allowed' : 'pointer', marginTop: '8px' }}>
                 {loading ? 'Creating your account...' : 'Join the HDT Club'}
               </button>
 
