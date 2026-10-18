@@ -49,6 +49,7 @@ export const routes: RouteRecord[] = [
       { index: true, entry: 'src/pages/home/page.tsx', lazy: () => import('./pages/home/page').then((m) => ({ Component: m.default })) },
       { path: 'join', entry: 'src/pages/join/page.tsx', lazy: () => import('./pages/join/page').then((m) => ({ Component: m.default })) },
       { path: 'login', entry: 'src/pages/login/page.tsx', lazy: () => import('./pages/login/page').then((m) => ({ Component: m.default })) },
+      { path: 'forgot-password', entry: 'src/pages/forgot-password/page.tsx', lazy: () => import('./pages/forgot-password/page').then((m) => ({ Component: m.default })) },
       { path: 'verify', entry: 'src/pages/verify/page.tsx', lazy: () => import('./pages/verify/page').then((m) => ({ Component: m.default })) },
       { path: 'privacy', entry: 'src/pages/privacy/page.tsx', lazy: () => import('./pages/privacy/page').then((m) => ({ Component: m.default })) },
       { path: 'terms', entry: 'src/pages/terms/page.tsx', lazy: () => import('./pages/terms/page').then((m) => ({ Component: m.default })) },
