@@ -12,6 +12,7 @@ const HOVER_CSS = `
 .vv-btn, .vv-acc, .vv-card, .vv-pill, .vv-tab { transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
 .vv-link { transition: color .2s ease; }
 
+@media (hover: hover) {
 /* Buttons and bubbles turn Virgin red with white text */
 .vv-btn:hover { background: ${VV_RED} !important; color: #fff !important; border-color: ${VV_RED} !important; }
 
@@ -33,6 +34,7 @@ const HOVER_CSS = `
 
 /* Text links (already red) go a deeper red */
 .vv-link:hover { color: ${VV_RED_DEEP} !important; }
+}
 `;
 
 function Accordion({ title, children }: { title: string; children: React.ReactNode }) {
@@ -197,7 +199,7 @@ function BarTabOptimizer() {
                       const v = parseFloat(e.target.value);
                       setCredit(isNaN(v) ? 0 : Math.max(0, v));
                     }}
-                    className="w-full px-3 py-2 text-sm outline-none bg-transparent"
+                    className="w-full px-3 py-2 text-base outline-none bg-transparent"
                   />
                 </div>
               </label>
@@ -278,6 +280,7 @@ const TABS = [
   { id: "ships", label: "The Ships" },
   { id: "dining", label: "Dining" },
   { id: "bars", label: "Bars" },
+  { id: "restrooms", label: "Restrooms" },
   { id: "loyalty", label: "Sailing Club" },
   { id: "solo", label: "Solo Travel" },
   { id: "excursions", label: "Shore Excursions" },
@@ -621,6 +624,60 @@ export default function VirginVoyagesPage() {
               Want to make your drink money go further?{" "}
               <button onClick={() => goToTab("optimizer")} className="vv-link font-semibold underline" style={{ color: VV_RED }}>Try the Bar Tab Optimizer</button>
             </div>
+          </section>
+        )}
+
+        {/* RESTROOMS */}
+        {activeTab === "restrooms" && (
+          <section>
+            <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: VV_DARK }}>Where Are the Restrooms?</h2>
+            <p className="text-gray-500 text-sm mb-6">Public restrooms on Virgin Voyages are on just a few decks, so they can be harder to find than on other ships. Here is where to go.</p>
+
+            <div className="p-4 rounded-xl mb-6 text-white text-sm" style={{ background: `linear-gradient(135deg, ${VV_DARK}, ${VV_RED})` }}>
+              <p className="font-bold mb-1" style={{ color: VV_GOLD }}>Look for signs that say "The Heads"</p>
+              <p>That's Virgin's name for the restrooms. If you're looking for a sign that says "Restroom," you'll walk right past them.</p>
+            </div>
+
+            <p className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: VV_RED }}>Public restrooms</p>
+            <div className="grid sm:grid-cols-2 gap-3 mb-8">
+              {[
+                { deck: "Deck 6", spots: "Front, middle, and back of the ship", near: "The main inside deck with the casino, shops, and lounges. Your best bet in the evening." },
+                { deck: "Deck 15", spots: "Middle of the ship", near: "The pool deck. Closest option when you're out in the sun." },
+              ].map((r) => (
+                <div key={r.deck} className="vv-card rounded-xl p-4 bg-white border border-red-100">
+                  <p className="text-2xl font-extrabold mb-1" style={{ color: VV_RED }}>{r.deck}</p>
+                  <p className="text-sm font-semibold text-gray-800 mb-1">{r.spots}</p>
+                  <p className="text-xs text-gray-500">{r.near}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: VV_RED }}>Accessible restrooms</p>
+            <div className="rounded-xl bg-white border border-red-100 divide-y divide-red-50 mb-8">
+              {[
+                { deck: "Deck 5", spots: "Middle" },
+                { deck: "Deck 6", spots: "Back" },
+                { deck: "Deck 7", spots: "Front and back" },
+                { deck: "Deck 15", spots: "Middle and back" },
+              ].map((r) => (
+                <div key={r.deck} className="flex justify-between items-center px-4 py-3 text-sm">
+                  <span className="font-bold text-gray-800">{r.deck}</span>
+                  <span className="text-gray-600">{r.spots}</span>
+                </div>
+              ))}
+            </div>
+
+            <Accordion title="Eric's Restroom Tips">
+              <ul className="list-disc pl-5 space-y-2">
+                <li><strong>Up on the top sun decks?</strong> Decks 16 and 17 aren't on Virgin's list, so head down to Deck 15.</li>
+                <li><strong>Near your cabin?</strong> Sometimes the quickest option is just popping back to your room.</li>
+                <li><strong>Going to a show or the casino?</strong> Deck 6 has restrooms at the front, middle, and back, so you're never far.</li>
+                <li><strong>Still lost?</strong> Ask any crew member. They'll point you to the closest Heads right away.</li>
+                <li><strong>Check the Sailor app.</strong> The ship map in the app shows where everything is on your deck.</li>
+              </ul>
+            </Accordion>
+
+            <p className="mt-6 text-xs text-gray-500 italic">Locations come from Virgin Voyages' own FAQ. All four ships share a similar layout, but double check the map in the Sailor app once you're onboard.</p>
           </section>
         )}
 
