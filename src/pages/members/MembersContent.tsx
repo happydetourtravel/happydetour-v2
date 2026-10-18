@@ -92,7 +92,7 @@ export default function MembersContent() {
           <h3 style={{ color: '#1F2937', fontSize: '15px', fontWeight: '700', margin: '10px 0 6px 0' }}>{perk.title}</h3>
           <p style={{ color: '#6B7280', fontSize: '13px', lineHeight: '1.6', margin: perk.link ? '0 0 10px 0' : 0 }}>{perk.desc}</p>
           {perk.link && (
-            <a href={perk.link.href} style={{ color: '#007298', fontSize: '13px', fontWeight: '700', textDecoration: 'none' }}>
+            <a href={perk.link.href} className="hdt-text-link" style={{ color: '#007298', fontSize: '13px', fontWeight: '700', textDecoration: 'none' }}>
               {perk.link.label} &rarr;
             </a>
           )}
@@ -140,6 +140,19 @@ export default function MembersContent() {
       </SignedOut>
       <SignedIn>
         <main style={{ minHeight: '80vh', backgroundColor: '#F9FAFB', padding: '60px 24px' }}>
+          {/* Hover effects (inline styles can't do hover, so they live here) */}
+          <style>{`
+            .hdt-card-link { transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease; }
+            .hdt-card-link:hover { border-color: #007298 !important; box-shadow: 0 6px 20px rgba(0,114,152,0.18) !important; transform: translateY(-2px); }
+            .hdt-card-link:hover h3 { color: #007298 !important; }
+            .hdt-btn { transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease; }
+            .hdt-btn:hover { transform: translateY(-1px); }
+            .hdt-btn-teal:hover { background-color: #005A78 !important; }
+            .hdt-btn-amber:hover { background-color: #D97706 !important; }
+            .hdt-btn-white:hover { background-color: #F59E0B !important; color: white !important; }
+            .hdt-text-link { transition: color 0.2s ease; }
+            .hdt-text-link:hover { color: #F59E0B !important; text-decoration: underline !important; }
+          `}</style>
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
 
             {/* Personal Welcome */}
@@ -185,11 +198,12 @@ export default function MembersContent() {
                     target={action.href.startsWith('http') ? '_blank' : undefined}
                     rel={action.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     style={style}
+                    className="hdt-card-link"
                   >
                     {inner}
                   </a>
                 ) : (
-                  <Link key={i} to={action.href} style={style}>
+                  <Link key={i} to={action.href} style={style} className="hdt-card-link">
                     {inner}
                   </Link>
                 )
@@ -239,10 +253,10 @@ export default function MembersContent() {
                 Have a destination or cruise line in mind? Reach out and let Eric know. He's building these around what members actually want.
               </p>
               <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                <a href="sms:6308231253" style={{ backgroundColor: '#007298', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
+                <a href="sms:6308231253" className="hdt-btn hdt-btn-teal" style={{ backgroundColor: '#007298', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
                   Text Eric
                 </a>
-                <a href="mailto:eric@happydetour.com" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
+                <a href="mailto:eric@happydetour.com" className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
                   Email Eric
                 </a>
               </div>
@@ -267,7 +281,7 @@ export default function MembersContent() {
                         <p style={{ color: '#6B7280', fontSize: '11px', margin: '0 0 2px 0' }}>Starting from</p>
                         <p style={{ color: '#1F2937', fontSize: '22px', fontWeight: '800', margin: 0 }}>{deal.from}<span style={{ fontSize: '13px', fontWeight: '400', color: '#6B7280' }}>/person</span></p>
                       </div>
-                      <a href={deal.link} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#007298', color: 'white', padding: '10px 20px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px', whiteSpace: 'nowrap' }}>
+                      <a href={deal.link} target="_blank" rel="noopener noreferrer" className="hdt-btn hdt-btn-teal" style={{ backgroundColor: '#007298', color: 'white', padding: '10px 20px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px', whiteSpace: 'nowrap' }}>
                         View Sailing
                       </a>
                     </div>
@@ -288,10 +302,10 @@ export default function MembersContent() {
                 <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', margin: 0 }}>Eric is a real person and he actually responds.</p>
               </div>
               <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                <a href="sms:6308231253" style={{ backgroundColor: 'white', color: '#007298', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
+                <a href="sms:6308231253" className="hdt-btn hdt-btn-white" style={{ backgroundColor: 'white', color: '#007298', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
                   Text Eric
                 </a>
-                <a href="mailto:eric@happydetour.com" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
+                <a href="mailto:eric@happydetour.com" className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
                   Email Eric
                 </a>
               </div>
