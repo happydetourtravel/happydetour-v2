@@ -243,7 +243,8 @@ const TABS = [
 // Lets links like /cruises/virgin-voyages#bar-tab open the right tab
 const HASH_TO_TAB: Record<string, string> = { "bar-tab": "perks" };
 
-const AFFILIATE_LINK = "https://www.virginvoyages.com/?agencyId=589&agentId=278796";
+// Voyage planner link with Eric's First Mate booking channel, so bookings tie back to Happy Detour Travel
+const AFFILIATE_LINK = "https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK";
 
 export default function VirginVoyagesPage() {
   const [activeTab, setActiveTab] = useState("included");
@@ -821,20 +822,36 @@ export default function VirginVoyagesPage() {
         <div className="mt-10 rounded-2xl p-5 md:p-8 text-center text-white" style={{ background: `linear-gradient(135deg, ${VV_DARK}, ${VV_RED})` }}>
           <p className="text-xs uppercase tracking-widest mb-2" style={{ color: VV_GOLD }}>Ready to Sail</p>
           <h3 className="text-lg md:text-2xl font-bold mb-3">Let's Get You on the Ship</h3>
-          <p className="text-red-100 text-sm mb-5 max-w-lg mx-auto">
-            I am First Mate certified with Virgin Voyages and I have sailed more than 20 cruises. You can start exploring sailings and book directly using my link below. Have questions first? I am happy to talk through everything before anything is confirmed.
+          <p className="text-red-100 text-sm mb-6 max-w-lg mx-auto">
+            Two easy ways to book. Browse sailings and book on your own through my link, or reach out and I will find the right sailing for you. Either way, there is no planning fee and I am in your corner.
           </p>
-          <a
-            href={AFFILIATE_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-6 py-3 rounded-lg font-bold text-sm transition hover:opacity-90"
-            style={{ background: VV_GOLD, color: VV_DARK }}
-          >
-            Ready for an actual vacation? Let's plot your escape.
-          </a>
-          <p className="mt-4 text-xs text-red-300">
-            Booking through this link connects you with Happy Detour Travel so I am in your corner if anything comes up.
+
+          <div className="grid md:grid-cols-2 gap-3 max-w-xl mx-auto text-left">
+            <div className="rounded-xl p-4" style={{ background: "rgba(255,255,255,0.08)" }}>
+              <p className="font-bold text-sm mb-1">Book on your own</p>
+              <p className="text-xs text-red-100 mb-3">Search live sailings and prices, then book right on Virgin's site.</p>
+              <a
+                href={AFFILIATE_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-center px-4 py-3 rounded-lg font-bold text-sm transition hover:opacity-90"
+                style={{ background: VV_GOLD, color: VV_DARK }}
+              >
+                Browse Sailings
+              </a>
+            </div>
+            <div className="rounded-xl p-4" style={{ background: "rgba(255,255,255,0.08)" }}>
+              <p className="font-bold text-sm mb-1">Let Eric help</p>
+              <p className="text-xs text-red-100 mb-3">Tell me what you want and I will find the best sailing and perks.</p>
+              <div className="flex gap-2">
+                <a href="sms:6308231253" className="flex-1 text-center px-3 py-3 rounded-lg font-bold text-sm border border-white/40 transition hover:bg-white/10">Text Eric</a>
+                <a href="mailto:eric@happydetour.com" className="flex-1 text-center px-3 py-3 rounded-lg font-bold text-sm border border-white/40 transition hover:bg-white/10">Email Eric</a>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-5 text-xs text-red-300">
+            Booking through my link connects your reservation to Happy Detour Travel, so I can help if anything comes up.
           </p>
         </div>
       </div>
