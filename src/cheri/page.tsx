@@ -111,7 +111,7 @@ export default function CheriPage() {
   const faqs = [
     {
       q: "How much does it cost?",
-      a: "Inside cabins are $1,437.63 per person and balcony cabins are $2,032.13 per person. Both prices include port fees and taxes and are based on double occupancy. Gratuities are not included and run $18.50 per person per day, so $129.50 per person for the full 7 nights. Book with a $500 deposit by August 22, 2026 and your cabin gets a $50 onboard credit toward whatever you want. Flex pay options are available so reach out to Eric and he will help you find a payment plan that works for you."
+      a: "Inside cabins are $1,437.63 per person, including port fees and taxes, based on double occupancy. Balcony cabins at the group rate of $2,032.13 per person are sold out. You can still book a balcony, it will just be at Royal Caribbean's price at the time you book. Reach out to Eric and he will check today's balcony rate for you. Gratuities are not included and run $18.50 per person per day, so $129.50 per person for the full 7 nights. Book with a $500 deposit by August 22, 2026 and your cabin gets a $50 onboard credit toward whatever you want. Flex pay options are available so reach out to Eric and he will help you find a payment plan that works for you."
     },
     {
       q: "Do I have to book by August 22?",
@@ -397,9 +397,11 @@ export default function CheriPage() {
               <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#f9a8d4', margin: '0 0 4px 0' }}>Inside Cabin</p>
               <p style={{ fontSize: 22, fontWeight: 900, color: '#fce7f3', margin: 0 }}>$1,437.63<span style={{ fontSize: 12, fontWeight: 400, color: 'rgba(252,231,243,0.5)' }}>/person</span></p>
             </div>
-            <div style={{ background: 'rgba(249,168,212,0.08)', border: '1px solid rgba(249,168,212,0.2)', borderRadius: 12, padding: '12px 20px', textAlign: 'center' }}>
+            <div style={{ background: 'rgba(249,168,212,0.04)', border: '1px solid rgba(249,168,212,0.12)', borderRadius: 12, padding: '12px 20px', textAlign: 'center', maxWidth: 240 }}>
               <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', color: '#f9a8d4', margin: '0 0 4px 0' }}>Balcony Cabin</p>
-              <p style={{ fontSize: 22, fontWeight: 900, color: '#fce7f3', margin: 0 }}>$2,032.13<span style={{ fontSize: 12, fontWeight: 400, color: 'rgba(252,231,243,0.5)' }}>/person</span></p>
+              <p style={{ fontSize: 16, fontWeight: 700, color: 'rgba(252,231,243,0.4)', margin: 0, textDecoration: 'line-through' }}>$2,032.13/person</p>
+              <p style={{ fontSize: 13, fontWeight: 800, color: '#fbbf24', margin: '4px 0 0 0', letterSpacing: '0.5px' }}>Sold out at this price</p>
+              <p style={{ fontSize: 11, color: 'rgba(252,231,243,0.55)', margin: '4px 0 0 0', lineHeight: 1.5 }}>Balconies still available at Royal Caribbean&apos;s rate at the time of booking</p>
             </div>
           </div>
           <p style={{ fontSize: 12, color: 'rgba(252,231,243,0.4)', marginBottom: 36 }}>Per person · double occupancy · port fees and taxes included · gratuities not included · flex pay available</p>
@@ -476,7 +478,8 @@ export default function CheriPage() {
               { label: 'Departs', value: <><strong style={{ color: '#fce7f3' }}>May 30, 2027</strong> from Rome (Civitavecchia), Italy</> },
               { label: 'Returns', value: <><strong style={{ color: '#fce7f3' }}>June 6, 2027</strong> back to Rome (Civitavecchia), Italy</> },
               { label: 'Duration', value: <><strong style={{ color: '#fce7f3' }}>7 nights</strong> · Round trip from Rome</> },
-              { label: 'Pricing', value: <>Inside cabin <strong style={{ color: '#fce7f3' }}>$1,437.63/person</strong> · Balcony <strong style={{ color: '#fce7f3' }}>$2,032.13/person</strong> · Double occupancy · Port fees and taxes included · Gratuities $18.50/person/day not included</> },              { label: 'Book by', value: <>Book with a $500 deposit by <strong style={{ color: '#fbbf24' }}>August 22, 2026</strong> and your cabin gets a $50 onboard credit toward drinks, gratuities, or whatever you want. <span style={{ color: 'rgba(252,231,243,0.5)' }}>You can still join the group after that date right up until the final payment deadline of February 20, 2027. You just won't get the extra credit.</span></> },
+              { label: 'Pricing', value: <>Inside cabin <strong style={{ color: '#fce7f3' }}>$1,437.63/person</strong> · Balcony at <span style={{ textDecoration: 'line-through' }}>$2,032.13/person</span> <strong style={{ color: '#fbbf24' }}>sold out</strong>. Balconies can still be booked at Royal Caribbean&apos;s rate at the time of booking. · Double occupancy · Port fees and taxes included · Gratuities $18.50/person/day not included</> },
+              { label: 'Book by', value: <>Book with a $500 deposit by <strong style={{ color: '#fbbf24' }}>August 22, 2026</strong> and your cabin gets a $50 onboard credit toward drinks, gratuities, or whatever you want. <span style={{ color: 'rgba(252,231,243,0.5)' }}>You can still join the group after that date right up until the final payment deadline of February 20, 2027. You just won't get the extra credit.</span></> },
             ].map((row, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'flex-start', padding: 'clamp(12px, 3vw, 18px) clamp(16px, 4vw, 32px)', borderBottom: i < 5 ? '1px solid rgba(249,168,212,0.07)' : 'none', gap: 12 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' as const, color: '#f9a8d4', width: 80, flexShrink: 0, paddingTop: 2 }}>{row.label}</div>
