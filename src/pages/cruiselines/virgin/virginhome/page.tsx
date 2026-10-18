@@ -391,6 +391,22 @@ export default function VirginVoyagesPage() {
 
             <BarTabOptimizer />
 
+            {/* Sailor Loot teaser: details live in the members area */}
+            <div className="rounded-2xl p-5 mb-8 flex flex-col md:flex-row md:items-center gap-4" style={{ background: VV_DARK }}>
+              <div className="flex-1">
+                <p className="text-xs uppercase tracking-widest mb-1" style={{ color: VV_GOLD }}>Book With Eric Bonus</p>
+                <p className="text-white font-bold text-lg leading-snug">Up to $200 Sailor Loot on select sailings</p>
+                <p className="text-sm text-gray-300 mt-1">Extra onboard credit on top of Virgin's own offers when you book with me. Members see which sailings qualify and how much.</p>
+              </div>
+              <a
+                href="/join"
+                className="text-center px-5 py-3 rounded-lg font-bold text-sm whitespace-nowrap transition hover:opacity-90"
+                style={{ background: VV_GOLD, color: VV_DARK }}
+              >
+                Join to See the Sailings
+              </a>
+            </div>
+
             <Accordion title="What Is the Bar Tab?">
               <p className="mb-3">The Bar Tab is credit that goes toward drinks onboard and at The Beach Club at Bimini. Cocktails, beer, wine, specialty coffee, and fresh juices all count, and you can use it to buy drinks for friends too.</p>
               <ul className="list-disc pl-5 space-y-2">
@@ -404,7 +420,10 @@ export default function VirginVoyagesPage() {
 
             <Accordion title="What Is Sailor Loot?">
               <p className="mb-3">Sailor Loot is onboard credit you can use on almost anything: drinks, the spa, the shops, even a tattoo at Squid Ink. It usually comes from a promotion or from booking with a travel advisor.</p>
-              <p className="mb-3">When you book eligible sailings with me, you can get Sailor Loot on top of Virgin's own offers. The amount depends on the sailing, so just ask.</p>
+              <p className="mb-3">
+                When you book eligible sailings with me, you can get up to $200 in Sailor Loot on top of Virgin's own offers.{" "}
+                <a href="/join" className="font-semibold underline" style={{ color: VV_RED }}>Join to see which sailings qualify</a>.
+              </p>
               <p>Sailor Loot cannot be cashed out, and anything you do not use is lost at the end of the sailing.</p>
             </Accordion>
 
