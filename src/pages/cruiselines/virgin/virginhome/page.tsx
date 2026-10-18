@@ -185,7 +185,7 @@ function BarTabOptimizer() {
             <div className="rounded-xl p-4" style={{ background: VV_CREAM }}>
               <label className="block">
                 <span className="block text-sm font-semibold text-gray-800">Already have Bar Tab money?</span>
-                <span className="block text-xs text-gray-500 mb-2">From a referral, a promo, or booking with me. Not sure? Leave it at 0.</span>
+                <span className="block text-xs text-gray-500 mb-2">From a referral, a promo, or booking with me. Not sure? Leave it at 0. New to Virgin? Ask me for a referral link and add $150 here.</span>
                 <div className="flex items-center border border-gray-200 rounded-lg bg-white overflow-hidden">
                   <span className="pl-3 text-sm text-gray-500">$</span>
                   <input
@@ -452,13 +452,29 @@ export default function VirginVoyagesPage() {
             </Accordion>
 
             <Accordion title="First Time on Virgin? Get a $150 Bar Tab With a Referral">
-              <p className="mb-3">Virgin's Refer a Friend program gives a brand new sailor a $150 Bar Tab, and the friend who referred them gets $150 too.</p>
-              <ul className="list-disc pl-5 space-y-2 mb-3">
-                <li><strong>If you are new to Virgin:</strong> ask a friend who has already sailed Virgin to send you their referral link. Use it before we book so the $150 lands on your sailing.</li>
-                <li><strong>If you have sailed Virgin:</strong> you can get your own link from Virgin and share it with friends. You earn $150 for each friend who books, and you can use up to two of those rewards on one sailing.</li>
-                <li>You and your friend need to be in separate cabins on separate bookings.</li>
+              <p className="mb-3">Brand new to Virgin Voyages? A referral link gets you a <strong>free $150 Bar Tab</strong>. Don't have a friend who has sailed Virgin? No problem. Just ask me and I'll get you a link.</p>
+
+              <p className="font-semibold mb-2" style={{ color: VV_RED }}>How it works</p>
+              <ol className="list-decimal pl-5 space-y-2 mb-4">
+                <li>Text or email me and ask for a referral link.</li>
+                <li>Open the link and sign up for Virgin's emails and texts. That's how they send your code.</li>
+                <li>Virgin sends you an Access Key. Send it to me before we book and I'll add it to your booking.</li>
+              </ol>
+
+              <p className="font-semibold mb-2" style={{ color: VV_RED }}>The fine print, made simple</p>
+              <ul className="list-disc pl-5 space-y-2 mb-4">
+                <li>You must be new to Virgin: never sailed, no booking right now, and no cancelled booking in the last 60 days.</li>
+                <li>Your Access Key is good for 12 months.</li>
+                <li>It works with Virgin's main sales, but not with Lock It In fares or some special deals. I'll check for you.</li>
+                <li>Bar Tab money is for drinks only and can't be turned into cash.</li>
               </ul>
-              <p className="text-sm text-gray-500">Referral rewards do not work with Lock It In fares. Let me know you have a referral link and I will make sure it gets applied the right way.</p>
+
+              <p className="text-sm text-gray-600 mb-4"><strong>Already sailed Virgin?</strong> You can share your own link with friends. You get $150 for each friend who books and pays in full, and you can use up to two of those on one sailing.</p>
+
+              <div className="flex flex-wrap gap-2">
+                <a href="sms:6308231253" className="vv-btn px-4 py-2 rounded-lg font-bold text-sm border border-transparent" style={{ background: VV_GOLD, color: VV_DARK }}>Text Eric for a link</a>
+                <a href="mailto:eric@happydetour.com?subject=Virgin%20Voyages%20referral%20link" className="vv-btn px-4 py-2 rounded-lg font-bold text-sm border border-gray-200 text-gray-800 bg-white">Email Eric</a>
+              </div>
             </Accordion>
 
             <Accordion title="My Next Virgin Voyage (MNVV): Book Onboard and Save">
