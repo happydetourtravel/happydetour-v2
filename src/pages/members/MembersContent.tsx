@@ -1,246 +1,319 @@
-import { useMemo, useState, type CSSProperties } from 'react'
-import { sailorLootSailings as allSailings } from './sailorLootData'
+import { useUser, SignedIn, SignedOut, RedirectToSignIn } from '@clerk/clerk-react'
+import { Link } from 'react-router-dom'
+import SailorLootSection from './SailorLootSection'
 
-// Sailings on or before this date are hidden from the list.
-// Change this date any time (format: YYYY-MM-DD).
-const HIDE_ON_OR_BEFORE = '2026-11-01'
-
-// Turns a sail date into YYYY-MM-DD so dates compare correctly
-function toDayString(value: unknown): string {
-  const str = String(value ?? '')
-  const iso = str.match(/^\d{4}-\d{2}-\d{2}/)
-  if (iso) return iso[0]
-  const d = new Date(str)
-  if (isNaN(d.getTime())) return ''
-  const mm = String(d.getMonth() + 1).padStart(2, '0')
-  const dd = String(d.getDate()).padStart(2, '0')
-  return `${d.getFullYear()}-${mm}-${dd}`
+function getGreeting() {
+  const hour = new Date().getHours()
+  if (hour < 12) return 'Good morning'
+  if (hour < 17) return 'Good afternoon'
+  return 'Good evening'
 }
 
-function getUpcomingSailings() {
-  const today = toDayString(new Date().toISOString())
-  // Use whichever is later: the cutoff date above, or today (so past sailings drop off on their own)
-  const cutoff = today > HIDE_ON_OR_BEFORE ? today : HIDE_ON_OR_BEFORE
-  return allSailings.filter((s) => {
-    const day = toDayString(s.sailDate) || toDayString(s.sailDateLabel)
-    if (!day) return true
-    return day > cutoff
-  })
-}
+export default function MembersContent() {
+  const { user } = useUser()
 
-export default function SailorLootSection() {
-  const sailorLootSailings = useMemo(() => getUpcomingSailings(), [])
-  const [search, setSearch] = useState('')
-  const [ship, setShip] = useState('All Ships')
-  const [region, setRegion] = useState('All Regions')
-  const [loot, setLoot] = useState('All Amounts')
-  const [length, setLength] = useState('All Lengths')
+  const firstName = user?.firstName || ''
+  const memberSince = user?.createdAt
+    ? new Date(user.createdAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+    : ''
 
-  const ships = useMemo(
-    () => ['All Ships', ...Array.from(new Set(sailorLootSailings.map((s) => s.ship))).sort()],
-    [sailorLootSailings]
+  const deals = [
+    {
+      line: 'Virgin Voyages',
+      ship: 'Scarlet Lady',
+      route: 'Bahamas + Key West',
+      date: 'January 2027',
+      nights: '5 nights',
+      from: '$1,099',
+      link: 'https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK',
+    },
+    {
+      line: 'Virgin Voyages',
+      ship: 'Resilient Lady',
+      route: 'Eastern Caribbean + Bimini',
+      date: 'March 2027',
+      nights: '7 nights',
+      from: '$1,199',
+      link: 'https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK',
+    },
+    {
+      line: 'Virgin Voyages',
+      ship: 'Resilient Lady',
+      route: 'French Riviera + Ibiza',
+      date: 'June 2027',
+      nights: '7 nights',
+      from: '$1,253',
+      link: 'https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK',
+    },
+  ]
+
+  type Perk = { icon: string; title: string; desc: string; link?: { href: string; label: string } }
+
+  // Perks that apply to every trip booked with Eric
+  const everyTripPerks: Perk[] = [
+    {
+      icon: '\ud83c\udf9f\ufe0f',
+      title: 'First Dibs on Group Sailings',
+      desc: 'New group sailings show up for members first, before Eric posts them anywhere else. Best cabins go fast.',
+    },
+    {
+      icon: '\ud83d\udcc9',
+      title: 'Price-Drop Check',
+      desc: 'Before your final payment, Eric rechecks your fare. If a lower eligible price is available, he\u2019ll work to get it for you.',
+    },
+  ]
+
+  // Virgin Voyages perks (Sea Terrace cabins and above)
+  // To add another cruise line later, copy this list and its section below.
+  const virginPerks: Perk[] = [
+    {
+      icon: '\u2b50',
+      title: 'Sailor Loot, Added Automatically',
+      desc: 'On eligible sailings, Virgin adds $50 to $200 in onboard credit to your cabin when you book through Eric. No code needed.',
+      link: { href: '#sailor-loot', label: 'See eligible sailings' },
+    },
+    {
+      icon: '\ud83c\udf79',
+      title: '$200 Bar Tab on Group Sailings',
+      desc: 'Book a Sea Terrace cabin or higher on one of Eric\u2019s Virgin Voyages group sailings and a $200 bar tab is included.',
+    },
+    {
+      icon: '\ud83e\udd1d',
+      title: 'WorldVia Network Perks',
+      desc: 'Eric books through the WorldVia travel network, which adds extra perks on Sea Terrace cabins and above. He\u2019ll tell you exactly what\u2019s included when you book.',
+    },
+  ]
+
+  const renderPerkCards = (list: Perk[]) => (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
+      {list.map((perk, i) => (
+        <div key={i} style={cardStyle}>
+          <span style={{ fontSize: '28px' }}>{perk.icon}</span>
+          <h3 style={{ color: '#1F2937', fontSize: '15px', fontWeight: '700', margin: '10px 0 6px 0' }}>{perk.title}</h3>
+          <p style={{ color: '#6B7280', fontSize: '13px', lineHeight: '1.6', margin: perk.link ? '0 0 10px 0' : 0 }}>{perk.desc}</p>
+          {perk.link && (
+            <a href={perk.link.href} className="hdt-text-link" style={{ color: '#007298', fontSize: '13px', fontWeight: '700', textDecoration: 'none' }}>
+              {perk.link.label} &rarr;
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
   )
-  const regions = useMemo(
-    () => ['All Regions', ...Array.from(new Set(sailorLootSailings.map((s) => s.region))).sort()],
-    [sailorLootSailings]
-  )
 
-  const lootAmounts = useMemo(
-    () => [
-      'All Amounts',
-      ...Array.from(new Set(sailorLootSailings.map((s) => Number(s.loot))))
-        .sort((a, b) => a - b)
-        .map((n) => `$${n}`),
-    ],
-    [sailorLootSailings]
-  )
+  const quickActions = [
+    {
+      icon: '\ud83d\uddfa\ufe0f',
+      title: 'Drop Your Trip Wishlist',
+      desc: 'Tell Eric where you want to go next.',
+      href: 'https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/dDfyxMMy8gucAddKpaipPB4Z/link',
+      external: true,
+    },
+    {
+      icon: '\ud83e\uddf3',
+      title: 'Browse Virgin Deals',
+      desc: 'See current sailings Eric recommends.',
+      href: '/virgin',
+      external: false,
+    },
+    {
+      icon: '\ud83d\udcac',
+      title: 'Text Eric',
+      desc: 'Quick question? Just send a text.',
+      href: 'sms:6308231253',
+      external: true,
+    },
+  ]
 
-  const filtered = useMemo(() => {
-    const q = search.trim().toLowerCase()
-    return sailorLootSailings.filter((s) => {
-      const nights = Number(s.nights)
-      if (ship !== 'All Ships' && s.ship !== ship) return false
-      if (region !== 'All Regions' && s.region !== region) return false
-      if (loot !== 'All Amounts' && `$${Number(s.loot)}` !== loot) return false
-      if (length === '4 to 5 nights' && !(nights >= 4 && nights <= 5)) return false
-      if (length === '6 to 9 nights' && !(nights >= 6 && nights <= 9)) return false
-      if (length === '10+ nights' && !(nights >= 10)) return false
-      if (q && !`${s.ship} ${s.sailing} ${s.region}`.toLowerCase().includes(q)) return false
-      return true
-    })
-  }, [sailorLootSailings, search, ship, region, loot, length])
-
-  const hasFilters = search || ship !== 'All Ships' || region !== 'All Regions' || loot !== 'All Amounts' || length !== 'All Lengths'
-  const clearFilters = () => {
-    setSearch('')
-    setShip('All Ships')
-    setRegion('All Regions')
-    setLoot('All Amounts')
-    setLength('All Lengths')
+  const cardStyle = {
+    backgroundColor: 'white',
+    borderRadius: '14px',
+    border: '1px solid #E5E7EB',
+    padding: '24px',
+    boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
   }
 
   return (
-    <div id="sailor-loot" style={{ marginBottom: '32px', scrollMarginTop: '24px' }}>
-      <div style={{ marginBottom: '20px' }}>
-        <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>
-          Automatic Onboard Credit
-        </p>
-        <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: '0 0 8px 0' }}>
-          Sailor Loot on Virgin Voyages
-        </h2>
-        <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.7', margin: 0, maxWidth: '640px' }}>
-          On the sailings below, Virgin Voyages adds onboard credit to your cabin automatically when you book
-          through Eric. No code needed, no extra step. Find your sailing and check the amount.
-        </p>
-      </div>
+    <>
+      <SignedOut>
+        <RedirectToSignIn />
+      </SignedOut>
+      <SignedIn>
+        <main style={{ minHeight: '80vh', backgroundColor: '#F9FAFB', padding: '60px 24px' }}>
+          {/* Hover effects (inline styles can't do hover, so they live here) */}
+          <style>{`
+            .hdt-card-link { transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease; }
+            .hdt-card-link:hover { border-color: #007298 !important; box-shadow: 0 6px 20px rgba(0,114,152,0.18) !important; transform: translateY(-2px); }
+            .hdt-card-link:hover h3 { color: #007298 !important; }
+            .hdt-btn { transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease; }
+            .hdt-btn:hover { transform: translateY(-1px); }
+            .hdt-btn-teal:hover { background-color: #005A78 !important; }
+            .hdt-btn-amber:hover { background-color: #D97706 !important; }
+            .hdt-btn-white:hover { background-color: #F59E0B !important; color: white !important; }
+            .hdt-text-link { transition: color 0.2s ease; }
+            .hdt-text-link:hover { color: #F59E0B !important; text-decoration: underline !important; }
+          `}</style>
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
 
-      {/* Terms summary */}
-      <div style={{ backgroundColor: 'white', borderRadius: '14px', border: '1px solid #E5E7EB', padding: '20px 24px', marginBottom: '20px' }}>
-        <h3 style={{ color: '#1F2937', fontSize: '14px', fontWeight: '700', margin: '0 0 10px 0' }}>How it works</h3>
-        <ul style={{ color: '#6B7280', fontSize: '13px', lineHeight: '1.8', margin: 0, paddingLeft: '18px' }}>
-          <li>Credit amount is based on how long the sailing is: $50 for 4 to 5 nights, $100 for 6 to 9 nights, $200 for 10 or more nights, per cabin.</li>
-          <li>Applies to Sea Terrace cabins, Rockstar Quarters, and Mega Rockstar suites. It does not apply to Insider, Sea View, or Solo cabins, or Lock-it-In Guaranteed rates.</li>
-          <li>Full-ship charters and group or Circle sailings are not eligible.</li>
-          <li>It can stack with things like Pay in Full, Resident Rates, and Military and First Responder Rates, but not with other Sailor Loot promos or reduced rate programs.</li>
-          <li>Virgin Voyages can change or end this offer at any time, so amounts here are a guide, not a guarantee. Eric will always confirm the current amount before you book.</li>
-        </ul>
-      </div>
-
-      {/* Filters */}
-      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '16px' }}>
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search by ship or destination"
-          style={{
-            flex: '1 1 220px',
-            padding: '10px 14px',
-            borderRadius: '8px',
-            border: '1px solid #E5E7EB',
-            fontSize: '14px',
-            color: '#1F2937',
-          }}
-        />
-        <select
-          value={ship}
-          onChange={(e) => setShip(e.target.value)}
-          style={{ padding: '10px 14px', borderRadius: '8px', border: '1px solid #E5E7EB', fontSize: '14px', color: '#1F2937' }}
-        >
-          {ships.map((s) => (
-            <option key={s} value={s}>{s}</option>
-          ))}
-        </select>
-        <select
-          value={region}
-          onChange={(e) => setRegion(e.target.value)}
-          style={{ padding: '10px 14px', borderRadius: '8px', border: '1px solid #E5E7EB', fontSize: '14px', color: '#1F2937' }}
-        >
-          {regions.map((r) => (
-            <option key={r} value={r}>{r}</option>
-          ))}
-        </select>
-        <select
-          value={length}
-          onChange={(e) => setLength(e.target.value)}
-          style={selectStyle}
-        >
-          {['All Lengths', '4 to 5 nights', '6 to 9 nights', '10+ nights'].map((l) => (
-            <option key={l} value={l}>{l}</option>
-          ))}
-        </select>
-        <select
-          value={loot}
-          onChange={(e) => setLoot(e.target.value)}
-          style={selectStyle}
-        >
-          {lootAmounts.map((a) => (
-            <option key={a} value={a}>{a === 'All Amounts' ? 'All Sailor Loot' : `${a} Sailor Loot`}</option>
-          ))}
-        </select>
-      </div>
-
-      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', margin: '0 0 12px 0', flexWrap: 'wrap' }}>
-        <p style={{ color: '#9CA3AF', fontSize: '12px', margin: 0 }}>
-          Showing {filtered.length} of {sailorLootSailings.length} upcoming sailings
-        </p>
-        {hasFilters && (
-          <button
-            type="button"
-            onClick={clearFilters}
-            className="hdt-text-link"
-            style={{ background: 'none', border: 'none', padding: 0, color: '#007298', fontSize: '12px', fontWeight: 700, cursor: 'pointer' }}
-          >
-            Clear filters
-          </button>
-        )}
-      </div>
-
-      {/* Table */}
-      <div style={{ backgroundColor: 'white', borderRadius: '14px', border: '1px solid #E5E7EB', overflow: 'hidden', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
-        <div style={{ maxHeight: '520px', overflowY: 'auto' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13px' }}>
-            <thead>
-              <tr style={{ backgroundColor: '#F9FAFB', position: 'sticky', top: 0 }}>
-                <th style={thStyle}>Ship</th>
-                <th style={thStyle}>Sail Date</th>
-                <th style={thStyle}>Nights</th>
-                <th style={thStyle}>Sailing</th>
-                <th style={thStyle}>Region</th>
-                <th style={{ ...thStyle, textAlign: 'right' }}>Sailor Loot</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filtered.map((s, i) => (
-                <tr key={`${s.ship}-${s.sailDate}-${i}`} style={{ borderTop: '1px solid #E5E7EB' }}>
-                  <td style={tdStyle}>{s.ship}</td>
-                  <td style={tdStyle}>{s.sailDateLabel}</td>
-                  <td style={tdStyle}>{s.nights}</td>
-                  <td style={tdStyle}>{s.sailing}</td>
-                  <td style={tdStyle}>{s.region}</td>
-                  <td style={{ ...tdStyle, textAlign: 'right', fontWeight: 700, color: '#007298' }}>${s.loot}</td>
-                </tr>
-              ))}
-              {filtered.length === 0 && (
-                <tr>
-                  <td colSpan={6} style={{ ...tdStyle, textAlign: 'center', color: '#9CA3AF', padding: '24px' }}>
-                    No sailings match that search. Try a different ship or destination.
-                  </td>
-                </tr>
+            {/* Personal Welcome */}
+            <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+              <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Members Area</p>
+              <h1 style={{ color: '#1F2937', fontSize: '36px', fontWeight: '800', margin: '0 0 8px 0' }}>
+                {getGreeting()}{firstName ? `, ${firstName}` : ''}.
+              </h1>
+              {memberSince && (
+                <p style={{ color: '#9CA3AF', fontSize: '13px', margin: 0 }}>
+                  Happy Detour Travel member since {memberSince}
+                </p>
               )}
-            </tbody>
-          </table>
-        </div>
-      </div>
+            </div>
 
-      <p style={{ color: '#9CA3AF', fontSize: '12px', marginTop: '12px' }}>
-        Amounts shown are per cabin and are added automatically at booking. Reach out to Eric with any questions
-        about a specific sailing.
-      </p>
-    </div>
+            {/* Note from Eric */}
+            <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', borderLeft: '5px solid #F59E0B', padding: '28px 32px', boxShadow: '0 4px 24px rgba(0,0,0,0.06)', marginBottom: '32px' }}>
+              <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 10px 0' }}>A Note From Eric</p>
+              <p style={{ color: '#374151', fontSize: '15px', lineHeight: '1.8', margin: '0 0 12px 0' }}>
+                {firstName ? `Hey ${firstName}, thanks` : 'Thanks'} for being here. This page is where I keep the perks, deals, and group sailings I think are actually worth your time. No pressure and no sales pitch, just the good stuff.
+              </p>
+              <p style={{ color: '#374151', fontSize: '15px', lineHeight: '1.8', margin: '0 0 12px 0' }}>
+                If you ever have a question, big or small, text me. I&rsquo;m a real person and I&rsquo;ll get back to you.
+              </p>
+              <p style={{ color: '#1F2937', fontSize: '15px', fontWeight: '700', margin: 0 }}>Eric</p>
+            </div>
+
+            {/* Quick Actions */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px', marginBottom: '40px' }}>
+              {quickActions.map((action, i) => {
+                const inner = (
+                  <>
+                    <span style={{ fontSize: '26px' }}>{action.icon}</span>
+                    <h3 style={{ color: '#1F2937', fontSize: '15px', fontWeight: '700', margin: '10px 0 4px 0' }}>{action.title}</h3>
+                    <p style={{ color: '#6B7280', fontSize: '13px', lineHeight: '1.5', margin: 0 }}>{action.desc}</p>
+                  </>
+                )
+                const style = { ...cardStyle, display: 'block', textDecoration: 'none' }
+                return action.external ? (
+                  <a
+                    key={i}
+                    href={action.href}
+                    target={action.href.startsWith('http') ? '_blank' : undefined}
+                    rel={action.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    style={style}
+                    className="hdt-card-link"
+                  >
+                    {inner}
+                  </a>
+                ) : (
+                  <Link key={i} to={action.href} style={style} className="hdt-card-link">
+                    {inner}
+                  </Link>
+                )
+              })}
+            </div>
+
+            {/* Perks for Every Trip */}
+            <div style={{ marginBottom: '32px' }}>
+              <div style={{ marginBottom: '20px' }}>
+                <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Member Perks</p>
+                <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: '0 0 6px 0' }}>Perks for Every Trip</h2>
+                <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
+                  Cruise or all-inclusive, these come with any trip you book with Eric.
+                </p>
+              </div>
+              {renderPerkCards(everyTripPerks)}
+            </div>
+
+            {/* Virgin Voyages Perks */}
+            <div style={{ marginBottom: '32px' }}>
+              <div style={{ marginBottom: '20px' }}>
+                <p style={{ color: '#CC0000', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Virgin Voyages</p>
+                <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: '0 0 6px 0' }}>Extra Perks on Virgin Voyages</h2>
+                <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
+                  For Sea Terrace cabins and above when you book through Eric.
+                </p>
+              </div>
+              {renderPerkCards(virginPerks)}
+              <p style={{ color: '#9CA3AF', fontSize: '12px', marginTop: '12px' }}>
+                Perks are offered by Virgin Voyages and WorldVia and can change. Eric will always confirm what applies before you book.
+              </p>
+            </div>
+
+            {/* Group Sailings */}
+            <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', padding: '40px', boxShadow: '0 4px 24px rgba(0,0,0,0.06)', marginBottom: '32px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                <span style={{ fontSize: '32px' }}>{'\ud83d\udea2'}</span>
+                <div>
+                  <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Group Sailings</p>
+                  <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: 0 }}>Group Cruises Coming Soon</h2>
+                </div>
+              </div>
+              <p style={{ color: '#6B7280', fontSize: '15px', lineHeight: '1.7', margin: '0 0 12px 0' }}>
+                Eric is putting together exclusive group sailings for HDT members on Virgin Voyages and Norwegian. When they're ready, you'll be the first to know. Target launch is September 2027.
+              </p>
+              <p style={{ color: '#6B7280', fontSize: '15px', lineHeight: '1.7', margin: '0 0 24px 0' }}>
+                Have a destination or cruise line in mind? Reach out and let Eric know. He's building these around what members actually want.
+              </p>
+              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                <a href="sms:6308231253" className="hdt-btn hdt-btn-teal" style={{ backgroundColor: '#007298', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
+                  Text Eric
+                </a>
+                <a href="mailto:eric@happydetour.com" className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
+                  Email Eric
+                </a>
+              </div>
+            </div>
+
+            {/* Exclusive Deals */}
+            <div style={{ marginBottom: '32px' }}>
+              <div style={{ marginBottom: '20px' }}>
+                <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Exclusive Deals</p>
+                <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: 0 }}>Sailings Worth Looking At</h2>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {deals.map((deal, i) => (
+                  <div key={i} style={{ backgroundColor: 'white', borderRadius: '14px', border: '1px solid #E5E7EB', padding: '24px 28px', boxShadow: '0 2px 12px rgba(0,0,0,0.04)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
+                    <div>
+                      <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 4px 0' }}>{deal.line}</p>
+                      <h3 style={{ color: '#1F2937', fontSize: '17px', fontWeight: '700', margin: '0 0 4px 0' }}>{deal.route}</h3>
+                      <p style={{ color: '#6B7280', fontSize: '13px', margin: 0 }}>{deal.ship} &middot; {deal.nights} &middot; {deal.date}</p>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+                      <div style={{ textAlign: 'right' }}>
+                        <p style={{ color: '#6B7280', fontSize: '11px', margin: '0 0 2px 0' }}>Starting from</p>
+                        <p style={{ color: '#1F2937', fontSize: '22px', fontWeight: '800', margin: 0 }}>{deal.from}<span style={{ fontSize: '13px', fontWeight: '400', color: '#6B7280' }}>/person</span></p>
+                      </div>
+                      <a href={deal.link} target="_blank" rel="noopener noreferrer" className="hdt-btn hdt-btn-teal" style={{ backgroundColor: '#007298', color: 'white', padding: '10px 20px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px', whiteSpace: 'nowrap' }}>
+                        View Sailing
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p style={{ color: '#9CA3AF', fontSize: '12px', marginTop: '12px' }}>
+                Prices are estimates and don't include gratuities or alcohol. Contact Eric for current availability and to lock in your spot.
+              </p>
+            </div>
+
+            <SailorLootSection />
+
+            {/* Contact */}
+            <div style={{ backgroundColor: '#007298', borderRadius: '16px', padding: '32px 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '20px' }}>
+              <div>
+                <h3 style={{ color: 'white', fontSize: '18px', fontWeight: '700', margin: '0 0 4px 0' }}>Have a question? Just ask.</h3>
+                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', margin: 0 }}>Eric is a real person and he actually responds.</p>
+              </div>
+              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                <a href="sms:6308231253" className="hdt-btn hdt-btn-white" style={{ backgroundColor: 'white', color: '#007298', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
+                  Text Eric
+                </a>
+                <a href="mailto:eric@happydetour.com" className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
+                  Email Eric
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </main>
+      </SignedIn>
+    </>
   )
-}
-
-const thStyle: CSSProperties = {
-  textAlign: 'left',
-  padding: '10px 16px',
-  color: '#6B7280',
-  fontSize: '11px',
-  fontWeight: 700,
-  textTransform: 'uppercase',
-  letterSpacing: '0.5px',
-}
-
-const selectStyle: CSSProperties = {
-  padding: '10px 14px',
-  borderRadius: '8px',
-  border: '1px solid #E5E7EB',
-  fontSize: '14px',
-  color: '#1F2937',
-  backgroundColor: 'white',
-}
-
-const tdStyle: CSSProperties = {
-  padding: '10px 16px',
-  color: '#1F2937',
 }
