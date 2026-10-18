@@ -14,8 +14,6 @@ const otherLines = [
   { name: "MSC Cruises", link: "/cruises/msc" },
   { name: "Royal Caribbean", link: "/cruises/royal-caribbean" },
   { name: "Carnival", link: "/cruises/carnival" },
-  { name: "Sandals", link: "/resorts/sandals" },
-  { name: "Beaches", link: "/resorts/beaches" },
 ]
 
 const testimonials = [
@@ -115,7 +113,7 @@ export default function Home() {
               Skip the corporate fluff and the hold music. I find the right sailing, book it with no planning fee, and stay with you until you are back home.
             </p>
             <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '13px', margin: '0 0 28px 0' }}>
-              Also booking NCL, MSC, Royal Caribbean, Carnival, Sandals &amp; Beaches
+              Also booking NCL, MSC, Royal Caribbean &amp; Carnival
             </p>
           </div>
 
@@ -319,7 +317,7 @@ export default function Home() {
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '32px' }}>
             <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Group Sailing</p>
-            <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: '0 0 16px 0' }}>Sail with the HDT crew.</h2>
+            <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: '0 0 16px 0' }}>Sail with the Happy Detour Travel crew.</h2>
             <p style={{ color: '#374151', fontSize: '15px', lineHeight: '1.7', maxWidth: '700px', margin: '0 auto' }}>
               This is a group sailing I set up directly with Virgin Voyages. I am holding a block of Sea Terrace cabins, so group guests get perks you will not get booking on your own. Space is limited, so it is smart to grab your spot early. I can also help with airfare and a hotel stay before or after the cruise if you need one.
             </p>
@@ -329,7 +327,7 @@ export default function Home() {
           <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
             <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden', backgroundColor: '#CC0000' }} className="group-card-image">
               <img src="/HWthumbnail.png" alt="Halloween Transatlantic on Virgin Voyages Scarlet Lady" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%', display: 'block' }} />
-              <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#F59E0B', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px' }}>HDT Group</span>
+              <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#F59E0B', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px' }}>Happy Detour Travel Group</span>
             </div>
             <div style={{ flex: 1, padding: '20px 24px' }}>
               <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '0 0 6px 0' }}>Transatlantic &middot; Barcelona to San Juan</p>
