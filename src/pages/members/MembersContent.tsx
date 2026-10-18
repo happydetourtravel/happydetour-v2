@@ -47,6 +47,28 @@ export default function MembersContent() {
     },
   ]
 
+  // Group sailings. To add another group, copy one block and change the details.
+  const groupSailings = [
+    {
+      line: 'Virgin Voyages',
+      name: 'Halloween Transatlantic from Spain',
+      ship: 'Scarlet Lady',
+      nights: '12 nights',
+      dates: 'Oct 31 \u2013 Nov 12, 2027',
+      ports: ['Barcelona, Spain', 'Tangier, Morocco', 'Lanzarote, Canary Islands', 'San Juan, Puerto Rico'],
+      blurb: 'Twelve nights from Barcelona to San Juan with the HDT group on Scarlet Lady, with Halloween at sea, stops in Morocco and the Canary Islands, and plenty of sea days to relax and meet the group.',
+      publicPage: '/group/transatlantic-10-2027',
+      // Lock It In rate, per person based on two sharing a cabin, taxes and fees included
+      cabins: [
+        { type: 'Insider', price: '$1,068' },
+        { type: 'Sea View', price: '$1,188' },
+        { type: 'Sea Terrace', price: '$1,308', barTab: true },
+        { type: 'RockStar Quarters', price: '$4,428', barTab: true },
+        { type: 'Mega RockStar Quarters', price: '$7,860', barTab: true },
+      ],
+    },
+  ]
+
   type Perk = { icon: string; title: string; desc: string; link?: { href: string; label: string } }
 
   // Perks that apply to every trip booked with Eric
@@ -75,7 +97,7 @@ export default function MembersContent() {
     {
       icon: '\ud83c\udf79',
       title: '$200 Bar Tab on Group Sailings',
-      desc: 'Book a Sea Terrace cabin or higher on one of Eric\u2019s Virgin Voyages group sailings and a $200 bar tab is included.',
+      desc: 'Book a Sea Terrace cabin or higher at the Essentials rate on one of Eric\u2019s Virgin Voyages group sailings and a $200 bar tab is included.',
     },
   ]
 
@@ -265,33 +287,84 @@ export default function MembersContent() {
               </div>
               {renderPerkCards(virginPerks)}
               <p style={{ color: '#9CA3AF', fontSize: '12px', marginTop: '12px' }}>
-                Sailor Loot is offered by Virgin Voyages through Eric&rsquo;s WorldVia network, and perks can change. Eric will always confirm what applies before you book.
+                Sailor Loot (through Eric&rsquo;s WorldVia network) and the group bar tab are offered by Virgin Voyages and are subject to change or end at any time. Eric will always confirm what applies before you book.
               </p>
             </div>
 
             {/* Group Sailings */}
-            <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', padding: '40px', boxShadow: '0 4px 24px rgba(0,0,0,0.06)', marginBottom: '32px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <span style={{ fontSize: '32px' }}>{'\ud83d\udea2'}</span>
-                <div>
-                  <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Group Sailings</p>
-                  <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: 0 }}>Group Cruises Coming Soon</h2>
-                </div>
+            <div style={{ marginBottom: '32px' }}>
+              <div style={{ marginBottom: '20px' }}>
+                <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Group Sailings</p>
+                <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: '0 0 6px 0' }}>Sail With the HDT Group</h2>
+                <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
+                  Members get first dibs. Book a Sea Terrace cabin or higher at the Essentials rate and a $200 bar tab is included.
+                </p>
               </div>
-              <p style={{ color: '#6B7280', fontSize: '15px', lineHeight: '1.7', margin: '0 0 12px 0' }}>
-                Eric is putting together exclusive group sailings for HDT members on Virgin Voyages and Norwegian. When they're ready, you'll be the first to know. Target launch is September 2027.
-              </p>
-              <p style={{ color: '#6B7280', fontSize: '15px', lineHeight: '1.7', margin: '0 0 24px 0' }}>
-                Have a destination or cruise line in mind? Reach out and let Eric know. He's building these around what members actually want.
-              </p>
-              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                <a href="sms:6308231253" className="hdt-btn hdt-btn-teal" style={{ backgroundColor: '#007298', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
-                  Text Eric
-                </a>
-                <a href="mailto:eric@happydetour.com" className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
-                  Email Eric
-                </a>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {groupSailings.map((g, i) => (
+                  <div key={i} style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', borderTop: '5px solid #CC0000', padding: '28px', boxShadow: '0 4px 24px rgba(0,0,0,0.06)' }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', marginBottom: '16px' }}>
+                      <div>
+                        <p style={{ color: '#CC0000', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 4px 0' }}>{g.line}</p>
+                        <h3 style={{ color: '#1F2937', fontSize: '20px', fontWeight: '800', margin: '0 0 4px 0' }}>{g.name}</h3>
+                        <p style={{ color: '#6B7280', fontSize: '14px', margin: 0 }}>{g.ship} &middot; {g.nights} &middot; {g.dates}</p>
+                      </div>
+                      <span style={{ backgroundColor: '#FEF3C7', color: '#92400E', fontSize: '12px', fontWeight: '700', padding: '6px 12px', borderRadius: '999px', whiteSpace: 'nowrap' }}>
+                        {'\ud83c\udf79'} $200 bar tab: Sea Terrace+ at Essentials rate
+                      </span>
+                    </div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '16px' }}>
+                      {g.ports.map((port, pi) => (
+                        <span key={pi} style={{ fontSize: '12px', backgroundColor: '#F9FAFB', border: '1px solid #E5E7EB', color: '#4B5563', padding: '4px 10px', borderRadius: '999px' }}>
+                          {port}
+                        </span>
+                      ))}
+                    </div>
+                    <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.7', margin: '0 0 20px 0' }}>{g.blurb}</p>
+
+                    <p style={{ color: '#9CA3AF', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1.5px', margin: '0 0 10px 0' }}>Cabin Prices</p>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '10px' }}>
+                      {g.cabins.map((c, ci) => (
+                        <div key={ci} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', backgroundColor: '#F9FAFB', borderRadius: '10px', padding: '10px 14px' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                            <span style={{ color: '#1F2937', fontSize: '14px', fontWeight: '600' }}>{c.type}</span>
+                            {c.barTab && (
+                              <span style={{ backgroundColor: '#FEF3C7', color: '#92400E', fontSize: '11px', fontWeight: '700', padding: '2px 8px', borderRadius: '999px' }}>
+                                Bar tab eligible
+                              </span>
+                            )}
+                          </div>
+                          <span style={{ color: '#007298', fontSize: '16px', fontWeight: '800' }}>
+                            from {c.price} <span style={{ color: '#9CA3AF', fontSize: '12px', fontWeight: '400' }}>/ person</span>
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                    <p style={{ color: '#9CA3AF', fontSize: '12px', lineHeight: '1.6', margin: '0 0 20px 0' }}>
+                      Prices shown are the Lock It In rate, per person based on two sharing a cabin, with taxes and fees included. The $200 bar tab applies to Sea Terrace and higher booked at the Essentials rate, which is priced a little higher. Eric will quote your exact price. Prices change often.
+                    </p>
+                    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                      <a href={`sms:6308231253?body=${encodeURIComponent(`Hi Eric! I'm interested in the ${g.name} group sailing.`)}`} className="hdt-btn hdt-btn-teal" style={{ backgroundColor: '#007298', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
+                        Text Eric to Hold a Cabin
+                      </a>
+                      <a href={`mailto:eric@happydetour.com?subject=${encodeURIComponent(`${g.name} group sailing`)}`} className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
+                        Email Eric
+                      </a>
+                    </div>
+                    <p style={{ fontSize: '13px', margin: '16px 0 0 0', color: '#6B7280' }}>
+                      Know someone who&rsquo;d love this?{' '}
+                      <Link to={g.publicPage} className="hdt-text-link" style={{ color: '#007298', fontWeight: '700', textDecoration: 'none' }}>
+                        Share the sailing page &rarr;
+                      </Link>
+                    </p>
+                  </div>
+                ))}
               </div>
+
+              <p style={{ color: '#9CA3AF', fontSize: '12px', marginTop: '12px' }}>
+                Have a destination or cruise line in mind for a future group? Let Eric know. He&rsquo;s building these around what members actually want.
+              </p>
             </div>
 
             {/* Exclusive Deals */}
