@@ -373,7 +373,7 @@ export default function Home() {
           {/* Scarlet Lady Halloween Transatlantic — Oct 31, 2027 */}
           <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
             <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden', backgroundColor: '#CC0000' }} className="group-card-image">
-              <img src="/halloween-voyage.png" alt="Halloween Transatlantic on Virgin Voyages Scarlet Lady" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <img src="/HWthumbnail.png" alt="Halloween Transatlantic on Virgin Voyages Scarlet Lady" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%', display: 'block' }} />
               <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#F59E0B', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px' }}>HDT Group</span>
             </div>
             <div style={{ flex: 1, padding: '20px 24px' }}>
