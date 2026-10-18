@@ -150,7 +150,7 @@ export default function MembersContent() {
               </h1>
               {memberSince && (
                 <p style={{ color: '#9CA3AF', fontSize: '13px', margin: 0 }}>
-                  HDT member since {memberSince}
+                  Happy Detour Travel member since {memberSince}
                 </p>
               )}
             </div>
