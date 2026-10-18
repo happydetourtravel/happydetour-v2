@@ -15,6 +15,9 @@ const HOVER_CSS = `
 /* Buttons and bubbles turn Virgin red with white text */
 .vv-btn:hover { background: ${VV_RED} !important; color: #fff !important; border-color: ${VV_RED} !important; }
 
+/* Disabled buttons stay put */
+.vv-btn:disabled { pointer-events: none; }
+
 /* Accordion headers */
 .vv-acc:hover { background: ${VV_RED} !important; color: #fff !important; }
 .vv-acc:hover .vv-acc-icon { color: #fff !important; }
@@ -58,9 +61,9 @@ function Accordion({ title, children }: { title: string; children: React.ReactNo
   );
 }
 
-/* ============ BAR TAB OPTIMIZER ============ */
-// Step 1: which perks could you get. Step 2: how far will your drink money go.
-// Amounts based on Virgin Voyages' published terms (MNVV and Refer a Friend), Oct 2026.
+/* ============ BAR TAB CALCULATOR ============ */
+// Simple version for clients: trip length, people, what you drink, one clear answer.
+// Prices are rough onboard averages, Oct 2026.
 
 type SailingLength = "short" | "mid" | "long";
 
@@ -74,182 +77,161 @@ function money(n: number) {
   return "$" + Math.round(n).toLocaleString();
 }
 
-function CheckRow({ checked, onChange, title, desc }: { checked: boolean; onChange: (v: boolean) => void; title: string; desc: string }) {
-  return (
-    <label
-      className="vv-card flex gap-3 items-start p-3 rounded-lg border cursor-pointer"
-      style={{ borderColor: checked ? VV_RED : "#F3E3E3", background: checked ? "#FFF5F5" : "white" }}
-    >
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={(e) => onChange(e.target.checked)}
-        className="mt-1 h-4 w-4 flex-shrink-0"
-        style={{ accentColor: VV_RED }}
-      />
-      <span>
-        <span className="block text-sm font-semibold text-gray-800">{title}</span>
-        <span className="block text-xs text-gray-500 mt-0.5">{desc}</span>
-      </span>
-    </label>
-  );
-}
+const DRINKS: { id: string; label: string; hint: string; price: number; icon: string }[] = [
+  { id: "beer", label: "Beer or seltzer", hint: "About $8", price: 8, icon: "🍺" },
+  { id: "wine", label: "Glass of wine", hint: "About $12", price: 12, icon: "🍷" },
+  { id: "basic", label: "Simple cocktail", hint: "Like a vodka soda · about $13", price: 13, icon: "🍸" },
+  { id: "fancy", label: "Fancy or frozen cocktail", hint: "Like a margarita · about $16", price: 16, icon: "🍹" },
+  { id: "shot", label: "Shot", hint: "About $11", price: 11, icon: "🥃" },
+  { id: "coffee", label: "Specialty coffee", hint: "Latte or espresso · about $6", price: 6, icon: "☕" },
+];
 
-function NumberField({ label, value, onChange, min, max, step = 1, prefix }: { label: string; value: number; onChange: (v: number) => void; min: number; max: number; step?: number; prefix?: string }) {
+function Stepper({ value, onChange, min, max }: { value: number; onChange: (v: number) => void; min: number; max: number }) {
   return (
-    <label className="block">
-      <span className="block text-xs font-semibold text-gray-600 mb-1">{label}</span>
-      <div className="flex items-center border border-gray-200 rounded-lg bg-white overflow-hidden">
-        {prefix && <span className="pl-3 text-sm text-gray-500">{prefix}</span>}
-        <input
-          type="number"
-          inputMode="decimal"
-          value={value}
-          min={min}
-          max={max}
-          step={step}
-          onChange={(e) => {
-            const v = parseFloat(e.target.value);
-            onChange(isNaN(v) ? min : Math.min(max, Math.max(min, v)));
-          }}
-          className="w-full px-3 py-2 text-sm outline-none bg-transparent"
-        />
-      </div>
-    </label>
+    <div className="flex items-center gap-1 flex-shrink-0">
+      <button
+        aria-label="Less"
+        onClick={() => onChange(Math.max(min, value - 1))}
+        disabled={value <= min}
+        className="vv-btn h-9 w-9 rounded-full border border-red-100 text-lg font-bold leading-none disabled:opacity-30"
+        style={{ color: VV_RED, background: "white" }}
+      >
+        −
+      </button>
+      <span className="w-8 text-center font-bold text-gray-800">{value}</span>
+      <button
+        aria-label="More"
+        onClick={() => onChange(Math.min(max, value + 1))}
+        disabled={value >= max}
+        className="vv-btn h-9 w-9 rounded-full border border-red-100 text-lg font-bold leading-none disabled:opacity-30"
+        style={{ color: VV_RED, background: "white" }}
+      >
+        +
+      </button>
+    </div>
   );
 }
 
 function BarTabOptimizer() {
-  const [length, setLength] = useState<SailingLength>("mid");
-  const [isNew, setIsNew] = useState(false);
-  const [seaTerrace, setSeaTerrace] = useState(false);
-  const [mnvv, setMnvv] = useState(false);
-  const [premium, setPremium] = useState(false);
-  const [prepurchase, setPrepurchase] = useState(false);
-
   const [nights, setNights] = useState(7);
   const [people, setPeople] = useState(2);
-  const [drinks, setDrinks] = useState(3);
-  const [price, setPrice] = useState(14);
+  const [counts, setCounts] = useState<Record<string, number>>({ beer: 0, wine: 1, basic: 1, fancy: 1, shot: 0, coffee: 0 });
+  const [credit, setCredit] = useState(0);
 
-  const len = LENGTHS.find((l) => l.id === length)!;
-
-  const perks: { label: string; amount: number | null; note: string }[] = [];
-  if (isNew) perks.push({ label: "Referral Bar Tab", amount: 150, note: "From a friend's referral link, used before you book." });
-  if (mnvv) perks.push({ label: "MNVV Sailor Loot", amount: len.mnvv, note: `Plus ${money(len.mnvv)} off your fare.` });
-  if (seaTerrace) perks.push({ label: "Book with Eric perk", amount: null, note: "Bar Tab or Sailor Loot on most sailings. Amount depends on the sailing." });
-  if (premium) perks.push({ label: "Premium fare Bar Tab", amount: null, note: "Included with Premium. Amount depends on the sailing." });
-  if (prepurchase) perks.push({ label: "Pre-purchase bonus", amount: null, note: "Virgin adds bonus credit to Bar Tabs you buy before sailing, up to $250." });
-
-  const known = perks.reduce((sum, p) => sum + (p.amount || 0), 0);
-  const hasVariable = perks.some((p) => p.amount === null);
-  const spend = nights * people * drinks * price;
-  const left = Math.max(0, spend - known);
+  const perPersonPerDay = DRINKS.reduce((sum, d) => sum + counts[d.id] * d.price, 0);
+  const drinksPerDay = DRINKS.reduce((sum, d) => sum + counts[d.id], 0);
+  const total = perPersonPerDay * people * nights;
+  const toBuy = Math.max(0, total - credit);
 
   return (
     <div className="rounded-2xl overflow-hidden mb-8 shadow-sm border border-red-100 bg-white">
       <div className="px-5 py-4 text-white" style={{ background: `linear-gradient(135deg, ${VV_DARK}, ${VV_RED})` }}>
-        <p className="text-xs uppercase tracking-widest mb-1" style={{ color: VV_GOLD }}>Bar Tab Optimizer</p>
-        <p className="text-lg md:text-xl font-bold">See how much drink money you could get</p>
-        <p className="text-xs text-red-100 mt-1">Check what applies to you, then see how far it goes.</p>
+        <p className="text-xs uppercase tracking-widest mb-1" style={{ color: VV_GOLD }}>Bar Tab Calculator</p>
+        <p className="text-lg md:text-xl font-bold">How much should I put on my Bar Tab?</p>
+        <p className="text-xs text-red-100 mt-1">Tell me about your trip and what you like to drink. I'll do the math.</p>
       </div>
 
-      <div className="p-5">
-        {/* Step 1 */}
-        <p className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: VV_RED }}>Step 1 · Your sailing</p>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {LENGTHS.map((l) => (
-            <button
-              key={l.id}
-              onClick={() => { setLength(l.id); setNights(l.nights); }}
-              className="vv-pill px-3 py-2 rounded-full text-xs font-semibold border"
-              style={{
-                background: length === l.id ? VV_RED : "white",
-                color: length === l.id ? "white" : "#374151",
-                borderColor: length === l.id ? VV_RED : "#E5E7EB",
-              }}
-            >
-              {l.label}
-            </button>
-          ))}
-        </div>
-
-        <div className="grid gap-2 mb-2">
-          <CheckRow checked={isNew} onChange={setIsNew} title="I'm new to Virgin Voyages" desc="A friend who has sailed can send you their referral link for a $150 Bar Tab." />
-          <CheckRow checked={seaTerrace} onChange={setSeaTerrace} title="I'm booking a Sea Terrace cabin or higher with Eric" desc="Unlocks the travel advisor Bar Tab or Sailor Loot perk on most sailings." />
-          <CheckRow checked={premium} onChange={setPremium} title="I'm choosing the Premium fare" desc="The Premium fare comes with a Bar Tab credit built in." />
-          <CheckRow checked={mnvv} onChange={setMnvv} title="I'm onboard now and booking my next voyage (MNVV)" desc={`For a ${len.label} sailing: ${money(len.mnvv)} Sailor Loot plus ${money(len.mnvv)} off your fare.`} />
-          <CheckRow checked={prepurchase} onChange={setPrepurchase} title="I'll pre-purchase a Bar Tab" desc="Buy before you sail and Virgin adds bonus credit on top." />
-        </div>
-
-        {mnvv && !seaTerrace && (
-          <p className="text-xs mb-2 p-2 rounded-lg" style={{ background: "#FFF7E6", color: "#92400E" }}>
-            Heads up: MNVV only works on Sea Terrace cabins or higher, on sailings of 4 nights or more.
-          </p>
-        )}
-
-        {/* Results for Step 1 */}
-        <div className="mt-4 p-4 rounded-xl" style={{ background: VV_CREAM }}>
-          {perks.length === 0 ? (
-            <p className="text-sm text-gray-500">Check the boxes above to see your perks.</p>
-          ) : (
-            <>
-              <ul className="space-y-2 mb-3">
-                {perks.map((p) => (
-                  <li key={p.label} className="flex justify-between gap-3 text-sm">
-                    <span>
-                      <span className="font-semibold text-gray-800">{p.label}</span>
-                      <span className="block text-xs text-gray-500">{p.note}</span>
-                    </span>
-                    <span className="font-bold whitespace-nowrap" style={{ color: VV_RED }}>
-                      {p.amount !== null ? money(p.amount) : "Varies"}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <div className="border-t border-red-100 pt-3 flex justify-between items-baseline">
-                <span className="text-sm font-semibold text-gray-700">You could get at least</span>
-                <span className="text-2xl font-extrabold" style={{ color: VV_DARK }}>{money(known)}</span>
+      <div className="p-5 grid md:grid-cols-5 gap-6">
+        {/* Inputs */}
+        <div className="md:col-span-3">
+          <p className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: VV_RED }}>1 · Your trip</p>
+          <div className="space-y-3 mb-6">
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold text-gray-800">Nights onboard</p>
+                <p className="text-xs text-gray-500">How long is your sailing?</p>
               </div>
-              {hasVariable && <p className="text-xs text-gray-500 mt-1">Plus the perks marked "Varies." Eric can tell you the exact amounts for your sailing.</p>}
-            </>
-          )}
+              <Stepper value={nights} onChange={setNights} min={1} max={30} />
+            </div>
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold text-gray-800">People drinking</p>
+                <p className="text-xs text-gray-500">Sharing one Bar Tab</p>
+              </div>
+              <Stepper value={people} onChange={setPeople} min={1} max={4} />
+            </div>
+          </div>
+
+          <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: VV_RED }}>2 · A typical day, per person</p>
+          <p className="text-xs text-gray-500 mb-3">Just a rough guess. You can't get this wrong.</p>
+          <div className="divide-y divide-red-50">
+            {DRINKS.map((d) => (
+              <div key={d.id} className="flex items-center justify-between gap-3 py-2">
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="h-9 w-9 rounded-full flex items-center justify-center text-lg flex-shrink-0" style={{ background: VV_CREAM }}>{d.icon}</span>
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold text-gray-800">{d.label}</p>
+                    <p className="text-xs text-gray-500">{d.hint}</p>
+                  </div>
+                </div>
+                <Stepper value={counts[d.id]} onChange={(v) => setCounts({ ...counts, [d.id]: v })} min={0} max={10} />
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-gray-400 mt-2">Sodas, juice, water, and drip coffee are free, so no need to count those.</p>
         </div>
 
-        {/* Step 2 */}
-        <p className="text-xs font-bold uppercase tracking-wider mt-8 mb-3" style={{ color: VV_RED }}>Step 2 · Your drink budget</p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-          <NumberField label="Nights" value={nights} onChange={setNights} min={1} max={30} />
-          <NumberField label="People drinking" value={people} onChange={setPeople} min={1} max={4} />
-          <NumberField label="Drinks per person, per day" value={drinks} onChange={setDrinks} min={0} max={15} />
-          <NumberField label="Average drink price" value={price} onChange={setPrice} min={1} max={50} prefix="$" />
+        {/* Result */}
+        <div className="md:col-span-2">
+          <div className="md:sticky md:top-16 space-y-3">
+            <div className="rounded-xl p-5 text-center text-white" style={{ background: `linear-gradient(135deg, ${VV_DARK}, ${VV_RED})` }}>
+              <p className="text-xs uppercase tracking-widest mb-1" style={{ color: VV_GOLD }}>Your drinks for the trip</p>
+              <p className="text-4xl font-extrabold">{money(total)}</p>
+              <p className="text-xs text-red-100 mt-2">
+                {drinksPerDay} {drinksPerDay === 1 ? "drink" : "drinks"} a day each · about {money(perPersonPerDay)} per person, per day
+              </p>
+            </div>
+
+            <div className="rounded-xl p-4" style={{ background: VV_CREAM }}>
+              <label className="block">
+                <span className="block text-sm font-semibold text-gray-800">Already have Bar Tab money?</span>
+                <span className="block text-xs text-gray-500 mb-2">From a referral, a promo, or booking with me. Not sure? Leave it at 0.</span>
+                <div className="flex items-center border border-gray-200 rounded-lg bg-white overflow-hidden">
+                  <span className="pl-3 text-sm text-gray-500">$</span>
+                  <input
+                    type="number"
+                    inputMode="decimal"
+                    value={credit}
+                    min={0}
+                    onChange={(e) => {
+                      const v = parseFloat(e.target.value);
+                      setCredit(isNaN(v) ? 0 : Math.max(0, v));
+                    }}
+                    className="w-full px-3 py-2 text-sm outline-none bg-transparent"
+                  />
+                </div>
+              </label>
+            </div>
+
+            <div className="rounded-xl p-4 border-2 text-center" style={{ borderColor: VV_RED }}>
+              {toBuy > 0 ? (
+                <>
+                  <p className="text-sm text-gray-600">Bar Tab to buy before you sail</p>
+                  <p className="text-3xl font-extrabold" style={{ color: VV_RED }}>{money(toBuy)}</p>
+                  <p className="text-xs text-gray-500 mt-2">Virgin adds bonus credit on top when you buy ahead, so you'll likely end up with a little extra.</p>
+                </>
+              ) : (
+                <>
+                  <p className="text-lg font-bold" style={{ color: VV_RED }}>You're covered!</p>
+                  <p className="text-xs text-gray-500 mt-1">Your existing Bar Tab money should cover your drinks.</p>
+                </>
+              )}
+            </div>
+
+            <a
+              href="sms:6308231253"
+              className="vv-btn block text-center px-4 py-3 rounded-lg font-bold text-sm border border-transparent"
+              style={{ background: VV_GOLD, color: VV_DARK }}
+            >
+              Ask Eric what perks your sailing has
+            </a>
+          </div>
         </div>
-
-        <div className="grid grid-cols-3 gap-2 text-center">
-          <div className="p-3 rounded-xl bg-gray-50">
-            <p className="text-xs text-gray-500 mb-1">Estimated drinks</p>
-            <p className="text-lg font-bold text-gray-800">{money(spend)}</p>
-          </div>
-          <div className="p-3 rounded-xl" style={{ background: "#FFF5F5" }}>
-            <p className="text-xs text-gray-500 mb-1">Covered by perks</p>
-            <p className="text-lg font-bold" style={{ color: VV_RED }}>{money(Math.min(known, spend))}</p>
-          </div>
-          <div className="p-3 rounded-xl text-white" style={{ background: VV_DARK }}>
-            <p className="text-xs opacity-70 mb-1">Left to cover</p>
-            <p className="text-lg font-bold">{money(left)}</p>
-          </div>
-        </div>
-
-        {left > 0 && (
-          <p className="text-sm text-gray-700 mt-4">
-            <strong>Eric's tip:</strong> Pre-purchase a Bar Tab for about {money(left)} before you sail. Virgin adds bonus credit on top, so your money goes further than paying as you go.
-          </p>
-        )}
-
-        <p className="text-xs text-gray-400 mt-4 leading-relaxed">
-          Drink prices are estimates and vary by bar, so change the average price if you like. Not every perk works with every fare, and offers change often. Eric confirms what stacks for your sailing before anything is booked.
-        </p>
       </div>
+
+      <p className="px-5 pb-5 text-xs text-gray-400 leading-relaxed">
+        Prices are rough averages and vary by bar. Unused Bar Tab money doesn't carry over, so it's better to guess a little low. Anything over just goes on your onboard account.
+      </p>
     </div>
   );
 }
@@ -693,11 +675,6 @@ export default function VirginVoyagesPage() {
                 It works on Sea Terrace cabins or higher.{" "}
                 <button onClick={() => goToTab("perks")} className="vv-link font-semibold underline" style={{ color: VV_RED }}>See the full MNVV breakdown</button>
               </p>
-            </Accordion>
-
-            <Accordion title="Sea Blazers and Sea Rovers: Legacy Status">
-              <p className="mb-3">Sea Blazers sailed with Virgin Voyages during their inaugural year in 2021. Sea Rovers sailed at least twice between 2022 and 2023. Both groups earned legacy status and automatically unlocked Deep Blue Extras through the end of 2026.</p>
-              <p>These groups are no longer open to new members. If you sailed in those windows you already know who you are.</p>
             </Accordion>
 
             <Accordion title="Status Match: Fast Track Into the Program">
