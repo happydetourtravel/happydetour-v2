@@ -35,7 +35,7 @@ const virginPoints = [
 const virginFaqs = [
   { q: "Is there a planning fee to book Virgin Voyages through you?", a: "No. Virgin Voyages bookings go through my direct affiliate link, so there is no planning fee. I still handle the details, you just do not pay extra for it." },
   { q: "What is actually included in the fare?", a: "All restaurants onboard, unlimited WiFi, group fitness classes, and sodas and sparkling water. No buffets and no upcharge dining like you find on most other lines." },
-  { q: "What is Bar Tab or Sailor Loot credit?", a: "It is a bonus some sailings offer when you book a Sea Terrace cabin or higher through a travel advisor instead of going direct. Ask me if your sailing qualifies." },
+  { q: "What is Bar Tab or Sailor Loot credit?", a: "Bar Tab is credit just for drinks. Sailor Loot works on almost anything onboard. You can get both through promotions, a referral, or booking a Sea Terrace cabin or higher with me." },
   { q: "Who is Virgin Voyages a good fit for?", a: "Couples, friend groups, and solo sailors who want a more upscale, relaxed vibe. Everyone onboard is 18 and up." },
 ]
 
@@ -292,6 +292,14 @@ export default function Home() {
                   <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '13px', margin: 0, lineHeight: '1.6' }}>{f.a}</p>
                 </div>
               ))}
+            </div>
+            <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', marginTop: '20px' }}>
+              <a href="/cruises/virgin-voyages#bar-tab" style={{ color: 'white', fontWeight: '700', fontSize: '14px', textDecoration: 'underline' }}>
+                Try the Bar Tab Optimizer &rarr;
+              </a>
+              <a href="/cruises/virgin-voyages" style={{ color: 'white', fontWeight: '700', fontSize: '14px', textDecoration: 'underline' }}>
+                Read the full Virgin Voyages guide &rarr;
+              </a>
             </div>
           </div>
 
