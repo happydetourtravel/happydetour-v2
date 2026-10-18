@@ -1,162 +1,179 @@
+// Route: /group/transatlantic-10-2027
+// Virgin Voyages — Scarlet Lady — Halloween Transatlantic from Spain — Oct 31, 2027
+// Group sailing: booked by Eric into the group block. Main button sends people to join (free) first.
+
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-// Public teaser page for the HDT Transatlantic 12 group sailing.
-// Full booking details live on the members page. Group sailings are always booked through Eric.
+export default function Page() {
+  const [showBanner, setShowBanner] = useState(true)
 
-export default function Transatlantic12Page() {
-  const included = [
-    'All restaurants on board',
-    'Unlimited WiFi',
-    'Group fitness classes',
-    'Soft drinks, juice, and drip coffee',
-  ]
-
-  const notIncluded = [
-    'Alcohol (that’s where the bar tab comes in)',
-    'Gratuities (a separate line item)',
-    'Shore excursions',
-    'Spa treatments',
-  ]
-
-  const ports = ['Barcelona, Spain', 'Tangier, Morocco', 'Lanzarote, Canary Islands', 'San Juan, Puerto Rico']
-
-  const memberPerks = [
-    { icon: '🍹', title: '$200 Bar Tab', desc: 'Included with Sea Terrace cabins and higher booked at the Essentials rate in the HDT group.' },
-    { icon: '🎟️', title: 'First Dibs on Cabins', desc: 'Members hear about group cabins before anyone else. Best cabins go fast.' },
-    { icon: '🤝', title: 'Booked by Eric', desc: 'Eric places you directly in the group so you get the perk and someone actually in your corner.' },
-  ]
+  const textHref = `sms:6308231253?body=${encodeURIComponent("Hi Eric, I saw the Halloween Transatlantic from Spain group sailing on Virgin Voyages and have a question.")}`;
 
   return (
-    <main style={{ backgroundColor: '#F9FAFB', minHeight: '80vh' }}>
-      <style>{`
-        .hdt-btn { transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease; }
-        .hdt-btn:hover { transform: translateY(-1px); }
-        .hdt-btn-amber:hover { background-color: #D97706 !important; }
-        .hdt-btn-ghost:hover { background-color: white !important; color: #CC0000 !important; }
-        .hdt-btn-teal:hover { background-color: #005A78 !important; }
-        .hdt-text-link { transition: color 0.2s ease; }
-        .hdt-text-link:hover { color: #F59E0B !important; text-decoration: underline !important; }
-      `}</style>
+    <div className="min-h-screen bg-[#F9FAFB] flex flex-col items-center py-10 px-4">
 
-      {/* Hero */}
-      <section style={{ backgroundColor: '#CC0000', padding: '64px 16px 56px', textAlign: 'center' }}>
-        <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-          <p style={{ color: '#FDE68A', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', margin: '0 0 12px 0' }}>
-            Happy Detour Travel Group Sailing
-          </p>
-          <h1 style={{ color: 'white', fontSize: 'clamp(32px, 6vw, 48px)', fontWeight: '800', lineHeight: '1.15', margin: '0 0 16px 0' }}>
+      {/* Halloween banner */}
+      {showBanner && (
+        <div className="w-full max-w-4xl rounded-2xl overflow-hidden shadow-sm mb-6">
+          <img
+            src="/halloween-voyage.jpg"
+            alt="Halloween Voyage with Virgin Voyages"
+            onError={() => setShowBanner(false)}
+            style={{ width: '100%', height: 'auto', display: 'block' }}
+          />
+        </div>
+      )}
+
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+
+        <div className="h-1 bg-[#007298]" />
+
+        <div className="p-6">
+
+          <span className="inline-block text-xs font-semibold uppercase tracking-widest bg-amber-100 text-amber-800 px-3 py-1 rounded-full mb-4">
+            Group Sailing — Members Get First Dibs
+          </span>
+
+          <h1 className="text-2xl font-bold text-[#1F2937] leading-snug mb-1">
             Halloween Transatlantic from Spain
           </h1>
-          <p style={{ color: 'rgba(255,255,255,0.92)', fontSize: '18px', lineHeight: '1.6', margin: '0 0 8px 0' }}>
-            Barcelona to San Juan &middot; Scarlet Lady &middot; 12 nights
+          <p className="text-sm text-gray-500 mb-1">
+            Virgin Voyages &middot; Scarlet Lady
           </p>
-          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', margin: '0 0 20px 0' }}>
-            Oct 31 &ndash; Nov 12, 2027
+          <p className="text-sm font-semibold text-[#007298] mb-4">
+            October 31 – November 12, 2027 &middot; Barcelona to San Juan
           </p>
-          <p style={{ color: 'white', fontSize: '15px', margin: '0 0 20px 0' }}>
-            From <span style={{ fontSize: '30px', fontWeight: '800' }}>$1,068</span> per person*
-          </p>
-          <div style={{ display: 'inline-block', backgroundColor: 'rgba(255,255,255,0.15)', color: 'white', fontSize: '14px', fontWeight: '700', padding: '8px 16px', borderRadius: '999px', marginBottom: '28px' }}>
-            {'🍹'} HDT members get a $200 bar tab
-          </div>
-          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/join" className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '14px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '16px' }}>
-              Join Free to Claim Your Spot
-            </Link>
-            <Link to="/login" className="hdt-btn hdt-btn-ghost" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>
-              Already a Member? Sign In
-            </Link>
-          </div>
-        </div>
-      </section>
 
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '48px 16px' }}>
-
-        {/* Route */}
-        <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', padding: '28px', marginBottom: '40px' }}>
-          <p style={{ color: '#CC0000', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>The Route</p>
-          <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: '0 0 16px 0' }}>Spain to the Caribbean, With Halloween at Sea</h2>
-          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '8px' }}>
-            {ports.map((port, i) => (
-              <span key={port} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                <span style={{ fontSize: '14px', fontWeight: '600', color: '#1F2937', backgroundColor: '#F9FAFB', border: '1px solid #E5E7EB', padding: '6px 12px', borderRadius: '999px' }}>{port}</span>
-                {i < ports.length - 1 && <span style={{ color: '#CC0000', fontWeight: '700' }}>&rarr;</span>}
+          <div className="flex flex-wrap gap-2 mb-5">
+            {["Barcelona, Spain", "Tangier, Morocco", "Lanzarote, Canary Islands", "San Juan, Puerto Rico"].map((port, i) => (
+              <span key={i} className="text-xs bg-gray-50 border border-gray-100 text-gray-500 px-3 py-1 rounded-full">
+                {port}
               </span>
             ))}
           </div>
-          <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.7', margin: '16px 0 0 0' }}>
-            Start in Barcelona, explore Tangier and the Canary Islands, then cross the Atlantic with plenty of sea days to relax and meet the group before arriving in San Juan.
-          </p>
-        </div>
 
-        {/* Why join */}
-        <div style={{ marginBottom: '40px' }}>
-          <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Member Perks</p>
-          <h2 style={{ color: '#1F2937', fontSize: '24px', fontWeight: '700', margin: '0 0 8px 0' }}>Why Sail With the HDT Group</h2>
-          <p style={{ color: '#6B7280', fontSize: '15px', lineHeight: '1.7', margin: '0 0 20px 0' }}>
-            Membership is free. It&rsquo;s how you get into the group and unlock the perks below.
+          <hr className="border-gray-100 mb-4" />
+
+          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+            Sailing Itinerary
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
-            {memberPerks.map((p, i) => (
-              <div key={i} style={{ backgroundColor: 'white', borderRadius: '14px', border: '1px solid #E5E7EB', padding: '24px', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
-                <span style={{ fontSize: '28px' }}>{p.icon}</span>
-                <h3 style={{ color: '#1F2937', fontSize: '16px', fontWeight: '700', margin: '10px 0 6px 0' }}>{p.title}</h3>
-                <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>{p.desc}</p>
+          <div className="space-y-3 mb-5">
+            {[
+              { day: "Day 1", port: "Barcelona, Spain", note: "Departs 5:00 PM" },
+              { day: "Day 2", port: "At Sea", note: "Sailing" },
+              { day: "Day 3", port: "Tangier, Morocco", note: "8:00 AM – 8:00 PM" },
+              { day: "Day 4", port: "At Sea", note: "Sailing" },
+              { day: "Day 5", port: "Lanzarote, Canary Islands, Spain", note: "8:00 AM – 5:00 PM" },
+              { day: "Days 6–12", port: "At Sea", note: "Atlantic crossing" },
+              { day: "Day 13", port: "San Juan, Puerto Rico", note: "Arrives 6:30 AM" },
+            ].map(({ day, port, note }) => (
+              <div key={day} className="flex justify-between text-sm">
+                <div>
+                  <p className="text-gray-400 text-xs mb-0.5">{day}</p>
+                  <p className="text-[#1F2937] font-medium">{port}</p>
+                </div>
+                <span className="text-gray-400 text-xs self-center text-right">{note}</span>
               </div>
             ))}
           </div>
-        </div>
 
-        {/* Included / not included */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px', marginBottom: '40px' }}>
-          <div style={{ backgroundColor: 'white', borderRadius: '14px', border: '1px solid #E5E7EB', padding: '24px' }}>
-            <h3 style={{ color: '#1F2937', fontSize: '16px', fontWeight: '700', margin: '0 0 12px 0' }}>Included With Virgin</h3>
-            <ul style={{ color: '#374151', fontSize: '14px', lineHeight: '1.9', margin: 0, paddingLeft: '18px' }}>
-              {included.map((item) => <li key={item}>{item}</li>)}
-            </ul>
-          </div>
-          <div style={{ backgroundColor: 'white', borderRadius: '14px', border: '1px solid #E5E7EB', padding: '24px' }}>
-            <h3 style={{ color: '#1F2937', fontSize: '16px', fontWeight: '700', margin: '0 0 12px 0' }}>Not Included</h3>
-            <ul style={{ color: '#374151', fontSize: '14px', lineHeight: '1.9', margin: 0, paddingLeft: '18px' }}>
-              {notIncluded.map((item) => <li key={item}>{item}</li>)}
-            </ul>
-          </div>
-        </div>
+          <hr className="border-gray-100 mb-4" />
 
-        {/* How it works */}
-        <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', borderLeft: '5px solid #F59E0B', padding: '28px', marginBottom: '40px' }}>
-          <h2 style={{ color: '#1F2937', fontSize: '20px', fontWeight: '700', margin: '0 0 16px 0' }}>How It Works</h2>
-          <ol style={{ color: '#374151', fontSize: '15px', lineHeight: '1.9', margin: 0, paddingLeft: '20px' }}>
-            <li><strong>Join free.</strong> Takes about a minute.</li>
-            <li><strong>See every cabin price</strong> on your members page.</li>
-            <li><strong>Text or email Eric</strong> to hold your cabin. He books you straight into the group.</li>
-          </ol>
-          <p style={{ color: '#6B7280', fontSize: '13px', lineHeight: '1.6', margin: '16px 0 0 0' }}>
-            Group cabins need to be booked through Eric to get the bar tab. Booking on your own through Virgin&rsquo;s site won&rsquo;t place you in the group.
+          <div className="space-y-2 mb-5">
+            {[
+              { label: "Departure", value: "October 31, 2027" },
+              { label: "Departs from", value: "Barcelona, Spain" },
+              { label: "Length", value: "12 nights" },
+              { label: "Returns", value: "November 12, 2027" },
+              { label: "Ends in", value: "San Juan, Puerto Rico" },
+              { label: "Ship", value: "Scarlet Lady" },
+              { label: "Cruise line", value: "Virgin Voyages (Adults Only)" },
+            ].map(({ label, value }) => (
+              <div key={label} className="flex justify-between text-sm">
+                <span className="text-gray-500">{label}</span>
+                <span className="font-semibold text-[#1F2937] text-right max-w-[55%]">{value}</span>
+              </div>
+            ))}
+          </div>
+
+          <hr className="border-gray-100 mb-4" />
+
+          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+            Cabin options
           </p>
-        </div>
-
-        {/* Final CTA */}
-        <div style={{ backgroundColor: '#007298', borderRadius: '16px', padding: '32px', textAlign: 'center' }}>
-          <h3 style={{ color: 'white', fontSize: '22px', fontWeight: '700', margin: '0 0 8px 0' }}>Want in?</h3>
-          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', margin: '0 0 20px 0' }}>Join free and grab first dibs on a group cabin.</p>
-          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/join" className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '14px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '16px' }}>
-              Join Free
-            </Link>
+          <div className="space-y-2 mb-2">
+            {[
+              { type: "Insider", price: "$1,068", note: "Lowest price" },
+              { type: "Sea Terrace", price: "$1,308", note: "Bar tab eligible" },
+            ].map(({ type, price, note }) => (
+              <div key={type} className="flex items-center justify-between bg-gray-50 rounded-xl px-4 py-2.5">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm text-[#1F2937] font-medium">{type}</span>
+                  {note && (
+                    <span className="text-xs bg-[#007298] text-white px-2 py-0.5 rounded-full">{note}</span>
+                  )}
+                </div>
+                <span className="text-base font-bold text-[#007298]">
+                  from {price} <span className="text-xs font-normal text-gray-400">/ person</span>
+                </span>
+              </div>
+            ))}
           </div>
-          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '14px', margin: '20px 0 0 0' }}>
-            Questions first?{' '}
-            <a href="sms:6308231253?body=Hi%20Eric!%20I%20have%20a%20question%20about%20the%20Transatlantic%20group%20sailing." className="hdt-text-link" style={{ color: 'white', fontWeight: '700', textDecoration: 'none' }}>
-              Text Eric
+          <p className="text-xs text-gray-400 mb-5">
+            Members see every cabin price, including RockStar suites.
+          </p>
+
+          <div className="bg-amber-50 border border-amber-100 rounded-xl px-4 py-3 text-sm text-amber-800 leading-relaxed mb-4">
+            🍹 HDT members get a <strong>$200 bar tab</strong> on Sea Terrace cabins and higher booked at the Essentials rate in the group. I book you into the group myself so you get it.
+          </div>
+
+          <p className="text-sm text-gray-600 leading-relaxed mb-5">
+            Twelve nights from Barcelona to San Juan on Scarlet Lady, with Halloween at sea. Stops in Tangier and the Canary Islands, then a relaxing Atlantic crossing with plenty of sea days to meet the group. Virgin is adults only, every restaurant is included, and there are no set dining times. Join free to see all the details and grab first dibs on a group cabin.
+          </p>
+
+          <Link
+            to="/join"
+            className="block w-full text-center bg-[#F59E0B] hover:bg-amber-500 text-white font-bold text-base py-3.5 rounded-xl mb-3 transition-colors"
+            style={{ textDecoration: 'none' }}
+          >
+            Join free to claim your spot
+          </Link>
+          <Link
+            to="/login"
+            className="block w-full text-center border-2 border-[#007298] text-[#007298] font-bold text-sm py-3 rounded-xl hover:bg-[#007298]/5 transition-colors"
+            style={{ textDecoration: 'none' }}
+          >
+            Already a member? Sign in
+          </Link>
+
+          <p className="text-xs text-gray-400 text-center mt-3 leading-relaxed">
+            Joining is free. Group cabins are booked through me so you land in the group and get the perk.{' '}
+            <a href={textHref} className="text-[#007298] font-semibold hover:text-amber-500 transition-colors">
+              Questions? Text me.
             </a>
           </p>
-        </div>
 
-        <p style={{ color: '#9CA3AF', fontSize: '12px', lineHeight: '1.6', marginTop: '16px', textAlign: 'center' }}>
-          *Starting price is for an Insider cabin at the Lock It In rate, per person based on two sharing, with taxes and fees included. The $200 bar tab applies to Sea Terrace and higher booked at the Essentials rate, which is priced a little higher. Prices and the group bar tab are set by Virgin Voyages and can change at any time. Eric will always confirm your exact price before you book.
-        </p>
+          <p className="text-[11px] text-gray-400 text-center mt-3 leading-relaxed">
+            Prices are the Lock It In rate, per person based on two sharing, with taxes and fees included. The Essentials rate is priced a little higher. Prices and the group bar tab are set by Virgin Voyages and can change at any time. I will always confirm your exact price before you book.
+          </p>
+
+          <div className="flex items-center gap-3 mt-5 pt-4 border-t border-gray-100">
+            <div className="w-10 h-10 rounded-full bg-[#007298] flex items-center justify-center text-white text-sm font-bold shrink-0">
+              EC
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-[#1F2937]">
+                Eric Carney &middot; Happy Detour Travel
+              </p>
+              <p className="text-xs text-gray-400 leading-relaxed">
+                20+ personal cruises &middot; Virgin Voyages Gold First Mate &middot; Northeast Ohio &middot; 630-823-1253
+              </p>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </main>
-  )
+    </div>
+  );
 }
