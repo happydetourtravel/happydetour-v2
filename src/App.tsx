@@ -77,6 +77,7 @@ export const routes: RouteRecord[] = [
       { path: 'group/halloween-caribbean-2026', entry: 'src/pages/group/halloween-caribbean-2026/page.tsx', lazy: () => import('./pages/group/halloween-caribbean-2026/page').then((m) => ({ Component: m.default })) },
       { path: 'group/allure-eastern-caribbean-2027', entry: 'src/pages/group/allure-eastern-caribbean-2027/page.tsx', lazy: () => import('./pages/group/allure-eastern-caribbean-2027/page').then((m) => ({ Component: m.default })) },
       { path: 'group/alaska-glacial-fjords-2027', entry: 'src/pages/group/alaska-glacial-fjords-2027/page.tsx', lazy: () => import('./pages/group/alaska-glacial-fjords-2027/page').then((m) => ({ Component: m.default })) },
+      { path: 'group/transatlantic-10-2027', entry: 'src/pages/group/transatlantic-10-2027/page.tsx', lazy: () => import('./pages/group/transatlantic-10-2027/page').then((m) => ({ Component: m.default })) },
       { path: 'group/baja-halloween-2027', entry: 'src/pages/group/baja-halloween-2027/page.tsx', lazy: () => import('./pages/group/baja-halloween-2027/page').then((m) => ({ Component: m.default })) },
     ],
   },
