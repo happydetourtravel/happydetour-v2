@@ -7,56 +7,6 @@ import { Link } from "react-router-dom";
 // included. Subject to change and availability — verify before quoting.
 const sailings = [
   {
-    slug: "bermuda-caribbean-nyc-sanjuan-valiant-1019",
-    photo: "/VL-BritishVirginIslands.JPG",
-    ship: "Valiant Lady",
-    title: "Bermuda & Caribbean: NYC to San Juan",
-    date: "October 19, 2026",
-    nights: "12 Nights",
-    price: "$1,188",
-    loot: 200,
-  },
-  {
-    slug: "spanish-isles-transatlantic-scarlet-1011",
-    photo: "/Transatlantic.jpg", // TODO: upload to /public
-    ship: "Scarlet Lady",
-    title: "Spanish Isles & Transatlantic Miles",
-    date: "October 11, 2026",
-    nights: "14 Nights",
-    price: "$1,386",
-    loot: 200,
-  },
-  {
-    slug: "panama-canal-la-miami-brilliant-1029",
-    photo: "/brilliantlady.jpeg",
-    ship: "Brilliant Lady",
-    title: "Panama Canal: LA to Miami",
-    date: "October 29, 2026",
-    nights: "17 Nights",
-    price: "$5,120",
-    loot: 200,
-  },
-  {
-    slug: "western-caribbean-bimini-resilient-1101",
-    photo: "/BiminiBeachClubDrone.jpg", // TODO: upload to /public
-    ship: "Resilient Lady",
-    title: "Western Caribbean & Bimini Beach Club",
-    date: "November 1, 2026",
-    nights: "7 Nights",
-    price: "$693",
-    loot: 100,
-  },
-  {
-    slug: "eastern-caribbean-bimini-brilliant-1115",
-    photo: "/eastern-caribbean-bimini.webp",
-    ship: "Brilliant Lady",
-    title: "Eastern Caribbean & Bimini Beach Club",
-    date: "November 15, 2026",
-    nights: "10 Nights",
-    price: "$1,190",
-    loot: 200,
-  },
-  {
     slug: "southern-caribbean-valiant-1120",
     photo: "/SanJuanCouple.jpg", // TODO: upload to /public
     ship: "Valiant Lady",
@@ -147,7 +97,7 @@ export default function VirginDealsHub() {
           </div>
           <h1 className="text-[28px] md:text-[42px]" style={{ color: "white", fontWeight: "800", margin: "0 0 12px 0", lineHeight: "1.2" }}>Real trips. Real value.</h1>
           <p style={{ color: "#D1D5DB", fontSize: "16px", maxWidth: "640px", margin: "0 auto", lineHeight: "1.6" }}>
-            Twelve Virgin Voyages sailings I've picked out myself, from a quick Caribbean getaway to a bucket-list Panama Canal crossing. Book any one of these with me and I'll add onboard credit to your cabin — up to $200 per cabin, no extra cost to you.
+            Virgin Voyages sailings I've picked out myself, from a quick Caribbean getaway to the Greek Isles and Alaska. Book any one of these with me and I'll add onboard credit to your cabin — up to $200 per cabin, no extra cost to you.
           </p>
         </div>
       </div>
