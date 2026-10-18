@@ -1,9 +1,36 @@
 import { useState, useEffect } from "react";
 
 const VV_RED = "#D4273C";
+const VV_RED_DEEP = "#A81E30";
 const VV_DARK = "#1A0A0E";
 const VV_GOLD = "#C9A84C";
 const VV_CREAM = "#FDF6EE";
+
+// Hover styles for the whole page. "!important" is needed because many
+// elements set their colors with inline styles, which would otherwise win.
+const HOVER_CSS = `
+.vv-btn, .vv-acc, .vv-card, .vv-pill, .vv-tab { transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+.vv-link { transition: color .2s ease; }
+
+/* Buttons and bubbles turn Virgin red with white text */
+.vv-btn:hover { background: ${VV_RED} !important; color: #fff !important; border-color: ${VV_RED} !important; }
+
+/* Accordion headers */
+.vv-acc:hover { background: ${VV_RED} !important; color: #fff !important; }
+.vv-acc:hover .vv-acc-icon { color: #fff !important; }
+
+/* Tabs in the dark tab bar */
+.vv-tab:hover { background: ${VV_RED} !important; color: #fff !important; }
+
+/* Sailing length pills */
+.vv-pill:hover { background: ${VV_RED} !important; color: #fff !important; border-color: ${VV_RED} !important; }
+
+/* Checkbox cards in the optimizer */
+.vv-card:hover { border-color: ${VV_RED} !important; background: #FFF5F5 !important; }
+
+/* Text links (already red) go a deeper red */
+.vv-link:hover { color: ${VV_RED_DEEP} !important; }
+`;
 
 function Accordion({ title, children }: { title: string; children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -11,12 +38,12 @@ function Accordion({ title, children }: { title: string; children: React.ReactNo
     <div className="border border-red-100 rounded-xl overflow-hidden mb-3">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center px-4 py-4 text-left font-semibold text-gray-800 hover:bg-red-50 transition-colors gap-3"
+        className="vv-acc w-full flex justify-between items-center px-4 py-4 text-left font-semibold text-gray-800 gap-3"
         style={{ background: open ? "#FFF5F5" : "white" }}
       >
         <span className="text-sm md:text-base leading-snug">{title}</span>
         <span
-          className="text-2xl transition-transform duration-200 flex-shrink-0"
+          className="vv-acc-icon text-2xl transition-transform duration-200 flex-shrink-0"
           style={{ color: VV_RED, transform: open ? "rotate(45deg)" : "rotate(0deg)" }}
         >
           +
@@ -50,7 +77,7 @@ function money(n: number) {
 function CheckRow({ checked, onChange, title, desc }: { checked: boolean; onChange: (v: boolean) => void; title: string; desc: string }) {
   return (
     <label
-      className="flex gap-3 items-start p-3 rounded-lg border cursor-pointer transition-colors"
+      className="vv-card flex gap-3 items-start p-3 rounded-lg border cursor-pointer"
       style={{ borderColor: checked ? VV_RED : "#F3E3E3", background: checked ? "#FFF5F5" : "white" }}
     >
       <input
@@ -135,7 +162,7 @@ function BarTabOptimizer() {
             <button
               key={l.id}
               onClick={() => { setLength(l.id); setNights(l.nights); }}
-              className="px-3 py-2 rounded-full text-xs font-semibold border transition-colors"
+              className="vv-pill px-3 py-2 rounded-full text-xs font-semibold border"
               style={{
                 background: length === l.id ? VV_RED : "white",
                 color: length === l.id ? "white" : "#374151",
@@ -262,6 +289,7 @@ export default function VirginVoyagesPage() {
 
   return (
     <div className="min-h-screen" style={{ background: VV_CREAM, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+      <style>{HOVER_CSS}</style>
 
       {/* Hero */}
       <div
@@ -286,7 +314,7 @@ export default function VirginVoyagesPage() {
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             <button
               onClick={() => goToTab("perks")}
-              className="px-5 py-3 rounded-lg font-bold text-sm transition hover:opacity-90"
+              className="vv-btn px-5 py-3 rounded-lg font-bold text-sm border border-transparent"
               style={{ background: VV_GOLD, color: VV_DARK }}
             >
               Try the Bar Tab Optimizer
@@ -295,7 +323,7 @@ export default function VirginVoyagesPage() {
               href={AFFILIATE_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-3 rounded-lg font-bold text-sm border border-white/40 text-white transition hover:bg-white/10"
+              className="vv-btn px-5 py-3 rounded-lg font-bold text-sm border border-white/40 text-white"
             >
               Search Virgin Sailings
             </a>
@@ -316,7 +344,7 @@ export default function VirginVoyagesPage() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className="px-3 py-3 text-xs font-semibold whitespace-nowrap transition-all border-b-2 flex-shrink-0"
+                className="vv-tab px-3 py-3 text-xs font-semibold whitespace-nowrap border-b-2 flex-shrink-0"
                 style={{
                   color: activeTab === tab.id ? VV_GOLD : "#ccc",
                   borderBottomColor: activeTab === tab.id ? VV_GOLD : "transparent",
@@ -375,6 +403,7 @@ export default function VirginVoyagesPage() {
                 href="https://www.virginvoyages.com/the-ships"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="vv-link"
                 style={{ color: VV_RED, textDecoration: "underline" }}
               >
                 Learn more about Virgin Voyages at virginvoyages.com
@@ -400,7 +429,7 @@ export default function VirginVoyagesPage() {
               </div>
               <a
                 href="/join"
-                className="text-center px-5 py-3 rounded-lg font-bold text-sm whitespace-nowrap transition hover:opacity-90"
+                className="vv-btn text-center px-5 py-3 rounded-lg font-bold text-sm whitespace-nowrap border border-transparent"
                 style={{ background: VV_GOLD, color: VV_DARK }}
               >
                 Join to See the Sailings
@@ -422,7 +451,7 @@ export default function VirginVoyagesPage() {
               <p className="mb-3">Sailor Loot is onboard credit you can use on almost anything: drinks, the spa, the shops, even a tattoo at Squid Ink. It usually comes from a promotion or from booking with a travel advisor.</p>
               <p className="mb-3">
                 When you book eligible sailings with me, you can get up to $200 in Sailor Loot on top of Virgin's own offers.{" "}
-                <a href="/join" className="font-semibold underline" style={{ color: VV_RED }}>Join to see which sailings qualify</a>.
+                <a href="/join" className="vv-link font-semibold underline" style={{ color: VV_RED }}>Join to see which sailings qualify</a>.
               </p>
               <p>Sailor Loot cannot be cashed out, and anything you do not use is lost at the end of the sailing.</p>
             </Accordion>
@@ -565,7 +594,7 @@ export default function VirginVoyagesPage() {
 
             <div className="mt-6 p-4 rounded-xl text-sm" style={{ background: "#FFF0F0", borderLeft: `4px solid ${VV_RED}` }}>
               Want to make your drink money go further?{" "}
-              <button onClick={() => goToTab("perks")} className="font-semibold underline" style={{ color: VV_RED }}>Try the Bar Tab Optimizer</button>
+              <button onClick={() => goToTab("perks")} className="vv-link font-semibold underline" style={{ color: VV_RED }}>Try the Bar Tab Optimizer</button>
             </div>
           </section>
         )}
@@ -618,7 +647,7 @@ export default function VirginVoyagesPage() {
                   note: "The top tier. Unlimited premium WiFi and priority boarding make this one worth working toward.",
                 },
               ].map((t) => (
-                <div key={t.tier} className="rounded-xl overflow-hidden border border-gray-100">
+                <div key={t.tier} className="vv-card rounded-xl overflow-hidden border border-gray-100">
                   <div className="px-4 py-3" style={{ background: t.color }}>
                     <p className="text-white font-bold text-sm mb-1">{t.tier}</p>
                     <p className="text-white text-xs opacity-80">{t.voyages}</p>
@@ -662,7 +691,7 @@ export default function VirginVoyagesPage() {
               <p className="mb-3">While you are onboard, a $150 deposit on a future sailing gets you Sailor Loot plus money off your fare, from $300 total value on 4 to 5 night sailings up to $500 on sailings of 9 nights or more.</p>
               <p>
                 It works on Sea Terrace cabins or higher.{" "}
-                <button onClick={() => goToTab("perks")} className="font-semibold underline" style={{ color: VV_RED }}>See the full MNVV breakdown</button>
+                <button onClick={() => goToTab("perks")} className="vv-link font-semibold underline" style={{ color: VV_RED }}>See the full MNVV breakdown</button>
               </p>
             </Accordion>
 
@@ -811,7 +840,7 @@ export default function VirginVoyagesPage() {
 
             <Accordion title="Stack Your Bar Tab Perks">
               <p className="mb-3">A referral link, a Sea Terrace booking with me, the Premium fare, and Virgin's own promotions can add up fast. Pre-purchasing a Bar Tab also earns bonus credit.</p>
-              <button onClick={() => goToTab("perks")} className="font-semibold underline" style={{ color: VV_RED }}>Use the Bar Tab Optimizer to see yours</button>
+              <button onClick={() => goToTab("perks")} className="vv-link font-semibold underline" style={{ color: VV_RED }}>Use the Bar Tab Optimizer to see yours</button>
             </Accordion>
 
             <Accordion title="Book Your Next Voyage Before You Disembark">
@@ -853,7 +882,7 @@ export default function VirginVoyagesPage() {
                 href={AFFILIATE_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-center px-4 py-3 rounded-lg font-bold text-sm transition hover:opacity-90"
+                className="vv-btn block text-center px-4 py-3 rounded-lg font-bold text-sm border border-transparent"
                 style={{ background: VV_GOLD, color: VV_DARK }}
               >
                 Browse Sailings
@@ -863,8 +892,8 @@ export default function VirginVoyagesPage() {
               <p className="font-bold text-sm mb-1">Let Eric help</p>
               <p className="text-xs text-red-100 mb-3">Tell me what you want and I will find the best sailing and perks.</p>
               <div className="flex gap-2">
-                <a href="sms:6308231253" className="flex-1 text-center px-3 py-3 rounded-lg font-bold text-sm border border-white/40 transition hover:bg-white/10">Text Eric</a>
-                <a href="mailto:eric@happydetour.com" className="flex-1 text-center px-3 py-3 rounded-lg font-bold text-sm border border-white/40 transition hover:bg-white/10">Email Eric</a>
+                <a href="sms:6308231253" className="vv-btn flex-1 text-center px-3 py-3 rounded-lg font-bold text-sm border border-white/40">Text Eric</a>
+                <a href="mailto:eric@happydetour.com" className="vv-btn flex-1 text-center px-3 py-3 rounded-lg font-bold text-sm border border-white/40">Email Eric</a>
               </div>
             </div>
           </div>
