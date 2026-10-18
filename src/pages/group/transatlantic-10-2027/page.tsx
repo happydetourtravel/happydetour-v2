@@ -41,7 +41,7 @@ export default function TransatlanticPage() {
 
       {/* Halloween banner (full image, never cropped) */}
       <img
-        src="/halloween-voyage.jpg"
+        src="/halloween-voyage.png"
         alt="Halloween Voyage with Virgin Voyages"
         style={{ width: '100%', height: 'auto', display: 'block', backgroundColor: '#1E1B2E' }}
       />
@@ -65,7 +65,7 @@ export default function TransatlanticPage() {
             From <span style={{ fontSize: '30px', fontWeight: '800' }}>$1,068</span> per person*
           </p>
           <div style={{ display: 'inline-block', backgroundColor: 'rgba(255,255,255,0.15)', color: 'white', fontSize: '14px', fontWeight: '700', padding: '8px 16px', borderRadius: '999px', marginBottom: '28px' }}>
-            {'🍹'} HDT members get a $200 bar tab
+            {'🍹'} $200 bar tab: group booking, Sea Terrace+ at Essentials rate
           </div>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/join" className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '14px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '16px' }}>
