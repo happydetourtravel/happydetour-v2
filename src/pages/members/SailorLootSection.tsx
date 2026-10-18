@@ -1,29 +1,83 @@
 import { useMemo, useState, type CSSProperties } from 'react'
-import { sailorLootSailings } from './sailorLootData'
+import { sailorLootSailings as allSailings } from './sailorLootData'
+
+// Sailings on or before this date are hidden from the list.
+// Change this date any time (format: YYYY-MM-DD).
+const HIDE_ON_OR_BEFORE = '2026-11-01'
+
+// Turns a sail date into YYYY-MM-DD so dates compare correctly
+function toDayString(value: unknown): string {
+  const str = String(value ?? '')
+  const iso = str.match(/^\d{4}-\d{2}-\d{2}/)
+  if (iso) return iso[0]
+  const d = new Date(str)
+  if (isNaN(d.getTime())) return ''
+  const mm = String(d.getMonth() + 1).padStart(2, '0')
+  const dd = String(d.getDate()).padStart(2, '0')
+  return `${d.getFullYear()}-${mm}-${dd}`
+}
+
+function getUpcomingSailings() {
+  const today = toDayString(new Date().toISOString())
+  // Use whichever is later: the cutoff date above, or today (so past sailings drop off on their own)
+  const cutoff = today > HIDE_ON_OR_BEFORE ? today : HIDE_ON_OR_BEFORE
+  return allSailings.filter((s) => {
+    const day = toDayString(s.sailDate) || toDayString(s.sailDateLabel)
+    if (!day) return true
+    return day > cutoff
+  })
+}
 
 export default function SailorLootSection() {
+  const sailorLootSailings = useMemo(() => getUpcomingSailings(), [])
   const [search, setSearch] = useState('')
   const [ship, setShip] = useState('All Ships')
   const [region, setRegion] = useState('All Regions')
+  const [loot, setLoot] = useState('All Amounts')
+  const [length, setLength] = useState('All Lengths')
 
   const ships = useMemo(
     () => ['All Ships', ...Array.from(new Set(sailorLootSailings.map((s) => s.ship))).sort()],
-    []
+    [sailorLootSailings]
   )
   const regions = useMemo(
     () => ['All Regions', ...Array.from(new Set(sailorLootSailings.map((s) => s.region))).sort()],
-    []
+    [sailorLootSailings]
+  )
+
+  const lootAmounts = useMemo(
+    () => [
+      'All Amounts',
+      ...Array.from(new Set(sailorLootSailings.map((s) => Number(s.loot))))
+        .sort((a, b) => a - b)
+        .map((n) => `$${n}`),
+    ],
+    [sailorLootSailings]
   )
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase()
     return sailorLootSailings.filter((s) => {
+      const nights = Number(s.nights)
       if (ship !== 'All Ships' && s.ship !== ship) return false
       if (region !== 'All Regions' && s.region !== region) return false
+      if (loot !== 'All Amounts' && `$${Number(s.loot)}` !== loot) return false
+      if (length === '4 to 5 nights' && !(nights >= 4 && nights <= 5)) return false
+      if (length === '6 to 9 nights' && !(nights >= 6 && nights <= 9)) return false
+      if (length === '10+ nights' && !(nights >= 10)) return false
       if (q && !`${s.ship} ${s.sailing} ${s.region}`.toLowerCase().includes(q)) return false
       return true
     })
-  }, [search, ship, region])
+  }, [sailorLootSailings, search, ship, region, loot, length])
+
+  const hasFilters = search || ship !== 'All Ships' || region !== 'All Regions' || loot !== 'All Amounts' || length !== 'All Lengths'
+  const clearFilters = () => {
+    setSearch('')
+    setShip('All Ships')
+    setRegion('All Regions')
+    setLoot('All Amounts')
+    setLength('All Lengths')
+  }
 
   return (
     <div id="sailor-loot" style={{ marginBottom: '32px', scrollMarginTop: '24px' }}>
@@ -86,11 +140,41 @@ export default function SailorLootSection() {
             <option key={r} value={r}>{r}</option>
           ))}
         </select>
+        <select
+          value={length}
+          onChange={(e) => setLength(e.target.value)}
+          style={selectStyle}
+        >
+          {['All Lengths', '4 to 5 nights', '6 to 9 nights', '10+ nights'].map((l) => (
+            <option key={l} value={l}>{l}</option>
+          ))}
+        </select>
+        <select
+          value={loot}
+          onChange={(e) => setLoot(e.target.value)}
+          style={selectStyle}
+        >
+          {lootAmounts.map((a) => (
+            <option key={a} value={a}>{a === 'All Amounts' ? 'All Sailor Loot' : `${a} Sailor Loot`}</option>
+          ))}
+        </select>
       </div>
 
-      <p style={{ color: '#9CA3AF', fontSize: '12px', margin: '0 0 12px 0' }}>
-        Showing {filtered.length} of {sailorLootSailings.length} upcoming sailings
-      </p>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', margin: '0 0 12px 0', flexWrap: 'wrap' }}>
+        <p style={{ color: '#9CA3AF', fontSize: '12px', margin: 0 }}>
+          Showing {filtered.length} of {sailorLootSailings.length} upcoming sailings
+        </p>
+        {hasFilters && (
+          <button
+            type="button"
+            onClick={clearFilters}
+            className="hdt-text-link"
+            style={{ background: 'none', border: 'none', padding: 0, color: '#007298', fontSize: '12px', fontWeight: 700, cursor: 'pointer' }}
+          >
+            Clear filters
+          </button>
+        )}
+      </div>
 
       {/* Table */}
       <div style={{ backgroundColor: 'white', borderRadius: '14px', border: '1px solid #E5E7EB', overflow: 'hidden', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
@@ -145,6 +229,15 @@ const thStyle: CSSProperties = {
   fontWeight: 700,
   textTransform: 'uppercase',
   letterSpacing: '0.5px',
+}
+
+const selectStyle: CSSProperties = {
+  padding: '10px 14px',
+  borderRadius: '8px',
+  border: '1px solid #E5E7EB',
+  fontSize: '14px',
+  color: '#1F2937',
+  backgroundColor: 'white',
 }
 
 const tdStyle: CSSProperties = {
