@@ -359,77 +359,46 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Group Cruise — Virgin sailings shown first */}
+      {/* Group Sailing — Scarlet Lady Halloween Transatlantic (only active group) */}
       <div style={{ backgroundColor: '#F3F4F6', padding: '60px 20px' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-            <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Group Sailings</p>
-            <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: '0 0 16px 0' }}>Locked in early. Priced to move.</h2>
+            <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Group Sailing</p>
+            <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: '0 0 16px 0' }}>Sail with the HDT crew.</h2>
             <p style={{ color: '#374151', fontSize: '15px', lineHeight: '1.7', maxWidth: '700px', margin: '0 auto' }}>
-              These are promotional sailings I book directly with the cruise line before prices go up. I hold a block of cabins on each one, usually 10 inside, 4 balcony, and 2 ocean view, so I can offer a better rate than booking on your own. Space is limited, so it is smart to grab your spot early. I can also help with airfare and a hotel stay before or after the cruise if you need one.
+              This is a group sailing I set up directly with Virgin Voyages. I am holding a block of Sea Terrace cabins, so group guests get perks you will not get booking on your own. Space is limited, so it is smart to grab your spot early. I can also help with airfare and a hotel stay before or after the cruise if you need one.
             </p>
           </div>
 
-          {/* Card 1 — Southern Caribbean Cruise */}
-          <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto 16px auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
-            <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden' }} className="group-card-image">
-              {/* TODO: upload SanJuanCouple.jpg to /public */}
-              <img src="/SanJuanCouple.jpg" alt="Southern Caribbean sailing" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-              <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#007298', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '4px' }}>✦ Sailor Loot</span>
-            </div>
-            <div style={{ flex: 1, padding: '20px 24px' }}>
-              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '0 0 6px 0' }}>Southern Caribbean</p>
-              <h3 style={{ color: '#1F2937', fontSize: '19px', fontWeight: '700', margin: '0 0 5px 0', lineHeight: '1.3' }}>Southern Caribbean Cruise</h3>
-              <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 10px 0' }}>November 20, 2026 &middot; 8 nights &middot; Valiant Lady &middot; Virgin Voyages</p>
-              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>✦ Virgin Voyages</span>
-                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>$100 Sailor Loot Included</span>
-              </div>
-            </div>
-            <div style={{ backgroundColor: '#F9FAFB', padding: '20px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', minWidth: '210px', flexShrink: 0, borderTop: '1px solid #F3F4F6' }} className="group-card-pricing">
-              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: 0 }}>Starting from</p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ $100 onboard credit</p>
-                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ No planning fee</p>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-              <span style={{ color: '#1F2937', fontSize: '26px', fontWeight: '800' }}>$792</span>
-              <span style={{ color: '#6B7280', fontSize: '12px' }}>/person</span>
-              </div>
-              <a href="/virgin/southern-caribbean-valiant-1120" style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>View Details &rarr;</a>
-            </div>
-          </div>
-
-          {/* Card 2 — Christmas Balcony Sailing, Scarlet Lady (from Eric's Christmas flyer) */}
+          {/* Scarlet Lady Halloween Transatlantic — Oct 31, 2027 */}
           <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
-            <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden' }} className="group-card-image">
-              <img src="/Christmas Flyer Final.png" alt="All I Want for Christmas Is a Balcony — Virgin Voyages" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-              <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#CC0000', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '4px' }}>🎄 Holiday Sailing</span>
+            <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden', backgroundColor: '#CC0000' }} className="group-card-image">
+              <img src="/halloween-voyage.png" alt="Halloween Transatlantic on Virgin Voyages Scarlet Lady" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#F59E0B', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px' }}>HDT Group</span>
             </div>
             <div style={{ flex: 1, padding: '20px 24px' }}>
-              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '0 0 6px 0' }}>Mexico, Round Trip Miami</p>
-              <h3 style={{ color: '#1F2937', fontSize: '19px', fontWeight: '700', margin: '0 0 5px 0', lineHeight: '1.3' }}>All I Want for Christmas Is a Balcony</h3>
-              <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 10px 0' }}>December 21&ndash;26, 2026 &middot; 5 nights &middot; Scarlet Lady &middot; Virgin Voyages</p>
+              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '0 0 6px 0' }}>Transatlantic &middot; Barcelona to San Juan</p>
+              <h3 style={{ color: '#1F2937', fontSize: '19px', fontWeight: '700', margin: '0 0 5px 0', lineHeight: '1.3' }}>Halloween Transatlantic on Scarlet Lady</h3>
+              <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 10px 0' }}>Departs October 31, 2027 &middot; Scarlet Lady &middot; Virgin Voyages</p>
               <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                <span style={{ backgroundColor: '#FEF2F2', color: '#CC0000', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>🎄 Christmas Week</span>
+                <span style={{ backgroundColor: '#FEF2F2', color: '#CC0000', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>🎃 Halloween Sailing</span>
                 <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>✦ Virgin Voyages</span>
+                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>Sea Terrace Cabins</span>
               </div>
             </div>
             <div style={{ backgroundColor: '#F9FAFB', padding: '20px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', minWidth: '210px', flexShrink: 0, borderTop: '1px solid #F3F4F6' }} className="group-card-pricing">
-              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: 0 }}>Balcony from</p>
+              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: 0 }}>Group perks</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ No planning fee</p>
-                <p style={{ color: '#9CA3AF', fontSize: '11px', margin: 0 }}>Price estimate, confirm before quoting</p>
+                <p style={{ color: '#007298', fontSize: '13px', fontWeight: '600', margin: 0 }}>+ $200 bar tab per cabin</p>
+                <p style={{ color: '#007298', fontSize: '13px', fontWeight: '600', margin: 0 }}>+ No planning fee</p>
               </div>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-              <span style={{ color: '#1F2937', fontSize: '26px', fontWeight: '800' }}>$595</span>
-              <span style={{ color: '#6B7280', fontSize: '12px' }}>/person</span>
-              </div>
-              <a href="https://www.virginvoyages.com/share?type=G&pkgCode=5NCH&voyageCode=SC2612215NCH&metaCat&currencyCode=USD&agencyId=589&agentId=278796" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>View Details &rarr;</a>
+              <a href="/join" style={{ display: 'block', textAlign: 'center', backgroundColor: '#F59E0B', color: 'white', padding: '12px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px', marginTop: '4px' }}>Join Free to Claim Your Spot</a>
+              <a href="/group/transatlantic-10-2027" style={{ display: 'block', textAlign: 'center', color: '#007298', fontSize: '13px', fontWeight: '600', textDecoration: 'none', padding: '4px 0' }}>See the sailing &rarr;</a>
+              <p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: 0, lineHeight: '1.5' }}>Members get pricing and booking details</p>
             </div>
-          </div>
           </div>
         </div>
+      </div>
 
       {/* Testimonials */}
       <div style={{ backgroundColor: '#F9FAFB', padding: '60px 20px' }}>
