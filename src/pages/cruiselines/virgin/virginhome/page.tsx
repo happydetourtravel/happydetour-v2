@@ -115,7 +115,7 @@ function Stepper({ value, onChange, min, max }: { value: number; onChange: (v: n
 function BarTabOptimizer() {
   const [nights, setNights] = useState(7);
   const [people, setPeople] = useState(2);
-  const [counts, setCounts] = useState<Record<string, number>>({ beer: 0, wine: 1, basic: 1, fancy: 1, shot: 0, coffee: 0 });
+  const [counts, setCounts] = useState<Record<string, number>>({ beer: 0, wine: 0, basic: 0, fancy: 0, shot: 0, coffee: 0 });
   const [credit, setCredit] = useState(0);
 
   const perPersonPerDay = DRINKS.reduce((sum, d) => sum + counts[d.id] * d.price, 0);
@@ -204,7 +204,12 @@ function BarTabOptimizer() {
             </div>
 
             <div className="rounded-xl p-4 border-2 text-center" style={{ borderColor: VV_RED }}>
-              {toBuy > 0 ? (
+              {total === 0 ? (
+                <>
+                  <p className="text-sm font-semibold text-gray-700">Your answer will show up here</p>
+                  <p className="text-xs text-gray-500 mt-1">Tap + next to the drinks you like to get started.</p>
+                </>
+              ) : toBuy > 0 ? (
                 <>
                   <p className="text-sm text-gray-600">Bar Tab to buy before you sail</p>
                   <p className="text-3xl font-extrabold" style={{ color: VV_RED }}>{money(toBuy)}</p>
@@ -236,9 +241,40 @@ function BarTabOptimizer() {
   );
 }
 
+function ReferralAccordion() {
+  return (
+      <Accordion title="First Time on Virgin? Get a $150 Bar Tab With a Referral">
+        <p className="mb-3">Brand new to Virgin Voyages? A referral link gets you a <strong>free $150 Bar Tab</strong>. Don't have a friend who has sailed Virgin? No problem. Just ask me and I'll get you a link.</p>
+    
+        <p className="font-semibold mb-2" style={{ color: VV_RED }}>How it works</p>
+        <ol className="list-decimal pl-5 space-y-2 mb-4">
+          <li>Text or email me and ask for a referral link.</li>
+          <li>Open the link and sign up for Virgin's emails and texts. That's how they send your code.</li>
+          <li>Virgin sends you an Access Key. Send it to me before we book and I'll add it to your booking.</li>
+        </ol>
+    
+        <p className="font-semibold mb-2" style={{ color: VV_RED }}>The fine print, made simple</p>
+        <ul className="list-disc pl-5 space-y-2 mb-4">
+          <li>You must be new to Virgin: never sailed, no booking right now, and no cancelled booking in the last 60 days.</li>
+          <li>Your Access Key is good for 12 months.</li>
+          <li>It works with Virgin's main sales, but not with Lock It In fares or some special deals. I'll check for you.</li>
+          <li>Bar Tab money is for drinks only and can't be turned into cash.</li>
+        </ul>
+    
+        <p className="text-sm text-gray-600 mb-4"><strong>Already sailed Virgin?</strong> You can share your own link with friends. You get $150 for each friend who books and pays in full, and you can use up to two of those on one sailing.</p>
+    
+        <div className="flex flex-wrap gap-2">
+          <a href="sms:6308231253" className="vv-btn px-4 py-2 rounded-lg font-bold text-sm border border-transparent" style={{ background: VV_GOLD, color: VV_DARK }}>Text Eric for a link</a>
+          <a href="mailto:eric@happydetour.com?subject=Virgin%20Voyages%20referral%20link" className="vv-btn px-4 py-2 rounded-lg font-bold text-sm border border-gray-200 text-gray-800 bg-white">Email Eric</a>
+        </div>
+      </Accordion>
+  );
+}
+
 const TABS = [
   { id: "included", label: "What's Included" },
   { id: "perks", label: "Bar Tab & Perks" },
+  { id: "optimizer", label: "Bar Tab Optimizer" },
   { id: "ships", label: "The Ships" },
   { id: "dining", label: "Dining" },
   { id: "bars", label: "Bars" },
@@ -250,7 +286,7 @@ const TABS = [
 ];
 
 // Lets links like /cruises/virgin-voyages#bar-tab open the right tab
-const HASH_TO_TAB: Record<string, string> = { "bar-tab": "perks" };
+const HASH_TO_TAB: Record<string, string> = { "bar-tab": "perks", "bar-tab-optimizer": "optimizer" };
 
 // Voyage planner link with Eric's First Mate booking channel, so bookings tie back to Happy Detour Travel
 const AFFILIATE_LINK = "https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK";
@@ -295,7 +331,7 @@ export default function VirginVoyagesPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             <button
-              onClick={() => goToTab("perks")}
+              onClick={() => goToTab("optimizer")}
               className="vv-btn px-5 py-3 rounded-lg font-bold text-sm border border-transparent"
               style={{ background: VV_GOLD, color: VV_DARK }}
             >
@@ -400,7 +436,10 @@ export default function VirginVoyagesPage() {
             <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: VV_DARK }}>Bar Tab and Sailor Perks</h2>
             <p className="text-gray-500 text-sm mb-6">Virgin Voyages does not sell drinks packages. Instead, you get drink money a few different ways, and some of them stack. Here is how it all works.</p>
 
-            <BarTabOptimizer />
+            <div className="mb-6 p-4 rounded-xl text-sm" style={{ background: "#FFF0F0", borderLeft: `4px solid ${VV_RED}` }}>
+              Want to know how much to put on your Bar Tab?{" "}
+              <button onClick={() => goToTab("optimizer")} className="vv-link font-semibold underline" style={{ color: VV_RED }}>Try the Bar Tab Optimizer</button>
+            </div>
 
             {/* Sailor Loot teaser: details live in the members area */}
             <div className="rounded-2xl p-5 mb-8 flex flex-col md:flex-row md:items-center gap-4" style={{ background: VV_DARK }}>
@@ -451,31 +490,7 @@ export default function VirginVoyagesPage() {
               </div>
             </Accordion>
 
-            <Accordion title="First Time on Virgin? Get a $150 Bar Tab With a Referral">
-              <p className="mb-3">Brand new to Virgin Voyages? A referral link gets you a <strong>free $150 Bar Tab</strong>. Don't have a friend who has sailed Virgin? No problem. Just ask me and I'll get you a link.</p>
-
-              <p className="font-semibold mb-2" style={{ color: VV_RED }}>How it works</p>
-              <ol className="list-decimal pl-5 space-y-2 mb-4">
-                <li>Text or email me and ask for a referral link.</li>
-                <li>Open the link and sign up for Virgin's emails and texts. That's how they send your code.</li>
-                <li>Virgin sends you an Access Key. Send it to me before we book and I'll add it to your booking.</li>
-              </ol>
-
-              <p className="font-semibold mb-2" style={{ color: VV_RED }}>The fine print, made simple</p>
-              <ul className="list-disc pl-5 space-y-2 mb-4">
-                <li>You must be new to Virgin: never sailed, no booking right now, and no cancelled booking in the last 60 days.</li>
-                <li>Your Access Key is good for 12 months.</li>
-                <li>It works with Virgin's main sales, but not with Lock It In fares or some special deals. I'll check for you.</li>
-                <li>Bar Tab money is for drinks only and can't be turned into cash.</li>
-              </ul>
-
-              <p className="text-sm text-gray-600 mb-4"><strong>Already sailed Virgin?</strong> You can share your own link with friends. You get $150 for each friend who books and pays in full, and you can use up to two of those on one sailing.</p>
-
-              <div className="flex flex-wrap gap-2">
-                <a href="sms:6308231253" className="vv-btn px-4 py-2 rounded-lg font-bold text-sm border border-transparent" style={{ background: VV_GOLD, color: VV_DARK }}>Text Eric for a link</a>
-                <a href="mailto:eric@happydetour.com?subject=Virgin%20Voyages%20referral%20link" className="vv-btn px-4 py-2 rounded-lg font-bold text-sm border border-gray-200 text-gray-800 bg-white">Email Eric</a>
-              </div>
-            </Accordion>
+            <ReferralAccordion />
 
             <Accordion title="My Next Virgin Voyage (MNVV): Book Onboard and Save">
               <p className="mb-3">If you are on a Virgin ship right now, this is one of the best deals going. Put down a $150 deposit onboard for a future sailing and you get Sailor Loot plus money off your fare.</p>
@@ -511,6 +526,18 @@ export default function VirginVoyagesPage() {
               <p className="mb-3">Download the Virgin Voyages Sailor app before you sail. You will use it for booking dining reservations, checking your Bar Tab balance, looking at Shore Things excursions, and managing your account.</p>
               <p>Dining reservations open before your sailing and the most popular restaurants fill up fast. Get on the app early and lock in your favorites as soon as your window opens.</p>
             </Accordion>
+          </section>
+        )}
+
+        {/* BAR TAB OPTIMIZER */}
+        {activeTab === "optimizer" && (
+          <section>
+            <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: VV_DARK }}>Bar Tab Optimizer</h2>
+            <p className="text-gray-500 text-sm mb-6">Not sure how much drink money you'll need? Tap in what you like to drink and I'll show you how much to put on your Bar Tab.</p>
+
+            <BarTabOptimizer />
+
+            <ReferralAccordion />
           </section>
         )}
 
@@ -592,7 +619,7 @@ export default function VirginVoyagesPage() {
 
             <div className="mt-6 p-4 rounded-xl text-sm" style={{ background: "#FFF0F0", borderLeft: `4px solid ${VV_RED}` }}>
               Want to make your drink money go further?{" "}
-              <button onClick={() => goToTab("perks")} className="vv-link font-semibold underline" style={{ color: VV_RED }}>Try the Bar Tab Optimizer</button>
+              <button onClick={() => goToTab("optimizer")} className="vv-link font-semibold underline" style={{ color: VV_RED }}>Try the Bar Tab Optimizer</button>
             </div>
           </section>
         )}
@@ -833,7 +860,7 @@ export default function VirginVoyagesPage() {
 
             <Accordion title="Stack Your Bar Tab Perks">
               <p className="mb-3">A referral link, a Sea Terrace booking with me, the Premium fare, and Virgin's own promotions can add up fast. Pre-purchasing a Bar Tab also earns bonus credit.</p>
-              <button onClick={() => goToTab("perks")} className="vv-link font-semibold underline" style={{ color: VV_RED }}>Use the Bar Tab Optimizer to see yours</button>
+              <button onClick={() => goToTab("optimizer")} className="vv-link font-semibold underline" style={{ color: VV_RED }}>Use the Bar Tab Optimizer to see yours</button>
             </Accordion>
 
             <Accordion title="Book Your Next Voyage Before You Disembark">
