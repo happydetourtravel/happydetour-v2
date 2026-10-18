@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const VV_RED = "#D4273C";
 const VV_DARK = "#1A0A0E";
@@ -31,12 +31,208 @@ function Accordion({ title, children }: { title: string; children: React.ReactNo
   );
 }
 
+/* ============ BAR TAB OPTIMIZER ============ */
+// Step 1: which perks could you get. Step 2: how far will your drink money go.
+// Amounts based on Virgin Voyages' published terms (MNVV and Refer a Friend), Oct 2026.
+
+type SailingLength = "short" | "mid" | "long";
+
+const LENGTHS: { id: SailingLength; label: string; nights: number; mnvv: number }[] = [
+  { id: "short", label: "4 to 5 nights", nights: 5, mnvv: 150 },
+  { id: "mid", label: "6 to 8 nights", nights: 7, mnvv: 200 },
+  { id: "long", label: "9+ nights", nights: 10, mnvv: 250 },
+];
+
+function money(n: number) {
+  return "$" + Math.round(n).toLocaleString();
+}
+
+function CheckRow({ checked, onChange, title, desc }: { checked: boolean; onChange: (v: boolean) => void; title: string; desc: string }) {
+  return (
+    <label
+      className="flex gap-3 items-start p-3 rounded-lg border cursor-pointer transition-colors"
+      style={{ borderColor: checked ? VV_RED : "#F3E3E3", background: checked ? "#FFF5F5" : "white" }}
+    >
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={(e) => onChange(e.target.checked)}
+        className="mt-1 h-4 w-4 flex-shrink-0"
+        style={{ accentColor: VV_RED }}
+      />
+      <span>
+        <span className="block text-sm font-semibold text-gray-800">{title}</span>
+        <span className="block text-xs text-gray-500 mt-0.5">{desc}</span>
+      </span>
+    </label>
+  );
+}
+
+function NumberField({ label, value, onChange, min, max, step = 1, prefix }: { label: string; value: number; onChange: (v: number) => void; min: number; max: number; step?: number; prefix?: string }) {
+  return (
+    <label className="block">
+      <span className="block text-xs font-semibold text-gray-600 mb-1">{label}</span>
+      <div className="flex items-center border border-gray-200 rounded-lg bg-white overflow-hidden">
+        {prefix && <span className="pl-3 text-sm text-gray-500">{prefix}</span>}
+        <input
+          type="number"
+          inputMode="decimal"
+          value={value}
+          min={min}
+          max={max}
+          step={step}
+          onChange={(e) => {
+            const v = parseFloat(e.target.value);
+            onChange(isNaN(v) ? min : Math.min(max, Math.max(min, v)));
+          }}
+          className="w-full px-3 py-2 text-sm outline-none bg-transparent"
+        />
+      </div>
+    </label>
+  );
+}
+
+function BarTabOptimizer() {
+  const [length, setLength] = useState<SailingLength>("mid");
+  const [isNew, setIsNew] = useState(false);
+  const [seaTerrace, setSeaTerrace] = useState(false);
+  const [mnvv, setMnvv] = useState(false);
+  const [premium, setPremium] = useState(false);
+  const [prepurchase, setPrepurchase] = useState(false);
+
+  const [nights, setNights] = useState(7);
+  const [people, setPeople] = useState(2);
+  const [drinks, setDrinks] = useState(3);
+  const [price, setPrice] = useState(14);
+
+  const len = LENGTHS.find((l) => l.id === length)!;
+
+  const perks: { label: string; amount: number | null; note: string }[] = [];
+  if (isNew) perks.push({ label: "Referral Bar Tab", amount: 150, note: "From a friend's referral link, used before you book." });
+  if (mnvv) perks.push({ label: "MNVV Sailor Loot", amount: len.mnvv, note: `Plus ${money(len.mnvv)} off your fare.` });
+  if (seaTerrace) perks.push({ label: "Book with Eric perk", amount: null, note: "Bar Tab or Sailor Loot on most sailings. Amount depends on the sailing." });
+  if (premium) perks.push({ label: "Premium fare Bar Tab", amount: null, note: "Included with Premium. Amount depends on the sailing." });
+  if (prepurchase) perks.push({ label: "Pre-purchase bonus", amount: null, note: "Virgin adds bonus credit to Bar Tabs you buy before sailing, up to $250." });
+
+  const known = perks.reduce((sum, p) => sum + (p.amount || 0), 0);
+  const hasVariable = perks.some((p) => p.amount === null);
+  const spend = nights * people * drinks * price;
+  const left = Math.max(0, spend - known);
+
+  return (
+    <div className="rounded-2xl overflow-hidden mb-8 shadow-sm border border-red-100 bg-white">
+      <div className="px-5 py-4 text-white" style={{ background: `linear-gradient(135deg, ${VV_DARK}, ${VV_RED})` }}>
+        <p className="text-xs uppercase tracking-widest mb-1" style={{ color: VV_GOLD }}>Bar Tab Optimizer</p>
+        <p className="text-lg md:text-xl font-bold">See how much drink money you could get</p>
+        <p className="text-xs text-red-100 mt-1">Check what applies to you, then see how far it goes.</p>
+      </div>
+
+      <div className="p-5">
+        {/* Step 1 */}
+        <p className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: VV_RED }}>Step 1 · Your sailing</p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {LENGTHS.map((l) => (
+            <button
+              key={l.id}
+              onClick={() => { setLength(l.id); setNights(l.nights); }}
+              className="px-3 py-2 rounded-full text-xs font-semibold border transition-colors"
+              style={{
+                background: length === l.id ? VV_RED : "white",
+                color: length === l.id ? "white" : "#374151",
+                borderColor: length === l.id ? VV_RED : "#E5E7EB",
+              }}
+            >
+              {l.label}
+            </button>
+          ))}
+        </div>
+
+        <div className="grid gap-2 mb-2">
+          <CheckRow checked={isNew} onChange={setIsNew} title="I'm new to Virgin Voyages" desc="A friend who has sailed can send you their referral link for a $150 Bar Tab." />
+          <CheckRow checked={seaTerrace} onChange={setSeaTerrace} title="I'm booking a Sea Terrace cabin or higher with Eric" desc="Unlocks the travel advisor Bar Tab or Sailor Loot perk on most sailings." />
+          <CheckRow checked={premium} onChange={setPremium} title="I'm choosing the Premium fare" desc="The Premium fare comes with a Bar Tab credit built in." />
+          <CheckRow checked={mnvv} onChange={setMnvv} title="I'm onboard now and booking my next voyage (MNVV)" desc={`For a ${len.label} sailing: ${money(len.mnvv)} Sailor Loot plus ${money(len.mnvv)} off your fare.`} />
+          <CheckRow checked={prepurchase} onChange={setPrepurchase} title="I'll pre-purchase a Bar Tab" desc="Buy before you sail and Virgin adds bonus credit on top." />
+        </div>
+
+        {mnvv && !seaTerrace && (
+          <p className="text-xs mb-2 p-2 rounded-lg" style={{ background: "#FFF7E6", color: "#92400E" }}>
+            Heads up: MNVV only works on Sea Terrace cabins or higher, on sailings of 4 nights or more.
+          </p>
+        )}
+
+        {/* Results for Step 1 */}
+        <div className="mt-4 p-4 rounded-xl" style={{ background: VV_CREAM }}>
+          {perks.length === 0 ? (
+            <p className="text-sm text-gray-500">Check the boxes above to see your perks.</p>
+          ) : (
+            <>
+              <ul className="space-y-2 mb-3">
+                {perks.map((p) => (
+                  <li key={p.label} className="flex justify-between gap-3 text-sm">
+                    <span>
+                      <span className="font-semibold text-gray-800">{p.label}</span>
+                      <span className="block text-xs text-gray-500">{p.note}</span>
+                    </span>
+                    <span className="font-bold whitespace-nowrap" style={{ color: VV_RED }}>
+                      {p.amount !== null ? money(p.amount) : "Varies"}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <div className="border-t border-red-100 pt-3 flex justify-between items-baseline">
+                <span className="text-sm font-semibold text-gray-700">You could get at least</span>
+                <span className="text-2xl font-extrabold" style={{ color: VV_DARK }}>{money(known)}</span>
+              </div>
+              {hasVariable && <p className="text-xs text-gray-500 mt-1">Plus the perks marked "Varies." Eric can tell you the exact amounts for your sailing.</p>}
+            </>
+          )}
+        </div>
+
+        {/* Step 2 */}
+        <p className="text-xs font-bold uppercase tracking-wider mt-8 mb-3" style={{ color: VV_RED }}>Step 2 · Your drink budget</p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+          <NumberField label="Nights" value={nights} onChange={setNights} min={1} max={30} />
+          <NumberField label="People drinking" value={people} onChange={setPeople} min={1} max={4} />
+          <NumberField label="Drinks per person, per day" value={drinks} onChange={setDrinks} min={0} max={15} />
+          <NumberField label="Average drink price" value={price} onChange={setPrice} min={1} max={50} prefix="$" />
+        </div>
+
+        <div className="grid grid-cols-3 gap-2 text-center">
+          <div className="p-3 rounded-xl bg-gray-50">
+            <p className="text-xs text-gray-500 mb-1">Estimated drinks</p>
+            <p className="text-lg font-bold text-gray-800">{money(spend)}</p>
+          </div>
+          <div className="p-3 rounded-xl" style={{ background: "#FFF5F5" }}>
+            <p className="text-xs text-gray-500 mb-1">Covered by perks</p>
+            <p className="text-lg font-bold" style={{ color: VV_RED }}>{money(Math.min(known, spend))}</p>
+          </div>
+          <div className="p-3 rounded-xl text-white" style={{ background: VV_DARK }}>
+            <p className="text-xs opacity-70 mb-1">Left to cover</p>
+            <p className="text-lg font-bold">{money(left)}</p>
+          </div>
+        </div>
+
+        {left > 0 && (
+          <p className="text-sm text-gray-700 mt-4">
+            <strong>Eric's tip:</strong> Pre-purchase a Bar Tab for about {money(left)} before you sail. Virgin adds bonus credit on top, so your money goes further than paying as you go.
+          </p>
+        )}
+
+        <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+          Drink prices are estimates and vary by bar, so change the average price if you like. Not every perk works with every fare, and offers change often. Eric confirms what stacks for your sailing before anything is booked.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 const TABS = [
   { id: "included", label: "What's Included" },
+  { id: "perks", label: "Bar Tab & Perks" },
   { id: "ships", label: "The Ships" },
   { id: "dining", label: "Dining" },
   { id: "bars", label: "Bars" },
-  { id: "perks", label: "Bar Tab & Extras" },
   { id: "loyalty", label: "Sailing Club" },
   { id: "solo", label: "Solo Travel" },
   { id: "excursions", label: "Shore Excursions" },
@@ -44,10 +240,24 @@ const TABS = [
   { id: "tips", label: "Eric's Tips" },
 ];
 
+// Lets links like /cruises/virgin-voyages#bar-tab open the right tab
+const HASH_TO_TAB: Record<string, string> = { "bar-tab": "perks" };
+
 const AFFILIATE_LINK = "https://www.virginvoyages.com/?agencyId=589&agentId=278796";
 
 export default function VirginVoyagesPage() {
   const [activeTab, setActiveTab] = useState("included");
+
+  const goToTab = (id: string) => {
+    setActiveTab(id);
+    setTimeout(() => document.getElementById("vv-tabs")?.scrollIntoView({ behavior: "smooth" }), 50);
+  };
+
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    const id = HASH_TO_TAB[hash] || TABS.find((t) => t.id === hash)?.id;
+    if (id) goToTab(id);
+  }, []);
 
   return (
     <div className="min-h-screen" style={{ background: VV_CREAM, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
@@ -64,14 +274,31 @@ export default function VirginVoyagesPage() {
           }}
         />
         <div className="relative max-w-3xl mx-auto">
-          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: VV_GOLD }}>Adults Only. All Included.</p>
+          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: VV_GOLD }}>Your Virgin Voyages Guide</p>
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 leading-tight">Virgin Voyages</h1>
           <p className="text-base md:text-xl text-red-100 mb-4 leading-relaxed">
-            No kids. No nickel and diming. No set dining times. Just you, the sea, and a ship that actually wants you to have fun.
+            No nickel and diming. No set dining times. Just you, the sea, and a ship that actually wants you to have fun.
           </p>
           <p className="text-xs md:text-base text-red-200 mb-6">
-            Everything you need to know before you sail, put together by Eric, your HDT travel advisor and Virgin Voyages First Mate certified agent.
+            Everything you need to know before you sail, put together by Eric, your Happy Detour Travel advisor and Virgin Voyages First Mate Gold certified agent.
           </p>
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            <button
+              onClick={() => goToTab("perks")}
+              className="px-5 py-3 rounded-lg font-bold text-sm transition hover:opacity-90"
+              style={{ background: VV_GOLD, color: VV_DARK }}
+            >
+              Try the Bar Tab Optimizer
+            </button>
+            <a
+              href={AFFILIATE_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-3 rounded-lg font-bold text-sm border border-white/40 text-white transition hover:bg-white/10"
+            >
+              Search Virgin Sailings
+            </a>
+          </div>
           <img
             src="/firstmate-gold.png"
             alt="Virgin Voyages Certified First Mate Gold Tier"
@@ -81,23 +308,27 @@ export default function VirginVoyagesPage() {
       </div>
 
       {/* Tab Bar */}
-      <div className="sticky top-0 z-30 shadow-md overflow-x-auto scrollbar-none" style={{ background: VV_DARK }}>
-        <div className="flex justify-start min-w-max px-2">
-          {TABS.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className="px-3 py-3 text-xs font-semibold whitespace-nowrap transition-all border-b-2 flex-shrink-0"
-              style={{
-                color: activeTab === tab.id ? VV_GOLD : "#ccc",
-                borderBottomColor: activeTab === tab.id ? VV_GOLD : "transparent",
-                background: "transparent",
-              }}
-            >
-              {tab.label}
-            </button>
-          ))}
+      <div id="vv-tabs" className="sticky top-0 z-30 shadow-md relative" style={{ background: VV_DARK }}>
+        <div className="overflow-x-auto scrollbar-none">
+          <div className="flex justify-start min-w-max px-2 md:justify-center md:min-w-0 md:flex-wrap">
+            {TABS.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className="px-3 py-3 text-xs font-semibold whitespace-nowrap transition-all border-b-2 flex-shrink-0"
+                style={{
+                  color: activeTab === tab.id ? VV_GOLD : "#ccc",
+                  borderBottomColor: activeTab === tab.id ? VV_GOLD : "transparent",
+                  background: "transparent",
+                }}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
         </div>
+        {/* Fade on the right so phone users can tell there are more tabs to swipe */}
+        <div className="pointer-events-none absolute top-0 right-0 h-full w-10 md:hidden" style={{ background: `linear-gradient(to right, rgba(26,10,14,0), ${VV_DARK})` }} />
       </div>
 
       {/* Tab Content */}
@@ -128,7 +359,7 @@ export default function VirginVoyagesPage() {
             <Accordion title="What Is NOT Included">
               <p className="mb-3">A few things to know before you sail so you are not caught off guard:</p>
               <ul className="list-disc pl-5 space-y-2">
-                <li><strong>Alcohol</strong> is not included in the base fare. You can add a Bar Tab or pay as you go.</li>
+                <li><strong>Alcohol</strong> is not included in the base fare. You can add a Bar Tab or pay as you go. See the Bar Tab &amp; Perks tab to get the most for your money.</li>
                 <li><strong>Gratuities</strong> are a separate charge. Lock them in at booking because they cost more if you wait.</li>
                 <li><strong>Shore excursions</strong> are an additional cost at each port.</li>
                 <li><strong>Spa treatments</strong> are not included. The spa is available but priced separately.</li>
@@ -138,7 +369,7 @@ export default function VirginVoyagesPage() {
             </Accordion>
 
             <p className="text-sm mt-6" style={{ color: "#6B7280" }}>
-              Virgin Voyages is an adults-only cruise line sailing the Caribbean, Mediterranean, Alaska, and beyond.{" "}
+              Virgin Voyages sails the Caribbean, Mediterranean, Alaska, and beyond, and everyone onboard is 18+.{" "}
               <a
                 href="https://www.virginvoyages.com/the-ships"
                 target="_blank"
@@ -151,11 +382,96 @@ export default function VirginVoyagesPage() {
           </section>
         )}
 
+        {/* BAR TAB & PERKS */}
+        {activeTab === "perks" && (
+          <section>
+            <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: VV_DARK }}>Bar Tab and Sailor Perks</h2>
+            <p className="text-gray-500 text-sm mb-6">Virgin Voyages does not sell drinks packages. Instead, you get drink money a few different ways, and some of them stack. Here is how it all works.</p>
+
+            <BarTabOptimizer />
+
+            <Accordion title="What Is the Bar Tab?">
+              <p className="mb-3">The Bar Tab is credit that goes toward drinks onboard and at The Beach Club at Bimini. Cocktails, beer, wine, specialty coffee, and fresh juices all count, and you can use it to buy drinks for friends too.</p>
+              <ul className="list-disc pl-5 space-y-2">
+                <li><strong>Buy it before you sail.</strong> You can add a Bar Tab in the app or through me up to 24 hours before your sailing. It cannot be bought onboard.</li>
+                <li><strong>You get a bonus.</strong> Virgin adds extra credit on top of what you buy, up to $250.</li>
+                <li><strong>It is used first.</strong> When you order a drink, your Bar Tab pays before anything else. No need to ask.</li>
+                <li><strong>It does not carry over.</strong> Unused Bar Tab is not refunded at the end of the trip, so plan to use it.</li>
+                <li><strong>Drinks only.</strong> It does not cover the spa or bottles and coffee bags to take home.</li>
+              </ul>
+            </Accordion>
+
+            <Accordion title="What Is Sailor Loot?">
+              <p className="mb-3">Sailor Loot is onboard credit you can use on almost anything: drinks, the spa, the shops, even a tattoo at Squid Ink. It usually comes from a promotion or from booking with a travel advisor.</p>
+              <p className="mb-3">When you book eligible sailings with me, you can get Sailor Loot on top of Virgin's own offers. The amount depends on the sailing, so just ask.</p>
+              <p>Sailor Loot cannot be cashed out, and anything you do not use is lost at the end of the sailing.</p>
+            </Accordion>
+
+            <Accordion title="Bar Tab vs. Sailor Loot: What's the Difference?">
+              <div className="grid md:grid-cols-2 gap-3">
+                <div className="p-3 rounded-lg" style={{ background: "#FFF5F5" }}>
+                  <p className="font-bold mb-1" style={{ color: VV_RED }}>Bar Tab</p>
+                  <p className="text-sm">Drinks only. Used first every time you order a drink. You can buy it ahead and get a bonus.</p>
+                </div>
+                <div className="p-3 rounded-lg" style={{ background: VV_CREAM }}>
+                  <p className="font-bold mb-1" style={{ color: VV_DARK }}>Sailor Loot</p>
+                  <p className="text-sm">Works on almost anything onboard. Used after your Bar Tab runs out for drinks, and first for everything else.</p>
+                </div>
+              </div>
+            </Accordion>
+
+            <Accordion title="First Time on Virgin? Get a $150 Bar Tab With a Referral">
+              <p className="mb-3">Virgin's Refer a Friend program gives a brand new sailor a $150 Bar Tab, and the friend who referred them gets $150 too.</p>
+              <ul className="list-disc pl-5 space-y-2 mb-3">
+                <li><strong>If you are new to Virgin:</strong> ask a friend who has already sailed Virgin to send you their referral link. Use it before we book so the $150 lands on your sailing.</li>
+                <li><strong>If you have sailed Virgin:</strong> you can get your own link from Virgin and share it with friends. You earn $150 for each friend who books, and you can use up to two of those rewards on one sailing.</li>
+                <li>You and your friend need to be in separate cabins on separate bookings.</li>
+              </ul>
+              <p className="text-sm text-gray-500">Referral rewards do not work with Lock It In fares. Let me know you have a referral link and I will make sure it gets applied the right way.</p>
+            </Accordion>
+
+            <Accordion title="My Next Virgin Voyage (MNVV): Book Onboard and Save">
+              <p className="mb-3">If you are on a Virgin ship right now, this is one of the best deals going. Put down a $150 deposit onboard for a future sailing and you get Sailor Loot plus money off your fare.</p>
+              <div className="grid grid-cols-3 gap-2 mb-3 text-center">
+                {LENGTHS.map((l) => (
+                  <div key={l.id} className="p-3 rounded-lg" style={{ background: VV_CREAM }}>
+                    <p className="text-xs text-gray-500">{l.label}</p>
+                    <p className="font-bold" style={{ color: VV_RED }}>{money(l.mnvv * 2)}</p>
+                    <p className="text-xs text-gray-500">{money(l.mnvv)} Loot + {money(l.mnvv)} off</p>
+                  </div>
+                ))}
+              </div>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Works on Sea Terrace cabins or higher, on sailings of 4 nights or more.</li>
+                <li>You can only sign up while you are onboard a Virgin ship.</li>
+                <li>Changed your mind? You get a full refund within 7 days. After that, your deposit becomes a credit toward a future sailing.</li>
+                <li>You can move your sailing date once on Essential and Premium fares.</li>
+              </ul>
+              <p className="text-sm text-gray-500 mt-3">Booked with me before? Text me from the ship and I will help you pick the right MNVV sailing so it stays connected to Happy Detour Travel.</p>
+            </Accordion>
+
+            <Accordion title="More Ways to Get Bar Tab Money">
+              <ul className="list-disc pl-5 space-y-3">
+                <li><strong>Book during a promotion.</strong> Virgin runs Bar Tab deals all year, sometimes worth hundreds of dollars per cabin.</li>
+                <li><strong>Book Sea Terrace or higher with me.</strong> Most sailings come with an extra Bar Tab or Sailor Loot perk when you book through a travel advisor. You usually will not see it booking direct.</li>
+                <li><strong>Choose the Premium fare.</strong> It includes a Bar Tab credit along with the most flexibility.</li>
+                <li><strong>Go longer.</strong> Bar Tab offers often get bigger on longer sailings.</li>
+              </ul>
+              <p className="mt-4 text-sm text-gray-500">Offers change often. Reach out before you book and I will check what is live for your sailing.</p>
+            </Accordion>
+
+            <Accordion title="The Sailor App: Your Onboard Hub">
+              <p className="mb-3">Download the Virgin Voyages Sailor app before you sail. You will use it for booking dining reservations, checking your Bar Tab balance, looking at Shore Things excursions, and managing your account.</p>
+              <p>Dining reservations open before your sailing and the most popular restaurants fill up fast. Get on the app early and lock in your favorites as soon as your window opens.</p>
+            </Accordion>
+          </section>
+        )}
+
         {/* THE SHIPS */}
         {activeTab === "ships" && (
           <section>
             <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: VV_DARK }}>The Fleet</h2>
-            <p className="text-gray-500 text-sm mb-6">Virgin Voyages currently has four ships. They are all adults only, all similar in size, and all carry the same brand identity. Here is what makes each one a little different.</p>
+            <p className="text-gray-500 text-sm mb-6">Virgin Voyages currently has four ships. They are all similar in size and all carry the same brand identity. Here is what makes each one a little different.</p>
 
             {[
               { name: "Scarlet Lady", year: "2021", capacity: "2,770 sailors", homeport: "Miami, FL", description: "The original. Scarlet Lady was the first Virgin Voyages ship and helped define the brand. She sails mostly Caribbean itineraries out of Miami with all the signature Virgin features including The Dock outdoor deck, The Manor nightclub, and a full lineup of restaurants.", deckHighlights: ["The Manor (nightclub and main event space)", "The Dock (outdoor stern deck, swim platform)", "Richard's Rooftop (top deck pool and lounge)", "Redemption Spa (rooftop spa pool)", "Athletic Club (gym, fitness classes)", "Pool Deck with The Groupie hot tubs"] },
@@ -164,7 +480,7 @@ export default function VirginVoyagesPage() {
               { name: "Brilliant Lady", year: "2024", capacity: "2,770 sailors", homeport: "San Francisco, CA (Alaska and Pacific)", description: "The newest addition to the fleet. Brilliant Lady homeports in San Francisco and was the first Virgin Voyages ship to offer Alaska sailings. She brought the brand's approach to a whole new part of the country and a whole new kind of itinerary.", deckHighlights: ["All flagship Virgin features", "Alaska-ready with glacier viewing areas", "New dining concept exclusive to Brilliant Lady", "West Coast debut for the brand"] },
             ].map((ship) => (
               <div key={ship.name} className="mb-4">
-                <Accordion title={`${ship.name} — ${ship.homeport}`}>
+                <Accordion title={`${ship.name} · ${ship.homeport}`}>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <p className="mb-3">{ship.description}</p>
@@ -202,7 +518,7 @@ export default function VirginVoyagesPage() {
               { name: "Noodle Around", type: "Pan Asian", description: "Casual Asian noodle dishes available during lunch. Think ramen, noodle soups, and bao. A quick, satisfying option when you want something light and flavorful between ports." },
               { name: "The Pizza Place", type: "Late Night Pizza", description: "Open late for when you need something after a night out. Simple, solid pizza by the slice. Exactly what it sounds like and exactly what you need at midnight." },
             ].map((r) => (
-              <Accordion key={r.name} title={`${r.name} — ${r.type}`}><p>{r.description}</p></Accordion>
+              <Accordion key={r.name} title={`${r.name} · ${r.type}`}><p>{r.description}</p></Accordion>
             ))}
 
             <p className="mt-6 text-xs text-gray-500 italic">Restaurant availability can vary slightly by ship. Brilliant Lady has an additional dining concept not available on other ships.</p>
@@ -220,46 +536,17 @@ export default function VirginVoyagesPage() {
               { name: "The Dock", vibe: "Outdoor Stern Bar", description: "Located at the very back of the ship on the lower deck. The Dock has an open-air swim platform, sun loungers, and a bar with easy tropical drinks. It is the most laid-back spot on the ship and one of the best places to watch the ocean go by." },
               { name: "On the Rocks", vibe: "Cocktail Lounge", description: "A classic craft cocktail bar with a menu built around proper technique. If you are someone who enjoys a well-made drink more than a frozen one, this is your spot. Great bartenders and a quieter atmosphere than some of the other bars." },
               { name: "The Manor Bar", vibe: "Nightclub Adjacent", description: "The bar inside The Manor, which is the main entertainment and nightclub space on the ship. Busy at night but a cool hang during the day when it is quieter. The Manor comes alive late and runs events and themed nights throughout the sailing." },
-              { name: "Richard's Rooftop", vibe: "Rooftop Pool Bar", description: "The adults-only rooftop pool area with a bar. Smaller and more intimate than the main pool deck. Limited loungers make it feel exclusive." },
+              { name: "Richard's Rooftop", vibe: "Rooftop Pool Bar", description: "The rooftop pool area with a bar. Smaller and more intimate than the main pool deck. Limited loungers make it feel exclusive." },
               { name: "The Groupie", vibe: "Hot Tub Bar", description: "Hot tubs with a bar nearby. The Groupie is social and fun, and tends to be a gathering spot for people meeting other sailors. The vibe is celebratory." },
               { name: "Squid Ink", vibe: "Tattoo Studio and Social Space", description: "A real tattoo studio onboard where you can get a tattoo at sea. The bar next to it makes the whole thing a bit of a social moment. You do not have to get a tattoo to enjoy the vibe." },
             ].map((b) => (
-              <Accordion key={b.name} title={`${b.name} — ${b.vibe}`}><p>{b.description}</p></Accordion>
+              <Accordion key={b.name} title={`${b.name} · ${b.vibe}`}><p>{b.description}</p></Accordion>
             ))}
-          </section>
-        )}
 
-        {/* BAR TAB & EXTRAS */}
-        {activeTab === "perks" && (
-          <section>
-            <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: VV_DARK }}>Bar Tab and Sailor Perks</h2>
-            <p className="text-gray-500 text-sm mb-6">Virgin Voyages does not sell traditional drinks packages. Instead they do a Bar Tab system where you load credit onto your onboard account to cover drinks.</p>
-
-            <Accordion title="What Is the Bar Tab?">
-              <p className="mb-3">The Bar Tab is onboard credit that goes specifically toward drinks. Instead of a flat drinks package where you pay per day, you load Bar Tab credit onto your account and use it as you go at any bar on the ship.</p>
-              <p>The Bar Tab credit shows in your Sailor app so you can keep an eye on your balance throughout the sailing. Any unused credit does not carry over after the trip.</p>
-            </Accordion>
-
-            <Accordion title="How to Get Free Bar Tab Money">
-              <p className="mb-3">Here are the main ways to get Bar Tab credit at no extra cost:</p>
-              <ul className="list-disc pl-5 space-y-3">
-                <li><strong>Book During a Promotion</strong> — Virgin Voyages runs Bar Tab promotions that can range from $100 to $300 or more per cabin depending on the sailing length and current offer.</li>
-                <li><strong>Sailor Loot Offers</strong> — Bar Tab is often included as part of a Sailor Loot package when you book through a travel advisor. These deals are not always visible when booking directly.</li>
-                <li><strong>Book Through Eric's Link</strong> — Booking through my affiliate link ensures your reservation is tied to my agency. I track current Virgin Voyages offers and can let you know when a good Bar Tab promotion is running.</li>
-                <li><strong>Longer Sailings</strong> — Bar Tab credit amounts often scale with sailing length.</li>
-              </ul>
-              <p className="mt-4 text-sm text-gray-500">Bar Tab promotions change often. Reach out before you book and I will check what is currently available for your sailing.</p>
-            </Accordion>
-
-            <Accordion title="Sailor Loot — Other Credits and Perks">
-              <p className="mb-3">Beyond Bar Tab, Virgin Voyages occasionally runs Sailor Loot promotions that include spa credit, Shore Things credit toward excursions, or general onboard spending credit.</p>
-              <p>These promotions are time-sensitive and vary by sailing. Booking at the right time with the right promotion is the difference between a good deal and a great one.</p>
-            </Accordion>
-
-            <Accordion title="The Sailor App — Your Onboard Hub">
-              <p className="mb-3">Download the Virgin Voyages Sailor app before you sail. You will use it for booking dining reservations, checking your Bar Tab balance, looking at Shore Things excursions, and managing your account.</p>
-              <p>Dining reservations open before your sailing and the most popular restaurants fill up fast. Get on the app early and lock in your favorites as soon as your window opens.</p>
-            </Accordion>
+            <div className="mt-6 p-4 rounded-xl text-sm" style={{ background: "#FFF0F0", borderLeft: `4px solid ${VV_RED}` }}>
+              Want to make your drink money go further?{" "}
+              <button onClick={() => goToTab("perks")} className="font-semibold underline" style={{ color: VV_RED }}>Try the Bar Tab Optimizer</button>
+            </div>
           </section>
         )}
 
@@ -291,7 +578,7 @@ export default function VirginVoyagesPage() {
                   perks: [
                     "One specialty coffee per day",
                     "Invitation to an exclusive Sailing Club cocktail event",
-                    "One free bag of laundry",
+                    "One bag of laundry included",
                     "Dedicated Sailor Services support line",
                   ],
                   note: "These kick in on your third sailing and stay with you on your fourth.",
@@ -351,22 +638,25 @@ export default function VirginVoyagesPage() {
               </ul>
             </Accordion>
 
-            <Accordion title="My Next Virgin Voyage (MNVV) — Book Onboard and Save">
-              <p className="mb-3">One of the smartest moves you can make while onboard is booking your next sailing before you disembark. You get a reduced deposit and sometimes additional Sailor Loot credit on top of current promotions.</p>
-              <p>The booking counts as an eligible voyage toward your Sailing Club tier. You can change the dates later if your plans shift and the deposit transfers.</p>
+            <Accordion title="My Next Virgin Voyage (MNVV): Book Onboard and Save">
+              <p className="mb-3">While you are onboard, a $150 deposit on a future sailing gets you Sailor Loot plus money off your fare, from $300 total value on 4 to 5 night sailings up to $500 on sailings of 9 nights or more.</p>
+              <p>
+                It works on Sea Terrace cabins or higher.{" "}
+                <button onClick={() => goToTab("perks")} className="font-semibold underline" style={{ color: VV_RED }}>See the full MNVV breakdown</button>
+              </p>
             </Accordion>
 
-            <Accordion title="Sea Blazers and Sea Rovers — Legacy Status">
+            <Accordion title="Sea Blazers and Sea Rovers: Legacy Status">
               <p className="mb-3">Sea Blazers sailed with Virgin Voyages during their inaugural year in 2021. Sea Rovers sailed at least twice between 2022 and 2023. Both groups earned legacy status and automatically unlocked Deep Blue Extras through the end of 2026.</p>
               <p>These groups are no longer open to new members. If you sailed in those windows you already know who you are.</p>
             </Accordion>
 
-            <Accordion title="Status Match — Fast Track Into the Program">
+            <Accordion title="Status Match: Fast Track Into the Program">
               <p className="mb-3">Virgin Voyages has run a Status Match program that lets sailors with loyalty status at other cruise lines, airlines, or hotel programs get a head start in the Sailing Club. The most recent enrollment window closed in February 2026.</p>
               <p>If Virgin Voyages opens another Status Match window I will share that through my list. It is easy to miss if you are not watching for it.</p>
             </Accordion>
 
-            <Accordion title="Virgin Red — The Broader Rewards Ecosystem">
+            <Accordion title="Virgin Red: The Broader Rewards Program">
               <p className="mb-3">Separate from the Sailing Club, Virgin Voyages is part of the Virgin Red rewards program. Virgin Red lets you earn points across multiple Virgin brands and redeem them for experiences and rewards.</p>
               <p>As a Sailing Club member, you can collect Virgin Points when you sail and redeem them through the Virgin Red app.</p>
             </Accordion>
@@ -382,7 +672,7 @@ export default function VirginVoyagesPage() {
         {activeTab === "solo" && (
           <section>
             <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: VV_DARK }}>Solo Travel on Virgin Voyages</h2>
-            <p className="text-gray-500 text-sm mb-6">Virgin Voyages is adults only, not couples only. Solo travelers sail VV all the time and the experience is genuinely well suited for it.</p>
+            <p className="text-gray-500 text-sm mb-6">Virgin Voyages is not couples only. Solo travelers sail VV all the time and the experience is genuinely well suited for it.</p>
 
             <div className="p-4 rounded-xl mb-6 text-white text-sm" style={{ background: `linear-gradient(135deg, ${VV_DARK}, ${VV_RED})` }}>
               <p className="font-bold text-sm mb-2" style={{ color: VV_GOLD }}>The honest thing to know upfront</p>
@@ -390,8 +680,8 @@ export default function VirginVoyagesPage() {
             </div>
 
             <Accordion title="Why VV Actually Works Really Well for Solo Travelers">
-              <p className="mb-3">The single supplement is a real consideration, but once you are onboard the ship has a lot going for it as a solo experience. It is adults only, the vibe skews social and relaxed, and conversations happen naturally.</p>
-              <p>The Freestyle setup means you eat when you want, do what you want, and never feel out of place doing it alone.</p>
+              <p className="mb-3">The single supplement is a real consideration, but once you are onboard the ship has a lot going for it as a solo experience. Everyone onboard is 18+, the vibe skews social and relaxed, and conversations happen naturally.</p>
+              <p>There are no set dining times, so you eat when you want, do what you want, and never feel out of place doing it alone.</p>
             </Accordion>
 
             <Accordion title="The Bar Scene Is a Solo Traveler's Best Friend">
@@ -406,7 +696,7 @@ export default function VirginVoyagesPage() {
 
             <Accordion title="Tips for Solo Travelers on VV">
               <ul className="list-disc pl-5 space-y-2">
-                <li>Book the Bar Tab promo when you can. It frees you up to enjoy the bar scene without watching your spending.</li>
+                <li>Grab a Bar Tab promo when you can. It frees you up to enjoy the bar scene without watching your spending.</li>
                 <li>Lock in dining reservations early in the Sailor app. The popular restaurants fill up fast.</li>
                 <li>Try Test Kitchen. The communal format means you are sharing a meal with a group regardless of who you came with.</li>
                 <li>Give Voyage Vinyl a real chance. Go in the evening, find a spot at the bar, and stay for more than one drink.</li>
@@ -499,12 +789,13 @@ export default function VirginVoyagesPage() {
               <p>The Sailor app lets you make restaurant reservations before you ever step on the ship. Do it early because The Wake and Test Kitchen fill up fast. Get them booked as soon as your booking window opens.</p>
             </Accordion>
 
-            <Accordion title="Time Your Booking Around a Bar Tab Promotion">
-              <p>Virgin Voyages runs Bar Tab promotions throughout the year that can add $100 to $300 or more in drink credit at no extra cost. Reach out to me before you commit to a sailing and I will check what is currently available.</p>
+            <Accordion title="Stack Your Bar Tab Perks">
+              <p className="mb-3">A referral link, a Sea Terrace booking with me, the Premium fare, and Virgin's own promotions can add up fast. Pre-purchasing a Bar Tab also earns bonus credit.</p>
+              <button onClick={() => goToTab("perks")} className="font-semibold underline" style={{ color: VV_RED }}>Use the Bar Tab Optimizer to see yours</button>
             </Accordion>
 
             <Accordion title="Book Your Next Voyage Before You Disembark">
-              <p className="mb-3">The My Next Virgin Voyage program lets you book your next sailing while you are still onboard at a reduced deposit and sometimes with extra Sailor Loot credit. The booking counts toward your Sailing Club tier and you can change the dates later.</p>
+              <p className="mb-3">With My Next Virgin Voyage, a $150 deposit onboard gets you up to $500 in Sailor Loot and fare savings on a future Sea Terrace or higher sailing. You get a full refund if you change your mind within 7 days.</p>
               <p>Do not get off the ship without at least looking into it.</p>
             </Accordion>
 
@@ -513,7 +804,7 @@ export default function VirginVoyagesPage() {
             </Accordion>
 
             <Accordion title="Richard's Rooftop Is the Hidden Gem">
-              <p>Most people find the main pool deck on day one and never go looking for anything else. Richard's Rooftop is the adults-only pool area on the top deck and it tends to be significantly quieter. Get there early and you will likely have it almost to yourself.</p>
+              <p>Most people find the main pool deck on day one and never go looking for anything else. Richard's Rooftop is the pool area on the top deck and it tends to be significantly quieter. Get there early and you will likely have it almost to yourself.</p>
             </Accordion>
 
             <Accordion title="Check Your Bar Tab Balance in the App">
