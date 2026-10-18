@@ -68,8 +68,8 @@ export default function MembersContent() {
   const virginPerks: Perk[] = [
     {
       icon: '\u2b50',
-      title: 'Sailor Loot, Added Automatically',
-      desc: 'On eligible sailings, Virgin adds $50 to $200 in onboard credit to your cabin when you book through Eric. No code needed.',
+      title: 'Sailor Loot Onboard Credit',
+      desc: 'Book through Eric and his WorldVia network, and Virgin adds $50 to $200 in onboard credit to your cabin on eligible sailings. Added automatically, no code needed.',
       link: { href: '#sailor-loot', label: 'See eligible sailings' },
     },
     {
@@ -77,27 +77,51 @@ export default function MembersContent() {
       title: '$200 Bar Tab on Group Sailings',
       desc: 'Book a Sea Terrace cabin or higher on one of Eric\u2019s Virgin Voyages group sailings and a $200 bar tab is included.',
     },
-    {
-      icon: '\ud83e\udd1d',
-      title: 'WorldVia Network Perks',
-      desc: 'Eric books through the WorldVia travel network, which adds extra perks on Sea Terrace cabins and above. He\u2019ll tell you exactly what\u2019s included when you book.',
-    },
   ]
+
+  // Smooth-scrolls to a section on the page and briefly highlights it
+  const jumpToSection = (e: React.MouseEvent, href: string) => {
+    const el = document.getElementById(href.replace('#', ''))
+    if (!el) return
+    e.preventDefault()
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    el.classList.remove('hdt-flash')
+    void el.offsetWidth
+    el.classList.add('hdt-flash')
+    setTimeout(() => el.classList.remove('hdt-flash'), 2600)
+  }
 
   const renderPerkCards = (list: Perk[]) => (
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
-      {list.map((perk, i) => (
-        <div key={i} style={cardStyle}>
-          <span style={{ fontSize: '28px' }}>{perk.icon}</span>
-          <h3 style={{ color: '#1F2937', fontSize: '15px', fontWeight: '700', margin: '10px 0 6px 0' }}>{perk.title}</h3>
-          <p style={{ color: '#6B7280', fontSize: '13px', lineHeight: '1.6', margin: perk.link ? '0 0 10px 0' : 0 }}>{perk.desc}</p>
-          {perk.link && (
-            <a href={perk.link.href} className="hdt-text-link" style={{ color: '#007298', fontSize: '13px', fontWeight: '700', textDecoration: 'none' }}>
-              {perk.link.label} &rarr;
-            </a>
-          )}
-        </div>
-      ))}
+      {list.map((perk, i) => {
+        const inner = (
+          <>
+            <span style={{ fontSize: '28px' }}>{perk.icon}</span>
+            <h3 style={{ color: '#1F2937', fontSize: '15px', fontWeight: '700', margin: '10px 0 6px 0' }}>{perk.title}</h3>
+            <p style={{ color: '#6B7280', fontSize: '13px', lineHeight: '1.6', margin: perk.link ? '0 0 10px 0' : 0 }}>{perk.desc}</p>
+            {perk.link && (
+              <span className="hdt-text-link" style={{ color: '#007298', fontSize: '13px', fontWeight: '700' }}>
+                {perk.link.label} &rarr;
+              </span>
+            )}
+          </>
+        )
+        return perk.link ? (
+          <a
+            key={i}
+            href={perk.link.href}
+            onClick={(e) => jumpToSection(e, perk.link!.href)}
+            className="hdt-card-link"
+            style={{ ...cardStyle, display: 'block', textDecoration: 'none' }}
+          >
+            {inner}
+          </a>
+        ) : (
+          <div key={i} style={cardStyle}>
+            {inner}
+          </div>
+        )
+      })}
     </div>
   )
 
@@ -151,7 +175,15 @@ export default function MembersContent() {
             .hdt-btn-amber:hover { background-color: #D97706 !important; }
             .hdt-btn-white:hover { background-color: #F59E0B !important; color: white !important; }
             .hdt-text-link { transition: color 0.2s ease; }
-            .hdt-text-link:hover { color: #F59E0B !important; text-decoration: underline !important; }
+            .hdt-text-link:hover, .hdt-card-link:hover .hdt-text-link { color: #F59E0B !important; text-decoration: underline !important; }
+            #sailor-loot { border-radius: 16px; }
+            .hdt-flash { animation: hdtFlash 2.6s ease; }
+            @keyframes hdtFlash {
+              0% { outline: 3px solid rgba(245,158,11,0); outline-offset: 14px; }
+              15% { outline: 3px solid rgba(245,158,11,1); outline-offset: 14px; }
+              70% { outline: 3px solid rgba(245,158,11,1); outline-offset: 14px; }
+              100% { outline: 3px solid rgba(245,158,11,0); outline-offset: 14px; }
+            }
           `}</style>
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
 
@@ -233,7 +265,7 @@ export default function MembersContent() {
               </div>
               {renderPerkCards(virginPerks)}
               <p style={{ color: '#9CA3AF', fontSize: '12px', marginTop: '12px' }}>
-                Perks are offered by Virgin Voyages and WorldVia and can change. Eric will always confirm what applies before you book.
+                Sailor Loot is offered by Virgin Voyages through Eric&rsquo;s WorldVia network, and perks can change. Eric will always confirm what applies before you book.
               </p>
             </div>
 
