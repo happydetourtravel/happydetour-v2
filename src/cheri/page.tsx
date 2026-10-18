@@ -36,12 +36,14 @@ export default function CheriPage() {
   const totalSpend = dailySpend * nights
 
   // Package prices per person with 18% gratuity included
-  const deluxePerPersonPerDay = 89.99 * (1 + GRATUITY)
+  // Deluxe price accurate as of 10/18/2026 — subject to change
+  // $92.02/day with gratuity = $1,288.28 for two for 7 nights, per Royal's price under Eric's sailing on 10/18/2026
+  const deluxePerPersonPerDay = 92.02
   const deluxePerPerson = deluxePerPersonPerDay * nights
   const deluxeForTwo = deluxePerPerson * 2  // both in cabin must buy
-  const refreshPerPersonPerDay = 12.99 * (1 + GRATUITY)
+  // $35.38/day with gratuity = $247.66 per person for 7 nights, per Royal's price under Eric's sailing on 10/18/2026
+  const refreshPerPersonPerDay = 35.38
   const refreshPerPerson = refreshPerPersonPerDay * nights
-  const refreshForTwo = refreshPerPerson * 2
 
   const hasCoffeeOrSoft = coffee > 0 || soda > 0 || other > 0
   const hasAlcohol = wine > 0 || beer > 0 || cocktails > 0 || mixed > 0
@@ -52,12 +54,12 @@ export default function CheriPage() {
     recommendation = 'Enter your estimated daily drinks above to get a recommendation.'
   } else if (hasAlcohol && (totalSpend * 2) > deluxeForTwo) {
     savings = (totalSpend * 2) - deluxeForTwo
-    recommendation = `A drink package looks worth it for your cabin. You and your cabin mate would spend an estimated $${(totalSpend * 2).toFixed(2)} paying as you go versus $${deluxeForTwo.toFixed(2)} for both of you on the Deluxe Package including 18% gratuity. That saves you around $${savings.toFixed(2)}.`
-  } else if (!hasAlcohol && hasCoffeeOrSoft && (totalSpend * 2) > refreshForTwo) {
-    savings = (totalSpend * 2) - refreshForTwo
-    recommendation = `The Refreshment Package looks worth it for your cabin. You and your cabin mate would spend an estimated $${(totalSpend * 2).toFixed(2)} paying as you go versus $${refreshForTwo.toFixed(2)} for both of you on the Refreshment Package including 18% gratuity. That saves you around $${savings.toFixed(2)}.`
+    recommendation = `A drink package looks worth it for your cabin. You and your cabin mate would spend an estimated $${(totalSpend * 2).toFixed(2)} paying as you go versus $${deluxeForTwo.toFixed(2)} for both of you on the Deluxe Package including gratuity. That saves you around $${savings.toFixed(2)}.`
+  } else if (!hasAlcohol && hasCoffeeOrSoft && totalSpend > refreshPerPerson) {
+    savings = totalSpend - refreshPerPerson
+    recommendation = `The Refreshment Package looks worth it for you. You would spend an estimated $${totalSpend.toFixed(2)} paying as you go versus $${refreshPerPerson.toFixed(2)} on the Refreshment Package including gratuity. That saves you around $${savings.toFixed(2)}. Good news: your cabin mate does not have to buy it too.`
   } else {
-    recommendation = `Based on your estimates paying as you go may be the better option. Remember both people in your cabin have to purchase the same package so the total cost for two would be $${deluxeForTwo.toFixed(2)} for the Deluxe Package or $${refreshForTwo.toFixed(2)} for the Refreshment Package. Both include 18% gratuity.`
+    recommendation = `Based on your estimates paying as you go may be the better option. For reference, the Deluxe Package is $${deluxeForTwo.toFixed(2)} for two because both adults in the cabin have to buy it. The Refreshment Package is $${refreshPerPerson.toFixed(2)} per person, and only the people who want it need to buy it. Both include gratuity.`
   }
 
   useEffect(() => {
@@ -123,7 +125,7 @@ export default function CheriPage() {
     },
     {
       q: "What about drink packages?",
-      a: "Drinks are not included in the fare but Royal Caribbean runs sales regularly. Eric will email the group whenever Royal drops a sale on drink packages so you can grab it at the best price. The Deluxe Beverage Package normally runs $120 per guest per day and has been on sale for as low as $89.99. The Refreshment Package normally runs $18 and has been on sale for $12.99. One important thing to know: everyone staying in the same cabin has to purchase the same drink package. You cannot have one person in the cabin get it and the other opt out. Use the drink calculator on this page to figure out if a package makes sense for you."
+      a: "Drinks are not included in the fare but Royal Caribbean runs sales regularly. Eric will email the group whenever Royal drops a sale on drink packages so you can grab it at the best price. As of October 18, 2026, the Deluxe Beverage Package is $79.99 per person per day plus gratuity. For this 7-night sailing that comes to $1,288.28 for two, and both adults in the cabin have to purchase it. This price is subject to change, so please check royalcaribbean.com and the drink packages listed under your account for this cruise for the current price. The Refreshment Package (non-alcoholic) is $247.66 per person for this sailing including gratuity. One important thing to know: if one adult in the cabin buys the Deluxe Package, every adult in that cabin has to buy it too. The Refreshment Package is different. Only the people who want it need to buy it. Use the drink calculator on this page to figure out if a package makes sense for you."
     },
     {
       q: "How do I book and what are my payment options?",
@@ -522,7 +524,7 @@ export default function CheriPage() {
           <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase' as const, color: '#f9a8d4', marginBottom: 16, display: 'block' }}>Do you need a drink package?</span>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 900, color: '#fce7f3', marginBottom: 12, lineHeight: 1.2 }}>Drink Package Calculator</h2>
           <p style={{ fontSize: 14, color: 'rgba(252,231,243,0.6)', marginBottom: 28, lineHeight: 1.7 }}>
-            Drinks are not included in your fare. Royal Caribbean runs sales regularly and Eric will email the group when a deal drops. Everyone in the same cabin has to purchase the same package. You cannot split it. Use this calculator to see if a package makes sense for you. Please note the drink prices shown are current estimates and are subject to change.
+            Drinks are not included in your fare. Royal Caribbean runs sales regularly and Eric will email the group when a deal drops. If one adult in the cabin buys the Deluxe Package, every adult in that cabin has to buy it. The Refreshment Package can be bought by just one person. Use this calculator to see if a package makes sense for you. Please note the drink prices shown are current estimates and are subject to change.
           </p>
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(249,168,212,0.12)', borderRadius: 20, overflow: 'hidden' }}>
             <div style={{ padding: '24px 28px', borderBottom: '1px solid rgba(249,168,212,0.08)' }}>
@@ -562,16 +564,16 @@ export default function CheriPage() {
                 <div style={{ flex: 1, minWidth: 160, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(249,168,212,0.1)', borderRadius: 10, padding: '12px 14px' }}>
                   <p style={{ fontSize: 11, color: 'rgba(252,231,243,0.5)', margin: '0 0 4px 0' }}>Deluxe Package (alcoholic)</p>
                   <p style={{ fontSize: 16, fontWeight: 700, color: '#fce7f3', margin: 0 }}>${deluxePerPerson.toFixed(2)} <span style={{ fontSize: 11, fontWeight: 400, color: 'rgba(252,231,243,0.4)' }}>per person</span></p>
-                  <p style={{ fontSize: 11, color: 'rgba(252,231,243,0.4)', margin: '2px 0 0 0' }}>${deluxeForTwo.toFixed(2)} for both · 18% gratuity included</p>
+                  <p style={{ fontSize: 11, color: 'rgba(252,231,243,0.4)', margin: '2px 0 0 0' }}>${deluxeForTwo.toFixed(2)} for both · gratuity included</p>
                 </div>
                 <div style={{ flex: 1, minWidth: 160, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(249,168,212,0.1)', borderRadius: 10, padding: '12px 14px' }}>
                   <p style={{ fontSize: 11, color: 'rgba(252,231,243,0.5)', margin: '0 0 4px 0' }}>Refreshment Package (non-alcoholic)</p>
                   <p style={{ fontSize: 16, fontWeight: 700, color: '#fce7f3', margin: 0 }}>${refreshPerPerson.toFixed(2)} <span style={{ fontSize: 11, fontWeight: 400, color: 'rgba(252,231,243,0.4)' }}>per person</span></p>
-                  <p style={{ fontSize: 11, color: 'rgba(252,231,243,0.4)', margin: '2px 0 0 0' }}>${refreshForTwo.toFixed(2)} for both · 18% gratuity included</p>
+                  <p style={{ fontSize: 11, color: 'rgba(252,231,243,0.4)', margin: '2px 0 0 0' }}>Only needed for those who want it · gratuity included</p>
                 </div>
               </div>
             </div>
-            <p style={{ fontSize: 11, color: 'rgba(252,231,243,0.3)', padding: '12px 28px', lineHeight: 1.6 }}>Drink package prices shown are current sale prices and are subject to change. Eric will notify the group when sales are available.</p>
+            <p style={{ fontSize: 11, color: 'rgba(252,231,243,0.3)', padding: '12px 28px', lineHeight: 1.6 }}>Deluxe Package price of $79.99 per person per day plus gratuity ($1,288.28 for two for this sailing) and Refreshment Package price of $247.66 per person including gratuity are accurate as of October 18, 2026 and are subject to change. Both adults in the cabin must purchase the Deluxe Package. The Refreshment Package can be purchased by just one person. Please refer to royalcaribbean.com and the drink packages listed under your account for this cruise for current pricing.</p>
           </div>
         </div>
 
