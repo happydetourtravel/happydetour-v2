@@ -1,8 +1,21 @@
 import { useUser, SignedIn, SignedOut, RedirectToSignIn } from '@clerk/clerk-react'
+import { Link } from 'react-router-dom'
 import SailorLootSection from './SailorLootSection'
+
+function getGreeting() {
+  const hour = new Date().getHours()
+  if (hour < 12) return 'Good morning'
+  if (hour < 17) return 'Good afternoon'
+  return 'Good evening'
+}
 
 export default function MembersContent() {
   const { user } = useUser()
+
+  const firstName = user?.firstName || ''
+  const memberSince = user?.createdAt
+    ? new Date(user.createdAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+    : ''
 
   const deals = [
     {
@@ -34,24 +47,91 @@ export default function MembersContent() {
     },
   ]
 
-  const perks: { icon: string; title: string; desc: string; link?: { href: string; label: string } }[] = [
+  type Perk = { icon: string; title: string; desc: string; link?: { href: string; label: string } }
+
+  // Perks that apply to every trip booked with Eric
+  const everyTripPerks: Perk[] = [
     {
-      icon: '\ud83c\udf79',
-      title: '$200 Bar Tab Included',
-      desc: 'On most Virgin Voyages sailings, Sea Terrace cabins and above, when booked through Eric.',
+      icon: '\ud83c\udf9f\ufe0f',
+      title: 'First Dibs on Group Sailings',
+      desc: 'New group sailings show up for members first, before Eric posts them anywhere else. Best cabins go fast.',
     },
+    {
+      icon: '\ud83d\udcc9',
+      title: 'Price-Drop Check',
+      desc: 'Before your final payment, Eric rechecks your fare. If a lower eligible price is available, he\u2019ll work to get it for you.',
+    },
+  ]
+
+  // Virgin Voyages perks (Sea Terrace cabins and above)
+  // To add another cruise line later, copy this list and its section below.
+  const virginPerks: Perk[] = [
     {
       icon: '\u2b50',
       title: 'Sailor Loot, Added Automatically',
-      desc: 'Virgin Voyages adds onboard credit to your cabin, from $50 to $200, on select sailings booked through Eric. No code needed.',
+      desc: 'On eligible sailings, Virgin adds $50 to $200 in onboard credit to your cabin when you book through Eric. No code needed.',
       link: { href: '#sailor-loot', label: 'See eligible sailings' },
     },
     {
-      icon: '\ud83c\udf82',
-      title: 'Birthday Trip Discount',
-      desc: 'A discount toward a trip booked around your birthday. Just let Eric know when you reach out.',
+      icon: '\ud83c\udf79',
+      title: '$200 Bar Tab on Group Sailings',
+      desc: 'Book a Sea Terrace cabin or higher on one of Eric\u2019s Virgin Voyages group sailings and a $200 bar tab is included.',
+    },
+    {
+      icon: '\ud83e\udd1d',
+      title: 'WorldVia Network Perks',
+      desc: 'Eric books through the WorldVia travel network, which adds extra perks on Sea Terrace cabins and above. He\u2019ll tell you exactly what\u2019s included when you book.',
     },
   ]
+
+  const renderPerkCards = (list: Perk[]) => (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
+      {list.map((perk, i) => (
+        <div key={i} style={cardStyle}>
+          <span style={{ fontSize: '28px' }}>{perk.icon}</span>
+          <h3 style={{ color: '#1F2937', fontSize: '15px', fontWeight: '700', margin: '10px 0 6px 0' }}>{perk.title}</h3>
+          <p style={{ color: '#6B7280', fontSize: '13px', lineHeight: '1.6', margin: perk.link ? '0 0 10px 0' : 0 }}>{perk.desc}</p>
+          {perk.link && (
+            <a href={perk.link.href} style={{ color: '#007298', fontSize: '13px', fontWeight: '700', textDecoration: 'none' }}>
+              {perk.link.label} &rarr;
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+
+  const quickActions = [
+    {
+      icon: '\ud83d\uddfa\ufe0f',
+      title: 'Drop Your Trip Wishlist',
+      desc: 'Tell Eric where you want to go next.',
+      href: 'https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/dDfyxMMy8gucAddKpaipPB4Z/link',
+      external: true,
+    },
+    {
+      icon: '\ud83e\uddf3',
+      title: 'Browse Virgin Deals',
+      desc: 'See current sailings Eric recommends.',
+      href: '/virgin',
+      external: false,
+    },
+    {
+      icon: '\ud83d\udcac',
+      title: 'Text Eric',
+      desc: 'Quick question? Just send a text.',
+      href: 'sms:6308231253',
+      external: true,
+    },
+  ]
+
+  const cardStyle = {
+    backgroundColor: 'white',
+    borderRadius: '14px',
+    border: '1px solid #E5E7EB',
+    padding: '24px',
+    boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
+  }
 
   return (
     <>
@@ -62,41 +142,91 @@ export default function MembersContent() {
         <main style={{ minHeight: '80vh', backgroundColor: '#F9FAFB', padding: '60px 24px' }}>
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
 
-            <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            {/* Personal Welcome */}
+            <div style={{ textAlign: 'center', marginBottom: '32px' }}>
               <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Members Area</p>
-              <h1 style={{ color: '#1F2937', fontSize: '36px', fontWeight: '800', margin: '0 0 12px 0' }}>
-                Welcome{user?.firstName ? `, ${user.firstName}` : ''}.
+              <h1 style={{ color: '#1F2937', fontSize: '36px', fontWeight: '800', margin: '0 0 8px 0' }}>
+                {getGreeting()}{firstName ? `, ${firstName}` : ''}.
               </h1>
-              <p style={{ color: '#6B7280', fontSize: '16px', lineHeight: '1.7', maxWidth: '520px', margin: '0 auto' }}>
-                You're in. This is your space for member perks, group cruise updates, and exclusive sailings hand-picked by Eric.
-              </p>
+              {memberSince && (
+                <p style={{ color: '#9CA3AF', fontSize: '13px', margin: 0 }}>
+                  HDT member since {memberSince}
+                </p>
+              )}
             </div>
 
-            {/* Member Perks */}
+            {/* Note from Eric */}
+            <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', borderLeft: '5px solid #F59E0B', padding: '28px 32px', boxShadow: '0 4px 24px rgba(0,0,0,0.06)', marginBottom: '32px' }}>
+              <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 10px 0' }}>A Note From Eric</p>
+              <p style={{ color: '#374151', fontSize: '15px', lineHeight: '1.8', margin: '0 0 12px 0' }}>
+                {firstName ? `Hey ${firstName}, thanks` : 'Thanks'} for being here. This page is where I keep the perks, deals, and group sailings I think are actually worth your time. No pressure and no sales pitch, just the good stuff.
+              </p>
+              <p style={{ color: '#374151', fontSize: '15px', lineHeight: '1.8', margin: '0 0 12px 0' }}>
+                If you ever have a question, big or small, text me. I&rsquo;m a real person and I&rsquo;ll get back to you.
+              </p>
+              <p style={{ color: '#1F2937', fontSize: '15px', fontWeight: '700', margin: 0 }}>Eric</p>
+            </div>
+
+            {/* Quick Actions */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px', marginBottom: '40px' }}>
+              {quickActions.map((action, i) => {
+                const inner = (
+                  <>
+                    <span style={{ fontSize: '26px' }}>{action.icon}</span>
+                    <h3 style={{ color: '#1F2937', fontSize: '15px', fontWeight: '700', margin: '10px 0 4px 0' }}>{action.title}</h3>
+                    <p style={{ color: '#6B7280', fontSize: '13px', lineHeight: '1.5', margin: 0 }}>{action.desc}</p>
+                  </>
+                )
+                const style = { ...cardStyle, display: 'block', textDecoration: 'none' }
+                return action.external ? (
+                  <a
+                    key={i}
+                    href={action.href}
+                    target={action.href.startsWith('http') ? '_blank' : undefined}
+                    rel={action.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    style={style}
+                  >
+                    {inner}
+                  </a>
+                ) : (
+                  <Link key={i} to={action.href} style={style}>
+                    {inner}
+                  </Link>
+                )
+              })}
+            </div>
+
+            {/* Perks for Every Trip */}
             <div style={{ marginBottom: '32px' }}>
               <div style={{ marginBottom: '20px' }}>
                 <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Member Perks</p>
-                <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: 0 }}>What You Get for Booking With Eric</h2>
+                <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: '0 0 6px 0' }}>Perks for Every Trip</h2>
+                <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
+                  Cruise or all-inclusive, these come with any trip you book with Eric.
+                </p>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
-                {perks.map((perk, i) => (
-                  <div key={i} style={{ backgroundColor: 'white', borderRadius: '14px', border: '1px solid #E5E7EB', padding: '24px', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
-                    <span style={{ fontSize: '28px' }}>{perk.icon}</span>
-                    <h3 style={{ color: '#1F2937', fontSize: '15px', fontWeight: '700', margin: '10px 0 6px 0' }}>{perk.title}</h3>
-                    <p style={{ color: '#6B7280', fontSize: '13px', lineHeight: '1.6', margin: perk.link ? '0 0 10px 0' : 0 }}>{perk.desc}</p>
-                    {perk.link && (
-                      <a href={perk.link.href} style={{ color: '#007298', fontSize: '13px', fontWeight: '700', textDecoration: 'none' }}>
-                        {perk.link.label} &rarr;
-                      </a>
-                    )}
-                  </div>
-                ))}
-              </div>
+              {renderPerkCards(everyTripPerks)}
             </div>
 
+            {/* Virgin Voyages Perks */}
+            <div style={{ marginBottom: '32px' }}>
+              <div style={{ marginBottom: '20px' }}>
+                <p style={{ color: '#CC0000', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Virgin Voyages</p>
+                <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: '0 0 6px 0' }}>Extra Perks on Virgin Voyages</h2>
+                <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
+                  For Sea Terrace cabins and above when you book through Eric.
+                </p>
+              </div>
+              {renderPerkCards(virginPerks)}
+              <p style={{ color: '#9CA3AF', fontSize: '12px', marginTop: '12px' }}>
+                Perks are offered by Virgin Voyages and WorldVia and can change. Eric will always confirm what applies before you book.
+              </p>
+            </div>
+
+            {/* Group Sailings */}
             <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', padding: '40px', boxShadow: '0 4px 24px rgba(0,0,0,0.06)', marginBottom: '32px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <span style={{ fontSize: '32px' }}>🚢</span>
+                <span style={{ fontSize: '32px' }}>{'\ud83d\udea2'}</span>
                 <div>
                   <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Group Sailings</p>
                   <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: 0 }}>Group Cruises Coming Soon</h2>
@@ -118,6 +248,7 @@ export default function MembersContent() {
               </div>
             </div>
 
+            {/* Exclusive Deals */}
             <div style={{ marginBottom: '32px' }}>
               <div style={{ marginBottom: '20px' }}>
                 <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Exclusive Deals</p>
@@ -129,7 +260,7 @@ export default function MembersContent() {
                     <div>
                       <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 4px 0' }}>{deal.line}</p>
                       <h3 style={{ color: '#1F2937', fontSize: '17px', fontWeight: '700', margin: '0 0 4px 0' }}>{deal.route}</h3>
-                      <p style={{ color: '#6B7280', fontSize: '13px', margin: 0 }}>{deal.ship} · {deal.nights} · {deal.date}</p>
+                      <p style={{ color: '#6B7280', fontSize: '13px', margin: 0 }}>{deal.ship} &middot; {deal.nights} &middot; {deal.date}</p>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
                       <div style={{ textAlign: 'right' }}>
@@ -144,12 +275,13 @@ export default function MembersContent() {
                 ))}
               </div>
               <p style={{ color: '#9CA3AF', fontSize: '12px', marginTop: '12px' }}>
-                Prices are estimates. Contact Eric for current availability and to lock in your spot.
+                Prices are estimates and don't include gratuities or alcohol. Contact Eric for current availability and to lock in your spot.
               </p>
             </div>
 
             <SailorLootSection />
 
+            {/* Contact */}
             <div style={{ backgroundColor: '#007298', borderRadius: '16px', padding: '32px 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '20px' }}>
               <div>
                 <h3 style={{ color: 'white', fontSize: '18px', fontWeight: '700', margin: '0 0 4px 0' }}>Have a question? Just ask.</h3>
