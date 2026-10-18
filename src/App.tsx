@@ -42,11 +42,6 @@ export const routes: RouteRecord[] = [
     lazy: () => import('./cheri/page').then((m) => ({ Component: m.default })),
   },
   {
-    path: '/susieandsue',
-    entry: 'src/susieandsue/page.tsx',
-    lazy: () => import('./susieandsue/page').then((m) => ({ Component: m.default })),
-  },
-  {
     path: '/',
     element: <Layout />,
     entry: 'src/App.tsx',
@@ -63,11 +58,6 @@ export const routes: RouteRecord[] = [
       { path: 'faq', entry: 'src/pages/faq/page.tsx', lazy: () => import('./pages/faq/page').then((m) => ({ Component: m.default })) },
       { path: 'links', entry: 'src/pages/links/page.tsx', lazy: () => import('./pages/links/page').then((m) => ({ Component: m.default })) },
       { path: 'virgin', entry: 'src/pages/virgin/page.tsx', lazy: () => import('./pages/virgin/page').then((m) => ({ Component: m.default })) },
-      { path: 'virgin/bermuda-caribbean-nyc-sanjuan-valiant-1019', entry: 'src/pages/virgin/bermuda-caribbean-nyc-sanjuan-valiant-1019/page.tsx', lazy: () => import('./pages/virgin/bermuda-caribbean-nyc-sanjuan-valiant-1019/page').then((m) => ({ Component: m.default })) },
-      { path: 'virgin/spanish-isles-transatlantic-scarlet-1011', entry: 'src/pages/virgin/spanish-isles-transatlantic-scarlet-1011/page.tsx', lazy: () => import('./pages/virgin/spanish-isles-transatlantic-scarlet-1011/page').then((m) => ({ Component: m.default })) },
-      { path: 'virgin/panama-canal-la-miami-brilliant-1029', entry: 'src/pages/virgin/panama-canal-la-miami-brilliant-1029/page.tsx', lazy: () => import('./pages/virgin/panama-canal-la-miami-brilliant-1029/page').then((m) => ({ Component: m.default })) },
-      { path: 'virgin/western-caribbean-bimini-resilient-1101', entry: 'src/pages/virgin/western-caribbean-bimini-resilient-1101/page.tsx', lazy: () => import('./pages/virgin/western-caribbean-bimini-resilient-1101/page').then((m) => ({ Component: m.default })) },
-      { path: 'virgin/eastern-caribbean-bimini-brilliant-1115', entry: 'src/pages/virgin/eastern-caribbean-bimini-brilliant-1115/page.tsx', lazy: () => import('./pages/virgin/eastern-caribbean-bimini-brilliant-1115/page').then((m) => ({ Component: m.default })) },
       { path: 'virgin/southern-caribbean-valiant-1120', entry: 'src/pages/virgin/southern-caribbean-valiant-1120/page.tsx', lazy: () => import('./pages/virgin/southern-caribbean-valiant-1120/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/bahamas-key-west', entry: 'src/pages/cruises/bahamas-key-west/page.tsx', lazy: () => import('./pages/cruises/bahamas-key-west/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/eastern-caribbean-bimini', entry: 'src/pages/cruises/eastern-caribbean-bimini/page.tsx', lazy: () => import('./pages/cruises/eastern-caribbean-bimini/page').then((m) => ({ Component: m.default })) },
