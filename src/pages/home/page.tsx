@@ -104,10 +104,10 @@ export default function Home() {
               Virgin Voyages Specialist · First Mate Gold
             </span>
             <h1 style={{ color: 'white', fontSize: 'clamp(28px, 6vw, 46px)', fontWeight: '800', lineHeight: '1.15', margin: '0 0 16px 0' }}>
-              Your Virgin Voyages cruise, planned by someone who has actually been there.
+              From 14 Days Transatlantic to Your Next Virgin Voyage.
             </h1>
             <p style={{ color: '#F59E0B', fontSize: 'clamp(16px, 4vw, 20px)', fontWeight: '700', margin: '0 0 16px 0' }}>
-              Real trips. Real value. Someone actually in your corner.
+              Real ocean experience. Zero planning fees. An insider in your corner.
             </p>
             <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '15px', lineHeight: '1.7', margin: '0 0 12px 0', maxWidth: '480px' }}>
               Skip the corporate fluff and the hold music. I find the right sailing, book it with no planning fee, and stay with you until you are back home.
