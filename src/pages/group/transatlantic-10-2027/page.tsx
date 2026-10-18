@@ -11,20 +11,7 @@ export default function Page() {
   const textHref = `sms:6308231253?body=${encodeURIComponent("Hi Eric, I saw the Halloween Transatlantic from Spain group sailing on Virgin Voyages and have a question.")}`;
 
   return (
-    <div className="min-h-screen bg-[#F9FAFB] flex flex-col items-center py-10 px-4">
-
-      {/* Halloween banner */}
-      {showBanner && (
-        <div className="w-full max-w-4xl rounded-2xl overflow-hidden shadow-sm mb-6">
-          <img
-            src="/halloween-voyage.jpg"
-            alt="Halloween Voyage with Virgin Voyages"
-            onError={() => setShowBanner(false)}
-            style={{ width: '100%', height: 'auto', display: 'block' }}
-          />
-        </div>
-      )}
-
+    <div className="min-h-screen bg-[#F9FAFB] flex items-start justify-center py-10 px-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
 
         <div className="h-1 bg-[#007298]" />
@@ -34,6 +21,17 @@ export default function Page() {
           <span className="inline-block text-xs font-semibold uppercase tracking-widest bg-amber-100 text-amber-800 px-3 py-1 rounded-full mb-4">
             Group Sailing — Members Get First Dibs
           </span>
+
+          {showBanner && (
+            <div className="rounded-xl overflow-hidden mb-4">
+              <img
+                src="/halloween-voyage.jpg"
+                alt="Halloween Voyage with Virgin Voyages"
+                onError={() => setShowBanner(false)}
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+              />
+            </div>
+          )}
 
           <h1 className="text-2xl font-bold text-[#1F2937] leading-snug mb-1">
             Halloween Transatlantic from Spain
