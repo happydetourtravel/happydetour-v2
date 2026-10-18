@@ -370,66 +370,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Card 1 — Western Caribbean & Bimini Beach Club */}
-          <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto 16px auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
-            <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden' }} className="group-card-image">
-              {/* TODO: upload BiminiBeachClubDrone.jpg to /public */}
-              <img src="/BiminiBeachClubDrone.jpg" alt="Bimini Beach Club aerial view" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-              <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#007298', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '4px' }}>✦ Sailor Loot</span>
-            </div>
-            <div style={{ flex: 1, padding: '20px 24px' }}>
-              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '0 0 6px 0' }}>Western Caribbean</p>
-              <h3 style={{ color: '#1F2937', fontSize: '19px', fontWeight: '700', margin: '0 0 5px 0', lineHeight: '1.3' }}>Western Caribbean & Bimini Beach Club</h3>
-              <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 10px 0' }}>November 1, 2026 &middot; 7 nights &middot; Resilient Lady &middot; Virgin Voyages</p>
-              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>✦ Virgin Voyages</span>
-                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>$100 Sailor Loot Included</span>
-              </div>
-            </div>
-            <div style={{ backgroundColor: '#F9FAFB', padding: '20px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', minWidth: '210px', flexShrink: 0, borderTop: '1px solid #F3F4F6' }} className="group-card-pricing">
-              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: 0 }}>Starting from</p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ $100 onboard credit</p>
-                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ No planning fee</p>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-                <span style={{ color: '#1F2937', fontSize: '26px', fontWeight: '800' }}>$693</span>
-                <span style={{ color: '#6B7280', fontSize: '12px' }}>/person</span>
-              </div>
-              <a href="/virgin/western-caribbean-bimini-resilient-1101" style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>View Details &rarr;</a>
-            </div>
-          </div>
-
-          {/* Card 2 — Eastern Caribbean & Bimini Beach Club */}
-          <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto 16px auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
-            <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden' }} className="group-card-image">
-              <img src="/eastern-caribbean-bimini.webp" alt="Eastern Caribbean and Bimini Beach Club" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-              <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#007298', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '4px' }}>✦ Sailor Loot</span>
-            </div>
-            <div style={{ flex: 1, padding: '20px 24px' }}>
-              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '0 0 6px 0' }}>Eastern Caribbean</p>
-              <h3 style={{ color: '#1F2937', fontSize: '19px', fontWeight: '700', margin: '0 0 5px 0', lineHeight: '1.3' }}>Eastern Caribbean & Bimini Beach Club</h3>
-              <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 10px 0' }}>November 15, 2026 &middot; 10 nights &middot; Brilliant Lady &middot; Virgin Voyages</p>
-              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>✦ Virgin Voyages</span>
-                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>$200 Sailor Loot Included</span>
-              </div>
-            </div>
-            <div style={{ backgroundColor: '#F9FAFB', padding: '20px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', minWidth: '210px', flexShrink: 0, borderTop: '1px solid #F3F4F6' }} className="group-card-pricing">
-              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: 0 }}>Starting from</p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ $200 onboard credit</p>
-                <p style={{ color: '#007298', fontSize: '12px', fontWeight: '600', margin: 0 }}>+ No planning fee</p>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-              <span style={{ color: '#1F2937', fontSize: '26px', fontWeight: '800' }}>$1,190</span>
-              <span style={{ color: '#6B7280', fontSize: '12px' }}>/person</span>
-              </div>
-              <a href="/virgin/eastern-caribbean-bimini-brilliant-1115" style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>View Details &rarr;</a>
-            </div>
-          </div>
-
-          {/* Card 3 — Southern Caribbean Cruise */}
+          {/* Card 1 — Southern Caribbean Cruise */}
           <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto 16px auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
             <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden' }} className="group-card-image">
               {/* TODO: upload SanJuanCouple.jpg to /public */}
@@ -459,7 +400,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Card 4 — Christmas Balcony Sailing, Scarlet Lady (from Eric's Christmas flyer) */}
+          {/* Card 2 — Christmas Balcony Sailing, Scarlet Lady (from Eric's Christmas flyer) */}
           <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
             <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden' }} className="group-card-image">
               <img src="/Christmas Flyer Final.png" alt="All I Want for Christmas Is a Balcony — Virgin Voyages" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
