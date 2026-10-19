@@ -1995,6 +1995,257 @@ export const POSTS: Post[] = [
       <p>Eric<br/>Happy Detour Travel<br/>Real trips. Real value. Someone actually in your corner.<br/>happydetour.com | eric@happydetour.com | 630-823-1253</p>
     `,
   },
+  {
+    slug: 'scarlet-lady-transatlantic-notes-from-the-middle-of-the-atlantic',
+    title: 'Somewhere in the Middle of the Atlantic: Notes From My Scarlet Lady Transatlantic',
+    date: '2026-10-18',
+    tag: 'Cruise Tips',
+    image: '/blog/scarlet-lady-las-palmas.jpeg',
+    excerpt: 'I\'m writing this from somewhere in the middle of the Atlantic Ocean. No land in sight. Fourteen nights on Virgin Voyages\' Scarlet Lady from Barcelona to Miami, with some of my favorite people in the world, and one brand new friend who says exactly what she thinks.',
+    content: `
+      <img src="/blog/scarlet-lady-las-palmas.jpeg" alt="Virgin Voyages Scarlet Lady docked at Puerto de Las Palmas, Gran Canaria" loading="lazy" />
+      <p class="caption">Our home for 14 nights. Scarlet Lady docked at Puerto de Las Palmas, Gran Canaria.</p>
+
+      <p>I'm writing this from somewhere in the middle of the Atlantic Ocean. No land in sight. Just blue water in every direction, a coffee in my hand, and the kind of quiet you never get at home.</p>
+
+      <p>Right now I'm on Virgin Voyages' Scarlet Lady, sailing from Barcelona to Miami. Fourteen nights. We left Spain on October 11 and we pull into Miami on October 25. As I type this, we're in the long stretch of sea days, and honestly? I'm having an absolute blast.</p>
+
+      <p>I'm not out here alone. I'm sailing with three of my favorite people in the world, Marianne, Mary Lou, and Andre. And this trip added a brand new face to our crew. Her name is Karen. I'll get to her. Trust me, she gets her own section.</p>
+
+      <p>I wanted to write this while I'm still onboard. Not after I get home, unpack, and life gets loud again. I want to catch how this feels right now, while it's still fresh.</p>
+
+      <p>So grab a drink and get comfy. This one is longer than my usual posts. I'm going to tell you why I picked a transatlantic, what the days actually look like out here, why the people you sail with matter more than almost anything, and a few honest tips if you've ever wondered whether a crossing is for you.</p>
+
+      <p>Spoiler: it might be.</p>
+
+      <h2>Why a transatlantic?</h2>
+
+      <p>People ask me this a lot. Why would you spend two weeks on a ship with only a few stops?</p>
+
+      <p>Here's my honest answer. Because on a crossing, the ship is the destination.</p>
+
+      <p>Most of the cruises I've taken over the years have been port heavy. You wake up, rush off the ship, rush back on, crash, and do it all again the next day. I love those trips. I'll always love those trips. But they don't exactly slow you down.</p>
+
+      <p>A transatlantic does. It slows you down on purpose.</p>
+
+      <p>And I needed that. Between my full time job and building Happy Detour Travel, there isn't a lot of white space on my calendar. I wanted a trip where nobody needed anything from me for a little while. Where I didn't have to plan a single thing. And this time, I truly didn't. Andre took care of our breakfast plans and Marianne handled every dinner reservation. All I had to do was show up hungry.</p>
+
+      <h3>So what is a repositioning cruise, anyway?</h3>
+
+      <p>If you've never heard the term, here's the simple version. Cruise ships move with the seasons. Scarlet Lady spends the summer in Europe and the winter in Miami. Twice a year, she has to get from one side of the ocean to the other.</p>
+
+      <p>Those one way sailings are called repositioning cruises. They usually have more sea days, longer itineraries, and a totally different feel from a regular week in the Caribbean. You get a lot of nights onboard for what you pay, and you get to see a part of the world on the way.</p>
+
+      <h3>And why Virgin?</h3>
+
+      <p>I'm a Virgin Voyages First Mate, and I've earned Gold tier. That means I've done the training, I know the ships, and I book a lot of Virgin for my clients.</p>
+
+      <p>But there's a difference between knowing a product and living it for two weeks. I wanted to see how Virgin holds up on a long sailing. Does the food get old? Do the days drag? Is it still fun on night twelve?</p>
+
+      <p>I'm only partway through, but so far the answer is: no, no, and absolutely yes.</p>
+
+      <h2>The route: Spain, Morocco, the Canary Islands, then a whole lot of ocean</h2>
+
+      <p>This sailing packs a lot of variety into the first week, then lets you exhale for the second. Here's how it lays out:</p>
+
+      <ol>
+        <li>Barcelona, Spain. We sailed away in the evening on October 11.</li>
+        <li>A sea day to settle in.</li>
+        <li>Casablanca, Morocco.</li>
+        <li>Another sea day.</li>
+        <li>Las Palmas, Gran Canaria.</li>
+        <li>Santa Cruz, Tenerife.</li>
+        <li>Eight sea days in a row across the Atlantic.</li>
+        <li>Miami, Florida, early on October 25.</li>
+      </ol>
+
+      <p>Think about that for a second. Europe, then Africa, then the Canary Islands, all inside the first six days. Then nothing but open water until Florida.</p>
+
+      <p>I'm going to save the port stories for their own post, because they deserve the room. This one is really about life onboard and the people I'm sharing it with.</p>
+
+      <p>One fun thing I'll mention about the crossing itself. As we head west, the clocks go back an hour on several nights. That means you keep getting extra hours added to your trip. An extra hour of sleep. An extra hour at the bar. An extra hour of sitting on deck doing absolutely nothing. I've never been so happy to lose track of what time it is.</p>
+
+      <h2>Sea days are the whole point</h2>
+
+      <p>If the idea of eight sea days in a row makes you nervous, I get it. I think a lot of people picture being bored out of their minds.</p>
+
+      <p>Here's what nobody tells you. The first day or two, you kind of don't know what to do with yourself. You keep checking your phone. You feel like you should be somewhere.</p>
+
+      <p>Then something shifts. Your shoulders drop. You stop asking what time it is. You just live.</p>
+
+      <h3>What a sea day actually looks like</h3>
+
+      <p>There's no schedule unless you want one. A typical day out here goes something like this:</p>
+
+      <ul>
+        <li>Wake up whenever my body decides to. No alarm.</li>
+        <li>Coffee, then a slow walk around the ship to see what's going on.</li>
+        <li>Maybe a fitness class, maybe not. No judgment either way.</li>
+        <li>Find a spot in the sun, or the shade, and read.</li>
+        <li>Lunch with the crew, which somehow always turns into a two hour conversation.</li>
+        <li>A nap. Yes, every day. This is vacation.</li>
+        <li>Get dressed up a little for dinner.</li>
+        <li>A show, a drink, a party, or just more talking.</li>
+      </ul>
+
+      <p>That's it. And somehow every day feels full.</p>
+
+      <h3>The ocean does something to you</h3>
+
+      <p>I don't know how else to say this. When you look out and there's nothing but water from edge to edge, it puts things in perspective. All the stuff I was stressing about back home feels very far away right now. Because it is.</p>
+
+      <p>And if you do need to check in with home, Virgin's WiFi is unlimited. That's actually how I'm writing this post from the middle of the ocean. But I've been pretty good about putting the phone down. Mostly.</p>
+
+      <h2>My people: Marianne, Mary Lou, and Andre</h2>
+
+      <p>I call them my cruise friends. That doesn't really cover it, but it's the easiest way to explain.</p>
+
+      <p>Marianne, Mary Lou, and Andre are some of the people I trust most. We don't see each other every week. Life is busy for all of us. But when we get on a ship together, it's like no time has passed at all. We pick up right where we left off.</p>
+
+      <p>And we talk. Really talk. Not the quick "how are you, I'm fine" kind of talking. The kind where you're sitting at dinner long after the plates are cleared, and somebody says something honest, and suddenly an hour is gone.</p>
+
+      <h3>Why ships are perfect for this</h3>
+
+      <p>I've thought a lot about why our friendship works so well at sea. I think it's because a ship takes away all the distractions. Nobody has to run to work. Nobody has to cook. Nobody is checking the clock to get home before traffic.</p>
+
+      <p>It's just us, a table, and time. That's rare. Most of us don't get that with the people we love nearly enough.</p>
+
+      <h3>Dear to my heart</h3>
+
+      <p>These three are dear to my heart. They've seen me at my best and at my most tired. They make me laugh until I can't breathe. They also tell me the truth when I need to hear it, and that's the kind of friend I value most.</p>
+
+      <p>Every time we sail together, I come home feeling a little more like myself.</p>
+
+      <p>I also have to give a shout out to Melissa and John. They're part of my cruise family too, and they're just as dear to my heart. They couldn't make it on this sailing, and we've missed them out here. Next time, you two.</p>
+
+      <p>If you take one thing from this post, let it be this. Who you travel with matters just as much as where you go. The best ship in the world won't feel special with the wrong people. And a simple sea day can feel like the best day of your year with the right ones.</p>
+
+      <h2>And then there's Karen</h2>
+
+      <p>Okay. Let me tell you about Karen.</p>
+
+      <p>Karen is a friend of Marianne's. She got added to our Virgin contacts list before the trip, so I knew she was coming. But seeing a name pop up on a list and spending two weeks at sea with someone are two very different things. Now I can't picture this trip without her.</p>
+
+      <p>Karen speaks her mind. Always. If she's thinking it, you're hearing it. There's no filter, no sugarcoating, and no pretending. And somehow that makes her one of the most refreshing people I've met in a long time.</p>
+
+      <p>She is also funny as all get out. The kind of funny where you're trying to take a sip of your drink and you have to put it down because you know what's coming. She had our whole group cracking up within about five minutes of meeting her, and it hasn't stopped since.</p>
+
+      <p>I'm keeping her best lines on the ship. Some things you just had to be there for. And honestly, a few of them aren't fit for a blog anyway.</p>
+
+      <h3>This is the magic of a long sailing</h3>
+
+      <p>Here's what Karen reminded me. On a two week crossing, you see the same faces every day. At breakfast. On deck. At the bar. At the late show.</p>
+
+      <p>On a short cruise, those people stay strangers. On a long one, they become your people. Somebody saves you a seat. Somebody waves you over. And before you know it, your little group of four is a group of five.</p>
+
+      <p>I love that about cruising. You can show up with your best friends and still leave with a new one.</p>
+
+      <p>Karen, if you're reading this: you're stuck with me now. That's just how it works.</p>
+
+      <p>And it's already working. We're sailing together again next year on another transatlantic out of Spain. Now we're working on getting the rest of our cruise friends to come along too.</p>
+
+      <h2>What Virgin gets right on a long crossing</h2>
+
+      <p>I've sailed a lot of cruise lines. MSC, Royal Caribbean, Norwegian, Carnival. They all have something to love. But a two week sailing really shows you what a cruise line is made of. Here's what's standing out to me on Scarlet Lady.</p>
+
+      <h3>The food doesn't get old</h3>
+
+      <p>This was my biggest question going in. Fourteen nights is a lot of dinners.</p>
+
+      <p>With Virgin, all of the restaurants are included in your fare. There's no extra charge to try the fancy spot, and there's no buffet line to fight through. So you can rotate between restaurants all trip long and still be excited about where you're going tonight.</p>
+
+      <h3>The little things add up</h3>
+
+      <p>These are the details that don't sound like much on paper but make a real difference over two weeks:</p>
+
+      <ul>
+        <li>Sodas are included, so I'm not paying for every Coke Zero.</li>
+        <li>There are two carafes of water in the cabin, refilled for you.</li>
+        <li>The WiFi is unlimited, so nobody is rationing their data.</li>
+        <li>Fitness classes like yoga are included, which helps when you're eating your way across an ocean.</li>
+      </ul>
+
+      <h3>The parties and the shows</h3>
+
+      <p>A longer sailing means more nights to celebrate, and Virgin does themed nights really well. So far we've had an 80s night and a disco night. And Scarlet Night is one you have to experience at least once.</p>
+
+      <p>The entertainment has honestly blown me away. Here's what we've seen so far:</p>
+
+      <ul>
+        <li><strong>Booked!</strong> This one was wonderful.</li>
+        <li><strong>Karaoke with the Happenings Cast.</strong> Virgin doesn't have a cruise director. Instead, there's a team of 12 people whose whole job is making sure you have a good time. This wasn't just karaoke. It was a show.</li>
+        <li><strong>A show with the Diva.</strong> Need I say more?</li>
+        <li><strong>Bingo with the Diva.</strong> It was everything. At one point someone in the audience said out loud how much they loved it and how glad they were they came. You could see it made the host smile. That's the vibe on this ship.</li>
+        <li><strong>The Charmer.</strong> He does magic. And I mean real magic, the kind that leaves you sitting there going WHAT?! How the f***?! We have a special show with him on October 19 in a special spot onboard, and I can't wait.</li>
+      </ul>
+
+      <p>The energy on this ship is fun without ever feeling like too much.</p>
+
+      <h3>What to know before you go</h3>
+
+      <p>I always want to be straight with you, so here's the honest part. Drinks aren't included on Virgin, and gratuities are a separate charge. Virgin doesn't do drink packages. Instead, you can add a Bar Tab, which works like a prepaid credit on your account.</p>
+
+      <p>None of that is a dealbreaker. You just want to know it ahead of time so there are no surprises. That's exactly the kind of thing I walk my clients through before they book.</p>
+
+      <h2>Honest tips if you're thinking about a transatlantic</h2>
+
+      <p>If this post has you even a little curious, here's what I'd tell you over coffee. Nothing fancy. Just the stuff that actually helps.</p>
+
+      <p><strong>1. Fly in early.</strong> A crossing starts in a different country, and international flights don't always go to plan. Mine sure didn't. I flew in a few days early, and on the way over we had a medical emergency onboard. We had to land in St. John's, Newfoundland to get the passenger off and to help, then wait for fuel and a new flight plan. That detour added about two hours. I really hope that person is okay. It was a good reminder of why I always tell people to build in a cushion. Give yourself at least one night in the departure city, more if you can. You'll start the trip rested instead of stressed, and you get to explore a little before you sail.</p>
+
+      <p><strong>2. Get trip insurance. Please.</strong> Two weeks, international flights, and a lot of open ocean. Your regular health insurance may not cover you outside the US, and a medical issue at sea can get very expensive very fast. Buy it when you book, not later. It's cheaper that way, and it can cover more.</p>
+
+      <p><strong>3. Pack for two climates, and bring a layer.</strong> You might leave Europe in fall weather and arrive somewhere warm and sunny. Even onboard, some people in our group found it chilly, so a light sweater or jacket is a smart move. You can send laundry in on the ship, so there's no need to overpack. Just take a quick inventory of what you send so you know everything came back.</p>
+
+      <p><strong>4. Plan a few things, not everything.</strong> Book your dinner reservations in the Virgin app early so you get the times you want. Then leave the rest of the day open. The best moments out here aren't on any schedule.</p>
+
+      <p><strong>5. Bring something for you.</strong> A good book. A journal. A project you never have time for at home. Sea days give you space, so bring something to fill it with if you want to.</p>
+
+      <p><strong>6. Let the clocks help you.</strong> Flying over to Europe usually means jet lag. Sailing back west, the ship gives you those hours back a little at a time. By the time you land in Miami, you're basically already on home time.</p>
+
+      <p><strong>7. Go with good people, or be open to meeting some.</strong> I think you already know how I feel about this one.</p>
+
+      <h2>Coming back next year, and you can come too</h2>
+
+      <p>I'm not even off this ship yet, and I already know I want to do it again.</p>
+
+      <p>So I am. Next fall I'm hosting a Happy Detour Travel group on Scarlet Lady's Halloween Transatlantic. We'll sail from Barcelona to San Juan, Puerto Rico, starting October 31, 2027.</p>
+
+      <p>Think about it. Halloween on Virgin Voyages, followed by days of open ocean with a group of people who are there to have a good time. I'm already planning my costume.</p>
+
+      <h3>How the group works</h3>
+
+      <p>I'm building the group in Sea Terrace cabins, which have a balcony so you can watch the ocean go by from your own private spot. Group cabins in Sea Terrace and up, booked into the group, come with a Bar Tab perk. I'll walk you through exactly how that works if you're interested.</p>
+
+      <p>And here's the best part, at least in my opinion. I'll be onboard with you. Not just booking it and disappearing. Actually there, on the same ship, the whole way across. If something comes up, you don't have to call a hotline. You just find me.</p>
+
+      <h3>No pressure, just an open door</h3>
+
+      <p>You don't have to decide anything today. If you're even a little curious, reach out and ask questions. There's no planning fee from me on Virgin Voyages bookings, and we talk through everything before anything is confirmed so there are no surprises.</p>
+
+      <p>Whether it's this group, a different Virgin sailing, or your very first cruise ever, I'd love to help you figure out what fits.</p>
+
+      <h2>One more thing before I go</h2>
+
+      <p>It's 11:55 at night as I finish this. No sun out there, just a dark ocean and the quiet hum of the ship. I'm about to close the laptop and go find my crew, and I'm pretty sure Karen is about to say something that makes the whole table lose it.</p>
+
+      <p>When I started Happy Detour Travel, I wanted to help people have trips like this one. Not just a booking. A real experience, with someone who's actually been there and actually cares how it goes.</p>
+
+      <p>This crossing is reminding me why I do it. Good food, good people, and an ocean big enough to make your worries feel small. That's the stuff I want for you too.</p>
+
+      <p>Real trips. Real value. Someone actually in your corner.</p>
+
+      <p>Talk soon. From the middle of the Atlantic,</p>
+
+      <p>Eric<br/>Happy Detour Travel<br/>Real trips. Real value. Someone actually in your corner.<br/><a href="https://happydetour.com">happydetour.com</a> | <a href="mailto:eric@happydetour.com">eric@happydetour.com</a> | 630-823-1253</p>
+
+      <p><strong>Want to chat about a transatlantic, the 2027 Halloween group, or any Virgin sailing?</strong></p>
+
+      <p>Email me at <a href="mailto:eric@happydetour.com">eric@happydetour.com</a> or call or text 630-823-1253.</p>
+
+      <p>Follow along on Instagram at <a href="https://instagram.com/happydetourtravel">@happydetourtravel</a>, and come hang out in our Facebook group, <a href="https://www.facebook.com/groups/somuchtosea">So Much to Sea</a>. First timers are always welcome.</p>
+    `,
+  },
  ]
 
 export function getAllPosts(): Post[] {
