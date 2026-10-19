@@ -23,6 +23,7 @@ export default function TransatlanticPage() {
 
   const memberPerks = [
     { icon: '🍹', title: '$200 Bar Tab', desc: 'Included with Sea Terrace cabins and higher booked at the Essentials rate in the HDT group.' },
+    { icon: '💸', title: 'No Planning Fee', desc: 'Virgin Voyages group bookings have no planning fee. You still get Eric handling every detail.' },
     { icon: '🎟️', title: 'First Dibs on Cabins', desc: 'Members hear about group cabins before anyone else. Best cabins go fast.' },
     { icon: '🤝', title: 'Booked by Eric', desc: 'Eric places you directly in the group so you get the perk and someone actually in your corner.' },
   ]
@@ -32,11 +33,13 @@ export default function TransatlanticPage() {
       <style>{`
         .hdt-btn { transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease; }
         .hdt-btn:hover { transform: translateY(-1px); }
-        .hdt-btn-amber:hover { background-color: #D97706 !important; }
-        .hdt-btn-ghost:hover { background-color: white !important; color: #1E1B2E !important; }
-        .hdt-btn-teal:hover { background-color: #005A78 !important; }
+        /* Hover: Virgin Voyages red (#CC0000) */
+        .hdt-btn-amber:hover { background-color: #CC0000 !important; }
+        .hdt-btn-ghost:hover { background-color: #CC0000 !important; border-color: #CC0000 !important; color: white !important; }
+        .hdt-btn-teal:hover { background-color: #CC0000 !important; }
+        /* Text links on dark or blue backgrounds: underline instead of red so they stay readable */
         .hdt-text-link { transition: color 0.2s ease; }
-        .hdt-text-link:hover { color: #F59E0B !important; text-decoration: underline !important; }
+        .hdt-text-link:hover { color: white !important; text-decoration: underline !important; }
       `}</style>
 
       {/* Halloween banner (full image, never cropped) */}
@@ -65,11 +68,11 @@ export default function TransatlanticPage() {
             From <span style={{ fontSize: '30px', fontWeight: '800' }}>$1,068</span> per person*
           </p>
           <div style={{ display: 'inline-block', backgroundColor: 'rgba(255,255,255,0.15)', color: 'white', fontSize: '14px', fontWeight: '700', padding: '8px 16px', borderRadius: '999px', marginBottom: '28px' }}>
-            {'🍹'} $200 bar tab: group booking, Sea Terrace+ at Essentials rate
+            {'🍹'} $200 bar tab with Sea Terrace cabins and up
           </div>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/join" className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '14px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '16px' }}>
-              Join Free to Claim Your Spot
+              Join to Claim Your Spot
             </Link>
             <Link to="/login" className="hdt-btn hdt-btn-ghost" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>
               Already a Member? Sign In
@@ -102,7 +105,7 @@ export default function TransatlanticPage() {
           <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Member Perks</p>
           <h2 style={{ color: '#1F2937', fontSize: '24px', fontWeight: '700', margin: '0 0 8px 0' }}>Why Sail With the HDT Group</h2>
           <p style={{ color: '#6B7280', fontSize: '15px', lineHeight: '1.7', margin: '0 0 20px 0' }}>
-            Membership is free. It&rsquo;s how you get into the group and unlock the perks below.
+            Joining just takes your name and email. It&rsquo;s how you get into the group and unlock the perks below.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
             {memberPerks.map((p, i) => (
@@ -135,7 +138,7 @@ export default function TransatlanticPage() {
         <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', borderLeft: '5px solid #F59E0B', padding: '28px', marginBottom: '40px' }}>
           <h2 style={{ color: '#1F2937', fontSize: '20px', fontWeight: '700', margin: '0 0 16px 0' }}>How It Works</h2>
           <ol style={{ color: '#374151', fontSize: '15px', lineHeight: '1.9', margin: 0, paddingLeft: '20px' }}>
-            <li><strong>Join free.</strong> Takes about a minute.</li>
+            <li><strong>Join the group.</strong> Takes about a minute, just your name and email.</li>
             <li><strong>See every cabin price</strong> on your members page.</li>
             <li><strong>Text or email Eric</strong> to hold your cabin. He books you straight into the group.</li>
           </ol>
@@ -147,10 +150,10 @@ export default function TransatlanticPage() {
         {/* Final CTA */}
         <div style={{ backgroundColor: '#007298', borderRadius: '16px', padding: '32px', textAlign: 'center' }}>
           <h3 style={{ color: 'white', fontSize: '22px', fontWeight: '700', margin: '0 0 8px 0' }}>Want in?</h3>
-          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', margin: '0 0 20px 0' }}>Join free and grab first dibs on a group cabin.</p>
+          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', margin: '0 0 20px 0' }}>Join and grab first dibs on a group cabin.</p>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/join" className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '14px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '16px' }}>
-              Join Free
+              Join the Group
             </Link>
           </div>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '14px', margin: '20px 0 0 0' }}>
