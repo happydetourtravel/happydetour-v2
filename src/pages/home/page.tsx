@@ -104,13 +104,13 @@ export default function Home() {
               Virgin Voyages Specialist · First Mate Gold
             </span>
             <h1 style={{ color: 'white', fontSize: 'clamp(28px, 6vw, 46px)', fontWeight: '800', lineHeight: '1.15', margin: '0 0 16px 0' }}>
-              From 14 Days Transatlantic to Your Next Virgin Voyage.
+              Real trips. Real value. Someone actually in your corner.
             </h1>
             <p style={{ color: '#F59E0B', fontSize: 'clamp(16px, 4vw, 20px)', fontWeight: '700', margin: '0 0 16px 0' }}>
-              Real ocean experience. Zero planning fees. An insider in your corner.
+              Your Virgin Voyages specialist, from first question to back home.
             </p>
             <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '15px', lineHeight: '1.7', margin: '0 0 12px 0', maxWidth: '480px' }}>
-              Skip the corporate fluff and the hold music. I find the right sailing, book it with no planning fee, and stay with you until you are back home.
+              Skip the corporate fluff and the hold music. I help you find the right sailing, talk through every detail before anything is confirmed, and stay with you until you are back home.
             </p>
             <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '13px', margin: '0 0 28px 0' }}>
               Also booking NCL, MSC, Royal Caribbean &amp; Carnival
@@ -139,7 +139,7 @@ export default function Home() {
                 <a href={deal.link} aria-label={`Get this deal: ${deal.title}`} style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>Get This Deal</a>
                 <a href="sms:6308231253" style={{ display: 'block', textAlign: 'center', color: '#6B7280', fontSize: '12px', fontWeight: '600', textDecoration: 'none', margin: '10px 0 0 0' }}>Prefer help? Text Eric →</a>
                 <p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: '8px 0 0 0', lineHeight: '1.5' }}>Prices are estimates. Contact Eric for current availability.</p>
-                <p style={{ color: '#D1D5DB', fontSize: '10px', textAlign: 'center', margin: '4px 0 0 0' }}>Updated August 2026</p>
+                <p style={{ color: '#D1D5DB', fontSize: '10px', textAlign: 'center', margin: '4px 0 0 0' }}>Updated October 2026</p>
               </div>
               <div style={{ padding: '12px 20px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', borderTop: '1px solid #F3F4F6' }}>
                 {featuredDeals.map((_, i) => (
@@ -212,9 +212,9 @@ export default function Home() {
                 </div>
               </div>
 
-              <div style={{ display: 'flex', gap: '20px', marginTop: '24px' }}>
+              <div style={{ display: 'flex', gap: '20px', marginTop: '24px', flexWrap: 'wrap' }}>
                 <a href="sms:6308231253" style={{ color: '#F59E0B', fontWeight: '600', fontSize: '14px', textDecoration: 'none' }}>
-                  Text Eric
+                  Text Eric: 630-823-1253
                 </a>
                 <a href="mailto:eric@happydetour.com" style={{ color: '#F59E0B', fontWeight: '600', fontSize: '14px', textDecoration: 'none' }}>
                   Email Eric
@@ -233,7 +233,7 @@ export default function Home() {
             <div style={{ flex: '1', minWidth: '280px' }}>
               <span style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: '#F59E0B', fontSize: '11px', fontWeight: '700', letterSpacing: '1px', padding: '4px 12px', borderRadius: '100px', textTransform: 'uppercase' }}>Our Specialty</span>
               <h2 style={{ color: 'white', fontSize: 'clamp(28px, 5vw, 40px)', fontWeight: '800', margin: '14px 0 10px 0' }}>Virgin Voyages is what we do best.</h2>
-              <p style={{ color: '#F59E0B', fontSize: '15px', fontWeight: '600', margin: '0 0 16px 0' }}>Voted best cruise line in the world, 2023 to 2026.</p>
+              <p style={{ color: '#F59E0B', fontSize: '15px', fontWeight: '600', margin: '0 0 16px 0' }}>Voted Travel + Leisure's #1 Mega-Ship Ocean Cruise Line, four years in a row (2023 to 2026).</p>
               <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '14px', lineHeight: '1.7', margin: '0 0 24px 0' }}>
                 No nickel and diming, everything that matters is already included. Eric is First Mate Gold certified and can search live sailings and book you directly, with no planning fee.
               </p>
@@ -262,13 +262,13 @@ export default function Home() {
                 >
                   Virgin Guide &amp; Bar Tab Optimizer
                 </a>
-                <a
-                  href="sms:6308231253"
-                  style={{ backgroundColor: 'transparent', color: 'white', textAlign: 'center', padding: '13px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px', border: '1px solid rgba(255,255,255,0.4)' }}
-                >
-                  Reach Out With Questions
-                </a>
               </div>
+              <a
+                href="sms:6308231253"
+                style={{ display: 'inline-block', color: 'white', fontSize: '13px', fontWeight: '600', textDecoration: 'none', margin: '14px 0 0 0' }}
+              >
+                Questions first? Text Eric →
+              </a>
             </div>
 
             <div style={{ flex: '0 0 280px', textAlign: 'center', margin: '0 auto' }}>
@@ -351,9 +351,9 @@ export default function Home() {
                 <p style={{ color: '#007298', fontSize: '13px', fontWeight: '600', margin: 0 }}>+ $200 bar tab per cabin</p>
                 <p style={{ color: '#007298', fontSize: '13px', fontWeight: '600', margin: 0 }}>+ No planning fee</p>
               </div>
-              <a href="/join" style={{ display: 'block', textAlign: 'center', backgroundColor: '#F59E0B', color: 'white', padding: '12px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px', marginTop: '4px' }}>Join to Claim Your Spot</a>
-              <a href="/group/transatlantic-10-2027" style={{ display: 'block', textAlign: 'center', color: '#007298', fontSize: '13px', fontWeight: '600', textDecoration: 'none', padding: '4px 0' }}>See the sailing &rarr;</a>
-              <p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: 0, lineHeight: '1.5' }}>Members get pricing and booking details</p>
+              <a href="/group/transatlantic-10-2027" style={{ display: 'block', textAlign: 'center', backgroundColor: '#F59E0B', color: 'white', padding: '12px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px', marginTop: '4px' }}>See the Sailing</a>
+              <a href="/join" style={{ display: 'block', textAlign: 'center', color: '#007298', fontSize: '13px', fontWeight: '600', textDecoration: 'none', padding: '4px 0' }}>Create an account for group pricing &rarr;</a>
+              <p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: 0, lineHeight: '1.5' }}>Just your name and email. Members see pricing and booking details.</p>
             </div>
           </div>
         </div>
