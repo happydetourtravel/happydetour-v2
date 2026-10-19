@@ -348,7 +348,7 @@ export default function Home() {
             <div style={{ backgroundColor: '#F9FAFB', padding: '20px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', minWidth: '210px', flexShrink: 0, borderTop: '1px solid #F3F4F6' }} className="group-card-pricing">
               <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: 0 }}>Group perks</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                <p style={{ color: '#007298', fontSize: '13px', fontWeight: '600', margin: 0 }}>+ $200 bar tab per cabin</p>
+                <p style={{ color: '#007298', fontSize: '13px', fontWeight: '600', margin: 0 }}>+ $200 bar tab (Sea Terrace and up)</p>
                 <p style={{ color: '#007298', fontSize: '13px', fontWeight: '600', margin: 0 }}>+ No planning fee</p>
               </div>
               <a href="/group/transatlantic-10-2027" style={{ display: 'block', textAlign: 'center', backgroundColor: '#F59E0B', color: 'white', padding: '12px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px', marginTop: '4px' }}>See the Sailing</a>
