@@ -76,6 +76,9 @@ export default function TransatlanticPage() {
             </Link>
             <Link to="/login" className="hdt-btn hdt-btn-ghost" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>
               Already a Member? Sign In
+                          <a href="sms:6308231253?body=Hi%20Eric!%20I%20saw%20your%20Halloween%20Transatlantic%20ad." className="hdt-btn hdt-btn-ghost" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>
+              Text Eric
+            </a>
             </Link>
           </div>
         </div>
