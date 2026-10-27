@@ -3,7 +3,7 @@ import { useSignIn } from '@clerk/clerk-react'
 import { useNavigate } from 'react-router-dom'
 
 export default function LoginForm() {
-  const { signIn, isLoaded } = useSignIn()
+  const { signIn, setActive, isLoaded } = useSignIn()
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -24,7 +24,13 @@ export default function LoginForm() {
       })
 
       if (result.status === 'complete') {
+        // Turn the session on so the member pages know you're logged in
+        await setActive({ session: result.createdSessionId })
         navigate('/members')
+      } else {
+        // Clerk wants an extra step (like an email code). Show a message instead of doing nothing.
+        console.log('Sign-in status:', result.status)
+        setError('Almost there! Your account needs an extra verification step. Please contact Eric if this keeps happening.')
       }
     } catch (err: any) {
       setError(err?.errors?.[0]?.message || 'Invalid email or password. Please try again.')
