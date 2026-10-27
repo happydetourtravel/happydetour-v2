@@ -56,7 +56,7 @@ export default function MembersContent() {
       nights: '12 nights',
       dates: 'Oct 31 \u2013 Nov 12, 2027',
       ports: ['Barcelona, Spain', 'Tangier, Morocco', 'Lanzarote, Canary Islands', 'San Juan, Puerto Rico'],
-      blurb: 'Twelve nights from Barcelona to San Juan with the HDT group on Scarlet Lady, with Halloween at sea, stops in Morocco and the Canary Islands, and plenty of sea days to relax and meet the group.',
+      blurb: 'Twelve nights from Barcelona to San Juan with the Happy Detour Travel group on Scarlet Lady, with Halloween at sea, stops in Morocco and the Canary Islands, and plenty of sea days to relax and meet the group.',
       publicPage: '/group/transatlantic-10-2027',
       // Lock It In rate, per person based on two sharing a cabin, taxes and fees included
       cabins: [
@@ -295,7 +295,7 @@ export default function MembersContent() {
             <div style={{ marginBottom: '32px' }}>
               <div style={{ marginBottom: '20px' }}>
                 <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Group Sailings</p>
-                <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: '0 0 6px 0' }}>Sail With the HDT Group</h2>
+                <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: '0 0 6px 0' }}>Sail With the Happy Detour Travel Group</h2>
                 <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
                   Members get first dibs. Book a Sea Terrace cabin or higher at the Essentials rate and a $200 bar tab is included.
                 </p>
