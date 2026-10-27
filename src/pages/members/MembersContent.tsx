@@ -1,4 +1,4 @@
-import { useUser, SignedIn, SignedOut, RedirectToSignIn } from '@clerk/clerk-react'
+import { useUser, SignedIn, SignedOut, RedirectToSignIn, SignOutButton } from '@clerk/clerk-react'
 import { Link } from 'react-router-dom'
 import SailorLootSection from './SailorLootSection'
 
@@ -222,6 +222,13 @@ export default function MembersContent() {
                   Happy Detour Travel member since {memberSince}
                 </p>
               )}
+              <div style={{ marginTop: '12px' }}>
+                <SignOutButton redirectUrl="/">
+                  <button className="hdt-text-link" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: '#007298', fontSize: '13px', fontWeight: '700' }}>
+                    Log out
+                  </button>
+                </SignOutButton>
+              </div>
             </div>
 
             {/* Note from Eric */}
@@ -416,6 +423,15 @@ export default function MembersContent() {
                   Email Eric
                 </a>
               </div>
+            </div>
+
+            {/* Log out (bottom of page) */}
+            <div style={{ textAlign: 'center', marginTop: '24px' }}>
+              <SignOutButton redirectUrl="/">
+                <button className="hdt-text-link" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: '#6B7280', fontSize: '13px', fontWeight: '600' }}>
+                  Log out
+                </button>
+              </SignOutButton>
             </div>
 
           </div>
