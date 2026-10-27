@@ -3,7 +3,7 @@ import { useSignUp } from '@clerk/clerk-react'
 import { useNavigate } from 'react-router-dom'
 
 export default function VerifyForm() {
-  const { signUp, isLoaded } = useSignUp()
+  const { signUp, setActive, isLoaded } = useSignUp()
   const navigate = useNavigate()
   const [code, setCode] = useState(['', '', '', '', '', ''])
   const [error, setError] = useState('')
@@ -49,7 +49,13 @@ export default function VerifyForm() {
     try {
       const result = await signUp.attemptEmailAddressVerification({ code: fullCode })
       if (result.status === 'complete') {
+        // Turn the session on so the members page knows they're logged in
+        await setActive({ session: result.createdSessionId })
         navigate('/members')
+      } else {
+        // Something else still needs finishing. Show a message instead of doing nothing.
+        console.log('Sign-up status:', result.status)
+        setError('Almost there! Something still needs to be finished. Please contact Eric if this keeps happening.')
       }
     } catch (err: any) {
       setError(err?.errors?.[0]?.message || 'Invalid code. Please try again.')
@@ -71,8 +77,9 @@ export default function VerifyForm() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#F9FAFB', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px', fontFamily: 'sans-serif' }}>
-      <div style={{ backgroundColor: 'white', borderRadius: '20px', padding: '56px 48px', maxWidth: '480px', width: '100%', boxShadow: '0 4px 32px rgba(0,0,0,0.08)', textAlign: 'center' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#F9FAFB', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px 16px', fontFamily: 'sans-serif', boxSizing: 'border-box' }}>
+      {/* Padding shrinks on phones so the 6 code boxes fit */}
+      <div style={{ backgroundColor: 'white', borderRadius: '20px', padding: 'clamp(32px, 7vw, 56px) clamp(20px, 6vw, 48px)', maxWidth: '480px', width: '100%', boxShadow: '0 4px 32px rgba(0,0,0,0.08)', textAlign: 'center', boxSizing: 'border-box' }}>
 
         <div style={{ width: '64px', height: '64px', backgroundColor: '#EFF6FF', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px auto' }}>
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#007298" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -81,7 +88,7 @@ export default function VerifyForm() {
           </svg>
         </div>
 
-        <h1 style={{ color: '#1F2937', fontSize: '26px', fontWeight: '800', margin: '0 0 8px 0' }}>Check your email</h1>
+        <h1 style={{ color: '#1F2937', fontSize: 'clamp(22px, 5vw, 26px)', fontWeight: '800', margin: '0 0 8px 0' }}>Check your email</h1>
         <p style={{ color: '#6B7280', fontSize: '15px', lineHeight: '1.6', margin: '0 0 32px 0' }}>
           We sent a 6-digit verification code to your email address. Enter it below to activate your HDT account.
         </p>
@@ -99,20 +106,25 @@ export default function VerifyForm() {
         )}
 
         <form onSubmit={handleSubmit}>
-          <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginBottom: '32px' }}>
+          {/* Boxes shrink to fit small phones, max 52px wide on bigger screens */}
+          <div style={{ display: 'flex', gap: 'clamp(6px, 2vw, 10px)', justifyContent: 'center', marginBottom: '32px' }}>
             {code.map((digit, i) => (
               <input
                 key={i}
                 ref={el => { inputs.current[i] = el }}
                 type="text"
                 inputMode="numeric"
+                autoComplete={i === 0 ? 'one-time-code' : 'off'}
                 maxLength={1}
                 value={digit}
                 onChange={e => handleChange(i, e.target.value)}
                 onKeyDown={e => handleKeyDown(i, e)}
                 onPaste={i === 0 ? handlePaste : undefined}
+                aria-label={`Digit ${i + 1}`}
                 style={{
-                  width: '52px',
+                  flex: '1 1 0',
+                  minWidth: 0,
+                  maxWidth: '52px',
                   height: '60px',
                   textAlign: 'center',
                   fontSize: '24px',
@@ -122,7 +134,9 @@ export default function VerifyForm() {
                   outline: 'none',
                   color: '#1F2937',
                   backgroundColor: digit ? '#EFF6FF' : 'white',
-                  transition: 'all 0.15s ease'
+                  transition: 'all 0.15s ease',
+                  boxSizing: 'border-box',
+                  padding: 0,
                 }}
               />
             ))}
@@ -140,8 +154,9 @@ export default function VerifyForm() {
         <p style={{ color: '#6B7280', fontSize: '14px', margin: 0 }}>
           Did not get the email?{' '}
           <button
+            type="button"
             onClick={handleResend}
-            style={{ color: '#007298', fontWeight: '600', background: 'none', border: 'none', cursor: 'pointer', fontSize: '14px', padding: 0 }}
+            style={{ color: '#007298', fontWeight: '600', background: 'none', border: 'none', cursor: 'pointer', fontSize: '14px', padding: '4px 0' }}
           >
             Resend the code
           </button>
