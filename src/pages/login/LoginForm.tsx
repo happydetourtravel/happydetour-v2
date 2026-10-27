@@ -83,7 +83,7 @@ export default function LoginForm() {
               Good to see you again.
             </h1>
             <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '16px', lineHeight: '1.7', margin: '0 0 28px 0' }}>
-              Sign in to access your member deals, group cruise info, and exclusive sailings Eric has put together just for HDT members.
+              Sign in to access your member deals, group cruise info, and exclusive sailings Eric has put together just for Happy Detour Travel members.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {[
@@ -107,7 +107,7 @@ export default function LoginForm() {
             <h2 style={{ color: '#1F2937', fontSize: 'clamp(24px, 5vw, 28px)', fontWeight: '800', margin: '0 0 8px 0' }}>Sign in to your account</h2>
             <p style={{ color: '#6B7280', fontSize: '15px', margin: '0 0 28px 0' }}>
               Don't have an account?{' '}
-              <a href="/join" style={{ color: '#007298', fontWeight: '600', textDecoration: 'none' }}>Join HDT</a>
+              <a href="/join" style={{ color: '#007298', fontWeight: '600', textDecoration: 'none' }}>Join Happy Detour Travel</a>
             </p>
 
             {error && (
