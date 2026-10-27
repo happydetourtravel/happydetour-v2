@@ -58,6 +58,8 @@ export default function MembersContent() {
       ports: ['Barcelona, Spain', 'Tangier, Morocco', 'Lanzarote, Canary Islands', 'San Juan, Puerto Rico'],
       blurb: 'Twelve nights from Barcelona to San Juan with the Happy Detour Travel group on Scarlet Lady, with Halloween at sea, stops in Morocco and the Canary Islands, and plenty of sea days to relax and meet the group.',
       publicPage: '/group/transatlantic-10-2027',
+      // The date you last priced this cruise (shows in the price disclaimer)
+      pricedOn: 'October 20, 2026',
       // Lock It In rate, per person based on two sharing a cabin, taxes and fees included
       cabins: [
         { type: 'Insider', price: '$1,068' },
@@ -342,7 +344,7 @@ export default function MembersContent() {
                       ))}
                     </div>
                     <p style={{ color: '#9CA3AF', fontSize: '12px', lineHeight: '1.6', margin: '0 0 20px 0' }}>
-                      Prices shown are the Lock It In rate, per person based on two sharing a cabin, with taxes and fees included. The $200 bar tab applies to Sea Terrace and higher booked at the Essentials rate, which is priced a little higher. Eric will quote your exact price. Prices change often.
+                      Prices shown are the Lock It In rate, per person based on two sharing a cabin, with taxes and fees included. The $200 bar tab applies to Sea Terrace and higher booked at the Essentials rate, which is priced a little higher. Eric will quote your exact price. Prices are subject to change and were current at the time this cruise was priced on {g.pricedOn}.
                     </p>
                     <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                       <a href={`sms:6308231253?body=${encodeURIComponent(`Hi Eric! I'm interested in the ${g.name} group sailing.`)}`} className="hdt-btn hdt-btn-teal" style={{ backgroundColor: '#007298', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
