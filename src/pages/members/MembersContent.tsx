@@ -1,5 +1,5 @@
-import { useUser, SignedIn, SignedOut, RedirectToSignIn, SignOutButton } from '@clerk/clerk-react'
-import { Link } from 'react-router-dom'
+import { useUser, useClerk, SignedIn, SignedOut, RedirectToSignIn } from '@clerk/clerk-react'
+import { Link, useNavigate } from 'react-router-dom'
 import SailorLootSection from './SailorLootSection'
 
 function getGreeting() {
@@ -11,6 +11,14 @@ function getGreeting() {
 
 export default function MembersContent() {
   const { user } = useUser()
+  const { signOut } = useClerk()
+  const navigate = useNavigate()
+
+  // Signs the member out, then sends them to the homepage
+  const handleLogout = async () => {
+    await signOut()
+    navigate('/')
+  }
 
   const firstName = user?.firstName || ''
   const memberSince = user?.createdAt
@@ -223,11 +231,9 @@ export default function MembersContent() {
                 </p>
               )}
               <div style={{ marginTop: '12px' }}>
-                <SignOutButton redirectUrl="/">
-                  <button className="hdt-text-link" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: '#007298', fontSize: '13px', fontWeight: '700' }}>
-                    Log out
-                  </button>
-                </SignOutButton>
+                <button onClick={handleLogout} className="hdt-text-link" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: '#007298', fontSize: '13px', fontWeight: '700' }}>
+                  Log out
+                </button>
               </div>
             </div>
 
@@ -427,11 +433,9 @@ export default function MembersContent() {
 
             {/* Log out (bottom of page) */}
             <div style={{ textAlign: 'center', marginTop: '24px' }}>
-              <SignOutButton redirectUrl="/">
-                <button className="hdt-text-link" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: '#6B7280', fontSize: '13px', fontWeight: '600' }}>
-                  Log out
-                </button>
-              </SignOutButton>
+              <button onClick={handleLogout} className="hdt-text-link" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: '#6B7280', fontSize: '13px', fontWeight: '600' }}>
+                Log out
+              </button>
             </div>
 
           </div>
