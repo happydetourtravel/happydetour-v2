@@ -31,15 +31,24 @@ export default function TransatlanticPage() {
   return (
     <main style={{ backgroundColor: '#F9FAFB', minHeight: '80vh' }}>
       <style>{`
-        .hdt-btn { transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease; }
-        .hdt-btn:hover { transform: translateY(-1px); }
-        /* Hover: Virgin Voyages red (#CC0000) */
-        .hdt-btn-amber:hover { background-color: #CC0000 !important; }
-        .hdt-btn-ghost:hover { background-color: #CC0000 !important; border-color: #CC0000 !important; color: white !important; }
-        .hdt-btn-teal:hover { background-color: #CC0000 !important; }
-        /* Text links on dark or blue backgrounds: underline instead of red so they stay readable */
+        .hdt-btn { transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease; text-align: center; }
         .hdt-text-link { transition: color 0.2s ease; }
-        .hdt-text-link:hover { color: white !important; text-decoration: underline !important; }
+
+        /* Hover effects only on devices with a mouse, so the red doesn't "stick" after a tap on phones */
+        @media (hover: hover) {
+          .hdt-btn:hover { transform: translateY(-1px); }
+          /* Hover: Virgin Voyages red (#CC0000) */
+          .hdt-btn-amber:hover { background-color: #CC0000 !important; }
+          .hdt-btn-ghost:hover { background-color: #CC0000 !important; border-color: #CC0000 !important; color: white !important; }
+          .hdt-btn-teal:hover { background-color: #CC0000 !important; }
+          /* Text links on dark or blue backgrounds: underline instead of red so they stay readable */
+          .hdt-text-link:hover { color: white !important; text-decoration: underline !important; }
+        }
+
+        /* Phones: stack the top buttons full width so they line up neatly */
+        @media (max-width: 600px) {
+          .hdt-hero-btns { flex-direction: column; align-items: stretch; max-width: 360px; margin: 0 auto; }
+        }
       `}</style>
 
       {/* Halloween banner (full image, never cropped) */}
@@ -70,7 +79,7 @@ export default function TransatlanticPage() {
           <div style={{ display: 'inline-block', backgroundColor: 'rgba(255,255,255,0.15)', color: 'white', fontSize: '14px', fontWeight: '700', padding: '8px 16px', borderRadius: '999px', marginBottom: '28px' }}>
             {'🍹'} $200 bar tab with Sea Terrace cabins and up
           </div>
-          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="hdt-hero-btns" style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/join" className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '14px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '16px' }}>
               Join to Claim Your Spot
             </Link>
