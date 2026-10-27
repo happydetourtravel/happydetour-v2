@@ -108,7 +108,7 @@ export default function JoinForm() {
   }
 
   const perks = [
-    'Access to exclusive HDT group cruise deals',
+    'Access to exclusive Happy Detour Travel group cruise deals',
     'Early access to new sailings before they fill up',
     'Direct line to Eric for questions and planning',
     'A community of real cruisers just like you',
@@ -169,9 +169,9 @@ export default function JoinForm() {
         <div style={{ flex: '1 1 380px', minWidth: 0, backgroundColor: '#007298', padding: panelPadding, display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', overflow: 'hidden', boxSizing: 'border-box' }}>
           <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/hero-image.webp')", backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.15 }} />
           <div style={{ position: 'relative', maxWidth: '440px', width: '100%', margin: '0 auto' }}>
-            <p style={{ color: '#F59E0B', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', margin: '0 0 12px 0' }}>HDT Members</p>
+            <p style={{ color: '#F59E0B', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', margin: '0 0 12px 0' }}>Happy Detour Travel Members</p>
             <h1 style={{ color: 'white', fontSize: 'clamp(28px, 6vw, 40px)', fontWeight: '800', lineHeight: '1.2', margin: '0 0 16px 0' }}>
-              Join the HDT Club
+              Join the Happy Detour Travel Club
             </h1>
             <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '16px', lineHeight: '1.7', margin: '0 0 28px 0' }}>
               Get exclusive access to group cruise deals that Eric organizes personally. Real trips, real savings, and someone actually in your corner.
@@ -336,7 +336,7 @@ export default function JoinForm() {
               </div>
 
               <button type="submit" disabled={loading} style={{ width: '100%', backgroundColor: loading ? '#9CA3AF' : '#F59E0B', color: 'white', padding: '15px', borderRadius: '8px', border: 'none', fontSize: '16px', fontWeight: '700', cursor: loading ? 'not-allowed' : 'pointer', marginTop: '8px' }}>
-                {loading ? 'Creating your account...' : 'Join the HDT Club'}
+                {loading ? 'Creating your account...' : 'Join the Happy Detour Travel Club'}
               </button>
 
             </form>
