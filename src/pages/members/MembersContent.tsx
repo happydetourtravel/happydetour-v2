@@ -55,7 +55,7 @@ export default function MembersContent() {
     },
   ]
 
-  // Group sailings. To add another group, copy one block and change the details.
+  // Featured sailings (booked through Eric). To add another, copy one block and change the details.
   const groupSailings = [
     {
       line: 'Virgin Voyages',
@@ -64,7 +64,7 @@ export default function MembersContent() {
       nights: '12 nights',
       dates: 'Oct 31 \u2013 Nov 12, 2027',
       ports: ['Barcelona, Spain', 'Tangier, Morocco', 'Lanzarote, Canary Islands', 'San Juan, Puerto Rico'],
-      blurb: 'Twelve nights from Barcelona to San Juan with the Happy Detour Travel group on Scarlet Lady, with Halloween at sea, stops in Morocco and the Canary Islands, and plenty of sea days to relax and meet the group.',
+      blurb: 'Twelve nights from Barcelona to San Juan on Scarlet Lady, with Halloween at sea, stops in Morocco and the Canary Islands, and plenty of sea days to relax and make some new friends.',
       publicPage: '/group/transatlantic-10-2027',
       // The date you last priced this cruise (shows in the price disclaimer)
       pricedOn: 'October 20, 2026',
@@ -85,8 +85,8 @@ export default function MembersContent() {
   const everyTripPerks: Perk[] = [
     {
       icon: '\ud83c\udf9f\ufe0f',
-      title: 'First Dibs on Group Sailings',
-      desc: 'New group sailings show up for members first, before Eric posts them anywhere else. Best cabins go fast.',
+      title: 'First Dibs on Featured Sailings',
+      desc: 'New featured sailings show up for members first, before Eric posts them anywhere else. Best cabins go fast.',
     },
     {
       icon: '\ud83d\udcc9',
@@ -106,8 +106,8 @@ export default function MembersContent() {
     },
     {
       icon: '\ud83c\udf79',
-      title: '$200 Bar Tab on Group Sailings',
-      desc: 'Book a Sea Terrace cabin or higher at the Essentials rate on one of Eric\u2019s Virgin Voyages group sailings and a $200 bar tab is included.',
+      title: '$200 Bar Tab on Featured Sailings',
+      desc: 'Book a Sea Terrace cabin or higher at the Essentials rate on one of Eric\u2019s featured Virgin Voyages sailings and a $200 bar tab is included.',
     },
   ]
 
@@ -241,7 +241,7 @@ export default function MembersContent() {
             <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', borderLeft: '5px solid #F59E0B', padding: '28px 32px', boxShadow: '0 4px 24px rgba(0,0,0,0.06)', marginBottom: '32px' }}>
               <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 10px 0' }}>A Note From Eric</p>
               <p style={{ color: '#374151', fontSize: '15px', lineHeight: '1.8', margin: '0 0 12px 0' }}>
-                {firstName ? `Hey ${firstName}, thanks` : 'Thanks'} for being here. This page is where I keep the perks, deals, and group sailings I think are actually worth your time. No pressure and no sales pitch, just the good stuff.
+                {firstName ? `Hey ${firstName}, thanks` : 'Thanks'} for being here. This page is where I keep the perks, deals, and sailings I think are actually worth your time. No pressure and no sales pitch, just the good stuff.
               </p>
               <p style={{ color: '#374151', fontSize: '15px', lineHeight: '1.8', margin: '0 0 12px 0' }}>
                 If you ever have a question, big or small, text me. I&rsquo;m a real person and I&rsquo;ll get back to you.
@@ -302,17 +302,17 @@ export default function MembersContent() {
               </div>
               {renderPerkCards(virginPerks)}
               <p style={{ color: '#9CA3AF', fontSize: '12px', marginTop: '12px' }}>
-                Sailor Loot (through Eric&rsquo;s WorldVia network) and the group bar tab are offered by Virgin Voyages and are subject to change or end at any time. Eric will always confirm what applies before you book.
+                Sailor Loot (through Eric&rsquo;s WorldVia network) and the $200 bar tab are offered by Virgin Voyages and are subject to change or end at any time. Eric will always confirm what applies before you book.
               </p>
             </div>
 
-            {/* Group Sailings */}
+            {/* Featured Sailings */}
             <div style={{ marginBottom: '32px' }}>
               <div style={{ marginBottom: '20px' }}>
-                <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Group Sailings</p>
-                <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: '0 0 6px 0' }}>Sail With the Happy Detour Travel Group</h2>
+                <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Featured Sailings</p>
+                <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: '0 0 6px 0' }}>Sail With Eric</h2>
                 <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
-                  Members get first dibs. Book a Sea Terrace cabin or higher at the Essentials rate and a $200 bar tab is included.
+                  Members get first dibs. Book a Sea Terrace cabin or higher at the Essentials rate through Eric and a $200 bar tab is included.
                 </p>
               </div>
 
@@ -360,10 +360,10 @@ export default function MembersContent() {
                       Prices shown are the Lock It In rate, per person based on two sharing a cabin, with taxes and fees included. The $200 bar tab applies to Sea Terrace and higher booked at the Essentials rate, which is priced a little higher. Eric will quote your exact price. Prices are subject to change and were current at the time this cruise was priced on {g.pricedOn}.
                     </p>
                     <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                      <a href={`sms:6308231253?body=${encodeURIComponent(`Hi Eric! I'm interested in the ${g.name} group sailing.`)}`} className="hdt-btn hdt-btn-teal" style={{ backgroundColor: '#007298', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
+                      <a href={`sms:6308231253?body=${encodeURIComponent(`Hi Eric! I'm interested in the ${g.name} sailing.`)}`} className="hdt-btn hdt-btn-teal" style={{ backgroundColor: '#007298', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
                         Text Eric to Hold a Cabin
                       </a>
-                      <a href={`mailto:eric@happydetour.com?subject=${encodeURIComponent(`${g.name} group sailing`)}`} className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
+                      <a href={`mailto:eric@happydetour.com?subject=${encodeURIComponent(`${g.name} sailing`)}`} className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
                         Email Eric
                       </a>
                     </div>
@@ -378,7 +378,7 @@ export default function MembersContent() {
               </div>
 
               <p style={{ color: '#9CA3AF', fontSize: '12px', marginTop: '12px' }}>
-                Have a destination or cruise line in mind for a future group? Let Eric know. He&rsquo;s building these around what members actually want.
+                Have a destination or cruise line in mind for a future sailing? Let Eric know. He&rsquo;s picking these around what members actually want.
               </p>
             </div>
 
