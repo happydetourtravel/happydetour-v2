@@ -413,6 +413,29 @@ export default function MembersContent() {
               </p>
             </div>
 
+            {/* Search Virgin Voyages on your own (affiliate link) */}
+            <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', borderLeft: '5px solid #CC0000', padding: '28px 32px', boxShadow: '0 4px 24px rgba(0,0,0,0.06)', marginBottom: '32px' }}>
+              <p style={{ color: '#CC0000', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Browse on Your Own</p>
+              <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: '0 0 10px 0' }}>Looking for a Cruise?</h2>
+              <p style={{ color: '#374151', fontSize: '15px', lineHeight: '1.8', margin: '0 0 12px 0' }}>
+                Checking prices, comparing dates, or just daydreaming about destinations? Use my Virgin Voyages link to look around and find the sailing that fits you. When you book through it, your trip is connected to me, so I&rsquo;m still in your corner from start to finish.
+              </p>
+              <p style={{ color: '#374151', fontSize: '15px', lineHeight: '1.8', margin: '0 0 20px 0' }}>
+                If you have questions or need help picking, don&rsquo;t hesitate to reach out.
+              </p>
+              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+                <a href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK" target="_blank" rel="noopener noreferrer" className="hdt-btn hdt-btn-teal" style={{ backgroundColor: '#007298', color: 'white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>
+                  Search Virgin Voyages Cruises
+                </a>
+                <a href={`sms:6308231253?body=${encodeURIComponent('Hi Eric! I have a question about picking a Virgin Voyages cruise.')}`} className="hdt-text-link" style={{ color: '#007298', fontSize: '14px', fontWeight: '700', textDecoration: 'none' }}>
+                  Or text Eric &rarr;
+                </a>
+              </div>
+              <p style={{ color: '#9CA3AF', fontSize: '12px', lineHeight: '1.6', margin: '16px 0 0 0' }}>
+                Heads up: for featured sailings like the Halloween Transatlantic, text Eric to book so you get the $200 bar tab.
+              </p>
+            </div>
+
             <SailorLootSection />
 
             {/* Contact */}
