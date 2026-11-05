@@ -75,6 +75,7 @@ export const routes: RouteRecord[] = [
       { path: 'blog', entry: 'src/pages/blog/index/page.tsx', lazy: () => import('./pages/blog/index/page').then((m) => ({ Component: m.default })) },
       { path: 'blog/:slug', entry: 'src/pages/blog/post/page.tsx', lazy: () => import('./pages/blog/post/page').then((m) => ({ Component: m.default })) },
       { path: 'group/transatlantic-10-2027', entry: 'src/pages/group/transatlantic-10-2027/page.tsx', lazy: () => import('./pages/group/transatlantic-10-2027/page').then((m) => ({ Component: m.default })) },
+      { path: 'jsister', entry: 'src/pages/jsister/page.tsx', lazy: () => import('./pages/jsister/page').then((m) => ({ Component: m.default })) },
       { path: 'group/baja-halloween-2027', entry: 'src/pages/group/baja-halloween-2027/page.tsx', lazy: () => import('./pages/group/baja-halloween-2027/page').then((m) => ({ Component: m.default })) },
     ],
   },
