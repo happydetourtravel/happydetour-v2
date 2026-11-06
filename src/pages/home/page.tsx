@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { VirginLink } from '../../components/VirginRedirect'
 
 const featuredDeals = [
   { tag: "VIRGIN VOYAGES", title: "Caribbean Escape: Bahamas & Key West", date: "Jan 2027", nights: "4 nights", ship: "Scarlet Lady · Miami", originalPrice: "$699", salePrice: "$549", link: "/cruises/bahamas-key-west" },
@@ -184,14 +185,11 @@ export default function Home() {
               </div>
 
               <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-                <a
-                  href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <VirginLink
                   style={{ backgroundColor: '#F59E0B', color: 'white', textAlign: 'center', padding: '13px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}
                 >
                   Search &amp; Book Virgin Voyages
-                </a>
+                </VirginLink>
                 <a
                   href="/cruises/virgin-voyages#bar-tab"
                   style={{ backgroundColor: 'white', color: '#CC0000', textAlign: 'center', padding: '13px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}
