@@ -283,7 +283,7 @@ export default function Home() {
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
                 <div style={{ backgroundColor: 'white', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '16px' }}>
-                  <p style={{ color: '#007298', fontWeight: '700', fontSize: '14px', margin: '0 0 4px 0' }}>40+ cruises, 100+ nights at sea</p>
+                  <p style={{ color: '#007298', fontWeight: '700', fontSize: '14px', margin: '0 0 4px 0' }}>25+ cruises, 150+ nights at sea</p>
                   <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>Real experience, not just a booking screen</p>
                 </div>
                 <div style={{ backgroundColor: 'white', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '16px' }}>
