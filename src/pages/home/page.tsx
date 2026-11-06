@@ -28,7 +28,7 @@ const virginPoints = [
   { label: "All restaurants included", desc: "No buffets, no upcharge dining" },
   { label: "Unlimited WiFi", desc: "Stay connected the whole trip, no extra fee" },
   { label: "Fitness classes included", desc: "Yoga and more, no extra charge" },
-  { label: "No planning fee", desc: "Book direct, Eric still looks after everything" },
+  { label: "No planning fee with Eric", desc: "Book through Eric and he still looks after everything" },
 ]
 
 // Quick Virgin Voyages FAQ, shown right inside the Virgin section
@@ -164,78 +164,17 @@ export default function Home() {
         .testimonial-scroll::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 10px; }
       `}</style>
 
-      {/* Why Book With Eric */}
-      <div style={{ backgroundColor: '#F9FAFB', padding: '60px 20px' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px', textAlign: 'center' }}>Why Book With Eric</p>
-          <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: '0 0 32px 0', textAlign: 'center' }}>Not just booked. Looked after.</h2>
-
-          <div style={{ display: 'flex', gap: '32px', alignItems: 'flex-start', flexWrap: 'wrap' }} className="why-eric-inner">
-            <div style={{ flex: '0 0 140px', textAlign: 'center', margin: '0 auto' }}>
-              <img
-                src="/eric-headshot.jpeg"
-                alt="Eric Carney, founder of Happy Detour Travel"
-                style={{ width: '120px', height: '120px', borderRadius: '50%', objectFit: 'cover', margin: '0 auto 12px auto', display: 'block' }}
-              />
-              <p style={{ color: '#1F2937', fontWeight: '700', fontSize: '15px', margin: 0 }}>Eric Carney</p>
-              <p style={{ color: '#6B7280', fontSize: '12px', margin: '2px 0 0 0' }}>Founder, Happy Detour Travel</p>
-            </div>
-
-            <div style={{ flex: '1', minWidth: '280px' }}>
-              <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.7', margin: '0 0 20px 0' }}>
-                Anyone can book a trip. I am the one who answers the phone when things do not go as planned. I have sailed over 20 cruises myself, so when I recommend a ship, it comes from actually being there, not a brochure.
-              </p>
-
-              <div style={{ backgroundColor: 'white', borderLeft: '4px solid #007298', borderRadius: '8px', padding: '18px 20px', margin: '0 0 20px 0' }}>
-                <p style={{ color: '#1F2937', fontSize: '14px', lineHeight: '1.7', fontStyle: 'italic', margin: '0 0 10px 0' }}>
-                  "Not every cruise line is right for every person. I don't start by asking which cruise is the cheapest. I want to know what you actually want your vacation to feel like. Do you want quiet and relaxing? Lots to do? Adults only? Great food? A ship that's good for the whole family? The right cruise isn't always the one with the best deal. It's the one that fits you. That's where I come in."
-                </p>
-                <p style={{ color: '#007298', fontWeight: '700', fontSize: '13px', margin: 0 }}>Eric Carney, Happy Detour Travel</p>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
-                <div style={{ backgroundColor: 'white', border: '1px solid #F3F4F6', borderRadius: '12px', padding: '16px' }}>
-                  <p style={{ color: '#007298', fontWeight: '700', fontSize: '14px', margin: '0 0 4px 0' }}>20+ cruises, 100+ nights at sea</p>
-                  <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>Real experience, not just a booking screen</p>
-                </div>
-                <div style={{ backgroundColor: 'white', border: '1px solid #F3F4F6', borderRadius: '12px', padding: '16px' }}>
-                  <p style={{ color: '#007298', fontWeight: '700', fontSize: '14px', margin: '0 0 4px 0' }}>Virgin Voyages First Mate, Gold Tier</p>
-                  <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>Also certified across NCL, Royal Caribbean, MSC</p>
-                </div>
-                <div style={{ backgroundColor: 'white', border: '1px solid #F3F4F6', borderRadius: '12px', padding: '16px' }}>
-                  <p style={{ color: '#007298', fontWeight: '700', fontSize: '14px', margin: '0 0 4px 0' }}>No surprises, no pressure</p>
-                  <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>Whichever way you book</p>
-                </div>
-                <div style={{ backgroundColor: 'white', border: '1px solid #F3F4F6', borderRadius: '12px', padding: '16px' }}>
-                  <p style={{ color: '#007298', fontWeight: '700', fontSize: '14px', margin: '0 0 4px 0' }}>Here when something goes wrong</p>
-                  <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>A real person, not a hold line</p>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', gap: '20px', marginTop: '24px', flexWrap: 'wrap' }}>
-                <a href="sms:6308231253" style={{ color: '#F59E0B', fontWeight: '600', fontSize: '14px', textDecoration: 'none' }}>
-                  Text Eric: 630-823-1253
-                </a>
-                <a href="mailto:eric@happydetour.com" style={{ color: '#F59E0B', fontWeight: '600', fontSize: '14px', textDecoration: 'none' }}>
-                  Email Eric
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ============ WHY VIRGIN VOYAGES (headline section) ============ */}
+      {/* ============ WHY VIRGIN VOYAGES (headline section, now right under the hero) ============ */}
       <div id="virgin-voyages" style={{ background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 94%, rgba(255,255,255,1) 100%), linear-gradient(to right, #CC0000 0%, #CC0000 35%, #F0A39D 100%)', padding: '64px 20px 48px 20px' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <div style={{ display: 'flex', gap: '40px', alignItems: 'center', flexWrap: 'wrap' }} className="why-virgin-inner">
 
             <div style={{ flex: '1', minWidth: '280px' }}>
-              <span style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: '#F59E0B', fontSize: '11px', fontWeight: '700', letterSpacing: '1px', padding: '4px 12px', borderRadius: '100px', textTransform: 'uppercase' }}>Our Specialty</span>
-              <h2 style={{ color: 'white', fontSize: 'clamp(28px, 5vw, 40px)', fontWeight: '800', margin: '14px 0 10px 0' }}>Virgin Voyages is what we do best.</h2>
+              <span style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: '#F59E0B', fontSize: '11px', fontWeight: '700', letterSpacing: '1px', padding: '4px 12px', borderRadius: '100px', textTransform: 'uppercase' }}>My Specialty</span>
+              <h2 style={{ color: 'white', fontSize: 'clamp(28px, 5vw, 40px)', fontWeight: '800', margin: '14px 0 10px 0' }}>Virgin Voyages is what I do best.</h2>
               <p style={{ color: '#F59E0B', fontSize: '15px', fontWeight: '600', margin: '0 0 16px 0' }}>Voted Travel + Leisure's #1 Mega-Ship Ocean Cruise Line, four years in a row (2023 to 2026).</p>
               <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '14px', lineHeight: '1.7', margin: '0 0 24px 0' }}>
-                No nickel and diming, everything that matters is already included. Eric is First Mate Gold certified and can search live sailings and book you directly, with no planning fee.
+                No nickel and diming, everything that matters is already included. I'm First Mate Gold certified and can search live sailings and book you directly, with no planning fee.
               </p>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '28px' }}>
@@ -304,10 +243,10 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Also Booking These Lines. Plain text links, stays out of Virgin's way */}
+      {/* Also Booking These Lines. Plain text links, stays right under Virgin as the "not the right fit?" option */}
       <div id="cruise-lines" style={{ backgroundColor: '#F3F4F6', padding: '32px 20px', textAlign: 'center' }}>
         <p style={{ color: '#6B7280', fontSize: '11px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', margin: '0 0 6px 0' }}>Also Booking</p>
-        <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 14px 0' }}>If Virgin is not the right fit, we've got you covered too.</p>
+        <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 14px 0' }}>If Virgin is not the right fit, I've got you covered too.</p>
         <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap', fontSize: '14px', fontWeight: '600' }}>
           {otherLines.map((line, i) => (
             <span key={line.name} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -318,8 +257,69 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Group Sailing: Scarlet Lady Halloween Transatlantic (only active group) */}
+      {/* Why Book With Eric (white background so it stands apart from the gray strip above) */}
       <div style={{ backgroundColor: 'white', padding: '60px 20px' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px', textAlign: 'center' }}>Why Book With Eric</p>
+          <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: '0 0 32px 0', textAlign: 'center' }}>Not just booked. Looked after.</h2>
+
+          <div style={{ display: 'flex', gap: '32px', alignItems: 'flex-start', flexWrap: 'wrap' }} className="why-eric-inner">
+            <div style={{ flex: '0 0 140px', textAlign: 'center', margin: '0 auto' }}>
+              <img
+                src="/eric-headshot.jpeg"
+                alt="Eric Carney, founder of Happy Detour Travel"
+                style={{ width: '120px', height: '120px', borderRadius: '50%', objectFit: 'cover', margin: '0 auto 12px auto', display: 'block' }}
+              />
+              <p style={{ color: '#1F2937', fontWeight: '700', fontSize: '15px', margin: 0 }}>Eric Carney</p>
+              <p style={{ color: '#6B7280', fontSize: '12px', margin: '2px 0 0 0' }}>Founder, Happy Detour Travel</p>
+            </div>
+
+            <div style={{ flex: '1', minWidth: '280px' }}>
+              <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.7', margin: '0 0 20px 0' }}>
+                Anyone can book a trip. I am the one who answers the phone when things do not go as planned. I have sailed over 20 cruises myself, so when I recommend a ship, it comes from actually being there, not a brochure.
+              </p>
+
+              <div style={{ backgroundColor: '#F9FAFB', borderLeft: '4px solid #007298', borderRadius: '8px', padding: '18px 20px', margin: '0 0 20px 0' }}>
+                <p style={{ color: '#1F2937', fontSize: '14px', lineHeight: '1.7', fontStyle: 'italic', margin: '0 0 10px 0' }}>
+                  "Not every cruise line is right for every person. I don't start by asking which cruise is the cheapest. I want to know what you actually want your vacation to feel like. Do you want quiet and relaxing? Lots to do? Adults only? Great food? A ship that's good for the whole family? The right cruise isn't always the one with the best deal. It's the one that fits you. That's where I come in."
+                </p>
+                <p style={{ color: '#007298', fontWeight: '700', fontSize: '13px', margin: 0 }}>Eric Carney, Happy Detour Travel</p>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
+                <div style={{ backgroundColor: 'white', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '16px' }}>
+                  <p style={{ color: '#007298', fontWeight: '700', fontSize: '14px', margin: '0 0 4px 0' }}>20+ cruises, 100+ nights at sea</p>
+                  <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>Real experience, not just a booking screen</p>
+                </div>
+                <div style={{ backgroundColor: 'white', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '16px' }}>
+                  <p style={{ color: '#007298', fontWeight: '700', fontSize: '14px', margin: '0 0 4px 0' }}>Virgin Voyages First Mate, Gold Tier</p>
+                  <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>Also certified across NCL, Royal Caribbean, MSC</p>
+                </div>
+                <div style={{ backgroundColor: 'white', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '16px' }}>
+                  <p style={{ color: '#007298', fontWeight: '700', fontSize: '14px', margin: '0 0 4px 0' }}>No surprises, no pressure</p>
+                  <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>Whichever way you book</p>
+                </div>
+                <div style={{ backgroundColor: 'white', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '16px' }}>
+                  <p style={{ color: '#007298', fontWeight: '700', fontSize: '14px', margin: '0 0 4px 0' }}>Here when something goes wrong</p>
+                  <p style={{ color: '#6B7280', fontSize: '12px', margin: 0 }}>A real person, not a hold line</p>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: '20px', marginTop: '24px', flexWrap: 'wrap' }}>
+                <a href="sms:6308231253" style={{ color: '#F59E0B', fontWeight: '600', fontSize: '14px', textDecoration: 'none' }}>
+                  Text Eric: 630-823-1253
+                </a>
+                <a href="mailto:eric@happydetour.com" style={{ color: '#F59E0B', fontWeight: '600', fontSize: '14px', textDecoration: 'none' }}>
+                  Email Eric
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Group Sailing: Scarlet Lady Halloween Transatlantic (only active group). Light gray so it doesn't blend into the white section above */}
+      <div style={{ backgroundColor: '#F9FAFB', padding: '60px 20px' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '32px' }}>
             <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Group Sailing</p>
@@ -359,8 +359,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Testimonials */}
-      <div style={{ backgroundColor: '#F9FAFB', padding: '60px 20px' }}>
+      {/* Testimonials. White background to alternate with the gray group section above */}
+      <div style={{ backgroundColor: 'white', padding: '60px 20px' }}>
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>What People Say</p>
           <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: 0 }}>Real people. Real trips. No surprises.</h2>
