@@ -4,7 +4,7 @@ import { useState, useEffect, type ReactNode, type CSSProperties, type MouseEven
 export const VIRGIN_AFFILIATE_LINK =
   'https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK'
 
-const COUNTDOWN_SECONDS = 5
+const COUNTDOWN_SECONDS = 8
 const EVENT_NAME = 'hdt:virgin-redirect'
 
 type Sailing = { title: string; details: string }
