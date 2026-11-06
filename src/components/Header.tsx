@@ -13,13 +13,13 @@ export default function Header() {
     <>
       {/* Announcement Bar */}
       <div className="w-full bg-brand-amber text-white text-left py-2 px-4 text-sm font-medium flex items-center gap-1.5">
-        <span>Sailings for 2026–2027 are selling fast.</span>{' '}
-        <button 
-          onClick={() => setModalOpen(true)} 
-          className="underline font-bold hover:text-brand-dark transition-colors bg-transparent border-none p-0 cursor-pointer text-sm text-white"
+        <span>🎃 Sail with the HDT crew: Halloween Transatlantic on Scarlet Lady, Oct 2027.</span>{' '}
+        <Link
+          to="/group/transatlantic-10-2027"
+          className="underline font-bold hover:text-brand-dark transition-colors text-sm text-white whitespace-nowrap"
         >
-          Learn More
-        </button>
+          See the sailing →
+        </Link>
       </div>
 
       {/* Header */}
@@ -33,6 +33,7 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-brand-dark">
             <Link to="/" className="hover:text-brand-blue transition-colors">Home</Link>
             <Link to="/about" className="hover:text-brand-blue transition-colors">About</Link>
+            <Link to="/cruises/virgin-voyages" style={{ color: '#CC0000', fontWeight: '700' }} className="hover:opacity-80 transition-opacity">Virgin Voyages</Link>
             <a
               href="https://www.facebook.com/groups/somuchtosea"
               target="_blank"
@@ -93,7 +94,7 @@ export default function Header() {
                     className="hover:bg-gray-50 transition-colors"
                     style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 16px', fontSize: '14px', color: '#1F2937', textDecoration: 'none', fontWeight: '600' }}
                   >
-                    💃 Book Virgin Voyages Directly
+                    💃 Search & Book Virgin with Eric
                   </a>
                 </div>
               )}
@@ -137,6 +138,7 @@ export default function Header() {
             {[
               { label: 'Home', to: '/' },
               { label: 'About', to: '/about' },
+              { label: 'Virgin Voyages Guide', to: '/cruises/virgin-voyages' },
             ].map((item) => (
               <Link
                 key={item.to}
@@ -186,7 +188,7 @@ export default function Header() {
               onClick={() => setMenuOpen(false)}
               style={{ display: 'block', padding: '12px 8px', fontSize: '15px', fontWeight: '500', color: '#007298', textDecoration: 'none' }}
             >
-              💃 Book Virgin Voyages Directly
+              💃 Search & Book Virgin with Eric
             </a>
           </div>
         )}
@@ -215,7 +217,7 @@ export default function Header() {
                 Find your next detour.
               </h2>
               <p style={{ color: '#BAE6FD', fontSize: '14px', margin: 0, lineHeight: '1.5' }}>
-                Get first dibs on cruise deals, resort updates, and honest travel tips from someone actually in your corner. No spam. Just good stuff.
+                Get first dibs on Virgin Voyages deals, group sailings, and honest cruise tips from someone actually in your corner. No spam. Just good stuff.
               </p>
             </div>
             <div style={{ padding: '24px 28px 28px' }}>
