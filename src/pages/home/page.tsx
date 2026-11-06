@@ -109,11 +109,8 @@ export default function Home() {
             <p style={{ color: '#F59E0B', fontSize: 'clamp(16px, 4vw, 20px)', fontWeight: '700', margin: '0 0 16px 0' }}>
               Your Virgin Voyages specialist, from first question to back home.
             </p>
-            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '15px', lineHeight: '1.7', margin: '0 0 12px 0', maxWidth: '480px' }}>
+            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '15px', lineHeight: '1.7', margin: '0 0 28px 0', maxWidth: '480px' }}>
               Skip the corporate fluff and the hold music. I help you find the right sailing, talk through every detail before anything is confirmed, and stay with you until you are back home.
-            </p>
-            <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '13px', margin: '0 0 28px 0' }}>
-              Also booking NCL, MSC, Royal Caribbean &amp; Carnival
             </p>
           </div>
 
