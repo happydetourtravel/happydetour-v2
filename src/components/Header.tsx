@@ -1,6 +1,7 @@
 import { useState, lazy, Suspense } from 'react'
 import { Link } from 'react-router-dom'
 import { ClientOnly } from 'vite-react-ssg'
+import { VirginLink, VirginRedirectModal } from './VirginRedirect'
 
 const AuthNavLink = lazy(() => import('./AuthNavLink'))
 
@@ -87,15 +88,13 @@ export default function Header() {
                   >
                     🧳 Virgin Voyages Deals
                   </Link>
-                  <a
-                    href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <VirginLink
+                    onClick={() => setDropdownOpen(false)}
                     className="hover:bg-gray-50 transition-colors"
                     style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 16px', fontSize: '14px', color: '#1F2937', textDecoration: 'none', fontWeight: '600' }}
                   >
                     💃 Search & Book Virgin with Eric
-                  </a>
+                  </VirginLink>
                 </div>
               )}
             </div>
@@ -181,18 +180,18 @@ export default function Header() {
             >
               🧳 Virgin Voyages Deals
             </Link>
-            <a
-              href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK"
-              target="_blank"
-              rel="noopener noreferrer"
+            <VirginLink
               onClick={() => setMenuOpen(false)}
               style={{ display: 'block', padding: '12px 8px', fontSize: '15px', fontWeight: '500', color: '#007298', textDecoration: 'none' }}
             >
               💃 Search & Book Virgin with Eric
-            </a>
+            </VirginLink>
           </div>
         )}
       </header>
+
+      {/* "Heading to Virgin Voyages" popup. Mounted once here so every VirginLink on the site can use it */}
+      <ClientOnly>{() => <VirginRedirectModal />}</ClientOnly>
 
       {/* Mailing List Modal */}
       {modalOpen && (
