@@ -131,13 +131,10 @@ export default function Home() {
               Virgin Voyages Specialist · First Mate Gold
             </span>
             <h1 style={{ color: 'white', fontSize: 'clamp(28px, 6vw, 46px)', fontWeight: '800', lineHeight: '1.15', margin: '0 0 16px 0' }}>
-              Real trips. Real value. Someone actually in your corner.
-            </h1>
-            <p style={{ color: '#F59E0B', fontSize: 'clamp(16px, 4vw, 20px)', fontWeight: '700', margin: '0 0 16px 0' }}>
               Your Virgin Voyages specialist, from first question to back home.
-            </p>
+            </h1>
             <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '15px', lineHeight: '1.7', margin: '0 0 28px 0', maxWidth: '480px' }}>
-              Skip the corporate fluff and the hold music. I help you find the right sailing, talk through every detail before anything is confirmed, and stay with you until you are back home.
+              Skip the corporate fluff and the hold music. I help you find the right sailing, talk through every detail before anything is confirmed, and stay in your corner the whole way.
             </p>
           </div>
 
