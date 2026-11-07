@@ -1,5 +1,6 @@
 import { useUser, useClerk, SignedIn, SignedOut, RedirectToSignIn } from '@clerk/clerk-react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import SailorLootSection from './SailorLootSection'
 
 function getGreeting() {
@@ -13,6 +14,23 @@ export default function MembersContent() {
   const { user } = useUser()
   const { signOut } = useClerk()
   const navigate = useNavigate()
+  const location = useLocation()
+
+  // If someone lands here with a section in the link (like /members#sailor-loot),
+  // scroll to that section once the page has loaded and briefly highlight it
+  useEffect(() => {
+    if (!user || !location.hash) return
+    const timer = setTimeout(() => {
+      const el = document.getElementById(location.hash.replace('#', ''))
+      if (!el) return
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      el.classList.remove('hdt-flash')
+      void el.offsetWidth
+      el.classList.add('hdt-flash')
+      setTimeout(() => el.classList.remove('hdt-flash'), 2600)
+    }, 300)
+    return () => clearTimeout(timer)
+  }, [user, location.hash])
 
   // Signs the member out, then sends them to the homepage
   const handleLogout = async () => {
