@@ -44,13 +44,29 @@ export default function Home() {
   const [dealIndex, setDealIndex] = useState(0)
   const deal = featuredDeals[dealIndex]
   const testimonialScrollRef = useRef<HTMLDivElement>(null)
+  const dealPausedRef = useRef(false)
+  const dealResumeRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
 
+  // Deals rotate every 7 seconds, and hold still while someone hovers or taps the card
   useEffect(() => {
     const timer = setInterval(() => {
+      if (dealPausedRef.current) return
       setDealIndex((prev) => (prev + 1) % featuredDeals.length)
-    }, 4000)
-    return () => clearInterval(timer)
+    }, 7000)
+    return () => {
+      clearInterval(timer)
+      clearTimeout(dealResumeRef.current)
+    }
   }, [])
+
+  const pauseDeals = () => {
+    dealPausedRef.current = true
+    clearTimeout(dealResumeRef.current)
+  }
+  const resumeDeals = (delay = 0) => {
+    clearTimeout(dealResumeRef.current)
+    dealResumeRef.current = setTimeout(() => { dealPausedRef.current = false }, delay)
+  }
 
   useEffect(() => {
     const el = testimonialScrollRef.current
@@ -62,10 +78,14 @@ export default function Home() {
     const pauseThenResume = () => {
       paused = true
       clearTimeout(resumeTimeout)
-      resumeTimeout = setTimeout(() => { paused = false }, 4000)
+      resumeTimeout = setTimeout(() => { paused = false }, 8000)
     }
+    const pauseOnHover = () => { paused = true; clearTimeout(resumeTimeout) }
+    const resumeAfterHover = () => { paused = false }
     el.addEventListener('touchstart', pauseThenResume)
     el.addEventListener('wheel', pauseThenResume)
+    el.addEventListener('mouseenter', pauseOnHover)
+    el.addEventListener('mouseleave', resumeAfterHover)
 
     const interval = setInterval(() => {
       if (paused) return
@@ -75,13 +95,15 @@ export default function Home() {
       } else {
         el.scrollBy({ left: scrollAmount, behavior: 'smooth' })
       }
-    }, 3000)
+    }, 6000)
 
     return () => {
       clearInterval(interval)
       clearTimeout(resumeTimeout)
       el.removeEventListener('touchstart', pauseThenResume)
       el.removeEventListener('wheel', pauseThenResume)
+      el.removeEventListener('mouseenter', pauseOnHover)
+      el.removeEventListener('mouseleave', resumeAfterHover)
     }
   }, [])
 
@@ -116,7 +138,12 @@ export default function Home() {
           </div>
 
           {/* Deal Card */}
-          <div style={{ width: '100%', maxWidth: '380px' }}>
+          <div
+            style={{ width: '100%', maxWidth: '380px' }}
+            onMouseEnter={pauseDeals}
+            onMouseLeave={() => resumeDeals()}
+            onTouchStart={() => { pauseDeals(); resumeDeals(10000) }}
+          >
             <div style={{ backgroundColor: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,0.25)' }}>
               <div style={{ backgroundColor: '#1F2937', padding: '12px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <span style={{ color: '#F59E0B', fontSize: '11px', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase' }}>Featured Virgin Voyages Deal</span>
@@ -137,7 +164,7 @@ export default function Home() {
                 <a href={deal.link} aria-label={`Get this deal: ${deal.title}`} style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>Get This Deal</a>
                 <a href="sms:6308231253" style={{ display: 'block', textAlign: 'center', color: '#6B7280', fontSize: '12px', fontWeight: '600', textDecoration: 'none', margin: '10px 0 0 0' }}>Prefer help? Text Eric →</a>
                 <p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: '8px 0 0 0', lineHeight: '1.5' }}>Prices are estimates. Contact Eric for current availability.</p>
-                <p style={{ color: '#D1D5DB', fontSize: '10px', textAlign: 'center', margin: '4px 0 0 0' }}>Updated October 2026</p>
+                <p style={{ color: '#D1D5DB', fontSize: '10px', textAlign: 'center', margin: '4px 0 0 0' }}>Updated November 2026</p>
               </div>
               <div style={{ padding: '12px 20px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', borderTop: '1px solid #F3F4F6' }}>
                 {featuredDeals.map((_, i) => (
@@ -271,7 +298,7 @@ export default function Home() {
 
             <div style={{ flex: '1', minWidth: '280px' }}>
               <p style={{ color: '#374151', fontSize: '14px', lineHeight: '1.7', margin: '0 0 20px 0' }}>
-                Anyone can book a trip. I am the one who answers the phone when things do not go as planned. I have sailed over 20 cruises myself, so when I recommend a ship, it comes from actually being there, not a brochure.
+                Anyone can book a trip. I am the one who answers the phone when things do not go as planned. I have sailed over 25 cruises myself, so when I recommend a ship, it comes from actually being there, not a brochure.
               </p>
 
               <div style={{ backgroundColor: '#F9FAFB', borderLeft: '4px solid #007298', borderRadius: '8px', padding: '18px 20px', margin: '0 0 20px 0' }}>
