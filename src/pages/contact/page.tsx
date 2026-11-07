@@ -1,77 +1,76 @@
 export default function Contact() {
+  const cardClass =
+    'group flex items-center gap-4 sm:gap-5 bg-white border border-[#E5E7EB] rounded-2xl p-5 sm:px-8 sm:py-7 no-underline shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition duration-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.10)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#007298] focus-visible:ring-offset-2'
+
+  const iconClass =
+    'flex items-center justify-center shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-[14px] text-xl sm:text-2xl'
+
   return (
-    <main style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', padding: '80px 24px' }}>
-      <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+    <main className="bg-[#F9FAFB] min-h-screen px-5 py-12 sm:px-6 sm:py-20">
+      <div className="max-w-[600px] mx-auto">
 
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Get In Touch</p>
-          <h1 style={{ color: '#1F2937', fontSize: '36px', fontWeight: '800', margin: '0 0 16px 0', lineHeight: '1.2' }}>
+        <div className="text-center mb-10 sm:mb-12">
+          <p className="text-[#007298] text-xs font-bold tracking-[2px] uppercase mb-2">
+            Get In Touch
+          </p>
+          <h1 className="text-[#1F2937] text-3xl sm:text-4xl font-extrabold leading-tight mb-4">
             Let's talk about your next trip.
           </h1>
-          <p style={{ color: '#6B7280', fontSize: '16px', lineHeight: '1.7', maxWidth: '480px', margin: '0 auto' }}>
-            No hold music. No runaround. Just reach out directly and Eric will get back to you.
+          <p className="text-[#6B7280] text-base leading-relaxed max-w-[480px] mx-auto">
+            No hold music. No runaround. Just reach out and I'll get back to you.
           </p>
         </div>
 
         {/* Contact Options */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '48px' }}>
+        <div className="flex flex-col gap-4 mb-6">
 
           {/* Text */}
-          
-           <a href="sms:6308231253"
-            style={{ backgroundColor: 'white', border: '1px solid #E5E7EB', borderRadius: '16px', padding: '28px 32px', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '20px', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', transition: 'box-shadow 0.2s' }}
-          >
-            <div style={{ width: '56px', height: '56px', backgroundColor: '#007298', borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', flexShrink: 0 }}>
-              📱
-            </div>
-            <div>
-              <p style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>Send a Text</p>
-              <p style={{ color: '#6B7280', fontSize: '14px', margin: '0 0 4px 0' }}>630-823-1253</p>
-              <p style={{ color: '#9CA3AF', fontSize: '13px', margin: 0 }}>Fastest way to reach Eric directly</p>
+          <a href="sms:6308231253" className={cardClass}>
+            <div className={`${iconClass} bg-[#007298]`} aria-hidden="true">📱</div>
+            <div className="min-w-0">
+              <p className="text-[#1F2937] font-bold text-base sm:text-lg mb-1">Send a Text</p>
+              <p className="text-[#6B7280] text-sm mb-1">630-823-1253</p>
+              <p className="text-[#9CA3AF] text-[13px]">Fastest way to reach me</p>
             </div>
           </a>
 
           {/* Email */}
-          
-           <a href="mailto:eric@happydetour.com?subject=Trip%20Inquiry%20-%20Happy%20Detour%20Travel"
-            style={{ backgroundColor: 'white', border: '1px solid #E5E7EB', borderRadius: '16px', padding: '28px 32px', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '20px', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', transition: 'box-shadow 0.2s' }}
+          <a
+            href="mailto:eric@happydetour.com?subject=Trip%20Inquiry%20-%20Happy%20Detour%20Travel"
+            className={cardClass}
           >
-            <div style={{ width: '56px', height: '56px', backgroundColor: '#F59E0B', borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', flexShrink: 0 }}>
-              ✉️
-            </div>
-            <div>
-              <p style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>Send an Email</p>
-              <p style={{ color: '#6B7280', fontSize: '14px', margin: '0 0 4px 0' }}>eric@happydetour.com</p>
-              <p style={{ color: '#9CA3AF', fontSize: '13px', margin: 0 }}>Great for detailed trip questions</p>
+            <div className={`${iconClass} bg-[#F59E0B]`} aria-hidden="true">✉️</div>
+            <div className="min-w-0">
+              <p className="text-[#1F2937] font-bold text-base sm:text-lg mb-1">Send an Email</p>
+              <p className="text-[#6B7280] text-sm mb-1 break-words">eric@happydetour.com</p>
+              <p className="text-[#9CA3AF] text-[13px]">Great for detailed trip questions</p>
             </div>
           </a>
 
           {/* TravelJoy Form */}
-
-           <a href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/6E9JQLQfrQfUvS85KcGhiHE1/link"
+          <a
+            href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/6E9JQLQfrQfUvS85KcGhiHE1/link"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ backgroundColor: 'white', border: '1px solid #E5E7EB', borderRadius: '16px', padding: '28px 32px', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '20px', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', transition: 'box-shadow 0.2s' }}
+            className={cardClass}
           >
-            <div style={{ width: '56px', height: '56px', backgroundColor: '#1F2937', borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', flexShrink: 0 }}>
-              📋
-            </div>
-            <div>
-              <p style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>Start Planning My Trip</p>
-              <p style={{ color: '#6B7280', fontSize: '14px', margin: '0 0 4px 0' }}>Quick trip planning form</p>
-              <p style={{ color: '#9CA3AF', fontSize: '13px', margin: 0 }}>Tell Eric everything about your dream cruise</p>
+            <div className={`${iconClass} bg-[#1F2937]`} aria-hidden="true">📋</div>
+            <div className="min-w-0">
+              <p className="text-[#1F2937] font-bold text-base sm:text-lg mb-1">Start Planning My Trip</p>
+              <p className="text-[#6B7280] text-sm mb-1">Quick trip planning form</p>
+              <p className="text-[#9CA3AF] text-[13px]">Tell me everything about your dream cruise</p>
             </div>
           </a>
 
         </div>
 
-        {/* Note */}
-        <div style={{ backgroundColor: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: '12px', padding: '20px 24px', textAlign: 'center' }}>
-          <p style={{ color: '#1e4d5e', fontSize: '14px', lineHeight: '1.7', margin: 0 }}>
-            Planning fees start at $50 depending on the complexity of your trip. We talk through everything before anything is confirmed so there are no surprises.
-          </p>
-        </div>
+        {/* Reply Times */}
+        <p className="text-center text-[#6B7280] text-sm leading-relaxed">
+          I reply weekday evenings, 7 to 10pm Eastern.
+          <br className="hidden sm:block" />{' '}
+          If it's urgent, send a text.
+        </p>
 
       </div>
     </main>
