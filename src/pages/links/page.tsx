@@ -7,7 +7,7 @@ const sections: { heading: string; links: LinkItem[] }[] = [
       { label: "🏠 Back to Happy Detour Travel", href: "/" },
       { label: "✈ Start Planning My Trip", href: "https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/6E9JQLQfrQfUvS85KcGhiHE1/link", external: true },
       { label: "🗺️ Drop Your Trip Wishlist", href: "https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/dDfyxMMy8gucAddKpaipPB4Z/link", external: true },
-      { label: "📝 Read Postcards, the HDT Blog", href: "/blog" },
+      { label: "📝 Read Postcards, the Happy Detour Travel Blog", href: "/blog" },
     ]
   },
   {
@@ -27,17 +27,9 @@ const sections: { heading: string; links: LinkItem[] }[] = [
     ]
   },
   {
-    heading: "All-Inclusive Resorts",
-    links: [
-      { label: "🌴 Explore Sandals Resorts", href: "https://www.sandals.com/?referral=101731&agentid=ERCA7707", external: true },
-      { label: "🏖️ Explore Beaches Resorts", href: "https://www.beaches.com/?referral=101731&agentid=ERCA7707", external: true },
-    ]
-  },
-  {
     heading: "Group Sailings",
     links: [
-      { label: "Mexican Riviera Halloween Cruise", href: "https://www.happydetour.com/group/baja-halloween-2027", external: true },
-      { label: "Eastern Caribbean on Allure of the Seas", href: "https://www.happydetour.com/group/allure-eastern-caribbean-2027", external: true },
+      { label: "🎃 Halloween Transatlantic on Scarlet Lady", href: "/group/transatlantic-10-2027" },
     ]
   },
   {
@@ -60,56 +52,36 @@ const sections: { heading: string; links: LinkItem[] }[] = [
 
 export default function Links() {
   return (
-    <main style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
+    <main className="bg-[#F9FAFB] min-h-screen">
 
       {/* Header */}
-      <div style={{ backgroundColor: '#007298', padding: '64px 24px', textAlign: 'center' }}>
-        <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>
+      <div className="bg-[#007298] px-5 py-12 sm:px-6 sm:py-16 text-center">
+        <p className="text-white/75 text-xs font-bold tracking-[2px] uppercase mb-3">
           Happy Detour Travel
         </p>
-        <h1 style={{ color: 'white', fontSize: '42px', fontWeight: '800', margin: '0 0 16px 0', lineHeight: '1.2' }}>
+        <h1 className="text-white text-3xl sm:text-[42px] font-extrabold leading-tight mb-4">
           Everything in one place.
         </h1>
-        <p style={{ color: 'rgba(255,255,255,0.80)', fontSize: '16px', maxWidth: '520px', margin: '0 auto', lineHeight: '1.7' }}>
-          Find your way to a cruise, a resort, a group, or just me. Whatever you need, it's right here.
+        <p className="text-white/80 text-base leading-relaxed max-w-[520px] mx-auto">
+          Find your way to a cruise, a group sailing, or just me. Whatever you need, it's right here.
         </p>
       </div>
 
       {/* Links List */}
-      <div style={{ maxWidth: '600px', margin: '0 auto', padding: '64px 24px' }}>
+      <div className="max-w-[600px] mx-auto px-4 py-10 sm:px-6 sm:py-16">
         {sections.map((section) => (
-          <div key={section.heading} style={{ marginBottom: '40px' }}>
-            <p style={{ color: '#9CA3AF', fontSize: '11px', fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase', margin: '0 0 12px 4px' }}>
+          <div key={section.heading} className="mb-8 sm:mb-10">
+            <p className="text-[#9CA3AF] text-[11px] font-bold tracking-[1.5px] uppercase mb-3 ml-1">
               {section.heading}
             </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <div className="flex flex-col gap-2.5">
               {section.links.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   target={link.external ? '_blank' : undefined}
                   rel={link.external ? 'noopener noreferrer' : undefined}
-                  style={{
-                    display: 'block',
-                    backgroundColor: 'white',
-                    borderRadius: '12px',
-                    border: '1px solid #E5E7EB',
-                    padding: '18px 22px',
-                    textAlign: 'center',
-                    textDecoration: 'none',
-                    color: '#1F2937',
-                    fontSize: '15px',
-                    fontWeight: '600',
-                    transition: 'transform 0.15s ease, border-color 0.15s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#F59E0B'
-                    e.currentTarget.style.transform = 'translateY(-2px)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#E5E7EB'
-                    e.currentTarget.style.transform = 'translateY(0)'
-                  }}
+                  className="block bg-white rounded-xl border border-[#E5E7EB] px-5 py-4 sm:py-[18px] text-center no-underline text-[#1F2937] text-[15px] font-semibold leading-snug transition duration-150 hover:border-[#F59E0B] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#007298] focus-visible:ring-offset-2"
                 >
                   {link.label}
                 </a>
@@ -119,11 +91,9 @@ export default function Links() {
         ))}
 
         {/* Footer note */}
-        <div style={{ textAlign: 'center', marginTop: '16px' }}>
-          <p style={{ color: '#9CA3AF', fontSize: '13px' }}>
-            Real trips. Real value. Someone actually in your corner.
-          </p>
-        </div>
+        <p className="text-center text-[#9CA3AF] text-[13px] mt-4">
+          Real trips. Real value. Someone actually in your corner.
+        </p>
       </div>
 
     </main>
