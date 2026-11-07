@@ -6,7 +6,7 @@ const quickLinks = [
   { label: 'Virgin Deals', to: '/virgin' },
   { label: 'Group Sailing', to: '/group/transatlantic-10-2027' },
   { label: 'About', to: '/about' },
-  { label: 'Contact', to: '/contact' },
+  { label: 'Contact', to: 'sms:6308231253' },
 ]
 
 export default function Footer() {
