@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { Link } from 'react-router-dom'
 
 const PLANNING_FORM_URL =
   'https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/6E9JQLQfrQfUvS85KcGhiHE1/link'
@@ -6,9 +7,13 @@ const INSTAGRAM_URL = 'https://www.instagram.com/happydetourtravel/'
 
 /* ---------- Page content (edit words here, not in the layout below) ---------- */
 
-const PLACES = [
-  { label: '🚢 Cruises' },
-  { label: '🏖️ All Inclusives' },
+// Tags with a "to" become links to that cruise line's page.
+const PLACES: { label: string; to?: string; upcoming?: boolean }[] = [
+  { label: '💃 Virgin Voyages', to: '/cruises/virgin-voyages' },
+  { label: '🚢 Royal Caribbean', to: '/cruises/royal-caribbean' },
+  { label: '🚢 Norwegian (NCL)', to: '/cruises/norwegian' },
+  { label: '🚢 MSC', to: '/cruises/msc' },
+  { label: '🚢 Carnival', to: '/cruises/carnival' },
   { label: '🏰 London' },
   { label: '🗼 Tokyo' },
   { label: '🦁 Tanzania (coming soon)', upcoming: true },
@@ -16,8 +21,8 @@ const PLACES = [
 
 const TRUST_CARDS: { title: string; body: string; icon: ReactNode }[] = [
   {
-    title: "I've actually done it",
-    body: 'I have been planning trips like this since 2017, first for friends, now for a living. I know which cruise cabins are worth the upgrade and what the cruise line brochure leaves out.',
+    title: 'Virgin Voyages, inside and out',
+    body: 'I am a certified Virgin Voyages First Mate, Gold Tier. I have been planning cruises since 2017, first for friends, now for a living. I know which cabins are worth the upgrade and what the brochure leaves out.',
     icon: (
       <>
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -136,7 +141,7 @@ export default function About() {
             </figure>
           </div>
 
-          <div className="flex justify-center md:justify-end">
+          <div className="order-first md:order-none flex flex-col items-center md:items-end gap-6">
             <img
               src="/IMG_2781.jpeg"
               alt="Eric Carney, travel advisor at Happy Detour Travel"
@@ -144,6 +149,19 @@ export default function About() {
               height={320}
               className="w-64 h-80 object-cover object-top rounded-2xl shadow-xl ring-8 ring-white ring-offset-2 ring-offset-sky-100"
             />
+            <div className="w-64 flex items-center gap-3 bg-white border border-gray-200 rounded-xl p-3 shadow-sm">
+              <img
+                src="/firstmate-gold.png"
+                alt="Virgin Voyages First Mate Gold Tier badge"
+                width={48}
+                height={48}
+                className="w-12 h-12 object-contain"
+              />
+              <p className="text-xs text-gray-700 leading-snug">
+                <strong className="block text-gray-900">Virgin Voyages First Mate</strong>
+                Gold Tier certified
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -156,8 +174,17 @@ export default function About() {
           <Paragraph>
             The world is too big to stay in one spot. That is just how I see it. My favorite
             decision of the day is which pool deck to post up on, but I have also gotten completely
-            lost in London and melted into a lounge chair at an all inclusive where nothing costs
-            extra. One trip is never enough. There is always somewhere else calling.
+            lost in London. One trip is never enough. There is always somewhere else calling.
+          </Paragraph>
+          <Paragraph>
+            And if you ask me where to start, my answer is usually Virgin Voyages. Adults only, every
+            restaurant included, no stuffy dress code. It is the cruise I wish more people knew
+            about, and it is the one I know best.
+          </Paragraph>
+          <Paragraph>
+            Not a Virgin person? No problem. I also book Royal Caribbean, Norwegian, MSC, and
+            Carnival, and I have sailed every one of them myself. We will figure out which ship
+            actually fits you.
           </Paragraph>
           <Paragraph>
             Right now, I am deep in research mode on a Tanzania safari. It has been on my list for a
@@ -165,18 +192,27 @@ export default function About() {
           </Paragraph>
 
           <ul className="flex flex-wrap gap-2.5 pt-4">
-            {PLACES.map(({ label, upcoming }) => (
-              <li
-                key={label}
-                className={`text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm ${
-                  upcoming
-                    ? 'bg-amber-100 text-amber-800 border border-amber-300'
-                    : 'bg-brand-blue text-white'
-                }`}
-              >
-                {label}
-              </li>
-            ))}
+            {PLACES.map(({ label, to, upcoming }) => {
+              const tagClass = `inline-block text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm ${
+                upcoming
+                  ? 'bg-amber-100 text-amber-800 border border-amber-300'
+                  : 'bg-brand-blue text-white'
+              }`
+              return (
+                <li key={label}>
+                  {to ? (
+                    <Link
+                      to={to}
+                      className={`${tagClass} hover:bg-brand-amber transition-colors`}
+                    >
+                      {label} →
+                    </Link>
+                  ) : (
+                    <span className={tagClass}>{label}</span>
+                  )}
+                </li>
+              )
+            })}
           </ul>
         </div>
       </section>
@@ -274,7 +310,7 @@ export default function About() {
           href={PLANNING_FORM_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-brand-amber hover:bg-amber-600 text-white font-bold px-10 py-3.5 rounded-full shadow-[0_4px_16px_rgba(245,158,11,0.35)] hover:scale-105 transition-all"
+          className="inline-flex items-center gap-2 bg-brand-amber hover:bg-amber-600 text-white font-bold px-8 sm:px-10 py-3.5 rounded-full shadow-[0_4px_16px_rgba(245,158,11,0.35)] hover:scale-105 transition-all"
         >
           ✈️ Start Planning My Trip
         </a>
