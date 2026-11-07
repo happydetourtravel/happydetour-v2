@@ -7,16 +7,12 @@ const INSTAGRAM_URL = 'https://www.instagram.com/happydetourtravel/'
 
 /* ---------- Page content (edit words here, not in the layout below) ---------- */
 
-// Tags with a "to" become links to that cruise line's page.
-const PLACES: { label: string; to?: string; upcoming?: boolean }[] = [
+const CRUISE_LINES = [
   { label: '💃 Virgin Voyages', to: '/cruises/virgin-voyages' },
   { label: '🚢 Royal Caribbean', to: '/cruises/royal-caribbean' },
   { label: '🚢 Norwegian (NCL)', to: '/cruises/norwegian' },
   { label: '🚢 MSC', to: '/cruises/msc' },
   { label: '🚢 Carnival', to: '/cruises/carnival' },
-  { label: '🏰 London' },
-  { label: '🗼 Tokyo' },
-  { label: '🦁 Tanzania (coming soon)', upcoming: true },
 ]
 
 const TRUST_CARDS: { title: string; body: string; icon: ReactNode }[] = [
@@ -192,27 +188,16 @@ export default function About() {
           </Paragraph>
 
           <ul className="flex flex-wrap gap-2.5 pt-4">
-            {PLACES.map(({ label, to, upcoming }) => {
-              const tagClass = `inline-block text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm ${
-                upcoming
-                  ? 'bg-amber-100 text-amber-800 border border-amber-300'
-                  : 'bg-brand-blue text-white'
-              }`
-              return (
-                <li key={label}>
-                  {to ? (
-                    <Link
-                      to={to}
-                      className={`${tagClass} hover:bg-brand-amber transition-colors`}
-                    >
-                      {label} →
-                    </Link>
-                  ) : (
-                    <span className={tagClass}>{label}</span>
-                  )}
-                </li>
-              )
-            })}
+            {CRUISE_LINES.map(({ label, to }) => (
+              <li key={label}>
+                <Link
+                  to={to}
+                  className="inline-block bg-brand-blue text-white text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm hover:bg-brand-amber transition-colors"
+                >
+                  {label} →
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
