@@ -427,7 +427,7 @@ export default function VirginVoyagesPage() {
                 className="vv-link"
                 style={{ color: VV_RED, textDecoration: "underline" }}
               >
-                See current Virgin Voyages deals
+                Learn more about Virgin Voyages at virginvoyages.com
               </a>.
             </p>
           </section>
