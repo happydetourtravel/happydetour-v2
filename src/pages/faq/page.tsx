@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const FORM_URL = "https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/RFxrKCNQTejSeWAhpo4BaaEz/link"
+const FORM_URL = "https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/dDfyxMMy8gucAddKpaipPB4Z/link"
 
 const faqs: { question: string; answer: string }[] = [
   {
