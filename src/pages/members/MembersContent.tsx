@@ -51,7 +51,7 @@ export default function MembersContent() {
       date: 'January 2027',
       nights: '5 nights',
       from: '$1,099',
-      link: 'https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK',
+      page: '/cruises/bahamas-key-west',
     },
     {
       line: 'Virgin Voyages',
@@ -60,7 +60,7 @@ export default function MembersContent() {
       date: 'March 2027',
       nights: '7 nights',
       from: '$1,199',
-      link: 'https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK',
+      page: '/cruises/eastern-caribbean-bimini',
     },
     {
       line: 'Virgin Voyages',
@@ -69,7 +69,7 @@ export default function MembersContent() {
       date: 'June 2027',
       nights: '7 nights',
       from: '$1,253',
-      link: 'https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK',
+      page: '/cruises/french-riviera-ibiza',
     },
   ]
 
@@ -186,9 +186,9 @@ export default function MembersContent() {
     {
       icon: '\ud83e\uddf3',
       title: 'Browse Virgin Deals',
-      desc: 'See current sailings Eric recommends.',
-      href: '/virgin',
-      external: false,
+      desc: 'Search sailings using Eric\u2019s booking link.',
+      href: 'https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK',
+      external: true,
     },
     {
       icon: '\ud83d\udcac',
@@ -303,7 +303,7 @@ export default function MembersContent() {
                 <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Member Perks</p>
                 <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: '0 0 6px 0' }}>Perks for Every Trip</h2>
                 <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
-                  Cruise or all-inclusive, these come with any trip you book with Eric.
+                  These come with any cruise you book with Eric.
                 </p>
               </div>
               {renderPerkCards(everyTripPerks)}
@@ -315,7 +315,7 @@ export default function MembersContent() {
                 <p style={{ color: '#CC0000', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Virgin Voyages</p>
                 <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: '0 0 6px 0' }}>Extra Perks on Virgin Voyages</h2>
                 <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
-                  For Sea Terrace cabins and above when you book through Eric.
+                  Extra perks when you book Virgin Voyages through Eric.
                 </p>
               </div>
               {renderPerkCards(virginPerks)}
@@ -330,7 +330,7 @@ export default function MembersContent() {
                 <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Featured Sailings</p>
                 <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: '0 0 6px 0' }}>Sail With Eric</h2>
                 <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
-                  Members get first dibs. Book a Sea Terrace cabin or higher at the Essentials rate through Eric and a $200 bar tab is included.
+                  Members get first dibs.
                 </p>
               </div>
 
@@ -400,10 +400,10 @@ export default function MembersContent() {
               </p>
             </div>
 
-            {/* Exclusive Deals */}
+            {/* Eric's Picks */}
             <div style={{ marginBottom: '32px' }}>
               <div style={{ marginBottom: '20px' }}>
-                <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Exclusive Deals</p>
+                <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Eric&rsquo;s Picks</p>
                 <h2 style={{ color: '#1F2937', fontSize: '22px', fontWeight: '700', margin: 0 }}>Sailings Worth Looking At</h2>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -419,9 +419,9 @@ export default function MembersContent() {
                         <p style={{ color: '#6B7280', fontSize: '11px', margin: '0 0 2px 0' }}>Starting from</p>
                         <p style={{ color: '#1F2937', fontSize: '22px', fontWeight: '800', margin: 0 }}>{deal.from}<span style={{ fontSize: '13px', fontWeight: '400', color: '#6B7280' }}>/person</span></p>
                       </div>
-                      <a href={deal.link} target="_blank" rel="noopener noreferrer" className="hdt-btn hdt-btn-teal" style={{ backgroundColor: '#007298', color: 'white', padding: '10px 20px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px', whiteSpace: 'nowrap' }}>
+                      <Link to={deal.page} className="hdt-btn hdt-btn-teal" style={{ backgroundColor: '#007298', color: 'white', padding: '10px 20px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px', whiteSpace: 'nowrap' }}>
                         View Sailing
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 ))}
@@ -449,9 +449,6 @@ export default function MembersContent() {
                   Or text Eric &rarr;
                 </a>
               </div>
-              <p style={{ color: '#9CA3AF', fontSize: '12px', lineHeight: '1.6', margin: '16px 0 0 0' }}>
-                Heads up: for featured sailings like the Halloween Transatlantic, text Eric to book so you get the $200 bar tab.
-              </p>
             </div>
 
             <SailorLootSection />
