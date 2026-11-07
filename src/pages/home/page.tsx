@@ -230,6 +230,20 @@ export default function Home() {
               >
                 Questions first? Text Eric →
               </a>
+
+              {/* Members: extra Sailor Loot button */}
+              <a
+                href="/join"
+                aria-label="Become a member for cruises with extra Sailor Loot up to $200"
+                style={{ display: 'block', backgroundColor: 'rgba(255,255,255,0.12)', border: '2px solid #F59E0B', borderRadius: '10px', padding: '14px 18px', margin: '20px 0 0 0', textDecoration: 'none', maxWidth: '520px' }}
+              >
+                <span style={{ display: 'block', color: 'white', fontSize: '15px', fontWeight: '700', lineHeight: '1.4' }}>
+                  Looking for cruises with extra Sailor Loot, up to $200?
+                </span>
+                <span style={{ display: 'block', color: '#F59E0B', fontSize: '14px', fontWeight: '700', margin: '4px 0 0 0' }}>
+                  Become a member →
+                </span>
+              </a>
             </div>
 
             <div style={{ flex: '0 0 280px', textAlign: 'center', margin: '0 auto' }}>
