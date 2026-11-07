@@ -81,13 +81,6 @@ export default function Header() {
                   >
                     🗺️ Drop Your Trip Wishlist
                   </a>
-                  <Link
-                    to="/virgin"
-                    className="hover:bg-gray-50 transition-colors"
-                    style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 16px', fontSize: '14px', color: '#1F2937', textDecoration: 'none', fontWeight: '600', borderBottom: '1px solid #F3F4F6' }}
-                  >
-                    🧳 Virgin Voyages Deals
-                  </Link>
                   <VirginLink
                     onClick={() => setDropdownOpen(false)}
                     className="hover:bg-gray-50 transition-colors"
@@ -173,13 +166,6 @@ export default function Header() {
               )}
             </ClientOnly>
 
-            <Link
-              to="/virgin"
-              onClick={() => setMenuOpen(false)}
-              style={{ display: 'block', padding: '12px 8px', fontSize: '15px', fontWeight: '500', color: '#1F2937', textDecoration: 'none', borderBottom: '1px solid #F9FAFB' }}
-            >
-              🧳 Virgin Voyages Deals
-            </Link>
             <VirginLink
               onClick={() => setMenuOpen(false)}
               style={{ display: 'block', padding: '12px 8px', fontSize: '15px', fontWeight: '500', color: '#007298', textDecoration: 'none' }}
