@@ -10,7 +10,7 @@ export default function Contact() {
             Let's talk about your next trip.
           </h1>
           <p style={{ color: '#6B7280', fontSize: '16px', lineHeight: '1.7', maxWidth: '480px', margin: '0 auto' }}>
-            No forms. No hold music. Just reach out directly and Eric will get back to you.
+            No hold music. No runaround. Just reach out directly and Eric will get back to you.
           </p>
         </div>
 
@@ -47,9 +47,9 @@ export default function Contact() {
             </div>
           </a>
 
-          {/* FORGE Form */}
-          
-           <a href="https://forgehq.app/f/?s=yozjm6l0"
+          {/* TravelJoy Form */}
+
+           <a href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/6E9JQLQfrQfUvS85KcGhiHE1/link"
             target="_blank"
             rel="noopener noreferrer"
             style={{ backgroundColor: 'white', border: '1px solid #E5E7EB', borderRadius: '16px', padding: '28px 32px', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '20px', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', transition: 'box-shadow 0.2s' }}
@@ -58,9 +58,9 @@ export default function Contact() {
               📋
             </div>
             <div>
-              <p style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>Fill Out the Trip Form</p>
-              <p style={{ color: '#6B7280', fontSize: '14px', margin: '0 0 4px 0' }}>forgehq.app</p>
-              <p style={{ color: '#9CA3AF', fontSize: '13px', margin: 0 }}>Tell Eric everything about your dream trip</p>
+              <p style={{ color: '#1F2937', fontWeight: '700', fontSize: '18px', margin: '0 0 4px 0' }}>Start Planning My Trip</p>
+              <p style={{ color: '#6B7280', fontSize: '14px', margin: '0 0 4px 0' }}>Quick trip planning form</p>
+              <p style={{ color: '#9CA3AF', fontSize: '13px', margin: 0 }}>Tell Eric everything about your dream cruise</p>
             </div>
           </a>
 
