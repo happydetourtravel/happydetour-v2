@@ -421,13 +421,13 @@ export default function VirginVoyagesPage() {
             <p className="text-sm mt-6" style={{ color: "#6B7280" }}>
               Virgin Voyages sails the Caribbean, Mediterranean, Alaska, and beyond, and everyone onboard is 18+.{" "}
               <a
-                href="https://www.virginvoyages.com/the-ships"
+                href="https://www.virginvoyages.com/cruise-deals?agentId=278796&agencyId=589"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="vv-link"
                 style={{ color: VV_RED, textDecoration: "underline" }}
               >
-                Learn more about Virgin Voyages at virginvoyages.com
+                See current Virgin Voyages deals
               </a>.
             </p>
           </section>
