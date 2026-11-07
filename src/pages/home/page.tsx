@@ -1,5 +1,9 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, lazy, Suspense } from 'react'
+import { ClientOnly } from 'vite-react-ssg'
 import { VirginLink } from '../../components/VirginRedirect'
+
+// Clerk-aware button (members go to /members, everyone else to /join). Lazy-loaded so Clerk never runs during the build
+const SailorLootButton = lazy(() => import('../../components/SailorLootButton'))
 
 const featuredDeals = [
   { tag: "VIRGIN VOYAGES", title: "Caribbean Escape: Bahamas & Key West", date: "Jan 2027", nights: "4 nights", ship: "Scarlet Lady · Miami", originalPrice: "$699", salePrice: "$549", link: "/cruises/bahamas-key-west" },
@@ -231,19 +235,29 @@ export default function Home() {
                 Questions first? Text Eric →
               </a>
 
-              {/* Members: extra Sailor Loot button */}
-              <a
-                href="/join"
-                aria-label="Become a member for cruises with extra Sailor Loot up to $200"
-                style={{ display: 'block', backgroundColor: 'rgba(255,255,255,0.12)', border: '2px solid #F59E0B', borderRadius: '10px', padding: '14px 18px', margin: '20px 0 0 0', textDecoration: 'none', maxWidth: '520px' }}
-              >
-                <span style={{ display: 'block', color: 'white', fontSize: '15px', fontWeight: '700', lineHeight: '1.4' }}>
-                  Looking for cruises with extra Sailor Loot, up to $200?
-                </span>
-                <span style={{ display: 'block', color: '#F59E0B', fontSize: '14px', fontWeight: '700', margin: '4px 0 0 0' }}>
-                  Become a member →
-                </span>
-              </a>
+              {/* Members: extra Sailor Loot button. Shows the /join version until sign-in status loads */}
+              <ClientOnly>
+                {() => (
+                  <Suspense
+                    fallback={
+                      <a
+                        href="/join"
+                        aria-label="Become a member for cruises with extra Sailor Loot up to $200"
+                        style={{ display: 'block', backgroundColor: 'rgba(255,255,255,0.12)', border: '2px solid #F59E0B', borderRadius: '10px', padding: '14px 18px', margin: '20px 0 0 0', textDecoration: 'none', maxWidth: '520px' }}
+                      >
+                        <span style={{ display: 'block', color: 'white', fontSize: '15px', fontWeight: '700', lineHeight: '1.4' }}>
+                          Looking for cruises with extra Sailor Loot, up to $200?
+                        </span>
+                        <span style={{ display: 'block', color: '#F59E0B', fontSize: '14px', fontWeight: '700', margin: '4px 0 0 0' }}>
+                          Become a member →
+                        </span>
+                      </a>
+                    }
+                  >
+                    <SailorLootButton />
+                  </Suspense>
+                )}
+              </ClientOnly>
             </div>
 
             <div style={{ flex: '0 0 280px', textAlign: 'center', margin: '0 auto' }}>
