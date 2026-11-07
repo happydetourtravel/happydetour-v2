@@ -65,6 +65,24 @@ export function VirginRedirectModal() {
     return () => window.removeEventListener(EVENT_NAME, handler)
   }, [])
 
+  // Catch ANY plain link to Eric's First Mate booking link, on any page of the site,
+  // so every "Search / Book / Browse Sailings" button gets the popup automatically.
+  useEffect(() => {
+    const onClick = (e: globalThis.MouseEvent) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
+      const link = (e.target as HTMLElement | null)?.closest?.('a') as HTMLAnchorElement | null
+      if (!link) return
+      const href = link.href || ''
+      // Any Virgin Voyages link with Eric's agent ID: booking search, cruise deals, etc.
+      if (!href.includes('virginvoyages.com') || !href.includes('agentId=278796')) return
+      e.preventDefault()
+      setDetail({ href })
+      setSeconds(COUNTDOWN_SECONDS)
+    }
+    document.addEventListener('click', onClick)
+    return () => document.removeEventListener('click', onClick)
+  }, [])
+
   // Countdown. When it hits zero, send them on to Virgin.
   // Browsers block new tabs that open on a timer, so the automatic hop happens in the same tab.
   // Clicking the button opens Virgin in a new tab, so your site stays open behind it.
