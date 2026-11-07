@@ -14,11 +14,7 @@ export default function Header() {
     <>
       {/* Announcement Bar */}
       <div className="w-full bg-brand-amber text-white text-left py-2 px-4 text-sm font-medium flex items-center gap-1.5">
-        <span className="relative flex h-2 w-2 shrink-0">
-  <span className="absolute inline-flex h-full w-full rounded-full bg-white opacity-75 motion-safe:animate-ping"></span>
-  <span className="relative inline-flex h-2 w-2 rounded-full bg-white"></span>
-</span>
-        <span> 🎃 Get $200 Sailor Loot: Halloween Transatlantic on Scarlet Lady, Oct 2027.</span>{' '}
+     <span className="motion-safe:animate-pulse">🎃 Get $200 Sailor Loot: Halloween Transatlantic on Scarlet Lady, Oct 2027.</span>{' '}
         <Link
           to="/group/transatlantic-10-2027"
           className="underline font-bold hover:text-brand-dark transition-colors text-sm text-white whitespace-nowrap"
