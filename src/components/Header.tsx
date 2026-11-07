@@ -14,7 +14,7 @@ export default function Header() {
     <>
       {/* Announcement Bar */}
       <div className="w-full bg-brand-amber text-white text-left py-2 px-4 text-sm font-medium flex items-center gap-1.5">
-        <span>🎃 Get $200 Sailor Loot: Halloween Transatlantic on Scarlet Lady, Oct 2027.</span>{' '}
+        <span><span className="inline-block motion-safe:animate-bounce">🎃</span>Get $200 Sailor Loot: Halloween Transatlantic on Scarlet Lady, Oct 2027.</span>{' '}
         <Link
           to="/group/transatlantic-10-2027"
           className="underline font-bold hover:text-brand-dark transition-colors text-sm text-white whitespace-nowrap"
