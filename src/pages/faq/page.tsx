@@ -1,55 +1,51 @@
 import { useState } from 'react'
 
-const FORM_URL = "https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/dDfyxMMy8gucAddKpaipPB4Z/link"
+const FORM_URL = "https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/6E9JQLQfrQfUvS85KcGhiHE1/link"
 
 const faqs: { question: string; answer: string }[] = [
   {
     question: "What does it cost to work with you?",
-    answer: "Planning fees start at $50 depending on your trip. We talk through it together before anything is confirmed so there are no surprises. Cruise lines and resorts pay me a commission when you travel, the same way a mortgage broker works. You get a real person in your corner without paying more than you would booking on your own."
+    answer: "There's no planning fee for cruises. The cruise lines pay me a commission when you sail, the same way a mortgage broker works. You get a real person in your corner without paying more than you would booking on your own. We talk through everything before anything is confirmed so there are no surprises."
   },
   {
     question: "Why work with you instead of just booking online?",
-    answer: "When you book online, you're on your own. You're sorting through hundreds of options, hoping the reviews are real, and figuring out the fine print alone. With me, you skip all of that. I know which ships and resorts are actually worth it, I handle every detail, and if something goes wrong before or during your trip, you call me, not some 1-800 number."
+    answer: "When you book online, you're on your own. You're sorting through hundreds of sailings, hoping the reviews are real, and figuring out the fine print alone. With me, you skip all of that. I know which ships and itineraries are actually worth it, I handle every detail, and if something goes wrong before or during your cruise, you call me, not some 1-800 number."
   },
   {
     question: "What happens after I fill out the form?",
-    answer: "You'll be guided through a simple, easy process right from the start. You may get an initial reply to help get things set up, and from there we'll connect over email or a quick call, whatever's easier for you. I'll ask a few questions about what you're thinking, share some ideas, and go from there. No commitment, no pressure. Just a conversation."
+    answer: "I'll reach out to get things started, and from there we'll connect over text, email, or a quick call, whatever's easier for you. I'll ask a few questions about what you're thinking, share some ideas, and go from there. No commitment, no pressure. Just a conversation."
   },
   {
     question: "How does the planning process work?",
-    answer: "Simple. You share your rough idea: dates, budget, who's coming, what kind of trip. I come back with a few solid options that actually fit. You pick what feels right, I handle the booking and all the details, and you focus on looking forward to the trip."
+    answer: "Simple. You share your rough idea: dates, budget, who's coming, and what kind of cruise sounds good. I come back with a few solid options that actually fit. You pick what feels right, I handle the booking and all the details, and you focus on looking forward to the trip."
   },
   {
     question: "What if I have no idea what I want yet?",
-    answer: "That's honestly the best time to reach out. A lot of my clients start with \"we want a vacation, we're just not sure what kind.\" I'll ask the right questions and help you figure out what'll actually make you happy, not just what's popular."
+    answer: "That's honestly the best time to reach out. A lot of people start with \"we want to cruise, we're just not sure where.\" I'll ask the right questions and help you figure out what'll actually make you happy, not just what's popular."
   },
   {
     question: "What if something goes wrong before or during my trip?",
-    answer: "You call me. I'm not a faceless booking platform. I know your trip and I'll help you sort it out. I also walk you through what you need to know before you go. No surprises."
+    answer: "You call me. I'm not a faceless booking platform. I know your trip and I'll help you sort it out. I also walk you through what you need to know before you sail. No surprises."
   },
   {
     question: "How far ahead should I reach out?",
-    answer: "6 to 12 months out gets you the best selection and pricing, especially for peak seasons or popular cruise itineraries. That said, don't let timing stop you. Reach out and I'll tell you honestly what's available."
+    answer: "6 to 12 months out gets you the best selection and pricing, especially for peak seasons or popular itineraries. That said, don't let timing stop you. Reach out and I'll tell you honestly what's available."
   },
   {
     question: "Can you help with groups or special occasions?",
-    answer: "Definitely. Anniversary trips, milestone birthdays, group cruises, group resort stays. Groups are some of my favorite trips to plan. They also tend to get better pricing and extras that solo bookings just don't."
+    answer: "Definitely. Anniversary cruises, milestone birthdays, and group sailings are some of my favorite trips to plan. Groups also tend to get better pricing and extras that individual bookings just don't."
   },
   {
     question: "What cruise lines do you work with?",
-    answer: "I work with all the major cruise lines including Royal Caribbean, Norwegian, MSC, Virgin Voyages, and Carnival. For all-inclusive resorts I work with Sandals and Beaches. If you have a specific line or resort in mind just ask. Chances are I can help."
+    answer: "Virgin Voyages is my specialty, and I'm a First Mate Gold certified advisor. I also book Royal Caribbean, Norwegian, MSC, and Carnival. If you have a specific ship or itinerary in mind, just ask. Chances are I can help."
   },
   {
     question: "What is a travel advisor and what do they do?",
-    answer: "A travel advisor is a real person who handles the research, planning, and booking of your trip on your behalf. Think of me as your personal travel expert. I know the industry, I know the ships and resorts, and I do all the heavy lifting so you don't have to. Unlike a search engine, I actually know your situation and can make recommendations based on what you actually want."
-  },
-  {
-    question: "What is the difference between a cruise and an all-inclusive resort?",
-    answer: "A cruise takes you to multiple destinations. You wake up somewhere new every day. An all-inclusive resort keeps you in one beautiful location where everything is included: food, drinks, activities, and entertainment. Both are great options depending on whether you want to explore or truly unwind. I can help you figure out which one fits your style."
+    answer: "A travel advisor is a real person who handles the research, planning, and booking of your trip on your behalf. Think of me as your personal cruise expert. I know the industry, I know the ships, and I do all the heavy lifting so you don't have to. Unlike a search engine, I actually know your situation and can make recommendations based on what you actually want."
   },
   {
     question: "Is Happy Detour Travel a legitimate travel agency?",
-    answer: "Yes. Happy Detour Travel is an independent travel advisory service affiliated with WorldVia Travel Network, one of the largest travel networks in the United States. I'm Eric Carney, a real person based in Northeast Ohio who genuinely loves helping people plan trips. My contact information is on this site and I'm always reachable directly."
+    answer: "Yes. Happy Detour Travel is an independent travel advisory service affiliated with WorldVia Travel Network, one of the largest travel networks in the United States. I'm Eric Carney, a real person based in Alliance, Ohio who genuinely loves helping people plan cruises. My contact information is on this site and I'm always reachable directly."
   }
 ]
 
@@ -61,7 +57,7 @@ export default function FAQ() {
   }
 
   return (
-    <main style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
+    <main className="bg-[#F9FAFB] min-h-screen">
 
       {/* FAQ Schema for AI and search engines */}
       <script
@@ -83,59 +79,42 @@ export default function FAQ() {
       />
 
       {/* Header */}
-      <div style={{ backgroundColor: '#007298', padding: '64px 24px', textAlign: 'center' }}>
-        <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>
+      <div className="bg-[#007298] px-5 py-12 sm:px-6 sm:py-16 text-center">
+        <p className="text-white/75 text-xs font-bold tracking-[2px] uppercase mb-3">
           Common Questions
         </p>
-        <h1 style={{ color: 'white', fontSize: '42px', fontWeight: '800', margin: '0 0 16px 0', lineHeight: '1.2' }}>
+        <h1 className="text-white text-3xl sm:text-[42px] font-extrabold leading-tight mb-4">
           Still on the fence? Let's clear that up.
         </h1>
-        <p style={{ color: 'rgba(255,255,255,0.80)', fontSize: '16px', maxWidth: '520px', margin: '0 auto', lineHeight: '1.7' }}>
+        <p className="text-white/80 text-base leading-relaxed max-w-[520px] mx-auto">
           These are the questions most people have before reaching out. Answered honestly, no fluff.
         </p>
       </div>
 
       {/* FAQ List */}
-      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '64px 24px' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+      <div className="max-w-[800px] mx-auto px-4 py-10 sm:px-6 sm:py-16">
+        <div className="flex flex-col gap-3">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index
             return (
               <div
                 key={index}
-                style={{ backgroundColor: 'white', borderRadius: '12px', border: '1px solid #E5E7EB', overflow: 'hidden' }}
+                className="bg-white rounded-xl border border-[#E5E7EB] overflow-hidden"
               >
                 <button
                   onClick={() => toggle(index)}
                   aria-expanded={isOpen}
                   aria-controls={`faq-panel-${index}`}
                   id={`faq-button-${index}`}
-                  style={{
-                    width: '100%',
-                    padding: '20px 24px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    gap: '16px',
-                    textAlign: 'left',
-                    background: 'none',
-                    border: 'none',
-                    cursor: 'pointer'
-                  }}
+                  className="w-full flex items-center justify-between gap-4 text-left bg-transparent border-0 cursor-pointer px-5 py-4 sm:px-6 sm:py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#007298]"
                 >
-                  <span style={{ color: '#1F2937', fontSize: '16px', fontWeight: '600', lineHeight: '1.4', flex: 1 }}>
+                  <span className="flex-1 text-[#1F2937] text-[15px] sm:text-base font-semibold leading-snug">
                     {faq.question}
                   </span>
-                  <span style={{
-                    color: '#F59E0B',
-                    fontSize: '22px',
-                    fontWeight: '300',
-                    flexShrink: 0,
-                    transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
-                    display: 'inline-block',
-                    lineHeight: 1
-                  }}>
+                  <span
+                    aria-hidden="true"
+                    className={`inline-block shrink-0 text-[#F59E0B] text-2xl font-light leading-none transition-transform duration-300 ${isOpen ? 'rotate-45' : 'rotate-0'}`}
+                  >
                     +
                   </span>
                 </button>
@@ -144,15 +123,10 @@ export default function FAQ() {
                   role="region"
                   aria-labelledby={`faq-button-${index}`}
                   aria-hidden={!isOpen}
-                  style={{
-                    display: 'grid',
-                    gridTemplateRows: isOpen ? '1fr' : '0fr',
-                    transition: 'grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease',
-                    opacity: isOpen ? 1 : 0
-                  }}
+                  className={`grid transition-[grid-template-rows,opacity] duration-300 ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
                 >
-                  <div style={{ overflow: 'hidden' }}>
-                    <p style={{ color: '#4B5563', fontSize: '15px', lineHeight: '1.8', padding: '0 24px 24px 24px', margin: 0 }}>
+                  <div className="overflow-hidden">
+                    <p className="text-[#4B5563] text-[15px] leading-[1.8] px-5 pb-5 sm:px-6 sm:pb-6 m-0">
                       {faq.answer}
                     </p>
                   </div>
@@ -163,30 +137,19 @@ export default function FAQ() {
         </div>
 
         {/* CTA */}
-        <div style={{ textAlign: 'center', marginTop: '64px' }}>
-          <p style={{ color: '#6B7280', fontSize: '15px', marginBottom: '20px' }}>
+        <div className="text-center mt-12 sm:mt-16">
+          <p className="text-[#6B7280] text-[15px] mb-5">
             Still have a question? Just reach out directly.
           </p>
-          
-           <a href={FORM_URL}
+          <a
+            href={FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              backgroundColor: '#F59E0B',
-              color: 'white',
-              padding: '14px 32px',
-              borderRadius: '100px',
-              textDecoration: 'none',
-              fontWeight: '700',
-              fontSize: '15px'
-            }}
+            className="inline-flex items-center justify-center gap-2 bg-[#F59E0B] text-white px-8 py-3.5 rounded-full no-underline font-bold text-[15px] transition hover:bg-[#D97706] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B] focus-visible:ring-offset-2"
           >
-            ✈ Let's build your trip
+            ✈ Let's plan your cruise
           </a>
-          <p style={{ color: '#9CA3AF', fontSize: '13px', marginTop: '12px' }}>
+          <p className="text-[#9CA3AF] text-[13px] mt-3">
             Start with an idea. I'll help from there.
           </p>
         </div>
