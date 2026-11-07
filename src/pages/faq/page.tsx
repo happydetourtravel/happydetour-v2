@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const FORM_URL = "https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/6E9JQLQfrQfUvS85KcGhiHE1/link"
+const FORM_URL = "https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/RFxrKCNQTejSeWAhpo4BaaEz/link"
 
 const faqs: { question: string; answer: string }[] = [
   {
@@ -147,7 +147,7 @@ export default function FAQ() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-[#F59E0B] text-white px-8 py-3.5 rounded-full no-underline font-bold text-[15px] transition hover:bg-[#D97706] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F59E0B] focus-visible:ring-offset-2"
           >
-            ✈ Let's plan your cruise
+            ✈ Let's plan your trip
           </a>
           <p className="text-[#9CA3AF] text-[13px] mt-3">
             Start with an idea. I'll help from there.
