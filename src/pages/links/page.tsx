@@ -13,9 +13,7 @@ const sections: { heading: string; links: LinkItem[] }[] = [
   {
     heading: "Virgin Voyages",
     links: [
-      { label: "💃 Search & Book Virgin Voyages", href: "https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK", external: true },
-      { label: "🧍 Solo Sailor Deals", href: "/solo" },
-    ]
+      { label: "💃 Search & Book Virgin Voyages", href: "https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK", external: true },    ]
   },
   {
     heading: "Other Cruise Lines",
