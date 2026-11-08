@@ -25,7 +25,7 @@ export default function TransatlanticPage() {
   const cabins = [
     { name: 'Insider', price: '$1,068', note: 'Cozy inside cabin with a rainshower and mood lighting.', barTab: false },
     { name: 'Sea View', price: '$1,188', note: 'Porthole window for ocean views.', barTab: false },
-    { name: 'Sea Terrace', price: '$1,308', note: 'Private balcony with a hammock. The group favorite.', barTab: true },
+    { name: 'Sea Terrace', price: '$1,374', note: 'Private balcony with a hammock. Essentials rate, so the bar tab is included.', barTab: true },
   ]
 
   const memberPerks = [
@@ -84,7 +84,7 @@ export default function TransatlanticPage() {
             From <span style={{ fontSize: '30px', fontWeight: '800' }}>$1,068</span> per person*
           </p>
           <div style={{ display: 'inline-block', backgroundColor: 'rgba(255,255,255,0.15)', color: 'white', fontSize: '14px', fontWeight: '700', padding: '8px 16px', borderRadius: '999px', marginBottom: '28px' }}>
-            {'🍹'} $200 bar tab with Sea Terrace cabins and up (from $1,308)
+            {'🍹'} $200 bar tab with Sea Terrace cabins and up (from $1,374)
           </div>
           <div className="hdt-hero-btns" style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/join" className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '14px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '16px' }}>
@@ -234,7 +234,7 @@ export default function TransatlanticPage() {
         </div>
 
         <p style={{ color: '#9CA3AF', fontSize: '12px', lineHeight: '1.6', marginTop: '16px', textAlign: 'center' }}>
-          *Starting prices are at the Lock It In rate, per person based on two sharing, with taxes and fees included. The $200 bar tab applies to Sea Terrace and higher booked at the Essentials rate, which is priced a little higher than the prices shown. Prices and the bar tab offer are set by Virgin Voyages and can change at any time. Eric will always confirm your exact price before you book.
+          *Insider and Sea View prices are at the Lock It In rate. The Sea Terrace price is at the Essentials rate, which is the rate that comes with the $200 bar tab. All prices are per person based on two sharing, with taxes and fees included. Prices and the bar tab offer are set by Virgin Voyages and can change at any time. Eric will always confirm your exact price before you book.
         </p>
       </div>
     </main>
