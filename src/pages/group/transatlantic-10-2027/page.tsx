@@ -21,6 +21,13 @@ export default function TransatlanticPage() {
 
   const ports = ['Barcelona, Spain', 'Tangier, Morocco', 'Lanzarote, Canary Islands', 'San Juan, Puerto Rico']
 
+  // Starting prices per person, from Virgin's site (Nov 2026). Update these when prices change.
+  const cabins = [
+    { name: 'Insider', price: '$1,068', note: 'Cozy inside cabin with a rainshower and mood lighting.', barTab: false },
+    { name: 'Sea View', price: '$1,188', note: 'Porthole window for ocean views.', barTab: false },
+    { name: 'Sea Terrace', price: '$1,308', note: 'Private balcony with a hammock. The group favorite.', barTab: true },
+  ]
+
   const memberPerks = [
     { icon: '🍹', title: '$200 Bar Tab', desc: 'Included with Sea Terrace cabins and higher booked at the Essentials rate through Eric.' },
     { icon: '💸', title: 'No Planning Fee', desc: 'There’s no planning fee on this sailing. You still get Eric handling every detail.' },
@@ -77,7 +84,7 @@ export default function TransatlanticPage() {
             From <span style={{ fontSize: '30px', fontWeight: '800' }}>$1,068</span> per person*
           </p>
           <div style={{ display: 'inline-block', backgroundColor: 'rgba(255,255,255,0.15)', color: 'white', fontSize: '14px', fontWeight: '700', padding: '8px 16px', borderRadius: '999px', marginBottom: '28px' }}>
-            {'🍹'} $200 bar tab with Sea Terrace cabins and up
+            {'🍹'} $200 bar tab with Sea Terrace cabins and up (from $1,308)
           </div>
           <div className="hdt-hero-btns" style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/join" className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '14px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '16px' }}>
@@ -112,6 +119,50 @@ export default function TransatlanticPage() {
           </div>
           <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.7', margin: '16px 0 0 0' }}>
             Start in Barcelona, explore Tangier and the Canary Islands, then cross the Atlantic with plenty of sea days to relax and make some new friends before arriving in San Juan.
+          </p>
+        </div>
+
+        {/* Cabin prices (public, no sign-up needed) */}
+        <div style={{ marginBottom: '40px' }}>
+          <p style={{ color: '#CC0000', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Cabin Prices</p>
+          <h2 style={{ color: '#1F2937', fontSize: '24px', fontWeight: '700', margin: '0 0 8px 0' }}>What It Costs</h2>
+          <p style={{ color: '#6B7280', fontSize: '15px', lineHeight: '1.7', margin: '0 0 20px 0' }}>
+            Starting prices per person, based on two sharing, with taxes and fees included.*
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
+            {cabins.map((c) => (
+              <div
+                key={c.name}
+                style={{
+                  backgroundColor: 'white',
+                  borderRadius: '14px',
+                  border: c.barTab ? '2px solid #F59E0B' : '1px solid #E5E7EB',
+                  padding: '24px',
+                  boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
+                  position: 'relative',
+                }}
+              >
+                {c.barTab && (
+                  <span style={{ position: 'absolute', top: '-12px', left: '20px', backgroundColor: '#F59E0B', color: 'white', fontSize: '12px', fontWeight: '700', padding: '4px 10px', borderRadius: '999px' }}>
+                    {'🍹'} Gets the $200 bar tab
+                  </span>
+                )}
+                <h3 style={{ color: '#1F2937', fontSize: '18px', fontWeight: '700', margin: '6px 0 6px 0' }}>{c.name}</h3>
+                <p style={{ color: '#1F2937', margin: '0 0 8px 0' }}>
+                  <span style={{ fontSize: '13px', color: '#6B7280' }}>from </span>
+                  <span style={{ fontSize: '26px', fontWeight: '800' }}>{c.price}</span>
+                  <span style={{ fontSize: '13px', color: '#6B7280' }}> per person</span>
+                </p>
+                <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>{c.note}</p>
+              </div>
+            ))}
+          </div>
+          <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.7', margin: '16px 0 0 0' }}>
+            Want to go big? RockStar Quarters start around $4,428 per person and Mega RockStar around $7,860. Both get the bar tab too.{' '}
+            <a href="sms:6308231253?body=Hi%20Eric!%20I%27m%20curious%20about%20RockStar%20suites%20on%20the%20Halloween%20Transatlantic." style={{ color: '#007298', fontWeight: '700', textDecoration: 'none' }}>
+              Text Eric
+            </a>{' '}
+            for details.
           </p>
         </div>
 
@@ -153,9 +204,9 @@ export default function TransatlanticPage() {
         <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', borderLeft: '5px solid #F59E0B', padding: '28px', marginBottom: '40px' }}>
           <h2 style={{ color: '#1F2937', fontSize: '20px', fontWeight: '700', margin: '0 0 16px 0' }}>How It Works</h2>
           <ol style={{ color: '#374151', fontSize: '15px', lineHeight: '1.9', margin: 0, paddingLeft: '20px' }}>
-            <li><strong>Sign up.</strong> Takes about a minute, just your name and email.</li>
-            <li><strong>See every cabin price</strong> on your members page.</li>
-            <li><strong>Text or email Eric</strong> to hold your cabin. He books it for you and locks in your perk.</li>
+            <li><strong>Pick your cabin</strong> from the prices above.</li>
+            <li><strong>Join free.</strong> Takes about a minute, just your name and email. It&rsquo;s how you join the group and unlock the perks.</li>
+            <li><strong>Text or email Eric</strong> to hold your cabin. He books it into the group for you and locks in your perk.</li>
           </ol>
           <p style={{ color: '#6B7280', fontSize: '13px', lineHeight: '1.6', margin: '16px 0 0 0' }}>
             Your cabin needs to be booked through Eric to get the bar tab. Booking on your own through Virgin&rsquo;s site won&rsquo;t include it.
@@ -183,7 +234,7 @@ export default function TransatlanticPage() {
         </div>
 
         <p style={{ color: '#9CA3AF', fontSize: '12px', lineHeight: '1.6', marginTop: '16px', textAlign: 'center' }}>
-          *Starting price is for an Insider cabin at the Lock It In rate, per person based on two sharing, with taxes and fees included. The $200 bar tab applies to Sea Terrace and higher booked at the Essentials rate, which is priced a little higher. Prices and the bar tab offer are set by Virgin Voyages and can change at any time. Eric will always confirm your exact price before you book.
+          *Starting prices are at the Lock It In rate, per person based on two sharing, with taxes and fees included. The $200 bar tab applies to Sea Terrace and higher booked at the Essentials rate, which is priced a little higher than the prices shown. Prices and the bar tab offer are set by Virgin Voyages and can change at any time. Eric will always confirm your exact price before you book.
         </p>
       </div>
     </main>
