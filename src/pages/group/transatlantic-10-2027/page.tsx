@@ -1,8 +1,35 @@
 // Route: /group/transatlantic-10-2027
 import { Link } from 'react-router-dom'
 
-// Public teaser page for the HDT Transatlantic 12 sailing.
-// Full booking details live on the members page. These cabins are always booked through Eric.
+// Public page for the HDT Halloween Transatlantic group sailing.
+// No sign-up needed. Visitors text or email Eric directly. These cabins are always booked through Eric.
+
+const PHONE_DISPLAY = '630-823-1253'
+const EMAIL = 'eric@happydetour.com'
+const SMS_LINK = 'sms:6308231253?body=Hi%20Eric!%20I%27m%20interested%20in%20the%20Halloween%20Transatlantic%20group%20sailing.'
+const EMAIL_LINK = 'mailto:eric@happydetour.com?subject=Halloween%20Transatlantic%20Group%20Sailing'
+
+// Text Eric + Email Eric buttons, each with the number or email shown underneath
+function ContactButtons() {
+  const btn = { display: 'block', padding: '14px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '16px', minWidth: '200px' }
+  const small = { color: 'rgba(255,255,255,0.85)', fontSize: '14px', margin: '8px 0 0 0', textDecoration: 'none', display: 'block' }
+  return (
+    <div className="hdt-hero-btns" style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
+      <div style={{ textAlign: 'center' }}>
+        <a href={SMS_LINK} className="hdt-btn hdt-btn-amber" style={{ ...btn, backgroundColor: '#F59E0B', color: 'white' }}>
+          {'💬'} Text Eric
+        </a>
+        <a href="tel:6308231253" className="hdt-text-link" style={small}>{PHONE_DISPLAY}</a>
+      </div>
+      <div style={{ textAlign: 'center' }}>
+        <a href={EMAIL_LINK} className="hdt-btn hdt-btn-ghost" style={{ ...btn, backgroundColor: 'transparent', color: 'white', border: '2px solid white', padding: '12px 26px' }}>
+          {'✉️'} Email Eric
+        </a>
+        <a href={EMAIL_LINK} className="hdt-text-link" style={small}>{EMAIL}</a>
+      </div>
+    </div>
+  )
+}
 
 export default function TransatlanticPage() {
   const included = [
@@ -31,7 +58,7 @@ export default function TransatlanticPage() {
   const memberPerks = [
     { icon: '🍹', title: '$200 Bar Tab', desc: 'Included with Sea Terrace cabins and higher booked at the Essentials rate through Eric.' },
     { icon: '💸', title: 'No Planning Fee', desc: 'There’s no planning fee on this sailing. You still get Eric handling every detail.' },
-    { icon: '🎟️', title: 'First Dibs on Cabins', desc: 'You hear about cabins on this sailing before anyone else. The best ones go fast.' },
+    { icon: '🎉', title: 'Sail With the Group', desc: 'Meet the rest of the HDT group on board for Halloween at sea. Come solo or bring your crew.' },
     { icon: '🤝', title: 'Booked by Eric', desc: 'Eric books your cabin himself so you get the perk and someone actually in your corner.' },
   ]
 
@@ -86,19 +113,9 @@ export default function TransatlanticPage() {
           <div style={{ display: 'inline-block', backgroundColor: 'rgba(255,255,255,0.15)', color: 'white', fontSize: '14px', fontWeight: '700', padding: '8px 16px', borderRadius: '999px', marginBottom: '28px' }}>
             {'🍹'} $200 bar tab with Sea Terrace cabins and up (from $1,374)
           </div>
-          <div className="hdt-hero-btns" style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/join" className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '14px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '16px' }}>
-              Claim Your Spot
-            </Link>
-            <Link to="/login" className="hdt-btn hdt-btn-ghost" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>
-              Already a Member? Sign In
-            </Link>
-            <a href="sms:6308231253?body=Hi%20Eric!%20I%20saw%20your%20Halloween%20Transatlantic%20ad." className="hdt-btn hdt-btn-ghost" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white', padding: '12px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}>
-              Text Eric
-            </a>
-          </div>
+          <ContactButtons />
           <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px', margin: '16px 0 0 0' }}>
-            No spam ever. Just emails about your trips. Promise.
+            No pressure, no planning fee. Just ask your questions.
           </p>
         </div>
       </section>
@@ -168,10 +185,10 @@ export default function TransatlanticPage() {
 
         {/* Why book */}
         <div style={{ marginBottom: '40px' }}>
-          <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Member Perks</p>
+          <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Group Perks</p>
           <h2 style={{ color: '#1F2937', fontSize: '24px', fontWeight: '700', margin: '0 0 8px 0' }}>Why Book This Sailing With Eric</h2>
           <p style={{ color: '#6B7280', fontSize: '15px', lineHeight: '1.7', margin: '0 0 20px 0' }}>
-            Signing up just takes your name and email. It&rsquo;s how you get the deal and unlock the perks below.
+            Book your cabin through Eric and you&rsquo;re part of the group, with these perks included.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
             {memberPerks.map((p, i) => (
@@ -205,8 +222,8 @@ export default function TransatlanticPage() {
           <h2 style={{ color: '#1F2937', fontSize: '20px', fontWeight: '700', margin: '0 0 16px 0' }}>How It Works</h2>
           <ol style={{ color: '#374151', fontSize: '15px', lineHeight: '1.9', margin: 0, paddingLeft: '20px' }}>
             <li><strong>Pick your cabin</strong> from the prices above.</li>
-            <li><strong>Join free.</strong> Takes about a minute, just your name and email. It&rsquo;s how you join the group and unlock the perks.</li>
-            <li><strong>Text or email Eric</strong> to hold your cabin. He books it into the group for you and locks in your perk.</li>
+            <li><strong>Text or email Eric</strong> with any questions. No pressure, no planning fee.</li>
+            <li><strong>Eric books your cabin into the group</strong> for you and locks in your perk.</li>
           </ol>
           <p style={{ color: '#6B7280', fontSize: '13px', lineHeight: '1.6', margin: '16px 0 0 0' }}>
             Your cabin needs to be booked through Eric to get the bar tab. Booking on your own through Virgin&rsquo;s site won&rsquo;t include it.
@@ -216,20 +233,20 @@ export default function TransatlanticPage() {
         {/* Final CTA */}
         <div style={{ backgroundColor: '#007298', borderRadius: '16px', padding: '32px', textAlign: 'center' }}>
           <h3 style={{ color: 'white', fontSize: '22px', fontWeight: '700', margin: '0 0 8px 0' }}>Want in?</h3>
-          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '15px', margin: '0 0 20px 0' }}>Sign up and get first dibs on a cabin.</p>
-          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/join" className="hdt-btn hdt-btn-amber" style={{ backgroundColor: '#F59E0B', color: 'white', padding: '14px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '16px' }}>
-              Join This Sailing
+          <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '15px', margin: '0 0 20px 0' }}>Reach out and Eric will get back to you personally. Questions are always welcome.</p>
+          <ContactButtons />
+        </div>
+
+        {/* Optional membership (secondary, not required to book) */}
+        <div style={{ backgroundColor: 'white', borderRadius: '14px', border: '1px solid #E5E7EB', padding: '20px 24px', marginTop: '20px', textAlign: 'center' }}>
+          <p style={{ color: '#374151', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>
+            Wish to be a member of Happy Detour Travel?{' '}
+            <Link to="/join" style={{ color: '#007298', fontWeight: '700', textDecoration: 'underline' }}>
+              Sign up here.
             </Link>
-          </div>
-          <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px', margin: '12px 0 0 0' }}>
-            No spam ever. Just emails about your trips. Promise.
           </p>
-          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '14px', margin: '20px 0 0 0' }}>
-            Questions first?{' '}
-            <a href="sms:6308231253?body=Hi%20Eric!%20I%20have%20a%20question%20about%20the%20Halloween%20Transatlantic%20sailing." className="hdt-text-link" style={{ color: 'white', fontWeight: '700', textDecoration: 'none' }}>
-              Text Eric
-            </a>
+          <p style={{ color: '#9CA3AF', fontSize: '13px', margin: '6px 0 0 0' }}>
+            It&rsquo;s free and totally optional. You don&rsquo;t need it to book this sailing.
           </p>
         </div>
 
