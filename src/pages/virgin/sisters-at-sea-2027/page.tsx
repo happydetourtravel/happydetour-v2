@@ -7,11 +7,12 @@ const Check = () => (
   </svg>
 );
 
-const CLAIM_FORM = "https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/6E9JQLQfrQfUvS85KcGhiHE1/link";
+const PHONE = "630-823-1253";
+const EMAIL = "eric@happydetour.com";
 const VV_BASE = "https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK";
 
-// PRICES: fill in "price" from your FirstMates tool (per person, double occupancy).
-// Leave it as "" and the card shows "Text Eric for today's price" instead.
+// PRICES: starting price per cabin (2 sailors), Lock It In rate, as of Nov 10, 2026.
+// Update these from your FirstMates tool when they change.
 const sailings = [
   {
     ship: "Scarlet Lady",
@@ -19,11 +20,10 @@ const sailings = [
     nights: 5,
     dates: "February 15 to 20, 2027",
     from: "Miami",
-    ports: ["Grand Bahama Island", "The Beach Club at Bimini", "Sisters at Sea meetup"],
+    ports: ["Freeport, Grand Bahama", "Sisters at Sea meetup", "The Beach Club at Bimini"],
     blurb: "The shortest way to be there for the big day. Five nights from Miami with a beach day at Bimini.",
     image: "/BiminiBeachClubDrone.jpg",
-    loot: 100,
-    price: "",
+    price: "$1,790",
     link: `${VV_BASE}&dateFrom=2027-02-15&dateTo=2027-02-15&durations=5&ships=SC`,
   },
   {
@@ -32,11 +32,10 @@ const sailings = [
     nights: 7,
     dates: "February 14 to 21, 2027",
     from: "Miami",
-    ports: ["Progreso, Mexico (Yucatán)", "Grand Bahama Island", "The Beach Club at Bimini", "Sisters at Sea meetup"],
+    ports: ["Freeport, Grand Bahama", "Sisters at Sea meetup", "Progreso, Mexico (Yucatán)", "The Beach Club at Bimini"],
     blurb: "A full week with Mexico's Yucatán, the Bahamas, and the meetup in the middle. Sails over Valentine's Day.",
     image: "/eastern-caribbean-bimini.webp",
-    loot: 100,
-    price: "",
+    price: "$2,086",
     link: `${VV_BASE}&dateFrom=2027-02-14&dateTo=2027-02-14&durations=6-8&ships=RS`,
   },
   {
@@ -48,8 +47,7 @@ const sailings = [
     ports: ["Samaná, Dominican Republic", "Grand Turk", "Sisters at Sea meetup", "Cabo Rojo, Dominican Republic"],
     blurb: "Island hopping from San Juan, including a brand new port for Virgin at Cabo Rojo. Sails over Valentine's Day.",
     image: "/VL-BritishVirginIslands.JPG",
-    loot: 100,
-    price: "",
+    price: "$2,226",
     link: `${VV_BASE}&dateFrom=2027-02-13&dateTo=2027-02-13&durations=6-8&ships=VL`,
   },
   {
@@ -58,11 +56,10 @@ const sailings = [
     nights: 10,
     dates: "February 8 to 18, 2027",
     from: "Miami",
-    ports: ["St. Maarten", "Tortola", "St. Croix", "San Juan", "Puerto Plata", "Sisters at Sea meetup"],
+    ports: ["Philipsburg, St. Maarten", "Tortola", "St. Croix", "San Juan", "Puerto Plata", "Sisters at Sea meetup", "The Beach Club at Bimini"],
     blurb: "The longest option with the most islands. Ten nights through the Eastern Caribbean on Virgin's newest ship.",
     image: "/BR-BalconyHammock.JPG",
-    loot: 200,
-    price: "",
+    price: "$3,580",
     link: `${VV_BASE}&dateFrom=2027-02-08&dateTo=2027-02-08&durations=9-12&ships=BR`,
   },
 ];
@@ -76,7 +73,6 @@ const eventHighlights = [
 ];
 
 export default function SistersAtSea2027() {
-  const [contactOpen, setContactOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
@@ -104,7 +100,7 @@ export default function SistersAtSea2027() {
           <div>
             <p style={{ color: "#1F2937", fontWeight: "700", fontSize: "14px", margin: "0 0 4px 0" }}>Hi, I'm Eric.</p>
             <p style={{ color: "#4B5563", fontSize: "14px", margin: 0, lineHeight: "1.6" }}>
-              Not sure which ship fits you best? Text me. I'll help you pick, handle every detail, and add Sailor Loot onboard credit you won't get booking direct.
+              Not sure which ship fits you best? Text me. I'll help you pick the right ship and cabin and handle every detail from start to finish.
             </p>
           </div>
         </div>
@@ -119,6 +115,7 @@ export default function SistersAtSea2027() {
           <p style={{ color: "#4B5563", fontSize: "16px", lineHeight: "1.8", margin: "0 0 20px 0" }}>
             The only way to be there is to be on one of these four sailings. Once it's done, it's done.
           </p>
+          <img src="/sisters-at-sea.jpeg" alt="All four Virgin Voyages ships sailing side by side" style={{ display: "block", width: "100%", maxWidth: "360px", borderRadius: "10px", margin: "0 0 20px 0", boxShadow: "0 4px 16px rgba(0,0,0,0.12)" }} />
           <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "12px" }}>
             {eventHighlights.map((item, i) => (
               <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
@@ -139,7 +136,6 @@ export default function SistersAtSea2027() {
                 <div style={{ position: "relative", height: "190px", backgroundImage: `url('${s.image}')`, backgroundSize: "cover", backgroundPosition: "center" }}>
                   <div style={{ position: "absolute", top: "12px", left: "12px", display: "flex", gap: "6px", flexWrap: "wrap" }}>
                     <span style={{ backgroundColor: "#1F2937", color: "white", fontSize: "11px", fontWeight: "700", padding: "4px 10px", borderRadius: "4px" }}>{s.tag}</span>
-                    <span style={{ backgroundColor: "#F59E0B", color: "#1F2937", fontSize: "11px", fontWeight: "800", padding: "4px 10px", borderRadius: "4px" }}>+${s.loot} Sailor Loot</span>
                   </div>
                 </div>
                 <div style={{ padding: "20px", display: "flex", flexDirection: "column", flex: 1 }}>
@@ -154,10 +150,20 @@ export default function SistersAtSea2027() {
                     ))}
                   </div>
                   <div style={{ marginTop: "auto" }}>
-                    <p style={{ color: "#1F2937", fontSize: "15px", fontWeight: "700", margin: "0 0 12px 0" }}>
-                      {s.price ? <>From <span style={{ color: "#007298", fontSize: "22px" }}>{s.price}</span> <span style={{ color: "#9CA3AF", fontSize: "12px", fontWeight: "500" }}>/person</span></> : "Text Eric for today's price"}
-                    </p>
-                    <a href={CLAIM_FORM} target="_blank" rel="noopener noreferrer" style={{ display: "block", textAlign: "center", backgroundColor: "#CC0000", color: "white", padding: "12px 16px", borderRadius: "8px", textDecoration: "none", fontWeight: "700", fontSize: "15px", marginBottom: "8px" }}>Claim a Spot on {s.ship}</a>
+                    <p style={{ color: "#6B7280", fontSize: "12px", margin: "0 0 2px 0" }}>Starting from</p>
+                    <p style={{ margin: "0 0 2px 0" }}><span style={{ color: "#007298", fontSize: "26px", fontWeight: "800" }}>{s.price}</span> <span style={{ color: "#6B7280", fontSize: "13px" }}>per cabin</span></p>
+                    <p style={{ color: "#9CA3AF", fontSize: "11px", margin: "0 0 14px 0" }}>For 2 sailors, Lock It In rate. Prices can change.</p>
+                    <p style={{ color: "#1F2937", fontSize: "13px", fontWeight: "700", margin: "0 0 8px 0" }}>Claim your spot on {s.ship}:</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "8px", marginBottom: "10px" }}>
+                      <a href={`sms:${PHONE.replace(/-/g, "")}`} style={{ display: "block", textAlign: "center", backgroundColor: "#CC0000", color: "white", padding: "10px 12px", borderRadius: "8px", textDecoration: "none" }}>
+                        <span style={{ display: "block", fontWeight: "700", fontSize: "14px" }}>Text Eric</span>
+                        <span style={{ display: "block", fontSize: "12px", opacity: 0.9 }}>{PHONE}</span>
+                      </a>
+                      <a href={`mailto:${EMAIL}?subject=${encodeURIComponent(`Sisters at Sea: ${s.ship}`)}`} style={{ display: "block", textAlign: "center", backgroundColor: "white", color: "#007298", padding: "10px 12px", borderRadius: "8px", textDecoration: "none", border: "2px solid #007298" }}>
+                        <span style={{ display: "block", fontWeight: "700", fontSize: "14px" }}>Email Eric</span>
+                        <span style={{ display: "block", fontSize: "12px" }}>{EMAIL}</span>
+                      </a>
+                    </div>
                     <a href={s.link} target="_blank" rel="noopener noreferrer" style={{ display: "block", textAlign: "center", color: "#9CA3AF", fontSize: "12px", textDecoration: "underline" }}>Already know your cabin? Book directly</a>
                   </div>
                 </div>
@@ -188,24 +194,21 @@ export default function SistersAtSea2027() {
           <p style={{ color: "#BAE6FD", fontSize: "15px", margin: "0 auto 20px auto", maxWidth: "560px", lineHeight: "1.6" }}>
             These sailings are tied to a one time event, so cabins won't sit around. We talk through everything before anything is confirmed so there are no surprises.
           </p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "center", position: "relative" }}>
-            <a href={CLAIM_FORM} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: "#F59E0B", color: "#1F2937", padding: "14px 24px", borderRadius: "8px", textDecoration: "none", fontWeight: "800", fontSize: "15px" }}>Start Planning My Trip</a>
-            <div style={{ position: "relative" }}>
-              <button onClick={() => setContactOpen(!contactOpen)} style={{ backgroundColor: "transparent", color: "white", padding: "14px 24px", borderRadius: "8px", fontWeight: "700", fontSize: "15px", border: "2px solid white", cursor: "pointer" }}>Text or Email Eric</button>
-              {contactOpen && (
-                <div style={{ position: "absolute", bottom: "calc(100% + 6px)", left: 0, right: 0, minWidth: "180px", backgroundColor: "white", borderRadius: "10px", boxShadow: "0 4px 24px rgba(0,0,0,0.12)", border: "1px solid #F3F4F6", zIndex: 100, textAlign: "left" }}>
-                  <a href="sms:6308231253" style={{ display: "block", padding: "12px 16px", fontSize: "14px", color: "#1F2937", textDecoration: "none", fontWeight: "600", borderBottom: "1px solid #F3F4F6" }}>Send a Text</a>
-                  <a href="mailto:eric@happydetour.com" style={{ display: "block", padding: "12px 16px", fontSize: "14px", color: "#1F2937", textDecoration: "none", fontWeight: "600" }}>Send an Email</a>
-                </div>
-              )}
-            </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "center" }}>
+            <a href={`sms:${PHONE.replace(/-/g, "")}`} style={{ backgroundColor: "#F59E0B", color: "#1F2937", padding: "12px 24px", borderRadius: "8px", textDecoration: "none", minWidth: "200px" }}>
+              <span style={{ display: "block", fontWeight: "800", fontSize: "15px" }}>Text Eric</span>
+              <span style={{ display: "block", fontSize: "13px" }}>{PHONE}</span>
+            </a>
+            <a href={`mailto:${EMAIL}?subject=${encodeURIComponent("Sisters at Sea 2027")}`} style={{ backgroundColor: "transparent", color: "white", padding: "12px 24px", borderRadius: "8px", textDecoration: "none", border: "2px solid white", minWidth: "200px" }}>
+              <span style={{ display: "block", fontWeight: "800", fontSize: "15px" }}>Email Eric</span>
+              <span style={{ display: "block", fontSize: "13px" }}>{EMAIL}</span>
+            </a>
           </div>
-          <p style={{ color: "#E0F2FE", fontSize: "13px", margin: "16px 0 0 0" }}>Text 630-823-1253 · eric@happydetour.com</p>
           <button onClick={() => setModalOpen(true)} style={{ background: "none", border: "none", color: "#FDE68A", fontSize: "13px", fontWeight: "600", cursor: "pointer", marginTop: "12px", textDecoration: "underline" }}>Join the mailing list for more sailings like this</button>
         </div>
 
         <p style={{ color: "#9CA3AF", fontSize: "11px", textAlign: "center", margin: "20px auto 0 auto", maxWidth: "720px", lineHeight: "1.6" }}>
-          Prices are per person, double occupancy, taxes and fees included, and are subject to change and availability. Sailor Loot applies to Sea Terrace cabins and above on Essential or Premium fares booked with Eric. Itineraries and event details are set by Virgin Voyages and may change.
+          Starting prices are per cabin for 2 sailors at the Lock It In rate, and are subject to change and availability. Itineraries and event details are set by Virgin Voyages and may change.
         </p>
       </div>
 
