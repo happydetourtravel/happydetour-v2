@@ -81,8 +81,6 @@ export const routes: RouteRecord[] = [
       { path: 'cruises/msc', entry: 'src/pages/cruiselines/msc/mschome/page.tsx', lazy: () => import('./pages/cruiselines/msc/mschome/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/royal-caribbean', entry: 'src/pages/cruiselines/royal/royalhome/page.tsx', lazy: () => import('./pages/cruiselines/royal/royalhome/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/carnival', entry: 'src/pages/cruiselines/carnival/carnivalhome/page.tsx', lazy: () => import('./pages/cruiselines/carnival/carnivalhome/page').then((m) => ({ Component: m.default })) },
-      { path: 'resorts/sandals', entry: 'src/pages/resorts/sandals/sandalshome/page.tsx', lazy: () => import('./pages/resorts/sandals/sandalshome/page').then((m) => ({ Component: m.default })) },
-      { path: 'resorts/beaches', entry: 'src/pages/resorts/beaches/beacheshome/page.tsx', lazy: () => import('./pages/resorts/beaches/beacheshome/page').then((m) => ({ Component: m.default })) },
       { path: 'blog', entry: 'src/pages/blog/index/page.tsx', lazy: () => import('./pages/blog/index/page').then((m) => ({ Component: m.default })) },
       { path: 'blog/:slug', entry: 'src/pages/blog/post/page.tsx', lazy: () => import('./pages/blog/post/page').then((m) => ({ Component: m.default })) },
       { path: 'group/transatlantic-10-2027', entry: 'src/pages/group/transatlantic-10-2027/page.tsx', lazy: () => import('./pages/group/transatlantic-10-2027/page').then((m) => ({ Component: m.default })) },
