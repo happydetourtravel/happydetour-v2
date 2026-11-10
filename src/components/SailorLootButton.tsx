@@ -1,12 +1,20 @@
 import { useUser } from '@clerk/clerk-react'
+import { useClerkReady } from './ClerkReady'
 
 // Home page Sailor Loot button.
 // Signed-in members go straight to the Sailor Loot section on /members. Everyone else goes to /join.
-// This file uses Clerk, so it must be lazy-loaded and wrapped in ClientOnly + Suspense.
+// Until Clerk loads, it shows the /join version.
 export default function SailorLootButton() {
-  const { isLoaded, isSignedIn } = useUser()
-  const isMember = isLoaded && isSignedIn
+  const clerkReady = useClerkReady()
+  return clerkReady ? <MemberAwareButton /> : <LootLink isMember={false} />
+}
 
+function MemberAwareButton() {
+  const { isLoaded, isSignedIn } = useUser()
+  return <LootLink isMember={!!(isLoaded && isSignedIn)} />
+}
+
+function LootLink({ isMember }: { isMember: boolean }) {
   return (
     <a
       href={isMember ? '/members#sailor-loot' : '/join'}
