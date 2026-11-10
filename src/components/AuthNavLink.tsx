@@ -1,5 +1,6 @@
 import { SignedIn, SignedOut } from '@clerk/clerk-react'
 import { Link } from 'react-router-dom'
+import { useClerkReady } from './ClerkReady'
 
 type AuthNavLinkProps = {
   variant?: 'desktop' | 'mobile'
@@ -7,6 +8,8 @@ type AuthNavLinkProps = {
 }
 
 export default function AuthNavLink({ variant = 'desktop', onNavigate }: AuthNavLinkProps) {
+  const clerkReady = useClerkReady()
+
   const mobileLinkStyle = {
     display: 'block',
     padding: '12px 8px',
@@ -16,6 +19,15 @@ export default function AuthNavLink({ variant = 'desktop', onNavigate }: AuthNav
     textDecoration: 'none',
     borderBottom: '1px solid #F9FAFB',
   } as const
+
+  // Until Clerk loads, show the regular "Members" link to /login
+  if (!clerkReady) {
+    return variant === 'mobile' ? (
+      <Link to="/login" onClick={onNavigate} style={mobileLinkStyle}>Members</Link>
+    ) : (
+      <Link to="/login" className="hover:text-brand-blue transition-colors">Members</Link>
+    )
+  }
 
   if (variant === 'mobile') {
     return (
