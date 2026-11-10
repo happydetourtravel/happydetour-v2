@@ -11,7 +11,7 @@ const PHONE = "630-823-1253";
 const EMAIL = "eric@happydetour.com";
 const VV_BASE = "https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&currencyCode=USD&agentId=278796&agencyId=589&bookingChannel=FMLINK";
 
-// PRICES: starting price per cabin (2 sailors), Lock It In rate, as of Nov 10, 2026.
+// FARES: starting fare per cabin (2 sailors), Lock It In rate, as of Nov 10, 2026.
 // Update these from your FirstMates tool when they change.
 const sailings = [
   {
@@ -78,18 +78,21 @@ export default function SistersAtSea2027() {
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "#F9FAFB", fontFamily: "sans-serif" }}>
       {/* Hero */}
-      <div className="h-[340px] md:h-[500px]" style={{ position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/BiminiBeachClubDrone.jpg')", backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.5)" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 60%)" }} />
-        <div className="px-4 md:px-6 pb-8 md:pb-12" style={{ position: "relative", maxWidth: "1280px", margin: "0 auto", height: "100%", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "12px" }}>
-            <div style={{ backgroundColor: "#CC0000", color: "white", fontSize: "11px", fontWeight: "800", padding: "4px 10px", borderRadius: "4px", letterSpacing: "1px", textTransform: "uppercase" }}>Virgin Voyages</div>
-            <div style={{ backgroundColor: "#F59E0B", color: "#1F2937", fontSize: "11px", fontWeight: "800", padding: "4px 10px", borderRadius: "4px", letterSpacing: "1px", textTransform: "uppercase" }}>One Time Only Event</div>
+      <div style={{ backgroundColor: "#0B2530" }}>
+        <div className="px-4 md:px-6 py-8 md:py-12 grid grid-cols-1 md:grid-cols-2 items-center" style={{ maxWidth: "1280px", margin: "0 auto", gap: "32px" }}>
+          <div className="order-2 md:order-1">
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "12px" }}>
+              <div style={{ backgroundColor: "#CC0000", color: "white", fontSize: "11px", fontWeight: "800", padding: "4px 10px", borderRadius: "4px", letterSpacing: "1px", textTransform: "uppercase" }}>Virgin Voyages</div>
+              <div style={{ backgroundColor: "#F59E0B", color: "#1F2937", fontSize: "11px", fontWeight: "800", padding: "4px 10px", borderRadius: "4px", letterSpacing: "1px", textTransform: "uppercase" }}>One Time Only Event</div>
+            </div>
+            <h1 className="text-[30px] md:text-[44px]" style={{ color: "white", fontWeight: "800", margin: "0 0 12px 0", lineHeight: "1.15" }}>Sisters at Sea 2027</h1>
+            <p className="text-[16px] md:text-[18px]" style={{ color: "rgba(255,255,255,0.9)", margin: 0, lineHeight: "1.6" }}>
+              On February 16, 2027, all four Virgin Voyages ships meet in the Caribbean for the first time. Four sailings. One party. Pick your ship.
+            </p>
           </div>
-          <h1 className="text-[30px] md:text-[46px]" style={{ color: "white", fontWeight: "800", margin: "0 0 12px 0", lineHeight: "1.15" }}>Sisters at Sea 2027</h1>
-          <p className="text-[16px] md:text-[19px]" style={{ color: "rgba(255,255,255,0.92)", margin: 0, maxWidth: "640px", lineHeight: "1.5" }}>
-            On February 16, 2027, all four Virgin Voyages ships meet in the Caribbean for the first time. Four sailings. One party. Pick your ship.
-          </p>
+          <div className="order-1 md:order-2" style={{ display: "flex", justifyContent: "center" }}>
+            <img src="/sisters-at-sea-ships.jpg" alt="Four ships sailing together toward a Caribbean sunset" style={{ display: "block", width: "100%", maxWidth: "460px", height: "auto", borderRadius: "12px", boxShadow: "0 8px 32px rgba(0,0,0,0.35)" }} />
+          </div>
         </div>
       </div>
 
@@ -115,7 +118,7 @@ export default function SistersAtSea2027() {
           <p style={{ color: "#4B5563", fontSize: "16px", lineHeight: "1.8", margin: "0 0 20px 0" }}>
             The only way to be there is to be on one of these four sailings. Once it's done, it's done.
           </p>
-          <img src="/sisters-at-sea.jpeg" alt="All four Virgin Voyages ships sailing side by side" style={{ display: "block", width: "100%", maxWidth: "360px", borderRadius: "10px", margin: "0 0 20px 0", boxShadow: "0 4px 16px rgba(0,0,0,0.12)" }} />
+          <img src="/sisters-at-sea-mermaids.jpg" alt="The four Lady Ship mermaids" style={{ display: "block", width: "100%", maxWidth: "420px", height: "auto", borderRadius: "10px", margin: "0 0 20px 0", boxShadow: "0 4px 16px rgba(0,0,0,0.12)" }} />
           <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "12px" }}>
             {eventHighlights.map((item, i) => (
               <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
@@ -152,7 +155,7 @@ export default function SistersAtSea2027() {
                   <div style={{ marginTop: "auto" }}>
                     <p style={{ color: "#6B7280", fontSize: "12px", margin: "0 0 2px 0" }}>Starting from</p>
                     <p style={{ margin: "0 0 2px 0" }}><span style={{ color: "#007298", fontSize: "26px", fontWeight: "800" }}>{s.price}</span> <span style={{ color: "#6B7280", fontSize: "13px" }}>per cabin</span></p>
-                    <p style={{ color: "#9CA3AF", fontSize: "11px", margin: "0 0 14px 0" }}>For 2 sailors, Lock It In rate. Prices can change.</p>
+                    <p style={{ color: "#9CA3AF", fontSize: "11px", margin: "0 0 14px 0" }}>For 2 sailors, Lock It In fare. Fares can change.</p>
                     <p style={{ color: "#1F2937", fontSize: "13px", fontWeight: "700", margin: "0 0 8px 0" }}>Claim your spot on {s.ship}:</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "8px", marginBottom: "10px" }}>
                       <a href={`sms:${PHONE.replace(/-/g, "")}`} style={{ display: "block", textAlign: "center", backgroundColor: "#CC0000", color: "white", padding: "10px 12px", borderRadius: "8px", textDecoration: "none" }}>
@@ -208,7 +211,7 @@ export default function SistersAtSea2027() {
         </div>
 
         <p style={{ color: "#9CA3AF", fontSize: "11px", textAlign: "center", margin: "20px auto 0 auto", maxWidth: "720px", lineHeight: "1.6" }}>
-          Starting prices are per cabin for 2 sailors at the Lock It In rate, and are subject to change and availability. Itineraries and event details are set by Virgin Voyages and may change.
+          Starting fares are per cabin for 2 sailors at the Lock It In fare, and are subject to change and availability. Itineraries and event details are set by Virgin Voyages and may change.
         </p>
       </div>
 
