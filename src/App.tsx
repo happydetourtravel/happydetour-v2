@@ -1,12 +1,17 @@
 import { useState, useEffect, type ComponentType } from 'react';
 import type { RouteRecord } from 'vite-react-ssg';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { ClerkReadyContext } from './components/ClerkReady';
+
+// Sign-in pages that need Clerk. They show "Loading..." until Clerk is ready.
+const CLERK_PAGES = ['/join', '/login', '/forgot-password', '/verify', '/members'];
 
 function Layout() {
   const publishableKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
   const [ClerkProviderComp, setClerkProviderComp] = useState<ComponentType<any> | null>(null);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     if (!publishableKey) return;
@@ -15,23 +20,29 @@ function Layout() {
     });
   }, [publishableKey]);
 
+  const clerkReady = !!publishableKey && !!ClerkProviderComp;
+  const needsClerk = CLERK_PAGES.some((p) => pathname === p || pathname.startsWith(p + '/'));
+
+  // The page always renders now, so search engines and ChatGPT can read it
   const body = (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <Outlet />
-      <Footer />
-    </div>
+    <ClerkReadyContext.Provider value={clerkReady}>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        {needsClerk && !clerkReady ? (
+          <main style={{ flex: 1, padding: '80px 20px', textAlign: 'center', color: '#6B7280' }}>Loading…</main>
+        ) : (
+          <Outlet />
+        )}
+        <Footer />
+      </div>
+    </ClerkReadyContext.Provider>
   );
 
-  if (!publishableKey) {
+  if (!clerkReady) {
     return body;
   }
 
-  if (!ClerkProviderComp) {
-    return null;
-  }
-
-  const ClerkProvider = ClerkProviderComp;
+  const ClerkProvider = ClerkProviderComp!;
   return <ClerkProvider publishableKey={publishableKey}>{body}</ClerkProvider>;
 }
 
