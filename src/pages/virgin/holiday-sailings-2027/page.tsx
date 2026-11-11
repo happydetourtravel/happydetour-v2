@@ -34,10 +34,10 @@ const sections: { id: string; label: string; emoji: string; blurb: string; saili
     emoji: "🎄",
     blurb: "Trade the holiday rush for sunshine. Christmas at sea, with no shopping lists and no hosting.",
     sailings: [
-      { ship: "Scarlet Lady", dates: "Dec 18 to 26, 2027", date: "2027-12-18", nights: 8, route: "San Juan • Philipsburg • St. John's • Roseau • Oranjestad • Willemstad • San Juan", price: "" },
-      { ship: "Resilient Lady", dates: "Dec 19 to 26, 2027", date: "2027-12-19", nights: 7, route: "Miami • Puerto Plata • San Juan • The Beach Club at Bimini • Miami", price: "" },
-      { ship: "Valiant Lady", dates: "Dec 20 to 27, 2027", date: "2027-12-20", nights: 7, route: "Miami • George Town, Grand Cayman • Ocho Rios • The Beach Club at Bimini • Miami", price: "" },
-      { ship: "Brilliant Lady", dates: "Dec 23 to 28, 2027", date: "2027-12-23", nights: 5, route: "Miami • The Beach Club at Bimini • Cozumel • Miami", price: "" },
+      { ship: "Scarlet Lady", dates: "Dec 18 to 26, 2027", date: "2027-12-18", nights: 8, route: "San Juan • Philipsburg • St. John's • Roseau • Oranjestad • Willemstad • San Juan", price: "", link: "https://www.virginvoyages.com/book/voyage-planner/pre-checkout?agencyId=589&agentId=278796&bookingChannel=FMLINK&currencyCode=USD&dateFrom=2027-12-01&dateTo=2027-12-31&packageCode=8NSJRW&voyageId=SC2712188NSJRW" },
+      { ship: "Resilient Lady", dates: "Dec 19 to 26, 2027", date: "2027-12-19", nights: 7, route: "Miami • Puerto Plata • San Juan • The Beach Club at Bimini • Miami", price: "", link: "https://www.virginvoyages.com/book/voyage-planner/pre-checkout?agencyId=589&agentId=278796&bookingChannel=FMLINK&currencyCode=USD&dateFrom=2027-12-01&dateTo=2027-12-31&packageCode=7NPD3H&voyageId=RS2712197NPD3H" },
+      { ship: "Valiant Lady", dates: "Dec 20 to 27, 2027", date: "2027-12-20", nights: 7, route: "Miami • George Town, Grand Cayman • Ocho Rios • The Beach Club at Bimini • Miami", price: "", link: "https://www.virginvoyages.com/book/voyage-planner/pre-checkout?agencyId=589&agentId=278796&bookingChannel=FMLINK&currencyCode=USD&dateFrom=2027-12-01&dateTo=2027-12-31&packageCode=7NGOR3C&voyageId=VL2712207NGOR3C" },
+      { ship: "Brilliant Lady", dates: "Dec 23 to 28, 2027", date: "2027-12-23", nights: 5, route: "Miami • The Beach Club at Bimini • Cozumel • Miami", price: "", link: "https://www.virginvoyages.com/book/voyage-planner/pre-checkout?agencyId=589&agentId=278796&bookingChannel=FMLINK&currencyCode=USD&dateFrom=2027-12-01&dateTo=2027-12-31&packageCode=5NCZX&voyageId=BR2712235NCZX" },
     ],
   },
   {
