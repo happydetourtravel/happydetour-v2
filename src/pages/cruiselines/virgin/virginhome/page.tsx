@@ -275,6 +275,7 @@ function ReferralAccordion() {
 
 const TABS = [
   { id: "included", label: "What's Included" },
+  { id: "fares", label: "Fare Types" },
   { id: "perks", label: "Bar Tab & Perks" },
   { id: "optimizer", label: "Bar Tab Optimizer" },
   { id: "ships", label: "The Ships" },
@@ -388,14 +389,21 @@ export default function VirginVoyagesPage() {
         {activeTab === "included" && (
           <section>
             <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: VV_DARK }}>What Comes With Your Fare</h2>
-            <p className="text-gray-500 text-sm mb-6">Virgin Voyages bundles in things that other cruise lines charge extra for. Here is a breakdown of what you get the moment you step onboard.</p>
+            <p className="text-gray-500 text-sm mb-6">
+              Virgin Voyages bundles in things that other cruise lines charge extra for. Here is a breakdown of what you get the moment you step onboard, no matter which fare you pick.{" "}
+              <button onClick={() => goToTab("fares")} className="vv-link font-semibold underline" style={{ color: VV_RED }}>See how the fare types differ</button>
+            </p>
 
             <Accordion title="All Restaurants Included">
               <p>Every single restaurant on the ship is included in your fare. No specialty dining surcharge. No reservation fee. You just show up and eat. Virgin Voyages has between 6 and 20 restaurant options depending on the ship. You book dining times in advance through the Sailor app, which makes the whole process smooth and easy.</p>
             </Accordion>
 
             <Accordion title="Unlimited WiFi">
-              <p>High speed WiFi is included for every sailor on every sailing. Not the slow, barely-works kind. You can stream, post, video call, and work from sea if you need to. This is one of the biggest things people do not realize is covered until they get onboard.</p>
+              <p className="mb-3">WiFi is included for every sailor on every sailing. This is one of the biggest things people do not realize is covered until they get onboard.</p>
+              <p>
+                How fast it is depends on your fare. Every fare covers messaging, social media, and browsing. Essential adds WiFi audio calls, and Premium adds video calls and streaming.{" "}
+                <button onClick={() => goToTab("fares")} className="vv-link font-semibold underline" style={{ color: VV_RED }}>Compare the fare types</button>
+              </p>
             </Accordion>
 
             <Accordion title="Fitness Classes">
@@ -430,6 +438,140 @@ export default function VirginVoyagesPage() {
                 Learn more about Virgin Voyages at virginvoyages.com
               </a>.
             </p>
+          </section>
+        )}
+
+        {/* FARE TYPES */}
+        {activeTab === "fares" && (
+          <section>
+            <h2 className="text-xl md:text-3xl font-bold mb-2" style={{ color: VV_DARK }}>Fare Types: Lock It In, Base, Essential, Premium</h2>
+            <p className="text-gray-500 text-sm mb-6">When you book Virgin Voyages, you pick a cabin and then a fare. Same ship, same food, same fun. The fare decides your WiFi speed, how early you can book dining, and what happens if your plans change.</p>
+
+            {/* Always included, every fare */}
+            <div className="rounded-2xl p-5 mb-6 text-white" style={{ background: `linear-gradient(135deg, ${VV_DARK}, ${VV_RED})` }}>
+              <p className="text-xs uppercase tracking-widest mb-2" style={{ color: VV_GOLD }}>Included on Every Fare</p>
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <p><strong>All dining</strong><br /><span className="text-red-100 text-xs">Every restaurant onboard</span></p>
+                <p><strong>Entertainment</strong><br /><span className="text-red-100 text-xs">Shows, comedy, and parties</span></p>
+                <p><strong>Fitness classes</strong><br /><span className="text-red-100 text-xs">Yoga, cycling, HIIT, and more</span></p>
+                <p><strong>Soda and water</strong><br /><span className="text-red-100 text-xs">Plus juice, tea, and drip coffee</span></p>
+              </div>
+            </div>
+
+            {/* Fare cards */}
+            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+              {[
+                {
+                  name: "Lock It In",
+                  tag: "Lowest Price",
+                  color: "#6B7280",
+                  summary: "The cheapest way onboard. Virgin picks your cabin for you.",
+                  rows: [
+                    ["Your cabin", "Virgin assigns it"],
+                    ["Changes", "None allowed"],
+                    ["Refunds", "Non-refundable"],
+                  ],
+                  note: "Great if your dates are set in stone and you just want to be on the ship.",
+                },
+                {
+                  name: "Base",
+                  tag: "Best Deal",
+                  color: "#4B5563",
+                  summary: "A low price, and you get to choose your own cabin.",
+                  rows: [
+                    ["WiFi", "Basic: messaging, social, browsing · 1 device per person"],
+                    ["Book dining", "15 days before you sail"],
+                    ["Changes", "None allowed"],
+                    ["Refunds", "Non-refundable"],
+                    ["Drinks", "Buy a Bar Tab if you want one"],
+                  ],
+                  note: "Good for travelers who are sure about their plans.",
+                },
+                {
+                  name: "Essential",
+                  tag: "Most Popular",
+                  color: VV_RED,
+                  summary: "A little more money for a lot more peace of mind.",
+                  rows: [
+                    ["WiFi", "Classic: adds WiFi audio calls · 1 device per person"],
+                    ["Book dining", "45 days before you sail"],
+                    ["Changes", "Some changes allowed"],
+                    ["Refunds", "Refundable as a future cruise credit"],
+                    ["Drinks", "Buy a Bar Tab if you want one"],
+                  ],
+                  note: "This is the one I suggest most often.",
+                },
+                {
+                  name: "Premium",
+                  tag: "Extra Perks",
+                  color: "#4C1D5E",
+                  summary: "The most flexible fare, with drink money built in.",
+                  rows: [
+                    ["WiFi", "Premium: adds video calls and streaming · 2 devices per person"],
+                    ["Book dining", "60 days before you sail"],
+                    ["Changes", "Most changes allowed"],
+                    ["Refunds", "Refundable as a future cruise credit"],
+                    ["Drinks", "Bar Tab credit per cabin included. The amount changes by sailing."],
+                    ["Support", "Dedicated phone line"],
+                  ],
+                  note: "Worth a look if you'd be buying a Bar Tab anyway.",
+                },
+              ].map((f) => (
+                <div key={f.name} className="vv-card rounded-xl overflow-hidden border border-gray-100 bg-white flex flex-col">
+                  <div className="px-4 py-3 flex justify-between items-center gap-2" style={{ background: f.color }}>
+                    <p className="text-white font-bold">{f.name}</p>
+                    <span className="text-xs font-semibold px-2 py-1 rounded-full bg-white" style={{ color: f.color }}>{f.tag}</span>
+                  </div>
+                  <div className="px-4 py-4 flex-1 flex flex-col">
+                    <p className="text-sm text-gray-700 mb-3">{f.summary}</p>
+                    <dl className="divide-y divide-gray-100 text-sm mb-3">
+                      {f.rows.map(([label, value]) => (
+                        <div key={label} className="flex justify-between gap-3 py-2">
+                          <dt className="font-semibold text-gray-800 flex-shrink-0">{label}</dt>
+                          <dd className="text-gray-600 text-right">{value}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                    <p className="text-xs text-gray-400 italic mt-auto">{f.note}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <Accordion title="Which Fare Should I Pick?">
+              <ul className="list-disc pl-5 space-y-2">
+                <li><strong>Want the lowest price and don't care which cabin?</strong> Lock It In.</li>
+                <li><strong>Want to pick your cabin and your plans won't change?</strong> Base.</li>
+                <li><strong>Want flexibility and better dining times?</strong> Essential. It's what I recommend for most people.</li>
+                <li><strong>Plan to drink, stream, or want the most flexibility?</strong> Premium. Ask me what the Bar Tab credit is on your sailing so we can see if it pays for itself.</li>
+              </ul>
+            </Accordion>
+
+            <Accordion title="Why Dining Booking Time Matters">
+              <p>Popular spots like The Wake and Test Kitchen fill up fast. Premium gets you in 60 days out and Essential 45 days out, while Base waits until 15 days before. When you book with me, I'll grab your reservations the moment your window opens.</p>
+            </Accordion>
+
+            <Accordion title="Good to Know Before You Choose">
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Lock It In and Base are non-refundable. If you might need to cancel or move your trip, go with Essential or Premium.</li>
+                <li>"Refundable as credit" means you get a future cruise credit, not cash back.</li>
+                <li>The first-timer referral Bar Tab does not work with Lock It In fares.</li>
+                <li>My book-with-Eric Sailor Loot is for Essential and Premium fares on Sea Terrace cabins or higher.</li>
+                <li>Prices change all the time. I'll show you the real difference between fares on your sailing before you decide.</li>
+              </ul>
+            </Accordion>
+
+            <div className="mt-6 p-4 rounded-xl text-sm" style={{ background: "#FFF0F0", borderLeft: `4px solid ${VV_RED}` }}>
+              <p className="mb-2">Not sure which fare fits? Reach out and I'll compare them for your sailing.</p>
+              <p className="mb-1">
+                <strong>Text:</strong>{" "}
+                <a href="sms:6308231253" className="vv-link font-semibold underline" style={{ color: VV_RED }}>630-823-1253</a>
+              </p>
+              <p>
+                <strong>Email:</strong>{" "}
+                <a href="mailto:eric@happydetour.com?subject=Virgin%20Voyages%20fare%20question" className="vv-link font-semibold underline" style={{ color: VV_RED }}>eric@happydetour.com</a>
+              </p>
+            </div>
           </section>
         )}
 
@@ -969,8 +1111,14 @@ export default function VirginVoyagesPage() {
               <p className="font-bold text-sm mb-1">Let Eric help</p>
               <p className="text-xs text-red-100 mb-3">Tell me what you want and I will find the best sailing and perks.</p>
               <div className="flex gap-2">
-                <a href="sms:6308231253" className="vv-btn flex-1 text-center px-3 py-3 rounded-lg font-bold text-sm border border-white/40">Text Eric</a>
-                <a href="mailto:eric@happydetour.com" className="vv-btn flex-1 text-center px-3 py-3 rounded-lg font-bold text-sm border border-white/40">Email Eric</a>
+                <a href="sms:6308231253" className="vv-btn flex-1 text-center px-3 py-3 rounded-lg border border-white/40">
+                  <span className="block font-bold text-sm">Text Eric</span>
+                  <span className="block text-xs font-normal opacity-90 mt-1">630-823-1253</span>
+                </a>
+                <a href="mailto:eric@happydetour.com" className="vv-btn flex-1 text-center px-3 py-3 rounded-lg border border-white/40">
+                  <span className="block font-bold text-sm">Email Eric</span>
+                  <span className="block text-xs font-normal opacity-90 mt-1 break-all">eric@happydetour.com</span>
+                </a>
               </div>
             </div>
           </div>
