@@ -91,7 +91,7 @@ export default function SistersAtSea2027() {
             </p>
           </div>
           <div className="order-1 md:order-2" style={{ display: "flex", justifyContent: "center" }}>
-            <img src="/sisters-at-sea-ships.jpg" alt="Four ships sailing together toward a Caribbean sunset" style={{ display: "block", width: "100%", maxWidth: "460px", height: "auto", borderRadius: "12px", boxShadow: "0 8px 32px rgba(0,0,0,0.35)" }} />
+            <img src="/sisters-at-sea-ships.png" alt="Four ships sailing together toward a Caribbean sunset" style={{ display: "block", width: "100%", maxWidth: "460px", height: "auto", borderRadius: "12px", boxShadow: "0 8px 32px rgba(0,0,0,0.35)" }} />
           </div>
         </div>
       </div>
@@ -118,7 +118,7 @@ export default function SistersAtSea2027() {
           <p style={{ color: "#4B5563", fontSize: "16px", lineHeight: "1.8", margin: "0 0 20px 0" }}>
             The only way to be there is to be on one of these four sailings. Once it's done, it's done.
           </p>
-          <img src="/sisters-at-sea-mermaids.jpg" alt="The four Lady Ship mermaids" style={{ display: "block", width: "100%", maxWidth: "420px", height: "auto", borderRadius: "10px", margin: "0 0 20px 0", boxShadow: "0 4px 16px rgba(0,0,0,0.12)" }} />
+          <img src="/sisters-at-sea-mermaids.png" alt="The four Lady Ship mermaids" style={{ display: "block", width: "100%", maxWidth: "420px", height: "auto", borderRadius: "10px", margin: "0 0 20px 0", boxShadow: "0 4px 16px rgba(0,0,0,0.12)" }} />
           <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "12px" }}>
             {eventHighlights.map((item, i) => (
               <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
