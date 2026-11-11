@@ -13,6 +13,7 @@ const featuredDeals = [
   { tag: "VIRGIN VOYAGES", title: "Miami to Morocco & Spain Transatlantic", date: "Apr 2027", nights: "14 nights", ship: "Scarlet Lady · Miami", originalPrice: "$1,818", salePrice: "$1,246", unit: "/person", cta: "Get This Deal", link: "/cruises/miami-morocco-transatlantic", image: "/BCN.png", sort: "2027-04" },
   { tag: "VIRGIN VOYAGES", title: "French Riviera, Spain & Ibiza Overnight", date: "Jun 2027", nights: "7 nights", ship: "Resilient Lady · Barcelona", originalPrice: "$1,801", salePrice: "$1,253", unit: "/person", cta: "Get This Deal", link: "/cruises/french-riviera-ibiza", image: "/ibiza-spain.webp", sort: "2027-06" },
   { tag: "VIRGIN VOYAGES", title: "Alaska: Hubbard Glacier & Coastal Views", date: "Aug 2027", nights: "9 nights", ship: "Brilliant Lady · Seattle", originalPrice: "$1,597", salePrice: "$1,161", unit: "/person", cta: "Get This Deal", link: "/cruises/alaska-hubbard-glacier", image: "/BL-Alaska.png", sort: "2027-08" },
+  { tag: "HOLIDAY SAILINGS", title: "Holiday Sailings 2027: Thanksgiving, Christmas & New Year's", date: "Nov & Dec 2027", nights: "3 to 8 nights", ship: "All 4 Lady Ships · Miami, San Juan & LA", originalPrice: "", salePrice: "", unit: "", cta: "See Holiday Sailings", link: "/virgin/holiday-sailings-2027", image: "/eastern-caribbean-bimini.webp", sort: "2027-11" },
 ]
 
 // Same sailings for the Featured Sailings tiles: Sisters at Sea first, the rest in date order
@@ -160,12 +161,16 @@ export default function Home() {
                 <h3 style={{ color: '#1F2937', fontSize: '18px', fontWeight: '700', margin: '10px 0 6px 0', lineHeight: '1.3' }}>{deal.title}</h3>
                 <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 16px 0' }}>{deal.date} · {deal.nights} · {deal.ship}</p>
                 <div style={{ borderTop: '1px solid #F3F4F6', paddingTop: '16px', marginBottom: '16px' }}>
+                  {deal.salePrice ? (<>
                   <p style={{ color: '#9CA3AF', fontSize: '11px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 4px 0' }}>Starting From</p>
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
                     {deal.originalPrice && <span style={{ color: '#9CA3AF', fontSize: '14px', textDecoration: 'line-through' }}>{deal.originalPrice}</span>}
                     <span style={{ color: '#1F2937', fontSize: '28px', fontWeight: '800' }}>{deal.salePrice}</span>
                     <span style={{ color: '#6B7280', fontSize: '12px' }}>{deal.unit}</span>
                   </div>
+                  </>) : (
+                    <p style={{ color: '#1F2937', fontSize: '15px', fontWeight: '700', margin: 0 }}>12 holiday sailings to choose from</p>
+                  )}
                 </div>
                 <a href={deal.link} {...(deal.link.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})} aria-label={`Get this deal: ${deal.title}`} style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>{deal.cta}</a>
                 <a href="sms:6308231253" style={{ display: 'block', textAlign: 'center', color: '#6B7280', fontSize: '12px', fontWeight: '600', textDecoration: 'none', margin: '10px 0 0 0' }}>Prefer help? Text Eric →</a>
@@ -334,10 +339,14 @@ export default function Home() {
                 <h3 style={{ color: '#1F2937', fontSize: '17px', fontWeight: '700', margin: '0 0 4px 0', lineHeight: '1.3' }}>{d.title}</h3>
                 <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 14px 0' }}>{d.ship}</p>
                 <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '10px' }}>
+                  {d.salePrice ? (
                   <div>
                     <p style={{ color: '#9CA3AF', fontSize: '11px', margin: 0 }}>Starting from</p>
                     <p style={{ margin: 0 }}><span style={{ color: '#1F2937', fontSize: '22px', fontWeight: '800' }}>{d.salePrice}</span> <span style={{ color: '#6B7280', fontSize: '12px' }}>{d.unit}</span></p>
                   </div>
+                  ) : (
+                  <p style={{ color: '#1F2937', fontSize: '14px', fontWeight: '700', margin: 0 }}>12 sailings</p>
+                  )}
                   <span style={{ backgroundColor: '#007298', color: 'white', padding: '9px 14px', borderRadius: '8px', fontWeight: '700', fontSize: '13px', whiteSpace: 'nowrap' }}>View Sailing</span>
                 </div>
               </div>
