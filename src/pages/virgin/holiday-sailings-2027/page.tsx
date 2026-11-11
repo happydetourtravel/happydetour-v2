@@ -63,14 +63,22 @@ export default function HolidaySailings2027() {
         @media (min-width: 700px) { .hs-grid { grid-template-columns: 1fr 1fr; } }
       `}</style>
 
-      {/* Hero */}
+      {/* Banner */}
       <div style={{ backgroundColor: "#1F2937" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "56px 20px", textAlign: "center" }}>
-          <div style={{ display: "inline-flex", gap: "8px", flexWrap: "wrap", justifyContent: "center", marginBottom: "16px" }}>
-            <span style={{ backgroundColor: "#CC0000", color: "white", fontSize: "11px", fontWeight: "800", padding: "4px 10px", borderRadius: "4px", letterSpacing: "1px", textTransform: "uppercase" }}>Virgin Voyages</span>
-            <span style={{ backgroundColor: "#F59E0B", color: "#1F2937", fontSize: "11px", fontWeight: "800", padding: "4px 10px", borderRadius: "4px", letterSpacing: "1px", textTransform: "uppercase" }}>Holiday Sailings 2027</span>
-          </div>
-          <h1 style={{ color: "white", fontSize: "clamp(28px, 6vw, 42px)", fontWeight: "800", margin: "0 0 14px 0", lineHeight: "1.2" }}>Spend the holidays at sea this year.</h1>
+        <img
+          src="/holiday-sailings-2027.png"
+          alt="Holiday Sailings 2027 with Virgin Voyages: Thanksgiving, Christmas, and New Year's Eve"
+          width="1983"
+          height="793"
+          fetchPriority="high"
+          style={{ display: "block", width: "100%", maxWidth: "1400px", height: "auto", margin: "0 auto" }}
+        />
+      </div>
+
+      {/* Intro */}
+      <div style={{ backgroundColor: "#1F2937" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "36px 20px 48px 20px", textAlign: "center" }}>
+          <h1 style={{ color: "white", fontSize: "clamp(24px, 5vw, 34px)", fontWeight: "800", margin: "0 0 14px 0", lineHeight: "1.2" }}>Spend the holidays at sea this year.</h1>
           <p style={{ color: "#D1D5DB", fontSize: "16px", maxWidth: "640px", margin: "0 auto 24px auto", lineHeight: "1.7" }}>
             Thanksgiving, Christmas, and New Year's on Virgin Voyages. Twelve sailings from 3 to 8 nights, out of Miami, San Juan, and Los Angeles. Holiday dates tend to fill up first, so it's smart to look early.
           </p>
