@@ -6,13 +6,16 @@ import { VirginLink } from '../../components/VirginRedirect'
 const SailorLootButton = lazy(() => import('../../components/SailorLootButton'))
 
 const featuredDeals = [
-  { tag: "ONE TIME EVENT", title: "Sisters at Sea: All Four Virgin Ships Meet", date: "Feb 2027", nights: "5 to 10 nights", ship: "All 4 Lady Ships · Miami & San Juan", originalPrice: "", salePrice: "$1,790", unit: "/cabin", cta: "See All Four Sailings", link: "/virgin/sisters-at-sea-2027" },
-  { tag: "VIRGIN VOYAGES", title: "Caribbean Escape: Bahamas & Key West", date: "Jan 2027", nights: "4 nights", ship: "Scarlet Lady · Miami", originalPrice: "$699", salePrice: "$549", unit: "/person", cta: "Get This Deal", link: "/cruises/bahamas-key-west" },
-  { tag: "VIRGIN VOYAGES", title: "Eastern Caribbean & Bimini Beach Club", date: "Mar 2027", nights: "7 nights", ship: "Resilient Lady · Miami", originalPrice: "$1,399", salePrice: "$1,099", unit: "/person", cta: "Get This Deal", link: "/cruises/eastern-caribbean-bimini" },
-  { tag: "VIRGIN VOYAGES", title: "French Riviera, Spain & Ibiza Overnight", date: "Jun 2027", nights: "7 nights", ship: "Resilient Lady · Barcelona", originalPrice: "$1,801", salePrice: "$1,253", unit: "/person", cta: "Get This Deal", link: "/cruises/french-riviera-ibiza" },
-  { tag: "VIRGIN VOYAGES", title: "Miami to Morocco & Spain Transatlantic", date: "Apr 2027", nights: "14 nights", ship: "Scarlet Lady · Miami", originalPrice: "$1,818", salePrice: "$1,246", unit: "/person", cta: "Get This Deal", link: "/cruises/miami-morocco-transatlantic" },
-  { tag: "VIRGIN VOYAGES", title: "Alaska: Hubbard Glacier & Coastal Views", date: "Aug 2027", nights: "9 nights", ship: "Brilliant Lady · Seattle", originalPrice: "$1,597", salePrice: "$1,161", unit: "/person", cta: "Get This Deal", link: "/cruises/alaska-hubbard-glacier" },
+  { tag: "ONE TIME EVENT", title: "Sisters at Sea: All Four Virgin Ships Meet", date: "Feb 2027", nights: "5 to 10 nights", ship: "All 4 Lady Ships · Miami & San Juan", originalPrice: "", salePrice: "$1,790", unit: "/cabin", cta: "See All Four Sailings", link: "/virgin/sisters-at-sea-2027", image: "/sisters-at-sea-ships.png", sort: "2027-02" },
+  { tag: "VIRGIN VOYAGES", title: "Caribbean Escape: Bahamas & Key West", date: "Jan 2027", nights: "4 nights", ship: "Scarlet Lady · Miami", originalPrice: "$699", salePrice: "$549", unit: "/person", cta: "Get This Deal", link: "/cruises/bahamas-key-west", image: "/bahamas-key-west.jpg", sort: "2027-01" },
+  { tag: "VIRGIN VOYAGES", title: "Eastern Caribbean & Bimini Beach Club", date: "Mar 2027", nights: "7 nights", ship: "Resilient Lady · Miami", originalPrice: "$1,399", salePrice: "$1,099", unit: "/person", cta: "Get This Deal", link: "/cruises/eastern-caribbean-bimini", image: "/eastern-caribbean-bimini.webp", sort: "2027-03" },
+  { tag: "VIRGIN VOYAGES", title: "Miami to Morocco & Spain Transatlantic", date: "Apr 2027", nights: "14 nights", ship: "Scarlet Lady · Miami", originalPrice: "$1,818", salePrice: "$1,246", unit: "/person", cta: "Get This Deal", link: "/cruises/miami-morocco-transatlantic", image: "/BCN.png", sort: "2027-04" },
+  { tag: "VIRGIN VOYAGES", title: "French Riviera, Spain & Ibiza Overnight", date: "Jun 2027", nights: "7 nights", ship: "Resilient Lady · Barcelona", originalPrice: "$1,801", salePrice: "$1,253", unit: "/person", cta: "Get This Deal", link: "/cruises/french-riviera-ibiza", image: "/ibiza-spain.webp", sort: "2027-06" },
+  { tag: "VIRGIN VOYAGES", title: "Alaska: Hubbard Glacier & Coastal Views", date: "Aug 2027", nights: "9 nights", ship: "Brilliant Lady · Seattle", originalPrice: "$1,597", salePrice: "$1,161", unit: "/person", cta: "Get This Deal", link: "/cruises/alaska-hubbard-glacier", image: "/BL-Alaska.png", sort: "2027-08" },
 ]
+
+// Same sailings for the Featured Sailings tiles: Sisters at Sea first, the rest in date order
+const tileDeals = featuredDeals.slice(1).sort((a, b) => a.sort.localeCompare(b.sort))
 
 // Other lines Eric also books. Kept small and quiet, well below the Virgin content
 const otherLines = [
@@ -294,9 +297,13 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Sisters at Sea 2027 feature. Links to the full event page */}
-      <div style={{ backgroundColor: '#0B2530', padding: '56px 20px' }}>
-        <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '28px', textAlign: 'center' }} className="event-card-inner">
+      {/* Featured Sailings. Sisters at Sea wide tile on top, the rest in date order */}
+      <div style={{ backgroundColor: '#F9FAFB', padding: '56px 20px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '28px' }}>
+          <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Featured Sailings</p>
+          <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: 0 }}>Where are you headed next?</h2>
+        </div>
+        <div style={{ maxWidth: '1100px', margin: '0 auto 28px auto', backgroundColor: '#0B2530', borderRadius: '16px', padding: '32px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '28px', textAlign: 'center' }} className="event-card-inner">
           <img
             src="/sisters-at-sea-ships.png"
             alt="Four ships sailing together toward a Caribbean sunset"
@@ -317,6 +324,26 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px' }}>
+          {tileDeals.map((d) => (
+            <a key={d.link} href={d.link} style={{ display: 'flex', flexDirection: 'column', backgroundColor: 'white', borderRadius: '14px', overflow: 'hidden', border: '1px solid #E5E7EB', boxShadow: '0 4px 18px rgba(0,0,0,0.06)', textDecoration: 'none' }}>
+              <img src={d.image} alt={d.title} loading="lazy" style={{ width: '100%', height: '180px', objectFit: 'cover', display: 'block' }} />
+              <div style={{ padding: '18px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase', margin: '0 0 6px 0' }}>{d.date} · {d.nights}</p>
+                <h3 style={{ color: '#1F2937', fontSize: '17px', fontWeight: '700', margin: '0 0 4px 0', lineHeight: '1.3' }}>{d.title}</h3>
+                <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 14px 0' }}>{d.ship}</p>
+                <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: '10px' }}>
+                  <div>
+                    <p style={{ color: '#9CA3AF', fontSize: '11px', margin: 0 }}>Starting from</p>
+                    <p style={{ margin: 0 }}><span style={{ color: '#1F2937', fontSize: '22px', fontWeight: '800' }}>{d.salePrice}</span> <span style={{ color: '#6B7280', fontSize: '12px' }}>{d.unit}</span></p>
+                  </div>
+                  <span style={{ backgroundColor: '#007298', color: 'white', padding: '9px 14px', borderRadius: '8px', fontWeight: '700', fontSize: '13px', whiteSpace: 'nowrap' }}>View Sailing</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+        <p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: '18px 0 0 0' }}>Fares can change. Text Eric for current availability.</p>
       </div>
 
       {/* Also Booking These Lines. Plain text links, stays right under Virgin as the "not the right fit?" option */}
