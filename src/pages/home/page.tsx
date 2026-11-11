@@ -294,20 +294,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Also Booking These Lines. Plain text links, stays right under Virgin as the "not the right fit?" option */}
-      <div id="cruise-lines" style={{ backgroundColor: '#F3F4F6', padding: '32px 20px', textAlign: 'center' }}>
-        <p style={{ color: '#6B7280', fontSize: '11px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', margin: '0 0 6px 0' }}>Also Booking</p>
-        <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 14px 0' }}>If Virgin is not the right fit, I've got you covered too.</p>
-        <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap', fontSize: '14px', fontWeight: '600' }}>
-          {otherLines.map((line, i) => (
-            <span key={line.name} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <a href={line.link} style={{ color: '#007298', textDecoration: 'none' }}>{line.name}</a>
-              {i < otherLines.length - 1 && <span style={{ color: '#D1D5DB' }}>&middot;</span>}
-            </span>
-          ))}
-        </div>
-      </div>
-
       {/* Sisters at Sea 2027 feature. Links to the full event page */}
       <div style={{ backgroundColor: '#0B2530', padding: '56px 20px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '28px', textAlign: 'center' }} className="event-card-inner">
@@ -330,6 +316,20 @@ export default function Home() {
               <a href="sms:6308231253" style={{ color: 'white', border: '2px solid white', padding: '11px 22px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>Text Eric: 630-823-1253</a>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Also Booking These Lines. Plain text links, stays right under Virgin as the "not the right fit?" option */}
+      <div id="cruise-lines" style={{ backgroundColor: '#F3F4F6', padding: '32px 20px', textAlign: 'center' }}>
+        <p style={{ color: '#6B7280', fontSize: '11px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', margin: '0 0 6px 0' }}>Also Booking</p>
+        <p style={{ color: '#6B7280', fontSize: '13px', margin: '0 0 14px 0' }}>If Virgin is not the right fit, I've got you covered too.</p>
+        <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap', fontSize: '14px', fontWeight: '600' }}>
+          {otherLines.map((line, i) => (
+            <span key={line.name} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <a href={line.link} style={{ color: '#007298', textDecoration: 'none' }}>{line.name}</a>
+              {i < otherLines.length - 1 && <span style={{ color: '#D1D5DB' }}>&middot;</span>}
+            </span>
+          ))}
         </div>
       </div>
 
