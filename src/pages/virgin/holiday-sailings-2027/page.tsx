@@ -12,6 +12,7 @@ type Sailing = {
   nights: number;
   route: string;
   price: string;
+  link?: string; // exact First Mates link for this sailing; if blank, a date search is used
 };
 
 const sections: { id: string; label: string; emoji: string; blurb: string; sailings: Sailing[] }[] = [
@@ -21,10 +22,10 @@ const sections: { id: string; label: string; emoji: string; blurb: string; saili
     emoji: "🦃",
     blurb: "Thanksgiving is Thursday, November 25, 2027. Skip the cooking and the dishes, and let someone else make the feast.",
     sailings: [
-      { ship: "Resilient Lady", dates: "Nov 20 to 28, 2027", date: "2027-11-20", nights: 8, route: "Miami • Philipsburg • San Juan • Samaná • The Beach Club at Bimini • Miami", price: "" },
-      { ship: "Scarlet Lady", dates: "Nov 20 to 27, 2027", date: "2027-11-20", nights: 7, route: "San Juan • Oranjestad • Willemstad • St. John's • Philipsburg • San Juan", price: "" },
-      { ship: "Valiant Lady", dates: "Nov 22 to 27, 2027", date: "2027-11-22", nights: 5, route: "Miami • George Town, Grand Cayman • The Beach Club at Bimini • Miami", price: "" },
-      { ship: "Brilliant Lady", dates: "Nov 24 to 27, 2027", date: "2027-11-24", nights: 3, route: "Los Angeles • Ensenada • Los Angeles", price: "" },
+      { ship: "Resilient Lady", dates: "Nov 20 to 28, 2027", date: "2027-11-20", nights: 8, route: "Miami • Philipsburg • San Juan • Samaná • The Beach Club at Bimini • Miami", price: "", link: "https://www.virginvoyages.com/book/voyage-planner/pre-checkout?agencyId=589&agentId=278796&bookingChannel=FMLINK&cabins=1&currencyCode=USD&dateFrom=2027-11-20&dateTo=2027-11-20&packageCode=8NPSST&voyageId=RS2711208NPSST" },
+      { ship: "Scarlet Lady", dates: "Nov 20 to 27, 2027", date: "2027-11-20", nights: 7, route: "San Juan • Oranjestad • Willemstad • St. John's • Philipsburg • San Juan", price: "", link: "https://www.virginvoyages.com/book/voyage-planner/pre-checkout?agencyId=589&agentId=278796&bookingChannel=FMLINK&cabins=1&currencyCode=USD&dateFrom=2027-11-20&dateTo=2027-11-20&packageCode=7NSJ8&voyageId=SC2711207NSJ8" },
+      { ship: "Valiant Lady", dates: "Nov 22 to 27, 2027", date: "2027-11-22", nights: 5, route: "Miami • George Town, Grand Cayman • The Beach Club at Bimini • Miami", price: "", link: "https://www.virginvoyages.com/book/voyage-planner/pre-checkout?dateFrom=2027-11-01&dateTo=2027-11-30&packageCode=5NGCB&voyageId=VL2711225NGCB&currencyCode=USD&agencyId=589&agentId=278796&bookingChannel=FMLINK" },
+      { ship: "Brilliant Lady", dates: "Nov 24 to 27, 2027", date: "2027-11-24", nights: 3, route: "Los Angeles • Ensenada • Los Angeles", price: "", link: "https://www.virginvoyages.com/book/voyage-planner/pre-checkout?agencyId=589&agentId=278796&bookingChannel=FMLINK&currencyCode=USD&dateFrom=2027-11-01&dateTo=2027-11-30&packageCode=3NCCC&ships=BR&voyageId=BR2711243NCCC" },
     ],
   },
   {
@@ -130,7 +131,7 @@ export default function HolidaySailings2027() {
                       <p style={{ color: "#6B7280", fontSize: "13px", fontWeight: "600", margin: "0 0 12px 0" }}>Text Eric for current pricing</p>
                     )}
                     <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-                      <a href={bookLink(s.date)} target="_blank" rel="noopener noreferrer" style={{ flex: "1 1 140px", textAlign: "center", backgroundColor: "#CC0000", color: "white", padding: "11px 14px", borderRadius: "8px", textDecoration: "none", fontWeight: "700", fontSize: "14px" }}>Book This Sailing</a>
+                      <a href={s.link || bookLink(s.date)} target="_blank" rel="noopener noreferrer" style={{ flex: "1 1 140px", textAlign: "center", backgroundColor: "#CC0000", color: "white", padding: "11px 14px", borderRadius: "8px", textDecoration: "none", fontWeight: "700", fontSize: "14px" }}>Book This Sailing</a>
                       <a href="sms:6308231253" style={{ flex: "1 1 180px", textAlign: "center", backgroundColor: "#F9FAFB", color: "#007298", border: "1px solid #E5E7EB", padding: "10px 14px", borderRadius: "8px", textDecoration: "none", fontWeight: "600", fontSize: "14px" }}>Text Eric: 630-823-1253</a>
                     </div>
                   </div>
