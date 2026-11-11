@@ -46,10 +46,10 @@ const sections: { id: string; label: string; emoji: string; blurb: string; saili
     emoji: "🎉",
     blurb: "Ring in 2028 on the water. A big party night onboard, then wake up somewhere warm.",
     sailings: [
-      { ship: "Scarlet Lady", dates: "Dec 26, 2027 to Jan 2, 2028", date: "2027-12-26", nights: 7, route: "San Juan • Philipsburg • Bridgetown • Fort-de-France • St. John's • Charlotte Amalie • San Juan", price: "" },
-      { ship: "Resilient Lady", dates: "Dec 26, 2027 to Jan 2, 2028", date: "2027-12-26", nights: 7, route: "Miami • Costa Maya • Belize City • Roatán • The Beach Club at Bimini • Miami", price: "" },
-      { ship: "Brilliant Lady", dates: "Dec 28, 2027 to Jan 4, 2028", date: "2027-12-28", nights: 7, route: "Miami • Nassau • Ocho Rios • George Town, Grand Cayman • The Beach Club at Bimini • Miami", price: "" },
-      { ship: "Valiant Lady", dates: "Dec 30, 2027 to Jan 3, 2028", date: "2027-12-30", nights: 4, route: "Miami • Key West • The Beach Club at Bimini • Miami", price: "" },
+      { ship: "Scarlet Lady", dates: "Dec 26, 2027 to Jan 2, 2028", date: "2027-12-26", nights: 7, route: "San Juan • Philipsburg • Bridgetown • Fort-de-France • St. John's • Charlotte Amalie • San Juan", price: "", link: "https://www.virginvoyages.com/book/voyage-planner/pre-checkout?agencyId=589&agentId=278796&bookingChannel=FMLINK&currencyCode=USD&dateFrom=2027-12-01&dateTo=2027-12-31&packageCode=7NSJBF&voyageId=SC2712267NSJBF" },
+      { ship: "Resilient Lady", dates: "Dec 26, 2027 to Jan 2, 2028", date: "2027-12-26", nights: 7, route: "Miami • Costa Maya • Belize City • Roatán • The Beach Club at Bimini • Miami", price: "", link: "https://www.virginvoyages.com/book/voyage-planner/pre-checkout?agencyId=589&agentId=278796&bookingChannel=FMLINK&currencyCode=USD&dateFrom=2027-12-01&dateTo=2027-12-31&packageCode=7NCBNY&voyageId=RS2712267NCBNY" },
+      { ship: "Brilliant Lady", dates: "Dec 28, 2027 to Jan 4, 2028", date: "2027-12-28", nights: 7, route: "Miami • Nassau • Ocho Rios • George Town, Grand Cayman • The Beach Club at Bimini • Miami", price: "", link: "https://www.virginvoyages.com/book/voyage-planner/pre-checkout?agencyId=589&agentId=278796&bookingChannel=FMLINK&currencyCode=USD&dateFrom=2027-12-01&dateTo=2027-12-31&packageCode=7NLOGN&voyageId=BR2712287NLOGN" },
+      { ship: "Valiant Lady", dates: "Dec 30, 2027 to Jan 3, 2028", date: "2027-12-30", nights: 4, route: "Miami • Key West • The Beach Club at Bimini • Miami", price: "", link: "https://www.virginvoyages.com/book/voyage-planner/pre-checkout?agencyId=589&agentId=278796&bookingChannel=FMLINK&currencyCode=USD&dateFrom=2027-12-01&dateTo=2027-12-31&packageCode=4NKWNY&voyageId=VL2712304NKWNY" },
     ],
   },
 ];
