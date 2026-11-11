@@ -185,6 +185,9 @@ export default function Home() {
           .group-card-pricing { border-top: none !important; border-left: 1px solid #F3F4F6; }
           .why-eric-inner { flex-direction: row !important; }
           .why-virgin-inner { flex-direction: row !important; }
+          .event-card-inner { flex-direction: row !important; text-align: left !important; }
+          .event-card-image { width: 240px !important; }
+          .event-card-buttons { justify-content: flex-start !important; }
         }
         .testimonial-scroll::-webkit-scrollbar { height: 6px; }
         .testimonial-scroll::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 10px; }
@@ -301,6 +304,31 @@ export default function Home() {
               {i < otherLines.length - 1 && <span style={{ color: '#D1D5DB' }}>&middot;</span>}
             </span>
           ))}
+        </div>
+      </div>
+
+      {/* Sisters at Sea 2027 feature. Links to the full event page */}
+      <div style={{ backgroundColor: '#0B2530', padding: '56px 20px' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '28px', textAlign: 'center' }} className="event-card-inner">
+          <img
+            src="/sisters-at-sea-ships.png"
+            alt="Four ships sailing together toward a Caribbean sunset"
+            loading="lazy"
+            className="event-card-image"
+            style={{ width: '100%', maxWidth: '320px', height: 'auto', borderRadius: '12px', boxShadow: '0 8px 32px rgba(0,0,0,0.35)', flexShrink: 0, display: 'block' }}
+          />
+          <div style={{ flex: 1 }}>
+            <span style={{ display: 'inline-block', backgroundColor: '#F59E0B', color: '#1F2937', fontSize: '11px', fontWeight: '800', letterSpacing: '1px', padding: '4px 10px', borderRadius: '4px', textTransform: 'uppercase' }}>One Time Only Event</span>
+            <h2 style={{ color: 'white', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: '12px 0 10px 0', lineHeight: '1.2' }}>Sisters at Sea 2027</h2>
+            <p style={{ color: 'rgba(255,255,255,0.88)', fontSize: '15px', lineHeight: '1.7', margin: '0 0 8px 0' }}>
+              On February 16, 2027, all four Virgin Voyages ships meet in the Caribbean for the first time ever. Four sailings, 5 to 10 nights, from Miami and San Juan. Once it's done, it's done.
+            </p>
+            <p style={{ color: '#FDE68A', fontSize: '14px', fontWeight: '600', margin: '0 0 22px 0' }}>Starting from $1,790 per cabin for 2 sailors.</p>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }} className="event-card-buttons">
+              <a href="/virgin/sisters-at-sea-2027" style={{ backgroundColor: '#CC0000', color: 'white', padding: '13px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>See All Four Sailings</a>
+              <a href="sms:6308231253" style={{ color: 'white', border: '2px solid white', padding: '11px 22px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>Text Eric: 630-823-1253</a>
+            </div>
+          </div>
         </div>
       </div>
 
