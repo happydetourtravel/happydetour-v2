@@ -72,6 +72,7 @@ export const routes: RouteRecord[] = [
       { path: 'virgin', entry: 'src/pages/virgin/page.tsx', lazy: () => import('./pages/virgin/page').then((m) => ({ Component: m.default })) },
       { path: 'virgin/sisters-at-sea-2027', entry: 'src/pages/virgin/sisters-at-sea-2027/page.tsx', lazy: () => import('./pages/virgin/sisters-at-sea-2027/page').then((m) => ({ Component: m.default })) },
       { path: 'virgin/true-crime-voyage', entry: 'src/pages/virgin/true-crime-voyage/page.tsx', lazy: () => import('./pages/virgin/true-crime-voyage/page').then((m) => ({ Component: m.default })) },
+      { path: 'virgin/holiday-sailings-2027', entry: 'src/pages/virgin/holiday-sailings-2027/page.tsx', lazy: () => import('./pages/virgin/holiday-sailings-2027/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/bahamas-key-west', entry: 'src/pages/cruises/bahamas-key-west/page.tsx', lazy: () => import('./pages/cruises/bahamas-key-west/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/eastern-caribbean-bimini', entry: 'src/pages/cruises/eastern-caribbean-bimini/page.tsx', lazy: () => import('./pages/cruises/eastern-caribbean-bimini/page').then((m) => ({ Component: m.default })) },
       { path: 'cruises/french-riviera-ibiza', entry: 'src/pages/cruises/french-riviera-ibiza/page.tsx', lazy: () => import('./pages/cruises/french-riviera-ibiza/page').then((m) => ({ Component: m.default })) },
