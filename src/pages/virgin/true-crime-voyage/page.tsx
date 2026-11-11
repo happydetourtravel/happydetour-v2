@@ -20,10 +20,10 @@ export default function TrueCrimeVoyage() {
   ];
 
   const cabins = [
-    { type: "Insider", desc: "No window, but everything else you need. Great value if you plan to be out enjoying the shows and the ship.", price: "$1,890" },
-    { type: "Sea View", desc: "A window to watch the ocean go by. A step up in comfort without a big jump in price.", price: "$1,990" },
-    { type: "Sea Terrace", desc: "Your own private balcony with a hammock. Perfect for morning coffee and sunsets.", price: "$2,290" },
-    { type: "RockStar Suite", desc: "The full Virgin experience. Extra space, priority everything, and perks that make the whole trip feel elevated.", price: "$5,100" },
+    { type: "Insider", desc: "No window, but everything else you need. Great value if you plan to be out enjoying the shows and the ship.", price: "$945" },
+    { type: "Sea View", desc: "A window to watch the ocean go by. A step up in comfort without a big jump in price.", price: "$995" },
+    { type: "Sea Terrace", desc: "Your own private balcony with a hammock. Perfect for morning coffee and sunsets.", price: "$1,145" },
+    { type: "RockStar Suite", desc: "The full Virgin experience. Extra space, priority everything, and perks that make the whole trip feel elevated.", price: "$2,550" },
   ];
 
   const onboard = [
@@ -113,18 +113,18 @@ export default function TrueCrimeVoyage() {
               <div style={{ backgroundColor: "#1F2937", padding: "16px 20px" }}>
                 <p style={{ color: "#F59E0B", fontSize: "11px", fontWeight: "700", letterSpacing: "1px", textTransform: "uppercase", margin: "0 0 4px 0" }}>Starting From</p>
                 <div style={{ display: "flex", alignItems: "baseline", gap: "8px" }}>
-                  <span style={{ color: "white", fontSize: "36px", fontWeight: "800" }}>$1,890</span>
-                  <span style={{ color: "#9CA3AF", fontSize: "13px" }}>/cabin for 2</span>
+                  <span style={{ color: "white", fontSize: "36px", fontWeight: "800" }}>$945</span>
+                  <span style={{ color: "#9CA3AF", fontSize: "13px" }}>/person</span>
                 </div>
               </div>
               <div style={{ padding: "20px" }}>
-                <p style={{ color: "#374151", fontSize: "13px", fontWeight: "600", margin: "0 0 12px 0" }}>Cabin Categories (per cabin, 2 sailors)</p>
+                <p style={{ color: "#374151", fontSize: "13px", fontWeight: "600", margin: "0 0 12px 0" }}>Cabin Categories (per person, based on 2 sailors)</p>
                 <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "20px" }}>
                   {cabins.map((c, i) => (
                     <div key={i} style={{ borderBottom: i < cabins.length - 1 ? "1px solid #F3F4F6" : "none", paddingBottom: i < cabins.length - 1 ? "10px" : "0" }}>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "2px" }}>
                         <span style={{ color: "#1F2937", fontWeight: "600", fontSize: "14px" }}>{c.type}</span>
-                        <span style={{ color: "#007298", fontWeight: "700", fontSize: "14px" }}>{c.price}</span>
+                        <span style={{ color: "#007298", fontWeight: "700", fontSize: "14px" }}>{c.price} pp</span>
                       </div>
                       <p style={{ color: "#9CA3AF", fontSize: "12px", margin: 0, lineHeight: "1.5" }}>{c.desc}</p>
                     </div>
