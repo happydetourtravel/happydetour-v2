@@ -6,7 +6,7 @@ import { VirginLink } from '../../components/VirginRedirect'
 const SailorLootButton = lazy(() => import('../../components/SailorLootButton'))
 
 const featuredDeals = [
-  { tag: "ONE TIME EVENT", title: "Sisters at Sea: All Four Virgin Ships Meet", date: "Feb 2027", nights: "5 to 10 nights", ship: "All 4 Lady Ships · Miami & San Juan", originalPrice: "", salePrice: "$1,790", unit: "/cabin", cta: "See All Four Sailings", link: "/virgin/sisters-at-sea-2027", image: "/sisters-at-sea-ships.png", sort: "2027-02" },
+  { tag: "ONE TIME EVENT", title: "Sisters at Sea: All Four Virgin Ships Meet", date: "Feb 2027", nights: "5 to 10 nights", ship: "All 4 Lady Ships · Miami & San Juan", originalPrice: "", salePrice: "$895", unit: "/person", cta: "See All Four Sailings", link: "/virgin/sisters-at-sea-2027", image: "/sisters-at-sea-ships.png", sort: "2027-02" },
   { tag: "RESERVED CABINS", title: "Halloween Transatlantic: Barcelona to San Juan", date: "Oct 2027", nights: "12 nights", ship: "Scarlet Lady · Barcelona", originalPrice: "", salePrice: "$1,068", unit: "/person", cta: "See Reserved Cabins", link: "/group/transatlantic-10-2027", image: "/HWthumbnail.png", sort: "2027-10-31" },
   { tag: "VIRGIN VOYAGES", title: "Caribbean Escape: Bahamas & Key West", date: "Jan 2027", nights: "4 nights", ship: "Scarlet Lady · Miami", originalPrice: "$699", salePrice: "$549", unit: "/person", cta: "Get This Deal", link: "/cruises/bahamas-key-west", image: "/bahamas-key-west.jpg", sort: "2027-01" },
   { tag: "VIRGIN VOYAGES", title: "Eastern Caribbean & Bimini Beach Club", date: "Mar 2027", nights: "7 nights", ship: "Resilient Lady · Miami", originalPrice: "$1,399", salePrice: "$1,099", unit: "/person", cta: "Get This Deal", link: "/cruises/eastern-caribbean-bimini", image: "/eastern-caribbean-bimini.webp", sort: "2027-03" },
@@ -144,6 +144,27 @@ export default function Home() {
             <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '15px', lineHeight: '1.7', margin: '0 0 28px 0', maxWidth: '480px' }}>
               Skip the corporate fluff and the hold music. I help you find the right sailing, talk through every detail before anything is confirmed, and stay in your corner the whole way.
             </p>
+
+            {/* Hero buttons: one main action (trip form) and one easy way to reach Eric. The number is shown so desktop visitors can see it */}
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+              <a
+                href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/dDfyxMMy8gucAddKpaipPB4Z/link"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ backgroundColor: '#F59E0B', color: 'white', padding: '14px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}
+              >
+                Tell Me About Your Trip
+              </a>
+              <a
+                href="sms:6308231253"
+                style={{ color: 'white', border: '2px solid white', padding: '12px 22px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}
+              >
+                Text Eric: 630-823-1253
+              </a>
+            </div>
+            <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '13px', margin: '12px 0 0 0' }}>
+              No pressure. Tell me what you have in mind and I'll get back to you personally, usually within a few hours.
+            </p>
           </div>
 
           {/* Deal Card */}
@@ -175,7 +196,6 @@ export default function Home() {
                   )}
                 </div>
                 <a href={deal.link} {...(deal.link.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})} aria-label={`Get this deal: ${deal.title}`} style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>{deal.cta}</a>
-                <a href="sms:6308231253" style={{ display: 'block', textAlign: 'center', color: '#6B7280', fontSize: '12px', fontWeight: '600', textDecoration: 'none', margin: '10px 0 0 0' }}>Prefer help? Text Eric →</a>
                 <p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: '8px 0 0 0', lineHeight: '1.5' }}>Prices are estimates. Contact Eric for current availability.</p>
                 <p style={{ color: '#D1D5DB', fontSize: '10px', textAlign: 'center', margin: '4px 0 0 0' }}>Updated November 2026</p>
               </div>
@@ -233,18 +253,12 @@ export default function Home() {
                 >
                   Search &amp; Book Virgin Voyages
                 </VirginLink>
-                <a
-                  href="/cruises/virgin-voyages#bar-tab"
-                  style={{ backgroundColor: 'white', color: '#CC0000', textAlign: 'center', padding: '13px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}
-                >
-                  Virgin Guide &amp; Bar Tab Optimizer
-                </a>
               </div>
               <a
-                href="sms:6308231253"
-                style={{ display: 'inline-block', color: 'white', fontSize: '13px', fontWeight: '600', textDecoration: 'none', margin: '14px 0 0 0' }}
+                href="/cruises/virgin-voyages#bar-tab"
+                style={{ display: 'inline-block', color: 'white', fontSize: '14px', fontWeight: '600', textDecoration: 'underline', margin: '14px 0 0 0' }}
               >
-                Questions first? Text Eric →
+                Read the Virgin Guide &amp; Bar Tab Optimizer →
               </a>
 
               {/* Members: extra Sailor Loot button. Shows the /join version until sign-in status loads */}
@@ -323,12 +337,11 @@ export default function Home() {
             <span style={{ display: 'inline-block', backgroundColor: '#F59E0B', color: '#1F2937', fontSize: '11px', fontWeight: '800', letterSpacing: '1px', padding: '4px 10px', borderRadius: '4px', textTransform: 'uppercase' }}>One Time Only Event</span>
             <h2 style={{ color: 'white', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: '12px 0 10px 0', lineHeight: '1.2' }}>Sisters at Sea 2027</h2>
             <p style={{ color: 'rgba(255,255,255,0.88)', fontSize: '15px', lineHeight: '1.7', margin: '0 0 8px 0' }}>
-              On February 16, 2027, all four Virgin Voyages ships meet in the Caribbean for the first time ever. Four sailings, 5 to 10 nights, from Miami and San Juan. Once it's done, it's done.
+              On February 16, 2027, all four Virgin Voyages ships meet in the Caribbean for the first time ever. Four sailings, 5 to 10 nights, from Miami and San Juan. A true one of a kind sailing.
             </p>
-            <p style={{ color: '#FDE68A', fontSize: '14px', fontWeight: '600', margin: '0 0 22px 0' }}>Starting from $1,790 per cabin for 2 sailors.</p>
+            <p style={{ color: '#FDE68A', fontSize: '14px', fontWeight: '600', margin: '0 0 22px 0' }}>Starting from $895 per person, based on two sharing.</p>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }} className="event-card-buttons">
               <a href="/virgin/sisters-at-sea-2027" style={{ backgroundColor: '#CC0000', color: 'white', padding: '13px 24px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>See All Four Sailings</a>
-              <a href="sms:6308231253" style={{ color: 'white', border: '2px solid white', padding: '11px 22px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>Text Eric: 630-823-1253</a>
             </div>
           </div>
         </div>
@@ -504,9 +517,9 @@ export default function Home() {
       {/* Final CTA */}
       <div style={{ padding: '48px 20px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', backgroundColor: '#F59E0B', borderRadius: '20px', padding: '48px 24px', textAlign: 'center' }}>
-          <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>What Are You Waiting For?</p>
+          <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>Ready When You Are</p>
           <p style={{ color: 'white', fontSize: '16px', fontWeight: '600', fontStyle: 'italic', margin: '0 0 14px 0' }}>"Every great trip has a happy detour."</p>
-          <h2 style={{ color: 'white', fontSize: 'clamp(28px, 6vw, 36px)', fontWeight: '800', margin: '0 0 12px 0', lineHeight: '1.2' }}>Stop scrolling, start packing.</h2>
+          <h2 style={{ color: 'white', fontSize: 'clamp(28px, 6vw, 36px)', fontWeight: '800', margin: '0 0 12px 0', lineHeight: '1.2' }}>Your next trip starts with a quick hello.</h2>
           <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '16px', margin: '0 0 28px 0' }}>Let's find your happy detour.</p>
           <a
             href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/dDfyxMMy8gucAddKpaipPB4Z/link"
