@@ -465,8 +465,8 @@ export default function Home() {
                 <p style={{ color: '#007298', fontSize: '13px', fontWeight: '600', margin: 0 }}>+ No planning fee</p>
               </div>
               <a href="/group/transatlantic-10-2027" style={{ display: 'block', textAlign: 'center', backgroundColor: '#F59E0B', color: 'white', padding: '12px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px', marginTop: '4px' }}>See the Sailing</a>
-              <a href="/join" style={{ display: 'block', textAlign: 'center', color: '#007298', fontSize: '13px', fontWeight: '600', textDecoration: 'none', padding: '4px 0' }}>Create an account for group pricing &rarr;</a>
-              <p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: 0, lineHeight: '1.5' }}>Just your name and email. Members see pricing and booking details.</p>
+              <a href="/group/transatlantic-10-2027" style={{ display: 'block', textAlign: 'center', color: '#007298', fontSize: '13px', fontWeight: '600', textDecoration: 'none', padding: '4px 0' }}>See group pricing &rarr;</a>
+<p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: 0, lineHeight: '1.5' }}>Prices are right on the sailing page. No sign up needed.</p>
             </div>
           </div>
         </div>
