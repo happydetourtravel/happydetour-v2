@@ -49,17 +49,19 @@ export default function TransatlanticPage() {
   const ports = ['Barcelona, Spain', 'Tangier, Morocco', 'Lanzarote, Canary Islands', 'San Juan, Puerto Rico']
 
   // Starting prices per person, from Virgin's site (Nov 2026). Update these when prices change.
+  // badge: short label on top of the card. barTab: true only for cabins that get Virgin's $200 bar tab
   const cabins = [
-    { name: 'Insider', price: '$1,068', note: 'Cozy inside cabin with a rainshower and mood lighting.', barTab: false },
-    { name: 'Sea View', price: '$1,188', note: 'Porthole window for ocean views.', barTab: false },
-    { name: 'Sea Terrace', price: '$1,374', note: 'Private balcony with a hammock. Essentials rate, so the bar tab is included.', barTab: true },
+    { name: 'Insider', price: '$1,068', note: 'Cozy inside cabin with a rainshower and mood lighting. The lowest price way to join the group.', badge: '💰 Lowest price', barTab: false },
+    { name: 'Sea View', price: '$1,188', note: 'Porthole window for ocean views, for a little more than an Insider.', badge: '', barTab: false },
+    { name: 'Sea Terrace', price: '$1,374', note: 'Private balcony with a hammock. Booked at the Essentials rate, so the $200 bar tab comes with it.', badge: '🍹 Gets the $200 bar tab', barTab: true },
   ]
 
+  // Perks every cabin gets, plus the bar tab bonus for Sea Terrace and up
   const memberPerks = [
-    { icon: '🍹', title: '$200 Bar Tab', desc: 'Included with Sea Terrace cabins and higher booked at the Essentials rate through Eric.' },
-    { icon: '💸', title: 'No Planning Fee', desc: 'There’s no planning fee on this sailing. You still get Eric handling every detail.' },
-    { icon: '🎉', title: 'Sail With the Group', desc: 'Meet the rest of the HDT group on board for Halloween at sea. Come solo or bring your crew.' },
-    { icon: '🤝', title: 'Booked by Eric', desc: 'Eric books your cabin himself so you get the perk and someone actually in your corner.' },
+    { icon: '🎉', title: 'Sail With the Group', desc: 'Every cabin type is part of the group. Insider, Sea View, Sea Terrace, or a suite, you are in. Come solo or bring your crew.' },
+    { icon: '💸', title: 'No Planning Fee', desc: 'There’s no planning fee on this sailing, whatever cabin you pick. You still get Eric handling every detail.' },
+    { icon: '🤝', title: 'Booked by Eric', desc: 'Eric books your cabin himself, so you have someone actually in your corner from booking to back home.' },
+    { icon: '🍹', title: 'Bonus: $200 Bar Tab', desc: 'Virgin adds a $200 bar tab for Sea Terrace cabins and higher booked at the Essentials rate through Eric.' },
   ]
 
   return (
@@ -110,8 +112,11 @@ export default function TransatlanticPage() {
           <p style={{ color: 'white', fontSize: '15px', margin: '0 0 20px 0' }}>
             From <span style={{ fontSize: '30px', fontWeight: '800' }}>$1,068</span> per person*
           </p>
+          <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '15px', margin: '0 0 14px 0' }}>
+            Every cabin type is welcome in the group.
+          </p>
           <div style={{ display: 'inline-block', backgroundColor: 'rgba(255,255,255,0.15)', color: 'white', fontSize: '14px', fontWeight: '700', padding: '8px 16px', borderRadius: '999px', marginBottom: '28px' }}>
-            {'🍹'} $200 bar tab with Sea Terrace cabins and up (from $1,374)
+            {'🍹'} Bonus $200 bar tab with Sea Terrace cabins and up (from $1,374)
           </div>
           <ContactButtons />
           <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px', margin: '16px 0 0 0' }}>
@@ -144,7 +149,7 @@ export default function TransatlanticPage() {
           <p style={{ color: '#CC0000', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Cabin Prices</p>
           <h2 style={{ color: '#1F2937', fontSize: '24px', fontWeight: '700', margin: '0 0 8px 0' }}>What It Costs</h2>
           <p style={{ color: '#6B7280', fontSize: '15px', lineHeight: '1.7', margin: '0 0 20px 0' }}>
-            Starting prices per person, based on two sharing, with taxes and fees included.*
+            Starting prices per person, based on two sharing, with taxes and fees included.* Pick the cabin that fits your budget. You get the group either way.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
             {cabins.map((c) => (
@@ -153,15 +158,15 @@ export default function TransatlanticPage() {
                 style={{
                   backgroundColor: 'white',
                   borderRadius: '14px',
-                  border: c.barTab ? '2px solid #F59E0B' : '1px solid #E5E7EB',
+                  border: c.badge ? '2px solid #F59E0B' : '1px solid #E5E7EB',
                   padding: '24px',
                   boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
                   position: 'relative',
                 }}
               >
-                {c.barTab && (
+                {c.badge && (
                   <span style={{ position: 'absolute', top: '-12px', left: '20px', backgroundColor: '#F59E0B', color: 'white', fontSize: '12px', fontWeight: '700', padding: '4px 10px', borderRadius: '999px' }}>
-                    {'🍹'} Gets the $200 bar tab
+                    {c.badge}
                   </span>
                 )}
                 <h3 style={{ color: '#1F2937', fontSize: '18px', fontWeight: '700', margin: '6px 0 6px 0' }}>{c.name}</h3>
@@ -171,6 +176,9 @@ export default function TransatlanticPage() {
                   <span style={{ fontSize: '13px', color: '#6B7280' }}> per person</span>
                 </p>
                 <p style={{ color: '#6B7280', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>{c.note}</p>
+                <p style={{ color: '#007298', fontSize: '13px', fontWeight: '600', margin: '10px 0 0 0' }}>
+                  {c.barTab ? '✓ Group + no planning fee + $200 bar tab' : '✓ Group + no planning fee'}
+                </p>
               </div>
             ))}
           </div>
@@ -188,7 +196,7 @@ export default function TransatlanticPage() {
           <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Group Perks</p>
           <h2 style={{ color: '#1F2937', fontSize: '24px', fontWeight: '700', margin: '0 0 8px 0' }}>Why Book This Sailing With Eric</h2>
           <p style={{ color: '#6B7280', fontSize: '15px', lineHeight: '1.7', margin: '0 0 20px 0' }}>
-            Book your cabin through Eric and you&rsquo;re part of the group, with these perks included.
+            Book any cabin through Eric and you&rsquo;re part of the group. Sea Terrace and up also get the bar tab.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
             {memberPerks.map((p, i) => (
@@ -223,10 +231,23 @@ export default function TransatlanticPage() {
           <ol style={{ color: '#374151', fontSize: '15px', lineHeight: '1.9', margin: 0, paddingLeft: '20px' }}>
             <li><strong>Pick your cabin</strong> from the prices above.</li>
             <li><strong>Text or email Eric</strong> with any questions. No pressure, no planning fee.</li>
-            <li><strong>Eric books your cabin into the group</strong> for you and locks in your perk.</li>
+            <li><strong>Eric walks you through the deposit and payment dates</strong> so there are no surprises.</li>
+            <li><strong>Eric books your cabin into the group</strong> for you.</li>
           </ol>
           <p style={{ color: '#6B7280', fontSize: '13px', lineHeight: '1.6', margin: '16px 0 0 0' }}>
-            Your cabin needs to be booked through Eric to get the bar tab. Booking on your own through Virgin&rsquo;s site won&rsquo;t include it.
+            Book through Eric to be part of the group. Booking on your own through Virgin&rsquo;s site won&rsquo;t add you to the group or include the bar tab.
+          </p>
+        </div>
+
+        {/* Getting there: flights, hotel, insurance */}
+        <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', padding: '28px', marginBottom: '40px' }}>
+          <p style={{ color: '#007298', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', margin: '0 0 4px 0' }}>Getting There and Home</p>
+          <h2 style={{ color: '#1F2937', fontSize: '20px', fontWeight: '700', margin: '0 0 12px 0' }}>I Can Help With the Rest Too</h2>
+          <p style={{ color: '#374151', fontSize: '15px', lineHeight: '1.7', margin: '0 0 10px 0' }}>
+            This sailing starts in Barcelona and ends in San Juan, so you will need a flight over and a flight home. I can help with both, plus a hotel night in Barcelona before you board.
+          </p>
+          <p style={{ color: '#374151', fontSize: '15px', lineHeight: '1.7', margin: 0 }}>
+            I always recommend trip insurance for a sailing like this. It costs less when you get it at booking, and it protects you if a flight gets delayed or plans change.
           </p>
         </div>
 
@@ -246,7 +267,7 @@ export default function TransatlanticPage() {
             </Link>
           </p>
           <p style={{ color: '#9CA3AF', fontSize: '13px', margin: '6px 0 0 0' }}>
-            It&rsquo;s free and totally optional. You don&rsquo;t need it to book this sailing.
+            Totally optional. You don&rsquo;t need it to book this sailing.
           </p>
         </div>
 
