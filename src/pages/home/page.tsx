@@ -435,10 +435,10 @@ export default function Home() {
       <div style={{ backgroundColor: '#F9FAFB', padding: '60px 20px' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-            <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Group Sailing</p>
-            <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: '0 0 16px 0' }}>Sail with the Happy Detour Travel crew.</h2>
+            <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Reserved Cabins</p>
+            <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: '0 0 16px 0' }}>I've reserved cabins on this sailing.</h2>
             <p style={{ color: '#374151', fontSize: '15px', lineHeight: '1.7', maxWidth: '700px', margin: '0 auto' }}>
-              This is a group sailing I set up directly with Virgin Voyages. Every cabin type is welcome, from Insider to suites, and group guests get perks you will not get booking on your own. I can also help with airfare and a hotel stay before or after the cruise if you need one.
+              I've reserved a block of Sea Terrace cabins with Virgin Voyages, and I can book Insider and Sea View cabins at current fares too. Book through me and you get perks you will not get booking on your own. I can also help with airfare and a hotel stay before or after the cruise if you need one.
             </p>
           </div>
 
@@ -446,7 +446,7 @@ export default function Home() {
           <div style={{ backgroundColor: 'white', borderRadius: '16px', border: '1px solid #E5E7EB', overflow: 'hidden', maxWidth: '900px', margin: '0 auto', display: 'flex', flexDirection: 'column' }} className="group-card-inner">
             <div style={{ position: 'relative', flexShrink: 0, width: '100%', height: '190px', overflow: 'hidden', backgroundColor: '#CC0000' }} className="group-card-image">
               <img src="/HWthumbnail.png" alt="Halloween Transatlantic on Virgin Voyages Scarlet Lady" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%', display: 'block' }} />
-              <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#F59E0B', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px' }}>Happy Detour Travel Group</span>
+              <span style={{ position: 'absolute', top: '10px', left: '10px', backgroundColor: '#F59E0B', color: 'white', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '5px' }}>Reserved by Happy Detour Travel</span>
             </div>
             <div style={{ flex: 1, padding: '20px 24px' }}>
               <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '0 0 6px 0' }}>Transatlantic &middot; Barcelona to San Juan</p>
@@ -461,9 +461,9 @@ export default function Home() {
             <div style={{ backgroundColor: '#F9FAFB', padding: '20px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', minWidth: '210px', flexShrink: 0, borderTop: '1px solid #F3F4F6' }} className="group-card-pricing">
               <p style={{ color: '#9CA3AF', fontSize: '11px', margin: 0 }}>Starting from</p>
               <p style={{ margin: 0 }}><span style={{ color: '#1F2937', fontSize: '22px', fontWeight: '800' }}>$1,068</span> <span style={{ color: '#6B7280', fontSize: '12px' }}>/person</span></p>
-              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '6px 0 0 0' }}>Group perks</p>
+              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '6px 0 0 0' }}>Perks</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                <p style={{ color: '#007298', fontSize: '13px', fontWeight: '600', margin: 0 }}>+ Sail with the group, any cabin</p>
+                <p style={{ color: '#007298', fontSize: '13px', fontWeight: '600', margin: 0 }}>+ Reserved Sea Terrace cabins</p>
                 <p style={{ color: '#007298', fontSize: '13px', fontWeight: '600', margin: 0 }}>+ No planning fee</p>
                 <p style={{ color: '#007298', fontSize: '13px', fontWeight: '600', margin: 0 }}>+ $200 bar tab (Sea Terrace and up)</p>
               </div>
