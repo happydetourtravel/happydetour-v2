@@ -145,7 +145,7 @@ export default function Home() {
               Skip the corporate fluff and the hold music. I help you find the right sailing, talk through every detail before anything is confirmed, and stay in your corner the whole way.
             </p>
 
-            {/* Hero buttons: help for the undecided shopper, browsing for the ready buyer. Texting is a small line underneath */}
+            {/* Hero buttons: help for the undecided shopper, Virgin's full search (affiliate link) for the ready buyer. Texting is a small line underneath */}
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
               <a
                 href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/dDfyxMMy8gucAddKpaipPB4Z/link"
@@ -155,12 +155,11 @@ export default function Home() {
               >
                 Help Me Find a Cruise
               </a>
-              <a
-                href="#featured-sailings"
+              <VirginLink
                 style={{ color: 'white', border: '2px solid white', padding: '12px 22px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}
               >
-                Browse Virgin Sailings
-              </a>
+                Search All Virgin Sailings
+              </VirginLink>
             </div>
             <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '13px', fontWeight: '600', margin: '14px 0 0 0' }}>
               ✓ No planning fee on Virgin Voyages &nbsp;·&nbsp; ✓ No pressure
