@@ -145,7 +145,7 @@ export default function Home() {
               Skip the corporate fluff and the hold music. I help you find the right sailing, talk through every detail before anything is confirmed, and stay in your corner the whole way.
             </p>
 
-            {/* Hero buttons: one main action (trip form) and one easy way to reach Eric. The number is shown so desktop visitors can see it */}
+            {/* Hero buttons: help for the undecided shopper, browsing for the ready buyer. Texting is a small line underneath */}
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
               <a
                 href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/dDfyxMMy8gucAddKpaipPB4Z/link"
@@ -153,17 +153,20 @@ export default function Home() {
                 rel="noopener noreferrer"
                 style={{ backgroundColor: '#F59E0B', color: 'white', padding: '14px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}
               >
-                Tell Me About Your Trip
+                Help Me Find a Cruise
               </a>
               <a
-                href="sms:6308231253"
+                href="#featured-sailings"
                 style={{ color: 'white', border: '2px solid white', padding: '12px 22px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}
               >
-                Text Eric: 630-823-1253
+                Browse Virgin Sailings
               </a>
             </div>
-            <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '13px', margin: '12px 0 0 0' }}>
-              No pressure. Tell me what you have in mind and I'll get back to you personally, usually within a few hours.
+            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '13px', fontWeight: '600', margin: '14px 0 0 0' }}>
+              ✓ No planning fee on Virgin Voyages &nbsp;·&nbsp; ✓ No pressure
+            </p>
+            <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '13px', margin: '6px 0 0 0' }}>
+              Prefer to text? <a href="sms:6308231253" style={{ color: 'white', fontWeight: '700', textDecoration: 'underline' }}>630-823-1253</a>. I usually reply within a few hours.
             </p>
           </div>
 
@@ -196,7 +199,7 @@ export default function Home() {
                   )}
                 </div>
                 <a href={deal.link} {...(deal.link.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})} aria-label={`Get this deal: ${deal.title}`} style={{ display: 'block', textAlign: 'center', backgroundColor: '#007298', color: 'white', padding: '11px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px' }}>{deal.cta}</a>
-                <p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: '8px 0 0 0', lineHeight: '1.5' }}>Prices are estimates. Contact Eric for current availability.</p>
+                <p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: '8px 0 0 0', lineHeight: '1.5' }}>Prices are per person, based on two sharing. Fares can change, so Eric will confirm before you book.</p>
                 <p style={{ color: '#D1D5DB', fontSize: '10px', textAlign: 'center', margin: '4px 0 0 0' }}>Updated November 2026</p>
               </div>
               <div style={{ padding: '12px 20px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', borderTop: '1px solid #F3F4F6' }}>
@@ -320,7 +323,7 @@ export default function Home() {
       </div>
 
       {/* Featured Sailings. Sisters at Sea wide tile on top, the rest in date order */}
-      <div style={{ backgroundColor: '#F9FAFB', padding: '56px 20px' }}>
+      <div id="featured-sailings" style={{ backgroundColor: '#F9FAFB', padding: '56px 20px', scrollMarginTop: '80px' }}>
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>
           <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Featured Sailings</p>
           <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: 0 }}>Where are you headed next?</h2>
@@ -368,7 +371,7 @@ export default function Home() {
             </a>
           ))}
         </div>
-        <p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: '18px 0 0 0' }}>Fares can change. Text Eric for current availability.</p>
+        <p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: '18px 0 0 0' }}>All prices are per person, based on two sharing. Fares can change, so Eric will confirm before you book.</p>
       </div>
 
       {/* Reserved Cabins: Scarlet Lady Halloween Transatlantic. Sits right after Featured Sailings. White so it stands apart from the gray sections around it */}
