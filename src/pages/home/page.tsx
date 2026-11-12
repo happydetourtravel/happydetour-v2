@@ -151,7 +151,7 @@ export default function Home() {
                 href="https://traveljoy.com/webforms/EkZDCw7aARb9pnzVYgdHRaVX/forms/dDfyxMMy8gucAddKpaipPB4Z/link"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ backgroundColor: '#F59E0B', color: 'white', padding: '14px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}
+                style={{ backgroundColor: '#F59E0B', color: '#1F2937', padding: '14px 26px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '15px' }}
               >
                 Help Me Find a Cruise
               </a>
@@ -166,6 +166,12 @@ export default function Home() {
             </p>
             <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '13px', margin: '6px 0 0 0' }}>
               Prefer to text? <a href="sms:6308231253" style={{ color: 'white', fontWeight: '700', textDecoration: 'underline' }}>630-823-1253</a>. I usually reply within a few hours.
+            </p>
+
+            {/* Real client quote near the first button (Jason P., from the testimonials below) */}
+            <p style={{ color: 'white', fontSize: '14px', fontStyle: 'italic', lineHeight: '1.6', margin: '20px 0 0 0', paddingLeft: '12px', borderLeft: '3px solid #F59E0B', maxWidth: '440px' }}>
+              "Thanks to Eric, my first cruise was extremely easy."
+              <span style={{ display: 'block', fontStyle: 'normal', fontSize: '12px', color: 'rgba(255,255,255,0.75)', margin: '4px 0 0 0' }}>Jason P., NCL Star</span>
             </p>
           </div>
 
