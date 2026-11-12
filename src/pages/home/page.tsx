@@ -438,7 +438,7 @@ export default function Home() {
             <p style={{ color: '#007298', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px' }}>Group Sailing</p>
             <h2 style={{ color: '#1F2937', fontSize: 'clamp(26px, 5vw, 36px)', fontWeight: '800', margin: '0 0 16px 0' }}>Sail with the Happy Detour Travel crew.</h2>
             <p style={{ color: '#374151', fontSize: '15px', lineHeight: '1.7', maxWidth: '700px', margin: '0 auto' }}>
-              This is a group sailing I set up directly with Virgin Voyages. I am holding a block of Sea Terrace cabins, so group guests get perks you will not get booking on your own. Space is limited, so it is smart to grab your spot early. I can also help with airfare and a hotel stay before or after the cruise if you need one.
+              This is a group sailing I set up directly with Virgin Voyages. Every cabin type is welcome, from Insider to suites, and group guests get perks you will not get booking on your own. I can also help with airfare and a hotel stay before or after the cruise if you need one.
             </p>
           </div>
 
@@ -455,18 +455,20 @@ export default function Home() {
               <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                 <span style={{ backgroundColor: '#FEF2F2', color: '#CC0000', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>🎃 Halloween Sailing</span>
                 <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>✦ Virgin Voyages</span>
-                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>Sea Terrace Cabins</span>
+                <span style={{ backgroundColor: '#EFF6FF', color: '#007298', fontSize: '11px', fontWeight: '600', padding: '3px 10px', borderRadius: '100px' }}>All Cabin Types</span>
               </div>
             </div>
             <div style={{ backgroundColor: '#F9FAFB', padding: '20px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', minWidth: '210px', flexShrink: 0, borderTop: '1px solid #F3F4F6' }} className="group-card-pricing">
-              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: 0 }}>Group perks</p>
+              <p style={{ color: '#9CA3AF', fontSize: '11px', margin: 0 }}>Starting from</p>
+              <p style={{ margin: 0 }}><span style={{ color: '#1F2937', fontSize: '22px', fontWeight: '800' }}>$1,068</span> <span style={{ color: '#6B7280', fontSize: '12px' }}>/person</span></p>
+              <p style={{ color: '#6B7280', fontSize: '12px', fontWeight: '600', margin: '6px 0 0 0' }}>Group perks</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                <p style={{ color: '#007298', fontSize: '13px', fontWeight: '600', margin: 0 }}>+ $200 bar tab (Sea Terrace and up)</p>
+                <p style={{ color: '#007298', fontSize: '13px', fontWeight: '600', margin: 0 }}>+ Sail with the group, any cabin</p>
                 <p style={{ color: '#007298', fontSize: '13px', fontWeight: '600', margin: 0 }}>+ No planning fee</p>
+                <p style={{ color: '#007298', fontSize: '13px', fontWeight: '600', margin: 0 }}>+ $200 bar tab (Sea Terrace and up)</p>
               </div>
-              <a href="/group/transatlantic-10-2027" style={{ display: 'block', textAlign: 'center', backgroundColor: '#F59E0B', color: 'white', padding: '12px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px', marginTop: '4px' }}>See the Sailing</a>
-              <a href="/group/transatlantic-10-2027" style={{ display: 'block', textAlign: 'center', color: '#007298', fontSize: '13px', fontWeight: '600', textDecoration: 'none', padding: '4px 0' }}>See group pricing &rarr;</a>
-<p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: 0, lineHeight: '1.5' }}>Prices are right on the sailing page. No sign up needed.</p>
+              <a href="/group/transatlantic-10-2027" style={{ display: 'block', textAlign: 'center', backgroundColor: '#F59E0B', color: 'white', padding: '12px 16px', borderRadius: '8px', textDecoration: 'none', fontWeight: '700', fontSize: '14px', marginTop: '4px' }}>See Prices &amp; Cabins</a>
+              <p style={{ color: '#9CA3AF', fontSize: '11px', textAlign: 'center', margin: 0, lineHeight: '1.5' }}>All prices are on the sailing page. No sign up needed.</p>
             </div>
           </div>
         </div>
